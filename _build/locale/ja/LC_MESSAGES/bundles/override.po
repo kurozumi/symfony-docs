@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../bundles/override.rst:5
+msgid "How to Override any Part of a Bundle"
+msgstr ""
+
+#: ../../../bundles/override.rst:7
+msgid ""
+"When using a third-party bundle, you might want to customize or override "
+"some of its features. This document describes ways of overriding the most"
+" common features of a bundle."
+msgstr ""
+
+#: ../../../bundles/override.rst:13
+msgid ""
+"The bundle overriding mechanism means that you cannot use physical paths "
+"to refer to bundle's resources (e.g. ``__DIR__/config/services.xml``). "
+"Always use logical paths in your bundles (e.g. "
+"``@FooBundle/Resources/config/services.xml``) and call the "
+":ref:`locateResource() method <http-kernel-resource-locator>` to turn "
+"them into physical paths when needed."
+msgstr ""
+
+#: ../../../bundles/override.rst:22
+msgid "Templates"
+msgstr ""
+
+#: ../../../bundles/override.rst:24
+msgid ""
+"Third-party bundle templates can be overridden in the ``<your-"
+"project>/templates/bundles/<bundle-name>/`` directory. The new templates "
+"must use the same name and path (relative to "
+"``<bundle>/Resources/views/``) as the original templates."
+msgstr ""
+
+#: ../../../bundles/override.rst:29
+msgid ""
+"For example, to override the "
+"``Resources/views/Registration/confirmed.html.twig`` template from the "
+"FOSUserBundle, create this template: ``<your-"
+"project>/templates/bundles/FOSUserBundle/Registration/confirmed.html.twig``"
+msgstr ""
+
+#: ../../../bundles/override.rst:35
+msgid ""
+"If you add a template in a new location, you *may* need to clear your "
+"cache (``php bin/console cache:clear``), even if you are in debug mode."
+msgstr ""
+
+#: ../../../bundles/override.rst:38
+msgid ""
+"Instead of overriding an entire template, you may just want to override "
+"one or more blocks. However, since you are overriding the template you "
+"want to extend from, you would end up in an infinite loop error. The "
+"solution is to use the special ``!`` prefix in the template name to tell "
+"Symfony that you want to extend from the original template, not from the "
+"overridden one:"
+msgstr ""
+
+#: ../../../bundles/override.rst:58
+msgid ""
+"Symfony internals use some bundles too, so you can apply the same "
+"technique to override the core Symfony templates. For example, you can "
+":doc:`customize error pages </controller/error_pages>` overriding "
+"TwigBundle templates."
+msgstr ""
+
+#: ../../../bundles/override.rst:64
+msgid "Routing"
+msgstr ""
+
+#: ../../../bundles/override.rst:66
+msgid ""
+"Routing is never automatically imported in Symfony. If you want to "
+"include the routes from any bundle, then they must be manually imported "
+"from somewhere in your application (e.g. ``config/routes.yaml``)."
+msgstr ""
+
+#: ../../../bundles/override.rst:70
+msgid ""
+"The easiest way to \"override\" a bundle's routing is to never import it "
+"at all. Instead of importing a third-party bundle's routing, copy that "
+"routing file into your application, modify it, and import it instead."
+msgstr ""
+
+#: ../../../bundles/override.rst:75
+msgid "Controllers"
+msgstr ""
+
+#: ../../../bundles/override.rst:77
+msgid ""
+"If the controller is a service, see the next section on how to override "
+"it. Otherwise, define a new route + controller with the same path "
+"associated to the controller you want to override (and make sure that the"
+" new route is loaded before the bundle one)."
+msgstr ""
+
+#: ../../../bundles/override.rst:83
+msgid "Services & Configuration"
+msgstr ""
+
+#: ../../../bundles/override.rst:85
+msgid ""
+"If you want to modify the services created by a bundle, you can use "
+":doc:`service decoration </service_container/service_decoration>`."
+msgstr ""
+
+#: ../../../bundles/override.rst:88
+msgid ""
+"If you want to do more advanced manipulations, like removing services "
+"created by other bundles, you must work with :doc:`service definitions "
+"</service_container/definitions>` inside a :doc:`compiler pass "
+"</service_container/compiler_passes>`."
+msgstr ""
+
+#: ../../../bundles/override.rst:93
+msgid "Entities & Entity Mapping"
+msgstr ""
+
+#: ../../../bundles/override.rst:95
+msgid ""
+"If a bundle defines its entity mapping in configuration files instead of "
+"annotations, you can override them as any other regular bundle "
+"configuration file. The only caveat is that you must override all those "
+"mapping configuration files and not just the ones you actually want to "
+"override."
+msgstr ""
+
+#: ../../../bundles/override.rst:100
+msgid ""
+"If a bundle provides a mapped superclass (such as the ``User`` entity in "
+"the FOSUserBundle) you can override its attributes and associations. "
+"Learn more about this feature and its limitations in `the Doctrine "
+"documentation`_."
+msgstr ""
+
+#: ../../../bundles/override.rst:105
+msgid "Forms"
+msgstr ""
+
+#: ../../../bundles/override.rst:107
+msgid ""
+"Existing form types can be modified defining :doc:`form type extensions "
+"</form/create_form_type_extension>`."
+msgstr ""
+
+#: ../../../bundles/override.rst:113
+msgid "Validation Metadata"
+msgstr ""
+
+#: ../../../bundles/override.rst:115
+msgid ""
+"Symfony loads all validation configuration files from every bundle and "
+"combines them into one validation metadata tree. This means you are able "
+"to add new constraints to a property, but you cannot override them."
+msgstr ""
+
+#: ../../../bundles/override.rst:119
+msgid ""
+"To overcome this, the 3rd party bundle needs to have configuration for "
+":doc:`validation groups </validation/groups>`. For instance, the "
+"FOSUserBundle has this configuration. To create your own validation, add "
+"the constraints to a new validation group:"
+msgstr ""
+
+#: ../../../bundles/override.rst:167
+msgid ""
+"Now, update the FOSUserBundle configuration, so it uses your validation "
+"groups instead of the original ones."
+msgstr ""
+
+#: ../../../bundles/override.rst:173
+msgid "Translations"
+msgstr ""
+
+#: ../../../bundles/override.rst:175
+msgid ""
+"Translations are not related to bundles, but to translation domains. For "
+"this reason, you can override any bundle translation file from the main "
+"``translations/`` directory, as long as the new file uses the same "
+"domain."
+msgstr ""
+
+#: ../../../bundles/override.rst:179
+msgid ""
+"For example, to override the translations defined in the "
+"``Resources/translations/FOSUserBundle.es.yml`` file of the "
+"FOSUserBundle, create a ``<your-"
+"project>/translations/FOSUserBundle.es.yml`` file."
+msgstr ""
+

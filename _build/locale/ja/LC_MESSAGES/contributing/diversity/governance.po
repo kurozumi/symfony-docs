@@ -1,0 +1,270 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/diversity/governance.rst:2
+msgid "Diversity Initiative Governance"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:5
+msgid "Membership"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:7
+msgid ""
+"Membership of Symfony's Diversity Initiative is open to any member of the"
+" Symfony community; to avoid the risk of elitism or meritocracy, no "
+"requirement is needed to be involved. All members, at any time, are "
+"invited to put forward ideas and suggestions as a proposal for an "
+"actionable item."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:13
+msgid "Guidance"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:15
+msgid ""
+"The project leader, Fabien Potencier, is responsible for publicly "
+"appointing five (5) members of the initiative to provide guidance and "
+"drive it forward, but also retains the right to revoke any of the "
+"appointed members at any time. This guidance team should:"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:20
+msgid ""
+"Be committed to the initiative's cause and have joined because they want "
+"to help the initiative to deliver its purpose most effectively for the "
+"community's benefit."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:23
+msgid "Recognize that meeting the initiative's purpose is an ongoing effort."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:24
+msgid ""
+"Be committed to good governance and want to contribute to the "
+"initiative's continued improvement."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:27
+msgid ""
+"The current guidance team is composed of the following people (in "
+"alphabetical order):"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:30
+msgid "**Lukas Kahwe Smith** (`lsmith77`_);"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:31
+msgid "**Michelle Sanver** (`michellesanver`_);"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:32
+msgid "**Nicolas Grekas** (`nicolas-grekas`_);"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:33
+msgid "**Timo Bakx** (`TimoBakx`_);"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:34
+msgid "**Zan Baldwin** (`zanbaldwin`_)."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:37
+msgid "Veto"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:39
+msgid ""
+"The project leader (Fabien Potencier) will have the right to veto any "
+"actionable item, regardless of the vote of the initiative's guidance "
+"team. The project leader may, at their discretion, also appoint other "
+"people from among the initiative's guidance team to also have the right "
+"to veto - in such a case these people are expected to use appropriate "
+"judgment to know when to use a \"no\" vote or a veto. Any single veto "
+"will reject an actionable item."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:46
+msgid ""
+"The purpose of having members with the right to veto is to prevent a "
+"\"people's majority\" from overruling the core interests of the Symfony "
+"project. This will encourage communication between proposing members, the"
+" initiative's guidance team and the Core Team to create realistic "
+"proposals, and in return any veto will come with a full explanation (not "
+"just a justification)."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:53
+msgid "Advice Process"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:55
+msgid ""
+"When a proposal on an actionable item is ready to be decided on, insight "
+"from the community (advice, general consensus, or non-binding poll) "
+"should be requested from the wider community - this will aim to include "
+"both those who will be meaningfully affected and those with meaningful "
+"expertise in the matter at hand. This feedback will enable the guidance "
+"team to have the confidence to vote for the best possible decision "
+"according to the information they have available, knowing that the "
+"responsibility they accept for said vote is justified."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:65
+msgid "Voting"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:67
+#, python-format
+msgid ""
+"The guidance team have the right to vote on proposals for actionable "
+"items. The quorum of \"yes\" or \"no\" votes required for a decision to "
+"be considered valid is at least 75% of active, appointed members of the "
+"guidance team - to abstain from voting means that vote will not be "
+"counted towards the quorum. For an actionable item to pass, approval from"
+" greater than 50% of the voting guidance team members is required. Use or"
+" management of finances/donations require at least a two-thirds majority "
+"to pass."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:75
+msgid ""
+"For transparency and ease-of-understanding, this means only the following"
+" combinations of votes will result in an actionable item passing:"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:79
+msgid "For"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:79
+msgid "Against"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:79
+msgid "Abstain"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:81
+msgid "5"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:81
+#: ../../../contributing/diversity/governance.rst:83
+#: ../../../contributing/diversity/governance.rst:85
+#: ../../../contributing/diversity/governance.rst:87
+msgid "0"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:83
+#: ../../../contributing/diversity/governance.rst:87
+msgid "4"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:83
+#: ../../../contributing/diversity/governance.rst:87
+#: ../../../contributing/diversity/governance.rst:89
+msgid "1"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:85
+#: ../../../contributing/diversity/governance.rst:89
+msgid "3"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:85
+msgid "2"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:93
+msgid "Guidance Principles"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:96
+msgid "Purpose"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:98
+msgid ""
+"The initiative should be led by an effective guidance team that provides "
+"strategic guidance in line with the initiative's aims and values, "
+"including a shared understanding with fellow initiative members to ensure"
+" that these are being delivered effectively and sustainably."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:104
+msgid "Integrity"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:106
+msgid ""
+"The guidance team should act with integrity: adopting values which help "
+"achieve the initiative's purposes, even where difficult or unpopular "
+"decisions are required. Guidance team members should undertake their "
+"duties, aware of the importance of confidence and trust in the initiative"
+" from the wider community, and ultimately acknowledges shared "
+"responsibility for the reputation of the Symfony project like the Core "
+"Team."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:114
+msgid "Decision-making Effectiveness"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:116
+msgid ""
+"Guidance members should work as an effective team, using the appropriate "
+"balance of skills, experience, backgrounds and knowledge to make sure its"
+" decision-making processes are informed and equitable. Risk assessment "
+"and management systems should be set up and monitored."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:122
+msgid "Openness and Accountability"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:124
+msgid ""
+"The behavior and conduct of the initiative's guidance team sets the tone "
+"for the rest of the community. The guidance team should lead by example "
+"to create a culture that enables members to feel it is safe to suggest, "
+"question and challenge - rather than avoid - difficult ideas and topics. "
+"The team should guide the initiative in being transparent, accountable "
+"and open."
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:131
+msgid "Adaptability"
+msgstr ""
+
+#: ../../../contributing/diversity/governance.rst:133
+msgid ""
+"The initiative should establish processes that do not require any one "
+"person to hold specific positions while being adaptable to accommodate "
+"unforeseen needs of the community, especially as membership and "
+"involvement grows over time (changes to guidance team member appointment "
+"will have to be approved by the current system, which is Fabien "
+"Potencier)."
+msgstr ""
+

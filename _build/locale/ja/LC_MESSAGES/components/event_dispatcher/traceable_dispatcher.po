@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/event_dispatcher/traceable_dispatcher.rst:6
+msgid "The Traceable Event Dispatcher"
+msgstr ""
+
+#: ../../../components/event_dispatcher/traceable_dispatcher.rst:8
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\EventDispatcher\\\\Debug\\\\TraceableEventDispatcher`"
+" is an event dispatcher that wraps any other event dispatcher and can "
+"then be used to determine which event listeners have been called by the "
+"dispatcher. Pass the event dispatcher to be wrapped and an instance of "
+"the :class:`Symfony\\\\Component\\\\Stopwatch\\\\Stopwatch` to its "
+"constructor::"
+msgstr ""
+
+#: ../../../components/event_dispatcher/traceable_dispatcher.rst:25
+msgid ""
+"Now, the ``TraceableEventDispatcher`` can be used like any other event "
+"dispatcher to register event listeners and dispatch events::"
+msgstr ""
+
+#: ../../../components/event_dispatcher/traceable_dispatcher.rst:43
+msgid ""
+"After your application has been processed, you can use the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\Debug\\\\TraceableEventDispatcher::getCalledListeners`"
+" method to retrieve an array of event listeners that have been called in "
+"your application. Similarly, the "
+":method:`Symfony\\\\Component\\\\EventDispatcher\\\\Debug\\\\TraceableEventDispatcher::getNotCalledListeners`"
+" method returns an array of event listeners that have not been called::"
+msgstr ""
+

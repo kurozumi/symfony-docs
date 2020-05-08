@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/expression_language.rst:8
+msgid "How to Inject Values Based on Complex Expressions"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:10
+msgid ""
+"The service container also supports an \"expression\" that allows you to "
+"inject very specific values into a service."
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:13
+msgid ""
+"For example, suppose you have a service (not shown here), called "
+"``App\\Mail\\MailerConfiguration``, which has a ``getMailerMethod()`` "
+"method on it. This returns a string - like ``sendmail`` based on some "
+"configuration."
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:17
+msgid ""
+"Suppose that you want to pass the result of this method as a constructor "
+"argument to another service: ``App\\Mailer``. One way to do this is with "
+"an expression:"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:73
+msgid ""
+"To learn more about the expression language syntax, see "
+":doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:75
+msgid "In this context, you have access to 2 functions:"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:77
+msgid "``service``"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:78
+msgid "Returns a given service (see the example above)."
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:80
+msgid "``parameter``"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:80
+msgid "Returns a specific parameter value (syntax is just like ``service``)."
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:82
+msgid ""
+"You also have access to the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Container` via a "
+"``container`` variable. Here's another example:"
+msgstr ""
+
+#: ../../../service_container/expression_language.rst:125
+msgid ""
+"Expressions can be used in ``arguments``, ``properties``, as arguments "
+"with ``configurator`` and as arguments to ``calls`` (method calls)."
+msgstr ""
+

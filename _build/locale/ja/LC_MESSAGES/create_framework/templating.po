@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/templating.rst:2
+msgid "Templating"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:4
+msgid ""
+"The astute reader has noticed that our framework hardcodes the way "
+"specific \"code\" (the templates) is run. For simple pages like the ones "
+"we have created so far, that's not a problem, but if you want to add more"
+" logic, you would be forced to put the logic into the template itself, "
+"which is probably not a good idea, especially if you still have the "
+"separation of concerns principle in mind."
+msgstr ""
+
+#: ../../../create_framework/templating.rst:11
+msgid ""
+"Let's separate the template code from the logic by adding a new layer: "
+"the controller: *The controller's mission is to generate a Response based"
+" on the information conveyed by the client's Request.*"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:15
+msgid "Change the template rendering part of the framework to read as follows::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:29
+msgid ""
+"As the rendering is now done by an external function "
+"(``render_template()`` here), we need to pass to it the attributes "
+"extracted from the URL. We could have passed them as an additional "
+"argument to ``render_template()``, but instead, let's use another feature"
+" of the ``Request`` class called *attributes*: Request attributes is a "
+"way to attach additional information about the Request that is not "
+"directly related to the HTTP Request data."
+msgstr ""
+
+#: ../../../create_framework/templating.rst:36
+msgid ""
+"You can now create the ``render_template()`` function, a generic "
+"controller that renders a template when there is no specific logic. To "
+"keep the same template as before, request attributes are extracted before"
+" the template is rendered::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:50
+msgid ""
+"As ``render_template`` is used as an argument to the PHP "
+"``call_user_func()`` function, we can replace it with any valid PHP "
+"`callbacks`_. This allows us to use a function, an anonymous function or "
+"a method of a class as a controller... your choice."
+msgstr ""
+
+#: ../../../create_framework/templating.rst:55
+msgid ""
+"As a convention, for each route, the associated controller is configured "
+"via the ``_controller`` route attribute::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:72
+msgid ""
+"A route can now be associated with any controller and within a "
+"controller, you can still use the ``render_template()`` to render a "
+"template::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:82
+msgid ""
+"This is rather flexible as you can change the Response object afterwards "
+"and you can even pass additional arguments to the template::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:100
+msgid "Here is the updated and improved version of our framework::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:136
+msgid ""
+"To celebrate the birth of our new framework, let's create a brand new "
+"application that needs some simple logic. Our application has one page "
+"that says whether a given year is a leap year or not. When calling "
+"``/is_leap_year``, you get the answer for the current year, but you can "
+"also specify a year like in ``/is_leap_year/2009``. Being generic, the "
+"framework does not need to be modified in any way, create a new "
+"``app.php`` file::"
+msgstr ""
+
+#: ../../../create_framework/templating.rst:170
+msgid ""
+"The ``is_leap_year()`` function returns ``true`` when the given year is a"
+" leap year, ``false`` otherwise. If the year is ``null``, the current "
+"year is tested. The controller does little: it gets the year from the "
+"request attributes, pass it to the ``is_leap_year()`` function, and "
+"according to the return value it creates a new Response object."
+msgstr ""
+
+#: ../../../create_framework/templating.rst:176
+msgid ""
+"As always, you can decide to stop here and use the framework as is; it's "
+"probably all you need to create simple websites like those fancy one-page"
+" `websites`_ and hopefully a few others."
+msgstr ""
+

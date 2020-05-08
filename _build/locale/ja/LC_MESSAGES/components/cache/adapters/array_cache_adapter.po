@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/array_cache_adapter.rst:6
+msgid "Array Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/array_cache_adapter.rst:8
+msgid ""
+"Generally, this adapter is useful for testing purposes, as its contents "
+"are stored in memory and not persisted outside the running PHP process in"
+" any way. It can also be useful while warming up caches, due to the "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\ArrayAdapter::getValues`"
+" method."
+msgstr ""
+
+#: ../../../components/cache/adapters/array_cache_adapter.rst:13
+msgid ""
+"This adapter can be passed a default cache lifetime as its first "
+"parameter, and a boolean that toggles serialization as its second "
+"parameter::"
+msgstr ""
+

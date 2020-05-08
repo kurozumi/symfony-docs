@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/command_in_controller.rst:5
+msgid "How to Call a Command from a Controller"
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:7
+msgid ""
+"The :doc:`Console component documentation </components/console>` covers "
+"how to create a console command. This article covers how to use a console"
+" command directly from your controller."
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:11
+msgid ""
+"You may have the need to execute some function that is only available in "
+"a console command. Usually, you should refactor the command and move some"
+" logic into a service that can be reused in the controller. However, when"
+" the command is part of a third-party library, you wouldn't want to "
+"modify or duplicate their code. Instead, you can execute the command "
+"directly."
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:19
+msgid ""
+"In comparison with a direct call from the console, calling a command from"
+" a controller has a slight performance impact because of the request "
+"stack overhead."
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:23
+msgid ""
+"Imagine you want to send spooled Swift Mailer messages by :doc:`using the"
+" swiftmailer:spool:send command </email>`. Run this command from inside "
+"your controller via::"
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:65
+msgid "Showing Colorized Command Output"
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:67
+msgid ""
+"By telling the ``BufferedOutput`` it is decorated via the second "
+"parameter, it will return the Ansi color-coded content. The `SensioLabs "
+"AnsiToHtml converter`_ can be used to convert this to colorful HTML."
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:71
+msgid "First, require the package:"
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:77
+msgid "Now, use it in your controller::"
+msgstr ""
+
+#: ../../../console/command_in_controller.rst:107
+msgid ""
+"The ``AnsiToHtmlConverter`` can also be registered `as a Twig "
+"Extension`_, and supports optional themes."
+msgstr ""
+

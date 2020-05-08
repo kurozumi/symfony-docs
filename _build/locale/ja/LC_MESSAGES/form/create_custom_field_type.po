@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/create_custom_field_type.rst:5
+msgid "How to Create a Custom Form Field Type"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:7
+msgid ""
+"Symfony comes with :doc:`tens of form types </reference/forms/types>` "
+"(called \"form fields\" in other projects) ready to use in your "
+"applications. However, it's common to create custom form types to solve "
+"specific purposes in your projects."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:13
+msgid "Creating Form Types Based on Symfony Built-in Types"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:15
+msgid ""
+"The easiest way to create a form type is to base it on one of the "
+":doc:`existing form types </reference/forms/types>`. Imagine that your "
+"project displays a list of \"shipping options\" as a ``<select>`` HTML "
+"element. This can be implemented with a :doc:`ChoiceType "
+"</reference/forms/types/choice>` where the ``choices`` option is set to "
+"the list of available shipping options."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:21
+msgid ""
+"However, if you use the same form type in several forms, repeating the "
+"list of ``choices`` everytime you use it quickly becomes boring. In this "
+"example, a better solution is to create a custom form type based on "
+"``ChoiceType``. The custom type looks and behaves like a ``ChoiceType`` "
+"but the list of choices is already populated with the shipping options so"
+" you don't need to define them."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:27
+msgid ""
+"Form types are PHP classes that implement "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeInterface`, but you "
+"should instead extend from "
+":class:`Symfony\\\\Component\\\\Form\\\\AbstractType`, which already "
+"implements that interface and provides some utilities. By convention they"
+" are stored in the ``src/Form/Type/`` directory::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:58
+msgid ""
+"The ``configureOptions()`` method, which is explained later in this "
+"article, defines the options that can be configured for the form type and"
+" sets the default value of those options."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:62
+msgid ""
+"The ``getParent()`` method defines which is the form type used as the "
+"base of this type. In this case, the type extends from ``ChoiceType`` to "
+"reuse all of the logic and rendering of that field type."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:68
+msgid ""
+"The PHP class extension mechanism and the Symfony form field extension "
+"mechanism are not the same. The parent type returned in ``getParent()`` "
+"is what Symfony uses to build and manage the field type. Making the PHP "
+"class extend from ``AbstractType`` is only a convenience way of "
+"implementing the required ``FormTypeInterface``."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:74
+msgid ""
+"Now you can add this form type when :doc:`creating Symfony forms "
+"</forms>`::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:96
+msgid ""
+"That's all. The ``shipping`` form field will be rendered correctly in any"
+" template because it reuses the templating logic defined by its parent "
+"type ``ChoiceType``. If you prefer, you can also define a template for "
+"your custom types, as explained later in this article."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:102
+msgid "Creating Form Types Created From Scratch"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:104
+msgid ""
+"Some form types are so specific to your projects that they cannot be "
+"based on any :doc:`existing form types </reference/forms/types>` because "
+"they are too different. Consider an application that wants to reuse in "
+"different forms the following set of fields as the \"postal address\":"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:113
+msgid ""
+"As explained above, form types are PHP classes that implement "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeInterface`, although it's"
+" more convenient to extend instead from "
+":class:`Symfony\\\\Component\\\\Form\\\\AbstractType`::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:129
+msgid ""
+"When a form type doesn't extend from another specific type, there's no "
+"need to implement the ``getParent()`` method (Symfony will make the type "
+"extend from the generic "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\FormType`,"
+" which is the parent of all the other types)."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:134
+msgid "These are the most important methods that a form type class can define:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:140
+msgid "``buildForm()``"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:139
+msgid ""
+"It adds and configures other types into this type. It's the same method "
+"used when :ref:`creating Symfony form classes <creating-forms-in-"
+"classes>`."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:143
+msgid "``buildView()``"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:143
+msgid ""
+"It sets any extra variables you'll need when rendering the field in a "
+"template."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:147
+msgid "``configureOptions()``"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:146
+msgid ""
+"It defines the options configurable when using the form type, which are "
+"also the options that can be used in ``buildForm()`` and ``buildView()`` "
+"methods."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:152
+msgid "``finishView()``"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:150
+msgid ""
+"When creating a form type that consists of many fields, this method "
+"allows to modify the \"view\" of any of those fields. For any other use "
+"case, it's recommended to use instead the ``buildView()`` method."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:155
+msgid "Defining the Form Type"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:157
+msgid ""
+"Start by adding the ``buildForm()`` method to configure all the types "
+"included in the postal address. For the moment, all fields are of type "
+"``TextType``::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:193
+msgid ""
+"Run the following command to verify that the form type was successfully "
+"registered in the application:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:200
+msgid ""
+"This form type is ready to use it inside other forms and all its fields "
+"will be correctly rendered in any template::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:223
+msgid ""
+"However, the real power of custom form types is achieved with custom form"
+" options (to make them flexible) and with custom templates (to make them "
+"look better)."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:230
+msgid "Adding Configuration Options for the Form Type"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:232
+msgid ""
+"Imagine that your project requires to make the ``PostalAddressType`` "
+"configurable in two ways:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:235
+msgid ""
+"In addition to \"address line 1\" and \"address line 2\", some addresses "
+"should be allowed to display an \"address line 3\" to store extended "
+"address information;"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:237
+msgid ""
+"Instead of displaying a free text input, some addresses should be able to"
+" restrict the possible states to a given list."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:240
+msgid ""
+"This is solved with \"form type options\", which allow to configure the "
+"behavior of the form types. The options are defined in the "
+"``configureOptions()`` method and you can use all the "
+":doc:`OptionsResolver component features </components/options_resolver>` "
+"to define, validate and process their values::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:287
+msgid "Now you can configure these options when using the form type::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:310
+msgid "The last step is to use these options when building the form::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:342
+msgid "Creating the Form Type Template"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:344
+msgid ""
+"By default, custom form types will be rendered using the :doc:`form "
+"themes </form/form_themes>` configured in the application. However, for "
+"some types you may prefer to create a custom template in order to "
+"customize how they look or their HTML structure."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:349
+msgid ""
+"First, create a new Twig template anywhere in the application to store "
+"the fragments used to render the types:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:358
+msgid ""
+"Then, update the :ref:`form_themes option <reference-twig-tag-form-"
+"theme>` to add this new template at the beginning of the list (the first "
+"one overrides the rest of files):"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:400
+msgid ""
+"The last step is to create the actual Twig template that will render the "
+"type. The template contents depend on which HTML, CSS and JavaScript "
+"frameworks and libraries are used in your application:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:418
+msgid ""
+"The first part of the Twig block name (e.g. ``postal_address``) comes "
+"from the class name (``PostalAddressType`` -> ``postal_address``). This "
+"can be controlled by overriding the ``getBlockPrefix()`` method in "
+"``PostalAddressType``. The second part of the Twig block name (e.g. "
+"``_row``) defines which form type part is being rendered (row, widget, "
+"help, errors, etc.)"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:424
+msgid ""
+"The article about form themes explains the :ref:`form fragment naming "
+"rules <form-fragment-naming>` in detail. The following diagram shows some"
+" of the Twig block names defined in this example:"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:434
+msgid ""
+"When the name of your form class matches any of the built-in field types,"
+" your form might not be rendered correctly. A form type named "
+"``App\\Form\\PasswordType`` will have the same block name as the built-in"
+" ``PasswordType`` and won't be rendered correctly. Override the "
+"``getBlockPrefix()`` method to return a unique block prefix (e.g. "
+"``app_password``) to avoid collisions."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:442
+msgid "Passing Variables to the Form Type Template"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:444
+msgid ""
+"Symfony passes a series of variables to the template used to render the "
+"form type. You can also pass your own variables, which can be based on "
+"the options defined by the form or be completely independent::"
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:475
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, this example will already work! "
+"Otherwise, :ref:`create a service <service-container-creating-service>` "
+"for this form class and :doc:`tag it </service_container/tags>` with "
+"``form.type``."
+msgstr ""
+
+#: ../../../form/create_custom_field_type.rst:479
+msgid ""
+"The variables added in ``buildView()`` are available in the form type "
+"template as any other regular Twig variable:"
+msgstr ""
+

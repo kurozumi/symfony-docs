@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/upgrade_major.rst:5
+msgid "Upgrading a Major Version (e.g. 4.4.0 to 5.0.0)"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:7
+msgid ""
+"Every two years, Symfony releases a new major version release (the first "
+"number changes). These releases are the trickiest to upgrade, as they are"
+" allowed to break backward compatibility. However, Symfony makes this "
+"upgrade process as smooth as possible."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:12
+msgid ""
+"This means that you can update most of your code before the major release"
+" is actually released. This is called making your code *future "
+"compatible*."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:15
+msgid "There are a couple of steps to upgrading a major version:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:17
+msgid ""
+":ref:`Make your code deprecation free <upgrade-major-symfony-"
+"deprecations>`;"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:18
+msgid ""
+":ref:`Update to the new major version via Composer <upgrade-major-"
+"symfony-composer>`;"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:19
+msgid ""
+":ref:`Update your code to work with the new version <upgrade-major-"
+"symfony-after>`."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:24
+msgid "1) Make your Code Deprecation Free"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:26
+msgid ""
+"During the lifecycle of a major release, new features are added and "
+"method signatures and public API usages are changed. However, :doc:`minor"
+" versions </setup/upgrade_minor>` should not contain any backwards "
+"incompatible changes. To accomplish this, the \"old\" (e.g. functions, "
+"classes, etc) code still works, but is marked as *deprecated*, indicating"
+" that it will be removed/changed in the future and that you should stop "
+"using it."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:33
+msgid ""
+"When the major version is released (e.g. 5.0.0), all deprecated features "
+"and functionality are removed. So, as long as you've updated your code to"
+" stop using these deprecated features in the last version before the "
+"major (e.g. ``4.4.*``), you should be able to upgrade without a problem. "
+"That means that you should first :doc:`upgrade to the last minor version "
+"</setup/upgrade_minor>` (e.g. 4.4) so that you can see *all* the "
+"deprecations."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:40
+msgid ""
+"To help you find deprecations, notices are triggered whenever you end up "
+"using a deprecated feature. When visiting your application in the "
+":ref:`dev environment <configuration-environments>` in your browser, "
+"these notices are shown in the web dev toolbar:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:49
+msgid ""
+"Ultimately, you should aim to stop using the deprecated functionality. "
+"Sometimes, this is easy: the warning might tell you exactly what to "
+"change."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:52
+msgid ""
+"But other times, the warning might be unclear: a setting somewhere might "
+"cause a class deeper to trigger the warning. In this case, Symfony does "
+"its best to give a clear message, but you may need to research that "
+"warning further."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:56
+msgid ""
+"And sometimes, the warning may come from a third-party library or bundle "
+"that you're using. If that's true, there's a good chance that those "
+"deprecations have already been updated. In that case, upgrade the library"
+" to fix them."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:60
+msgid ""
+"Once all the deprecation warnings are gone, you can upgrade with a lot "
+"more confidence."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:64
+msgid "Deprecations in PHPUnit"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:66
+msgid ""
+"When you run your tests using PHPUnit, no deprecation notices are shown. "
+"To help you here, Symfony provides a PHPUnit bridge. This bridge will "
+"show you a nice summary of all deprecation notices at the end of the test"
+" report."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:70
+msgid "All you need to do is install the PHPUnit bridge:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:76
+msgid "Now, you can start fixing the notices:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:95
+msgid ""
+"Once you fixed them all, the command ends with ``0`` (success) and you're"
+" done!"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst
+msgid "Using the Weak Deprecations Mode"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:100
+msgid ""
+"Sometimes, you can't fix all deprecations (e.g. something was deprecated "
+"in 4.4 and you still need to support 4.3). In these cases, you can still "
+"use the bridge to fix as many deprecations as possible and then allow "
+"more of them to make your tests pass again. You can do this by using the "
+"``SYMFONY_DEPRECATIONS_HELPER`` env variable:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:117
+msgid "You can also execute the command like:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:126
+msgid "2) Update to the New Major Version via Composer"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:128
+msgid ""
+"Once your code is deprecation free, you can update the Symfony library "
+"via Composer by modifying your ``composer.json`` file and changing all "
+"the libraries starting with ``symfony/`` to the new major version:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:155
+msgid ""
+"At the bottom of your ``composer.json`` file, in the ``extra`` block you "
+"can find a data setting for the Symfony version. Make sure to also "
+"upgrade this one. For instance, update it to ``5.0.*`` to upgrade to "
+"Symfony 5.0:"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:169
+msgid "Next, use Composer to download new versions of the libraries:"
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:2
+msgid "Dependency Errors"
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:4
+msgid ""
+"If you get a dependency error, it may mean that you also need to upgrade "
+"other libraries that are dependencies of the Symfony libraries. To allow "
+"that, pass the ``--with-all-dependencies`` flag:"
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:12
+msgid ""
+"This updates ``symfony/*`` and *all* packages that those packages depend "
+"on. By using tight version constraints in ``composer.json``, you can "
+"control what versions each library upgrades to."
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:16
+msgid ""
+"If this still doesn't work, your ``composer.json`` file may specify a "
+"version for a library that is not compatible with the newer Symfony "
+"version. In that case, updating that library to a newer version in "
+"``composer.json`` may solve the issue."
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:21
+msgid ""
+"Or, you may have deeper issues where different libraries depend on "
+"conflicting versions of other libraries. Check your error message to "
+"debug."
+msgstr ""
+
+#: ../../../setup/_update_dep_errors.rst.inc:24
+msgid ""
+"Another issue that may happen is that the project dependencies can be "
+"installed on your local computer but not on the remote server. This "
+"usually happens when the PHP versions are different on each machine. The "
+"solution is to add the `platform`_ config option to your `composer.json` "
+"file to define the highest PHP version allowed for the dependencies (set "
+"it to the server's PHP version)."
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:2
+msgid "Upgrading other Packages"
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:4
+msgid ""
+"You may also want to upgrade the rest of your libraries. If you've done a"
+" good job with your `version constraints`_ in ``composer.json``, you can "
+"do this safely by running:"
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:14
+msgid ""
+"Beware, if you have some unspecific `version constraints`_ in your "
+"``composer.json`` (e.g. ``dev-master``), this could upgrade some non-"
+"Symfony libraries to new versions that contain backwards-compatibility "
+"breaking changes."
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:182
+msgid "3) Update your Code to Work with the New Version"
+msgstr ""
+
+#: ../../../setup/upgrade_major.rst:184
+msgid ""
+"In some rare situations, the next major version *may* contain backwards-"
+"compatibility breaks. Make sure you read the ``UPGRADE-X.0.md`` (where X "
+"is the new major version) included in the Symfony repository for any BC "
+"break that you need to be aware of."
+msgstr ""
+

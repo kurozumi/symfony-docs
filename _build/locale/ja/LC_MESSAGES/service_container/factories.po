@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/factories.rst:5
+msgid "Using a Factory to Create Services"
+msgstr ""
+
+#: ../../../service_container/factories.rst:7
+msgid ""
+"Symfony's Service Container provides multiple features to control the "
+"creation of objects, allowing you to specify arguments passed to the "
+"constructor as well as calling methods and setting parameters."
+msgstr ""
+
+#: ../../../service_container/factories.rst:11
+msgid ""
+"However, sometimes you need to apply the `factory design pattern`_ to "
+"delegate the object creation to some special object called \"the "
+"factory\". In those cases, the service container can call a method on "
+"your factory to create the object rather than directly instantiating the "
+"class."
+msgstr ""
+
+#: ../../../service_container/factories.rst:17
+msgid "Static Factories"
+msgstr ""
+
+#: ../../../service_container/factories.rst:19
+msgid ""
+"Suppose you have a factory that configures and returns a new "
+"``NewsletterManager`` object by calling the static "
+"``createNewsletterManager()`` method::"
+msgstr ""
+
+#: ../../../service_container/factories.rst:34
+msgid ""
+"To make the ``NewsletterManager`` object available as a service, use the "
+"``factory`` option to define which method of which class must be called "
+"to create its object:"
+msgstr ""
+
+#: ../../../service_container/factories.rst:92
+msgid ""
+"When using a factory to create services, the value chosen for class has "
+"no effect on the resulting service. The actual class name only depends on"
+" the object that is returned by the factory. However, the configured "
+"class name may be used by compiler passes and therefore should be set to "
+"a sensible value."
+msgstr ""
+
+#: ../../../service_container/factories.rst:99
+msgid "Non-Static Factories"
+msgstr ""
+
+#: ../../../service_container/factories.rst:101
+msgid ""
+"If your factory is using a regular method instead of a static one to "
+"configure and create the service, instantiate the factory itself as a "
+"service too. Configuration of the service container then looks like this:"
+msgstr ""
+
+#: ../../../service_container/factories.rst:167
+msgid "Invokable Factories"
+msgstr ""
+
+#: ../../../service_container/factories.rst:169
+msgid ""
+"Suppose you now change your factory method to ``__invoke()`` so that your"
+" factory service can be used as a callback::"
+msgstr ""
+
+#: ../../../service_container/factories.rst:184
+msgid ""
+"Services can be created and configured via invokable factories by "
+"omitting the method name, just as routes can reference :ref:`invokable "
+"controllers <controller-service-invoke>`."
+msgstr ""
+
+#: ../../../service_container/factories.rst:238
+msgid "Passing Arguments to the Factory Method"
+msgstr ""
+
+#: ../../../service_container/factories.rst:242
+msgid ""
+"Arguments to your factory method are :ref:`autowired <services-autowire>`"
+" if that's enabled for your service."
+msgstr ""
+
+#: ../../../service_container/factories.rst:245
+msgid ""
+"If you need to pass arguments to the factory method you can use the "
+"``arguments`` option. For example, suppose the "
+"``createNewsletterManager()`` method in the previous examples takes the "
+"``templating`` service as an argument:"
+msgstr ""
+

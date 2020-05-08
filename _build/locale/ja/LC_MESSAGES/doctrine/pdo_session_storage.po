@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/pdo_session_storage.rst:5
+msgid "How to Use PdoSessionHandler to Store Sessions in the Database"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:7
+msgid ""
+"The default Symfony session storage writes the session information to "
+"files. Most medium to large websites use a database to store the session "
+"values instead of files, because databases are easier to use and scale in"
+" a multiple web server environment."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:12
+msgid ""
+"Symfony has a built-in solution for database session storage called "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\Handler\\\\PdoSessionHandler`."
+" To use it, first register a new handler service:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:71
+msgid ""
+"Configure the database credentials :ref:`using environment variables "
+"<config-env-vars>` or as a :doc:`secret </configuration/secrets>` to make"
+" your application more secure."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:76
+msgid "Next, tell Symfony to use your service as the session handler:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:111
+msgid "Configuring the Table and Column Names"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:113
+msgid ""
+"This will expect a ``sessions`` table with a number of different columns."
+" The table name, and all of the column names, can be configured by "
+"passing a second array argument to ``PdoSessionHandler``:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:164
+msgid "These are parameters that you can configure:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:167
+msgid "``db_table`` (default ``sessions``):"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:167
+msgid "The name of the session table in your database;"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:170
+msgid "``db_id_col`` (default ``sess_id``):"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:170
+msgid "The name of the id column in your session table (VARCHAR(128));"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:173
+msgid "``db_data_col`` (default ``sess_data``):"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:173
+msgid "The name of the value column in your session table (BLOB);"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:176
+msgid "``db_time_col`` (default ``sess_time``):"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:176
+msgid "The name of the time column in your session table (INTEGER);"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:179
+msgid "``db_lifetime_col`` (default ``sess_lifetime``):"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:179
+msgid "The name of the lifetime column in your session table (INTEGER)."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:184
+msgid "Preparing the Database to Store Sessions"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:186
+msgid ""
+"Before storing sessions in the database, you must create the table that "
+"stores the information. The session handler provides a method called "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\Handler\\\\PdoSessionHandler::createTable`"
+" to set up this table for you according to the database engine used::"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:197
+msgid ""
+"If you prefer to set up the table yourself, these are some examples of "
+"the SQL statements you may use according to your specific database "
+"engine."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:200
+msgid ""
+"A great way to run this on production is to generate an empty migration, "
+"and then add this SQL inside:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:207
+msgid ""
+"Find the correct SQL below and put it inside that file. Then execute it "
+"with:"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:214
+msgid "MySQL"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:227
+msgid ""
+"A ``BLOB`` column type can only store up to 64 kb. If the data stored in "
+"a user's session exceeds this, an exception may be thrown or their "
+"session will be silently reset. Consider using a ``MEDIUMBLOB`` if you "
+"need more space."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:233
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:245
+msgid "Microsoft SQL Server"
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:267
+msgid ""
+"If the session data doesn't fit in the data column, it might get "
+"truncated by the database engine. To make matters worse, when the session"
+" data gets corrupted, PHP ignores the data without giving a warning."
+msgstr ""
+
+#: ../../../doctrine/pdo_session_storage.rst:271
+msgid ""
+"If the application stores large amounts of session data, this problem can"
+" be solved by increasing the column size (use ``BLOB`` or even "
+"``MEDIUMBLOB``). When using MySQL as the database engine, you can also "
+"enable the `strict SQL mode`_ to be notified when such an error happens."
+msgstr ""
+

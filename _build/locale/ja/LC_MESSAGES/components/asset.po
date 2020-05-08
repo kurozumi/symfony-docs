@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/asset.rst:6
+msgid "The Asset Component"
+msgstr ""
+
+#: ../../../components/asset.rst:8
+msgid ""
+"The Asset component manages URL generation and versioning of web assets "
+"such as CSS stylesheets, JavaScript files and image files."
+msgstr ""
+
+#: ../../../components/asset.rst:11
+msgid ""
+"In the past, it was common for web applications to hardcode URLs of web "
+"assets. For example:"
+msgstr ""
+
+#: ../../../components/asset.rst:22
+msgid ""
+"This practice is no longer recommended unless the web application is "
+"extremely simple. Hardcoding URLs can be a disadvantage because:"
+msgstr ""
+
+#: ../../../components/asset.rst:25
+msgid ""
+"**Templates get verbose**: you have to write the full path for each "
+"asset. When using the Asset component, you can group assets in packages "
+"to avoid repeating the common part of their path;"
+msgstr ""
+
+#: ../../../components/asset.rst:28
+msgid ""
+"**Versioning is difficult**: it has to be custom managed for each "
+"application. Adding a version (e.g. ``main.css?v=5``) to the asset URLs "
+"is essential for some applications because it allows you to control how "
+"the assets are cached. The Asset component allows you to define different"
+" versioning strategies for each package;"
+msgstr ""
+
+#: ../../../components/asset.rst:33
+msgid ""
+"**Moving assets' location** is cumbersome and error-prone: it requires "
+"you to carefully update the URLs of all assets included in all templates."
+" The Asset component allows to move assets effortlessly just by changing "
+"the base path value associated with the package of assets;"
+msgstr ""
+
+#: ../../../components/asset.rst:37
+msgid ""
+"**It's nearly impossible to use multiple CDNs**: this technique requires "
+"you to change the URL of the asset randomly for each request. The Asset "
+"component provides out-of-the-box support for any number of multiple "
+"CDNs, both regular (``http://``) and secure (``https://``)."
+msgstr ""
+
+#: ../../../components/asset.rst:43
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/asset.rst:52
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/asset.rst:55
+msgid "Asset Packages"
+msgstr ""
+
+#: ../../../components/asset.rst:57
+msgid ""
+"The Asset component manages assets through packages. A package groups all"
+" the assets which share the same properties: versioning strategy, base "
+"path, CDN hosts, etc. In the following basic example, a package is "
+"created to manage assets without any versioning::"
+msgstr ""
+
+#: ../../../components/asset.rst:75
+msgid ""
+"Packages implement "
+":class:`Symfony\\\\Component\\\\Asset\\\\PackageInterface`, which defines"
+" the following two methods:"
+msgstr ""
+
+#: ../../../components/asset.rst:79
+msgid ":method:`Symfony\\\\Component\\\\Asset\\\\PackageInterface::getVersion`"
+msgstr ""
+
+#: ../../../components/asset.rst:79
+msgid "Returns the asset version for an asset."
+msgstr ""
+
+#: ../../../components/asset.rst:82
+msgid ":method:`Symfony\\\\Component\\\\Asset\\\\PackageInterface::getUrl`"
+msgstr ""
+
+#: ../../../components/asset.rst:82
+msgid "Returns an absolute or root-relative public path."
+msgstr ""
+
+#: ../../../components/asset.rst:84
+msgid "With a package, you can:"
+msgstr ""
+
+#: ../../../components/asset.rst:86
+msgid ":ref:`version the assets <component-assets-versioning>`;"
+msgstr ""
+
+#: ../../../components/asset.rst:87
+msgid ""
+"set a :ref:`common base path <component-assets-path-package>` (e.g. "
+"``/css``) for the assets;"
+msgstr ""
+
+#: ../../../components/asset.rst:89
+msgid ":ref:`configure a CDN <component-assets-cdn>` for the assets"
+msgstr ""
+
+#: ../../../components/asset.rst:94
+msgid "Versioned Assets"
+msgstr ""
+
+#: ../../../components/asset.rst:96
+msgid ""
+"One of the main features of the Asset component is the ability to manage "
+"the versioning of the application's assets. Asset versions are commonly "
+"used to control how these assets are cached."
+msgstr ""
+
+#: ../../../components/asset.rst:100
+msgid ""
+"Instead of relying on a simple version mechanism, the Asset component "
+"allows you to define advanced versioning strategies via PHP classes. The "
+"two built-in strategies are the "
+":class:`Symfony\\\\Component\\\\Asset\\\\VersionStrategy\\\\EmptyVersionStrategy`,"
+" which doesn't add any version to the asset and "
+":class:`Symfony\\\\Component\\\\Asset\\\\VersionStrategy\\\\StaticVersionStrategy`,"
+" which allows you to set the version with a format string."
+msgstr ""
+
+#: ../../../components/asset.rst:106
+msgid ""
+"In this example, the ``StaticVersionStrategy`` is used to append the "
+"``v1`` suffix to any asset path::"
+msgstr ""
+
+#: ../../../components/asset.rst:122
+msgid ""
+"In case you want to modify the version format, pass a "
+"``sprintf``-compatible format string as the second argument of the "
+"``StaticVersionStrategy`` constructor::"
+msgstr ""
+
+#: ../../../components/asset.rst:142
+msgid "JSON File Manifest"
+msgstr ""
+
+#: ../../../components/asset.rst:144
+msgid ""
+"A popular strategy to manage asset versioning, which is used by tools "
+"such as `Webpack`_, is to generate a JSON file mapping all source file "
+"names to their corresponding output file:"
+msgstr ""
+
+#: ../../../components/asset.rst:157
+msgid ""
+"In those cases, use the "
+":class:`Symfony\\\\Component\\\\Asset\\\\VersionStrategy\\\\JsonManifestVersionStrategy`::"
+msgstr ""
+
+#: ../../../components/asset.rst:168
+msgid ""
+"If your JSON file is not on your local filesystem but is accessible over "
+"HTTP, use the "
+":class:`Symfony\\\\Component\\\\Asset\\\\VersionStrategy\\\\RemoteJsonManifestVersionStrategy`"
+" with the :doc:`HttpClient component </components/http_client>`::"
+msgstr ""
+
+#: ../../../components/asset.rst:182
+msgid "The ``RemoteJsonManifestVersionStrategy`` was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/asset.rst:185
+msgid "Custom Version Strategies"
+msgstr ""
+
+#: ../../../components/asset.rst:187
+msgid ""
+"Use the "
+":class:`Symfony\\\\Component\\\\Asset\\\\VersionStrategy\\\\VersionStrategyInterface`"
+" to define your own versioning strategy. For example, your application "
+"may need to append the current date to all its web assets in order to "
+"bust the cache every day::"
+msgstr ""
+
+#: ../../../components/asset.rst:217
+msgid "Grouped Assets"
+msgstr ""
+
+#: ../../../components/asset.rst:219
+msgid ""
+"Often, many assets live under a common path (e.g. ``/static/images``). If"
+" that's your case, replace the default "
+":class:`Symfony\\\\Component\\\\Asset\\\\Package` class with "
+":class:`Symfony\\\\Component\\\\Asset\\\\PathPackage` to avoid repeating "
+"that path over and over again::"
+msgstr ""
+
+#: ../../../components/asset.rst:237 ../../../components/asset.rst:326
+msgid "Request Context Aware Assets"
+msgstr ""
+
+#: ../../../components/asset.rst:239
+msgid ""
+"If you are also using the :doc:`HttpFoundation "
+"</components/http_foundation>` component in your project (for instance, "
+"in a Symfony application), the ``PathPackage`` class can take into "
+"account the context of the current request::"
+msgstr ""
+
+#: ../../../components/asset.rst:260
+msgid ""
+"Now that the request context is set, the ``PathPackage`` will prepend the"
+" current request base URL. So, for example, if your entire site is hosted"
+" under the ``/somewhere`` directory of your web server root directory and"
+" the configured base path is ``/static/images``, all paths will be "
+"prefixed with ``/somewhere/static/images``."
+msgstr ""
+
+#: ../../../components/asset.rst:269
+msgid "Absolute Assets and CDNs"
+msgstr ""
+
+#: ../../../components/asset.rst:271
+msgid ""
+"Applications that host their assets on different domains and CDNs "
+"(*Content Delivery Networks*) should use the "
+":class:`Symfony\\\\Component\\\\Asset\\\\UrlPackage` class to generate "
+"absolute URLs for their assets::"
+msgstr ""
+
+#: ../../../components/asset.rst:286
+msgid "You can also pass a schema-agnostic URL::"
+msgstr ""
+
+#: ../../../components/asset.rst:299
+msgid ""
+"This is useful because assets will automatically be requested via HTTPS "
+"if a visitor is viewing your site in https. If you want to use this, make"
+" sure that your CDN host supports HTTPS."
+msgstr ""
+
+#: ../../../components/asset.rst:303
+msgid ""
+"In case you serve assets from more than one domain to improve application"
+" performance, pass an array of URLs as the first argument to the "
+"``UrlPackage`` constructor::"
+msgstr ""
+
+#: ../../../components/asset.rst:321
+msgid ""
+"For each asset, one of the URLs will be randomly used. But, the selection"
+" is deterministic, meaning that each asset will always be served by the "
+"same domain. This behavior simplifies the management of HTTP cache."
+msgstr ""
+
+#: ../../../components/asset.rst:328
+msgid ""
+"Similarly to application-relative assets, absolute assets can also take "
+"into account the context of the current request. In this case, only the "
+"request scheme is considered, in order to select the appropriate base URL"
+" (HTTPs or protocol-relative URLs for HTTPs requests, any base URL for "
+"HTTP requests)::"
+msgstr ""
+
+#: ../../../components/asset.rst:348
+msgid "Named Packages"
+msgstr ""
+
+#: ../../../components/asset.rst:350
+msgid ""
+"Applications that manage lots of different assets may need to group them "
+"in packages with the same versioning strategy and base path. The Asset "
+"component includes a :class:`Symfony\\\\Component\\\\Asset\\\\Packages` "
+"class to simplify management of several packages."
+msgstr ""
+
+#: ../../../components/asset.rst:355
+msgid ""
+"In the following example, all packages use the same versioning strategy, "
+"but they all have different base paths::"
+msgstr ""
+
+#: ../../../components/asset.rst:375
+msgid ""
+"The ``Packages`` class allows to define a default package, which will be "
+"applied to assets that don't define the name of package to use. In "
+"addition, this application defines a package named ``img`` to serve "
+"images from an external domain and a ``doc`` package to avoid repeating "
+"long paths when linking to a document inside a template::"
+msgstr ""
+
+#: ../../../components/asset.rst:391
+msgid "Local Files and Other Protocols"
+msgstr ""
+
+#: ../../../components/asset.rst:393
+msgid ""
+"In addition to HTTP this component supports other protocols (such as "
+"``file://`` and ``ftp://``). This allows for example to serve local files"
+" in order to improve performance::"
+msgstr ""
+
+#: ../../../components/asset.rst:417
+msgid "Learn more"
+msgstr ""
+
+#: ../../../components/asset.rst:419
+msgid ""
+":doc:`How to manage CSS and JavaScript assets in Symfony applications "
+"</frontend>`"
+msgstr ""
+
+#: ../../../components/asset.rst:420
+msgid ""
+":doc:`WebLink component </components/web_link>` to preload assets using "
+"HTTP/2."
+msgstr ""
+

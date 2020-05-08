@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/channels_handlers.rst:5
+msgid "How to Log Messages to different Files"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:7
+msgid ""
+"The Symfony Framework organizes log messages into channels. By default, "
+"there are several channels, including ``doctrine``, ``event``, "
+"``security``, ``request`` and more. The channel is printed in the log "
+"message and can also be used to direct different channels to different "
+"places/files."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:12
+msgid ""
+"By default, Symfony logs every message into a single file (regardless of "
+"the channel)."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:17
+msgid ""
+"Each channel corresponds to a different logger service "
+"(``monolog.logger.XXX``) Use the ``php bin/console debug:container "
+"monolog`` command to see a full list of services and learn :ref:`how to "
+"autowire monolog channels <monolog-autowire-channels>`."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:24
+msgid "Switching a Channel to a different Handler"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:26
+msgid ""
+"Now, suppose you want to log the ``security`` channel to a different "
+"file. To do this, create a new handler and configure it to log only "
+"messages from the ``security`` channel:"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:99
+msgid ""
+"The ``channels`` configuration only works for top-level handlers. "
+"Handlers that are nested inside a group, buffer, filter, fingers crossed "
+"or other such handler will ignore this configuration and will process "
+"every message passed to them."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:105
+msgid "YAML Specification"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:107
+msgid "You can specify the configuration by many forms:"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:120
+msgid "Creating your own Channel"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:122
+msgid ""
+"You can change the channel Monolog logs to one service at a time. This is"
+" done either via the :ref:`configuration <monolog-channels-config>` below"
+" or by tagging your service with :ref:`monolog.logger<dic_tags-monolog>` "
+"and specifying which channel the service should log to. With the tag, the"
+" logger that is injected into that service is preconfigured to use the "
+"channel you've specified."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:132
+msgid "Configure Additional Channels without Tagged Services"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:134
+msgid ""
+"You can also configure additional channels without the need to tag your "
+"services:"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:171
+msgid ""
+"Symfony automatically registers one service per channel (in this example,"
+" the channel ``foo`` creates a service called ``monolog.logger.foo``). In"
+" order to inject this service into others, you must update the service "
+"configuration to :ref:`choose the specific service to inject <services-"
+"wire-specific-service>`."
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:179
+msgid "How to Autowire Logger Channels"
+msgstr ""
+
+#: ../../../logging/channels_handlers.rst:181
+msgid ""
+"Starting from `MonologBundle`_ 3.5 you can autowire different Monolog "
+"channels by type-hinting your service arguments with the following "
+"syntax: ``Psr\\Log\\LoggerInterface $<channel>Logger``. For example, to "
+"inject the service related to the ``app`` logger channel use this:"
+msgstr ""
+

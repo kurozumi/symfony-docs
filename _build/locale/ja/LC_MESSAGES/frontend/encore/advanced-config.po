@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/advanced-config.rst:2
+msgid "Advanced Webpack Config"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:4
+msgid ""
+"Summarized, Encore generates the Webpack configuration that's used in "
+"your ``webpack.config.js`` file. Encore doesn't support adding all of "
+"Webpack's `configuration options`_, because many can be added on your "
+"own."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:8
+msgid ""
+"For example, suppose you need to resolve automatically a new extension. "
+"To do that, modify the config after fetching it from Encore:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:28
+msgid "But be careful not to accidentally override any config from Encore:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:42
+msgid "Configuring Watching Options and Polling"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:44
+msgid ""
+"Encore provides the method ``configureWatchOptions()`` to configure "
+"`Watching Options`_ when running ``encore dev --watch`` or ``encore dev-"
+"server``:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:56
+msgid "Defining Multiple Webpack Configurations"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:58
+msgid ""
+"Webpack supports passing an `array of configurations`_, which are "
+"processed in parallel. Webpack Encore includes a ``reset()`` object "
+"allowing to reset the state of the current configuration to build a new "
+"one:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:103
+msgid ""
+"When running Encore, both configurations will be built in parallel. If "
+"you prefer to build configs separately, pass the ``--config-name`` "
+"option:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:110
+msgid "Next, define the output directories of each build:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:121
+msgid ""
+"Finally, use the third optional parameter of the "
+"``encore_entry_*_tags()`` functions to specify which build to use:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:135
+msgid ""
+"Generating a Webpack Configuration Object without using the Command-Line "
+"Interface"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:137
+msgid ""
+"Ordinarily you would use your ``webpack.config.js`` file by calling "
+"Encore from the command-line interface. But sometimes, having access to "
+"the generated Webpack configuration can be required by tools that don't "
+"use Encore (for instance a test-runner such as `Karma`_)."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:142
+msgid ""
+"The problem is that if you try generating that Webpack configuration "
+"object without using the ``encore`` command you will encounter the "
+"following error:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:149
+msgid ""
+"The reason behind that message is that Encore needs to know a few things "
+"before being able to create a configuration object, the most important "
+"one being what the target environment is."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:153
+msgid ""
+"To solve this issue you can use ``configureRuntimeEnvironment``. This "
+"method must be called from a JavaScript file **before** requiring "
+"``webpack.config.js``."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:156
+msgid "For instance:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:168
+msgid ""
+"If needed, you can also pass to that method all the options that you "
+"would normally use from the command-line interface:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:181
+msgid "Having the full control on Loaders Rules"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:183
+msgid ""
+"The method ``configureLoaderRule()`` provides a clean way to configure "
+"Webpack loaders rules (``module.rules``, see `Configuration "
+"<https://webpack.js.org/concepts/loaders/#configuration>`_)."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:185
+msgid ""
+"This is a low-level method. All your modifications will be applied just "
+"before pushing the loaders rules to Webpack. It means that you can "
+"override the default configuration provided by Encore, which may break "
+"things. Be careful when using it."
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:188
+msgid ""
+"One use might be to configure the ``eslint-loader`` to lint Vue files "
+"too. The following code is equivalent:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:219
+msgid "The following loaders are configurable with ``configureLoaderRule()``:"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:209
+msgid "``javascript`` (alias ``js``)"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:210
+msgid "``css``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:211
+msgid "``images``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:212
+msgid "``fonts``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:213
+msgid "``sass`` (alias ``scss``)"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:214
+msgid "``less``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:215
+msgid "``stylus``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:216
+msgid "``vue``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:217
+msgid "``eslint``"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:218
+msgid "``typescript`` (alias ``ts``)"
+msgstr ""
+
+#: ../../../frontend/encore/advanced-config.rst:219
+msgid "``handlebars``"
+msgstr ""
+

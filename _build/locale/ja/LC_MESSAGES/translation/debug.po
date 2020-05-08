@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/debug.rst:7
+msgid "How to Find Missing or Unused Translation Messages"
+msgstr ""
+
+#: ../../../translation/debug.rst:9
+msgid ""
+"When maintaining an application or bundle, you may add or remove "
+"translation messages and forget to update the message catalogs. The "
+"``debug:translation`` command helps you to find these missing or unused "
+"translation messages templates:"
+msgstr ""
+
+#: ../../../translation/debug.rst:22
+msgid ""
+"The extractors can't find messages translated outside templates, like "
+"form labels or controllers. Dynamic translations using variables or "
+"expressions in templates are not detected either:"
+msgstr ""
+
+#: ../../../translation/debug.rst:32
+msgid ""
+"Suppose your application's default_locale is ``fr`` and you have "
+"configured ``en`` as the fallback locale (see :ref:`translation-"
+"configuration` and :ref:`translation-fallback` for how to configure "
+"these). And suppose you've already setup some translations for the ``fr``"
+" locale:"
+msgstr ""
+
+#: ../../../translation/debug.rst:66
+msgid "and for the ``en`` locale:"
+msgstr ""
+
+#: ../../../translation/debug.rst:97
+msgid "To inspect all messages in the ``fr`` locale for the application, run:"
+msgstr ""
+
+#: ../../../translation/debug.rst:109
+msgid ""
+"It shows you a table with the result when translating the message in the "
+"``fr`` locale and the result when the fallback locale ``en`` would be "
+"used. On top of that, it will also show you when the translation is the "
+"same as the fallback translation (this could indicate that the message "
+"was not correctly translated). Furthermore, it indicates that the message"
+" ``Symfony is great`` is unused because it is translated, but you haven't"
+" used it anywhere yet."
+msgstr ""
+
+#: ../../../translation/debug.rst:116
+msgid ""
+"Now, if you translate the message in one of your templates, you will get "
+"this output:"
+msgstr ""
+
+#: ../../../translation/debug.rst:129
+msgid ""
+"The state is empty which means the message is translated in the ``fr`` "
+"locale and used in one or more templates."
+msgstr ""
+
+#: ../../../translation/debug.rst:132
+msgid ""
+"If you delete the message ``Symfony is great`` from your translation file"
+" for the ``fr`` locale and run the command, you will get:"
+msgstr ""
+
+#: ../../../translation/debug.rst:145
+msgid ""
+"The state indicates the message is missing because it is not translated "
+"in the ``fr`` locale but it is still used in the template. Moreover, the "
+"message in the ``fr`` locale equals to the message in the ``en`` locale. "
+"This is a special case because the untranslated message id equals its "
+"translation in the ``en`` locale."
+msgstr ""
+
+#: ../../../translation/debug.rst:151
+msgid ""
+"If you copy the content of the translation file in the ``en`` locale to "
+"the translation file in the ``fr`` locale and run the command, you will "
+"get:"
+msgstr ""
+
+#: ../../../translation/debug.rst:164
+msgid ""
+"You can see that the translations of the message are identical in the "
+"``fr`` and ``en`` locales which means this message was probably copied "
+"from English to French and maybe you forgot to translate it."
+msgstr ""
+
+#: ../../../translation/debug.rst:168
+msgid ""
+"By default, all domains are inspected, but it is possible to specify a "
+"single domain:"
+msgstr ""
+
+#: ../../../translation/debug.rst:175
+msgid ""
+"When the application has a lot of messages, it is useful to display only "
+"the unused or only the missing messages, by using the ``--only-unused`` "
+"or ``--only-missing`` options:"
+msgstr ""
+
+#: ../../../translation/debug.rst:185
+msgid "Debug Command Exit Codes"
+msgstr ""
+
+#: ../../../translation/debug.rst:187
+msgid ""
+"The exit code of the ``debug:translation`` command changes depending on "
+"the status of the translations. Use the following public constants to "
+"check it::"
+msgstr ""
+
+#: ../../../translation/debug.rst:204
+msgid ""
+"These constants are defined as \"bit masks\", so you can combine them as "
+"follows::"
+msgstr ""
+
+#: ../../../translation/debug.rst:212
+msgid "The exit codes were introduced in Symfony 5.1"
+msgstr ""
+

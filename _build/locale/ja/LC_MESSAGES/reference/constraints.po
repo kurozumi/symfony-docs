@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints.rst:2
+msgid "Validation Constraints Reference"
+msgstr ""
+
+#: ../../../reference/constraints.rst:77
+msgid ""
+"The Validator is designed to validate objects against *constraints*. In "
+"real life, a constraint could be: \"The cake must not be burned\". In "
+"Symfony, constraints are similar: They are assertions that a condition is"
+" true."
+msgstr ""
+
+#: ../../../reference/constraints.rst:83
+msgid "Supported Constraints"
+msgstr ""
+
+#: ../../../reference/constraints.rst:85
+msgid "The following constraints are natively available in Symfony:"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:2
+msgid "Basic Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:4
+msgid ""
+"These are the basic constraints: use them to assert very basic things "
+"about the value of properties or the return value of methods on your "
+"object."
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:7
+msgid ":doc:`NotBlank </reference/constraints/NotBlank>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:8
+msgid ":doc:`Blank </reference/constraints/Blank>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:9
+msgid ":doc:`NotNull </reference/constraints/NotNull>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:10
+msgid ":doc:`IsNull </reference/constraints/IsNull>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:11
+msgid ":doc:`IsTrue </reference/constraints/IsTrue>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:12
+msgid ":doc:`IsFalse </reference/constraints/IsFalse>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:13
+msgid ":doc:`Type </reference/constraints/Type>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:16
+msgid "String Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:18
+msgid ":doc:`Email </reference/constraints/Email>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:19
+msgid ":doc:`Length </reference/constraints/Length>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:20
+msgid ":doc:`Url </reference/constraints/Url>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:21
+msgid ":doc:`Regex </reference/constraints/Regex>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:22
+msgid ":doc:`Hostname </reference/constraints/Hostname>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:23
+msgid ":doc:`Ip </reference/constraints/Ip>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:24
+msgid ":doc:`Json</reference/constraints/Json>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:25
+msgid ":doc:`Uuid</reference/constraints/Uuid>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:26
+msgid ":doc:`UserPassword </reference/constraints/UserPassword>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:27
+msgid ""
+":doc:`NotCompromisedPassword "
+"</reference/constraints/NotCompromisedPassword>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:30
+msgid "Comparison Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:32
+msgid ":doc:`EqualTo </reference/constraints/EqualTo>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:33
+msgid ":doc:`NotEqualTo </reference/constraints/NotEqualTo>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:34
+msgid ":doc:`IdenticalTo </reference/constraints/IdenticalTo>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:35
+msgid ":doc:`NotIdenticalTo </reference/constraints/NotIdenticalTo>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:36
+msgid ":doc:`LessThan </reference/constraints/LessThan>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:37
+msgid ":doc:`LessThanOrEqual </reference/constraints/LessThanOrEqual>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:38
+msgid ":doc:`GreaterThan </reference/constraints/GreaterThan>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:39
+msgid ":doc:`GreaterThanOrEqual </reference/constraints/GreaterThanOrEqual>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:40
+msgid ":doc:`Range </reference/constraints/Range>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:41
+msgid ":doc:`DivisibleBy </reference/constraints/DivisibleBy>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:42
+msgid ":doc:`Unique </reference/constraints/Unique>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:45
+msgid "Number Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:46
+msgid ":doc:`Positive </reference/constraints/Positive>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:47
+msgid ":doc:`PositiveOrZero </reference/constraints/PositiveOrZero>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:48
+msgid ":doc:`Negative </reference/constraints/Negative>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:49
+msgid ":doc:`NegativeOrZero </reference/constraints/NegativeOrZero>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:52
+msgid "Date Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:54
+msgid ":doc:`Date </reference/constraints/Date>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:55
+msgid ":doc:`DateTime </reference/constraints/DateTime>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:56
+msgid ":doc:`Time </reference/constraints/Time>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:57
+msgid ":doc:`Timezone </reference/constraints/Timezone>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:60
+msgid "Choice Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:62
+msgid ":doc:`Choice </reference/constraints/Choice>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:63
+msgid ":doc:`Language </reference/constraints/Language>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:64
+msgid ":doc:`Locale </reference/constraints/Locale>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:65
+msgid ":doc:`Country </reference/constraints/Country>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:68
+msgid "File Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:70
+msgid ":doc:`File </reference/constraints/File>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:71
+msgid ":doc:`Image </reference/constraints/Image>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:74
+msgid "Financial and other Number Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:76
+msgid ":doc:`Bic </reference/constraints/Bic>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:77
+msgid ":doc:`CardScheme </reference/constraints/CardScheme>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:78
+msgid ":doc:`Currency </reference/constraints/Currency>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:79
+msgid ":doc:`Luhn </reference/constraints/Luhn>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:80
+msgid ":doc:`Iban </reference/constraints/Iban>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:81
+msgid ":doc:`Isbn </reference/constraints/Isbn>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:82
+msgid ":doc:`Issn </reference/constraints/Issn>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:85
+msgid "Other Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:87
+msgid ":doc:`AtLeastOneOf </reference/constraints/AtLeastOneOf>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:88
+msgid ":doc:`Sequentially </reference/constraints/Sequentially>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:89
+msgid ":doc:`Compound </reference/constraints/Compound>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:90
+msgid ":doc:`Callback </reference/constraints/Callback>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:91
+msgid ":doc:`Expression </reference/constraints/Expression>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:92
+msgid ":doc:`All </reference/constraints/All>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:93
+msgid ":doc:`Valid </reference/constraints/Valid>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:94
+msgid ":doc:`Traverse </reference/constraints/Traverse>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:95
+msgid ":doc:`Collection </reference/constraints/Collection>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:96
+msgid ":doc:`Count </reference/constraints/Count>`"
+msgstr ""
+
+#: ../../../reference/constraints/map.rst.inc:97
+msgid ":doc:`UniqueEntity </reference/constraints/UniqueEntity>`"
+msgstr ""
+

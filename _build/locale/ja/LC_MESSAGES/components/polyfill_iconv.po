@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_iconv.rst:7
+msgid "The Symfony Polyfill / Iconv Component"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:9
+msgid ""
+"This component provides a native PHP implementation of the ``iconv_*`` "
+"functions to users who run PHP versions without the ``iconv`` extension."
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following constants and functions, no matter if the `PHP iconv "
+"extension`_ is installed or not in your server. The only function not "
+"implemented in this component is :phpfunction:`ob_iconv_handler`."
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:30
+msgid "Provided Constants"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:32
+msgid "``ICONV_IMPL`` (value = ``'Symfony'``)"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:33
+msgid "``ICONV_VERSION`` (value = ``'1.0'``)"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:34
+msgid "``ICONV_MIME_DECODE_STRICT`` (value = ``1``)"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:35
+msgid "``ICONV_MIME_DECODE_CONTINUE_ON_ERROR`` (value = ``2``)"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:38
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:40
+msgid "These functions are always available:"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:42
+msgid ":phpfunction:`iconv`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:43
+msgid ":phpfunction:`iconv_get_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:44
+msgid ":phpfunction:`iconv_set_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:45
+msgid ":phpfunction:`iconv_mime_encode`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:46
+msgid ":phpfunction:`iconv_mime_decode_headers`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:48
+msgid ""
+"These functions are only available when the ``mbstring`` or the ``xml`` "
+"extension are installed:"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:51
+msgid ":phpfunction:`iconv_strlen`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:52
+msgid ":phpfunction:`iconv_strpos`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:53
+msgid ":phpfunction:`iconv_strrpos`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:54
+msgid ":phpfunction:`iconv_substr`"
+msgstr ""
+
+#: ../../../components/polyfill_iconv.rst:55
+msgid ":phpfunction:`iconv_mime_decode`"
+msgstr ""
+

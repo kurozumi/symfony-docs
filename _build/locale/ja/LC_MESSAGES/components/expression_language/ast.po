@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/expression_language/ast.rst:6
+msgid "Dumping and Manipulating the AST of Expressions"
+msgstr ""
+
+#: ../../../components/expression_language/ast.rst:8
+msgid ""
+"Manipulating or inspecting the expressions created with the "
+"ExpressionLanguage component is difficult because they are plain strings."
+" A better approach is to turn those expressions into an AST. In computer "
+"science, `AST`_ (*Abstract Syntax Tree*) is *\"a tree representation of "
+"the structure of source code written in a programming language\"*. In "
+"Symfony, a ExpressionLanguage AST is a set of nodes that contain PHP "
+"classes representing the given expression."
+msgstr ""
+
+#: ../../../components/expression_language/ast.rst:16
+msgid "Dumping the AST"
+msgstr ""
+
+#: ../../../components/expression_language/ast.rst:18
+msgid ""
+"Call the "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::getNodes`"
+" method after parsing any expression to get its AST::"
+msgstr ""
+
+#: ../../../components/expression_language/ast.rst:35
+msgid "Manipulating the AST"
+msgstr ""
+
+#: ../../../components/expression_language/ast.rst:37
+msgid ""
+"The nodes of the AST can also be dumped into a PHP array of nodes to "
+"allow manipulating them. Call the "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::toArray`"
+" method to turn the AST into an array::"
+msgstr ""
+

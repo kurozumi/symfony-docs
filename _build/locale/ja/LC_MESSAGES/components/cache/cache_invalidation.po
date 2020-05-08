@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/cache_invalidation.rst:6
+msgid "Cache Invalidation"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:8
+msgid ""
+"Cache invalidation is the process of removing all cached items related to"
+" a change in the state of your model. The most basic kind of invalidation"
+" is direct items deletion. But when the state of a primary resource has "
+"spread across several cached items, keeping them in sync can be "
+"difficult."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:13
+msgid ""
+"The Symfony Cache component provides two mechanisms to help solve this "
+"problem:"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:15
+msgid ""
+":ref:`Tags-based invalidation <cache-component-tags>` for managing data "
+"dependencies;"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:16
+msgid ""
+":ref:`Expiration based invalidation <cache-component-expiration>` for "
+"time-related dependencies."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:21
+msgid "Using Cache Tags"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:23
+msgid ""
+"To benefit from tags-based invalidation, you need to attach the proper "
+"tags to each cached item. Each tag is a plain string identifier that you "
+"can use at any time to trigger the removal of all items associated with "
+"this tag."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:27
+msgid ""
+"To attach tags to cached items, you need to use the "
+":method:`Symfony\\\\Contracts\\\\Cache\\\\ItemInterface::tag` method that"
+" is implemented by cache items::"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:40
+msgid ""
+"If ``$cache`` implements "
+":class:`Symfony\\\\Contracts\\\\Cache\\\\TagAwareCacheInterface`, you can"
+" invalidate the cached items by calling "
+":method:`Symfony\\\\Contracts\\\\Cache\\\\TagAwareCacheInterface::invalidateTags`::"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:50
+msgid ""
+"Using tags invalidation is very useful when tracking cache keys becomes "
+"difficult."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:53
+msgid "Tag Aware Adapters"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:55
+msgid ""
+"To store tags, you need to wrap a cache adapter with the "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\TagAwareAdapter` "
+"class or implement "
+":class:`Symfony\\\\Contracts\\\\Cache\\\\TagAwareCacheInterface` and its "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\TagAwareAdapterInterface::invalidateTags`"
+" method."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:61
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\TagAwareAdapter` "
+"class implements instantaneous invalidation (time complexity is ``O(N)`` "
+"where ``N`` is the number of invalidated tags). It needs one or two cache"
+" adapters: the first required one is used to store cached items; the "
+"second optional one is used to store tags and their invalidation version "
+"number (conceptually similar to their latest invalidation date). When "
+"only one adapter is used, items and tags are all stored in the same "
+"place. By using two adapters, you can e.g. store some big cached items on"
+" the filesystem or in the database and keep tags in a Redis database to "
+"sync all your fronts and have very fast invalidation checks::"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:84
+msgid ""
+"Since Symfony 3.4, "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\TagAwareAdapter` "
+"implements :class:`Symfony\\\\Component\\\\Cache\\\\PruneableInterface`, "
+"enabling manual :ref:`pruning of expired cache entries <component-cache-"
+"cache-pool-prune>` by calling its "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\TagAwareAdapter::prune`"
+" method (assuming the wrapped adapter itself implements "
+":class:`Symfony\\\\Component\\\\Cache\\\\PruneableInterface`)."
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:95
+msgid "Using Cache Expiration"
+msgstr ""
+
+#: ../../../components/cache/cache_invalidation.rst:97
+msgid ""
+"If your data is valid only for a limited period of time, you can specify "
+"their lifetime or their expiration date with the PSR-6 interface, as "
+"explained in the :doc:`/components/cache/cache_items` article."
+msgstr ""
+

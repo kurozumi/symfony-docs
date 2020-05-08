@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Positive.rst:2
+msgid "Positive"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:4
+msgid ""
+"Validates that a value is a positive number. Zero is neither positive nor"
+" negative, so you must use :doc:`/reference/constraints/PositiveOrZero` "
+"if you want to allow zero as value."
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:10
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:13
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:13
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Positive`"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:14
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:14
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\GreaterThanValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:18
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:20
+msgid ""
+"The following constraint ensures that the ``income`` of an ``Employee`` "
+"is a positive number (greater than zero):"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:81
+msgid "Available Options"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:86
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:88
+msgid "**type**: ``string`` **default**: ``This value should be positive.``"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:90
+msgid "The default message supplied when the value is not greater than zero."
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:92
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:95
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:95
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:97
+msgid "``{{ compared_value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:97
+msgid "Always zero"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:98
+msgid "``{{ compared_value_type }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:98
+msgid "The expected value type"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:99
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Positive.rst:99
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

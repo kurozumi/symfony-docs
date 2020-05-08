@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/lazy_commands.rst:2
+msgid "How to Make Commands Lazily Loaded"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:6
+msgid ""
+"If you are using the Symfony full-stack framework, you are probably "
+"looking for details about :ref:`creating lazy commands <console-command-"
+"service-lazy-loading>`"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:9
+msgid ""
+"The traditional way of adding commands to your application is to use "
+":method:`Symfony\\\\Component\\\\Console\\\\Application::add`, which "
+"expects a ``Command`` instance as an argument."
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:13
+msgid ""
+"In order to lazy-load commands, you need to register an intermediate "
+"loader which will be responsible for returning ``Command`` instances::"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:28
+msgid ""
+"This way, the ``HeavyCommand`` instance will be created only when the "
+"``app:heavy`` command is actually called."
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:31
+msgid ""
+"This example makes use of the built-in "
+":class:`Symfony\\\\Component\\\\Console\\\\CommandLoader\\\\FactoryCommandLoader`"
+" class, but the "
+":method:`Symfony\\\\Component\\\\Console\\\\Application::setCommandLoader`"
+" method accepts any "
+":class:`Symfony\\\\Component\\\\Console\\\\CommandLoader\\\\CommandLoaderInterface`"
+" instance so you can use your own implementation."
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:39
+msgid "Built-in Command Loaders"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:42
+msgid "``FactoryCommandLoader``"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:44
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Console\\\\CommandLoader\\\\FactoryCommandLoader`"
+" class provides a way of getting commands lazily loaded as it takes an "
+"array of ``Command`` factories as its only constructor argument::"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:55
+msgid ""
+"Factories can be any PHP callable and will be executed each time "
+":method:`Symfony\\\\Component\\\\Console\\\\CommandLoader\\\\FactoryCommandLoader::get`"
+" is called."
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:60
+msgid "``ContainerCommandLoader``"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:62
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Console\\\\CommandLoader\\\\ContainerCommandLoader`"
+" class can be used to load commands from a PSR-11 container. As such, its"
+" constructor takes a PSR-11 ``ContainerInterface`` implementation as its "
+"first argument and a command map as its last argument. The command map "
+"must be an array with command names as keys and service identifiers as "
+"values::"
+msgstr ""
+
+#: ../../../console/lazy_commands.rst:79
+msgid ""
+"Like this, executing the ``app:foo`` command will load the ``FooCommand``"
+" service by calling ``$containerBuilder->get(FooCommand::class)``."
+msgstr ""
+

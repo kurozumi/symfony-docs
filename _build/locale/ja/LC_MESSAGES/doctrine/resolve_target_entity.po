@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/resolve_target_entity.rst:6
+msgid "How to Define Relationships with Abstract Classes and Interfaces"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:8
+msgid ""
+"One of the goals of bundles is to create discreet bundles of "
+"functionality that do not have many (if any) dependencies, allowing you "
+"to use that functionality in other applications without including "
+"unnecessary items."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:12
+msgid ""
+"Doctrine 2.2 includes a new utility called the "
+"``ResolveTargetEntityListener``, that functions by intercepting certain "
+"calls inside Doctrine and rewriting ``targetEntity`` parameters in your "
+"metadata mapping at runtime. It means that in your bundle you are able to"
+" use an interface or abstract class in your mappings and expect correct "
+"mapping to a concrete entity at runtime."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:18
+msgid ""
+"This functionality allows you to define relationships between different "
+"entities without making them hard dependencies."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:22
+msgid "Background"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:24
+msgid ""
+"Suppose you have an InvoiceBundle which provides invoicing functionality "
+"and a CustomerBundle that contains customer management tools. You want to"
+" keep these separated, because they can be used in other systems without "
+"each other, but for your application you want to use them together."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:29
+msgid ""
+"In this case, you have an ``Invoice`` entity with a relationship to a "
+"non-existent object, an ``InvoiceSubjectInterface``. The goal is to get "
+"the ``ResolveTargetEntityListener`` to replace any mention of the "
+"interface with a real object that implements that interface."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:35
+msgid "Set up"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:37
+msgid ""
+"This article uses the following two basic entities (which are incomplete "
+"for brevity) to explain how to set up and use the "
+"``ResolveTargetEntityListener``."
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:40
+msgid "A Customer entity::"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:59
+msgid "An Invoice entity::"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:82
+msgid "An InvoiceSubjectInterface::"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:105
+msgid ""
+"Next, you need to configure the listener, which tells the DoctrineBundle "
+"about the replacement:"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:156
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../../doctrine/resolve_target_entity.rst:158
+msgid ""
+"With the ``ResolveTargetEntityListener``, you are able to decouple your "
+"bundles, keeping them usable by themselves, but still being able to "
+"define relationships between different objects. By using this method, "
+"your bundles will end up being easier to maintain independently."
+msgstr ""
+

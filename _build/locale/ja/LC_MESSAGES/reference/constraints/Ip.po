@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Ip.rst:2
+msgid "Ip"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:4
+msgid ""
+"Validates that a value is a valid IP address. By default, this will "
+"validate the value as IPv4, but a number of different options exist to "
+"validate as IPv6 and many other combinations."
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:10
+#: ../../../reference/constraints/Ip.rst:81
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:12
+msgid "`normalizer`_"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:13
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:14
+msgid "`version`_"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Ip`"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:16
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\IpValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:20
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:86
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:88
+msgid "**type**: ``string`` **default**: ``This is not a valid IP address.``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:90
+msgid "This message is shown if the string is not a valid IP address."
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:92
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:95
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:95
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:97
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:97
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:2
+msgid "normalizer"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:4
+msgid "**type**: a `PHP callable`_ **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:6
+msgid ""
+"This option allows to define the PHP callable applied to the given value "
+"before checking if it is valid."
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:9
+msgid ""
+"For example, you may want to pass the ``'trim'`` string to apply the "
+":phpfunction:`trim` PHP function in order to ignore leading and trailing "
+"whitespace during validation."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:105
+msgid "version"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:107
+msgid "**type**: ``string`` **default**: ``4``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:109
+msgid ""
+"This determines exactly *how* the IP address is validated and can take "
+"one of a variety of different values:"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:112
+msgid "**All ranges**"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:114
+msgid "``4``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:115
+msgid "Validates for IPv4 addresses"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:116
+msgid "``6``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:117
+msgid "Validates for IPv6 addresses"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:119
+msgid "``all``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:119
+msgid "Validates all IP formats"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:121
+msgid "**No private ranges**"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:123
+msgid "``4_no_priv``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:124
+msgid "Validates for IPv4 but without private IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:125
+msgid "``6_no_priv``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:126
+msgid "Validates for IPv6 but without private IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:128
+msgid "``all_no_priv``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:128
+msgid "Validates for all IP formats but without private IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:130
+msgid "**No reserved ranges**"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:132
+msgid "``4_no_res``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:133
+msgid "Validates for IPv4 but without reserved IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:134
+msgid "``6_no_res``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:135
+msgid "Validates for IPv6 but without reserved IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:137
+msgid "``all_no_res``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:137
+msgid "Validates for all IP formats but without reserved IP ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:139
+msgid "**Only public ranges**"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:141
+msgid "``4_public``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:142
+msgid "Validates for IPv4 but without private and reserved ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:143
+msgid "``6_public``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:144
+msgid "Validates for IPv6 but without private and reserved ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:145
+msgid "``all_public``"
+msgstr ""
+
+#: ../../../reference/constraints/Ip.rst:146
+msgid "Validates for all IP formats but without private and reserved ranges"
+msgstr ""
+

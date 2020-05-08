@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Timezone.rst:2
+msgid "Timezone"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:4
+msgid ""
+"Validates that a value is a valid timezone identifier (e.g. "
+"``Europe/Paris``)."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:7
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:7
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:8
+#: ../../../reference/constraints/Timezone.rst:83
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:8
+msgid "`countryCode`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:9
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:10
+msgid "`intlCompatible`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:13
+msgid "`zone`_"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:14
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:14
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Timezone`"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:15
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\TimezoneValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:19
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:21
+msgid ""
+"Suppose you have a ``UserSettings`` class, with a ``timezone`` field that"
+" is a string which contains any of the `PHP timezone identifiers`_ (e.g. "
+"``America/New_York``):"
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:86
+msgid "countryCode"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:88
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:90
+msgid ""
+"If the ``zone`` option is set to ``\\DateTimeZone::PER_COUNTRY``, this "
+"option restricts the valid timezone identifiers to the ones that belong "
+"to the given country."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:94
+msgid ""
+"The value of this option must be a valid `ISO 3166-1 alpha-2`_ country "
+"code (e.g. ``CN`` for China)."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:100
+msgid "intlCompatible"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:102
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:104
+msgid ""
+"This constraint considers valid both the `PHP timezone identifiers`_ and "
+"the :ref:`ICU timezones <component-intl-timezones>` provided by Symfony's"
+" :doc:`Intl component </components/intl>`"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:108
+msgid ""
+"However, the timezones provided by the Intl component can be different "
+"from the timezones provided by PHP's Intl extension (because they use "
+"different ICU versions). If this option is set to ``true``, this "
+"constraint only considers valid the values compatible with the PHP "
+"``\\IntlTimeZone::createTimeZone()`` method."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:114
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:116
+msgid "**type**: ``string`` **default**: ``This value is not a valid timezone.``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:118
+msgid ""
+"This message is shown if the underlying data is not a valid timezone "
+"identifier."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:120
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:123
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:123
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:125
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:125
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:131
+msgid "zone"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:133
+msgid "**type**: ``string`` **default**: ``\\DateTimeZone::ALL``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:135
+msgid ""
+"Set this option to any of the following constants to restrict the valid "
+"timezone identifiers to the ones that belong to that geographical zone:"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:138
+msgid "``\\DateTimeZone::AFRICA``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:139
+msgid "``\\DateTimeZone::AMERICA``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:140
+msgid "``\\DateTimeZone::ANTARCTICA``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:141
+msgid "``\\DateTimeZone::ARCTIC``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:142
+msgid "``\\DateTimeZone::ASIA``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:143
+msgid "``\\DateTimeZone::ATLANTIC``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:144
+msgid "``\\DateTimeZone::AUSTRALIA``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:145
+msgid "``\\DateTimeZone::EUROPE``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:146
+msgid "``\\DateTimeZone::INDIAN``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:147
+msgid "``\\DateTimeZone::PACIFIC``"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:149
+msgid "In addition, there are some special zone values:"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:151
+msgid ""
+"``\\DateTimeZone::ALL`` accepts any timezone excluding deprecated "
+"timezones;"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:152
+msgid ""
+"``\\DateTimeZone::ALL_WITH_BC`` accepts any timezone including deprecated"
+" timezones;"
+msgstr ""
+
+#: ../../../reference/constraints/Timezone.rst:154
+msgid ""
+"``\\DateTimeZone::PER_COUNTRY`` restricts the valid timezones to a "
+"certain country (which is defined using the ``countryCode`` option)."
+msgstr ""
+

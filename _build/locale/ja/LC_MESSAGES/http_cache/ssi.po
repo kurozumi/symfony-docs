@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../http_cache/ssi.rst:8
+msgid "Working with Server Side Includes"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:10
+msgid ""
+"In a similar way as :doc:`ESI (Edge Side Includes) </http_cache/esi>`, "
+"SSI can be used to control HTTP caching on fragments of a response. The "
+"most important difference that is SSI is known directly by most web "
+"servers like `Apache`_, `Nginx`_ etc."
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:15
+msgid "The SSI instructions are done via HTML comments:"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:31
+msgid ""
+"There are some other `available directives`_ but Symfony manages only the"
+" ``#include virtual`` one."
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:36
+msgid ""
+"Be careful with SSI, your website may be victim of injections. Please "
+"read this `OWASP article`_ first!"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:39
+msgid ""
+"When the web server reads an SSI directive, it requests the given URI or "
+"gives directly from its cache. It repeats this process until there is no "
+"more SSI directives to handle. Then, it merges all responses into one and"
+" sends it to the client."
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:47
+msgid "Using SSI in Symfony"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:49
+msgid "First, to use SSI, be sure to enable it in your application configuration:"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:83
+msgid ""
+"Suppose you have a page with private content like a Profile page and you "
+"want to cache a static GDPR content block. With SSI, you can add some "
+"expiration on this block and keep the page private::"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:109
+msgid ""
+"The profile index page has not public caching, but the GDPR block has 10 "
+"minutes of expiration. Let's include this block into the main one:"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:122
+msgid "The ``render_ssi`` twig helper will generate something like:"
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:128
+msgid ""
+"``render_ssi`` ensures that SSI directive are generated only if the "
+"request has the header requirement like ``Surrogate-Capability: "
+"device=\"SSI/1.0\"`` (normally given by the web server). Otherwise it "
+"will embed directly the sub-response."
+msgstr ""
+
+#: ../../../http_cache/ssi.rst:135
+msgid ""
+"For more information about Symfony cache fragments, take a tour on the "
+":ref:`ESI documentation <http_cache-fragments>`."
+msgstr ""
+

@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_apcu.rst:7
+msgid "The Symfony Polyfill / APCu Component"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:9
+msgid ""
+"This component provides ``apcu_*`` functions and the ``APCUIterator`` "
+"class to users of the legacy APC extension."
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following classes and functions, no matter if the `PHP APCu extension`_ "
+"is installed or not in your server. The only requirement is to have "
+"installed at least the `legacy APC extension`_."
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:30
+msgid "Provided Classes"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:32
+msgid ":phpclass:`APCUIterator`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:35
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:37
+msgid ":phpfunction:`apcu_add`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:38
+msgid ":phpfunction:`apcu_delete`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:39
+msgid ":phpfunction:`apcu_exists`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:40
+msgid ":phpfunction:`apcu_fetch`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:41
+msgid ":phpfunction:`apcu_store`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:42
+msgid ":phpfunction:`apcu_cache_info`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:43
+msgid ":phpfunction:`apcu_cas`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:44
+msgid ":phpfunction:`apcu_clear_cache`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:45
+msgid ":phpfunction:`apcu_dec`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:46
+msgid ":phpfunction:`apcu_inc`"
+msgstr ""
+
+#: ../../../components/polyfill_apcu.rst:47
+msgid ":phpfunction:`apcu_sma_info`"
+msgstr ""
+

@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/http_foundation/session_testing.rst:6
+msgid "Testing with Sessions"
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:8
+msgid ""
+"Symfony is designed from the ground up with code-testability in mind. In "
+"order to test your code which utilizes sessions, we provide two separate "
+"mock storage mechanisms for both unit testing and functional testing."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:12
+msgid ""
+"Testing code using real sessions is tricky because PHP's workflow state "
+"is global and it is not possible to have multiple concurrent sessions in "
+"the same PHP process."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:16
+msgid ""
+"The mock storage engines simulate the PHP session workflow without "
+"actually starting one allowing you to test your code without "
+"complications. You may also run multiple instances in the same PHP "
+"process."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:20
+msgid ""
+"The mock storage drivers do not read or write the system globals "
+"``session_id()`` or ``session_name()``. Methods are provided to simulate "
+"this if required:"
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:24
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\SessionStorageInterface::getId`:"
+" Gets the session ID."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:27
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\SessionStorageInterface::setId`:"
+" Sets the session ID."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:30
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\SessionStorageInterface::getName`:"
+" Gets the session name."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:33
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\SessionStorageInterface::setName`:"
+" Sets the session name."
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:37
+msgid "Unit Testing"
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:39
+msgid ""
+"For unit testing where it is not necessary to persist the session, you "
+"should swap out the default storage engine with "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\MockArraySessionStorage`::"
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:49
+msgid "Functional Testing"
+msgstr ""
+
+#: ../../../components/http_foundation/session_testing.rst:51
+msgid ""
+"For functional testing where you may need to persist session data across "
+"separate PHP processes, change the storage engine to "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\MockFileSessionStorage`::"
+msgstr ""
+

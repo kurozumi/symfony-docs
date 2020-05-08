@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Hostname.rst:2
+msgid "Hostname"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:4
+msgid ""
+"This constraint ensures that the given value is a valid host name "
+"(internally it uses the ``FILTER_VALIDATE_DOMAIN`` option of the "
+":phpfunction:`filter_var` PHP function)."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:10
+msgid "The ``Hostname`` constraint was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:13
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:13
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:14
+#: ../../../reference/constraints/Hostname.rst:96
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:14
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:15
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:16
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:17
+msgid "`requireTld`_"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:18
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Hostname`"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:19
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:19
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\HostnameValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:23
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:25
+msgid ""
+"To use the Hostname validator, apply it to a property on an object that "
+"will contain a host name."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:89
+msgid ""
+"The following top-level domains (TLD) are reserved according to `RFC "
+"2606`_ and that's why hostnames containing them are not considered valid:"
+" ``.example``, ``.invalid``, ``.localhost``, and ``.test``."
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:101
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:103
+msgid "**type**: ``string`` **default**: ``This value is not a valid hostname.``"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:105
+msgid "The default message supplied when the value is not a valid hostname."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:107
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:110
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:110
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:112
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:112
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:118
+msgid "``requireTld``"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:120
+msgid "**type**: ``bool`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:122
+msgid ""
+"By default, hostnames are considered valid only when they are fully "
+"qualified and include their TLDs (top-level domain names). For instance, "
+"``example.com`` is valid but ``example`` is not."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:126
+msgid "Set this option to ``false`` to not require any TLD in the hostnames."
+msgstr ""
+
+#: ../../../reference/constraints/Hostname.rst:130
+msgid ""
+"This constraint does not validate that the given TLD value is included in"
+" the `list of official top-level domains`_ (because that list is growing "
+"continuously and it's hard to keep track of it)."
+msgstr ""
+

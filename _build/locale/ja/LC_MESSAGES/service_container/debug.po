@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/debug.rst:6
+msgid "How to Debug the Service Container & List Services"
+msgstr ""
+
+#: ../../../service_container/debug.rst:8
+msgid ""
+"You can find out what services are registered with the container using "
+"the console. To show all services (public and private) and their PHP "
+"classes, run:"
+msgstr ""
+
+#: ../../../service_container/debug.rst:18
+msgid ""
+"To see a list of all of the available types that can be used for "
+"autowiring, run:"
+msgstr ""
+
+#: ../../../service_container/debug.rst:25
+msgid "Detailed Info about a Single Service"
+msgstr ""
+
+#: ../../../service_container/debug.rst:27
+msgid ""
+"You can get more detailed information about a particular service by "
+"specifying its id:"
+msgstr ""
+

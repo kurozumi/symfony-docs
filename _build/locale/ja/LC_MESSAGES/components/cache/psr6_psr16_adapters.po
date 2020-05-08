@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:7
+msgid "Adapters For Interoperability between PSR-6 and PSR-16 Cache"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:9
+msgid ""
+"Sometimes, you may have a Cache object that implements the `PSR-16`_ "
+"standard, but need to pass it to an object that expects a :ref:`PSR-6 "
+"<cache-component-psr6-caching>` cache adapter. Or, you might have the "
+"opposite situation. The cache component contains two classes for "
+"bidirectional interoperability between PSR-6 and PSR-16 caches."
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:15
+msgid "Using a PSR-16 Cache Object as a PSR-6 Cache"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:17
+msgid ""
+"Suppose you want to work with a class that requires a PSR-6 Cache pool "
+"object. For example::"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:34
+msgid ""
+"But, you already have a PSR-16 cache object, and you'd like to pass this "
+"to the class instead. No problem! The Cache component provides the "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\Psr16Adapter` class "
+"for exactly this use-case::"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:50
+msgid "Using a PSR-6 Cache Object as a PSR-16 Cache"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:52
+msgid ""
+"Suppose you want to work with a class that requires a PSR-16 Cache "
+"object. For example::"
+msgstr ""
+
+#: ../../../components/cache/psr6_psr16_adapters.rst:69
+msgid ""
+"But, you already have a PSR-6 cache pool object, and you'd like to pass "
+"this to the class instead. No problem! The Cache component provides the "
+":class:`Symfony\\\\Component\\\\Cache\\\\Psr16Cache` class for exactly "
+"this use-case::"
+msgstr ""
+

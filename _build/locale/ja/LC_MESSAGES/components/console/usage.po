@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/usage.rst:5
+msgid "Using Console Commands, Shortcuts and Built-in Commands"
+msgstr ""
+
+#: ../../../components/console/usage.rst:7
+msgid ""
+"In addition to the options you specify for your commands, there are some "
+"built-in options as well as a couple of built-in commands for the Console"
+" component."
+msgstr ""
+
+#: ../../../components/console/usage.rst:12
+msgid ""
+"These examples assume you have added a file ``application.php`` to run at"
+" the CLI::"
+msgstr ""
+
+#: ../../../components/console/usage.rst:28
+msgid "Built-in Commands"
+msgstr ""
+
+#: ../../../components/console/usage.rst:30
+msgid ""
+"There is a built-in command ``list`` which outputs all the standard "
+"options and the registered commands:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:37
+msgid "You can get the same output by not running any command as well"
+msgstr ""
+
+#: ../../../components/console/usage.rst:43
+msgid ""
+"The help command lists the help information for the specified command. "
+"For example, to get the help for the ``list`` command:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:50
+msgid ""
+"Running ``help`` without specifying a command will list the global "
+"options:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:57
+msgid "Global Options"
+msgstr ""
+
+#: ../../../components/console/usage.rst:59
+msgid ""
+"You can get help information for any command with the ``--help`` option. "
+"To get help for the list command:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:67
+msgid "You can suppress output with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:74
+msgid ""
+"You can get more verbose messages (if this is supported for a command) "
+"with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:82
+msgid "To output even more verbose messages you can use these options:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:89
+msgid ""
+"If you set the optional arguments to give your application a name and "
+"version::"
+msgstr ""
+
+#: ../../../components/console/usage.rst:93
+msgid "then you can use:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:100
+msgid "to get this information output:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:106
+msgid "If you do not provide a console name then it will just output:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:112
+msgid "You can force turning on ANSI output coloring with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:118
+msgid "or turn it off with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:124
+msgid ""
+"You can suppress any interactive questions from the command you are "
+"running with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:132
+msgid "Shortcut Syntax"
+msgstr ""
+
+#: ../../../components/console/usage.rst:134
+msgid ""
+"You do not have to type out the full command names. You can just type the"
+" shortest unambiguous name to run a command. So if there are non-clashing"
+" commands, then you can run ``help`` like this:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:142
+msgid ""
+"If you have commands using ``:`` to namespace commands then you only need"
+" to type the shortest unambiguous text for each part. If you have created"
+" the ``demo:greet`` as shown in :doc:`/components/console` then you can "
+"run it with:"
+msgstr ""
+
+#: ../../../components/console/usage.rst:156
+msgid ""
+"If you enter a short command that's ambiguous (i.e. there are more than "
+"one command that match), then no command will be run and some suggestions"
+" of the possible commands to choose from will be output."
+msgstr ""
+

@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/monolog_regex_based_excludes.rst:7
+msgid "How to Configure Monolog to Exclude 404 Errors from the Log"
+msgstr ""
+
+#: ../../../logging/monolog_regex_based_excludes.rst:11
+msgid ""
+"Read :doc:`/logging/monolog_exclude_http_codes` to learn about a similar "
+"but more generic feature that allows to exclude logs for any HTTP status "
+"code and not only 404 errors."
+msgstr ""
+
+#: ../../../logging/monolog_regex_based_excludes.rst:15
+msgid ""
+"Sometimes your logs become flooded with unwanted 404 HTTP errors, for "
+"example, when an attacker scans your app for some well-known application "
+"paths (e.g. `/phpmyadmin`). When using a ``fingers_crossed`` handler, you"
+" can exclude logging these 404 errors based on a regular expression in "
+"the MonologBundle configuration:"
+msgstr ""
+
+#: ../../../logging/monolog_regex_based_excludes.rst:73
+msgid ""
+"Combining ``excluded_404s`` with a ``passthru_level`` lower than "
+"``error`` (i.e. ``debug``, ``info``, ``notice`` or ``warning``) will not "
+"actually exclude log messages for the URL(s) listed in ``excluded_404s`` "
+"because they are logged with level of ``error`` or higher and "
+"``passthru_level`` takes precedence over the URLs being listed in "
+"``excluded_404s``."
+msgstr ""
+

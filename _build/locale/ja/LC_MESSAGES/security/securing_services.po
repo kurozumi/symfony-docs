@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/securing_services.rst:6
+msgid "How to Secure any Service or Method in your Application"
+msgstr ""
+
+#: ../../../security/securing_services.rst:8
+msgid ""
+"In the security article, you learned how to :ref:`secure a controller "
+"<security-securing-controller>` via a shortcut method."
+msgstr ""
+
+#: ../../../security/securing_services.rst:11
+msgid ""
+"But, you can check access *anywhere* in your code by injecting the "
+"``Security`` service. For example, suppose you have a "
+"``SalesReportManager`` service and you want to include extra details only"
+" for users that have a ``ROLE_SALES_ADMIN`` role:"
+msgstr ""
+
+#: ../../../security/securing_services.rst:46
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, Symfony will automatically pass the "
+"``security.helper`` to your service thanks to autowiring and the "
+"``Security`` type-hint."
+msgstr ""
+
+#: ../../../security/securing_services.rst:50
+msgid ""
+"You can also use a lower-level "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AuthorizationCheckerInterface`"
+" service. It does the same thing as ``Security``, but allows you to type-"
+"hint a more-specific interface."
+msgstr ""
+

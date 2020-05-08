@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/intl.rst:6
+msgid "The Intl Component"
+msgstr ""
+
+#: ../../../components/intl.rst:8
+msgid ""
+"This component provides access to the localization data of the `ICU "
+"library`_. It also provides a PHP replacement layer for the C `intl "
+"extension`_."
+msgstr ""
+
+#: ../../../components/intl.rst:13
+msgid ""
+"The replacement layer is limited to the ``en`` locale. If you want to use"
+" other locales, you should `install the intl extension`_. There is no "
+"conflict between the two because, even if you use the extension, this "
+"package can still be useful to access the ICU data."
+msgstr ""
+
+#: ../../../components/intl.rst:20
+msgid ""
+"This article explains how to use the Intl features as an independent "
+"component in any PHP application. Read the :doc:`/translation` article to"
+" learn about how to internationalize and manage the user locale in "
+"Symfony applications."
+msgstr ""
+
+#: ../../../components/intl.rst:25
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/intl.rst:33
+msgid ""
+"If you install the component via Composer, the following classes and "
+"functions of the intl extension will be automatically provided if the "
+"intl extension is not loaded:"
+msgstr ""
+
+#: ../../../components/intl.rst:37
+msgid ":phpclass:`Collator`"
+msgstr ""
+
+#: ../../../components/intl.rst:38
+msgid ":phpclass:`IntlDateFormatter`"
+msgstr ""
+
+#: ../../../components/intl.rst:39
+msgid ":phpclass:`Locale`"
+msgstr ""
+
+#: ../../../components/intl.rst:40
+msgid ":phpclass:`NumberFormatter`"
+msgstr ""
+
+#: ../../../components/intl.rst:41
+msgid ":phpfunction:`intl_error_name`"
+msgstr ""
+
+#: ../../../components/intl.rst:42
+msgid ":phpfunction:`intl_is_failure`"
+msgstr ""
+
+#: ../../../components/intl.rst:43
+msgid ":phpfunction:`intl_get_error_code`"
+msgstr ""
+
+#: ../../../components/intl.rst:44
+msgid ":phpfunction:`intl_get_error_message`"
+msgstr ""
+
+#: ../../../components/intl.rst:46
+msgid ""
+"When the intl extension is not available, the following classes are used "
+"to replace the intl classes:"
+msgstr ""
+
+#: ../../../components/intl.rst:49
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Collator\\\\Collator`"
+msgstr ""
+
+#: ../../../components/intl.rst:50
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\DateFormatter\\\\IntlDateFormatter`"
+msgstr ""
+
+#: ../../../components/intl.rst:51
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Locale\\\\Locale`"
+msgstr ""
+
+#: ../../../components/intl.rst:52
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\NumberFormatter\\\\NumberFormatter`"
+msgstr ""
+
+#: ../../../components/intl.rst:53
+msgid ":class:`Symfony\\\\Component\\\\Intl\\\\Globals\\\\IntlGlobals`"
+msgstr ""
+
+#: ../../../components/intl.rst:55
+msgid "Composer automatically exposes these classes in the global namespace."
+msgstr ""
+
+#: ../../../components/intl.rst:58
+msgid "Accessing ICU Data"
+msgstr ""
+
+#: ../../../components/intl.rst:60
+msgid "This component provides the following ICU data:"
+msgstr ""
+
+#: ../../../components/intl.rst:62
+msgid "`Language and Script Names`_"
+msgstr ""
+
+#: ../../../components/intl.rst:63
+msgid "`Country Names`_"
+msgstr ""
+
+#: ../../../components/intl.rst:64
+msgid "`Locales`_"
+msgstr ""
+
+#: ../../../components/intl.rst:65
+msgid "`Currencies`_"
+msgstr ""
+
+#: ../../../components/intl.rst:66
+msgid "`Timezones`_"
+msgstr ""
+
+#: ../../../components/intl.rst:69
+msgid "Language and Script Names"
+msgstr ""
+
+#: ../../../components/intl.rst:71
+msgid ""
+"The ``Languages`` class provides access to the name of all languages "
+"according to the `ISO 639-1 alpha-2`_ list and the `ISO 639-2 alpha-3`_ "
+"list::"
+msgstr ""
+
+#: ../../../components/intl.rst:92 ../../../components/intl.rst:139
+#: ../../../components/intl.rst:179 ../../../components/intl.rst:230
+#: ../../../components/intl.rst:306
+msgid ""
+"All methods accept the translation locale as the last, optional "
+"parameter, which defaults to the current default locale::"
+msgstr ""
+
+#: ../../../components/intl.rst:107
+msgid ""
+"If the given locale doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"language code is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:113
+msgid "Or if you have a alpha3 language code you want to check::"
+msgstr ""
+
+#: ../../../components/intl.rst:117 ../../../components/intl.rst:204
+msgid ""
+"You may convert codes between two-letter alpha2 and three-letter alpha3 "
+"codes::"
+msgstr ""
+
+#: ../../../components/intl.rst:123
+msgid ""
+"The ``Scripts`` class provides access to the optional four-letter script "
+"code that can follow the language code according to the `Unicode ISO "
+"15924 Registry`_ (e.g. ``HANS`` in ``zh_HANS`` for simplified Chinese and"
+" ``HANT`` in ``zh_HANT`` for traditional Chinese)::"
+msgstr ""
+
+#: ../../../components/intl.rst:148
+msgid ""
+"If the given script code doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"script code is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:155
+msgid "Country Names"
+msgstr ""
+
+#: ../../../components/intl.rst:157
+msgid ""
+"The ``Countries`` class provides access to the name of all countries "
+"according to the `ISO 3166-1 alpha-2`_ list and the `ISO 3166-1 alpha-3`_"
+" list of officially recognized countries and territories::"
+msgstr ""
+
+#: ../../../components/intl.rst:194
+msgid ""
+"If the given country code doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"country code is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:200
+msgid "Or if you have a alpha3 country code you want to check::"
+msgstr ""
+
+#: ../../../components/intl.rst:211
+msgid "Locales"
+msgstr ""
+
+#: ../../../components/intl.rst:213
+msgid ""
+"A locale is the combination of a language, a region and some parameters "
+"that define the interface preferences of the user. For example, "
+"\"Chinese\" is the language and ``zh_Hans_MO`` is the locale for "
+"\"Chinese\" (language) + \"Simplified\" (script) + \"Macau SAR China\" "
+"(region). The ``Locales`` class provides access to the name of all "
+"locales::"
+msgstr ""
+
+#: ../../../components/intl.rst:239
+msgid ""
+"If the given locale code doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"locale code is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:246
+msgid "Currencies"
+msgstr ""
+
+#: ../../../components/intl.rst:248
+msgid ""
+"The ``Currencies`` class provides access to the name of all currencies as"
+" well as some of their information (symbol, fraction digits, etc.)::"
+msgstr ""
+
+#: ../../../components/intl.rst:271
+msgid ""
+"All methods (except for ``getFractionDigits()`` and "
+"``getRoundingIncrement()``) accept the translation locale as the last, "
+"optional parameter, which defaults to the current default locale::"
+msgstr ""
+
+#: ../../../components/intl.rst:281
+msgid ""
+"If the given currency code doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"currency code is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:290
+msgid "Timezones"
+msgstr ""
+
+#: ../../../components/intl.rst:292
+msgid ""
+"The ``Timezones`` class provides several utilities related to timezones. "
+"First, you can get the name and values of all timezones in all "
+"languages::"
+msgstr ""
+
+#: ../../../components/intl.rst:315
+msgid ""
+"You can also get all the timezones that exist in a given country. The "
+"``forCountryCode()`` method returns one or more timezone IDs, which you "
+"can translate into any locale with the ``getName()`` method shown "
+"earlier::"
+msgstr ""
+
+#: ../../../components/intl.rst:323
+msgid ""
+"The reverse lookup is also possible thanks to the ``getCountryCode()`` "
+"method, which returns the code of the country where the given timezone ID"
+" belongs to::"
+msgstr ""
+
+#: ../../../components/intl.rst:329
+msgid ""
+"The `UTC/GMT time offsets`_ of all timezones are provided by "
+"``getRawOffset()`` (which returns an integer representing the offset in "
+"seconds) and ``getGmtOffset()`` (which returns a string representation of"
+" the offset to display it to users)::"
+msgstr ""
+
+#: ../../../components/intl.rst:342
+msgid ""
+"The timezone offset can vary in time because of the `daylight saving time"
+" (DST)`_ practice. By default these methods use the ``time()`` PHP "
+"function to get the current timezone offset value, but you can pass a "
+"timestamp as their second arguments to get the offset at any given point "
+"in time::"
+msgstr ""
+
+#: ../../../components/intl.rst:353
+msgid ""
+"The string representation of the GMT offset can vary depending on the "
+"locale, so you can pass the locale as the third optional argument::"
+msgstr ""
+
+#: ../../../components/intl.rst:359
+msgid ""
+"If the given timezone ID doesn't exist, the methods trigger a "
+":class:`Symfony\\\\Component\\\\Intl\\\\Exception\\\\MissingResourceException`."
+" In addition to catching the exception, you can also check if a given "
+"timezone ID is valid::"
+msgstr ""
+
+#: ../../../components/intl.rst:366
+msgid "Learn more"
+msgstr ""
+

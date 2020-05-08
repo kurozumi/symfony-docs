@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../serializer/normalizers.rst:5
+msgid "Normalizers"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:7
+msgid ""
+"Normalizers turn **objects** into **arrays** and vice versa. They "
+"implement "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\NormalizerInterface`"
+" for normalizing (object to array) and "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DenormalizerInterface`"
+" for denormalizing (array to object)."
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:13
+msgid ""
+"Normalizers are enabled in the serializer passing them as its first "
+"argument::"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:22
+msgid "Built-in Normalizers"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:24
+msgid ""
+"Symfony includes the following normalizers but you can also :doc:`create "
+"your own normalizer </serializer/custom_normalizer>`:"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:27
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ObjectNormalizer`"
+" to normalize PHP object using the :doc:`PropertyAccessor component "
+"</components/property_access>`;"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:29
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateTimeZoneNormalizer`"
+" for :phpclass:`DateTimeZone` objects"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:31
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateTimeNormalizer`"
+" for objects implementing the :phpclass:`DateTimeInterface` interface"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:33
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateIntervalNormalizer`"
+" for :phpclass:`DateInterval` objects"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:35
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DataUriNormalizer`"
+" to transform :phpclass:`SplFileInfo` objects in `Data URIs`_"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:37
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\CustomNormalizer`"
+" to normalize PHP object using an object that implements "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\NormalizableInterface`;"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:40
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\GetSetMethodNormalizer`"
+" to normalize PHP object using the getter and setter methods of the "
+"object;"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:42
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\PropertyNormalizer`"
+" to normalize PHP object using `PHP reflection`_."
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:44
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ConstraintViolationListNormalizer`"
+" for objects implementing the "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolationListInterface`"
+" interface"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:45
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ProblemNormalizer`"
+" for "
+":class:`Symfony\\\\Component\\\\ErrorHandler\\\\Exception\\\\FlattenException`"
+" objects"
+msgstr ""
+
+#: ../../../serializer/normalizers.rst:46
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\JsonSerializableNormalizer`"
+" to deal with objects implementing the :phpclass:`JsonSerializable` "
+"interface"
+msgstr ""
+

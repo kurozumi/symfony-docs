@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:2
+msgid "LessThanOrEqual"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:4
+msgid ""
+"Validates that a value is less than or equal to another value, defined in"
+" the options. To force that a value is less than another value, see "
+":doc:`/reference/constraints/LessThan`."
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:10
+#: ../../../reference/constraints/LessThanOrEqual.rst:286
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:13
+msgid "`propertyPath`_"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:14
+msgid "`value`_"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\LessThanOrEqual`"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:16
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\LessThanOrEqualValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:20
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:22
+msgid "The following constraints ensure that:"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:24
+msgid "the number of ``siblings`` of a ``Person`` is less than or equal to ``5``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:25
+msgid "the ``age`` is less than or equal to ``80``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:105
+msgid "Comparing Dates"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:107
+msgid ""
+"This constraint can be used to compare ``DateTime`` objects against any "
+"date string `accepted by the DateTime constructor`_. For example, you "
+"could check that a date must be today or in the past like this:"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:167
+msgid ""
+"Be aware that PHP will use the server's configured timezone to interpret "
+"these dates. If you want to fix the timezone, append it to the date "
+"string:"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:226
+msgid ""
+"The ``DateTime`` class also accepts relative dates or times. For example,"
+" you can check that a person must be at least 18 years old like this:"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:291
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:293
+msgid ""
+"**type**: ``string`` **default**: ``This value should be less than or "
+"equal to {{ compared_value }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:295
+msgid ""
+"This is the message that will be shown if the value is not less than or "
+"equal to the comparison value."
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:298
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:301
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:301
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:303
+msgid "``{{ compared_value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:303
+msgid "The upper limit"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:304
+msgid "``{{ compared_value_type }}``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:304
+msgid "The expected value type"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:305
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/LessThanOrEqual.rst:305
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:2
+msgid "``propertyPath``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:4
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:6
+msgid "It defines the object property whose value is used to make the comparison."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:8
+msgid ""
+"For example, if you want to compare the ``$endDate`` property of some "
+"object with regard to the ``$startDate`` property of the same object, use"
+" ``propertyPath=\"startDate\"`` in the comparison constraint of "
+"``$endDate``."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:14
+msgid ""
+"When using this option, its value is available in error messages as the "
+"``{{ compared_value_path }}`` placeholder. Although it's not intended to "
+"include it in the error messages displayed to end users, it's useful when"
+" using APIs for doing any mapping logic on client-side."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:2
+msgid "``value``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:4
+msgid "**type**: ``mixed`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:6
+msgid ""
+"This option is required. It defines the value to compare to. It can be a "
+"string, number or object."
+msgstr ""
+

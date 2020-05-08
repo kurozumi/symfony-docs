@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../http_cache/esi.rst:8
+msgid "Working with Edge Side Includes"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:10
+msgid ""
+"Gateway caches are a great way to make your website perform better. But "
+"they have one limitation: they can only cache whole pages. If your pages "
+"contain dynamic sections, such as the user name or a shopping cart, you "
+"are out of luck. Fortunately, Symfony provides a solution for these "
+"cases, based on a technology called `ESI`_, or Edge Side Includes. Akamai"
+" wrote this specification in 2001 and it allows specific parts of a page "
+"to have a different caching strategy than the main page."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:18
+msgid ""
+"The ESI specification describes tags you can embed in your pages to "
+"communicate with the gateway cache. Only one tag is implemented in "
+"Symfony, ``include``, as this is the only useful one outside of Akamai "
+"context:"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:38
+msgid ""
+"Notice from the example that each ESI tag requires a fully-qualified URL."
+" An ESI tag represents a page fragment that can be fetched via the given "
+"URL."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:42
+msgid ""
+"When a request is handled, the gateway cache fetches the entire page from"
+" its cache or requests it from the backend application. If the response "
+"contains one or more ESI tags, these are processed in the same way. In "
+"other words, the gateway cache either retrieves the included page "
+"fragment from its cache or requests the page fragment from the backend "
+"application again. When all the ESI tags have been resolved, the gateway "
+"cache merges each into the main page and sends the final content to the "
+"client."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:50
+msgid ""
+"All of this happens transparently at the gateway cache level (i.e. "
+"outside of your application). As you'll see, if you choose to take "
+"advantage of ESI tags, Symfony makes the process of including them almost"
+" effortless."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:57
+msgid "Using ESI in Symfony"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:59
+msgid "First, to use ESI, be sure to enable it in your application configuration:"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:96
+msgid ""
+"Now, suppose you have a page that is relatively static, except for a news"
+" ticker at the bottom of the content. With ESI, you can cache the news "
+"ticker independently of the rest of the page::"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:115
+msgid ""
+"In this example, the full-page cache has a lifetime of ten minutes. Next,"
+" include the news ticker in the template by embedding an action. This is "
+"done via the ``render()`` helper (for more details, see how to "
+":ref:`embed controllers in templates <templates-embed-controllers>`)."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:120
+msgid ""
+"As the embedded content comes from another page (or controller for that "
+"matter), Symfony uses the standard ``render`` helper to configure ESI "
+"tags:"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:133
+msgid ""
+"By using the ``esi`` renderer (via the ``render_esi()`` Twig function), "
+"you tell Symfony that the action should be rendered as an ESI tag. You "
+"might be wondering why you would want to use a helper instead of just "
+"writing the ESI tag yourself. That's because using a helper makes your "
+"application work even if there is no gateway cache installed."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:141
+msgid ""
+"As you'll see below, the ``maxPerPage`` variable you pass is available as"
+" an argument to your controller (i.e. ``$maxPerPage``). The variables "
+"passed through ``render_esi`` also become part of the cache key so that "
+"you have unique caches for each combination of variables and values."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:146
+msgid ""
+"When using the default ``render()`` function (or setting the renderer to "
+"``inline``), Symfony merges the included page content into the main one "
+"before sending the response to the client. But if you use the ``esi`` "
+"renderer (i.e. call ``render_esi()``) *and* if Symfony detects that it's "
+"talking to a gateway cache that supports ESI, it generates an ESI include"
+" tag. But if there is no gateway cache or if it does not support ESI, "
+"Symfony will just merge the included page content within the main one as "
+"it would have done if you had used ``render()``."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:157
+msgid ""
+"Symfony detects if a gateway cache supports ESI via another Akamai "
+"specification that is supported out of the box by the Symfony reverse "
+"proxy."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:161
+msgid ""
+"The embedded action can now specify its own caching rules entirely "
+"independently of the master page::"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:179
+msgid ""
+"With ESI, the full page cache will be valid for 600 seconds, but the news"
+" component cache will only last for 60 seconds."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:184
+msgid ""
+"When using a controller reference, the ESI tag should reference the "
+"embedded action as an accessible URL so the gateway cache can fetch it "
+"independently of the rest of the page. Symfony takes care of generating a"
+" unique URL for any controller reference and it is able to route them "
+"properly thanks to the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\FragmentListener`"
+" that must be enabled in your configuration:"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:226
+msgid ""
+"One great advantage of the ESI renderer is that you can make your "
+"application as dynamic as needed and at the same time, hit the "
+"application as little as possible."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:232
+msgid ""
+"The fragment listener only responds to signed requests. Requests are only"
+" signed when using the fragment renderer and the ``render_esi`` Twig "
+"function."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:238
+msgid ""
+"Once you start using ESI, remember to always use the ``s-maxage`` "
+"directive instead of ``max-age``. As the browser only ever receives the "
+"aggregated resource, it is not aware of the sub-components, and so it "
+"will obey the ``max-age`` directive and cache the entire page. And you "
+"don't want that."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:244
+msgid "The ``render_esi`` helper supports two other useful options:"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:248
+msgid "``alt``"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:247
+msgid ""
+"Used as the ``alt`` attribute on the ESI tag, which allows you to specify"
+" an alternative URL to be used if the ``src`` cannot be found."
+msgstr ""
+
+#: ../../../http_cache/esi.rst:253
+msgid "``ignore_errors``"
+msgstr ""
+
+#: ../../../http_cache/esi.rst:251
+msgid ""
+"If set to true, an ``onerror`` attribute will be added to the ESI with a "
+"value of ``continue`` indicating that, in the event of a failure, the "
+"gateway cache will remove the ESI tag silently."
+msgstr ""
+

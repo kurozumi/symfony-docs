@@ -1,0 +1,395 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/style.rst:5
+msgid "How to Style a Console Command"
+msgstr ""
+
+#: ../../../console/style.rst:7
+msgid ""
+"One of the most boring tasks when creating console commands is to deal "
+"with the styling of the command's input and output. Displaying titles and"
+" tables or asking questions to the user involves a lot of repetitive "
+"code."
+msgstr ""
+
+#: ../../../console/style.rst:11
+msgid ""
+"Consider for example the code used to display the title of the following "
+"command::"
+msgstr ""
+
+#: ../../../console/style.rst:36
+msgid ""
+"Displaying a simple title requires three lines of code, to change the "
+"font color, underline the contents and leave an additional blank line "
+"after the title. Dealing with styles is required for well-designed "
+"commands, but it complicates their code unnecessarily."
+msgstr ""
+
+#: ../../../console/style.rst:41
+msgid ""
+"In order to reduce that boilerplate code, Symfony commands can optionally"
+" use the **Symfony Style Guide**. These styles are implemented as a set "
+"of helper methods which allow to create *semantic* commands and forget "
+"about their styling."
+msgstr ""
+
+#: ../../../console/style.rst:46
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../console/style.rst:48
+msgid ""
+"In your command, instantiate the "
+":class:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle` class "
+"and pass the ``$input`` and ``$output`` variables as its arguments. Then,"
+" you can start using any of its helpers, such as ``title()``, which "
+"displays the title of the command::"
+msgstr ""
+
+#: ../../../console/style.rst:75
+msgid "Helper Methods"
+msgstr ""
+
+#: ../../../console/style.rst:77
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle` "
+"class defines some helper methods that cover the most common interactions"
+" performed by console commands."
+msgstr ""
+
+#: ../../../console/style.rst:81
+msgid "Titling Methods"
+msgstr ""
+
+#: ../../../console/style.rst:88
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::title`"
+msgstr ""
+
+#: ../../../console/style.rst:84
+msgid ""
+"It displays the given string as the command title. This method is meant "
+"to be used only once in a given command, but nothing prevents you to use "
+"it repeatedly::"
+msgstr ""
+
+#: ../../../console/style.rst:100
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::section`"
+msgstr ""
+
+#: ../../../console/style.rst:91
+msgid ""
+"It displays the given string as the title of some command section. This "
+"is only needed in complex commands which want to better separate their "
+"contents::"
+msgstr ""
+
+#: ../../../console/style.rst:103
+msgid "Content Methods"
+msgstr ""
+
+#: ../../../console/style.rst:120
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::text`"
+msgstr ""
+
+#: ../../../console/style.rst:106
+msgid ""
+"It displays the given string or array of strings as regular text. This is"
+" useful to render help messages and instructions for the user running the"
+" command::"
+msgstr ""
+
+#: ../../../console/style.rst:129
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::listing`"
+msgstr ""
+
+#: ../../../console/style.rst:123
+msgid "It displays an unordered list of elements passed as an array::"
+msgstr ""
+
+#: ../../../console/style.rst:141
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::table`"
+msgstr ""
+
+#: ../../../console/style.rst:132
+msgid "It displays the given array of headers and rows as a compact table::"
+msgstr ""
+
+#: ../../../console/style.rst:153
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::horizontalTable`"
+msgstr ""
+
+#: ../../../console/style.rst:144
+msgid ""
+"It displays the given array of headers and rows as a compact horizontal "
+"table::"
+msgstr ""
+
+#: ../../../console/style.rst:166
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::definitionList`"
+msgstr ""
+
+#: ../../../console/style.rst:156
+msgid ""
+"It displays the given ``key => value`` pairs as a compact list of "
+"elements::"
+msgstr ""
+
+#: ../../../console/style.rst:178
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::newLine`"
+msgstr ""
+
+#: ../../../console/style.rst:169
+msgid ""
+"It displays a blank line in the command output. Although it may seem "
+"useful, most of the times you won't need it at all. The reason is that "
+"every helper already adds their own blank lines, so you don't have to "
+"care about the vertical spacing::"
+msgstr ""
+
+#: ../../../console/style.rst:181
+msgid "Admonition Methods"
+msgstr ""
+
+#: ../../../console/style.rst:197
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::note`"
+msgstr ""
+
+#: ../../../console/style.rst:184
+msgid ""
+"It displays the given string or array of strings as a highlighted "
+"admonition. Use this helper sparingly to avoid cluttering command's "
+"output::"
+msgstr ""
+
+#: ../../../console/style.rst:214
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::caution`"
+msgstr ""
+
+#: ../../../console/style.rst:200
+msgid ""
+"Similar to the ``note()`` helper, but the contents are more prominently "
+"highlighted. The resulting contents resemble an error message, so you "
+"should avoid using this helper unless strictly necessary::"
+msgstr ""
+
+#: ../../../console/style.rst:217
+msgid "Progress Bar Methods"
+msgstr ""
+
+#: ../../../console/style.rst:228
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::progressStart`"
+msgstr ""
+
+#: ../../../console/style.rst:220
+msgid ""
+"It displays a progress bar with a number of steps equal to the argument "
+"passed to the method (don't pass any value if the length of the progress "
+"bar is unknown)::"
+msgstr ""
+
+#: ../../../console/style.rst:238
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::progressAdvance`"
+msgstr ""
+
+#: ../../../console/style.rst:231
+msgid ""
+"It makes the progress bar advance the given number of steps (or ``1`` "
+"step if no argument is passed)::"
+msgstr ""
+
+#: ../../../console/style.rst:244
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::progressFinish`"
+msgstr ""
+
+#: ../../../console/style.rst:241
+msgid ""
+"It finishes the progress bar (filling up all the remaining steps when its"
+" length is known)::"
+msgstr ""
+
+#: ../../../console/style.rst:247
+msgid "User Input Methods"
+msgstr ""
+
+#: ../../../console/style.rst:268
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::ask`"
+msgstr ""
+
+#: ../../../console/style.rst:250
+msgid "It asks the user to provide some value::"
+msgstr ""
+
+#: ../../../console/style.rst:254 ../../../console/style.rst:292
+msgid ""
+"You can pass the default value as the second argument so the user can hit"
+" the <Enter> key to select that value::"
+msgstr ""
+
+#: ../../../console/style.rst:259
+msgid ""
+"In case you need to validate the given value, pass a callback validator "
+"as the third argument::"
+msgstr ""
+
+#: ../../../console/style.rst:285
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::askHidden`"
+msgstr ""
+
+#: ../../../console/style.rst:271
+msgid ""
+"It's very similar to the ``ask()`` method but the user's input will be "
+"hidden and it cannot define a default value. Use it when asking for "
+"sensitive information::"
+msgstr ""
+
+#: ../../../console/style.rst:276
+msgid ""
+"In case you need to validate the given value, pass a callback validator "
+"as the second argument::"
+msgstr ""
+
+#: ../../../console/style.rst:295
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::confirm`"
+msgstr ""
+
+#: ../../../console/style.rst:288
+msgid ""
+"It asks a Yes/No question to the user and it only returns ``true`` or "
+"``false``::"
+msgstr ""
+
+#: ../../../console/style.rst:306
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::choice`"
+msgstr ""
+
+#: ../../../console/style.rst:298
+msgid ""
+"It asks a question whose answer is constrained to the given list of valid"
+" answers::"
+msgstr ""
+
+#: ../../../console/style.rst:303
+msgid ""
+"You can pass the default value as the third argument so the user can hit "
+"the <Enter> key to select that value::"
+msgstr ""
+
+#: ../../../console/style.rst:309
+msgid "Result Methods"
+msgstr ""
+
+#: ../../../console/style.rst:326
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::success`"
+msgstr ""
+
+#: ../../../console/style.rst:312
+msgid ""
+"It displays the given string or array of strings highlighted as a "
+"successful message (with a green background and the ``[OK]`` label). It's"
+" meant to be used once to display the final result of executing the given"
+" command, but you can use it repeatedly during the execution of the "
+"command::"
+msgstr ""
+
+#: ../../../console/style.rst:343
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::warning`"
+msgstr ""
+
+#: ../../../console/style.rst:329
+msgid ""
+"It displays the given string or array of strings highlighted as a warning"
+" message (with a red background and the ``[WARNING]`` label). It's meant "
+"to be used once to display the final result of executing the given "
+"command, but you can use it repeatedly during the execution of the "
+"command::"
+msgstr ""
+
+#: ../../../console/style.rst:360
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::error`"
+msgstr ""
+
+#: ../../../console/style.rst:346
+msgid ""
+"It displays the given string or array of strings highlighted as an error "
+"message (with a red background and the ``[ERROR]`` label). It's meant to "
+"be used once to display the final result of executing the given command, "
+"but you can use it repeatedly during the execution of the command::"
+msgstr ""
+
+#: ../../../console/style.rst:363
+msgid "Defining your Own Styles"
+msgstr ""
+
+#: ../../../console/style.rst:365
+msgid ""
+"If you don't like the design of the commands that use the Symfony Style, "
+"you can define your own set of console styles. Create a class that "
+"implements the "
+":class:`Symfony\\\\Component\\\\Console\\\\Style\\\\StyleInterface`::"
+msgstr ""
+
+#: ../../../console/style.rst:378
+msgid ""
+"Then, instantiate this custom class instead of the default "
+"``SymfonyStyle`` in your commands. Thanks to the ``StyleInterface`` you "
+"won't need to change the code of your commands to change their "
+"appearance::"
+msgstr ""
+
+#: ../../../console/style.rst:407
+msgid "Writing to the error output"
+msgstr ""
+
+#: ../../../console/style.rst:409
+msgid ""
+"If you reuse the output of a command as the input of other commands or "
+"dump it into a file for later reuse, you probably want to exclude "
+"progress bars, notes and other output that provides no real value."
+msgstr ""
+
+#: ../../../console/style.rst:413
+msgid ""
+"Commands can output information in two different streams: ``stdout`` "
+"(standard output) is the stream where the real contents should be output "
+"and ``stderr`` (standard error) is the stream where the errors and the "
+"debugging messages should be output."
+msgstr ""
+
+#: ../../../console/style.rst:418
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle` "
+"class provides a convenient method called "
+":method:`Symfony\\\\Component\\\\Console\\\\Style\\\\SymfonyStyle::getErrorStyle`"
+" to switch between both streams. This method returns a new "
+"``SymfonyStyle`` instance which makes use of the error output::"
+msgstr ""
+
+#: ../../../console/style.rst:433
+msgid ""
+"If you create a ``SymfonyStyle`` instance with an ``OutputInterface`` "
+"object that is not an instance of "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\ConsoleOutputInterface`,"
+" the ``getErrorStyle()`` method will have no effect and the returned "
+"object will still write to the standard output instead of the error "
+"output."
+msgstr ""
+

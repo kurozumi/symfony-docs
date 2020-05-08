@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/commands_as_services.rst:5
+msgid "How to Define Commands as Services"
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:7
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, your command classes are already "
+"registered as services. Great! This is the recommended setup."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:13
+msgid ""
+"You can also manually register your command as a service by configuring "
+"the service and :doc:`tagging it </service_container/tags>` with "
+"``console.command``."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:16
+msgid "For example, suppose you want to log something from within your command::"
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:51
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, the command class will automatically "
+"be registered as a service and passed the ``$logger`` argument (thanks to"
+" autowiring). In other words, *just* by creating this class, everything "
+"works! You can call the ``app:sunshine`` command and start logging."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:58
+msgid ""
+"You *do* have access to services in ``configure()``. However, if your "
+"command is not :ref:`lazy <console-command-service-lazy-loading>`, try to"
+" avoid doing any work (e.g. making database queries), as that code will "
+"be run, even if you're using the console to execute a different command."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:66
+msgid "Lazy Loading"
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:68
+msgid ""
+"To make your command lazily loaded, either define its ``$defaultName`` "
+"static property::"
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:77
+msgid ""
+"Or set the ``command`` attribute on the ``console.command`` tag in your "
+"service definition:"
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:121
+msgid ""
+"If the command defines aliases (using the "
+":method:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command::getAliases`"
+" method) you must add one ``console.command`` tag per alias."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:125
+msgid ""
+"That's it. One way or another, the ``SunshineCommand`` will be "
+"instantiated only when the ``app:sunshine`` command is actually called."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:130
+msgid ""
+"You don't need to call ``setName()`` for configuring the command when it "
+"is lazy."
+msgstr ""
+
+#: ../../../console/commands_as_services.rst:134
+msgid ""
+"Calling the ``list`` command will instantiate all commands, including "
+"lazy commands."
+msgstr ""
+

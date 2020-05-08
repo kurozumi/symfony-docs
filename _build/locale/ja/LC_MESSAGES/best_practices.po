@@ -1,0 +1,594 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../best_practices.rst:2
+msgid "The Symfony Framework Best Practices"
+msgstr ""
+
+#: ../../../best_practices.rst:4
+msgid ""
+"This article describes the **best practices for developing web "
+"applications with Symfony** that fit the philosophy envisioned by the "
+"original Symfony creators."
+msgstr ""
+
+#: ../../../best_practices.rst:7
+msgid ""
+"If you don't agree with some of these recommendations, they might be a "
+"good **starting point** that you can then **extend and fit to your "
+"specific needs**. You can even ignore them completely and continue using "
+"your own best practices and methodologies. Symfony is flexible enough to "
+"adapt to your needs."
+msgstr ""
+
+#: ../../../best_practices.rst:12
+msgid ""
+"This article assumes that you already have experience developing Symfony "
+"applications. If you don't, read first the :doc:`Getting Started "
+"</setup>` section of the documentation."
+msgstr ""
+
+#: ../../../best_practices.rst:18
+msgid ""
+"Symfony provides a sample application called `Symfony Demo`_ that follows"
+" all these best practices, so you can experience them in practice."
+msgstr ""
+
+#: ../../../best_practices.rst:22
+msgid "Creating the Project"
+msgstr ""
+
+#: ../../../best_practices.rst:25
+msgid "Use the Symfony Binary to Create Symfony Applications"
+msgstr ""
+
+#: ../../../best_practices.rst:27
+msgid ""
+"The Symfony binary is an executable command created in your machine when "
+"you `download Symfony`_. It provides multiple utilities, including the "
+"simplest way to create new Symfony applications:"
+msgstr ""
+
+#: ../../../best_practices.rst:35
+msgid ""
+"Under the hood, this Symfony binary command executes the needed "
+"`Composer`_ command to :ref:`create a new Symfony application <creating-"
+"symfony-applications>` based on the current stable version."
+msgstr ""
+
+#: ../../../best_practices.rst:40
+msgid "Use the Default Directory Structure"
+msgstr ""
+
+#: ../../../best_practices.rst:42
+msgid ""
+"Unless your project follows a development practice that imposes a certain"
+" directory structure, follow the default Symfony directory structure. "
+"It's flat, self-explanatory and not coupled to Symfony:"
+msgstr ""
+
+#: ../../../best_practices.rst:79
+msgid "Configuration"
+msgstr ""
+
+#: ../../../best_practices.rst:82
+msgid "Use Environment Variables for Infrastructure Configuration"
+msgstr ""
+
+#: ../../../best_practices.rst:84
+msgid ""
+"These are the options that change from one machine to another (e.g. from "
+"your development machine to the production server) but which don't change"
+" the application behavior."
+msgstr ""
+
+#: ../../../best_practices.rst:88
+msgid ""
+":ref:`Use env vars in your project <config-env-vars>` to define these "
+"options and create multiple ``.env`` files to :ref:`configure env vars "
+"per environment <config-dot-env>`."
+msgstr ""
+
+#: ../../../best_practices.rst:92
+msgid "Use Secret for Sensitive Information"
+msgstr ""
+
+#: ../../../best_practices.rst:94
+msgid ""
+"When your application has sensitive configuration - like an API key - you"
+" should store those securely via :doc:`secrets </configuration/secrets>`."
+msgstr ""
+
+#: ../../../best_practices.rst:98
+msgid "Use Parameters for Application Configuration"
+msgstr ""
+
+#: ../../../best_practices.rst:100
+msgid ""
+"These are the options used to modify the application behavior, such as "
+"the sender of email notifications, or the enabled `feature toggles`_. "
+"Their value doesn't change per machine, so don't define them as "
+"environment variables."
+msgstr ""
+
+#: ../../../best_practices.rst:104
+msgid ""
+"Define these options as :ref:`parameters <configuration-parameters>` in "
+"the ``config/services.yaml`` file. You can override these options per "
+":ref:`environment <configuration-environments>` in the "
+"``config/services_dev.yaml`` and ``config/services_prod.yaml`` files."
+msgstr ""
+
+#: ../../../best_practices.rst:110
+msgid "Use Short and Prefixed Parameter Names"
+msgstr ""
+
+#: ../../../best_practices.rst:112
+msgid ""
+"Consider using ``app.`` as the prefix of your :ref:`parameters "
+"<configuration-parameters>` to avoid collisions with Symfony and third-"
+"party bundles/libraries parameters. Then, use just one or two words to "
+"describe the purpose of the parameter:"
+msgstr ""
+
+#: ../../../best_practices.rst:130
+msgid "Use Constants to Define Options that Rarely Change"
+msgstr ""
+
+#: ../../../best_practices.rst:132
+msgid ""
+"Configuration options like the number of items to display in some listing"
+" rarely change. Instead of defining them as :ref:`service container "
+"parameters <configuration-parameters>`, define them as PHP constants in "
+"the related classes. Example::"
+msgstr ""
+
+#: ../../../best_practices.rst:146
+msgid ""
+"The main advantage of constants is that you can use them everywhere, "
+"including Twig templates and Doctrine entities, whereas parameters are "
+"only available from places with access to the :doc:`service container "
+"</service_container>`."
+msgstr ""
+
+#: ../../../best_practices.rst:150
+msgid ""
+"The only notable disadvantage of using constants for this kind of "
+"configuration values is that it's complicated to redefine their values in"
+" your tests."
+msgstr ""
+
+#: ../../../best_practices.rst:154
+msgid "Business Logic"
+msgstr ""
+
+#: ../../../best_practices.rst:157
+msgid "Don't Create any Bundle to Organize your Application Logic"
+msgstr ""
+
+#: ../../../best_practices.rst:159
+msgid ""
+"When Symfony 2.0 was released, applications used :doc:`bundles "
+"</bundles>` to divide their code into logical features: UserBundle, "
+"ProductBundle, InvoiceBundle, etc. However, a bundle is meant to be "
+"something that can be reused as a stand-alone piece of software."
+msgstr ""
+
+#: ../../../best_practices.rst:164
+msgid ""
+"If you need to reuse some feature in your projects, create a bundle for "
+"it (in a private repository, to not make it publicly available). For the "
+"rest of your application code, use PHP namespaces to organize code "
+"instead of bundles."
+msgstr ""
+
+#: ../../../best_practices.rst:169
+msgid "Use Autowiring to Automate the Configuration of Application Services"
+msgstr ""
+
+#: ../../../best_practices.rst:171
+msgid ""
+":doc:`Service autowiring </service_container/autowiring>` is a feature "
+"that reads the type-hints on your constructor (or other methods) and "
+"automatically passes the correct services to each method, making "
+"unnecessary to configure services explicitly and simplifying the "
+"application maintenance."
+msgstr ""
+
+#: ../../../best_practices.rst:176
+msgid ""
+"Use it in combination with :ref:`service autoconfiguration <services-"
+"autoconfigure>` to also add :doc:`service tags </service_container/tags>`"
+" to the services needing them, such as Twig extensions, event "
+"subscribers, etc."
+msgstr ""
+
+#: ../../../best_practices.rst:181
+msgid "Services Should be Private Whenever Possible"
+msgstr ""
+
+#: ../../../best_practices.rst:183
+msgid ""
+":ref:`Make services private <container-public>` to prevent you from "
+"accessing those services via ``$container->get()``. Instead, you will "
+"need to use proper dependency injection."
+msgstr ""
+
+#: ../../../best_practices.rst:188
+msgid "Use the YAML Format to Configure your Own Services"
+msgstr ""
+
+#: ../../../best_practices.rst:190
+msgid ""
+"If you use the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, most services will be configured "
+"automatically. However, in some edge cases you'll need to configure "
+"services (or parts of them) manually."
+msgstr ""
+
+#: ../../../best_practices.rst:194
+msgid ""
+"YAML is the format recommended to configure services because it's "
+"friendly to newcomers and concise, but Symfony also supports XML and PHP "
+"configuration."
+msgstr ""
+
+#: ../../../best_practices.rst:198
+msgid "Use Annotations to Define the Doctrine Entity Mapping"
+msgstr ""
+
+#: ../../../best_practices.rst:200
+msgid ""
+"Doctrine entities are plain PHP objects that you store in some "
+"\"database\". Doctrine only knows about your entities through the mapping"
+" metadata configured for your model classes."
+msgstr ""
+
+#: ../../../best_practices.rst:204
+msgid ""
+"Doctrine supports several metadata formats, but it's recommended to use "
+"annotations because they are by far the most convenient and agile way of "
+"setting up and looking for mapping information."
+msgstr ""
+
+#: ../../../best_practices.rst:209
+msgid "Controllers"
+msgstr ""
+
+#: ../../../best_practices.rst:212
+msgid "Make your Controller Extend the ``AbstractController`` Base Controller"
+msgstr ""
+
+#: ../../../best_practices.rst:214
+msgid ""
+"Symfony provides a :ref:`base controller <the-base-controller-classes-"
+"services>` which includes shortcuts for the most common needs such as "
+"rendering templates or checking security permissions."
+msgstr ""
+
+#: ../../../best_practices.rst:218
+msgid ""
+"Extending your controllers from this base controller couples your "
+"application to Symfony. Coupling is generally wrong, but it may be OK in "
+"this case because controllers shouldn't contain any business logic. "
+"Controllers should contain nothing more than a few lines of *glue-code*, "
+"so you are not coupling the important parts of your application."
+msgstr ""
+
+#: ../../../best_practices.rst:227
+msgid "Use Annotations to Configure Routing, Caching and Security"
+msgstr ""
+
+#: ../../../best_practices.rst:229
+msgid ""
+"Using annotations for routing, caching and security simplifies "
+"configuration. You don't need to browse several files created with "
+"different formats (YAML, XML, PHP): all the configuration is just where "
+"you need it and it only uses one format."
+msgstr ""
+
+#: ../../../best_practices.rst:234
+msgid "Don't Use Annotations to Configure the Controller Template"
+msgstr ""
+
+#: ../../../best_practices.rst:236
+msgid ""
+"The ``@Template`` annotation is useful, but also involves some *magic*. "
+"Moreover, most of the time ``@Template`` is used without any parameters, "
+"which makes it more difficult to know which template is being rendered. "
+"It also hides the fact that a controller should always return a "
+"``Response`` object."
+msgstr ""
+
+#: ../../../best_practices.rst:242
+msgid "Use Dependency Injection to Get Services"
+msgstr ""
+
+#: ../../../best_practices.rst:244
+msgid ""
+"If you extend the base ``AbstractController``, you can only access to the"
+" most common services (e.g ``twig``, ``router``, ``doctrine``, etc.), "
+"directly from the container via ``$this->container->get()`` or "
+"``$this->get()``. Instead, you must use dependency injection to fetch "
+"services by :ref:`type-hinting action method arguments <controller-"
+"accessing-services>` or constructor arguments."
+msgstr ""
+
+#: ../../../best_practices.rst:252
+msgid "Use ParamConverters If They Are Convenient"
+msgstr ""
+
+#: ../../../best_practices.rst:254
+msgid ""
+"If you're using :doc:`Doctrine </doctrine>`, then you can *optionally* "
+"use the `ParamConverter`_ to automatically query for an entity and pass "
+"it as an argument to your controller. It will also show a 404 page if no "
+"entity can be found."
+msgstr ""
+
+#: ../../../best_practices.rst:258
+msgid ""
+"If the logic to get an entity from a route variable is more complex, "
+"instead of configuring the ParamConverter, it's better to make the "
+"Doctrine query inside the controller (e.g. by calling to a :doc:`Doctrine"
+" repository method </doctrine>`)."
+msgstr ""
+
+#: ../../../best_practices.rst:263
+msgid "Templates"
+msgstr ""
+
+#: ../../../best_practices.rst:266
+msgid "Use Snake Case for Template Names and Variables"
+msgstr ""
+
+#: ../../../best_practices.rst:268
+msgid ""
+"Use lowercased snake_case for template names, directories and variables "
+"(e.g. ``user_profile`` instead of ``userProfile`` and "
+"``product/edit_form.html.twig`` instead of "
+"``Product/EditForm.html.twig``)."
+msgstr ""
+
+#: ../../../best_practices.rst:273
+msgid "Prefix Template Fragments with an Underscore"
+msgstr ""
+
+#: ../../../best_practices.rst:275
+msgid ""
+"Template fragments, also called *\"partial templates\"*, allow to "
+":ref:`reuse template contents <templates-reuse-contents>`. Prefix their "
+"names with an underscore to better differentiate them from complete "
+"templates (e.g. ``_user_metadata.html.twig`` or "
+"``_caution_message.html.twig``)."
+msgstr ""
+
+#: ../../../best_practices.rst:281
+msgid "Forms"
+msgstr ""
+
+#: ../../../best_practices.rst:284
+msgid "Define your Forms as PHP Classes"
+msgstr ""
+
+#: ../../../best_practices.rst:286
+msgid ""
+"Creating :ref:`forms in classes <creating-forms-in-classes>` allows to "
+"reuse them in different parts of the application. Besides, not creating "
+"forms in controllers simplify the code and maintenance of the "
+"controllers."
+msgstr ""
+
+#: ../../../best_practices.rst:291
+msgid "Add Form Buttons in Templates"
+msgstr ""
+
+#: ../../../best_practices.rst:293
+msgid ""
+"Form classes should be agnostic to where they will be used. For example, "
+"the button of a form used to both create and edit items should change "
+"from \"Add new\" to \"Save changes\" depending on where it's used."
+msgstr ""
+
+#: ../../../best_practices.rst:297
+msgid ""
+"Instead of adding buttons in form classes or the controllers, it's "
+"recommended to add buttons in the templates. This also improves the "
+"separation of concerns, because the button styling (CSS class and other "
+"attributes) is defined in the template instead of in a PHP class."
+msgstr ""
+
+#: ../../../best_practices.rst:303
+msgid "Define Validation Constraints on the Underlying Object"
+msgstr ""
+
+#: ../../../best_practices.rst:305
+msgid ""
+"Attaching :doc:`validation constraints </reference/constraints>` to form "
+"fields instead of to the mapped object prevents the validation from being"
+" reused in other forms or other places where the object is used."
+msgstr ""
+
+#: ../../../best_practices.rst:312
+msgid "Use a Single Action to Render and Process the Form"
+msgstr ""
+
+#: ../../../best_practices.rst:314
+msgid ""
+":ref:`Rendering forms <rendering-forms>` and :ref:`processing forms "
+"<processing-forms>` are two of the main tasks when handling forms. Both "
+"are too similar (most of the times, almost identical), so it's much "
+"simpler to let a single controller action handle everything."
+msgstr ""
+
+#: ../../../best_practices.rst:320
+msgid "Internationalization"
+msgstr ""
+
+#: ../../../best_practices.rst:323
+msgid "Use the XLIFF Format for Your Translation Files"
+msgstr ""
+
+#: ../../../best_practices.rst:325
+msgid ""
+"Of all the translation formats supported by Symfony (PHP, Qt, ``.po``, "
+"``.mo``, JSON, CSV, INI, etc.) XLIFF and gettext have the best support in"
+" the tools used by professional translators. And since it's based on XML,"
+" you can validate XLIFF file contents as you write them."
+msgstr ""
+
+#: ../../../best_practices.rst:330
+msgid ""
+"Symfony also supports notes in XLIFF files, making them more user-"
+"friendly for translators. At the end, good translations are all about "
+"context, and these XLIFF notes allow you to define that context."
+msgstr ""
+
+#: ../../../best_practices.rst:335
+msgid "Use Keys for Translations Instead of Content Strings"
+msgstr ""
+
+#: ../../../best_practices.rst:337
+msgid ""
+"Using keys simplifies the management of the translation files because you"
+" can change the original contents in templates, controllers and services "
+"without having to update all of the translation files."
+msgstr ""
+
+#: ../../../best_practices.rst:341
+msgid ""
+"Keys should always describe their *purpose* and *not* their location. For"
+" example, if a form has a field with the label \"Username\", then a nice "
+"key would be ``label.username``, *not* ``edit_form.label.username``."
+msgstr ""
+
+#: ../../../best_practices.rst:346
+msgid "Security"
+msgstr ""
+
+#: ../../../best_practices.rst:349
+msgid "Define a Single Firewall"
+msgstr ""
+
+#: ../../../best_practices.rst:351
+msgid ""
+"Unless you have two legitimately different authentication systems and "
+"users (e.g. form login for the main site and a token system for your API "
+"only), it's recommended to have only one firewall to keep things simple."
+msgstr ""
+
+#: ../../../best_practices.rst:355
+msgid ""
+"Additionally, you should use the ``anonymous`` key under your firewall. "
+"If you require users to be logged in for different sections of your site,"
+" use the :doc:`access_control </security/access_control>` option."
+msgstr ""
+
+#: ../../../best_practices.rst:360
+msgid "Use the ``auto`` Password Hasher"
+msgstr ""
+
+#: ../../../best_practices.rst:362
+msgid ""
+"The :ref:`auto password hasher <reference-security-encoder-auto>` "
+"automatically selects the best possible encoder/hasher depending on your "
+"PHP installation. Currently, it tries to use ``sodium`` by default and "
+"falls back to ``bcrypt``."
+msgstr ""
+
+#: ../../../best_practices.rst:367
+msgid "Use Voters to Implement Fine-grained Security Restrictions"
+msgstr ""
+
+#: ../../../best_practices.rst:369
+msgid ""
+"If your security logic is complex, you should create custom "
+":doc:`security voters </security/voters>` instead of defining long "
+"expressions inside the ``@Security`` annotation."
+msgstr ""
+
+#: ../../../best_practices.rst:374
+msgid "Web Assets"
+msgstr ""
+
+#: ../../../best_practices.rst:377
+msgid "Use Webpack Encore to Process Web Assets"
+msgstr ""
+
+#: ../../../best_practices.rst:379
+msgid ""
+"Web assets are things like CSS, JavaScript and image files that make the "
+"frontend of your site look and work great. `Webpack`_ is the leading "
+"JavaScript module bundler that compiles, transforms and packages assets "
+"for usage in a browser."
+msgstr ""
+
+#: ../../../best_practices.rst:383
+msgid ""
+":doc:`Webpack Encore </frontend>` is a JavaScript library that gets rid "
+"of most of Webpack complexity without hiding any of its features or "
+"distorting its usage and philosophy. It was originally created for "
+"Symfony applications, but it works for any application using any "
+"technology."
+msgstr ""
+
+#: ../../../best_practices.rst:389
+msgid "Tests"
+msgstr ""
+
+#: ../../../best_practices.rst:392
+msgid "Smoke Test your URLs"
+msgstr ""
+
+#: ../../../best_practices.rst:394
+msgid ""
+"In software engineering, `smoke testing`_ consists of *\"preliminary "
+"testing to reveal simple failures severe enough to reject a prospective "
+"software release\"*. Using :ref:`PHPUnit data providers <testing-data-"
+"providers>` you can define a functional test that checks that all "
+"application URLs load successfully::"
+msgstr ""
+
+#: ../../../best_practices.rst:428
+msgid ""
+"Add this test while creating your application because it requires little "
+"effort and checks that none of your pages returns an error. Later you'll "
+"add more specific tests for each page."
+msgstr ""
+
+#: ../../../best_practices.rst:433
+msgid "Hardcode URLs in a Functional Test"
+msgstr ""
+
+#: ../../../best_practices.rst:435
+msgid ""
+"In Symfony applications it's recommended to :ref:`generate URLs <routing-"
+"generating-urls>` using routes to automatically update all links when a "
+"URL changes. However, if a public URL changes, users won't be able to "
+"browse it unless you set up a redirection to the new URL."
+msgstr ""
+
+#: ../../../best_practices.rst:440
+msgid ""
+"That's why it's recommended to use raw URLs in tests instead of "
+"generating them from routes. Whenever a route changes, tests will break "
+"and you'll know that you must set up a redirection."
+msgstr ""
+

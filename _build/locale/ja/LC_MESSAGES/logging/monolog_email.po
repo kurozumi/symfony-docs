@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/monolog_email.rst:5
+msgid "How to Configure Monolog to Email Errors"
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:9
+msgid ""
+"This feature is not compatible yet with the new :doc:`Symfony mailer "
+"</mailer>`, so it requires using SwiftMailer."
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:12
+msgid ""
+"`Monolog`_ can be configured to send an email when an error occurs within"
+" an application. The configuration for this requires a few nested "
+"handlers in order to avoid receiving too many emails. This configuration "
+"looks complicated at first but each handler is fairly straightforward "
+"when it is broken down."
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:133
+msgid ""
+"The ``main`` handler is a ``fingers_crossed`` handler which means that it"
+" is only triggered when the action level, in this case ``critical`` is "
+"reached. The ``critical`` level is only triggered for 5xx HTTP code "
+"errors. If this level is reached once, the ``fingers_crossed`` handler "
+"will log all messages regardless of their level. The ``handler`` setting "
+"means that the output is then passed onto the ``deduplicated`` handler."
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:142
+msgid ""
+"If you want both 400 level and 500 level errors to trigger an email, set "
+"the ``action_level`` to ``error`` instead of ``critical``. See the code "
+"above for an example."
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:146
+msgid ""
+"The ``deduplicated`` handler keeps all the messages for a request and "
+"then passes them onto the nested handler in one go, but only if the "
+"records are unique over a given period of time (60 seconds by default). "
+"If the records are duplicates they are discarded. Adding this handler "
+"reduces the amount of notifications to a manageable level, specially in "
+"critical failure scenarios. You can adjust the time period using the "
+"``time`` option:"
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:192
+msgid ""
+"The messages are then passed to the ``swift`` handler. This is the "
+"handler that actually deals with emailing you the error. The settings for"
+" this are straightforward, the to and from addresses, the formatter, the "
+"content type and the subject."
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:197
+msgid ""
+"You can combine these handlers with other handlers so that the errors "
+"still get logged on the server as well as the emails being sent:"
+msgstr ""
+
+#: ../../../logging/monolog_email.rst:322
+msgid ""
+"This uses the ``group`` handler to send the messages to the two group "
+"members, the ``deduplicated`` and the ``stream`` handlers. The messages "
+"will now be both written to the log file and emailed."
+msgstr ""
+

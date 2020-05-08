@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../configuration/multiple_kernels.rst:5
+msgid "How To Create Symfony Applications with Multiple Kernels"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:9
+msgid ""
+"Creating applications with multiple kernels is no longer recommended by "
+"Symfony. Consider creating multiple small applications instead."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:12
+msgid ""
+"In most Symfony applications, incoming requests are processed by the "
+"``public/index.php`` front controller, which instantiates the "
+"``src/Kernel.php`` class to create the application kernel that loads the "
+"bundles and handles the request to generate the response."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:17
+msgid ""
+"This single kernel approach is a convenient default, but Symfony "
+"applications can define any number of kernels. Whereas :ref:`environments"
+" <configuration-environments>` execute the same application with "
+"different configurations, kernels can execute different parts of the same"
+" application."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:23
+msgid "These are some of the common use cases for creating multiple kernels:"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:25
+msgid ""
+"An application that defines an API could define two kernels for "
+"performance reasons. The first kernel would serve the regular application"
+" and the second one would only respond to the API requests, loading less "
+"bundles and enabling less features;"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:29
+msgid ""
+"A highly sensitive application could define two kernels. The first one "
+"would only load the routes that match the parts of the application "
+"exposed publicly. The second kernel would load the rest of the "
+"application and its access would be protected by the web server;"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:33
+msgid ""
+"A micro-services oriented application could define several kernels to "
+"enable/disable services selectively turning a traditional monolith "
+"application into several micro-applications."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:38
+msgid "Adding a new Kernel to the Application"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:40
+msgid "Creating a new kernel in a Symfony application is a three-step process:"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:42
+msgid "Create a new front controller to load the new kernel;"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:43
+msgid "Create the new kernel class;"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:44
+msgid "Define the configuration loaded by the new kernel."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:46
+msgid ""
+"The following example shows how to create a new kernel for the API of a "
+"given Symfony application."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:50
+msgid "Step 1) Create a new Front Controller"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:52
+msgid ""
+"Instead of creating the new front controller from scratch, it's easier to"
+" duplicate the existing one. For example, create ``public/api.php`` from "
+"``public/index.php``."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:56
+msgid ""
+"Then, update the code of the new front controller to instantiate the new "
+"kernel class instead of the usual ``Kernel`` class::"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:69
+msgid ""
+"Another approach is to keep the existing ``index.php`` front controller, "
+"but add an ``if`` statement to load the different kernel based on the URL"
+" (e.g. if the URL starts with ``/api``, use the ``ApiKernel``)."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:74
+msgid "Step 2) Create the new Kernel Class"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:76
+msgid ""
+"Now you need to define the ``ApiKernel`` class used by the new front "
+"controller. The easiest way to do this is by duplicating the existing  "
+"``src/Kernel.php`` file and make the needed changes."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:80
+msgid ""
+"In this example, the ``ApiKernel`` will load less bundles than the "
+"default Kernel. Be sure to also change the location of the cache, logs "
+"and configuration files so they don't collide with the files from "
+"``src/Kernel.php``::"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:120
+msgid "Step 3) Define the Kernel Configuration"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:122
+msgid ""
+"Finally, define the configuration files that the new ``ApiKernel`` will "
+"load. According to the above code, this config will live in one or "
+"multiple files stored in ``config/api/`` and "
+"``config/api/ENVIRONMENT_NAME/`` directories."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:126
+msgid ""
+"The new configuration files can be created from scratch when you load "
+"just a few bundles, because it will be small. Otherwise, duplicate the "
+"existing config files in ``config/packages/`` or better, import them and "
+"override the needed options."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:132
+msgid "Executing Commands with a Different Kernel"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:134
+msgid ""
+"The ``bin/console`` script used to run Symfony commands always uses the "
+"default ``Kernel`` class to build the application and load the commands. "
+"If you need to execute console commands using the new kernel, duplicate "
+"the ``bin/console`` script and rename it (e.g. ``bin/api``)."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:139
+msgid ""
+"Then, replace the ``Kernel`` instance by your own kernel instance (e.g. "
+"``ApiKernel``) and now you can execute commands using the new kernel "
+"(e.g. ``php bin/api cache:clear``) Now you can use execute commands using"
+" the new kernel."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:146
+msgid ""
+"The commands available for each console script (e.g. ``bin/console`` and "
+"``bin/api``) can differ because they depend on the bundles enabled for "
+"each kernel, which could be different."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:151
+msgid "Rendering Templates Defined in a Different Kernel"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:153
+msgid ""
+"If you follow the Symfony Best Practices, the templates of the default "
+"kernel will be stored in ``templates/``. Trying to render those templates"
+" in a different kernel will result in a *There are no registered paths "
+"for namespace \"__main__\"* error."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:158
+msgid ""
+"In order to solve this issue, add the following configuration to your "
+"kernel:"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:169
+msgid "Running Tests Using a Different Kernel"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:171
+msgid ""
+"In Symfony applications, functional tests extend by default from the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Test\\\\WebTestCase` "
+"class. Inside that class, a method called ``getKernelClass()`` tries to "
+"find the class of the kernel to use to run the application during tests. "
+"The logic of this method does not support multiple kernel applications, "
+"so your tests won't use the right kernel."
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:177
+msgid ""
+"The solution is to create a custom base class for functional tests "
+"extending from ``WebTestCase`` class and overriding the "
+"``getKernelClass()`` method to return the fully qualified class name of "
+"the kernel to use::"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:206
+msgid "Adding more Kernels to the Application"
+msgstr ""
+
+#: ../../../configuration/multiple_kernels.rst:208
+msgid ""
+"If your application is very complex and you create several kernels, it's "
+"better to store them in their own directories instead of messing with "
+"lots of files in the default ``src/`` directory:"
+msgstr ""
+

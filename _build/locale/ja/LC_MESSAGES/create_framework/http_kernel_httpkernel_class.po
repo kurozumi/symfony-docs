@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:2
+msgid "The HttpKernel Component: The HttpKernel Class"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:4
+msgid ""
+"If you were to use our framework right now, you would probably have to "
+"add support for custom error messages. We do have 404 and 500 error "
+"support but the responses are hardcoded in the framework itself. Making "
+"them customizable is straightforward though: dispatch a new event and "
+"listen to it. Doing it right means that the listener has to call a "
+"regular controller. But what if the error controller throws an exception?"
+" You will end up in an infinite loop. There should be an easier way, "
+"right?"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:12
+msgid ""
+"Enter the ``HttpKernel`` class. Instead of solving the same problem over "
+"and over again and instead of reinventing the wheel each time, the "
+"``HttpKernel`` class is a generic, extensible and flexible implementation"
+" of ``HttpKernelInterface``."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:17
+msgid ""
+"This class is very similar to the framework class we have written so far:"
+" it dispatches events at some strategic points during the handling of the"
+" request, it uses a controller resolver to choose the controller to "
+"dispatch the request to, and as an added bonus, it takes care of edge "
+"cases and provides great feedback when a problem arises."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:23
+msgid "Here is the new framework code::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:34
+msgid "And the new front controller::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:64
+msgid ""
+"``RouterListener`` is an implementation of the same logic we had in our "
+"framework: it matches the incoming request and populates the request "
+"attributes with route parameters."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:68
+msgid ""
+"Our code is now much more concise and surprisingly more robust and more "
+"powerful than ever. For instance, use the built-in ``ErrorListener`` to "
+"make your error management configurable::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:79
+msgid ""
+"``ErrorListener`` gives you a ``FlattenException`` instance instead of "
+"the thrown ``Exception`` or ``Error`` instance to ease exception "
+"manipulation and display. It can take any valid controller as an "
+"exception handler, so you can create an ErrorController class instead of "
+"using a Closure::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:89
+msgid "The error controller reads as follows::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:107
+msgid ""
+"*Voilà!* Clean and customizable error management without efforts. And if "
+"your ``ErrorController`` throws an exception, HttpKernel will handle it "
+"nicely."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:110
+msgid ""
+"In chapter two, we talked about the ``Response::prepare()`` method, which"
+" ensures that a Response is compliant with the HTTP specification. It is "
+"probably a good idea to always call it just before sending the Response "
+"to the client; that's what the ``ResponseListener`` does::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:117
+msgid ""
+"If you want out of the box support for streamed responses, subscribe to "
+"``StreamedResponseListener``::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:122
+msgid ""
+"And in your controller, return a ``StreamedResponse`` instance instead of"
+" a ``Response`` instance."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:127
+msgid ""
+"Read the :doc:`/reference/events` reference to learn more about the "
+"events dispatched by HttpKernel and how they allow you to change the flow"
+" of a request."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:131
+msgid ""
+"Now, let's create a listener, one that allows a controller to return a "
+"string instead of a full Response object::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:147
+msgid ""
+"To implement this feature, we are going to listen to the ``kernel.view`` "
+"event, which is triggered just after the controller has been called. Its "
+"goal is to convert the controller return value to a proper Response "
+"instance, but only if needed::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:176
+msgid ""
+"The code is simple because the ``kernel.view`` event is only triggered "
+"when the controller return value is not a Response and because setting "
+"the response on the event stops the event propagation (our listener "
+"cannot interfere with other view listeners)."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:181
+msgid "Don't forget to register it in the front controller::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:187
+msgid ""
+"If you forget to register the subscriber, HttpKernel will throw an "
+"exception with a nice message: ``The controller must return a response "
+"(Nope, this is not a leap year. given).``."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:191
+msgid ""
+"At this point, our whole framework code is as compact as possible and it "
+"is mainly composed of an assembly of existing libraries. Extending is a "
+"matter of registering event listeners/subscribers."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_httpkernel_class.rst:195
+msgid ""
+"Hopefully, you now have a better understanding of why the simple looking "
+"``HttpKernelInterface`` is so powerful. Its default implementation, "
+"``HttpKernel``, gives you access to a lot of cool features, ready to be "
+"used out of the box, with no efforts. And because HttpKernel is actually "
+"the code that powers the Symfony framework, you have the best of both "
+"worlds: a custom framework, tailored to your needs, but based on a rock-"
+"solid and well maintained low-level architecture that has been proven to "
+"work for many websites; a code that has been audited for security issues "
+"and that has proven to scale well."
+msgstr ""
+

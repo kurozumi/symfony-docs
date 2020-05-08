@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/profiling.rst:5
+msgid "How to Use the Profiler in a Functional Test"
+msgstr ""
+
+#: ../../../testing/profiling.rst:7
+msgid ""
+"It's highly recommended that a functional test only tests the Response. "
+"But if you write functional tests that monitor your production servers, "
+"you might want to write tests on the profiling data as it gives you a "
+"great way to check various things and enforce some metrics."
+msgstr ""
+
+#: ../../../testing/profiling.rst:15
+msgid "Enabling the Profiler in Tests"
+msgstr ""
+
+#: ../../../testing/profiling.rst:17
+msgid ""
+"Collecting data with :doc:`the Symfony Profiler </profiler>` can slow "
+"down your tests significantly. That's why Symfony disables it by default:"
+msgstr ""
+
+#: ../../../testing/profiling.rst:60
+msgid ""
+"Setting ``collect`` to ``true`` enables the profiler for all tests. "
+"However, if you need the profiler just in a few tests, you can keep it "
+"disabled globally and enable the profiler individually on each test by "
+"calling ``$client->enableProfiler()``."
+msgstr ""
+
+#: ../../../testing/profiling.rst:66
+msgid "Testing the Profiler Information"
+msgstr ""
+
+#: ../../../testing/profiling.rst:68
+msgid ""
+"The data collected by the Symfony Profiler can be used to check the "
+"number of database calls, the time spent in the framework, etc. All this "
+"information is provided by the collectors obtained through the "
+"``$client->getProfile()`` call::"
+msgstr ""
+
+#: ../../../testing/profiling.rst:106
+msgid ""
+"If a test fails because of profiling data (too many DB queries for "
+"instance), you might want to use the Web Profiler to analyze the request "
+"after the tests finish. It can be achieved by embedding the token in the "
+"error message::"
+msgstr ""
+
+#: ../../../testing/profiling.rst:121
+msgid ""
+"The profiler information is available even if you :doc:`insulate the "
+"client </testing/insulating_clients>` or if you use an HTTP layer for "
+"your tests."
+msgstr ""
+
+#: ../../../testing/profiling.rst:126
+msgid ""
+"Read the API for built-in :doc:`data collectors "
+"</profiler/data_collector>` to learn more about their interfaces."
+msgstr ""
+

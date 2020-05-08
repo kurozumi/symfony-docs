@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/parent_services.rst:5
+msgid "How to Manage Common Dependencies with Parent Services"
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:7
+msgid ""
+"As you add more functionality to your application, you may well start to "
+"have related classes that share some of the same dependencies. For "
+"example, you may have multiple repository classes which need the "
+"``doctrine.orm.entity_manager`` service and an optional ``logger`` "
+"service::"
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:37
+msgid "Your child service classes may look like this::"
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:61
+msgid ""
+"Just as you use PHP inheritance to avoid duplication in your PHP code, "
+"the service container allows you to extend parent services in order to "
+"avoid duplicated service definitions:"
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:145
+msgid ""
+"In this context, having a ``parent`` service implies that the arguments "
+"and method calls of the parent service should be used for the child "
+"services. Specifically, the ``EntityManager`` will be injected and "
+"``setLogger()`` will be called when "
+"``App\\Repository\\DoctrineUserRepository`` is instantiated."
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:150
+msgid ""
+"All attributes on the parent service are shared with the child **except**"
+" for ``shared``, ``abstract`` and ``tags``. These are *not* inherited "
+"from the parent."
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:155
+msgid ""
+"In the examples shown, the classes sharing the same configuration also "
+"extend from the same parent class in PHP. This isn't necessary at all. "
+"You can also extract common parts of similar service definitions into a "
+"parent service without also extending a parent class in PHP."
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:161
+msgid "Overriding Parent Dependencies"
+msgstr ""
+
+#: ../../../service_container/parent_services.rst:163
+msgid ""
+"There may be times where you want to override what service is injected "
+"for one child service only. You can override most settings by specifying "
+"it in the child class:"
+msgstr ""
+

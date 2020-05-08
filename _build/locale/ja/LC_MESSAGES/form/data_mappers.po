@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/data_mappers.rst:5
+msgid "When and How to Use Data Mappers"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:7
+msgid ""
+"When a form is compound, the initial data needs to be passed to children "
+"so each can display their own input value. On submission, children values"
+" need to be written back into the form."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:10
+msgid ""
+"Data mappers are responsible for reading and writing data from and into "
+"parent forms."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:12
+msgid ""
+"The main built-in data mapper uses the :doc:`PropertyAccess component "
+"</components/property_access>` and will fit most cases. However, you can "
+"create your own implementation that could, for example, pass submitted "
+"data to immutable objects via their constructor."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:17
+msgid "The Difference between Data Transformers and Mappers"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:19
+msgid ""
+"It is important to know the difference between :doc:`data transformers "
+"</form/data_transformers>` and mappers."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:22
+msgid ""
+"**Data transformers** change the representation of a value (e.g. from "
+"``\"2016-08-12\"`` to a ``DateTime`` instance);"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:24
+msgid ""
+"**Data mappers** map data (e.g. an object or array) to form fields, and "
+"vice versa."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:26
+msgid ""
+"Changing a ``YYYY-mm-dd`` string value to a ``DateTime`` instance is done"
+" by a data transformer. Populating inner fields (e.g year, hour, etc) of "
+"a compound date type using a ``DateTime`` instance is done by the data "
+"mapper."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:31
+msgid "Creating a Data Mapper"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:33
+msgid ""
+"Suppose that you want to save a set of colors to the database. For this, "
+"you're using an immutable color object::"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:68
+msgid ""
+"The form type should be allowed to edit a color. But because you've "
+"decided to make the ``Color`` object immutable, a new color object has to"
+" be created each time one of the values is changed."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:74
+msgid ""
+"If you're using a mutable object with constructor arguments, instead of "
+"using a data mapper, you should configure the ``empty_data`` option with "
+"a closure as described in :ref:`How to Configure empty Data for a Form "
+"Class <forms-empty-data-closure>`."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:79
+msgid ""
+"The red, green and blue form fields have to be mapped to the constructor "
+"arguments and the ``Color`` instance has to be mapped to red, green and "
+"blue form fields. Recognize a familiar pattern? It's time for a data "
+"mapper. The easiest way to create one is by implementing "
+":class:`Symfony\\\\Component\\\\Form\\\\DataMapperInterface` in your form"
+" type::"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:140
+msgid ""
+"The data passed to the mapper is *not yet validated*. This means that "
+"your objects should allow being created in an invalid state in order to "
+"produce user-friendly errors in the form."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:145
+msgid "Using the Mapper"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:147
+msgid ""
+"After creating the data mapper, you need to configure the form to use it."
+" This is achieved using the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormConfigBuilderInterface::setDataMapper`"
+" method::"
+msgstr ""
+
+#: ../../../form/data_mappers.rst:189
+msgid ""
+"Cool! When using the ``ColorType`` form, the custom data mapper methods "
+"will create a new ``Color`` object now."
+msgstr ""
+
+#: ../../../form/data_mappers.rst:194
+msgid ""
+"When a form has the ``inherit_data`` option set to ``true``, it does not "
+"use the data mapper and lets its parent map inner values."
+msgstr ""
+

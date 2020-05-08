@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/shared-entry.rst:2
+msgid "Creating a Shared Commons Entry"
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:6
+msgid ""
+"While this method still works, see :doc:`/frontend/encore/split-chunks` "
+"for the preferred solution to sharing assets between multiple entry "
+"files."
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:9
+msgid ""
+"Suppose you have multiple entry files and *each* requires ``jquery``. In "
+"this case, *each* output file will contain jQuery, slowing down your "
+"user's experience. To solve this, you can *extract* the common libraries "
+"to a \"shared\" entry file that's included on every page."
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:14
+msgid ""
+"Suppose you already have an entry called ``app`` that's included on every"
+" page. Update your code to use ``createSharedEntry()``:"
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:27
+msgid ""
+"Before making this change, if both ``app.js`` and ``store.js`` require "
+"``jquery``, then ``jquery`` would be packaged into *both* files, which is"
+" wasteful. By making ``app.js`` your \"shared\" entry, *any* code "
+"required by ``app.js`` (like jQuery) will *no longer* be packaged into "
+"any other files. The same is true for any CSS."
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:32
+msgid ""
+"Because ``app.js`` contains all the common code that other entry files "
+"depend on, its script (and link) tag must be on every page."
+msgstr ""
+
+#: ../../../frontend/encore/shared-entry.rst:37
+msgid ""
+"The ``app.js`` file works best when its contents are changed *rarely* and"
+" you're using :ref:`long-term caching <encore-long-term-caching>`. Why? "
+"If ``app.js`` contains application code that *frequently* changes, then "
+"(when using versioning), its filename hash will frequently change. This "
+"means your users won't enjoy the benefits of long-term caching for this "
+"file (which is generally quite large)."
+msgstr ""
+

@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../event_dispatcher.rst:6
+msgid "Events and Event Listeners"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:8
+msgid ""
+"During the execution of a Symfony application, lots of event "
+"notifications are triggered. Your application can listen to these "
+"notifications and respond to them by executing any piece of code."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:12
+msgid ""
+"Symfony triggers several :doc:`events related to the kernel "
+"</reference/events>` while processing the HTTP Request. Third-party "
+"bundles may also dispatch events, and you can even dispatch :doc:`custom "
+"events </components/event_dispatcher>` from your own code."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:17
+msgid ""
+"All the examples shown in this article use the same "
+"``KernelEvents::EXCEPTION`` event for consistency purposes. In your own "
+"application, you can use any event and even mix several of them in the "
+"same subscriber."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:22
+msgid "Creating an Event Listener"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:24
+msgid ""
+"The most common way to listen to an event is to register an **event "
+"listener**::"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:65
+msgid ""
+"Each event receives a slightly different type of ``$event`` object. For "
+"the ``kernel.exception`` event, it is "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ExceptionEvent`. "
+"Check out the :doc:`Symfony events reference </reference/events>` to see "
+"what type of object each event provides."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:70
+msgid ""
+"Now that the class is created, you need to register it as a service and "
+"notify Symfony that it is a \"listener\" on the ``kernel.exception`` "
+"event by using a special \"tag\":"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:109
+msgid ""
+"Symfony follows this logic to decide which method to execute inside the "
+"event listener class:"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:112
+msgid ""
+"If the ``kernel.event_listener`` tag defines the ``method`` attribute, "
+"that's the name of the method to be executed;"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:114
+msgid ""
+"If no ``method`` attribute is defined, try to execute the method whose "
+"name is ``on`` + \"camel-cased event name\" (e.g. ``onKernelException()``"
+" method for the ``kernel.exception`` event);"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:117
+msgid ""
+"If that method is not defined either, try to execute the ``__invoke()`` "
+"magic method (which makes event listeners invokable);"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:119
+msgid "If the ``_invoke()`` method is not defined either, throw an exception."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:123
+msgid ""
+"There is an optional attribute for the ``kernel.event_listener`` tag "
+"called ``priority``, which is a positive or negative integer that "
+"defaults to ``0`` and it controls the order in which listeners are "
+"executed (the higher the number, the earlier a listener is executed). "
+"This is useful when you need to guarantee that one listener is executed "
+"before another. The priorities of the internal Symfony listeners usually "
+"range from ``-255`` to ``255`` but your own listeners can use any "
+"positive or negative integer."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:134
+msgid "Creating an Event Subscriber"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:136
+msgid ""
+"Another way to listen to events is via an **event subscriber**, which is "
+"a class that defines one or more methods that listen to one or various "
+"events. The main difference with the event listeners is that subscribers "
+"always know which events they are listening to."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:141
+msgid ""
+"If different event subscriber methods listen to the same event, their "
+"order is defined by the ``priority`` parameter. This value is a positive "
+"or negative integer which defaults to ``0``. The higher the number, the "
+"earlier the method is called. **Priority is aggregated for all listeners "
+"and subscribers**, so your methods could be executed before or after the "
+"methods defined in other listeners and subscribers. To learn more about "
+"event subscribers, read :doc:`/components/event_dispatcher`."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:148
+msgid ""
+"The following example shows an event subscriber that defines several "
+"methods which listen to the same ``kernel.exception`` event::"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:188
+msgid ""
+"That's it! Your ``services.yaml`` file should already be setup to load "
+"services from the ``EventSubscriber`` directory. Symfony takes care of "
+"the rest."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:195
+msgid ""
+"If your methods are *not* called when an exception is thrown, double-"
+"check that you're :ref:`loading services <service-container-services-"
+"load-example>` from the ``EventSubscriber`` directory and have "
+":ref:`autoconfigure <services-autoconfigure>` enabled. You can also "
+"manually add the ``kernel.event_subscriber`` tag."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:201
+msgid "Request Events, Checking Types"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:203
+msgid ""
+"A single page can make several requests (one master request, and then "
+"multiple sub-requests - typically when :ref:`embedding controllers in "
+"templates <templates-embed-controllers>`). For the core Symfony events, "
+"you might need to check to see if the event is for a \"master\" request "
+"or a \"sub request\"::"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:226
+msgid ""
+"Certain things, like checking information on the *real* request, may not "
+"need to be done on the sub-request listeners."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:232
+msgid "Listeners or Subscribers"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:234
+msgid ""
+"Listeners and subscribers can be used in the same application "
+"indistinctly. The decision to use either of them is usually a matter of "
+"personal taste. However, there are some minor advantages for each of "
+"them:"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:238
+msgid ""
+"**Subscribers are easier to reuse** because the knowledge of the events "
+"is kept in the class rather than in the service definition. This is the "
+"reason why Symfony uses subscribers internally;"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:241
+msgid ""
+"**Listeners are more flexible** because bundles can enable or disable "
+"each of them conditionally depending on some configuration value."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:245
+msgid "Event Aliases"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:247
+msgid ""
+"When configuring event listeners and subscribers via dependency "
+"injection, Symfony's core events can also be referred to by the fully "
+"qualified class name (FQCN) of the corresponding event class::"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:272
+msgid ""
+"Internally, the event FQCN are treated as aliases for the original event "
+"names. Since the mapping already happens when compiling the service "
+"container, event listeners and subscribers using FQCN instead of event "
+"names will appear under the original event name when inspecting the event"
+" dispatcher."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:277
+msgid ""
+"This alias mapping can be extended for custom events by registering the "
+"compiler pass ``AddEventAliasesPass``::"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:296
+msgid ""
+"The compiler pass will always extend the existing list of aliases. "
+"Because of that, it is safe to register multiple instances of the pass "
+"with different configurations."
+msgstr ""
+
+#: ../../../event_dispatcher.rst:301
+msgid "Debugging Event Listeners"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:303
+msgid ""
+"You can find out what listeners are registered in the event dispatcher "
+"using the console. To show all events and their listeners, run:"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:310
+msgid ""
+"You can get registered listeners for a particular event by specifying its"
+" name:"
+msgstr ""
+
+#: ../../../event_dispatcher.rst:318
+msgid "Learn more"
+msgstr ""
+

@@ -1,0 +1,792 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security.rst:5
+msgid "Security"
+msgstr ""
+
+#: ../../../security.rst:7
+msgid "Screencast"
+msgstr ""
+
+#: ../../../security.rst:10
+msgid ""
+"Do you prefer video tutorials? Check out the `Symfony Security screencast"
+" series`_."
+msgstr ""
+
+#: ../../../security.rst:12
+msgid ""
+"Symfony's security system is incredibly powerful, but it can also be "
+"confusing to set up. Don't worry! In this article, you'll learn how to "
+"set up your app's security system step-by-step:"
+msgstr ""
+
+#: ../../../security.rst:16
+msgid ":ref:`Installing security support <security-installation>`;"
+msgstr ""
+
+#: ../../../security.rst:18
+msgid ":ref:`Create your User Class <create-user-class>`;"
+msgstr ""
+
+#: ../../../security.rst:20
+msgid ":ref:`Authentication & Firewalls <security-yaml-firewalls>`;"
+msgstr ""
+
+#: ../../../security.rst:22
+msgid ""
+":ref:`Denying access to your app (authorization) <security-"
+"authorization>`;"
+msgstr ""
+
+#: ../../../security.rst:24
+msgid ":ref:`Fetching the current User object <retrieving-the-user-object>`."
+msgstr ""
+
+#: ../../../security.rst:26
+msgid "A few other important topics are discussed after."
+msgstr ""
+
+#: ../../../security.rst:31
+msgid "1) Installation"
+msgstr ""
+
+#: ../../../security.rst:33
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the security feature before using it:"
+msgstr ""
+
+#: ../../../security.rst:45
+msgid "2a) Create your User Class"
+msgstr ""
+
+#: ../../../security.rst:47
+msgid ""
+"No matter *how* you will authenticate (e.g. login form or API tokens) or "
+"*where* your user data will be stored (database, single sign-on), the "
+"next step is always the same: create a \"User\" class. The easiest way is"
+" to use the `MakerBundle`_."
+msgstr ""
+
+#: ../../../security.rst:51
+msgid ""
+"Let's assume that you want to store your user data in the database with "
+"Doctrine:"
+msgstr ""
+
+#: ../../../security.rst:75
+msgid ""
+"That's it! The command asks several questions so that it can generate "
+"exactly what you need. The most important is the ``User.php`` file "
+"itself. The *only* rule about your ``User`` class is that it *must* "
+"implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\UserInterface`."
+" Feel free to add *any* other fields or logic you need. If your ``User`` "
+"class is an entity (like in this example), you can use the "
+":ref:`make:entity command <doctrine-add-more-fields>` to add more fields."
+" Also, make sure to make and run a migration for the new entity:"
+msgstr ""
+
+#: ../../../security.rst:91
+msgid "2b) The \"User Provider\""
+msgstr ""
+
+#: ../../../security.rst:93
+msgid ""
+"In addition to your ``User`` class, you also need a \"User provider\": a "
+"class that helps with a few things, like reloading the User data from the"
+" session and some optional features, like :doc:`remember me "
+"</security/remember_me>` and :doc:`impersonation "
+"</security/impersonating_user>`."
+msgstr ""
+
+#: ../../../security.rst:98
+msgid ""
+"Fortunately, the ``make:user`` command already configured one for you in "
+"your ``security.yaml`` file under the ``providers`` key."
+msgstr ""
+
+#: ../../../security.rst:101
+msgid ""
+"If your ``User`` class is an entity, you don't need to do anything else. "
+"But if your class is *not* an entity, then ``make:user`` will also have "
+"generated a ``UserProvider`` class that you need to finish. Learn more "
+"about user providers here: :doc:`User Providers "
+"</security/user_provider>`."
+msgstr ""
+
+#: ../../../security.rst:110
+msgid "2c) Encoding Passwords"
+msgstr ""
+
+#: ../../../security.rst:112
+msgid ""
+"Not all applications have \"users\" that need passwords. *If* your users "
+"have passwords, you can control how those passwords are encoded in "
+"``security.yaml``. The ``make:user`` command will pre-configure this for "
+"you:"
+msgstr ""
+
+#: ../../../security.rst:173
+msgid ""
+"Now that Symfony knows *how* you want to encode the passwords, you can "
+"use the ``UserPasswordEncoderInterface`` service to do this before saving"
+" your users to the database."
+msgstr ""
+
+#: ../../../security.rst:179
+msgid ""
+"For example, by using :ref:`DoctrineFixturesBundle <doctrine-fixtures>`, "
+"you can create dummy database users:"
+msgstr ""
+
+#: ../../../security.rst:189
+msgid "Use this service to encode the passwords:"
+msgstr ""
+
+#: ../../../security.rst:221
+msgid "You can manually encode a password by running:"
+msgstr ""
+
+#: ../../../security.rst:232
+msgid "3a) Authentication & Firewalls"
+msgstr ""
+
+#: ../../../security.rst:234
+msgid ""
+"The security system is configured in ``config/packages/security.yaml``. "
+"The *most* important section is ``firewalls``:"
+msgstr ""
+
+#: ../../../security.rst:288
+msgid ""
+"A \"firewall\" is your authentication system: the configuration below it "
+"defines *how* your users will be able to authenticate (e.g. login form, "
+"API token, etc)."
+msgstr ""
+
+#: ../../../security.rst:291
+msgid ""
+"Only one firewall is active on each request: Symfony uses the ``pattern``"
+" key to find the first match (you can also :doc:`match by host or other "
+"things </security/firewall_restriction>`). The ``dev`` firewall is really"
+" a fake firewall: it just makes sure that you don't accidentally block "
+"Symfony's dev tools - which live under URLs like ``/_profiler`` and "
+"``/_wdt``."
+msgstr ""
+
+#: ../../../security.rst:297
+msgid ""
+"All *real* URLs are handled by the ``main`` firewall (no ``pattern`` key "
+"means it matches *all* URLs). A firewall can have many modes of "
+"authentication, in other words many ways to ask the question \"Who are "
+"you?\". Often, the user is unknown (i.e. not logged in) when they first "
+"visit your website. The ``anonymous`` mode, if enabled, is used for these"
+" requests."
+msgstr ""
+
+#: ../../../security.rst:303
+msgid ""
+"In fact, if you go to the homepage right now, you *will* have access and "
+"you'll see that you're \"authenticated\" as ``anon.``. The firewall "
+"verified that it does not know your identity, and so, you are anonymous:"
+msgstr ""
+
+#: ../../../security.rst:310
+msgid ""
+"It means any request can have an anonymous token to access some resource,"
+" while some actions (i.e. some pages or buttons) can still require "
+"specific privileges. A user can then access a form login without being "
+"authenticated as a unique user (otherwise an infinite redirection loop "
+"would happen asking the user to authenticate while trying to doing so)."
+msgstr ""
+
+#: ../../../security.rst:316
+msgid ""
+"You'll learn later how to deny access to certain URLs, controllers, or "
+"part of templates."
+msgstr ""
+
+#: ../../../security.rst:321
+msgid ""
+"The ``lazy`` anonymous mode prevents the session from being started if "
+"there is no need for authorization (i.e. explicit check for a user "
+"privilege). This is important to keep requests cacheable (see "
+":doc:`/http_cache`)."
+msgstr ""
+
+#: ../../../security.rst:328
+msgid ""
+"If you do not see the toolbar, install the :doc:`profiler </profiler>` "
+"with:"
+msgstr ""
+
+#: ../../../security.rst:334
+msgid ""
+"Now that we understand our firewall, the next step is to create a way for"
+" your users to authenticate!"
+msgstr ""
+
+#: ../../../security.rst:340
+msgid "3b) Authenticating your Users"
+msgstr ""
+
+#: ../../../security.rst:342
+msgid ""
+"Authentication in Symfony can feel a bit \"magic\" at first. That's "
+"because, instead of building a route & controller to handle login, you'll"
+" activate an *authentication provider*: some code that runs automatically"
+" *before* your controller is called."
+msgstr ""
+
+#: ../../../security.rst:347
+msgid ""
+"Symfony has several :doc:`built-in authentication providers "
+"</security/auth_providers>`. If your use-case matches one of these "
+"*exactly*, great! But, in most cases - including a login form - *we "
+"recommend building a Guard Authenticator*: a class that allows you to "
+"control *every* part of the authentication process (see the next "
+"section)."
+msgstr ""
+
+#: ../../../security.rst:354
+msgid ""
+"If your application logs users in via a third-party service such as "
+"Google, Facebook or Twitter (social login), check out the "
+"`HWIOAuthBundle`_ community bundle."
+msgstr ""
+
+#: ../../../security.rst:359
+msgid "Guard Authenticators"
+msgstr ""
+
+#: ../../../security.rst:361
+msgid ""
+"A Guard authenticator is a class that gives you *complete* control over "
+"your authentication process. There are many different ways to build an "
+"authenticator; here are a few common use-cases:"
+msgstr ""
+
+#: ../../../security.rst:365
+msgid ":doc:`/security/form_login_setup`"
+msgstr ""
+
+#: ../../../security.rst:367
+msgid ""
+":doc:`/security/guard_authentication` – see this for the most detailed "
+"description of"
+msgstr ""
+
+#: ../../../security.rst:367
+msgid "authenticators and how they work"
+msgstr ""
+
+#: ../../../security.rst:373
+msgid "4) Denying Access, Roles and other Authorization"
+msgstr ""
+
+#: ../../../security.rst:375
+msgid ""
+"Users can now log in to your app using your login form. Great! Now, you "
+"need to learn how to deny access and work with the User object. This is "
+"called **authorization**, and its job is to decide if a user can access "
+"some resource (a URL, a model object, a method call, ...)."
+msgstr ""
+
+#: ../../../security.rst:380
+msgid "The process of authorization has two different sides:"
+msgstr ""
+
+#: ../../../security.rst:382
+msgid ""
+"The user receives a specific set of roles when logging in (e.g. "
+"``ROLE_ADMIN``)."
+msgstr ""
+
+#: ../../../security.rst:383
+msgid ""
+"You add code so that a resource (e.g. URL, controller) requires a "
+"specific \"attribute\" (most commonly a role like ``ROLE_ADMIN``) in "
+"order to be accessed."
+msgstr ""
+
+#: ../../../security.rst:388
+msgid "Roles"
+msgstr ""
+
+#: ../../../security.rst:390
+msgid ""
+"When a user logs in, Symfony calls the ``getRoles()`` method on your "
+"``User`` object to determine which roles this user has. In the ``User`` "
+"class that we generated earlier, the roles are an array that's stored in "
+"the database, and every user is *always* given at least one role: "
+"``ROLE_USER``::"
+msgstr ""
+
+#: ../../../security.rst:416
+msgid ""
+"This is a nice default, but you can do *whatever* you want to determine "
+"which roles a user should have. Here are a few guidelines:"
+msgstr ""
+
+#: ../../../security.rst:419
+msgid ""
+"Every role **must start with** ``ROLE_`` (otherwise, things won't work as"
+" expected)"
+msgstr ""
+
+#: ../../../security.rst:421
+msgid ""
+"Other than the above rule, a role is just a string and you can invent "
+"what you need (e.g. ``ROLE_PRODUCT_ADMIN``)."
+msgstr ""
+
+#: ../../../security.rst:424
+msgid ""
+"You'll use these roles next to grant access to specific sections of your "
+"site. You can also use a :ref:`role hierarchy <security-role-hierarchy>` "
+"where having some roles automatically give you other roles."
+msgstr ""
+
+#: ../../../security.rst:431
+msgid "Add Code to Deny Access"
+msgstr ""
+
+#: ../../../security.rst:433
+msgid "There are **two** ways to deny access to something:"
+msgstr ""
+
+#: ../../../security.rst:435
+msgid ""
+":ref:`access_control in security.yaml <security-authorization-access-"
+"control>` allows you to protect URL patterns (e.g. ``/admin/*``). "
+"Simpler, but less flexible;"
+msgstr ""
+
+#: ../../../security.rst:438
+msgid ":ref:`in your controller (or other code) <security-securing-controller>`."
+msgstr ""
+
+#: ../../../security.rst:443
+msgid "Securing URL patterns (access_control)"
+msgstr ""
+
+#: ../../../security.rst:445
+msgid ""
+"The most basic way to secure part of your app is to secure an entire URL "
+"pattern in ``security.yaml``. For example, to require ``ROLE_ADMIN`` for "
+"all URLs that start with ``/admin``, you can:"
+msgstr ""
+
+#: ../../../security.rst:532
+msgid ""
+"You can define as many URL patterns as you need - each is a regular "
+"expression. **BUT**, only **one** will be matched per request: Symfony "
+"starts at the top of the list and stops when it finds the first match:"
+msgstr ""
+
+#: ../../../security.rst:583
+msgid ""
+"Prepending the path with ``^`` means that only URLs *beginning* with the "
+"pattern are matched. For example, a path of ``/admin`` (without the "
+"``^``) would match ``/admin/foo`` but would also match URLs like "
+"``/foo/admin``."
+msgstr ""
+
+#: ../../../security.rst:587
+msgid ""
+"Each ``access_control`` can also match on IP address, hostname and HTTP "
+"methods. It can also be used to redirect a user to the ``https`` version "
+"of a URL pattern. See :doc:`/security/access_control`."
+msgstr ""
+
+#: ../../../security.rst:594
+msgid "Securing Controllers and other Code"
+msgstr ""
+
+#: ../../../security.rst:596
+msgid "You can deny access from inside a controller::"
+msgstr ""
+
+#: ../../../security.rst:609
+msgid ""
+"That's it! If access is not granted, a special "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AccessDeniedException`"
+" is thrown and no more code in your controller is executed. Then, one of "
+"two things will happen:"
+msgstr ""
+
+#: ../../../security.rst:614
+msgid ""
+"If the user isn't logged in yet, they will be asked to log in (e.g. "
+"redirected to the login page)."
+msgstr ""
+
+#: ../../../security.rst:617
+msgid ""
+"If the user *is* logged in, but does *not* have the ``ROLE_ADMIN`` role, "
+"they'll be shown the 403 access denied page (which you can "
+":ref:`customize <controller-error-pages-by-status-code>`)."
+msgstr ""
+
+#: ../../../security.rst:623
+msgid ""
+"Thanks to the SensioFrameworkExtraBundle, you can also secure your "
+"controller using annotations:"
+msgstr ""
+
+#: ../../../security.rst:651
+msgid "For more information, see the `FrameworkExtraBundle documentation`_."
+msgstr ""
+
+#: ../../../security.rst:656
+msgid "Access Control in Templates"
+msgstr ""
+
+#: ../../../security.rst:658
+msgid ""
+"If you want to check if the current user has a certain role, you can use "
+"the built-in ``is_granted()`` helper function in any Twig template:"
+msgstr ""
+
+#: ../../../security.rst:668
+msgid "Securing other Services"
+msgstr ""
+
+#: ../../../security.rst:670
+msgid "See :doc:`/security/securing_services`."
+msgstr ""
+
+#: ../../../security.rst:673
+msgid "Setting Individual User Permissions"
+msgstr ""
+
+#: ../../../security.rst:675
+msgid ""
+"Most applications require more specific access rules. For instance, a "
+"user should be able to only edit their *own* comments on a blog. Voters "
+"allow you to write *whatever* business logic you need to determine "
+"access. Using these voters is similar to the role-based access checks "
+"implemented in the previous chapters. Read :doc:`/security/voters` to "
+"learn how to implement your own voter."
+msgstr ""
+
+#: ../../../security.rst:683
+msgid "Checking to see if a User is Logged In (IS_AUTHENTICATED_FULLY)"
+msgstr ""
+
+#: ../../../security.rst:685
+msgid ""
+"If you *only* want to check if a user is logged in (you don't care about "
+"roles), you have two options. First, if you've given *every* user "
+"``ROLE_USER``, you can just check for that role. Otherwise, you can use a"
+" special \"attribute\" in place of a role::"
+msgstr ""
+
+#: ../../../security.rst:699
+msgid ""
+"You can use ``IS_AUTHENTICATED_FULLY`` anywhere roles are used: like "
+"``access_control`` or in Twig."
+msgstr ""
+
+#: ../../../security.rst:702
+msgid ""
+"``IS_AUTHENTICATED_FULLY`` isn't a role, but it kind of acts like one, "
+"and every user that has logged in will have this. Actually, there are "
+"some special attributes like this:"
+msgstr ""
+
+#: ../../../security.rst:706
+msgid ""
+"``IS_AUTHENTICATED_REMEMBERED``: *All* logged in users have this, even if"
+" they are logged in because of a \"remember me cookie\". Even if you "
+"don't use the :doc:`remember me functionality </security/remember_me>`, "
+"you can use this to check if the user is logged in."
+msgstr ""
+
+#: ../../../security.rst:711
+msgid ""
+"``IS_AUTHENTICATED_FULLY``: This is similar to "
+"``IS_AUTHENTICATED_REMEMBERED``, but stronger. Users who are logged in "
+"only because of a \"remember me cookie\" will have "
+"``IS_AUTHENTICATED_REMEMBERED`` but will not have "
+"``IS_AUTHENTICATED_FULLY``."
+msgstr ""
+
+#: ../../../security.rst:715
+msgid ""
+"``IS_AUTHENTICATED_ANONYMOUSLY``: *All* users (even anonymous ones) have "
+"this - this is useful when *whitelisting* URLs to guarantee access - some"
+" details are in :doc:`/security/access_control`."
+msgstr ""
+
+#: ../../../security.rst:719
+msgid "``IS_ANONYMOUS``: *Only* anonymous users are matched by this attribute."
+msgstr ""
+
+#: ../../../security.rst:721
+msgid ""
+"``IS_REMEMBERED``: *Only* users authenticated using the :doc:`remember me"
+" functionality </security/remember_me>`, (i.e. a remember-me cookie)."
+msgstr ""
+
+#: ../../../security.rst:725
+msgid ""
+"``IS_IMPERSONATOR``: When the current user is :doc:`impersonating "
+"</security/impersonating_user>` another user in this session, this "
+"attribute will match."
+msgstr ""
+
+#: ../../../security.rst:731
+msgid ""
+"The ``IS_ANONYMOUS``, ``IS_REMEMBERED`` and ``IS_IMPERSONATOR`` "
+"attributes were introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../security.rst:737
+msgid "5a) Fetching the User Object"
+msgstr ""
+
+#: ../../../security.rst:739
+msgid ""
+"After authentication, the ``User`` object of the current user can be "
+"accessed via the ``getUser()`` shortcut::"
+msgstr ""
+
+#: ../../../security.rst:758
+msgid "5b) Fetching the User from a Service"
+msgstr ""
+
+#: ../../../security.rst:760
+msgid ""
+"If you need to get the logged in user from a service, use the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Security` service::"
+msgstr ""
+
+#: ../../../security.rst:787
+msgid "Fetch the User in a Template"
+msgstr ""
+
+#: ../../../security.rst:789
+msgid ""
+"In a Twig Template the user object is available via the ``app.user`` "
+"variable thanks to the :ref:`Twig global app variable <twig-app-"
+"variable>`:"
+msgstr ""
+
+#: ../../../security.rst:801
+msgid "Logging Out"
+msgstr ""
+
+#: ../../../security.rst:803
+msgid ""
+"To enable logging out, activate the  ``logout`` config parameter under "
+"your firewall:"
+msgstr ""
+
+#: ../../../security.rst:858
+msgid "Next, you'll need to create a route for this URL (but not a controller):"
+msgstr ""
+
+#: ../../../security.rst:912
+msgid ""
+"And that's it! By sending a user to the ``app_logout`` route (i.e. to "
+"``/logout``) Symfony will un-authenticate the current user and redirect "
+"them."
+msgstr ""
+
+#: ../../../security.rst:916
+msgid "Customizing Logout"
+msgstr ""
+
+#: ../../../security.rst:920
+msgid ""
+"The ``LogoutEvent`` was introduced in Symfony 5.1. Prior to this version,"
+" you had to use a :ref:`logout success handler <reference-security-"
+"logout-success-handler>` to customize the logout."
+msgstr ""
+
+#: ../../../security.rst:925
+msgid ""
+"In some cases you need to execute extra logic upon logout (e.g. "
+"invalidate some tokens) or want to customize what happens after a logout."
+" During logout, a "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Event\\\\LogoutEvent`"
+" is dispatched. Register an :doc:`event listener or subscriber "
+"</event_dispatcher>` to execute custom logic. The following information "
+"is available in the event class:"
+msgstr ""
+
+#: ../../../security.rst:933
+msgid "``getToken()``"
+msgstr ""
+
+#: ../../../security.rst:933
+msgid "Returns the security token of the session that is about to be logged out."
+msgstr ""
+
+#: ../../../security.rst:935
+msgid "``getRequest()``"
+msgstr ""
+
+#: ../../../security.rst:936
+msgid "Returns the current request."
+msgstr ""
+
+#: ../../../security.rst:940
+msgid "``getResponse()``"
+msgstr ""
+
+#: ../../../security.rst:938
+msgid ""
+"Returns a response, if it is already set by a custom listener. Use "
+"``setResponse()`` to configure a custom logout response."
+msgstr ""
+
+#: ../../../security.rst:944
+msgid ""
+"Every Security firewall has its own event dispatcher "
+"(``security.event_dispatcher.FIREWALLNAME``). The logout event is "
+"dispatched on both the global and firewall dispatcher. You can register "
+"on the firewall dispatcher if you want your listener to only be executed "
+"for a specific firewall. For instance, if you have an ``api`` and "
+"``main`` firewall, use this configuration to register only on the logout "
+"event in the ``main`` firewall:"
+msgstr ""
+
+#: ../../../security.rst:1006
+msgid "Hierarchical Roles"
+msgstr ""
+
+#: ../../../security.rst:1008
+msgid ""
+"Instead of giving many roles to each user, you can define role "
+"inheritance rules by creating a role hierarchy:"
+msgstr ""
+
+#: ../../../security.rst:1058
+msgid ""
+"Users with the ``ROLE_ADMIN`` role will also have the ``ROLE_USER`` role."
+" And users with ``ROLE_SUPER_ADMIN``, will automatically have "
+"``ROLE_ADMIN``, ``ROLE_ALLOWED_TO_SWITCH`` and ``ROLE_USER`` (inherited "
+"from ``ROLE_ADMIN``)."
+msgstr ""
+
+#: ../../../security.rst:1062
+msgid ""
+"For role hierarchy to work, do not try to call ``$user->getRoles()`` "
+"manually. For example, in a controller extending from the :ref:`base "
+"controller <the-base-controller-class-services>`::"
+msgstr ""
+
+#: ../../../security.rst:1074
+msgid ""
+"The ``role_hierarchy`` values are static - you can't, for example, store "
+"the role hierarchy in a database. If you need that, create a custom "
+":doc:`security voter </security/voters>` that looks for the user roles in"
+" the database."
+msgstr ""
+
+#: ../../../security.rst:1080
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../../security.rst:1087
+msgid "**Can I have Multiple Firewalls?**"
+msgstr ""
+
+#: ../../../security.rst:1083
+msgid ""
+"Yes! But it's usually not necessary. Each firewall is like a separate "
+"security system. And so, unless you have *very* different authentication "
+"needs, one firewall usually works well. With :doc:`Guard authentication "
+"</security/guard_authentication>`, you can create various, diverse ways "
+"of allowing authentication (e.g. form login, API key authentication and "
+"LDAP) all under the same firewall."
+msgstr ""
+
+#: ../../../security.rst:1095
+msgid "**Can I Share Authentication Between Firewalls?**"
+msgstr ""
+
+#: ../../../security.rst:1090
+msgid ""
+"Yes, but only with some configuration. If you're using multiple firewalls"
+" and you authenticate against one firewall, you will *not* be "
+"authenticated against any other firewalls automatically. Different "
+"firewalls are like different security systems. To do this you have to "
+"explicitly specify the same :ref:`reference-security-firewall-context` "
+"for different firewalls. But usually for most applications, having one "
+"main firewall is enough."
+msgstr ""
+
+#: ../../../security.rst:1101
+msgid "**Security doesn't seem to work on my Error Pages**"
+msgstr ""
+
+#: ../../../security.rst:1098
+msgid ""
+"As routing is done *before* security, 404 error pages are not covered by "
+"any firewall. This means you can't check for security or even access the "
+"user object on these pages. See :doc:`/controller/error_pages` for more "
+"details."
+msgstr ""
+
+#: ../../../security.rst:1107
+msgid ""
+"**My Authentication Doesn't Seem to Work: No Errors, but I'm Never Logged"
+" In**"
+msgstr ""
+
+#: ../../../security.rst:1104
+msgid ""
+"Sometimes authentication may be successful, but after redirecting, you're"
+" logged out immediately due to a problem loading the ``User`` from the "
+"session. To see if this is an issue, check your log file "
+"(``var/log/dev.log``) for the log message:"
+msgstr ""
+
+#: ../../../security.rst:1113
+msgid "**Cannot refresh token because user has changed**"
+msgstr ""
+
+#: ../../../security.rst:1110
+msgid ""
+"If you see this, there are two possible causes. First, there may be a "
+"problem loading your User from the session. See "
+":ref:`user_session_refresh`. Second, if certain user information was "
+"changed in the database since the last page refresh, Symfony will "
+"purposely log out the user for security reasons."
+msgstr ""
+
+#: ../../../security.rst:1116
+msgid "Learn More"
+msgstr ""
+
+#: ../../../security.rst:1119
+msgid "Authentication (Identifying/Logging in the User)"
+msgstr ""
+
+#: ../../../security.rst:1141
+msgid "Authorization (Denying Access)"
+msgstr ""
+

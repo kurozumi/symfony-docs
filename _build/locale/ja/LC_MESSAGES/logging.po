@@ -1,0 +1,289 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging.rst:2
+msgid "Logging"
+msgstr ""
+
+#: ../../../logging.rst:4
+msgid ""
+"Symfony comes with a minimalist `PSR-3`_ logger: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Log\\\\Logger`. In "
+"conformance with `the twelve-factor app methodology`_, it sends messages "
+"starting from the ``WARNING`` level to `stderr`_."
+msgstr ""
+
+#: ../../../logging.rst:8
+msgid ""
+"The minimal log level can be changed by setting the ``SHELL_VERBOSITY`` "
+"environment variable:"
+msgstr ""
+
+#: ../../../logging.rst:11
+msgid "``SHELL_VERBOSITY`` value"
+msgstr ""
+
+#: ../../../logging.rst:11
+msgid "Minimum log level"
+msgstr ""
+
+#: ../../../logging.rst:13
+msgid "``-1``"
+msgstr ""
+
+#: ../../../logging.rst:13
+msgid "``ERROR``"
+msgstr ""
+
+#: ../../../logging.rst:14
+msgid "``1``"
+msgstr ""
+
+#: ../../../logging.rst:14
+msgid "``NOTICE``"
+msgstr ""
+
+#: ../../../logging.rst:15
+msgid "``2``"
+msgstr ""
+
+#: ../../../logging.rst:15
+msgid "``INFO``"
+msgstr ""
+
+#: ../../../logging.rst:16
+msgid "``3``"
+msgstr ""
+
+#: ../../../logging.rst:16
+msgid "``DEBUG``"
+msgstr ""
+
+#: ../../../logging.rst:19
+msgid ""
+"The minimum log level, the default output and the log format can also be "
+"changed by passing the appropriate arguments to the constructor of "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Log\\\\Logger`. To do so, "
+":ref:`override the \"logger\" service definition <service-psr4-loader>`."
+msgstr ""
+
+#: ../../../logging.rst:24
+msgid "Logging a Message"
+msgstr ""
+
+#: ../../../logging.rst:26
+msgid "To log a message, inject the default logger in your controller::"
+msgstr ""
+
+#: ../../../logging.rst:43
+msgid ""
+"The ``logger`` service has different methods for different logging "
+"levels/priorities. See `LoggerInterface`_ for a list of all of the "
+"methods on the logger."
+msgstr ""
+
+#: ../../../logging.rst:47
+msgid "Monolog"
+msgstr ""
+
+#: ../../../logging.rst:49
+msgid ""
+"Symfony integrates seamlessly with `Monolog`_, the most popular PHP "
+"logging library, to create and store log messages in a variety of "
+"different places and trigger various actions."
+msgstr ""
+
+#: ../../../logging.rst:53
+msgid ""
+"For instance, using Monolog you can configure the logger to do different "
+"things based on the *level* of a message (e.g. :doc:`send an email when "
+"an error occurs </logging/monolog_email>`)."
+msgstr ""
+
+#: ../../../logging.rst:56
+msgid "Run this command to install the Monolog based logger before using it:"
+msgstr ""
+
+#: ../../../logging.rst:62
+msgid "The following sections assume that Monolog is installed."
+msgstr ""
+
+#: ../../../logging.rst:65
+msgid "Where Logs are Stored"
+msgstr ""
+
+#: ../../../logging.rst:67
+msgid ""
+"By default, log entries are written to the ``var/log/dev.log`` file when "
+"you're in the ``dev`` environment. In the ``prod`` environment, logs are "
+"written to ``var/log/prod.log``, but *only* during a request where an "
+"error or high-priority log entry was made (i.e. ``error()`` , "
+"``critical()``, ``alert()`` or ``emergency()``)."
+msgstr ""
+
+#: ../../../logging.rst:72
+msgid ""
+"To control this, you'll configure different *handlers* that handle log "
+"entries, sometimes modify them, and ultimately store them."
+msgstr ""
+
+#: ../../../logging.rst:76
+msgid "Handlers: Writing Logs to different Locations"
+msgstr ""
+
+#: ../../../logging.rst:78
+msgid ""
+"The logger has a stack of *handlers*, and each can be used to write the "
+"log entries to different locations (e.g. files, database, Slack, etc)."
+msgstr ""
+
+#: ../../../logging.rst:83
+msgid ""
+"You can *also* configure logging \"channels\", which are like categories."
+" Each channel can have its *own* handlers, which means you can store "
+"different log messages in different places. See "
+":doc:`/logging/channels_handlers`."
+msgstr ""
+
+#: ../../../logging.rst:87
+msgid ""
+"Symfony pre-configures some basic handlers in the default "
+"``monolog.yaml`` config files. Check these out for some real-world "
+"examples."
+msgstr ""
+
+#: ../../../logging.rst:90
+msgid ""
+"This example uses *two* handlers: ``stream`` (to write to a file) and "
+"``syslog`` to write logs using the :phpfunction:`syslog` function:"
+msgstr ""
+
+#: ../../../logging.rst:159
+msgid ""
+"This defines a *stack* of handlers and each handler is called in the "
+"order that it's defined."
+msgstr ""
+
+#: ../../../logging.rst:163
+msgid "Handlers that Modify Log Entries"
+msgstr ""
+
+#: ../../../logging.rst:165
+msgid ""
+"Instead of writing log files somewhere, *some* handlers are used to "
+"filter or modify log entries before sending them to *other* handlers. One"
+" powerful, built-in handler called ``fingers_crossed`` is used in the "
+"``prod`` environment by default. It stores *all* log messages during a "
+"request but *only* passes them to a second handler if one of the messages"
+" reaches an ``action_level``. Take this example:"
+msgstr ""
+
+#: ../../../logging.rst:256
+msgid ""
+"Now, if even one log entry has an ``error`` level or higher, then *all* "
+"log entries for that request are saved to a file via the ``file_log`` "
+"handler. That means that your log file will contain *all* the details "
+"about the problematic request - making debugging much easier!"
+msgstr ""
+
+#: ../../../logging.rst:263
+msgid ""
+"The handler named \"file_log\" will not be included in the stack itself "
+"as it is used as a nested handler of the ``fingers_crossed`` handler."
+msgstr ""
+
+#: ../../../logging.rst:268
+msgid ""
+"If you want to override the ``monolog`` configuration via another config "
+"file, you will need to redefine the entire ``handlers`` stack. The "
+"configuration from the two files cannot be merged because the order "
+"matters and a merge does not allow to control the order."
+msgstr ""
+
+#: ../../../logging.rst:274
+msgid "All Built-in Handlers"
+msgstr ""
+
+#: ../../../logging.rst:276
+msgid ""
+"Monolog comes with *many* built-in handlers for emailing logs, sending "
+"them to Loggly, or notifying you in Slack. These are documented inside of"
+" MonologBundle itself. For a full list, see `Monolog Configuration`_."
+msgstr ""
+
+#: ../../../logging.rst:281
+msgid "How to Rotate your Log Files"
+msgstr ""
+
+#: ../../../logging.rst:283
+msgid ""
+"Over time, log files can grow to be *huge*, both while developing and on "
+"production. One best-practice solution is to use a tool like the "
+"`logrotate`_ Linux command to rotate log files before they become too "
+"large."
+msgstr ""
+
+#: ../../../logging.rst:287
+msgid ""
+"Another option is to have Monolog rotate the files for you by using the "
+"``rotating_file`` handler. This handler creates a new log file every day "
+"and can also remove old files automatically. To use it, set the ``type`` "
+"option of your handler to ``rotating_file``:"
+msgstr ""
+
+#: ../../../logging.rst:348
+msgid "Using a Logger inside a Service"
+msgstr ""
+
+#: ../../../logging.rst:350
+msgid ""
+"If your application uses :ref:`service autoconfiguration <services-"
+"autoconfigure>`, any service whose class implements "
+"``Psr\\Log\\LoggerAwareInterface`` will receive a call to its method "
+"``setLogger()`` with the default logger service passed as a service."
+msgstr ""
+
+#: ../../../logging.rst:355
+msgid ""
+"If you want to use in your own services a pre-configured logger which "
+"uses a specific channel (``app`` by default), you can either "
+":ref:`autowire monolog channels <monolog-autowire-channels>` or use the "
+"``monolog.logger`` tag  with the ``channel`` property as explained in the"
+" :ref:`Dependency Injection reference <dic_tags-monolog>`."
+msgstr ""
+
+#: ../../../logging.rst:361
+msgid "Adding extra Data to each Log (e.g. a unique request token)"
+msgstr ""
+
+#: ../../../logging.rst:363
+msgid ""
+"Monolog also supports *processors*: functions that can dynamically add "
+"extra information to your log entries."
+msgstr ""
+
+#: ../../../logging.rst:366
+msgid "See :doc:`/logging/processors` for details."
+msgstr ""
+
+#: ../../../logging.rst:369
+msgid "Learn more"
+msgstr ""
+

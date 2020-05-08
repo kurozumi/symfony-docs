@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/coloring.rst:2
+msgid "How to Color and Style the Console Output"
+msgstr ""
+
+#: ../../../console/coloring.rst:4
+msgid ""
+"By using colors in the command output, you can distinguish different "
+"types of output (e.g. important messages, titles, comments, etc.)."
+msgstr ""
+
+#: ../../../console/coloring.rst:9
+msgid ""
+"By default, the Windows command console doesn't support output coloring. "
+"The Console component disables output coloring for Windows systems, but "
+"if your commands invoke other scripts which emit color sequences, they "
+"will be wrongly displayed as raw escape characters. Install the `Cmder`_,"
+" `ConEmu`_, `ANSICON`_, `Mintty`_ (used by default in GitBash and Cygwin)"
+" or `Hyper`_ free applications to add coloring support to your Windows "
+"command console."
+msgstr ""
+
+#: ../../../console/coloring.rst:17
+msgid "Using Color Styles"
+msgstr ""
+
+#: ../../../console/coloring.rst:19
+msgid ""
+"Whenever you output text, you can surround the text with tags to color "
+"its output. For example::"
+msgstr ""
+
+#: ../../../console/coloring.rst:34
+msgid ""
+"The closing tag can be replaced by ``</>``, which revokes all formatting "
+"options established by the last opened tag."
+msgstr ""
+
+#: ../../../console/coloring.rst:37
+msgid ""
+"It is possible to define your own styles using the "
+":class:`Symfony\\\\Component\\\\Console\\\\Formatter\\\\OutputFormatterStyle`"
+" class::"
+msgstr ""
+
+#: ../../../console/coloring.rst:48
+msgid ""
+"Available foreground and background colors are: ``black``, ``red``, "
+"``green``, ``yellow``, ``blue``, ``magenta``, ``cyan`` and ``white``."
+msgstr ""
+
+#: ../../../console/coloring.rst:51
+msgid ""
+"And available options are: ``bold``, ``underscore``, ``blink``, "
+"``reverse`` (enables the \"reverse video\" mode where the background and "
+"foreground colors are swapped) and ``conceal`` (sets the foreground color"
+" to transparent, making the typed text invisible - although it can be "
+"selected and copied; this option is commonly used when asking the user to"
+" type sensitive information)."
+msgstr ""
+
+#: ../../../console/coloring.rst:57
+msgid "You can also set these colors and options directly inside the tag name::"
+msgstr ""
+
+#: ../../../console/coloring.rst:73
+msgid ""
+"If you need to render a tag literally, escape it with a backslash: "
+"``\\<info>`` or use the "
+":method:`Symfony\\\\Component\\\\Console\\\\Formatter\\\\OutputFormatter::escape`"
+" method to escape all the tags included in the given string."
+msgstr ""
+
+#: ../../../console/coloring.rst:78
+msgid "Displaying Clickable Links"
+msgstr ""
+
+#: ../../../console/coloring.rst:80
+msgid ""
+"Commands can use the special ``<href>`` tag to display links similar to "
+"the ``<a>`` elements of web pages::"
+msgstr ""
+
+#: ../../../console/coloring.rst:85
+msgid ""
+"If your terminal belongs to the `list of terminal emulators that support "
+"links`_ you can click on the *\"Symfony Homepage\"* text to open its URL "
+"in your default browser. Otherwise, you'll see *\"Symfony Homepage\"* as "
+"regular text and the URL will be lost."
+msgstr ""
+

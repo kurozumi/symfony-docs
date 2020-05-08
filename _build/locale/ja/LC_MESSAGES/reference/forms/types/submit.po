@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/submit.rst:5
+msgid "SubmitType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:7
+msgid "A submit button."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:10
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:10
+msgid "``button`` ``submit`` tag"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:12
+#: ../../../reference/forms/types/submit.rst:41
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:12
+msgid "`validate`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:14
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:14
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:15
+msgid "`attr_translation_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:16
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:17
+msgid "`label`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:18
+msgid "`label_format`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:19
+msgid "`label_translation_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:20
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:21
+msgid "`translation_domain`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:22
+msgid "`validation_groups`_"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:24
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:24
+msgid ":doc:`ButtonType</reference/forms/types/button>`"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:26
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:26
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\SubmitType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:31
+msgid ""
+"The Submit button has an additional method "
+":method:`Symfony\\\\Component\\\\Form\\\\ClickableInterface::isClicked` "
+"that lets you check whether this button was used to submit the form. This"
+" is especially useful when :doc:`a form has multiple submit buttons "
+"</form/multiple_buttons>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:44
+msgid "validate"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:46
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:48
+msgid ""
+"Set this option to ``false`` to disable the client-side validation of the"
+" form performed by the browser."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:52
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:55
+msgid "attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+#: ../../../reference/forms/types/submit.rst:57
+#: ../../../reference/forms/types/submit.rst:81
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:59
+msgid ""
+"If you want to add extra attributes to the HTML representation of the "
+"button, you can use ``attr`` option. It's an associative array with HTML "
+"attribute as a key. This can be useful when you need to set a custom "
+"class for the button::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:6
+msgid ""
+"If you don't want a user to be able to click a button, you can set the "
+"disabled option to true. It will not be possible to submit the form with "
+"this button, not even when bypassing the browser and sending a request "
+"manually, for example with cURL."
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:2
+msgid "``label``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field"
+" name"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:6
+msgid ""
+"Sets the label that will be displayed on the button. The label can also "
+"be directly set inside the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:2
+msgid "``label_format``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:4
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:6
+msgid ""
+"Configures the string used as the label of the field, in case the "
+"``label`` option was not set. This is useful when using :ref:`keyword "
+"translation messages <translation-real-vs-keyword-messages>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:10
+msgid ""
+"If you're using keyword translation messages as labels, you often end up "
+"having multiple keyword messages for the same label (e.g. "
+"``profile_address_street``, ``invoice_address_street``). This is because "
+"the label is built for each \"path\" to a field. To avoid duplicated "
+"keyword messages, you can configure the label format to a static value, "
+"like::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:25
+msgid ""
+"This option is inherited by the child types. With the code above, the "
+"label of the ``street`` field of both forms will use the "
+"``form.address.street`` keyword message."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:29
+msgid "Two variables are available in the label format:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+#, python-format
+msgid "``%id%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+msgid ""
+"A unique identifier for the field, consisting of the complete path to the"
+" field and the field name (e.g. ``profile_address_street``);"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "``%name%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "The field name (e.g. ``street``)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:37
+msgid ""
+"The default value (``null``) results in a :ref:`\"humanized\" version "
+"<reference-twig-humanize-filter>` of the field name."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:42
+msgid ""
+"The ``label_format`` option is evaluated in the form theme. Make sure to "
+"update your templates in case you :doc:`customized form theming "
+"</form/form_customization>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:2
+msgid "``translation_domain``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:4
+msgid "**type**: ``string`` **default**: ``messages``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:6
+msgid ""
+"This is the translation domain that will be used for any labels or "
+"options that are rendered for this button."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:79
+msgid "label_translation_parameters"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:83
+msgid ""
+"The content of the `label`_ option is translated before displaying it, so"
+" it can contain :ref:`translation placeholders <component-translation-"
+"placeholders>`. This option defines the values used to replace those "
+"placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:11
+#: ../../../reference/forms/types/submit.rst:87
+msgid "Given this translation message:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:19
+#: ../../../reference/forms/types/submit.rst:94
+msgid "You can specify the placeholder values as follows::"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:106
+msgid ""
+"The ``label_translation_parameters`` option of buttons is merged with the"
+" same option of its parents, so buttons can reuse and/or override any of "
+"the parent placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:2
+msgid "attr_translation_parameters"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:6
+msgid ""
+"The content of the ``title`` and ``placeholder`` values defined in the "
+"`attr`_ option is translated before displaying it, so it can contain "
+":ref:`translation placeholders <component-translation-placeholders>`. "
+"This option defines the values used to replace those placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:31
+msgid ""
+"The ``attr_translation_parameters`` option of children fields is merged "
+"with the same option of their parents, so children can reuse and/or "
+"override any of the parent placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:115
+msgid "validation_groups"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:117
+msgid "**type**: ``array`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:119
+msgid ""
+"When your form contains multiple submit buttons, you can change the "
+"validation group based on the button which was used to submit the form. "
+"Imagine a registration form wizard with buttons to go to the previous or "
+"the next step::"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:135
+msgid ""
+"The special ``false`` ensures that no validation is performed when the "
+"previous step button is clicked. When the second button is clicked, all "
+"constraints from the \"Registration\" are validated."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:141
+msgid "You can read more about this in :doc:`/form/data_based_validation`."
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:144
+msgid "Form Variables"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:147
+msgid "Variable"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:147
+msgid "Type"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:147
+msgid "Usage"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:149
+msgid "clicked"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:149
+msgid "``boolean``"
+msgstr ""
+
+#: ../../../reference/forms/types/submit.rst:149
+msgid "Whether the button is clicked or not."
+msgstr ""
+

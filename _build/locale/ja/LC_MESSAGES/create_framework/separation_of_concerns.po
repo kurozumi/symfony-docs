@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/separation_of_concerns.rst:2
+msgid "The Separation of Concerns"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:4
+msgid ""
+"One down-side of our framework right now is that we need to copy and "
+"paste the code in ``front.php`` each time we create a new website. 60 "
+"lines of code is not that much, but it would be nice if we could wrap "
+"this code into a proper class. It would bring us better *reusability* and"
+" easier testing to name just a few benefits."
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:10
+msgid ""
+"If you have a closer look at the code, ``front.php`` has one input, the "
+"Request and one output, the Response. Our framework class will follow "
+"this simple principle: the logic is about creating the Response "
+"associated with a Request."
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:15
+msgid ""
+"Let's create our very own namespace for our framework: ``Simplex``. Move "
+"the request handling logic into its own ``Simplex\\Framework`` class::"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:60
+msgid "And update ``example.com/web/front.php`` accordingly::"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:79
+msgid ""
+"To wrap up the refactoring, let's move everything but routes definition "
+"from ``example.com/src/app.php`` into yet another namespace: "
+"``Calendar``."
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:82
+msgid ""
+"For the classes defined under the ``Simplex`` and ``Calendar`` namespaces"
+" to be autoloaded, update the ``composer.json`` file:"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:96
+msgid "For the Composer autoloader to be updated, run ``composer dump-autoload``."
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:98
+msgid "Move the controller to ``Calendar\\Controller\\LeapYearController``::"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:120
+msgid "And move the ``is_leap_year()`` function to its own class too::"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:137
+msgid "Don't forget to update the ``example.com/src/app.php`` file accordingly::"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:144
+msgid "To sum up, here is the new file layout:"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:165
+msgid ""
+"That's it! Our application has now four different layers and each of them"
+" has a well-defined goal:"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:168
+msgid ""
+"``web/front.php``: The front controller; the only exposed PHP code that "
+"makes the interface with the client (it gets the Request and sends the "
+"Response) and provides the boiler-plate code to initialize the framework "
+"and our application;"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:173
+msgid ""
+"``src/Simplex``: The reusable framework code that abstracts the handling "
+"of incoming Requests (by the way, it makes your controllers/templates "
+"better testable -- more about that later on);"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:177
+msgid ""
+"``src/Calendar``: Our application specific code (the controllers and the "
+"model);"
+msgstr ""
+
+#: ../../../create_framework/separation_of_concerns.rst:180
+msgid "``src/app.php``: The application configuration/framework customization."
+msgstr ""
+

@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/impersonating_user.rst:5
+msgid "How to Impersonate a User"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:7
+msgid ""
+"Sometimes, it's useful to be able to switch from one user to another "
+"without having to log out and log in again (for instance when you are "
+"debugging something a user sees that you can't reproduce)."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:13
+msgid ""
+"User impersonation is not compatible with some authentication mechanisms "
+"(e.g. ``REMOTE_USER``) where the authentication information is expected "
+"to be sent on each request."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:17
+msgid ""
+"Impersonating the user can be done by activating the ``switch_user`` "
+"firewall listener:"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:69
+msgid ""
+"To switch to another user, add a query string with the ``_switch_user`` "
+"parameter and the username (or whatever field our user provider uses to "
+"load users) as the value to the current URL:"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:77
+msgid "To switch back to the original user, use the special ``_exit`` username:"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:83
+msgid ""
+"This feature is only available to users with a special role called "
+"``ROLE_ALLOWED_TO_SWITCH``. Using :ref:`role_hierarchy <security-role-"
+"hierarchy>` is a great way to give this role to the users that need it."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:88
+msgid "Knowing When Impersonation Is Active"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:90
+msgid ""
+"You can use the special attribute ``IS_IMPERSONATOR`` to check if the "
+"impersonation is active in this session. Use this special role, for "
+"instance, to show a link to exit impersonation in a template:"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:102
+msgid ""
+"The ``IS_IMPERSONATOR`` was introduced in Symfony 5.1. Use "
+"``ROLE_PREVIOUS_ADMIN`` prior to Symfony 5.1."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:106
+msgid "Finding the Original User"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:108
+msgid ""
+"In some cases, you may need to get the object that represents the "
+"impersonator user rather than the impersonated user. When a user is "
+"impersonated the token stored in the token storage will be a "
+"``SwitchUserToken`` instance. Use the following snippet to obtain the "
+"original token which gives you access to the impersonator user::"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:142
+msgid "Controlling the Query Parameter"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:144
+msgid ""
+"This feature needs to be available only to a restricted group of users. "
+"By default, access is restricted to users having the "
+"``ROLE_ALLOWED_TO_SWITCH`` role. The name of this role can be modified "
+"via the ``role`` setting. You can also adjust the query parameter name "
+"via the ``parameter`` setting:"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:201
+msgid "Limiting User Switching"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:203
+msgid ""
+"If you need more control over user switching, you can use a security "
+"voter. First, configure ``switch_user`` to check for some new, custom "
+"attribute. This can be anything, but *cannot* start with ``ROLE_`` (to "
+"enforce that only your voter will be called):"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:258
+msgid ""
+"Then, create a voter class that responds to this role and includes "
+"whatever custom logic you want::"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:312
+msgid ""
+"That's it! When switching users, your voter now has full control over "
+"whether or not this is allowed. If your voter isn't called, see :ref"
+":`declaring-the-voter-as-a-service`."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:316
+msgid "Events"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:318
+msgid ""
+"The firewall dispatches the ``security.switch_user`` event right after "
+"the impersonation is completed. The "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Event\\\\SwitchUserEvent`"
+" is passed to the listener, and you can use this to get the user that you"
+" are now impersonating."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:322
+msgid ""
+"The :doc:`/session/locale_sticky_session` article does not update the "
+"locale when you impersonate a user. If you *do* want to be sure to update"
+" the locale when you switch users, add an event subscriber on this "
+"event::"
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:357
+msgid ""
+"That's it! If you're using the :ref:`default services.yaml configuration "
+"<service-container-services-load-example>`, Symfony will automatically "
+"discover your service and call ``onSwitchUser`` whenever a switch user "
+"occurs."
+msgstr ""
+
+#: ../../../security/impersonating_user.rst:361
+msgid "For more details about event subscribers, see :doc:`/event_dispatcher`."
+msgstr ""
+

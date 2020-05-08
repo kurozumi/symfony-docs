@@ -1,0 +1,887 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/bc.rst:2
+msgid "Our Backward Compatibility Promise"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:4
+msgid ""
+"Ensuring smooth upgrades of your projects is our first priority. That's "
+"why we promise you backward compatibility (BC) for all minor Symfony "
+"releases. You probably recognize this strategy as `Semantic Versioning`_."
+" In short, Semantic Versioning means that only major releases (such as "
+"2.0, 3.0 etc.) are allowed to break backward compatibility. Minor "
+"releases (such as 2.5, 2.6 etc.) may introduce new features, but must do "
+"so without breaking the existing API of that release branch (2.x in the "
+"previous example)."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:14
+msgid ""
+"This promise was introduced with Symfony 2.3 and does not apply to "
+"previous versions of Symfony."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:17
+msgid ""
+"However, backward compatibility comes in many different flavors. In fact,"
+" almost every change that we make to the framework can potentially break "
+"an application. For example, if we add a new method to a class, this will"
+" break an application which extended this class and added the same "
+"method, but with a different method signature."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:23
+msgid ""
+"Also, not every BC break has the same impact on application code. While "
+"some BC breaks require you to make significant changes to your classes or"
+" your architecture, others are fixed by changing the name of a method."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:27
+msgid ""
+"That's why we created this page for you. The section \"Using Symfony "
+"Code\" will tell you how you can ensure that your application won't break"
+" completely when upgrading to a newer version of the same major release "
+"branch."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:31
+msgid ""
+"The second section, \"Working on Symfony Code\", is targeted at Symfony "
+"contributors. This section lists detailed rules that every contributor "
+"needs to follow to ensure smooth upgrades for our users."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:37
+msgid ""
+":doc:`Experimental Features </contributing/code/experimental>` and code "
+"marked with the ``@internal`` tags are excluded from our Backward "
+"Compatibility promise."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:41
+msgid ""
+"Also note that backward compatibility breaks are tolerated if they are "
+"required to fix a security issue."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:45
+msgid "Using Symfony Code"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:47
+msgid ""
+"If you are using Symfony in your projects, the following guidelines will "
+"help you to ensure smooth upgrades to all future minor releases of your "
+"Symfony version."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:52
+msgid "Using our Interfaces"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:54
+msgid ""
+"All interfaces shipped with Symfony can be used in type hints. You can "
+"also call any of the methods that they declare. We guarantee that we "
+"won't break code that sticks to these rules."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:60
+msgid ""
+"The exception to this rule are interfaces tagged with ``@internal``. Such"
+" interfaces should not be used or implemented."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:63
+msgid ""
+"If you implement an interface, we promise that we won't ever break your "
+"code."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:65
+msgid ""
+"The following table explains in detail which use cases are covered by our"
+" backward compatibility promise:"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:69 ../../../contributing/code/bc.rst:105
+#: ../../../contributing/code/bc.rst:160
+msgid "Use Case"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:69 ../../../contributing/code/bc.rst:105
+#: ../../../contributing/code/bc.rst:160
+msgid "Backward Compatibility"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:71 ../../../contributing/code/bc.rst:107
+#: ../../../contributing/code/bc.rst:162
+msgid "**If you...**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:71 ../../../contributing/code/bc.rst:77
+#: ../../../contributing/code/bc.rst:107 ../../../contributing/code/bc.rst:119
+#: ../../../contributing/code/bc.rst:162 ../../../contributing/code/bc.rst:166
+msgid "**Then we guarantee BC...**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:73
+msgid "Type hint against the interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:73 ../../../contributing/code/bc.rst:75
+#: ../../../contributing/code/bc.rst:79 ../../../contributing/code/bc.rst:81
+#: ../../../contributing/code/bc.rst:83 ../../../contributing/code/bc.rst:85
+#: ../../../contributing/code/bc.rst:109 ../../../contributing/code/bc.rst:111
+#: ../../../contributing/code/bc.rst:113 ../../../contributing/code/bc.rst:115
+#: ../../../contributing/code/bc.rst:117 ../../../contributing/code/bc.rst:121
+#: ../../../contributing/code/bc.rst:123 ../../../contributing/code/bc.rst:125
+#: ../../../contributing/code/bc.rst:127 ../../../contributing/code/bc.rst:129
+#: ../../../contributing/code/bc.rst:131 ../../../contributing/code/bc.rst:137
+#: ../../../contributing/code/bc.rst:139 ../../../contributing/code/bc.rst:164
+#: ../../../contributing/code/bc.rst:168 ../../../contributing/code/bc.rst:170
+#: ../../../contributing/code/bc.rst:172 ../../../contributing/code/bc.rst:174
+#: ../../../contributing/code/bc.rst:176 ../../../contributing/code/bc.rst:178
+#: ../../../contributing/code/bc.rst:204 ../../../contributing/code/bc.rst:220
+#: ../../../contributing/code/bc.rst:239 ../../../contributing/code/bc.rst:242
+#: ../../../contributing/code/bc.rst:245 ../../../contributing/code/bc.rst:247
+#: ../../../contributing/code/bc.rst:251 ../../../contributing/code/bc.rst:253
+#: ../../../contributing/code/bc.rst:254 ../../../contributing/code/bc.rst:255
+#: ../../../contributing/code/bc.rst:261 ../../../contributing/code/bc.rst:263
+#: ../../../contributing/code/bc.rst:265 ../../../contributing/code/bc.rst:267
+#: ../../../contributing/code/bc.rst:272 ../../../contributing/code/bc.rst:285
+#: ../../../contributing/code/bc.rst:291 ../../../contributing/code/bc.rst:304
+#: ../../../contributing/code/bc.rst:305 ../../../contributing/code/bc.rst:306
+#: ../../../contributing/code/bc.rst:307 ../../../contributing/code/bc.rst:308
+#: ../../../contributing/code/bc.rst:309 ../../../contributing/code/bc.rst:310
+#: ../../../contributing/code/bc.rst:311 ../../../contributing/code/bc.rst:312
+#: ../../../contributing/code/bc.rst:313 ../../../contributing/code/bc.rst:314
+#: ../../../contributing/code/bc.rst:315 ../../../contributing/code/bc.rst:316
+#: ../../../contributing/code/bc.rst:317 ../../../contributing/code/bc.rst:318
+#: ../../../contributing/code/bc.rst:323 ../../../contributing/code/bc.rst:339
+#: ../../../contributing/code/bc.rst:341 ../../../contributing/code/bc.rst:344
+#: ../../../contributing/code/bc.rst:346 ../../../contributing/code/bc.rst:350
+#: ../../../contributing/code/bc.rst:352 ../../../contributing/code/bc.rst:354
+#: ../../../contributing/code/bc.rst:355 ../../../contributing/code/bc.rst:359
+#: ../../../contributing/code/bc.rst:364 ../../../contributing/code/bc.rst:375
+#: ../../../contributing/code/bc.rst:381 ../../../contributing/code/bc.rst:392
+#: ../../../contributing/code/bc.rst:395 ../../../contributing/code/bc.rst:396
+msgid "Yes"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:75
+msgid "Call a method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:77
+msgid "**If you implement the interface and...**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:79
+msgid "Implement a method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:81
+msgid "Add an argument to an implemented method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:83 ../../../contributing/code/bc.rst:139
+msgid "Add a default value to an argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:85
+msgid "Add a return type to an implemented method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:89
+msgid "Using our Classes"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:91
+msgid ""
+"All classes provided by Symfony may be instantiated and accessed through "
+"their public methods and properties."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:96
+msgid ""
+"Classes, properties and methods that bear the tag ``@internal`` as well "
+"as the classes located in the various ``*\\Tests\\`` namespaces are an "
+"exception to this rule. They are meant for internal use only and should "
+"not be accessed by your own code."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:101 ../../../contributing/code/bc.rst:156
+msgid ""
+"To be on the safe side, check the following table to know which use cases"
+" are covered by our backward compatibility promise:"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:109
+msgid "Type hint against the class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:111
+msgid "Create a new instance"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:113
+msgid "Extend the class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:115
+msgid "Access a public property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:117
+msgid "Call a public method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:119
+msgid "**If you extend the class and...**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:121
+msgid "Access a protected property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:123
+msgid "Call a protected method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:125
+msgid "Override a public property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:127
+msgid "Override a protected property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:129
+msgid "Override a public method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:131
+msgid "Override a protected method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:133
+msgid "Add a new property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:133 ../../../contributing/code/bc.rst:135
+#: ../../../contributing/code/bc.rst:141 ../../../contributing/code/bc.rst:143
+#: ../../../contributing/code/bc.rst:196 ../../../contributing/code/bc.rst:197
+#: ../../../contributing/code/bc.rst:199 ../../../contributing/code/bc.rst:201
+#: ../../../contributing/code/bc.rst:202 ../../../contributing/code/bc.rst:203
+#: ../../../contributing/code/bc.rst:205 ../../../contributing/code/bc.rst:206
+#: ../../../contributing/code/bc.rst:208 ../../../contributing/code/bc.rst:209
+#: ../../../contributing/code/bc.rst:210 ../../../contributing/code/bc.rst:211
+#: ../../../contributing/code/bc.rst:212 ../../../contributing/code/bc.rst:213
+#: ../../../contributing/code/bc.rst:215 ../../../contributing/code/bc.rst:217
+#: ../../../contributing/code/bc.rst:218 ../../../contributing/code/bc.rst:221
+#: ../../../contributing/code/bc.rst:234 ../../../contributing/code/bc.rst:236
+#: ../../../contributing/code/bc.rst:237 ../../../contributing/code/bc.rst:240
+#: ../../../contributing/code/bc.rst:243 ../../../contributing/code/bc.rst:244
+#: ../../../contributing/code/bc.rst:258 ../../../contributing/code/bc.rst:259
+#: ../../../contributing/code/bc.rst:264 ../../../contributing/code/bc.rst:268
+#: ../../../contributing/code/bc.rst:269 ../../../contributing/code/bc.rst:270
+#: ../../../contributing/code/bc.rst:273 ../../../contributing/code/bc.rst:277
+#: ../../../contributing/code/bc.rst:321 ../../../contributing/code/bc.rst:324
+#: ../../../contributing/code/bc.rst:337 ../../../contributing/code/bc.rst:338
+#: ../../../contributing/code/bc.rst:342 ../../../contributing/code/bc.rst:343
+#: ../../../contributing/code/bc.rst:347 ../../../contributing/code/bc.rst:348
+#: ../../../contributing/code/bc.rst:349 ../../../contributing/code/bc.rst:353
+#: ../../../contributing/code/bc.rst:357 ../../../contributing/code/bc.rst:360
+#: ../../../contributing/code/bc.rst:361 ../../../contributing/code/bc.rst:362
+#: ../../../contributing/code/bc.rst:365 ../../../contributing/code/bc.rst:366
+#: ../../../contributing/code/bc.rst:367 ../../../contributing/code/bc.rst:368
+#: ../../../contributing/code/bc.rst:369 ../../../contributing/code/bc.rst:370
+#: ../../../contributing/code/bc.rst:371 ../../../contributing/code/bc.rst:372
+#: ../../../contributing/code/bc.rst:373 ../../../contributing/code/bc.rst:376
+#: ../../../contributing/code/bc.rst:377 ../../../contributing/code/bc.rst:378
+#: ../../../contributing/code/bc.rst:382 ../../../contributing/code/bc.rst:383
+#: ../../../contributing/code/bc.rst:384 ../../../contributing/code/bc.rst:385
+#: ../../../contributing/code/bc.rst:386 ../../../contributing/code/bc.rst:387
+#: ../../../contributing/code/bc.rst:388 ../../../contributing/code/bc.rst:389
+#: ../../../contributing/code/bc.rst:390 ../../../contributing/code/bc.rst:393
+#: ../../../contributing/code/bc.rst:394 ../../../contributing/code/bc.rst:397
+#: ../../../contributing/code/bc.rst:398 ../../../contributing/code/bc.rst:399
+#: ../../../contributing/code/bc.rst:400 ../../../contributing/code/bc.rst:401
+#: ../../../contributing/code/bc.rst:402 ../../../contributing/code/bc.rst:403
+#: ../../../contributing/code/bc.rst:404 ../../../contributing/code/bc.rst:405
+#: ../../../contributing/code/bc.rst:406 ../../../contributing/code/bc.rst:407
+#: ../../../contributing/code/bc.rst:409 ../../../contributing/code/bc.rst:410
+msgid "No"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:135
+msgid "Add a new method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:137
+msgid "Add an argument to an overridden method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:141
+msgid "Call a private method (via Reflection)"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:143
+msgid "Access a private property (via Reflection)"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:147
+msgid "Using our Traits"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:149
+msgid "All traits provided by Symfony may be used in your classes."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:153
+msgid ""
+"The exception to this rule are traits tagged with ``@internal``. Such "
+"traits should not be used."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:164
+msgid "Use a trait"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:166
+msgid "**If you use the trait and...**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:168
+msgid "Use it to implement an interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:170
+msgid "Use it to implement an abstract method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:172
+msgid "Use it to extend a parent class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:174
+msgid "Use it to define an abstract class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:176
+msgid "Use a public, protected or private property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:178
+msgid "Use a public, protected or private method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:182
+msgid "Working on Symfony Code"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:184
+msgid ""
+"Do you want to help us improve Symfony? That's great! However, please "
+"stick to the rules listed below in order to ensure smooth upgrades for "
+"our users."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:188
+msgid "Changing Interfaces"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:190
+msgid ""
+"This table tells you which changes you are allowed to do when working on "
+"Symfony's interfaces:"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:194 ../../../contributing/code/bc.rst:232
+#: ../../../contributing/code/bc.rst:335
+msgid "Type of Change"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:194 ../../../contributing/code/bc.rst:232
+#: ../../../contributing/code/bc.rst:335
+msgid "Change Allowed"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:196 ../../../contributing/code/bc.rst:234
+#: ../../../contributing/code/bc.rst:337
+msgid "Remove entirely"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:197 ../../../contributing/code/bc.rst:237
+#: ../../../contributing/code/bc.rst:338
+msgid "Change name or namespace"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:198
+msgid "Add parent interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:198
+msgid "Yes [2]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:199
+msgid "Remove parent interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:200
+msgid "**Methods**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:201
+msgid "Add method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:202
+msgid "Remove method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:203 ../../../contributing/code/bc.rst:269
+#: ../../../contributing/code/bc.rst:287 ../../../contributing/code/bc.rst:306
+#: ../../../contributing/code/bc.rst:361 ../../../contributing/code/bc.rst:377
+#: ../../../contributing/code/bc.rst:394
+msgid "Change name"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:204
+msgid "Move to parent interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:205 ../../../contributing/code/bc.rst:273
+#: ../../../contributing/code/bc.rst:292 ../../../contributing/code/bc.rst:308
+#: ../../../contributing/code/bc.rst:365 ../../../contributing/code/bc.rst:382
+#: ../../../contributing/code/bc.rst:397
+msgid "Add argument without a default value"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:206 ../../../contributing/code/bc.rst:274
+#: ../../../contributing/code/bc.rst:293 ../../../contributing/code/bc.rst:309
+#: ../../../contributing/code/bc.rst:366 ../../../contributing/code/bc.rst:383
+#: ../../../contributing/code/bc.rst:398
+msgid "Add argument with a default value"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:207 ../../../contributing/code/bc.rst:275
+#: ../../../contributing/code/bc.rst:294 ../../../contributing/code/bc.rst:310
+#: ../../../contributing/code/bc.rst:367 ../../../contributing/code/bc.rst:384
+#: ../../../contributing/code/bc.rst:399
+msgid "Remove argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:207 ../../../contributing/code/bc.rst:275
+#: ../../../contributing/code/bc.rst:294
+msgid "No [3]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:208 ../../../contributing/code/bc.rst:276
+#: ../../../contributing/code/bc.rst:295 ../../../contributing/code/bc.rst:311
+#: ../../../contributing/code/bc.rst:368 ../../../contributing/code/bc.rst:385
+#: ../../../contributing/code/bc.rst:400
+msgid "Add default value to an argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:209 ../../../contributing/code/bc.rst:277
+#: ../../../contributing/code/bc.rst:296 ../../../contributing/code/bc.rst:312
+#: ../../../contributing/code/bc.rst:369 ../../../contributing/code/bc.rst:386
+#: ../../../contributing/code/bc.rst:401
+msgid "Remove default value of an argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:210 ../../../contributing/code/bc.rst:278
+#: ../../../contributing/code/bc.rst:297 ../../../contributing/code/bc.rst:313
+#: ../../../contributing/code/bc.rst:370 ../../../contributing/code/bc.rst:387
+#: ../../../contributing/code/bc.rst:402
+msgid "Add type hint to an argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:211 ../../../contributing/code/bc.rst:279
+#: ../../../contributing/code/bc.rst:298 ../../../contributing/code/bc.rst:314
+#: ../../../contributing/code/bc.rst:371 ../../../contributing/code/bc.rst:388
+#: ../../../contributing/code/bc.rst:403
+msgid "Remove type hint of an argument"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:212 ../../../contributing/code/bc.rst:280
+#: ../../../contributing/code/bc.rst:299 ../../../contributing/code/bc.rst:315
+#: ../../../contributing/code/bc.rst:372 ../../../contributing/code/bc.rst:389
+#: ../../../contributing/code/bc.rst:404
+msgid "Change argument type"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:213 ../../../contributing/code/bc.rst:281
+#: ../../../contributing/code/bc.rst:300 ../../../contributing/code/bc.rst:316
+#: ../../../contributing/code/bc.rst:405
+msgid "Add return type"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:214 ../../../contributing/code/bc.rst:282
+#: ../../../contributing/code/bc.rst:301 ../../../contributing/code/bc.rst:317
+#: ../../../contributing/code/bc.rst:406
+msgid "Remove return type"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:214
+msgid "No [9]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:215 ../../../contributing/code/bc.rst:283
+#: ../../../contributing/code/bc.rst:302 ../../../contributing/code/bc.rst:318
+#: ../../../contributing/code/bc.rst:373 ../../../contributing/code/bc.rst:390
+#: ../../../contributing/code/bc.rst:407
+msgid "Change return type"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:216
+msgid "**Static Methods**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:217 ../../../contributing/code/bc.rst:320
+#: ../../../contributing/code/bc.rst:409
+msgid "Turn non static into static"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:218 ../../../contributing/code/bc.rst:321
+#: ../../../contributing/code/bc.rst:410
+msgid "Turn static into non static"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:219 ../../../contributing/code/bc.rst:322
+msgid "**Constants**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:220 ../../../contributing/code/bc.rst:323
+msgid "Add constant"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:221 ../../../contributing/code/bc.rst:324
+msgid "Remove constant"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:222 ../../../contributing/code/bc.rst:325
+msgid "Change value of a constant"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:222 ../../../contributing/code/bc.rst:325
+msgid "Yes [1]_ [5]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:226
+msgid "Changing Classes"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:228
+msgid ""
+"This table tells you which changes you are allowed to do when working on "
+"Symfony's classes:"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:235 ../../../contributing/code/bc.rst:271
+#: ../../../contributing/code/bc.rst:289 ../../../contributing/code/bc.rst:363
+#: ../../../contributing/code/bc.rst:379
+msgid "Make final"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:235 ../../../contributing/code/bc.rst:271
+#: ../../../contributing/code/bc.rst:289 ../../../contributing/code/bc.rst:363
+#: ../../../contributing/code/bc.rst:379
+msgid "No [6]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:236
+msgid "Make abstract"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:238
+msgid "Change parent class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:238
+msgid "Yes [4]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:239
+msgid "Add interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:240
+msgid "Remove interface"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:241 ../../../contributing/code/bc.rst:340
+msgid "**Public Properties**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:242 ../../../contributing/code/bc.rst:341
+msgid "Add public property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:243 ../../../contributing/code/bc.rst:342
+msgid "Remove public property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:244 ../../../contributing/code/bc.rst:249
+#: ../../../contributing/code/bc.rst:270 ../../../contributing/code/bc.rst:288
+#: ../../../contributing/code/bc.rst:343 ../../../contributing/code/bc.rst:348
+#: ../../../contributing/code/bc.rst:362 ../../../contributing/code/bc.rst:378
+msgid "Reduce visibility"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:245 ../../../contributing/code/bc.rst:251
+#: ../../../contributing/code/bc.rst:261 ../../../contributing/code/bc.rst:265
+#: ../../../contributing/code/bc.rst:272 ../../../contributing/code/bc.rst:291
+msgid "Move to parent class"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:246 ../../../contributing/code/bc.rst:345
+msgid "**Protected Properties**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:247 ../../../contributing/code/bc.rst:346
+msgid "Add protected property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:248 ../../../contributing/code/bc.rst:347
+msgid "Remove protected property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:248 ../../../contributing/code/bc.rst:249
+#: ../../../contributing/code/bc.rst:250 ../../../contributing/code/bc.rst:260
+#: ../../../contributing/code/bc.rst:286 ../../../contributing/code/bc.rst:287
+#: ../../../contributing/code/bc.rst:288 ../../../contributing/code/bc.rst:292
+#: ../../../contributing/code/bc.rst:296
+msgid "No [7]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:250 ../../../contributing/code/bc.rst:290
+#: ../../../contributing/code/bc.rst:349 ../../../contributing/code/bc.rst:380
+msgid "Make public"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:252 ../../../contributing/code/bc.rst:351
+msgid "**Private Properties**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:253 ../../../contributing/code/bc.rst:352
+msgid "Add private property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:254 ../../../contributing/code/bc.rst:307
+#: ../../../contributing/code/bc.rst:354 ../../../contributing/code/bc.rst:395
+msgid "Make public or protected"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:255 ../../../contributing/code/bc.rst:353
+msgid "Remove private property"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:256
+msgid "**Constructors**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:257
+msgid "Add constructor without mandatory arguments"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:257
+msgid "Yes [1]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:258
+msgid "Remove constructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:259
+msgid "Reduce visibility of a public constructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:260
+msgid "Reduce visibility of a protected constructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:262
+msgid "**Destructors**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:263
+msgid "Add destructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:264
+msgid "Remove destructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:266 ../../../contributing/code/bc.rst:358
+msgid "**Public Methods**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:267 ../../../contributing/code/bc.rst:359
+msgid "Add public method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:268 ../../../contributing/code/bc.rst:360
+msgid "Remove public method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:274 ../../../contributing/code/bc.rst:276
+#: ../../../contributing/code/bc.rst:278 ../../../contributing/code/bc.rst:279
+#: ../../../contributing/code/bc.rst:280 ../../../contributing/code/bc.rst:281
+#: ../../../contributing/code/bc.rst:283 ../../../contributing/code/bc.rst:290
+#: ../../../contributing/code/bc.rst:293 ../../../contributing/code/bc.rst:295
+#: ../../../contributing/code/bc.rst:297 ../../../contributing/code/bc.rst:298
+#: ../../../contributing/code/bc.rst:299 ../../../contributing/code/bc.rst:300
+#: ../../../contributing/code/bc.rst:302 ../../../contributing/code/bc.rst:320
+msgid "No [7]_ [8]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:282 ../../../contributing/code/bc.rst:301
+msgid "No [7]_ [8]_ [9]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:284 ../../../contributing/code/bc.rst:374
+msgid "**Protected Methods**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:285 ../../../contributing/code/bc.rst:375
+msgid "Add protected method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:286 ../../../contributing/code/bc.rst:376
+msgid "Remove protected method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:303 ../../../contributing/code/bc.rst:391
+msgid "**Private Methods**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:304 ../../../contributing/code/bc.rst:392
+msgid "Add private method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:305 ../../../contributing/code/bc.rst:393
+msgid "Remove private method"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:319 ../../../contributing/code/bc.rst:408
+msgid "**Static Methods and Properties**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:329
+msgid "Changing Traits"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:331
+msgid ""
+"This table tells you which changes you are allowed to do when working on "
+"Symfony's traits:"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:339
+msgid "Use another trait"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:344 ../../../contributing/code/bc.rst:350
+#: ../../../contributing/code/bc.rst:355
+msgid "Move to a used trait"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:356
+msgid "**Constructors and destructors**"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:357
+msgid "Have constructor or destructor"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:364 ../../../contributing/code/bc.rst:381
+#: ../../../contributing/code/bc.rst:396
+msgid "Move to used trait"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:380
+msgid "No [8]_"
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:413
+msgid ""
+"Should be avoided. When done, this change must be documented in the "
+"UPGRADE file."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:416
+msgid ""
+"The added parent interface must not introduce any new methods that don't "
+"exist in the interface already."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:419
+msgid ""
+"Only the last optional argument(s) of a method may be removed, as PHP "
+"does not care about additional arguments that you pass to a method."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:422
+msgid ""
+"When changing the parent class, the original parent class must remain an "
+"ancestor of the class."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:425
+msgid ""
+"The value of a constant may only be changed when the constants aren't "
+"used in configuration (e.g. Yaml and XML files), as these do not support "
+"constants and have to hardcode the value. For instance, event name "
+"constants can't change the value without introducing a BC break. "
+"Additionally, if a constant will likely be used in objects that are "
+"serialized, the value of a constant should not be changed."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:432
+msgid "Allowed using the ``@final`` annotation."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:434
+msgid ""
+"Allowed if the class is final. Classes that received the ``@final`` "
+"annotation after their first release are considered final in their next "
+"major version. Changing an argument type is only possible with a parent "
+"type. Changing a return type is only possible with a child type."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:440
+msgid ""
+"Allowed if the method is final. Methods that received the ``@final`` "
+"annotation after their first release are considered final in their next "
+"major version. Changing an argument type is only possible with a parent "
+"type. Changing a return type is only possible with a child type."
+msgstr ""
+
+#: ../../../contributing/code/bc.rst:446
+msgid "Allowed for the ``void`` return type."
+msgstr ""
+

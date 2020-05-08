@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/security.rst:5
+msgid "The Security Component"
+msgstr ""
+
+#: ../../../components/security.rst:7
+msgid ""
+"The Security component provides a complete security system for your web "
+"application. It ships with facilities for authenticating using HTTP basic"
+" authentication, interactive form login or X.509 certificate login, but "
+"also allows you to implement your own authentication strategies. "
+"Furthermore, the component provides ways to authorize authenticated users"
+" based on their roles."
+msgstr ""
+
+#: ../../../components/security.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/security.rst:17
+msgid ""
+"The Security component is divided into several smaller sub-components "
+"which can be used separately:"
+msgstr ""
+
+#: ../../../components/security.rst:22
+msgid "``symfony/security-core``"
+msgstr ""
+
+#: ../../../components/security.rst:21
+msgid ""
+"It provides all the common security features, from authentication to "
+"authorization and from encoding passwords to loading users."
+msgstr ""
+
+#: ../../../components/security.rst:26
+msgid "``symfony/security-http``"
+msgstr ""
+
+#: ../../../components/security.rst:25
+msgid ""
+"It integrates the core sub-component with the HTTP protocol to handle "
+"HTTP requests and responses."
+msgstr ""
+
+#: ../../../components/security.rst:29
+msgid "``symfony/security-csrf``"
+msgstr ""
+
+#: ../../../components/security.rst:29
+msgid "It provides protection against `CSRF attacks`_."
+msgstr ""
+
+#: ../../../components/security.rst:33
+msgid "``symfony/security-guard``"
+msgstr ""
+
+#: ../../../components/security.rst:32
+msgid ""
+"It brings many layers of authentication together, allowing the creation "
+"of complex authentication systems."
+msgstr ""
+
+#: ../../../components/security.rst:35
+msgid "You can install each of them separately in your project:"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/security.rst:48
+msgid ""
+"This article explains how to use the Security features as an independent "
+"component in any PHP application. Read the :doc:`/security` article to "
+"learn about how to use it in Symfony applications."
+msgstr ""
+
+#: ../../../components/security.rst:53
+msgid "Learn More"
+msgstr ""
+

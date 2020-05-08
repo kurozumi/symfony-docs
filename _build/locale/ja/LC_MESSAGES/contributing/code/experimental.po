@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/experimental.rst:2
+msgid "Experimental Features"
+msgstr ""
+
+#: ../../../contributing/code/experimental.rst:4
+msgid ""
+"All Symfony features benefit from our :doc:`Backward Compatibility "
+"Promise </contributing/code/bc>` to give developers the confidence to "
+"upgrade to new versions safely and more often."
+msgstr ""
+
+#: ../../../contributing/code/experimental.rst:8
+msgid ""
+"But sometimes, a new feature is controversial or you cannot find a "
+"convincing API. In such cases, we prefer to gather feedback from real-"
+"world usage, adapt the API, or remove it altogether. Doing so is not "
+"possible with a no BC-break approach."
+msgstr ""
+
+#: ../../../contributing/code/experimental.rst:13
+msgid ""
+"To avoid being bound to our backward compatibility promise, such features"
+" can be marked as **experimental** and their classes and methods must be "
+"marked with the ``@experimental`` tag."
+msgstr ""
+
+#: ../../../contributing/code/experimental.rst:17
+msgid ""
+"A feature can be marked as being experimental for only one minor version,"
+" and can never be introduced in an :ref:`LTS version <releases-lts>`. The"
+" core team can decide to extend the experimental period for another minor"
+" version on a case by case basis."
+msgstr ""
+
+#: ../../../contributing/code/experimental.rst:22
+msgid ""
+"To ease upgrading projects using experimental features, the changelog "
+"must explain backward incompatible changes and explain how to upgrade "
+"code."
+msgstr ""
+

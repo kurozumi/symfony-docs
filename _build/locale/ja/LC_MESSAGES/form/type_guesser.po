@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/type_guesser.rst:5
+msgid "Creating a custom Type Guesser"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:7
+msgid ""
+"The Form component can guess the type and some options of a form field by"
+" using type guessers. The component already includes a type guesser using"
+" the assertions of the Validation component, but you can also add your "
+"own custom type guessers."
+msgstr ""
+
+#: ../../../form/type_guesser.rst
+msgid "Form Type Guessers in the Bridges"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:14
+msgid "Symfony also provides some form type guessers in the bridges:"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:16
+msgid ""
+":class:`Symfony\\\\Bridge\\\\Doctrine\\\\Form\\\\DoctrineOrmTypeGuesser` "
+"provided by the Doctrine bridge."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:20
+msgid "Create a PHPDoc Type Guesser"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:22
+msgid ""
+"In this section, you are going to build a guesser that reads information "
+"about fields from the PHPDoc of the properties. At first, you need to "
+"create a class which implements "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeGuesserInterface`. This "
+"interface requires four methods:"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:27
+msgid ":method:`Symfony\\\\Component\\\\Form\\\\FormTypeGuesserInterface::guessType`"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:28
+msgid "Tries to guess the type of a field;"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:30
+msgid ":method:`Symfony\\\\Component\\\\Form\\\\FormTypeGuesserInterface::guessRequired`"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:30
+msgid ""
+"Tries to guess the value of the :ref:`required <reference-form-option-"
+"required>` option;"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:32
+msgid ":method:`Symfony\\\\Component\\\\Form\\\\FormTypeGuesserInterface::guessMaxLength`"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:33
+msgid "Tries to guess the value of the ``maxlength`` input attribute;"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:35
+msgid ":method:`Symfony\\\\Component\\\\Form\\\\FormTypeGuesserInterface::guessPattern`"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:35
+msgid "Tries to guess the value of the ``pattern`` input attribute."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:37
+msgid ""
+"Start by creating the class and these methods. Next, you'll learn how to "
+"fill each in::"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:64
+msgid "Guessing the Type"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:66
+msgid ""
+"When guessing a type, the method returns either an instance of "
+":class:`Symfony\\\\Component\\\\Form\\\\Guess\\\\TypeGuess` or nothing, "
+"to determine that the type guesser cannot guess the type."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:70
+msgid "The ``TypeGuess`` constructor requires three options:"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:72
+msgid "The type name (one of the :doc:`form types </reference/forms/types>`);"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:73
+msgid ""
+"Additional options (for instance, when the type is ``entity``, you also "
+"want to set the ``class`` option). If no types are guessed, this should "
+"be set to an empty array;"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:76
+msgid ""
+"The confidence that the guessed type is correct. This can be one of the "
+"constants of the :class:`Symfony\\\\Component\\\\Form\\\\Guess\\\\Guess` "
+"class: ``LOW_CONFIDENCE``, ``MEDIUM_CONFIDENCE``, ``HIGH_CONFIDENCE``, "
+"``VERY_HIGH_CONFIDENCE``. After all type guessers have been executed, the"
+" type with the highest confidence is used."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:82
+msgid ""
+"With this knowledge, you can implement the ``guessType()`` method of the "
+"``PHPDocTypeGuesser``::"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:146
+msgid ""
+"This type guesser can now guess the field type for a property if it has "
+"PHPDoc!"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:150
+msgid "Guessing Field Options"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:152
+msgid ""
+"The other three methods (``guessMaxLength()``, ``guessRequired()`` and "
+"``guessPattern()``) return a "
+":class:`Symfony\\\\Component\\\\Form\\\\Guess\\\\ValueGuess` instance "
+"with the value of the option. This constructor has 2 arguments:"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:156
+msgid "The value of the option;"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:157
+msgid ""
+"The confidence that the guessed value is correct (using the constants of "
+"the ``Guess`` class)."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:160
+msgid ""
+"``null`` is guessed when you believe the value of the option should not "
+"be set."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:165
+msgid ""
+"You should be very careful using the ``guessPattern()`` method. When the "
+"type is a float, you cannot use it to determine a min or max value of the"
+" float (e.g. you want a float to be greater than ``5``, ``4.512313`` is "
+"not valid but ``length(4.512314) > length(5)`` is, so the pattern will "
+"succeed). In this case, the value should be set to ``null`` with a "
+"``MEDIUM_CONFIDENCE``."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:172
+msgid "Registering a Type Guesser"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:174
+msgid ""
+"If you're using :ref:`autowire <services-autowire>` and "
+":ref:`autoconfigure <services-autoconfigure>`, you're done! Symfony "
+"already knows and is using your form type guesser."
+msgstr ""
+
+#: ../../../form/type_guesser.rst:178
+msgid ""
+"If you're **not** using autowire and autoconfigure, register your service"
+" manually and tag it with ``form.type_guesser``:"
+msgstr ""
+
+#: ../../../form/type_guesser.rst
+msgid "Registering a Type Guesser in the Component"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:219
+msgid ""
+"If you're using the Form component standalone in your PHP project, use "
+":method:`Symfony\\\\Component\\\\Form\\\\FormFactoryBuilder::addTypeGuesser`"
+" or "
+":method:`Symfony\\\\Component\\\\Form\\\\FormFactoryBuilder::addTypeGuessers`"
+" of the ``FormFactoryBuilder`` to register new type guessers::"
+msgstr ""
+
+#: ../../../form/type_guesser.rst:236
+msgid ""
+"Run the following command to verify that the form type guesser was "
+"successfully registered in the application:"
+msgstr ""
+

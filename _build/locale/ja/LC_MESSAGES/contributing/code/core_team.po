@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/core_team.rst:2
+msgid "Symfony Core Team"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:4
+msgid ""
+"The **Symfony Core** team is the group of developers that determine the "
+"direction and evolution of the Symfony project. Their votes rule if the "
+"features and patches proposed by the community are approved or rejected."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:8
+msgid ""
+"All the Symfony Core members are long-time contributors with solid "
+"technical expertise and they have demonstrated a strong commitment to "
+"drive the project forward."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:12
+msgid ""
+"This document states the rules that govern the Symfony core team. These "
+"rules are effective upon publication of this document and all Symfony "
+"Core members must adhere to said rules and protocol."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:17
+msgid "Core Organization"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:19
+msgid ""
+"Symfony Core members are divided into groups. Each member can only belong"
+" to one group at a time. The privileges granted to a group are "
+"automatically granted to all higher priority groups."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:23
+msgid "The Symfony Core groups, in descending order of priority, are as follows:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:25
+msgid "**Project Leader**"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:27
+msgid "Elects members in any other group;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:28
+msgid "Merges pull requests in all Symfony repositories."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:30
+msgid "**Mergers Team**"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:32
+msgid "Merge pull requests on the main Symfony repository."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:34
+msgid "In addition, there are other groups created to manage specific topics:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:36
+msgid "**Security Team**"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:38
+msgid ""
+"Manage the whole security process (triaging reported vulnerabilities, "
+"fixing the reported issues, coordinating the release of security fixes, "
+"etc.)"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:41
+msgid "**Recipes Team**"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:43
+msgid "Manage the recipes in the main and contrib recipe repositories."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:45
+msgid "**Documentation Team**"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:47
+msgid "Manage the whole `symfony-docs repository`_."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:50
+msgid "Active Core Members"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:52
+msgid "**Project Leader**:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:54
+msgid "**Fabien Potencier** (`fabpot`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:56
+msgid "**Mergers Team** (``@symfony/mergers`` on GitHub):"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:58
+msgid "**Nicolas Grekas** (`nicolas-grekas`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:59
+msgid "**Christophe Coevoet** (`stof`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:60
+#: ../../../contributing/code/core_team.rst:86
+msgid "**Christian Flothmann** (`xabbuh`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:61
+msgid "**Tobias Schultze** (`Tobion`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:62
+msgid "**Kévin Dunglas** (`dunglas`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:63
+msgid "**Jakub Zalas** (`jakzal`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:64
+msgid "**Javier Eguiluz** (`javiereguiluz`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:65
+msgid "**Grégoire Pineau** (`lyrixx`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:66
+#: ../../../contributing/code/core_team.rst:85
+msgid "**Ryan Weaver** (`weaverryan`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:67
+msgid "**Robin Chalas** (`chalasr`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:68
+msgid "**Maxime Steinhausser** (`ogizanagi`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:69
+msgid "**Samuel Rozé** (`sroze`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:70
+msgid "**Yonel Ceruto** (`yceruto`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:72
+msgid "**Security Team** (``@symfony/security`` on GitHub):"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:74
+#: ../../../contributing/code/core_team.rst:79
+#: ../../../contributing/code/core_team.rst:84
+msgid "**Fabien Potencier** (`fabpot`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:75
+msgid "**Michael Cullum** (`michaelcullum`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:77
+msgid "**Recipes Team**:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:80
+msgid "**Tobias Nyholm** (`Nyholm`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:82
+msgid "**Documentation Team** (``@symfony/team-symfony-docs`` on GitHub):"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:87
+msgid "**Wouter De Jong** (`wouterj`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:88
+msgid "**Jules Pietri** (`HeahDude`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:89
+msgid "**Javier Eguiluz** (`javiereguiluz`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:90
+msgid "**Oskar Stark** (`OskarStark`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:93
+msgid "Former Core Members"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:95
+msgid ""
+"They are no longer part of the core team, but we are very grateful for "
+"all their Symfony contributions:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:98
+msgid "**Bernhard Schussek** (`webmozart`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:99
+msgid "**Abdellatif AitBoudad** (`aitboudad`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:100
+msgid "**Romain Neutron** (`romainneutron`_);"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:101
+msgid "**Jordi Boggiano** (`Seldaek`_)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:104
+msgid "Core Membership Application"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:106
+msgid "At present, new Symfony Core membership applications are not accepted."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:109
+msgid "Core Membership Revocation"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:111
+msgid "A Symfony Core membership can be revoked for any of the following reasons:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:113
+msgid "Refusal to follow the rules and policies stated in this document;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:114
+msgid "Lack of activity for the past six months;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:115
+msgid "Willful negligence or intent to harm the Symfony project;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:116
+msgid "Upon decision of the **Project Leader**."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:118
+msgid ""
+"Should new Symfony Core memberships be accepted in the future, revoked "
+"members must wait at least 12 months before re-applying."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:122
+msgid "Code Development Rules"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:124
+msgid ""
+"Symfony project development is based on pull requests proposed by any "
+"member of the Symfony community. Pull request acceptance or rejection is "
+"decided based on the votes cast by the Symfony Core members."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:129
+msgid "Pull Request Voting Policy"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:131
+msgid "``-1`` votes must always be justified by technical and objective reasons;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:133
+msgid ""
+"``+1`` votes do not require justification, unless there is at least one "
+"``-1`` vote;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:136
+msgid ""
+"Core members can change their votes as many times as they desire during "
+"the course of a pull request discussion;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:139
+msgid "Core members are not allowed to vote on their own pull requests."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:142
+msgid "Pull Request Merging Policy"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:144
+msgid "A pull request **can be merged** if:"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:146
+msgid "It is a minor change [1]_;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:148
+msgid "Enough time was given for peer reviews;"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:150
+msgid ""
+"At least two **Merger Team** members voted ``+1`` (only one if the "
+"submitter is part of the Merger team) and no Core member voted ``-1`` "
+"(via GitHub reviews or as comments)."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:155
+msgid "Pull Request Merging Process"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:157
+msgid ""
+"All code must be committed to the repository through pull requests, "
+"except for minor changes [1]_ which can be committed directly to the "
+"repository."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:160
+msgid ""
+"**Mergers** must always use the command-line ``gh`` tool provided by the "
+"**Project Leader** to merge the pull requests."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:164
+msgid "Release Policy"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:166
+msgid ""
+"The **Project Leader** is also the release manager for every Symfony "
+"version."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:169
+msgid "Symfony Core Rules and Protocol Amendments"
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:171
+msgid ""
+"The rules described in this document may be amended at anytime at the "
+"discretion of the **Project Leader**."
+msgstr ""
+
+#: ../../../contributing/code/core_team.rst:174
+msgid ""
+"Minor changes comprise typos, DocBlock fixes, code standards violations, "
+"and minor CSS, JavaScript and HTML modifications."
+msgstr ""
+

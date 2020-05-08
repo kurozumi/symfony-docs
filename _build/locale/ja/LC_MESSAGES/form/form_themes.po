@@ -1,0 +1,543 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/form_themes.rst:6
+msgid "How to Work with Form Themes"
+msgstr ""
+
+#: ../../../form/form_themes.rst:8
+msgid ""
+"This article explains how to use in your app any of the form themes "
+"provided by Symfony and how to create your own custom form theme."
+msgstr ""
+
+#: ../../../form/form_themes.rst:14
+msgid "Symfony Built-In Form Themes"
+msgstr ""
+
+#: ../../../form/form_themes.rst:16
+msgid ""
+"Symfony comes with several **built-in form themes** that make your forms "
+"look great when using some of the most popular CSS frameworks. Each theme"
+" is defined in a single Twig template and they are enabled in the "
+":ref:`twig.form_themes <config-twig-form-themes>` option:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:21
+msgid ""
+"`form_div_layout.html.twig`_, wraps each form field inside a ``<div>`` "
+"element and it's the theme used by default in Symfony applications unless"
+" you configure it as explained later in this article."
+msgstr ""
+
+#: ../../../form/form_themes.rst:24
+msgid ""
+"`form_table_layout.html.twig`_, wraps the entire form inside a "
+"``<table>`` element and each form field inside a ``<tr>`` element."
+msgstr ""
+
+#: ../../../form/form_themes.rst:26
+msgid ""
+"`bootstrap_3_layout.html.twig`_, wraps each form field inside a ``<div>``"
+" element with the appropriate CSS classes to apply the styles used by the"
+" `Bootstrap 3 CSS framework`_."
+msgstr ""
+
+#: ../../../form/form_themes.rst:29
+msgid ""
+"`bootstrap_3_horizontal_layout.html.twig`_, it's similar to the previous "
+"theme, but the CSS classes applied are the ones used to display the forms"
+" horizontally (i.e. the label and the widget in the same row)."
+msgstr ""
+
+#: ../../../form/form_themes.rst:32
+msgid ""
+"`bootstrap_4_layout.html.twig`_, same as "
+"``bootstrap_3_layout.html.twig``, but updated for `Bootstrap 4 CSS "
+"framework`_ styles."
+msgstr ""
+
+#: ../../../form/form_themes.rst:34
+msgid ""
+"`bootstrap_4_horizontal_layout.html.twig`_, same as "
+"``bootstrap_3_horizontal_layout.html.twig`` but updated for Bootstrap 4 "
+"styles."
+msgstr ""
+
+#: ../../../form/form_themes.rst:36
+msgid ""
+"`foundation_5_layout.html.twig`_, wraps each form field inside a "
+"``<div>`` element with the appropriate CSS classes to apply the default "
+"styles of the version 5 of `Foundation CSS framework`_."
+msgstr ""
+
+#: ../../../form/form_themes.rst:39
+msgid ""
+"`foundation_6_layout.html.twig`_, wraps each form field inside a "
+"``<div>`` element with the appropriate CSS classes to apply the default "
+"styles of the version 6 of `Foundation CSS framework`_."
+msgstr ""
+
+#: ../../../form/form_themes.rst:42
+msgid ""
+"`bulma_0_layout.html.twig`_, wraps each form field inside a ``<div>`` "
+"element with the appropriate CSS classes to apply the styles used by the "
+"`Bulma CSS framework`_."
+msgstr ""
+
+#: ../../../form/form_themes.rst:48
+msgid ""
+"The ``foundation_6_layout.html.twig`` and ``bulma_0_layout.html.twig`` "
+"themes were introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../form/form_themes.rst:53
+msgid ""
+"Read the article about the :doc:`Bootstrap 4 Symfony form theme "
+"</form/bootstrap4>` to learn more about it."
+msgstr ""
+
+#: ../../../form/form_themes.rst:60
+msgid "Applying Themes to all Forms"
+msgstr ""
+
+#: ../../../form/form_themes.rst:62
+msgid ""
+"Symfony forms use by default the ``form_div_layout.html.twig`` theme. If "
+"you want to use another theme for all the forms of your app, configure it"
+" in the ``twig.form_themes`` option:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:102
+msgid ""
+"You can pass multiple themes to this option because sometimes form themes"
+" only redefine a few elements. This way, if some theme doesn't override "
+"some element, Symfony looks up in the other themes."
+msgstr ""
+
+#: ../../../form/form_themes.rst:106
+msgid ""
+"The order of the themes in the ``twig.form_themes`` option is important. "
+"Each theme overrides all the previous themes, so you must put the most "
+"important themes at the end of the list."
+msgstr ""
+
+#: ../../../form/form_themes.rst:111
+msgid "Applying Themes to Single Forms"
+msgstr ""
+
+#: ../../../form/form_themes.rst:113
+msgid ""
+"Although most of the times you'll apply form themes globally, you may "
+"need to apply a theme only to some specific form. You can do that with "
+"the :ref:`form_theme Twig tag <reference-twig-tag-form-theme>`:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:126
+msgid ""
+"The first argument of the ``form_theme`` tag (``form`` in this example) "
+"is the name of the variable that stores the form view object. The second "
+"argument is the path of the Twig template that defines the form theme."
+msgstr ""
+
+#: ../../../form/form_themes.rst:131
+msgid "Applying Multiple Themes to Single Forms"
+msgstr ""
+
+#: ../../../form/form_themes.rst:133
+msgid ""
+"A form can also be customized by applying several themes. To do this, "
+"pass the path of all the Twig templates as an array using the ``with`` "
+"keyword (their order is important, because each theme overrides all the "
+"previous ones):"
+msgstr ""
+
+#: ../../../form/form_themes.rst:148
+msgid "Applying Different Themes to Child Forms"
+msgstr ""
+
+#: ../../../form/form_themes.rst:150
+msgid "You can also apply a form theme to a specific child of your form:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:156
+msgid ""
+"This is useful when you want to have a custom theme for a nested form "
+"that's different than the one of your main form. Specify both your "
+"themes:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:167
+msgid "Disabling Global Themes for Single Forms"
+msgstr ""
+
+#: ../../../form/form_themes.rst:169
+msgid ""
+"Global form themes defined in the app are always applied to all forms, "
+"even those which use the ``form_theme`` tag to apply their own themes. "
+"You may want to disable this for example when creating an admin interface"
+" for a bundle which can be installed on different Symfony applications "
+"(and so you can't control what themes are enabled globally). To do that, "
+"add the ``only`` keyword after the list of form themes:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:184
+msgid ""
+"When using the ``only`` keyword, none of Symfony's built-in form themes "
+"(``form_div_layout.html.twig``, etc.) will be applied. In order to render"
+" your forms correctly, you need to either provide a fully-featured form "
+"theme yourself, or extend one of the built-in form themes with Twig's "
+"``use`` keyword instead of ``extends`` to re-use the original theme "
+"contents."
+msgstr ""
+
+#: ../../../form/form_themes.rst:200
+msgid "Creating your Own Form Theme"
+msgstr ""
+
+#: ../../../form/form_themes.rst:202
+msgid ""
+"Symfony uses Twig blocks to render each part of a form - field labels, "
+"errors, ``<input>`` text fields, ``<select>`` tags, etc. A *theme* is a "
+"Twig template with one or more of those blocks that you want to use when "
+"rendering a form."
+msgstr ""
+
+#: ../../../form/form_themes.rst:206
+msgid ""
+"Consider for example a form field that represents an integer property "
+"called ``age``. If you add this to the template:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:213
+msgid ""
+"The generated HTML content will be something like this (it will vary "
+"depending upon the form themes enabled in your app):"
+msgstr ""
+
+#: ../../../form/form_themes.rst:220
+msgid ""
+"Symfony uses a Twig block called ``integer_widget`` to render that field."
+" This is because the field type is ``integer`` and you're rendering its "
+"``widget`` (as opposed to its ``label`` or ``errors`` or ``help``). The "
+"first step to create a form theme is to know which Twig block to "
+"override, as explained in the following section."
+msgstr ""
+
+#: ../../../form/form_themes.rst:230
+msgid "Form Fragment Naming"
+msgstr ""
+
+#: ../../../form/form_themes.rst:232
+msgid "The naming of form fragments varies depending on your needs:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:234
+msgid ""
+"If you want to customize **all fields of the same type** (e.g. all "
+"``<textarea>``) use the ``field-type_field-part`` pattern (e.g. "
+"``textarea_widget``)."
+msgstr ""
+
+#: ../../../form/form_themes.rst:236
+msgid ""
+"If you want to customize **only one specific field** (e.g. the "
+"``<textarea>`` used for the ``description`` field of the form that edits "
+"products) use the ``_field-id_field-part`` pattern (e.g. "
+"``_product_description_widget``)."
+msgstr ""
+
+#: ../../../form/form_themes.rst:240
+msgid ""
+"In both cases, the ``field-part`` can be any of these valid form field "
+"parts:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:247
+msgid "Fragment Naming for All Fields of the Same Type"
+msgstr ""
+
+#: ../../../form/form_themes.rst:249
+msgid ""
+"These fragment names follow the ``type_part`` pattern, where the ``type``"
+" corresponds to the field *type* being rendered (e.g. ``textarea``, "
+"``checkbox``, ``date``, etc) and the ``part`` corresponds to *what* is "
+"being rendered (e.g. ``label``, ``widget``, etc.)"
+msgstr ""
+
+#: ../../../form/form_themes.rst:254
+msgid "A few examples of fragment names are:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:256
+msgid ""
+"``form_row`` - used by :ref:`form_row() <reference-forms-twig-row>` to "
+"render most fields;"
+msgstr ""
+
+#: ../../../form/form_themes.rst:258
+msgid ""
+"``textarea_widget`` - used by :ref:`form_widget() <reference-forms-twig-"
+"widget>` to render a ``textarea`` field type;"
+msgstr ""
+
+#: ../../../form/form_themes.rst:260
+msgid ""
+"``form_errors`` - used by :ref:`form_errors() <reference-forms-twig-"
+"errors>` to render errors for a field;"
+msgstr ""
+
+#: ../../../form/form_themes.rst:264
+msgid "Fragment Naming for Individual Fields"
+msgstr ""
+
+#: ../../../form/form_themes.rst:266
+msgid ""
+"These fragment names follow the ``_id_part`` pattern, where the ``id`` "
+"corresponds to the field ``id`` attribute (e.g. ``product_description``, "
+"``user_age``, etc) and the ``part`` corresponds to *what* is being "
+"rendered (e.g. ``label``, ``widget``, etc.)"
+msgstr ""
+
+#: ../../../form/form_themes.rst:271
+msgid ""
+"The ``id`` attribute contains both the form name and the field name (e.g."
+" ``product_price``). The form name can be set manually or generated "
+"automatically based on your form type name (e.g. ``ProductType`` equates "
+"to ``product``). If you're not sure what your form name is, look at the "
+"HTML code rendered for your form. You can also define this value "
+"explicitly with the ``block_name`` option::"
+msgstr ""
+
+#: ../../../form/form_themes.rst:289
+msgid ""
+"In this example, the fragment name will be "
+"``_product_custom_name_widget`` instead of the default "
+"``_product_name_widget``."
+msgstr ""
+
+#: ../../../form/form_themes.rst:295
+msgid "Custom Fragment Naming for Individual Fields"
+msgstr ""
+
+#: ../../../form/form_themes.rst:297
+msgid ""
+"The ``block_prefix`` option allows form fields to define their own custom"
+" fragment name. This is mostly useful to customize some instances of the "
+"same field without having to :doc:`create a custom form type "
+"</form/create_custom_field_type>`::"
+msgstr ""
+
+#: ../../../form/form_themes.rst:311
+msgid ""
+"Now you can use ``wrapped_text_row``, ``wrapped_text_widget``, etc. as "
+"the block names."
+msgstr ""
+
+#: ../../../form/form_themes.rst:317
+msgid "Fragment Naming for Collections"
+msgstr ""
+
+#: ../../../form/form_themes.rst:319
+msgid ""
+"When using a :doc:`collection of forms </form/form_collections>`, you "
+"have several ways of customizing the collection and each of its entries. "
+"First, use the following blocks to customize each part of all form "
+"collections:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:331
+msgid ""
+"You can also customize each entry of all collections with the following "
+"blocks:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:343
+msgid "The ``collection_entry_*`` blocks were introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../form/form_themes.rst:345
+msgid ""
+"Finally, you can customize specific form collections instead of all of "
+"them. For example, consider the following complex example where a "
+"``TaskManagerType`` has a collection of ``TaskListType`` which in turn "
+"has a collection of ``TaskType``::"
+msgstr ""
+
+#: ../../../form/form_themes.rst:382
+msgid ""
+"Then you get all the following customizable blocks (where ``*`` can be "
+"replaced by ``row``, ``widget``, ``label``, or ``help``):"
+msgstr ""
+
+#: ../../../form/form_themes.rst:408
+msgid "Template Fragment Inheritance"
+msgstr ""
+
+#: ../../../form/form_themes.rst:410
+msgid ""
+"Each field type has a *parent* type (e.g. the parent type of ``textarea``"
+" is ``text``, and the parent type of ``text`` is ``form``) and Symfony "
+"uses the fragment for the parent type if the base fragment doesn't exist."
+msgstr ""
+
+#: ../../../form/form_themes.rst:414
+msgid ""
+"When Symfony renders for example the errors for a textarea type, it looks"
+" first for a ``textarea_errors`` fragment before falling back to the "
+"``text_errors`` and ``form_errors`` fragments."
+msgstr ""
+
+#: ../../../form/form_themes.rst:420
+msgid ""
+"The \"parent\" type of each field type is available in the :doc:`form "
+"type reference </reference/forms/types>` for each field type."
+msgstr ""
+
+#: ../../../form/form_themes.rst:424
+msgid "Creating a Form Theme in the same Template as the Form"
+msgstr ""
+
+#: ../../../form/form_themes.rst:426
+msgid ""
+"This is recommended when doing customizations specific to a single form "
+"in your app, such as changing all ``<textarea>`` elements of a form or "
+"customizing a very special form field which will be handled with "
+"JavaScript."
+msgstr ""
+
+#: ../../../form/form_themes.rst:430
+#, python-format
+msgid ""
+"You only need to add the special ``{% form_theme form _self %}`` tag to "
+"the same template where the form is rendered. This causes Twig to look "
+"inside the template for any overridden form blocks:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:458
+msgid ""
+"The main disadvantage of this method is that it only works if your "
+"template extends another (``'base.html.twig'`` in the previous example). "
+"If your template does not, you must point ``form_theme`` to a separate "
+"template, as explained in the next section."
+msgstr ""
+
+#: ../../../form/form_themes.rst:463
+msgid ""
+"Another disadvantage is that the customized form blocks can't be reused "
+"when rendering other forms in other templates. If that's what you need, "
+"create a form theme in a separate template as explained in the next "
+"section."
+msgstr ""
+
+#: ../../../form/form_themes.rst:468
+msgid "Creating a Form Theme in a Separate Template"
+msgstr ""
+
+#: ../../../form/form_themes.rst:470
+msgid ""
+"This is recommended when creating form themes that are used in your "
+"entire app or even reused in different Symfony applications. You only "
+"need to create a Twig template somewhere and follow the :ref:`form "
+"fragment naming <form-fragment-naming>` rules to know which Twig blocks "
+"to define."
+msgstr ""
+
+#: ../../../form/form_themes.rst:475
+msgid ""
+"For example, if your form theme is simple and you only want to override "
+"the ``<input type=\"integer\">`` elements, create this template:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:487
+msgid ""
+"Now you need to tell Symfony to use this form theme instead of (or in "
+"addition to) the default theme. As explained in the previous sections of "
+"this article, if you want to apply the theme globally to all forms, "
+"define the ``twig.form_themes`` option:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:528
+msgid ""
+"If you only want to apply it to some specific forms, use the "
+"``form_theme`` tag:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:541
+msgid "Reusing Parts of a Built-In Form Theme"
+msgstr ""
+
+#: ../../../form/form_themes.rst:543
+msgid ""
+"Creating a complete form theme takes a lot of work because there are too "
+"many different form field types. Instead of defining all those Twig "
+"blocks, you can define only the blocks you are interested in and then "
+"configure multiple form themes in your app or template. This works "
+"because when rendering a block which is not overridden in your custom "
+"theme, Symfony falls back to the other themes."
+msgstr ""
+
+#: ../../../form/form_themes.rst:549
+msgid ""
+"Another solution is to make your form theme template extend from one of "
+"the built-in themes using the `Twig \"use\" tag`_ instead of the "
+"``extends`` tag so you can inherit all its blocks (if you are unsure, "
+"extend from the default ``form_div_layout.html.twig`` theme):"
+msgstr ""
+
+#: ../../../form/form_themes.rst:561
+msgid ""
+"Finally, you can also use the `Twig parent() function`_ to reuse the "
+"original content of the built-in theme. This is useful when you only want"
+" to make minor changes, such as wrapping the generated HTML with some "
+"element:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:576
+msgid ""
+"This technique also works when defining the form theme in the same "
+"template that renders the form. However, importing the blocks from the "
+"built-in themes is a bit more complicated:"
+msgstr ""
+
+#: ../../../form/form_themes.rst:597
+msgid "Customizing the Form Validation Errors"
+msgstr ""
+
+#: ../../../form/form_themes.rst:599
+msgid ""
+"If you define :doc:`validation rules </validation>` for your objects, "
+"you'll see some validation error messages when the submitted data is not "
+"valid. These messages are displayed with the :ref:`form_errors() "
+"<reference-forms-twig-errors>` function and can be customized with the "
+"``form_errors`` Twig block in any form theme, as explained in the "
+"previous sections."
+msgstr ""
+
+#: ../../../form/form_themes.rst:605
+msgid ""
+"An important thing to consider is that certain errors are associated to "
+"the entire form instead of a specific field. In order to differentiate "
+"between global and local errors, use one of the :ref:`variables available"
+" in forms <reference-form-twig-variables>` called ``compound``. If it is "
+"``true``, it means that what's being currently rendered is a collection "
+"of fields (e.g. a whole form), and not just an individual field:"
+msgstr ""
+

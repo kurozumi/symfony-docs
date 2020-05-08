@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/dependency_injection.rst:2
+msgid "The DependencyInjection Component"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:4
+msgid ""
+"In the previous chapter, we emptied the ``Simplex\\Framework`` class by "
+"extending the ``HttpKernel`` class from the eponymous component. Seeing "
+"this empty class, you might be tempted to move some code from the front "
+"controller to it::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:41
+msgid "The front controller code would become more concise::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:55
+msgid ""
+"Having a concise front controller allows you to have several front "
+"controllers for a single application. Why would it be useful? To allow "
+"having different configuration for the development environment and the "
+"production one for instance. In the development environment, you might "
+"want to have error reporting turned on and errors displayed in the "
+"browser to ease debugging::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:64
+msgid ""
+"... but you certainly won't want that same configuration on the "
+"production environment. Having two different front controllers gives you "
+"the opportunity to have a slightly different configuration for each of "
+"them."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:68
+msgid ""
+"So, moving code from the front controller to the framework class makes "
+"our framework more configurable, but at the same time, it introduces a "
+"lot of issues:"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:72
+msgid ""
+"We are not able to register custom listeners anymore as the dispatcher is"
+" not available outside the Framework class (a workaround could be the "
+"adding of a ``Framework::getEventDispatcher()`` method);"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:76
+msgid ""
+"We have lost the flexibility we had before; you cannot change the "
+"implementation of the ``UrlMatcher`` or of the ``ControllerResolver`` "
+"anymore;"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:80
+msgid ""
+"Related to the previous point, we cannot test our framework without much "
+"effort anymore as it's impossible to mock internal objects;"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:83
+msgid ""
+"We cannot change the charset passed to ``ResponseListener`` anymore (a "
+"workaround could be to pass it as a constructor argument)."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:86
+msgid ""
+"The previous code did not exhibit the same issues because we used "
+"dependency injection; all dependencies of our objects were injected into "
+"their constructors (for instance, the event dispatchers were injected "
+"into the framework so that we had total control of its creation and "
+"configuration)."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:91
+msgid ""
+"Does it mean that we have to make a choice between flexibility, "
+"customization, ease of testing and not to copy and paste the same code "
+"into each application front controller? As you might expect, there is a "
+"solution. We can solve all these issues and some more by using the "
+"Symfony dependency injection container:"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:101
+msgid ""
+"Create a new file to host the dependency injection container "
+"configuration::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:146
+msgid ""
+"The goal of this file is to configure your objects and their "
+"dependencies. Nothing is instantiated during this configuration step. "
+"This is purely a static description of the objects you need to manipulate"
+" and how to create them. Objects will be created on-demand when you "
+"access them from the container or when the container needs them to create"
+" other objects."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:152
+msgid ""
+"For instance, to create the router listener, we tell Symfony that its "
+"class name is "
+"``Symfony\\Component\\HttpKernel\\EventListener\\RouterListener`` and "
+"that its constructor takes a matcher object (``new "
+"Reference('matcher')``). As you can see, each object is referenced by a "
+"name, a string that uniquely identifies each object. The name allows us "
+"to get an object and to reference it in other object definitions."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:161
+msgid ""
+"By default, every time you get an object from the container, it returns "
+"the exact same instance. That's because a container manages your "
+"\"global\" objects."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:165
+msgid "The front controller is now only about wiring everything together::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:181
+msgid ""
+"As all the objects are now created in the dependency injection container,"
+" the framework code should be the previous simple version::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:195
+msgid ""
+"If you want a light alternative for your container, consider `Pimple`_, a"
+" simple dependency injection container in about 60 lines of PHP code."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:198
+msgid ""
+"Now, here is how you can register a custom listener in the front "
+"controller::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:208
+msgid ""
+"Beside describing your objects, the dependency injection container can "
+"also be configured via parameters. Let's create one that defines if we "
+"are in debug mode or not::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:216
+msgid ""
+"These parameters can be used when defining object definitions. Let's make"
+" the charset configurable::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:224
+msgid ""
+"After this change, you must set the charset before using the response "
+"listener object::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:229
+msgid ""
+"Instead of relying on the convention that the routes are defined by the "
+"``$routes`` variables, let's use a parameter again::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:237
+msgid "And the related change in the front controller::"
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:241
+msgid ""
+"We have barely scratched the surface of what you can do with the "
+"container: from class names as parameters, to overriding existing object "
+"definitions, from shared service support to dumping a container to a "
+"plain PHP class, and much more. The Symfony dependency injection "
+"container is really powerful and is able to manage any kind of PHP class."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:247
+msgid ""
+"Don't yell at me if you don't want to use a dependency injection "
+"container in your framework. If you don't like it, don't use it. It's "
+"your framework, not mine."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:251
+msgid ""
+"This is (already) the last chapter of this book on creating a framework "
+"on top of the Symfony components. I'm aware that many topics have not "
+"been covered in great details, but hopefully it gives you enough "
+"information to get started on your own and to better understand how the "
+"Symfony framework works internally."
+msgstr ""
+
+#: ../../../create_framework/dependency_injection.rst:257
+msgid "Have fun!"
+msgstr ""
+

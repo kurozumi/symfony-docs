@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/dependency_injection/compilation.rst:5
+msgid "Compiling the Container"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:7
+msgid ""
+"The service container can be compiled for various reasons. These reasons "
+"include checking for any potential issues such as circular references and"
+" making the container more efficient by resolving parameters and removing"
+" unused services. Also, certain features - like using :doc:`parent "
+"services </service_container/parent_services>` - require the container to"
+" be compiled."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:14
+msgid "It is compiled by running::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:18
+msgid ""
+"The compile method uses *Compiler Passes* for the compilation. The "
+"DependencyInjection component comes with several passes which are "
+"automatically registered for compilation. For example the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Compiler\\\\CheckDefinitionValidityPass`"
+" checks for various potential issues with the definitions that have been "
+"set in the container. After this and several other passes that check the "
+"container's validity, further compiler passes are used to optimize the "
+"configuration before it is cached. For example, private services and "
+"abstract services are removed and aliases are resolved."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:31
+msgid "Managing Configuration with Extensions"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:33
+msgid ""
+"As well as loading configuration directly into the container as shown in "
+":doc:`/components/dependency_injection`, you can manage it by registering"
+" extensions with the container. The first step in the compilation process"
+" is to load configuration from any extension classes registered with the "
+"container. Unlike the configuration loaded directly, they are only "
+"processed when the container is compiled. If your application is modular "
+"then extensions allow each module to register and manage their own "
+"service configuration."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:41
+msgid ""
+"The extensions must implement "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Extension\\\\ExtensionInterface`"
+" and can be registered with the container with::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:47
+msgid ""
+"The main work of the extension is done in the ``load()`` method. In the "
+"``load()`` method you can load configuration from one or more "
+"configuration files as well as manipulate the container definitions using"
+" the methods shown in :doc:`/service_container/definitions`."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:52
+msgid ""
+"The ``load()`` method is passed a fresh container to set up, which is "
+"then merged afterwards into the container it is registered with. This "
+"allows you to have several extensions managing container definitions "
+"independently. The extensions do not add to the containers configuration "
+"when they are added but are processed when the container's ``compile()`` "
+"method is called."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:58
+msgid ""
+"A very simple extension may just load configuration files into the "
+"container::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:79
+msgid ""
+"This does not gain very much compared to loading the file directly into "
+"the overall container being built. It just allows the files to be split "
+"up among the modules/bundles. Being able to affect the configuration of a"
+" module from configuration files outside of the module/bundle is needed "
+"to make a complex application configurable. This can be done by "
+"specifying sections of config files loaded directly into the container as"
+" being for a particular extension. These sections on the config will not "
+"be processed directly by the container but by the relevant Extension."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:88
+msgid ""
+"The Extension must specify a ``getAlias()`` method to implement the "
+"interface::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:102
+msgid ""
+"For YAML configuration files specifying the alias for the extension as a "
+"key will mean that those values are passed to the Extension's ``load()`` "
+"method:"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:112
+msgid ""
+"If this file is loaded into the configuration then the values in it are "
+"only processed when the container is compiled at which point the "
+"Extensions are loaded::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:131
+msgid ""
+"When loading a config file that uses an extension alias as a key, the "
+"extension must already have been registered with the container builder or"
+" an exception will be thrown."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:135
+msgid ""
+"The values from those sections of the config files are passed into the "
+"first argument of the ``load()`` method of the extension::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:144
+msgid ""
+"The ``$configs`` argument is an array containing each different config "
+"file that was loaded into the container. You are only loading a single "
+"config file in the above example but it will still be within an array. "
+"The array will look like this::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:156
+msgid ""
+"Whilst you can manually manage merging the different files, it is much "
+"better to use :doc:`the Config component </components/config>` to merge "
+"and validate the config values. Using the configuration processing you "
+"could access the config value this way::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:176
+msgid ""
+"There are a further two methods you must implement. One to return the XML"
+" namespace so that the relevant parts of an XML config file are passed to"
+" the extension. The other to specify the base path to XSD files to "
+"validate the XML configuration::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:193
+msgid ""
+"XSD validation is optional, returning ``false`` from the "
+"``getXsdValidationBasePath()`` method will disable it."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:196
+msgid "The XML version of the config would then look like this:"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:214
+msgid ""
+"In the Symfony full-stack Framework there is a base Extension class which"
+" implements these methods as well as a shortcut method for processing the"
+" configuration. See :doc:`/bundles/extension` for more details."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:218
+msgid ""
+"The processed config value can now be added as container parameters as if"
+" it were listed in a ``parameters`` section of the config file but with "
+"the additional benefit of merging multiple files and validation of the "
+"configuration::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:233
+msgid ""
+"More complex configuration requirements can be catered for in the "
+"Extension classes. For example, you may choose to load a main service "
+"configuration file but also load a secondary one only if a certain "
+"parameter is set::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:256
+msgid ""
+"Just registering an extension with the container is not enough to get it "
+"included in the processed extensions when the container is compiled. "
+"Loading config which uses the extension's alias as a key as in the above "
+"examples will ensure it is loaded. The container builder can also be told"
+" to load it with its "
+":method:`Symfony\\\\Component\\\\DependencyInjection\\\\ContainerBuilder::loadFromExtension`"
+" method::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:274
+msgid ""
+"If you need to manipulate the configuration loaded by an extension then "
+"you cannot do it from another extension as it uses a fresh container. You"
+" should instead use a compiler pass which works with the full container "
+"after the extensions have been processed."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:282
+msgid "Prepending Configuration Passed to the Extension"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:284
+msgid ""
+"An Extension can prepend the configuration of any Bundle before the "
+"``load()`` method is called by implementing "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Extension\\\\PrependExtensionInterface`::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:305
+msgid ""
+"For more details, see :doc:`/bundles/prepend_extension`, which is "
+"specific to the Symfony Framework, but contains more details about this "
+"feature."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:313
+msgid "Execute Code During Compilation"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:315
+msgid ""
+"You can also execute custom code during compilation by writing your own "
+"compiler pass. By implementing "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Compiler\\\\CompilerPassInterface`"
+" in your extension, the added ``process()`` method will be called during "
+"compilation::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:334
+msgid ""
+"As ``process()`` is called *after* all extensions are loaded, it allows "
+"you to edit service definitions of other extensions as well as retrieving"
+" information about service definitions."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:338
+msgid ""
+"The container's parameters and definitions can be manipulated using the "
+"methods described in :doc:`/service_container/definitions`."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:343
+msgid ""
+"Please note that the ``process()`` method in the extension class is "
+"called during the ``PassConfig::TYPE_BEFORE_OPTIMIZATION`` step. You can "
+"read :ref:`the next section <components-di-separate-compiler-passes>` if "
+"you need to edit the container during another step."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:350
+msgid ""
+"As a rule, only work with services definition in a compiler pass and do "
+"not create service instances. In practice, this means using the methods "
+"``has()``, ``findDefinition()``, ``getDefinition()``, "
+"``setDefinition()``, etc. instead of ``get()``, ``set()``, etc."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:357
+msgid ""
+"Make sure your compiler pass does not require services to exist. Abort "
+"the method call if some required service is not available."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:360
+msgid ""
+"A common use-case of compiler passes is to search for all service "
+"definitions that have a certain tag in order to process dynamically plug "
+"each into some other service. See the section on :ref:`service tags "
+"<service-container-compiler-pass-tags>` for an example."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:368
+msgid "Creating Separate Compiler Passes"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:370
+msgid ""
+"Sometimes, you need to do more than one thing during compilation, want to"
+" use compiler passes without an extension or you need to execute some "
+"code at another step in the compilation process. In these cases, you can "
+"create a new class implementing the ``CompilerPassInterface``::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:386
+msgid "You then need to register your custom pass with the container::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:395
+msgid ""
+"Compiler passes are registered differently if you are using the full-"
+"stack framework, see :doc:`/service_container/compiler_passes` for more "
+"details."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:400
+msgid "Controlling the Pass Ordering"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:402
+msgid ""
+"The default compiler passes are grouped into optimization passes and "
+"removal passes. The optimization passes run first and include tasks such "
+"as resolving references within the definitions. The removal passes "
+"perform tasks such as removing private aliases and unused services. When "
+"registering compiler passes using ``addCompilerPass()``, you can "
+"configure when your compiler pass is run. By default, they are run before"
+" the optimization passes."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:409
+msgid ""
+"You can use the following constants to determine when your pass is "
+"executed:"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:411
+msgid "``PassConfig::TYPE_BEFORE_OPTIMIZATION``"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:412
+msgid "``PassConfig::TYPE_OPTIMIZE``"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:413
+msgid "``PassConfig::TYPE_BEFORE_REMOVING``"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:414
+msgid "``PassConfig::TYPE_REMOVE``"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:415
+msgid "``PassConfig::TYPE_AFTER_REMOVING``"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:417
+msgid ""
+"For example, to run your custom pass after the default removal passes "
+"have been run, use::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:426
+msgid ""
+"You can also control the order in which compiler passes are run for each "
+"compilation phase. Use the optional third argument of "
+"``addCompilerPass()`` to set the priority as an integer number. The "
+"default priority is ``0`` and the higher its value, the earlier it's "
+"executed::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:443
+msgid "Dumping the Configuration for Performance"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:445
+msgid ""
+"Using configuration files to manage the service container can be much "
+"easier to understand than using PHP once there are a lot of services. "
+"This ease comes at a price though when it comes to performance as the "
+"config files need to be parsed and the PHP configuration built from them."
+" The compilation process makes the container more efficient but it takes "
+"time to run. You can have the best of both worlds though by using "
+"configuration files and then dumping and caching the resulting "
+"configuration. The ``PhpDumper`` serves at dumping the compiled "
+"container::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:471
+msgid ""
+"``ProjectServiceContainer`` is the default name given to the dumped "
+"container class. However, you can change this with the ``class`` option "
+"when you dump it::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:493
+msgid ""
+"You will now get the speed of the PHP configured container with the ease "
+"of using configuration files. Additionally dumping the container in this "
+"way further optimizes how the services are created by the container."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:497
+msgid ""
+"In the above example you will need to delete the cached container file "
+"whenever you make any changes. Adding a check for a variable that "
+"determines if you are in debug mode allows you to keep the speed of the "
+"cached container in production but getting an up to date configuration "
+"whilst developing your application::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:527
+msgid ""
+"This could be further improved by only recompiling the container in debug"
+" mode when changes have been made to its configuration rather than on "
+"every request. This can be done by caching the resource files used to "
+"configure the container in the way described in "
+"\":doc:`/components/config/caching`\" in the config component "
+"documentation."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:533
+msgid ""
+"You do not need to work out which files to cache as the container builder"
+" keeps track of all the resources used to configure it, not just the "
+"configuration files but the extension classes and compiler passes as "
+"well. This means that any changes to any of these files will invalidate "
+"the cache and trigger the container being rebuilt. You need to ask the "
+"container for these resources and use them as metadata for the cache::"
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:563
+msgid ""
+"Now the cached dumped container is used regardless of whether debug mode "
+"is on or not. The difference is that the ``ConfigCache`` is set to debug "
+"mode with its second constructor argument. When the cache is not in debug"
+" mode the cached container will always be used if it exists. In debug "
+"mode, an additional metadata file is written with the timestamps of all "
+"the resource files. These are then checked to see if the files have "
+"changed, if they have the cache will be considered stale."
+msgstr ""
+
+#: ../../../components/dependency_injection/compilation.rst:573
+msgid ""
+"In the full-stack framework the compilation and caching of the container "
+"is taken care of for you."
+msgstr ""
+

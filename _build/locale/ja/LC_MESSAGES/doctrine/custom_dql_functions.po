@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/custom_dql_functions.rst:5
+msgid "How to Register custom DQL Functions"
+msgstr ""
+
+#: ../../../doctrine/custom_dql_functions.rst:7
+msgid ""
+"Doctrine allows you to specify custom DQL functions. For more information"
+" on this topic, read Doctrine's cookbook article \"`DQL User Defined "
+"Functions`_\"."
+msgstr ""
+
+#: ../../../doctrine/custom_dql_functions.rst:10
+msgid "In Symfony, you can register your custom DQL functions as follows:"
+msgstr ""
+
+#: ../../../doctrine/custom_dql_functions.rst:81
+msgid ""
+"In case the ``entity_managers`` were named explicitly, configuring the "
+"functions with the ORM directly will trigger the exception ``Unrecognized"
+" option \"dql\" under \"doctrine.orm\"``. The ``dql`` configuration block"
+" must be defined under the named entity manager."
+msgstr ""
+

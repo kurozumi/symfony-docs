@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/force_https.rst:5
+msgid "How to Force HTTPS or HTTP for different URLs"
+msgstr ""
+
+#: ../../../security/force_https.rst:9
+msgid ""
+"The *best* policy is to force ``https`` on all URLs, which can be done "
+"via your web server configuration or ``access_control``."
+msgstr ""
+
+#: ../../../security/force_https.rst:12
+msgid ""
+"You can force areas of your site to use the HTTPS protocol in the "
+"security config. This is done through the ``access_control`` rules using "
+"the ``requires_channel`` option. To enforce HTTPS on all URLs, add the "
+"``requires_channel`` config to every access control:"
+msgstr ""
+
+#: ../../../security/force_https.rst:85
+#, python-format
+msgid ""
+"To make life easier while developing, you can also use an environment "
+"variable, like ``requires_channel: '%env(SECURE_SCHEME)%'``. In your "
+"``.env`` file, set ``SECURE_SCHEME`` to ``http`` by default, but override"
+" it to ``https`` on production."
+msgstr ""
+
+#: ../../../security/force_https.rst:89
+msgid ""
+"See :doc:`/security/access_control` for more details about "
+"``access_control`` in general."
+msgstr ""
+
+#: ../../../security/force_https.rst:94
+msgid ""
+"An alternative way to enforce HTTP or HTTPS is to use :ref:`the scheme "
+"option <routing-force-https>` of a route or group of routes."
+msgstr ""
+
+#: ../../../security/force_https.rst:99
+msgid ""
+"Forcing HTTPS while using a reverse proxy or load balancer requires a "
+"proper configuration to avoid infinite redirect loops; see "
+":doc:`/deployment/proxies` for more details."
+msgstr ""
+

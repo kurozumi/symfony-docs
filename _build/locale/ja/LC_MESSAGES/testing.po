@@ -1,0 +1,937 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing.rst:5
+msgid "Testing"
+msgstr ""
+
+#: ../../../testing.rst:7
+msgid ""
+"Whenever you write a new line of code, you also potentially add new bugs."
+" To build better and more reliable applications, you should test your "
+"code using both functional and unit tests."
+msgstr ""
+
+#: ../../../testing.rst:12
+msgid "The PHPUnit Testing Framework"
+msgstr ""
+
+#: ../../../testing.rst:14
+msgid ""
+"Symfony integrates with an independent library called `PHPUnit`_ to give "
+"you a rich testing framework. This article won't cover PHPUnit itself, "
+"which has its own excellent `documentation`_."
+msgstr ""
+
+#: ../../../testing.rst:18
+msgid ""
+"Before creating your first test, install the `PHPUnit Bridge component`_,"
+" which wraps the original PHPUnit binary to provide additional features:"
+msgstr ""
+
+#: ../../../testing.rst:25
+msgid ""
+"After the library downloads, try executing PHPUnit by running (the first "
+"time you run this, it will download PHPUnit itself and make its classes "
+"available in your app):"
+msgstr ""
+
+#: ../../../testing.rst:35
+msgid ""
+"The ``./bin/phpunit`` command is created by :ref:`Symfony Flex <symfony-"
+"flex>` when installing the ``phpunit-bridge`` package. If the command is "
+"missing, you can remove the package (``composer remove symfony/phpunit-"
+"bridge``) and install it again. Another solution is to remove the "
+"project's ``symfony.lock`` file and run ``composer install`` to force the"
+" execution of all Symfony Flex recipes."
+msgstr ""
+
+#: ../../../testing.rst:41
+msgid ""
+"Each test - whether it's a unit test or a functional test - is a PHP "
+"class that should live in the ``tests/`` directory of your application. "
+"If you follow this rule, then you can run all of your application's tests"
+" with the same command as before."
+msgstr ""
+
+#: ../../../testing.rst:46
+msgid ""
+"PHPUnit is configured by the ``phpunit.xml.dist`` file in the root of "
+"your Symfony application."
+msgstr ""
+
+#: ../../../testing.rst:51
+msgid ""
+"Code coverage can be generated with the ``--coverage-*`` options, see the"
+" help information that is shown when using ``--help`` for more "
+"information."
+msgstr ""
+
+#: ../../../testing.rst:58
+msgid "Unit Tests"
+msgstr ""
+
+#: ../../../testing.rst:60
+msgid ""
+"A unit test is a test against a single PHP class, also called a *unit*. "
+"If you want to test the overall behavior of your application, see the "
+"section about :ref:`Functional Tests <functional-tests>`."
+msgstr ""
+
+#: ../../../testing.rst:64
+msgid ""
+"Writing Symfony unit tests is no different from writing standard PHPUnit "
+"unit tests. Suppose, for example, that you have an *incredibly* simple "
+"class called ``Calculator`` in the ``src/Util/`` directory of the app::"
+msgstr ""
+
+#: ../../../testing.rst:79
+msgid ""
+"To test this, create a ``CalculatorTest`` file in the ``tests/Util`` "
+"directory of your application::"
+msgstr ""
+
+#: ../../../testing.rst:102
+msgid ""
+"By convention, the ``tests/`` directory should replicate the directory of"
+" your bundle for unit tests. So, if you're testing a class in the "
+"``src/Util/`` directory, put the test in the ``tests/Util/`` directory."
+msgstr ""
+
+#: ../../../testing.rst:107
+msgid ""
+"Just like in your real application - autoloading is automatically enabled"
+" via the ``vendor/autoload.php`` file (as configured by default in the "
+"``phpunit.xml.dist`` file)."
+msgstr ""
+
+#: ../../../testing.rst:111
+msgid "You can also limit a test run to a directory or a specific test file:"
+msgstr ""
+
+#: ../../../testing.rst:130
+msgid "Functional Tests"
+msgstr ""
+
+#: ../../../testing.rst:132
+msgid ""
+"Functional tests check the integration of the different layers of an "
+"application (from the routing to the views). They are no different from "
+"unit tests as far as PHPUnit is concerned, but they have a very specific "
+"workflow:"
+msgstr ""
+
+#: ../../../testing.rst:136
+msgid "Make a request;"
+msgstr ""
+
+#: ../../../testing.rst:137
+msgid "Click on a link or submit a form;"
+msgstr ""
+
+#: ../../../testing.rst:138
+msgid "Test the response;"
+msgstr ""
+
+#: ../../../testing.rst:139
+msgid "Rinse and repeat."
+msgstr ""
+
+#: ../../../testing.rst:141
+msgid ""
+"Before creating your first test, install these packages that provide some"
+" of the utilities used in the functional tests:"
+msgstr ""
+
+#: ../../../testing.rst:149
+msgid "Your First Functional Test"
+msgstr ""
+
+#: ../../../testing.rst:150
+msgid ""
+"Functional tests are PHP files that typically live in the "
+"``tests/Controller`` directory for your bundle. If you want to test the "
+"pages handled by your ``PostController`` class, start by creating a new "
+"``PostControllerTest.php`` file that extends a special ``WebTestCase`` "
+"class."
+msgstr ""
+
+#: ../../../testing.rst:155
+msgid "As an example, a test could look like this::"
+msgstr ""
+
+#: ../../../testing.rst:176
+msgid ""
+"To run your functional tests, the ``WebTestCase`` class needs to know "
+"which is the application kernel to bootstrap it. The kernel class is "
+"usually defined in the ``KERNEL_CLASS`` environment variable (included in"
+" the default ``.env.test`` file provided by Symfony):"
+msgstr ""
+
+#: ../../../testing.rst:181
+msgid ""
+"If your use case is more complex, you can also override the "
+"``createKernel()`` or ``getKernelClass()`` methods of your functional "
+"test, which take precedence over the ``KERNEL_CLASS`` env var."
+msgstr ""
+
+#: ../../../testing.rst:185
+msgid ""
+"In the above example, you validated that the HTTP response was "
+"successful. The next step is to validate that the page actually contains "
+"the expected content. The ``createClient()`` method returns a client, "
+"which is like a browser that you'll use to crawl your site::"
+msgstr ""
+
+#: ../../../testing.rst:192
+msgid ""
+"The ``request()`` method (read :ref:`more about the request method "
+"<testing-request-method-sidebar>`) returns a "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` object which can "
+"be used to select elements in the response, click on links and submit "
+"forms."
+msgstr ""
+
+#: ../../../testing.rst:199
+msgid ""
+"The ``Crawler`` only works when the response is an XML or an HTML "
+"document. To get the raw content response, call "
+"``$client->getResponse()->getContent()``."
+msgstr ""
+
+#: ../../../testing.rst:202
+msgid ""
+"The crawler integrates with the ``symfony/css-selector`` component to "
+"give you the power of CSS selectors to find content in a page. To install"
+" the CSS selector component, run:"
+msgstr ""
+
+#: ../../../testing.rst:210
+msgid ""
+"Now you can use CSS selectors with the crawler. To assert that the phrase"
+" \"Hello World\" is present in the page's main title, you can use this "
+"assertion::"
+msgstr ""
+
+#: ../../../testing.rst:215
+msgid ""
+"This assertion checks if the first element matching the CSS selector "
+"contains the given text. This asserts calls ``$crawler->filter('html "
+"h1.title')`` internally, which allows you to use CSS selectors to filter "
+"any HTML element in the page and check for its existence, attributes, "
+"text, etc."
+msgstr ""
+
+#: ../../../testing.rst:220
+msgid ""
+"The ``assertSelectorTextContains`` method is not a native PHPUnit "
+"assertion and is available thanks to the ``WebTestCase`` class."
+msgstr ""
+
+#: ../../../testing.rst:223
+msgid ""
+"The crawler can also be used to interact with the page. Click on a link "
+"by first selecting it with the crawler using either an XPath expression "
+"or a CSS selector, then use the client to click on it::"
+msgstr ""
+
+#: ../../../testing.rst:236
+msgid ""
+"Submitting a form is very similar: select a form button, optionally "
+"override some form values and submit the corresponding form::"
+msgstr ""
+
+#: ../../../testing.rst:250
+msgid ""
+"The form can also handle uploads and contains methods to fill in "
+"different types of form fields (e.g. ``select()`` and ``tick()``). For "
+"details, see the `Forms`_ section below."
+msgstr ""
+
+#: ../../../testing.rst:254
+msgid ""
+"Now that you can navigate through an application, use assertions to test "
+"that it actually does what you expect it to. Use the Crawler to make "
+"assertions on the DOM::"
+msgstr ""
+
+#: ../../../testing.rst:261
+msgid ""
+"Or test against the response content directly if you just want to assert "
+"that the content contains some text or in case that the response is not "
+"an XML/HTML document::"
+msgstr ""
+
+#: ../../../testing.rst:272
+msgid ""
+"Instead of installing each testing dependency individually, you can use "
+"the ``test`` :ref:`Symfony pack <symfony-packs>` to install all those "
+"dependencies at once:"
+msgstr ""
+
+#: ../../../testing.rst
+msgid "Useful Assertions"
+msgstr ""
+
+#: ../../../testing.rst:284
+msgid ""
+"To get you started faster, here is a list of the most common and useful "
+"test assertions::"
+msgstr ""
+
+#: ../../../testing.rst:337
+msgid "Testing against Different Sets of Data"
+msgstr ""
+
+#: ../../../testing.rst:339
+msgid ""
+"It's common to have to execute the same test against different sets of "
+"data to check the multiple conditions code must handle. This is solved "
+"with PHPUnit's `data providers`_, which work both for unit and functional"
+" tests."
+msgstr ""
+
+#: ../../../testing.rst:343
+msgid ""
+"First, add one or more arguments to your test method and use them inside "
+"the test code. Then, define another method which returns a nested array "
+"with the arguments to use on each test run. Lastly, add the "
+"``@dataProvider`` annotation to associate both methods::"
+msgstr ""
+
+#: ../../../testing.rst:373
+msgid "Working with the Test Client"
+msgstr ""
+
+#: ../../../testing.rst:375
+msgid ""
+"The test client simulates an HTTP client like a browser and makes "
+"requests into your Symfony application::"
+msgstr ""
+
+#: ../../../testing.rst:380
+msgid ""
+"The ``request()`` method takes the HTTP method and a URL as arguments and"
+" returns a ``Crawler`` instance."
+msgstr ""
+
+#: ../../../testing.rst:385
+msgid ""
+"Hardcoding the request URLs is a best practice for functional tests. If "
+"the test generates URLs using the Symfony router, it won't detect any "
+"change made to the application URLs which may impact the end users."
+msgstr ""
+
+#: ../../../testing.rst
+msgid "More about the ``request()`` Method:"
+msgstr ""
+
+#: ../../../testing.rst:393
+msgid "The full signature of the ``request()`` method is::"
+msgstr ""
+
+#: ../../../testing.rst:405
+msgid ""
+"The ``server`` array is the raw values that you'd expect to normally find"
+" in the PHP `$_SERVER`_ superglobal. For example, to set the ``Content-"
+"Type`` and ``Referer`` HTTP headers, you'd pass the following (mind the "
+"``HTTP_`` prefix for non standard headers)::"
+msgstr ""
+
+#: ../../../testing.rst:421
+msgid ""
+"Use the crawler to find DOM elements in the response. These elements can "
+"then be used to click on links and submit forms::"
+msgstr ""
+
+#: ../../../testing.rst:428
+msgid ""
+"The ``clickLink()`` and ``submitForm()`` methods both return a "
+"``Crawler`` object. These methods are the best way to browse your "
+"application as it takes care of a lot of things for you, like detecting "
+"the HTTP method from a form and giving you a nice API for uploading "
+"files."
+msgstr ""
+
+#: ../../../testing.rst:433
+msgid ""
+"The ``request()`` method can also be used to simulate form submissions "
+"directly or perform more complex requests. Some useful examples::"
+msgstr ""
+
+#: ../../../testing.rst:474
+msgid ""
+"Last but not least, you can force each request to be executed in its own "
+"PHP process to avoid any side effects when working with several clients "
+"in the same script::"
+msgstr ""
+
+#: ../../../testing.rst:481
+msgid "AJAX Requests"
+msgstr ""
+
+#: ../../../testing.rst:483
+msgid ""
+"The Client provides a "
+":method:`Symfony\\\\Component\\\\BrowserKit\\\\AbstractBrowser::xmlHttpRequest`"
+" method, which has the same arguments as the ``request()`` method, and "
+"it's a shortcut to make AJAX requests::"
+msgstr ""
+
+#: ../../../testing.rst:491
+msgid "Browsing"
+msgstr ""
+
+#: ../../../testing.rst:493
+msgid "The Client supports many operations that can be done in a real browser::"
+msgstr ""
+
+#: ../../../testing.rst:504
+msgid ""
+"The ``back()`` and ``forward()`` methods skip the redirects that may have"
+" occurred when requesting a URL, as normal browsers do."
+msgstr ""
+
+#: ../../../testing.rst:508
+msgid "Accessing Internal Objects"
+msgstr ""
+
+#: ../../../testing.rst:510
+msgid ""
+"If you use the client to test your application, you might want to access "
+"the client's internal objects::"
+msgstr ""
+
+#: ../../../testing.rst:516
+msgid "You can also get the objects related to the latest request::"
+msgstr ""
+
+#: ../../../testing.rst:534
+msgid "Accessing the Container"
+msgstr ""
+
+#: ../../../testing.rst:536
+msgid ""
+"It's highly recommended that a functional test only tests the response. "
+"But under certain very rare circumstances, you might want to access some "
+"services to write assertions. Given that services are private by default,"
+" test classes define a property that stores a special container created "
+"by Symfony which allows fetching both public and all non-removed private "
+"services::"
+msgstr ""
+
+#: ../../../testing.rst:548
+msgid ""
+"For a list of services available in your application, use the "
+"``debug:container`` command."
+msgstr ""
+
+#: ../../../testing.rst:551
+msgid ""
+"If a private service is *never* used in your application (outside of your"
+" test), it is *removed* from the container and cannot be accessed as "
+"described above. In that case, you can create a public alias in the "
+"``test`` environment and access it via that alias:"
+msgstr ""
+
+#: ../../../testing.rst:601
+msgid ""
+"The special container that gives access to private services exists only "
+"in the ``test`` environment and is itself a service that you can get from"
+" the real container using the ``test.service_container`` id."
+msgstr ""
+
+#: ../../../testing.rst:607
+msgid ""
+"If the information you need to check is available from the profiler, use "
+"it instead."
+msgstr ""
+
+#: ../../../testing.rst:613
+msgid "Logging in Users (Authentication)"
+msgstr ""
+
+#: ../../../testing.rst:617
+msgid "The ``loginUser()`` method was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../testing.rst:619
+msgid ""
+"When you want to add functional tests for protected pages, you have to "
+"first \"login\" as a user. Reproducing the actual steps - such as "
+"submitting a login form - make a test very slow. For this reason, Symfony"
+" provides a ``loginUser()`` method to simulate logging in in your "
+"functional tests."
+msgstr ""
+
+#: ../../../testing.rst:625
+msgid ""
+"Instead of login in with real users, it's recommended to create a user "
+"only for tests. You can do that with Doctrine :ref:`data fixtures <user-"
+"data-fixture>`, to load the testing users only in the test database."
+msgstr ""
+
+#: ../../../testing.rst:629
+msgid ""
+"After loading users in your database, use your user repository to fetch "
+"this user and use :method:`$client->loginUser() "
+"<Symfony\\\\Bundle\\\\FrameworkBundle\\\\KernelBrowser::loginUser>` to "
+"simulate a login request::"
+msgstr ""
+
+#: ../../../testing.rst:662
+msgid ""
+"You can pass any "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\UserInterface`"
+" instance to ``loginUser()``. This method creates a special "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Test\\\\TestBrowserToken`"
+" object and stores in the session of the test client."
+msgstr ""
+
+#: ../../../testing.rst:669
+msgid "Accessing the Profiler Data"
+msgstr ""
+
+#: ../../../testing.rst:671
+msgid ""
+"On each request, you can enable the Symfony profiler to collect data "
+"about the internal handling of that request. For example, the profiler "
+"could be used to verify that a given page executes less than a certain "
+"number of database queries when loading."
+msgstr ""
+
+#: ../../../testing.rst:676
+msgid "To get the Profiler for the last request, do the following::"
+msgstr ""
+
+#: ../../../testing.rst:686
+msgid ""
+"For specific details on using the profiler inside a test, see the "
+":doc:`/testing/profiling` article."
+msgstr ""
+
+#: ../../../testing.rst:690
+msgid "Redirecting"
+msgstr ""
+
+#: ../../../testing.rst:692
+msgid ""
+"When a request returns a redirect response, the client does not follow it"
+" automatically. You can examine the response and force a redirection "
+"afterwards with the ``followRedirect()`` method::"
+msgstr ""
+
+#: ../../../testing.rst:698
+msgid ""
+"If you want the client to automatically follow all redirects, you can "
+"force them by calling the ``followRedirects()`` method before performing "
+"the request::"
+msgstr ""
+
+#: ../../../testing.rst:703
+msgid ""
+"If you pass ``false`` to the ``followRedirects()`` method, the redirects "
+"will no longer be followed::"
+msgstr ""
+
+#: ../../../testing.rst:709
+msgid "Reporting Exceptions"
+msgstr ""
+
+#: ../../../testing.rst:711
+msgid ""
+"Debugging exceptions in functional tests may be difficult because by "
+"default they are caught and you need to look at the logs to see which "
+"exception was thrown. Disabling catching of exceptions in the test client"
+" allows the exception to be reported by PHPUnit::"
+msgstr ""
+
+#: ../../../testing.rst:724
+msgid "The Crawler"
+msgstr ""
+
+#: ../../../testing.rst:726
+msgid ""
+"A Crawler instance is returned each time you make a request with the "
+"Client. It allows you to traverse HTML documents, select nodes, find "
+"links and forms."
+msgstr ""
+
+#: ../../../testing.rst:730
+msgid "Traversing"
+msgstr ""
+
+#: ../../../testing.rst:732
+msgid ""
+"Like jQuery, the Crawler has methods to traverse the DOM of an HTML/XML "
+"document. For example, the following finds all ``input[type=submit]`` "
+"elements, selects the last one on the page, and then selects its "
+"immediate parent element::"
+msgstr ""
+
+#: ../../../testing.rst:742
+msgid "Many other methods are also available:"
+msgstr ""
+
+#: ../../../testing.rst:744
+msgid "``filter('h1.title')``"
+msgstr ""
+
+#: ../../../testing.rst:745
+msgid "Nodes that match the CSS selector."
+msgstr ""
+
+#: ../../../testing.rst:746
+msgid "``filterXpath('h1')``"
+msgstr ""
+
+#: ../../../testing.rst:747
+msgid "Nodes that match the XPath expression."
+msgstr ""
+
+#: ../../../testing.rst:748
+msgid "``eq(1)``"
+msgstr ""
+
+#: ../../../testing.rst:749
+msgid "Node for the specified index."
+msgstr ""
+
+#: ../../../testing.rst:750
+msgid "``first()``"
+msgstr ""
+
+#: ../../../testing.rst:751
+msgid "First node."
+msgstr ""
+
+#: ../../../testing.rst:752
+msgid "``last()``"
+msgstr ""
+
+#: ../../../testing.rst:753
+msgid "Last node."
+msgstr ""
+
+#: ../../../testing.rst:754
+msgid "``siblings()``"
+msgstr ""
+
+#: ../../../testing.rst:755
+msgid "Siblings."
+msgstr ""
+
+#: ../../../testing.rst:756
+msgid "``nextAll()``"
+msgstr ""
+
+#: ../../../testing.rst:757
+msgid "All following siblings."
+msgstr ""
+
+#: ../../../testing.rst:758
+msgid "``previousAll()``"
+msgstr ""
+
+#: ../../../testing.rst:759
+msgid "All preceding siblings."
+msgstr ""
+
+#: ../../../testing.rst:760
+msgid "``parents()``"
+msgstr ""
+
+#: ../../../testing.rst:761
+msgid "Returns the parent nodes."
+msgstr ""
+
+#: ../../../testing.rst:762
+msgid "``children()``"
+msgstr ""
+
+#: ../../../testing.rst:763
+msgid "Returns children nodes."
+msgstr ""
+
+#: ../../../testing.rst:765
+msgid "``reduce($lambda)``"
+msgstr ""
+
+#: ../../../testing.rst:765
+msgid "Nodes for which the callable does not return false."
+msgstr ""
+
+#: ../../../testing.rst:767
+msgid ""
+"Since each of these methods returns a new ``Crawler`` instance, you can "
+"narrow down your node selection by chaining the method calls::"
+msgstr ""
+
+#: ../../../testing.rst:782
+msgid ""
+"Use the ``count()`` function to get the number of nodes stored in a "
+"Crawler: ``count($crawler)``"
+msgstr ""
+
+#: ../../../testing.rst:786
+msgid "Extracting Information"
+msgstr ""
+
+#: ../../../testing.rst:788
+msgid "The Crawler can extract information from the nodes::"
+msgstr ""
+
+#: ../../../testing.rst:815
+msgid "Links"
+msgstr ""
+
+#: ../../../testing.rst:817
+msgid ""
+"Use the ``clickLink()`` method to click on the first link that contains "
+"the given text (or the first clickable image with that ``alt`` "
+"attribute)::"
+msgstr ""
+
+#: ../../../testing.rst:825
+msgid ""
+"If you need access to the "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Link` object that provides "
+"helpful methods specific to links (such as ``getMethod()`` and "
+"``getUri()``), use the ``selectLink()`` method instead::"
+msgstr ""
+
+#: ../../../testing.rst:836
+msgid "Forms"
+msgstr ""
+
+#: ../../../testing.rst:838
+msgid ""
+"Use the ``submitForm()`` method to submit the form that contains the "
+"given button::"
+msgstr ""
+
+#: ../../../testing.rst:847
+msgid ""
+"The first argument of ``submitForm()`` is the text content, ``id``, "
+"``value`` or ``name`` of any ``<button>`` or ``<input type=\"submit\">`` "
+"included in the form. The second optional argument is used to override "
+"the default form field values."
+msgstr ""
+
+#: ../../../testing.rst:853
+msgid ""
+"Notice that you select form buttons and not forms as a form can have "
+"several buttons; if you use the traversing API, keep in mind that you "
+"must look for a button."
+msgstr ""
+
+#: ../../../testing.rst:857
+msgid ""
+"If you need access to the "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Form` object that provides "
+"helpful methods specific to forms (such as ``getUri()``, ``getValues()`` "
+"and ``getFields()``) use the ``selectButton()`` method instead::"
+msgstr ""
+
+#: ../../../testing.rst:881
+msgid ""
+"The field values can also be passed as a second argument of the "
+"``submit()`` method::"
+msgstr ""
+
+#: ../../../testing.rst:889
+msgid ""
+"For more complex situations, use the ``Form`` instance as an array to set"
+" the value of each field individually::"
+msgstr ""
+
+#: ../../../testing.rst:896
+msgid ""
+"There is also a nice API to manipulate the values of the fields according"
+" to their type::"
+msgstr ""
+
+#: ../../../testing.rst:914
+msgid ""
+"Instead of hardcoding the form name as part of the field names (e.g. "
+"``my_form[...]`` in previous examples), you can use the "
+":method:`Symfony\\\\Component\\\\DomCrawler\\\\Form::getName` method to "
+"get the form name."
+msgstr ""
+
+#: ../../../testing.rst:921
+msgid ""
+"If you purposefully want to select \"invalid\" select/radio values, see "
+":ref:`components-dom-crawler-invalid`."
+msgstr ""
+
+#: ../../../testing.rst:926
+msgid ""
+"You can get the values that will be submitted by calling the "
+"``getValues()`` method on the ``Form`` object. The uploaded files are "
+"available in a separate array returned by ``getFiles()``. The "
+"``getPhpValues()`` and ``getPhpFiles()`` methods also return the "
+"submitted values, but in the PHP format (it converts the keys with square"
+" brackets notation - e.g. ``my_form[subject]`` - to PHP arrays)."
+msgstr ""
+
+#: ../../../testing.rst:935
+msgid ""
+"The ``submit()`` and ``submitForm()`` methods define optional arguments "
+"to add custom server parameters and HTTP headers when submitting the "
+"form::"
+msgstr ""
+
+#: ../../../testing.rst:942
+msgid "Adding and Removing Forms to a Collection"
+msgstr ""
+
+#: ../../../testing.rst:944
+msgid ""
+"If you use a :doc:`Collection of Forms </form/form_collections>`, you "
+"can't add fields to an existing form with ``$form['task[tags][0][name]'] "
+"= 'foo';``. This results in an error ``Unreachable field \"…\"`` because "
+"``$form`` can only be used in order to set values of existing fields. In "
+"order to add new fields, you have to add the values to the raw data "
+"array::"
+msgstr ""
+
+#: ../../../testing.rst:968
+msgid ""
+"Where ``task[tags][0][name]`` is the name of a field created with "
+"JavaScript."
+msgstr ""
+
+#: ../../../testing.rst:971
+msgid "You can remove an existing field, e.g. a tag::"
+msgstr ""
+
+#: ../../../testing.rst:990
+msgid "Testing Configuration"
+msgstr ""
+
+#: ../../../testing.rst:992
+msgid ""
+"The Client used by functional tests creates a Kernel that runs in a "
+"special ``test`` environment. Since Symfony loads the "
+"``config/packages/test/*.yaml`` in the ``test`` environment, you can "
+"tweak any of your application's settings specifically for testing."
+msgstr ""
+
+#: ../../../testing.rst:997
+msgid ""
+"For example, by default, the Swift Mailer is configured to *not* actually"
+" deliver emails in the ``test`` environment. You can see this under the "
+"``swiftmailer`` configuration option:"
+msgstr ""
+
+#: ../../../testing.rst:1036
+msgid ""
+"You can also use a different environment entirely, or override the "
+"default debug mode (``true``) by passing each as options to the "
+"``createClient()`` method::"
+msgstr ""
+
+#: ../../../testing.rst:1046
+msgid "Customizing Database URL / Environment Variables"
+msgstr ""
+
+#: ../../../testing.rst:1048
+msgid ""
+"If you need to customize some environment variables for your tests (e.g. "
+"the ``DATABASE_URL`` used by Doctrine), you can do that by overriding "
+"anything you need in your ``.env.test`` file:"
+msgstr ""
+
+#: ../../../testing.rst:1060
+msgid ""
+"This file is automatically read in the ``test`` environment: any keys "
+"here override the defaults in ``.env``."
+msgstr ""
+
+#: ../../../testing.rst:1065
+msgid ""
+"Applications created before November 2018 had a slightly different "
+"system, involving a ``.env.dist`` file. For information about upgrading, "
+"see: :doc:`configuration/dot-env-changes`."
+msgstr ""
+
+#: ../../../testing.rst:1070
+msgid "Sending Custom Headers"
+msgstr ""
+
+#: ../../../testing.rst:1072
+msgid ""
+"If your application behaves according to some HTTP headers, pass them as "
+"the second argument of ``createClient()``::"
+msgstr ""
+
+#: ../../../testing.rst:1080
+msgid "You can also override HTTP headers on a per request basis::"
+msgstr ""
+
+#: ../../../testing.rst:1089
+msgid ""
+"The test client is available as a service in the container in the "
+"``test`` environment (or wherever the :ref:`framework.test <reference-"
+"framework-test>` option is enabled). This means you can override the "
+"service entirely if you need to."
+msgstr ""
+
+#: ../../../testing.rst:1098
+msgid "PHPUnit Configuration"
+msgstr ""
+
+#: ../../../testing.rst:1100
+msgid ""
+"Each application has its own PHPUnit configuration, stored in the "
+"``phpunit.xml.dist`` file. You can edit this file to change the defaults "
+"or create a ``phpunit.xml`` file to set up a configuration for your local"
+" machine only."
+msgstr ""
+
+#: ../../../testing.rst:1107
+msgid ""
+"Store the ``phpunit.xml.dist`` file in your code repository and ignore "
+"the ``phpunit.xml`` file."
+msgstr ""
+
+#: ../../../testing.rst:1110
+msgid ""
+"By default, only the tests stored in ``tests/`` are run via the "
+"``phpunit`` command, as configured in the ``phpunit.xml.dist`` file:"
+msgstr ""
+
+#: ../../../testing.rst:1126
+msgid ""
+"But you can add more directories. For instance, the following "
+"configuration adds tests from a custom ``lib/tests`` directory:"
+msgstr ""
+
+#: ../../../testing.rst:1143
+msgid ""
+"To include other directories in the code coverage, also edit the "
+"``<filter>`` section:"
+msgstr ""
+
+#: ../../../testing.rst:1165
+msgid "Learn more"
+msgstr ""
+

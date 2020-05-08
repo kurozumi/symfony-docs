@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../configuration/env_var_processors.rst:7
+msgid "Environment Variable Processors"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:9
+msgid ""
+":ref:`Using env vars to configure Symfony applications <config-env-vars>`"
+" is a common practice to make your applications truly dynamic."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:12
+msgid ""
+"The main issue of env vars is that their values can only be strings and "
+"your application may need other data types (integer, boolean, etc.). "
+"Symfony solves this problem with \"env var processors\", which transform "
+"the original contents of the given environment variables. The following "
+"example uses the integer processor to turn the value of the ``HTTP_PORT``"
+" env var into an integer:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:54
+msgid "Built-In Environment Variable Processors"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:56
+msgid "Symfony provides the following env var processors:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:96
+msgid "``env(string:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:59
+msgid "Casts ``FOO`` to a string:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:136
+msgid "``env(bool:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:99
+msgid "Casts ``FOO`` to a bool:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:139
+msgid "``env(int:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:139
+msgid "Casts ``FOO`` to an int."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:142
+msgid "``env(float:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:142
+msgid "Casts ``FOO`` to a float."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:190
+msgid "``env(const:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:145
+msgid "Finds the const value named in ``FOO``:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:193
+msgid "``env(base64:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:193
+msgid "Decodes the content of ``FOO``, which is a base64 encoded string."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:234
+msgid "``env(json:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:196
+msgid ""
+"Decodes the content of ``FOO``, which is a JSON encoded string. It "
+"returns either an array or ``null``:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:278
+msgid "``env(resolve:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:237
+msgid ""
+"If the content of ``FOO`` includes container parameters (with the syntax "
+"``%parameter_name%``), it replaces the parameters by their values:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:288
+msgid "``env(csv:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:281
+msgid "Decodes the content of ``FOO``, which is a CSV-encoded string:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:328
+msgid "``env(file:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:291
+msgid ""
+"Returns the contents of a file whose path is the value of the ``FOO`` env"
+" var:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:369
+msgid "``env(require:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:331
+msgid ""
+"``require()`` the PHP file whose path is the value of the ``FOO`` env var"
+" and return the value returned from it."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:411
+msgid "``env(trim:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:372
+msgid ""
+"Trims the content of ``FOO`` env var, removing whitespaces from the "
+"beginning and end of the string. This is especially useful in combination"
+" with the ``file`` processor, as it'll remove newlines at the end of a "
+"file."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:449
+msgid "``env(key:FOO:BAR)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:414
+msgid ""
+"Retrieves the value associated with the key ``FOO`` from the array whose "
+"contents are stored in the ``BAR`` env var:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:492
+msgid "``env(default:fallback_param:BAR)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:452
+msgid ""
+"Retrieves the value of the parameter ``fallback_param`` when the ``BAR`` "
+"env var is not available:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:491
+msgid ""
+"When the fallback parameter is omitted (e.g. ``env(default::API_KEY)``), "
+"the value returned is ``null``."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:561
+msgid "``env(url:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:495
+msgid "Parses an absolute URL and returns its components as an associative array."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:560
+msgid ""
+"In order to ease extraction of the resource from the URL, the leading "
+"``/`` is trimmed from the ``path`` component."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:607
+msgid "``env(query_string:FOO)``"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:564
+msgid ""
+"Parses the query string part of the given URL and returns its components "
+"as an associative array."
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:609
+msgid "It is also possible to combine any number of processors:"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:623
+msgid "Custom Environment Variable Processors"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:625
+msgid ""
+"It's also possible to add your own processors for environment variables. "
+"First, create a class that implements "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\EnvVarProcessorInterface`::"
+msgstr ""
+
+#: ../../../configuration/env_var_processors.rst:648
+msgid ""
+"To enable the new processor in the app, register it as a service and "
+":doc:`tag it </service_container/tags>` with the "
+"``container.env_var_processor`` tag. If you're using the :ref:`default "
+"services.yaml configuration <service-container-services-load-example>`, "
+"this is already done for you, thanks to :ref:`autoconfiguration "
+"<services-autoconfigure>`."
+msgstr ""
+

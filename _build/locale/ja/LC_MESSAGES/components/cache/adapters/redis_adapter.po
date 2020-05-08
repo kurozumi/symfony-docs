@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/redis_adapter.rst:8
+msgid "Redis Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:12
+msgid ""
+"This article explains how to configure the Redis adapter when using the "
+"Cache as an independent component in any PHP application. Read the "
+":ref:`Symfony Cache configuration <cache-configuration-with-"
+"frameworkbundle>` article if you are using it in a Symfony application."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:17
+msgid ""
+"This adapter stores the values in-memory using one (or more) `Redis "
+"server`_ instances."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:19
+msgid ""
+"Unlike the :ref:`APCu adapter <apcu-adapter>`, and similarly to the "
+":ref:`Memcached adapter <memcached-adapter>`, it is not limited to the "
+"current server's shared memory; you can store contents independent of "
+"your PHP environment. The ability to utilize a cluster of servers to "
+"provide redundancy and/or fail-over is also available."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:26
+msgid ""
+"**Requirements:** At least one `Redis server`_ must be installed and "
+"running to use this adapter. Additionally, this adapter requires a "
+"compatible extension or library that implements ``\\Redis``, "
+"``\\RedisArray``, ``RedisCluster``, or ``\\Predis``."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:30
+msgid ""
+"This adapter expects a `Redis`_, `RedisArray`_, `RedisCluster`_, or "
+"`Predis`_ instance to be passed as the first parameter. A namespace and "
+"default cache lifetime can optionally be passed as the second and third "
+"parameters::"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:51
+msgid "Configure the Connection"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:53
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\RedisAdapter::createConnection`"
+" helper method allows creating and configuring the Redis client class "
+"instance using a `Data Source Name (DSN)`_::"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:64
+msgid ""
+"The DSN can specify either an IP/host (and an optional port) or a socket "
+"path, as well as a password and a database index."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:69
+msgid ""
+"A `Data Source Name (DSN)`_ for this adapter must use the following "
+"format."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:75
+msgid ""
+"Below are common examples of valid DSNs showing a combination of "
+"available values::"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:97
+msgid ""
+"`Redis Sentinel`_, which provides high availability for Redis, is also "
+"supported when using the Predis library. Use the ``redis_sentinel`` "
+"parameter to set the name of your service group::"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:107
+msgid ""
+"See the :class:`Symfony\\\\Component\\\\Cache\\\\Traits\\\\RedisTrait` "
+"for more options you can pass as DSN parameters."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:111
+msgid "Configure the Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:113
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\RedisAdapter::createConnection`"
+" helper method also accepts an array of options as its second argument. "
+"The expected format is an associative array of ``key => value`` pairs "
+"representing option names and their respective values::"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:139
+msgid "Available Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:144
+msgid "``class`` (type: ``string``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:142
+msgid ""
+"Specifies the connection library to return, either ``\\Redis`` or "
+"``\\Predis\\Client``. If none is specified, it will return ``\\Redis`` if"
+" the ``redis`` extension is available, and ``\\Predis\\Client`` "
+"otherwise."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:148
+msgid "``compression`` (type: ``bool``, default: ``true``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:147
+msgid ""
+"Enables or disables compression of items. This requires phpredis v4 or "
+"higher with LZF support enabled."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:153
+msgid "``lazy`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:151
+msgid ""
+"Enables or disables lazy connections to the backend. It's ``false`` by "
+"default when using this as a stand-alone component and ``true`` by "
+"default when using it inside a Symfony application."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:157
+msgid "``persistent`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:156
+msgid ""
+"Enables or disables use of persistent connections. A value of ``0`` "
+"disables persistent connections, and a value of ``1`` enables them."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:160
+msgid "``persistent_id`` (type: ``string|null``, default: ``null``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:160
+msgid "Specifies the persistent id string to use for a persistent connection."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:164
+msgid "``read_timeout`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:163
+msgid ""
+"Specifies the time (in seconds) used when performing read operations on "
+"the underlying network resource before the operation times out."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:168
+msgid "``retry_interval`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:167
+msgid ""
+"Specifies the delay (in milliseconds) between reconnection attempts in "
+"case the client loses connection with the server."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:172
+msgid "``tcp_keepalive`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:171
+msgid ""
+"Specifies the `TCP-keepalive`_ timeout (in seconds) of the connection. "
+"This requires phpredis v4 or higher and a TCP-keepalive enabled server."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:176
+msgid "``timeout`` (type: ``int``, default: ``30``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:175
+msgid ""
+"Specifies the time (in seconds) used to connect to a Redis server before "
+"the connection attempt times out."
+msgstr ""
+
+#: ../../../components/cache/adapters/redis_adapter.rst:180
+msgid ""
+"When using the `Predis`_ library some additional Predis-specific options "
+"are available. Reference the `Predis Connection Parameters`_ "
+"documentation for more information."
+msgstr ""
+

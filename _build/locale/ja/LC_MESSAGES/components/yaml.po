@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/yaml.rst:6
+msgid "The Yaml Component"
+msgstr ""
+
+#: ../../../components/yaml.rst:8
+msgid "The Yaml component loads and dumps YAML files."
+msgstr ""
+
+#: ../../../components/yaml.rst:11
+msgid "What is It?"
+msgstr ""
+
+#: ../../../components/yaml.rst:13
+msgid ""
+"The Symfony Yaml component parses YAML strings to convert them to PHP "
+"arrays. It is also able to convert PHP arrays to YAML strings."
+msgstr ""
+
+#: ../../../components/yaml.rst:16
+msgid ""
+"`YAML`_, *YAML Ain't Markup Language*, is a human friendly data "
+"serialization standard for all programming languages. YAML is a great "
+"format for your configuration files. YAML files are as expressive as XML "
+"files and as readable as INI files."
+msgstr ""
+
+#: ../../../components/yaml.rst:21
+msgid ""
+"The Symfony Yaml Component implements a selected subset of features "
+"defined in the `YAML 1.2 version specification`_."
+msgstr ""
+
+#: ../../../components/yaml.rst:26
+msgid ""
+"Learn more about the Yaml component in the "
+":doc:`/components/yaml/yaml_format` article."
+msgstr ""
+
+#: ../../../components/yaml.rst:30
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/yaml.rst:39
+msgid "Why?"
+msgstr ""
+
+#: ../../../components/yaml.rst:42
+msgid "Fast"
+msgstr ""
+
+#: ../../../components/yaml.rst:44
+msgid ""
+"One of the goals of Symfony Yaml is to find the right balance between "
+"speed and features. It supports just the needed features to handle "
+"configuration files. Notable lacking features are: document directives, "
+"multi-line quoted messages, compact block collections and multi-document "
+"files."
+msgstr ""
+
+#: ../../../components/yaml.rst:50
+msgid "Real Parser"
+msgstr ""
+
+#: ../../../components/yaml.rst:52
+msgid ""
+"It sports a real parser and is able to parse a large subset of the YAML "
+"specification, for all your configuration needs. It also means that the "
+"parser is pretty robust, easy to understand, and simple enough to extend."
+msgstr ""
+
+#: ../../../components/yaml.rst:57
+msgid "Clear Error Messages"
+msgstr ""
+
+#: ../../../components/yaml.rst:59
+msgid ""
+"Whenever you have a syntax problem with your YAML files, the library "
+"outputs a helpful message with the filename and the line number where the"
+" problem occurred. It eases the debugging a lot."
+msgstr ""
+
+#: ../../../components/yaml.rst:64
+msgid "Dump Support"
+msgstr ""
+
+#: ../../../components/yaml.rst:66
+msgid ""
+"It is also able to dump PHP arrays to YAML with object support, and "
+"inline level configuration for pretty outputs."
+msgstr ""
+
+#: ../../../components/yaml.rst:70
+msgid "Types Support"
+msgstr ""
+
+#: ../../../components/yaml.rst:72
+msgid ""
+"It supports most of the YAML built-in types like dates, integers, octal "
+"numbers, booleans, and much more..."
+msgstr ""
+
+#: ../../../components/yaml.rst:76
+msgid "Full Merge Key Support"
+msgstr ""
+
+#: ../../../components/yaml.rst:78
+msgid ""
+"Full support for references, aliases, and full merge key. Don't repeat "
+"yourself by referencing common configuration bits."
+msgstr ""
+
+#: ../../../components/yaml.rst:84
+msgid "Using the Symfony YAML Component"
+msgstr ""
+
+#: ../../../components/yaml.rst:86
+msgid ""
+"The Symfony Yaml component consists of two main classes: one parses YAML "
+"strings (:class:`Symfony\\\\Component\\\\Yaml\\\\Parser`), and the other "
+"dumps a PHP array to a YAML string "
+"(:class:`Symfony\\\\Component\\\\Yaml\\\\Dumper`)."
+msgstr ""
+
+#: ../../../components/yaml.rst:91
+msgid ""
+"On top of these two classes, the "
+":class:`Symfony\\\\Component\\\\Yaml\\\\Yaml` class acts as a thin "
+"wrapper that simplifies common uses."
+msgstr ""
+
+#: ../../../components/yaml.rst:95
+msgid "Reading YAML Contents"
+msgstr ""
+
+#: ../../../components/yaml.rst:97
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Yaml\\\\Yaml::parse` method parses a"
+" YAML string and converts it to a PHP array::"
+msgstr ""
+
+#: ../../../components/yaml.rst:105
+msgid ""
+"If an error occurs during parsing, the parser throws a "
+":class:`Symfony\\\\Component\\\\Yaml\\\\Exception\\\\ParseException` "
+"exception indicating the error type and the line in the original YAML "
+"string where the error occurred::"
+msgstr ""
+
+#: ../../../components/yaml.rst:119
+msgid "Reading YAML Files"
+msgstr ""
+
+#: ../../../components/yaml.rst:121
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Yaml\\\\Yaml::parseFile` method "
+"parses the YAML contents of the given file path and converts them to a "
+"PHP value::"
+msgstr ""
+
+#: ../../../components/yaml.rst:128
+msgid ""
+"If an error occurs during parsing, the parser throws a ``ParseException``"
+" exception."
+msgstr ""
+
+#: ../../../components/yaml.rst:133
+msgid "Writing YAML Files"
+msgstr ""
+
+#: ../../../components/yaml.rst:135
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Yaml\\\\Yaml::dump` method dumps any"
+" PHP array to its YAML representation::"
+msgstr ""
+
+#: ../../../components/yaml.rst:149
+msgid ""
+"If an error occurs during the dump, the parser throws a "
+":class:`Symfony\\\\Component\\\\Yaml\\\\Exception\\\\DumpException` "
+"exception."
+msgstr ""
+
+#: ../../../components/yaml.rst:155
+msgid "Expanded and Inlined Arrays"
+msgstr ""
+
+#: ../../../components/yaml.rst:157
+msgid ""
+"The YAML format supports two kind of representation for arrays, the "
+"expanded one, and the inline one. By default, the dumper uses the "
+"expanded representation:"
+msgstr ""
+
+#: ../../../components/yaml.rst:168
+msgid ""
+"The second argument of the "
+":method:`Symfony\\\\Component\\\\Yaml\\\\Yaml::dump` method customizes "
+"the level at which the output switches from the expanded representation "
+"to the inline one::"
+msgstr ""
+
+#: ../../../components/yaml.rst:191
+msgid "Indentation"
+msgstr ""
+
+#: ../../../components/yaml.rst:193
+msgid ""
+"By default, the YAML component will use 4 spaces for indentation. This "
+"can be changed using the third argument as follows::"
+msgstr ""
+
+#: ../../../components/yaml.rst:207
+msgid "Numeric Literals"
+msgstr ""
+
+#: ../../../components/yaml.rst:209
+msgid ""
+"Long numeric literals, being integer, float or hexadecimal, are known for"
+" their poor readability in code and configuration files. That's why YAML "
+"files allow to add underscores to improve their readability:"
+msgstr ""
+
+#: ../../../components/yaml.rst:221
+msgid ""
+"During the parsing of the YAML contents, all the ``_`` characters are "
+"removed from the numeric literal contents, so there is not a limit in the"
+" number of underscores you can include or the way you group contents."
+msgstr ""
+
+#: ../../../components/yaml.rst:226
+msgid "Advanced Usage: Flags"
+msgstr ""
+
+#: ../../../components/yaml.rst:231
+msgid "Object Parsing and Dumping"
+msgstr ""
+
+#: ../../../components/yaml.rst:233
+msgid "You can dump objects by using the ``DUMP_OBJECT`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:241
+msgid "And parse them by using the ``PARSE_OBJECT`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:247
+msgid ""
+"The YAML component uses PHP's ``serialize()`` method to generate a string"
+" representation of the object."
+msgstr ""
+
+#: ../../../components/yaml.rst:252
+msgid ""
+"Object serialization is specific to this implementation, other PHP YAML "
+"parsers will likely not recognize the ``php/object`` tag and non-PHP "
+"implementations certainly won't - use with discretion!"
+msgstr ""
+
+#: ../../../components/yaml.rst:257
+msgid "Parsing and Dumping Objects as Maps"
+msgstr ""
+
+#: ../../../components/yaml.rst:259
+msgid ""
+"You can dump objects as Yaml maps by using the ``DUMP_OBJECT_AS_MAP`` "
+"flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:267
+msgid "And parse them by using the ``PARSE_OBJECT_FOR_MAP`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:274
+msgid ""
+"The YAML component uses PHP's ``(array)`` casting to generate a string "
+"representation of the object as a map."
+msgstr ""
+
+#: ../../../components/yaml.rst:280
+msgid "Handling Invalid Types"
+msgstr ""
+
+#: ../../../components/yaml.rst:282
+msgid ""
+"By default, the parser will encode invalid types as ``null``. You can "
+"make the parser throw exceptions by using the "
+"``PARSE_EXCEPTION_ON_INVALID_TYPE`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:289
+msgid "Similarly you can use ``DUMP_EXCEPTION_ON_INVALID_TYPE`` when dumping::"
+msgstr ""
+
+#: ../../../components/yaml.rst:295
+msgid "Date Handling"
+msgstr ""
+
+#: ../../../components/yaml.rst:297
+msgid ""
+"By default, the YAML parser will convert unquoted strings which look like"
+" a date or a date-time into a Unix timestamp; for example ``2016-05-27`` "
+"or ``2016-05-27T02:59:43.1Z`` (`ISO-8601`_)::"
+msgstr ""
+
+#: ../../../components/yaml.rst:303
+msgid ""
+"You can make it convert to a ``DateTime`` instance by using the "
+"``PARSE_DATETIME`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:310
+msgid "Dumping Multi-line Literal Blocks"
+msgstr ""
+
+#: ../../../components/yaml.rst:312
+msgid ""
+"In YAML, multiple lines can be represented as literal blocks. By default,"
+" the dumper will encode multiple lines as an inline string::"
+msgstr ""
+
+#: ../../../components/yaml.rst:319
+msgid ""
+"You can make it use a literal block with the "
+"``DUMP_MULTI_LINE_LITERAL_BLOCK`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:331
+msgid "Parsing PHP Constants"
+msgstr ""
+
+#: ../../../components/yaml.rst:333
+msgid ""
+"By default, the YAML parser treats the PHP constants included in the "
+"contents as regular strings. Use the ``PARSE_CONSTANT`` flag and the "
+"special ``!php/const`` syntax to parse them as proper PHP constants::"
+msgstr ""
+
+#: ../../../components/yaml.rst:342
+msgid "Parsing and Dumping of Binary Data"
+msgstr ""
+
+#: ../../../components/yaml.rst:344
+msgid "You can dump binary data by using the ``DUMP_BASE64_BINARY_DATA`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:351
+msgid ""
+"Binary data is automatically parsed if they include the ``!!binary`` YAML"
+" tag (there's no need to pass any flag to the Yaml parser)::"
+msgstr ""
+
+#: ../../../components/yaml.rst:359
+msgid "Parsing and Dumping Custom Tags"
+msgstr ""
+
+#: ../../../components/yaml.rst:361
+msgid ""
+"In addition to the built-in support of tags like ``!php/const`` and "
+"``!!binary``, you can define your own custom YAML tags and parse them "
+"with the ``PARSE_CUSTOM_TAGS`` flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:371
+msgid ""
+"If the contents to dump contain "
+":class:`Symfony\\\\Component\\\\Yaml\\\\Tag\\\\TaggedValue` objects, they"
+" are automatically transformed into YAML tags::"
+msgstr ""
+
+#: ../../../components/yaml.rst:381
+msgid "Dumping Null Values"
+msgstr ""
+
+#: ../../../components/yaml.rst:383
+msgid ""
+"The official YAML specification uses both ``null`` and ``~`` to represent"
+" null values. This component uses ``null`` by default when dumping null "
+"values but you can dump them as ``~`` with the ``DUMP_NULL_AS_TILDE`` "
+"flag::"
+msgstr ""
+
+#: ../../../components/yaml.rst:394
+msgid "Syntax Validation"
+msgstr ""
+
+#: ../../../components/yaml.rst:396
+msgid ""
+"The syntax of YAML contents can be validated through the CLI using the "
+":class:`Symfony\\\\Component\\\\Yaml\\\\Command\\\\LintCommand` command."
+msgstr ""
+
+#: ../../../components/yaml.rst:399
+msgid "First, install the Console component:"
+msgstr ""
+
+#: ../../../components/yaml.rst:405
+msgid "Create a console application with ``lint:yaml`` as its only command::"
+msgstr ""
+
+#: ../../../components/yaml.rst:417
+msgid "Then, execute the script for validating contents:"
+msgstr ""
+
+#: ../../../components/yaml.rst:436
+msgid ""
+"The result is written to STDOUT and uses a plain text format by default. "
+"Add the ``--format`` option to get the output in JSON format:"
+msgstr ""
+
+#: ../../../components/yaml.rst:445
+msgid ""
+"The linting command will also report any deprecations in the checked YAML"
+" files. This may for example be useful for recognizing deprecations of "
+"contents of YAML files during automated tests."
+msgstr ""
+
+#: ../../../components/yaml.rst:450
+msgid "Learn More"
+msgstr ""
+

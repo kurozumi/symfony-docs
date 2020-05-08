@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/chain_adapter.rst:8
+msgid "Chain Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/chain_adapter.rst:10
+msgid ""
+"This adapter allows combining any number of the other :ref:`available "
+"cache adapters <component-cache-creating-cache-pools>`. Cache items are "
+"fetched from the first adapter containing them and cache items are saved "
+"to all the given adapters. This exposes a simple and efficient method for"
+" creating a layered cache."
+msgstr ""
+
+#: ../../../components/cache/adapters/chain_adapter.rst:15
+msgid ""
+"The ChainAdapter must be provided an array of adapters and optionally a "
+"maximum cache lifetime as its constructor arguments::"
+msgstr ""
+
+#: ../../../components/cache/adapters/chain_adapter.rst:30
+msgid ""
+"When an item is not found in the first adapter but is found in the next "
+"ones, this adapter ensures that the fetched item is saved to all the "
+"adapters where it was previously missing."
+msgstr ""
+
+#: ../../../components/cache/adapters/chain_adapter.rst:34
+msgid ""
+"The following example shows how to create a chain adapter instance using "
+"the fastest and slowest storage engines, "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\ApcuAdapter` and "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\FilesystemAdapter`, "
+"respectfully::"
+msgstr ""
+
+#: ../../../components/cache/adapters/chain_adapter.rst:47
+msgid ""
+"When calling this adapter's "
+":method:`Symfony\\\\Component\\\\Cache\\\\ChainAdapter::prune` method, "
+"the call is delegated to all its compatible cache adapters. It is safe to"
+" mix both adapters that *do* and do *not* implement "
+":class:`Symfony\\\\Component\\\\Cache\\\\PruneableInterface`, as "
+"incompatible adapters are silently ignored::"
+msgstr ""
+

@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/expressions.rst:5
+msgid "Security: Complex Access Controls with Expressions"
+msgstr ""
+
+#: ../../../security/expressions.rst:9
+msgid ""
+"The best solution for handling complex authorization rules is to use the "
+":doc:`Voter System </security/voters>`."
+msgstr ""
+
+#: ../../../security/expressions.rst:12
+msgid ""
+"In addition to a role like ``ROLE_ADMIN``, the ``isGranted()`` method "
+"also accepts an "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\Expression` "
+"object::"
+msgstr ""
+
+#: ../../../security/expressions.rst:27
+msgid ""
+"In this example, if the current user has ``ROLE_ADMIN`` or if the current"
+" user object's ``isSuperAdmin()`` method returns ``true``, then access "
+"will be granted (note: your User object may not have an "
+"``isSuperAdmin()`` method, that method is invented for this example)."
+msgstr ""
+
+#: ../../../security/expressions.rst:32
+msgid ""
+"This uses an expression and you can learn more about the expression "
+"language syntax, see :doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../../security/expressions.rst:37
+msgid "Inside the expression, you have access to a number of variables:"
+msgstr ""
+
+#: ../../../security/expressions.rst:39
+msgid "``user``"
+msgstr ""
+
+#: ../../../security/expressions.rst:40
+msgid "The user object (or the string ``anon`` if you're not authenticated)."
+msgstr ""
+
+#: ../../../security/expressions.rst:43
+msgid "``roles``"
+msgstr ""
+
+#: ../../../security/expressions.rst:42
+msgid ""
+"The array of roles the user has. This array includes any roles granted "
+"indirectly via the :ref:`role hierarchy <security-role-hierarchy>` but it"
+" does not include the ``IS_AUTHENTICATED_*`` attributes (see the "
+"functions below)."
+msgstr ""
+
+#: ../../../security/expressions.rst:45
+msgid "``object``"
+msgstr ""
+
+#: ../../../security/expressions.rst:46
+msgid ""
+"The object (if any) that's passed as the second argument to "
+"``isGranted()``."
+msgstr ""
+
+#: ../../../security/expressions.rst:47
+msgid "``token``"
+msgstr ""
+
+#: ../../../security/expressions.rst:48
+msgid "The token object."
+msgstr ""
+
+#: ../../../security/expressions.rst:51
+msgid "``trust_resolver``"
+msgstr ""
+
+#: ../../../security/expressions.rst:50
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\AuthenticationTrustResolverInterface`,"
+" object: you'll probably use the ``is_*()`` functions below instead."
+msgstr ""
+
+#: ../../../security/expressions.rst:53
+msgid ""
+"Additionally, you have access to a number of functions inside the "
+"expression:"
+msgstr ""
+
+#: ../../../security/expressions.rst:56
+msgid "``is_authenticated()``"
+msgstr ""
+
+#: ../../../security/expressions.rst:56
+msgid ""
+"Returns ``true`` if the user is authenticated via \"remember-me\" or "
+"authenticated \"fully\" - i.e. returns true if the user is \"logged in\"."
+msgstr ""
+
+#: ../../../security/expressions.rst:60
+msgid "``is_anonymous()``"
+msgstr ""
+
+#: ../../../security/expressions.rst:59
+msgid ""
+"Returns ``true`` if the user is anonymous. That is, the firewall confirms"
+" that it does not know this user's identity. This is different from "
+"``IS_AUTHENTICATED_ANONYMOUSLY``, which is granted to *all* users, "
+"including authenticated ones."
+msgstr ""
+
+#: ../../../security/expressions.rst:62
+msgid "``is_remember_me()``"
+msgstr ""
+
+#: ../../../security/expressions.rst:63
+msgid "Similar, but not equal to ``IS_AUTHENTICATED_REMEMBERED``, see below."
+msgstr ""
+
+#: ../../../security/expressions.rst:64
+msgid "``is_fully_authenticated()``"
+msgstr ""
+
+#: ../../../security/expressions.rst:65
+msgid "Equal to checking if the user has the ``IS_AUTHENTICATED_FULLY`` role."
+msgstr ""
+
+#: ../../../security/expressions.rst:70
+msgid "``is_granted()``"
+msgstr ""
+
+#: ../../../security/expressions.rst:67
+msgid ""
+"Checks if the user has the given permission. Optionally accepts a second "
+"argument with the object where permission is checked on. It's equivalent "
+"to using the :doc:`isGranted() method </security/securing_services>` from"
+" the authorization checker service."
+msgstr ""
+
+#: ../../../security/expressions.rst
+msgid ""
+"``is_remember_me()`` is different than checking "
+"``IS_AUTHENTICATED_REMEMBERED``"
+msgstr ""
+
+#: ../../../security/expressions.rst:74
+msgid ""
+"The ``is_remember_me()`` and ``is_fully_authenticated()`` functions are "
+"*similar* to using ``IS_AUTHENTICATED_REMEMBERED`` and "
+"``IS_AUTHENTICATED_FULLY`` with the ``isGranted()`` function - but they "
+"are **not** the same. The following controller snippet shows the "
+"difference::"
+msgstr ""
+
+#: ../../../security/expressions.rst:92
+msgid ""
+"Here, ``$access1`` and ``$access2`` will be the same value. Unlike the "
+"behavior of ``IS_AUTHENTICATED_REMEMBERED`` and "
+"``IS_AUTHENTICATED_FULLY``, the ``is_remember_me()`` function *only* "
+"returns true if the user is authenticated via a remember-me cookie and "
+"``is_fully_authenticated()`` *only* returns true if the user has actually"
+" logged in during this session (i.e. is full-fledged)."
+msgstr ""
+
+#: ../../../security/expressions.rst:100
+msgid "Learn more"
+msgstr ""
+
+#: ../../../security/expressions.rst:102
+msgid ":doc:`/service_container/expression_language`"
+msgstr ""
+
+#: ../../../security/expressions.rst:103
+msgid ":doc:`/reference/constraints/Expression`"
+msgstr ""
+

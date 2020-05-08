@@ -1,0 +1,426 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../deployment.rst:7 ../../../deployment.rst:38
+msgid "How to Deploy a Symfony Application"
+msgstr ""
+
+#: ../../../deployment.rst:9
+msgid ""
+"Deploying a Symfony application can be a complex and varied task "
+"depending on the setup and the requirements of your application. This "
+"article is not a step- by-step guide, but is a general list of the most "
+"common requirements and ideas for deployment."
+msgstr ""
+
+#: ../../../deployment.rst:17
+msgid "Symfony Deployment Basics"
+msgstr ""
+
+#: ../../../deployment.rst:19
+msgid "The typical steps taken while deploying a Symfony application include:"
+msgstr ""
+
+#: ../../../deployment.rst:21
+msgid "Upload your code to the production server;"
+msgstr ""
+
+#: ../../../deployment.rst:22
+msgid ""
+"Install your vendor dependencies (typically done via Composer and may be "
+"done before uploading);"
+msgstr ""
+
+#: ../../../deployment.rst:24
+msgid ""
+"Running database migrations or similar tasks to update any changed data "
+"structures;"
+msgstr ""
+
+#: ../../../deployment.rst:25
+msgid "Clearing (and optionally, warming up) your cache."
+msgstr ""
+
+#: ../../../deployment.rst:27
+msgid "A deployment may also include other tasks, such as:"
+msgstr ""
+
+#: ../../../deployment.rst:29
+msgid ""
+"Tagging a particular version of your code as a release in your source "
+"control repository;"
+msgstr ""
+
+#: ../../../deployment.rst:31
+msgid "Creating a temporary staging area to build your updated setup \"offline\";"
+msgstr ""
+
+#: ../../../deployment.rst:32
+msgid "Running any tests available to ensure code and/or server stability;"
+msgstr ""
+
+#: ../../../deployment.rst:33
+msgid ""
+"Removal of any unnecessary files from the ``public/`` directory to keep "
+"your production environment clean;"
+msgstr ""
+
+#: ../../../deployment.rst:35
+msgid "Clearing of external cache systems (like `Memcached`_ or `Redis`_)."
+msgstr ""
+
+#: ../../../deployment.rst:40
+msgid ""
+"There are several ways you can deploy a Symfony application. Start with a"
+" few basic deployment strategies and build up from there."
+msgstr ""
+
+#: ../../../deployment.rst:44
+msgid "Basic File Transfer"
+msgstr ""
+
+#: ../../../deployment.rst:46
+msgid ""
+"The most basic way of deploying an application is copying the files "
+"manually via FTP/SCP (or similar method). This has its disadvantages as "
+"you lack control over the system as the upgrade progresses. This method "
+"also requires you to take some manual steps after transferring the files "
+"(see `Common Post-Deployment Tasks`_)"
+msgstr ""
+
+#: ../../../deployment.rst:52
+msgid "Using Source Control"
+msgstr ""
+
+#: ../../../deployment.rst:54
+msgid ""
+"If you're using source control (e.g. Git or SVN), you can simplify by "
+"having your live installation also be a copy of your repository. When "
+"you're ready to upgrade, fetch the latest updates from your source "
+"control system. When using Git, a common approach is to create a tag for "
+"each release and check out the appropriate tag on deployment (see `Git "
+"Tagging`_)."
+msgstr ""
+
+#: ../../../deployment.rst:60
+msgid ""
+"This makes updating your files *easier*, but you still need to worry "
+"about manually taking other steps (see `Common Post-Deployment Tasks`_)."
+msgstr ""
+
+#: ../../../deployment.rst:64
+msgid "Using Platforms as a Service"
+msgstr ""
+
+#: ../../../deployment.rst:66
+msgid ""
+"Using a Platform as a Service (PaaS) can be a great way to deploy your "
+"Symfony app quickly. There are many PaaS - below are a few that work well"
+" with Symfony:"
+msgstr ""
+
+#: ../../../deployment.rst:69
+msgid "`Symfony Cloud`_"
+msgstr ""
+
+#: ../../../deployment.rst:70
+msgid "`Heroku`_"
+msgstr ""
+
+#: ../../../deployment.rst:71
+msgid "`Platform.sh`_"
+msgstr ""
+
+#: ../../../deployment.rst:72
+msgid "`Azure`_"
+msgstr ""
+
+#: ../../../deployment.rst:73
+msgid "`fortrabbit`_"
+msgstr ""
+
+#: ../../../deployment.rst:74
+msgid "`Clever Cloud`_"
+msgstr ""
+
+#: ../../../deployment.rst:75
+msgid "`Scalingo`_"
+msgstr ""
+
+#: ../../../deployment.rst:78
+msgid "Using Build Scripts and other Tools"
+msgstr ""
+
+#: ../../../deployment.rst:80
+msgid ""
+"There are also tools to help ease the pain of deployment. Some of them "
+"have been specifically tailored to the requirements of Symfony."
+msgstr ""
+
+#: ../../../deployment.rst:84
+msgid "`EasyDeployBundle`_"
+msgstr ""
+
+#: ../../../deployment.rst:84
+msgid "A Symfony bundle that adds deploy tools to your application."
+msgstr ""
+
+#: ../../../deployment.rst:88
+msgid "`Deployer`_"
+msgstr ""
+
+#: ../../../deployment.rst:87
+msgid ""
+"This is another native PHP rewrite of Capistrano, with some ready recipes"
+" for Symfony."
+msgstr ""
+
+#: ../../../deployment.rst:91
+msgid "`Ansistrano`_"
+msgstr ""
+
+#: ../../../deployment.rst:91
+msgid ""
+"An Ansible role that allows you to configure a powerful deploy via YAML "
+"files."
+msgstr ""
+
+#: ../../../deployment.rst:95
+msgid "`Magallanes`_"
+msgstr ""
+
+#: ../../../deployment.rst:94
+msgid ""
+"This Capistrano-like deployment tool is built in PHP, and may be easier "
+"for PHP developers to extend for their needs."
+msgstr ""
+
+#: ../../../deployment.rst:99
+msgid "`Fabric`_"
+msgstr ""
+
+#: ../../../deployment.rst:98
+msgid ""
+"This Python-based library provides a basic suite of operations for "
+"executing local or remote shell commands and uploading/downloading files."
+msgstr ""
+
+#: ../../../deployment.rst:104
+msgid "`Capistrano`_ with `Symfony plugin`_"
+msgstr ""
+
+#: ../../../deployment.rst:102
+msgid ""
+"`Capistrano`_ is a remote server automation and deployment tool written "
+"in Ruby. `Symfony plugin`_ is a plugin to ease Symfony related tasks, "
+"inspired by `Capifony`_ (which works only with Capistrano 2)."
+msgstr ""
+
+#: ../../../deployment.rst:107
+msgid "Common Post-Deployment Tasks"
+msgstr ""
+
+#: ../../../deployment.rst:109
+msgid ""
+"After deploying your actual source code, there are a number of common "
+"things you'll need to do:"
+msgstr ""
+
+#: ../../../deployment.rst:113
+msgid "A) Check Requirements"
+msgstr ""
+
+#: ../../../deployment.rst:115
+msgid ""
+"Use the ``check:requirements`` command to check if your server meets the "
+":ref:`technical requirements for running Symfony applications <symfony-"
+"tech-requirements>`."
+msgstr ""
+
+#: ../../../deployment.rst:121
+msgid "B) Configure your Environment Variables"
+msgstr ""
+
+#: ../../../deployment.rst:123
+msgid ""
+"Most Symfony applications read their configuration from environment "
+"variables. While developing locally, you'll usually store these in "
+"``.env`` and ``.env.local`` (for local overrides). On production, you "
+"have two options:"
+msgstr ""
+
+#: ../../../deployment.rst:127
+msgid ""
+"Create \"real\" environment variables. How you set environment variables,"
+" depends on your setup: they can be set at the command line, in your "
+"Nginx configuration, or via other methods provided by your hosting "
+"service."
+msgstr ""
+
+#: ../../../deployment.rst:131
+msgid ""
+"Or, create a ``.env.local`` file just like your local development (see "
+"note below)"
+msgstr ""
+
+#: ../../../deployment.rst:133
+msgid ""
+"There is no significant advantage to either of the two options: use "
+"whatever is most natural in your hosting environment."
+msgstr ""
+
+#: ../../../deployment.rst:138
+msgid ""
+"If you use the ``.env.*`` files on production, you may need to move your "
+"``symfony/dotenv`` dependency from ``require-dev`` to ``require`` in "
+"``composer.json``:"
+msgstr ""
+
+#: ../../../deployment.rst:146
+msgid "C) Install/Update your Vendors"
+msgstr ""
+
+#: ../../../deployment.rst:148
+msgid ""
+"Your vendors can be updated before transferring your source code (i.e. "
+"update the ``vendor/`` directory, then transfer that with your source "
+"code) or afterwards on the server. Either way, update your vendors as you"
+" normally do:"
+msgstr ""
+
+#: ../../../deployment.rst:159
+msgid ""
+"The ``--optimize-autoloader`` flag improves Composer's autoloader "
+"performance significantly by building a \"class map\". The ``--no-dev`` "
+"flag ensures that development packages are not installed in the "
+"production environment."
+msgstr ""
+
+#: ../../../deployment.rst:165
+msgid ""
+"If you get a \"class not found\" error during this step, you may need to "
+"run ``export APP_ENV=prod`` (or ``export SYMFONY_ENV=prod`` if you're not"
+" using :ref:`Symfony Flex <symfony-flex>`) before running this command so"
+" that the ``post-install-cmd`` scripts run in the ``prod`` environment."
+msgstr ""
+
+#: ../../../deployment.rst:171
+msgid "D) Clear your Symfony Cache"
+msgstr ""
+
+#: ../../../deployment.rst:173
+msgid "Make sure you clear and warm-up your Symfony cache:"
+msgstr ""
+
+#: ../../../deployment.rst:180
+msgid "E) Other Things!"
+msgstr ""
+
+#: ../../../deployment.rst:182
+msgid ""
+"There may be lots of other things that you need to do, depending on your "
+"setup:"
+msgstr ""
+
+#: ../../../deployment.rst:185
+msgid "Running any database migrations"
+msgstr ""
+
+#: ../../../deployment.rst:186
+msgid "Clearing your APCu cache"
+msgstr ""
+
+#: ../../../deployment.rst:187
+msgid "Add/edit CRON jobs"
+msgstr ""
+
+#: ../../../deployment.rst:188
+msgid ""
+":ref:`Building and minifying your assets <how-do-i-deploy-my-encore-"
+"assets>` with Webpack Encore"
+msgstr ""
+
+#: ../../../deployment.rst:189
+msgid "Pushing assets to a CDN"
+msgstr ""
+
+#: ../../../deployment.rst:190
+msgid "..."
+msgstr ""
+
+#: ../../../deployment.rst:193
+msgid "Application Lifecycle: Continuous Integration, QA, etc."
+msgstr ""
+
+#: ../../../deployment.rst:195
+msgid ""
+"While this article covers the technical details of deploying, the full "
+"lifecycle of taking code from development up to production may have more "
+"steps: deploying to staging, QA (Quality Assurance), running tests, etc."
+msgstr ""
+
+#: ../../../deployment.rst:199
+msgid ""
+"The use of staging, testing, QA, continuous integration, database "
+"migrations and the capability to roll back in case of failure are all "
+"strongly advised. There are simple and more complex tools and one can "
+"make the deployment as easy (or sophisticated) as your environment "
+"requires."
+msgstr ""
+
+#: ../../../deployment.rst:204
+msgid ""
+"Don't forget that deploying your application also involves updating any "
+"dependency (typically via Composer), migrating your database, clearing "
+"your cache and other potential things like pushing assets to a CDN (see "
+"`Common Post-Deployment Tasks`_)."
+msgstr ""
+
+#: ../../../deployment.rst:209
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../deployment.rst:212
+msgid "Deployments not Using the ``composer.json`` File"
+msgstr ""
+
+#: ../../../deployment.rst:214
+msgid ""
+"The :ref:`project root directory <configuration-kernel-project-"
+"directory>` (whose value is used via the ``kernel.project_dir`` parameter"
+" and the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getProjectDir` "
+"method) is calculated automatically by Symfony as the directory where the"
+" main ``composer.json`` file is stored."
+msgstr ""
+
+#: ../../../deployment.rst:220
+msgid ""
+"In deployments not using the ``composer.json`` file, you'll need to "
+"override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getProjectDir` "
+"method :ref:`as explained in this section <configuration-kernel-project-"
+"directory>`."
+msgstr ""
+
+#: ../../../deployment.rst:225
+msgid "Learn More"
+msgstr ""
+

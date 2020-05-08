@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/verbosity.rst:2
+msgid "Verbosity Levels"
+msgstr ""
+
+#: ../../../console/verbosity.rst:4
+msgid ""
+"Console commands have different verbosity levels, which determine the "
+"messages displayed in their output. By default, commands display only the"
+" most useful messages, but you can control their verbosity with the "
+"``-q`` and ``-v`` options:"
+msgstr ""
+
+#: ../../../console/verbosity.rst:26
+msgid ""
+"The verbosity level can also be controlled globally for all commands with"
+" the ``SHELL_VERBOSITY`` environment variable (the ``-q`` and ``-v`` "
+"options still have more precedence over the value of "
+"``SHELL_VERBOSITY``):"
+msgstr ""
+
+#: ../../../console/verbosity.rst:31
+msgid "Console option"
+msgstr ""
+
+#: ../../../console/verbosity.rst:31
+msgid "``SHELL_VERBOSITY`` value"
+msgstr ""
+
+#: ../../../console/verbosity.rst:31
+msgid "Equivalent PHP constant"
+msgstr ""
+
+#: ../../../console/verbosity.rst:33
+msgid "``-q`` or ``--quiet``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:33
+msgid "``-1``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:33
+msgid "``OutputInterface::VERBOSITY_QUIET``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:34
+msgid "(none)"
+msgstr ""
+
+#: ../../../console/verbosity.rst:34
+msgid "``0``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:34
+msgid "``OutputInterface::VERBOSITY_NORMAL``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:35
+msgid "``-v``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:35
+msgid "``1``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:35
+msgid "``OutputInterface::VERBOSITY_VERBOSE``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:36
+msgid "``-vv``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:36
+msgid "``2``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:36
+msgid "``OutputInterface::VERBOSITY_VERY_VERBOSE``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:37
+msgid "``-vvv``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:37
+msgid "``3``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:37
+msgid "``OutputInterface::VERBOSITY_DEBUG``"
+msgstr ""
+
+#: ../../../console/verbosity.rst:40
+msgid ""
+"It is possible to print a message in a command for only a specific "
+"verbosity level. For example::"
+msgstr ""
+
+#: ../../../console/verbosity.rst:74
+msgid ""
+"When the quiet level is used, all output is suppressed as the default "
+":method:`Symfony\\\\Component\\\\Console\\\\Output\\\\Output::write` "
+"method returns without actually printing."
+msgstr ""
+
+#: ../../../console/verbosity.rst:80
+msgid ""
+"The MonologBridge provides a "
+":class:`Symfony\\\\Bridge\\\\Monolog\\\\Handler\\\\ConsoleHandler` class "
+"that allows you to display messages on the console. This is cleaner than "
+"wrapping your output calls in conditions. For an example use in the "
+"Symfony Framework, see :doc:`/logging/monolog_console`."
+msgstr ""
+
+#: ../../../console/verbosity.rst:87
+msgid ""
+"The full exception stacktrace is printed if the ``VERBOSITY_VERBOSE`` "
+"level or above is used."
+msgstr ""
+

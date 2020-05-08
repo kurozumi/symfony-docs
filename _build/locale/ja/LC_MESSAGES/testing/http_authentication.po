@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/http_authentication.rst:5
+msgid "How to Simulate HTTP Authentication in a Functional Test"
+msgstr ""
+
+#: ../../../testing/http_authentication.rst:9
+msgid ""
+"Starting from Symfony 5.1, a ``loginUser()`` method was introduced to "
+"ease testing secured applications. See :ref:`testing_logging_in_users` "
+"for more information about this."
+msgstr ""
+
+#: ../../../testing/http_authentication.rst:13
+msgid ""
+"If you are still using an older version of Symfony, view `previous "
+"versions of this article`_ for information on how to simulate HTTP "
+"authentication."
+msgstr ""
+

@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/faq.rst:2
+msgid "FAQ and Common Issues"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:7
+msgid "How Do I Deploy My Encore Assets?"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:9
+msgid "There are two important things to remember when deploying your assets."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:11
+msgid "**1) Compile Assets for Production**"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:13
+msgid "Optimize your assets for production by running:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:19
+msgid ""
+"That will minify your assets and make other performance optimizations. "
+"Yay!"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:21
+msgid ""
+"But, what server should you run this command on? That depends on how you "
+"deploy. For example, you could execute this locally (or on a build "
+"server), and use `rsync`_ or something else to transfer the generated "
+"files to your production server. Or, you could put your files on your "
+"production server first (e.g. via ``git pull``) and then run this command"
+" on production (ideally, before traffic hits your code). In this case, "
+"you'll need to install Node.js on your production server."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:29
+msgid "**2) Only Deploy the Built Assets**"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:31
+msgid ""
+"The *only* files that need to be deployed to your production servers are "
+"the final, built assets (e.g. the ``public/build`` directory). You do "
+"*not* need to install Node.js, deploy ``webpack.config.js``, the "
+"``node_modules`` directory or even your source asset files, **unless** "
+"you plan on running ``encore production`` on your production machine. "
+"Once your assets are built, these are the *only* thing that need to live "
+"on the production server."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:39
+msgid "Do I Need to Install Node.js on My Production Server?"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:41
+msgid ""
+"No, unless you plan to build your production assets on your production "
+"server, which is not recommended. See `How Do I Deploy my Encore "
+"Assets?`_."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:45
+msgid "What Files Should I Commit to git? And which Should I Ignore?"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:47
+msgid ""
+"You should commit all of your files to git, except for the "
+"``node_modules/`` directory and the built files. Your ``.gitignore`` file"
+" should include:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:56
+msgid ""
+"You *should* commit all of your source asset files, ``package.json`` and "
+"``yarn.lock``."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:59
+msgid "My App Lives under a Subdirectory"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:61
+msgid ""
+"If your app does not live at the root of your web server (i.e. it lives "
+"under a subdirectory, like ``/myAppSubdir``), you will need to configure "
+"that when calling ``Encore.setPublicPath()``:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:81
+msgid ""
+"If you're using the ``encore_entry_script_tags()`` and "
+"``encore_entry_link_tags()`` Twig shortcuts (or are :ref:`processing your"
+" assets through entrypoints.json <load-manifest-files>` in some other "
+"way) you're done! These shortcut methods read from an "
+":ref:`entrypoints.json <encore-entrypointsjson-simple-description>` file "
+"that will now contain the subdirectory."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:88
+msgid "\"jQuery is not defined\" or \"$ is not defined\""
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:90
+msgid ""
+"This error happens when your code (or some library that you are using) "
+"expects ``$`` or ``jQuery`` to be a global variable. But, when you use "
+"Webpack and ``require('jquery')``, no global variables are set."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:94
+msgid ""
+"The fix depends on if the error is happening in your code or inside some "
+"third-party code that you're using. See :doc:`/frontend/encore/legacy-"
+"applications` for the fix."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:98
+msgid "Uncaught ReferenceError: webpackJsonp is not defined"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:100
+msgid ""
+"If you get this error, it's probably because you've forgotten to add a "
+"``script`` tag for the ``runtime.js`` file that contains Webpack's "
+"runtime. If you're using the ``encore_entry_script_tags()`` Twig "
+"function, this should never happen: the file script tag is rendered "
+"automatically."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:106
+msgid "This dependency was not found: some-module in ./path/to/file.js"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:108
+msgid ""
+"Usually, after you install a package via yarn, you can require / import "
+"it to use it. For example, after running ``yarn add respond.js``, you try"
+" to require that module:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:115
+msgid "But, instead of working, you see an error:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:117
+msgid "This dependency was not found:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:119
+msgid "respond.js in ./assets/js/app.js"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:121
+msgid ""
+"Typically, a package will \"advertise\" its \"main\" file by adding a "
+"``main`` key to its ``package.json``. But sometimes, old libraries won't "
+"have this. Instead, you'll need to specifically require the file you "
+"need. In this case, the file you should use is located at "
+"``node_modules/respond.js/dest/respond.src.js``. You can require this "
+"via:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:133
+msgid "I need to execute Babel on a third-party Module"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:135
+msgid ""
+"For performance, Encore does not process libraries inside "
+"``node_modules/`` through Babel. But, you can change that via the "
+"``configureBabel()`` method. See :doc:`/frontend/encore/babel` for "
+"details."
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:142
+msgid "How Do I Integrate my Encore Configuration with my IDE?"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:144
+msgid ""
+"`Webpack integration in PhpStorm`_ and other IDEs makes your development "
+"more productive (for example by resolving aliases). However, you may face"
+" this error:"
+msgstr ""
+
+#: ../../../frontend/encore/faq.rst:154
+msgid ""
+"It fails because the Encore Runtime Environment is only configured when "
+"you are running it (e.g. when executing ``yarn encore dev``). Fix this "
+"issue calling to ``Encore.isRuntimeEnvironmentConfigured()`` and "
+"``Encore.configureRuntimeEnvironment()`` methods:"
+msgstr ""
+

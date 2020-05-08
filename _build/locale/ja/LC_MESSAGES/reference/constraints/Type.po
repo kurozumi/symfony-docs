@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Type.rst:2
+msgid "Type"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:4
+msgid ""
+"Validates that a value is of a specific data type. For example, if a "
+"variable should be an array, you can use this constraint with the "
+"``array`` type option to validate this."
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:10
+#: ../../../reference/constraints/Type.rst:147
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:13
+msgid ":ref:`type <reference-constraint-type-type>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:14
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:14
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Type`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:15
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\TypeValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:19
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:21
+msgid ""
+"This will check if ``id`` is an instance of "
+"``Ramsey\\Uuid\\UuidInterface``, ``firstName`` is of type ``string`` "
+"(using :phpfunction:`is_string` PHP function), ``age`` is an ``integer`` "
+"(using :phpfunction:`is_int` PHP function) and ``accessCode`` contains "
+"either only letters or only digits (using :phpfunction:`ctype_alpha` and "
+":phpfunction:`ctype_digit` PHP functions)."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:152
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:154
+msgid ""
+"**type**: ``string`` **default**: ``This value should be of type {{ type "
+"}}.``"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:156
+msgid "The message if the underlying data is not of the given type."
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:158
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:161
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:161
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:163
+msgid "``{{ type }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:163
+msgid "The expected type"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:164
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:164
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:172
+msgid "type"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:174
+msgid ""
+"**type**: ``string`` or ``array`` [:ref:`default option <validation-"
+"default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:176
+msgid ""
+"This required option defines the type or collection of types allowed for "
+"the given value. Each type is either the FQCN (fully qualified class "
+"name) of some PHP class/interface or a valid PHP datatype (checked by "
+"PHP's ``is_()`` functions):"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:180
+msgid ":phpfunction:`array <is_array>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:181
+msgid ":phpfunction:`bool <is_bool>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:182
+msgid ":phpfunction:`callable <is_callable>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:183
+msgid ":phpfunction:`float <is_float>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:184
+msgid ":phpfunction:`double <is_double>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:185
+msgid ":phpfunction:`int <is_int>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:186
+msgid ":phpfunction:`integer <is_integer>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:187
+msgid ":phpfunction:`iterable <is_iterable>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:188
+msgid ":phpfunction:`long <is_long>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:189
+msgid ":phpfunction:`null <is_null>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:190
+msgid ":phpfunction:`numeric <is_numeric>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:191
+msgid ":phpfunction:`object <is_object>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:192
+msgid ":phpfunction:`real <is_real>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:193
+msgid ":phpfunction:`resource <is_resource>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:194
+msgid ":phpfunction:`scalar <is_scalar>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:195
+msgid ":phpfunction:`string <is_string>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:197
+msgid ""
+"Also, you can use ``ctype_*()`` functions from corresponding `built-in "
+"PHP extension`_. Consider `a list of ctype functions`_:"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:200
+msgid ":phpfunction:`alnum <ctype_alnum>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:201
+msgid ":phpfunction:`alpha <ctype_alpha>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:202
+msgid ":phpfunction:`cntrl <ctype_cntrl>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:203
+msgid ":phpfunction:`digit <ctype_digit>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:204
+msgid ":phpfunction:`graph <ctype_graph>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:205
+msgid ":phpfunction:`lower <ctype_lower>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:206
+msgid ":phpfunction:`print <ctype_print>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:207
+msgid ":phpfunction:`punct <ctype_punct>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:208
+msgid ":phpfunction:`space <ctype_space>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:209
+msgid ":phpfunction:`upper <ctype_upper>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:210
+msgid ":phpfunction:`xdigit <ctype_xdigit>`"
+msgstr ""
+
+#: ../../../reference/constraints/Type.rst:212
+msgid ""
+"Make sure that the proper :phpfunction:`locale <setlocale>` is set before"
+" using one of these."
+msgstr ""
+

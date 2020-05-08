@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/multiple_guard_authenticators.rst:2
+msgid "How to Use Multiple Guard Authenticators"
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:4
+msgid ""
+"The Guard authentication component allows you to use many different "
+"authenticators at a time."
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:7
+msgid ""
+"An entry point is a service id (of one of your authenticators) whose "
+"``start()`` method is called to start the authentication process."
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:11
+msgid "Multiple Authenticators with Shared Entry Point"
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:13
+msgid ""
+"Sometimes you want to offer your users different authentication "
+"mechanisms like a form login and a Facebook login while both entry points"
+" redirect the user to the same login page. However, in your configuration"
+" you have to explicitly say which entry point you want to use."
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:19
+msgid "This is how your security configuration can look in action:"
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:83
+msgid ""
+"There is one limitation with this approach - you have to use exactly one "
+"entry point."
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:86
+msgid "Multiple Authenticators with Separate Entry Points"
+msgstr ""
+
+#: ../../../security/multiple_guard_authenticators.rst:88
+msgid ""
+"However, there are use cases where you have authenticators that protect "
+"different parts of your application. For example, you have a login form "
+"that protects the secured area of your application front-end and API end "
+"points that are protected with API tokens. As you can only configure one "
+"entry point per firewall, the solution is to split the configuration into"
+" two separate firewalls:"
+msgstr ""
+

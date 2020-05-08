@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:2
+msgid "The HttpKernel Component: the Controller Resolver"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:4
+msgid ""
+"You might think that our framework is already pretty solid and you are "
+"probably right. But let's see how we can improve it nonetheless."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:7
+msgid ""
+"Right now, all our examples use procedural code, but remember that "
+"controllers can be any valid PHP callbacks. Let's convert our controller "
+"to a proper class::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:23
+msgid "Update the route definition accordingly::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:30
+msgid ""
+"The move is pretty straightforward and makes a lot of sense as soon as "
+"you create more pages but you might have noticed a non-desirable side "
+"effect... The ``LeapYearController`` class is *always* instantiated, even"
+" if the requested URL does not match the ``leap_year`` route. This is bad"
+" for one main reason: performance wise, all controllers for all routes "
+"must now be instantiated for every request. It would be better if "
+"controllers were lazy-loaded so that only the controller associated with "
+"the matched route is instantiated."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:39
+msgid ""
+"To solve this issue, and a bunch more, let's install and use the "
+"HttpKernel component:"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:46
+msgid ""
+"The HttpKernel component has many interesting features, but the ones we "
+"need right now are the *controller resolver* and *argument resolver*. A "
+"controller resolver knows how to determine the controller to execute and "
+"the argument resolver determines the arguments to pass to it, based on a "
+"Request object. All controller resolvers implement the following "
+"interface::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:59
+msgid ""
+"The ``getController()`` method relies on the same convention as the one "
+"we have defined earlier: the ``_controller`` request attribute must "
+"contain the controller associated with the Request. Besides the built-in "
+"PHP callbacks, ``getController()`` also supports strings composed of a "
+"class name followed by two colons and a method name as a valid callback, "
+"like 'class::method'::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:70
+msgid ""
+"To make this code work, modify the framework code to use the controller "
+"resolver from HttpKernel::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:85
+msgid ""
+"As an added bonus, the controller resolver properly handles the error "
+"management for you: when you forget to define a ``_controller`` attribute"
+" for a Route for instance."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:89
+msgid ""
+"Now, let's see how the controller arguments are guessed. "
+"``getArguments()`` introspects the controller signature to determine "
+"which arguments to pass to it by using the native PHP `reflection`_. This"
+" method is defined in the following interface::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:102
+msgid ""
+"The ``index()`` method needs the Request object as an argument. "
+"``getArguments()`` knows when to inject it properly if it is type-hinted "
+"correctly::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:111
+msgid ""
+"More interesting, ``getArguments()`` is also able to inject any Request "
+"attribute; if the argument has the same name as the corresponding "
+"attribute::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:117
+msgid ""
+"You can also inject the Request and some attributes at the same time (as "
+"the matching is done on the argument name or a type hint, the arguments "
+"order does not matter)::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:125
+msgid ""
+"Finally, you can also define default values for any argument that matches"
+" an optional attribute of the Request::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:130
+msgid "Let's inject the ``$year`` request attribute for our controller::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:144
+msgid ""
+"The resolvers also take care of validating the controller callable and "
+"its arguments. In case of a problem, it throws an exception with a nice "
+"message explaining the problem (the controller class does not exist, the "
+"method is not defined, an argument has no matching attribute, ...)."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:151
+msgid ""
+"With the great flexibility of the default controller resolver and "
+"argument resolver, you might wonder why someone would want to create "
+"another one (why would there be an interface if not?). Two examples: in "
+"Symfony, ``getController()`` is enhanced to support :doc:`controllers as "
+"services </controller/service>`; and ``getArguments()`` provides an "
+"extension point to alter or enhance the resolving of arguments."
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:158
+msgid "Let's conclude with the new version of our framework::"
+msgstr ""
+
+#: ../../../create_framework/http_kernel_controller_resolver.rst:202
+msgid ""
+"Think about it once more: our framework is more robust and more flexible "
+"than ever and it still has less than 50 lines of code."
+msgstr ""
+

@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/database.rst:5
+msgid "How to Test Code that Interacts with the Database"
+msgstr ""
+
+#: ../../../testing/database.rst:8
+msgid "Configuring a Database for Tests"
+msgstr ""
+
+#: ../../../testing/database.rst:10
+msgid ""
+"Tests that interact with the database should use their own separate "
+"database to not mess with the databases used in the other "
+":ref:`configuration environments <configuration-environments>`. To do "
+"that, edit or create the ``.env.test.local`` file at the root directory "
+"of your project and define the new value for the ``DATABASE_URL`` env "
+"var:"
+msgstr ""
+
+#: ../../../testing/database.rst:22
+msgid ""
+"A common practice is to append the ``_test`` suffix to the original "
+"database names in tests. If the database name in production is called "
+"``project_acme`` the name of the testing database could be "
+"``project_acme_test``."
+msgstr ""
+
+#: ../../../testing/database.rst:26
+msgid ""
+"The above assumes that each developer/machine uses a different database "
+"for the tests. If the entire team uses the same settings for tests, edit "
+"or create the ``.env.test`` file instead and commit it to the shared "
+"repository. Learn more about :ref:`using multiple .env files in Symfony "
+"applications <configuration-multiple-env-files>`."
+msgstr ""
+
+#: ../../../testing/database.rst:32
+msgid "Resetting the Database Automatically Before each Test"
+msgstr ""
+
+#: ../../../testing/database.rst:34
+msgid ""
+"Tests should be independent from each other to avoid side effects. For "
+"example, if some test modifies the database (by adding or removing an "
+"entity) it could change the results of other tests. Run the following "
+"command to install a bundle that ensures that each test is run with the "
+"same unmodified database:"
+msgstr ""
+
+#: ../../../testing/database.rst:43
+msgid "Now, enable it as a PHPUnit extension or listener:"
+msgstr ""
+
+#: ../../../testing/database.rst:62
+msgid ""
+"This bundle uses a clever trick to avoid side effects without sacrificing"
+" performance: it begins a database transaction before every test and "
+"rolls it back automatically after the test finishes to undo all changes. "
+"Read more in the documentation of the `DAMADoctrineTestBundle`_."
+msgstr ""
+
+#: ../../../testing/database.rst:70
+msgid "Dummy Data Fixtures"
+msgstr ""
+
+#: ../../../testing/database.rst:72
+msgid ""
+"Instead of using the real data from the production database, it's common "
+"to use fake or dummy data in the test database. This is usually called "
+"*\"fixtures data\"* and Doctrine provides a library to create and load "
+"them. Install it with:"
+msgstr ""
+
+#: ../../../testing/database.rst:80
+msgid ""
+"Then, use the ``make:fixtures`` command to generate an empty fixture "
+"class:"
+msgstr ""
+
+#: ../../../testing/database.rst:89
+msgid "Customize the new class to load ``Product`` objects into Doctrine::"
+msgstr ""
+
+#: ../../../testing/database.rst:114
+msgid "Empty the database and reload *all* the fixture classes with:"
+msgstr ""
+
+#: ../../../testing/database.rst:120
+msgid "For more information, read the `DoctrineFixturesBundle documentation`_."
+msgstr ""
+
+#: ../../../testing/database.rst:123
+msgid "Mocking a Doctrine Repository in Unit Tests"
+msgstr ""
+
+#: ../../../testing/database.rst:125
+msgid ""
+"**Unit testing Doctrine repositories is not recommended**. Repositories "
+"are meant to be tested against a real database connection. However, in "
+"case you still need to do this, look at the following example."
+msgstr ""
+
+#: ../../../testing/database.rst:129
+msgid "Suppose the class you want to test looks like this::"
+msgstr ""
+
+#: ../../../testing/database.rst:156
+msgid ""
+"Since the ``EntityManagerInterface`` gets injected into the class through"
+" the constructor, you can pass a mock object within a test::"
+msgstr ""
+
+#: ../../../testing/database.rst:199
+msgid ""
+"In this example, you are building the mocks from the inside out, first "
+"creating the employee which gets returned by the ``Repository``, which "
+"itself gets returned by the ``EntityManager``. This way, no real class is"
+" involved in testing."
+msgstr ""
+
+#: ../../../testing/database.rst:205
+msgid "Functional Testing of A Doctrine Repository"
+msgstr ""
+
+#: ../../../testing/database.rst:207
+msgid ""
+"In :ref:`functional tests <functional-tests>` you'll make queries to the "
+"database using the actual Doctrine repositories, instead of mocking them."
+" To do so, get the entity manager via the service container as follows::"
+msgstr ""
+

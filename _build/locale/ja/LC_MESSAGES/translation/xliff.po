@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/xliff.rst:2
+msgid "The XLIFF format"
+msgstr ""
+
+#: ../../../translation/xliff.rst:4
+msgid ""
+"Most professional translation tools support XLIFF_. These files use the "
+"XML format and are supported by Symfony by default. Besides supporting "
+":doc:`all Symfony translation features </translation>`, the XLIFF format "
+"also has some specific features."
+msgstr ""
+
+#: ../../../translation/xliff.rst:10
+msgid "Adding Notes to Translation Contents"
+msgstr ""
+
+#: ../../../translation/xliff.rst:12
+msgid ""
+"Sometimes translators need additional context to better decide how to "
+"translate some content. This context can be provided with notes, which "
+"are a collection of comments used to store end user readable information."
+" The only format that supports loading and dumping notes is XLIFF version"
+" 2."
+msgstr ""
+
+#: ../../../translation/xliff.rst:17
+msgid ""
+"If the XLIFF 2.0 document contains ``<notes>`` nodes, they are "
+"automatically loaded/dumped inside a Symfony application:"
+msgstr ""
+

@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/monolog_console.rst:5
+msgid "How to Configure Monolog to Display Console Messages"
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:7
+msgid ""
+"It is possible to use the console to print messages for certain "
+":doc:`verbosity levels </console/verbosity>` using the "
+":class:`Symfony\\\\Component\\\\Console\\\\Output\\\\OutputInterface` "
+"instance that is passed when a command gets executed."
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:12
+msgid ""
+"When a lot of logging has to happen, it's cumbersome to print information"
+" depending on the verbosity settings (``-v``, ``-vv``, ``-vvv``) because "
+"the calls need to be wrapped in conditions. For example::"
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:30
+msgid ""
+"Instead of using these semantic methods to test for each of the verbosity"
+" levels, the `MonologBridge`_ provides a "
+":class:`Symfony\\\\Bridge\\\\Monolog\\\\Handler\\\\ConsoleHandler` that "
+"listens to console events and writes log messages to the console output "
+"depending on the current log level and the console verbosity."
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:36
+msgid "The example above could then be rewritten as::"
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:61
+msgid ""
+"Depending on the verbosity level that the command is run in and the "
+"user's configuration (see below), these messages may or may not be "
+"displayed to the console. If they are displayed, they are timestamped and"
+" colored appropriately. Additionally, error logs are written to the error"
+" output (``php://stderr``). There is no need to conditionally handle the "
+"verbosity settings anymore."
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:67
+msgid "The Monolog console handler is enabled by default:"
+msgstr ""
+
+#: ../../../logging/monolog_console.rst:122
+msgid ""
+"Now, log messages will be shown on the console based on the log levels "
+"and verbosity. By default (normal verbosity level), warnings and higher "
+"will be shown. But in :doc:`full verbosity mode </console/verbosity>`, "
+"all messages will be shown."
+msgstr ""
+

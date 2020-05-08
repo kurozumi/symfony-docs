@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/validation_groups.rst:5
+msgid "How to Define the Validation Groups to Use"
+msgstr ""
+
+#: ../../../form/validation_groups.rst:8
+msgid "Validation Groups"
+msgstr ""
+
+#: ../../../form/validation_groups.rst:10
+msgid ""
+"If your object takes advantage of :doc:`validation groups "
+"</validation/groups>`, you'll need to specify which validation group(s) "
+"your form should use. Pass this as an option when :ref:`creating forms in"
+" controllers <creating-forms-in-controllers>`::"
+msgstr ""
+
+#: ../../../form/validation_groups.rst:18
+msgid ""
+"When :ref:`creating forms in classes <creating-forms-in-classes>`, add "
+"the following to the ``configureOptions()`` method::"
+msgstr ""
+
+#: ../../../form/validation_groups.rst:31
+msgid ""
+"In both of these cases, *only* the ``registration`` validation group will"
+" be used to validate the underlying object. To apply the ``registration``"
+" group *and* all constraints that are not in a group, use::"
+msgstr ""
+

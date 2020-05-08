@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Collection.rst:2
+msgid "Collection"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:4
+msgid ""
+"This constraint is used when the underlying data is a collection (i.e. an"
+" array or an object that implements ``Traversable`` and ``ArrayAccess``),"
+" but you'd like to validate different keys of that collection in "
+"different ways. For example, you might validate the ``email`` key using "
+"the ``Email`` constraint and the ``inventory`` key of the collection with"
+" the ``Range`` constraint."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:11
+msgid ""
+"This constraint can also make sure that certain collection keys are "
+"present and that extra keys are not present."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:16
+msgid ""
+"If you want to validate that all the elements of the collection are "
+"unique use the :doc:`Unique constraint </reference/constraints/Unique>`."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:20
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:20
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:21
+#: ../../../reference/constraints/Collection.rst:293
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:21
+msgid "`allowExtraFields`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:22
+msgid "`allowMissingFields`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:23
+msgid "`extraFieldsMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:24
+msgid "`fields`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:25
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:26
+msgid "`missingFieldsMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:27
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:28
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:28
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Collection`"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:29
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:29
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\CollectionValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:33
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:35
+msgid ""
+"The ``Collection`` constraint allows you to validate the different keys "
+"of a collection individually. Take the following example::"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:54
+msgid ""
+"To validate that the ``personal_email`` element of the ``profileData`` "
+"array property is a valid email address and that the ``short_bio`` "
+"element is not blank but is no longer than 100 characters in length, you "
+"would do the following:"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:166
+msgid "Presence and Absence of Fields"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:168
+msgid ""
+"By default, this constraint validates more than whether or not the "
+"individual fields in the collection pass their assigned constraints. In "
+"fact, if any keys of a collection are missing or if there are any "
+"unrecognized keys in the collection, validation errors will be thrown."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:173
+msgid ""
+"If you would like to allow for keys to be absent from the collection or "
+"if you would like \"extra\" keys to be allowed in the collection, you can"
+" modify the `allowMissingFields`_ and `allowExtraFields`_ options "
+"respectively. In the above example, the ``allowMissingFields`` option was"
+" set to true, meaning that if either of the ``personal_email`` or "
+"``short_bio`` elements were missing from the ``$personalData`` property, "
+"no validation error would occur."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:182
+msgid "Required and Optional Field Constraints"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:184
+msgid ""
+"Constraints for fields within a collection can be wrapped in the "
+"``Required`` or ``Optional`` constraint to control whether they should "
+"always be applied (``Required``) or only applied when the field is "
+"present (``Optional``)."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:188
+msgid ""
+"For instance, if you want to require that the ``personal_email`` field of"
+" the ``profileData`` array is not blank and is a valid email but the "
+"``alternate_email`` field is optional but must be a valid email if "
+"supplied, you can do the following:"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:286
+msgid ""
+"Even without ``allowMissingFields`` set to true, you can now omit the "
+"``alternate_email`` property completely from the ``profileData`` array, "
+"since it is ``Optional``. However, if the ``personal_email`` field does "
+"not exist in the array, the ``NotBlank`` constraint will still be applied"
+" (since it is wrapped in ``Required``) and you will receive a constraint "
+"violation."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:296
+msgid "``allowExtraFields``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:298
+#: ../../../reference/constraints/Collection.rst:307
+msgid "**type**: ``boolean`` **default**: false"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:300
+msgid ""
+"If this option is set to ``false`` and the underlying collection contains"
+" one or more elements that are not included in the `fields`_ option, a "
+"validation error will be returned. If set to ``true``, extra fields are "
+"OK."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:305
+msgid "``allowMissingFields``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:309
+msgid ""
+"If this option is set to ``false`` and one or more fields from the "
+"`fields`_ option are not present in the underlying collection, a "
+"validation error will be returned. If set to ``true``, it's OK if some "
+"fields in the `fields`_ option are not present in the underlying "
+"collection."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:315
+msgid "``extraFieldsMessage``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:317
+msgid "**type**: ``string`` **default**: ``This field was not expected.``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:319
+msgid ""
+"The message shown if `allowExtraFields`_ is false and an extra field is "
+"detected."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:322
+#: ../../../reference/constraints/Collection.rst:349
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:325
+#: ../../../reference/constraints/Collection.rst:352
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:325
+#: ../../../reference/constraints/Collection.rst:352
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:327
+#: ../../../reference/constraints/Collection.rst:354
+msgid "``{{ field }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:327
+msgid "The key of the extra field detected"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:331
+msgid "``fields``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:333
+msgid "**type**: ``array`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:335
+msgid ""
+"This option is required and is an associative array defining all of the "
+"keys in the collection and, for each key, exactly which validator(s) "
+"should be executed against that element of the collection."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:342
+msgid "``missingFieldsMessage``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:344
+msgid "**type**: ``string`` **default**: ``This field is missing.``"
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:346
+msgid ""
+"The message shown if `allowMissingFields`_ is false and one or more "
+"fields are missing from the underlying collection."
+msgstr ""
+
+#: ../../../reference/constraints/Collection.rst:354
+msgid "The key of the missing field defined in ``fields``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

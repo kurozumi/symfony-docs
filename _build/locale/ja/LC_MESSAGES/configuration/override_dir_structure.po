@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../configuration/override_dir_structure.rst:5
+msgid "How to Override Symfony's default Directory Structure"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:7
+msgid ""
+"Symfony applications have the following default directory structure, but "
+"you can override it to create your own structure:"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:33
+msgid "Override the Configuration Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:35
+msgid ""
+"The configuration directory is the only one which cannot be overridden in"
+" a Symfony application. Its location is hardcoded as the ``config/`` "
+"directory at your project root directory."
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:42
+msgid "Override the Cache Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:44
+msgid ""
+"You can change the default cache directory by overriding the "
+"``getCacheDir()`` method in the ``Kernel`` class of your application::"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:60
+msgid ""
+"In this code, ``$this->environment`` is the current environment (i.e. "
+"``dev``). In this case you have changed the location of the cache "
+"directory to ``var/{environment}/cache/``."
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:66
+msgid ""
+"You should keep the cache directory different for each environment, "
+"otherwise some unexpected behavior may happen. Each environment generates"
+" its own cached configuration files, and so each needs its own directory "
+"to store those cache files."
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:74
+msgid "Override the Log Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:76
+msgid ""
+"Overriding the ``var/log/`` directory is the same as overriding the "
+"``var/cache/`` directory. The only difference is that you need to "
+"override the ``getLogDir()`` method::"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:93
+msgid ""
+"Here you have changed the location of the directory to "
+"``var/{environment}/log/``."
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:98
+msgid "Override the Templates Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:100
+msgid ""
+"If your templates are not stored in the default ``templates/`` directory,"
+" use the :ref:`twig.paths <config-twig-paths>` configuration option to "
+"define your own templates directory (or directories):"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:141
+msgid "Override the Translations Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:143
+msgid ""
+"If your translation files are not stored in the default ``translations/``"
+" directory, use the :ref:`framework.translator.paths <reference-"
+"translator-paths>` configuration option to define your own translations "
+"directory (or directories):"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:192
+msgid "Override the Public Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:194
+msgid ""
+"If you need to rename or move your ``public/`` directory, the only thing "
+"you need to guarantee is that the path to the ``var/`` directory is still"
+" correct in your ``index.php`` front controller. If you renamed the "
+"directory, you're fine. But if you moved it in some way, you may need to "
+"modify these paths inside those files::"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:202
+msgid ""
+"You also need to change the ``extra.public-dir`` option in the "
+"``composer.json`` file:"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:217
+msgid ""
+"Some shared hosts have a ``public_html/`` web directory root. Renaming "
+"your web directory from ``public/`` to ``public_html/`` is one way to "
+"make your Symfony project work on your shared host. Another way is to "
+"deploy your application to a directory outside of your web root, delete "
+"your ``public_html/`` directory, and then replace it with a symbolic link"
+" to the ``public/`` dir in your project."
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:225
+msgid "Override the Vendor Directory"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:227
+msgid ""
+"To override the ``vendor/`` directory, you need to define the ``vendor-"
+"dir`` option in your ``composer.json`` file like this:"
+msgstr ""
+
+#: ../../../configuration/override_dir_structure.rst:241
+msgid ""
+"This modification can be of interest if you are working in a virtual "
+"environment and cannot use NFS - for example, if you're running a Symfony"
+" application using Vagrant/VirtualBox in a guest operating system."
+msgstr ""
+

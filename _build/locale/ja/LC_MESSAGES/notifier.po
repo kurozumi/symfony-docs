@@ -1,0 +1,414 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../notifier.rst:5
+msgid "Creating and Sending Notifications"
+msgstr ""
+
+#: ../../../notifier.rst:9
+msgid ""
+"The Notifier component was introduced in Symfony 5.0 as an "
+":doc:`experimental feature </contributing/code/experimental>`."
+msgstr ""
+
+#: ../../../notifier.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../notifier.rst:15
+msgid ""
+"Current web applications use many different channels to send messages to "
+"the users (e.g. SMS, Slack messages, emails, push notifications, etc.). "
+"The Notifier component in Symfony is an abstraction on top of all these "
+"channels. It provides a dynamic way to manage how the messages are sent. "
+"Get the Notifier installed using:"
+msgstr ""
+
+#: ../../../notifier.rst:26
+msgid "Channels: Chatters, Texters, Email and Browser"
+msgstr ""
+
+#: ../../../notifier.rst:28
+msgid ""
+"The notifier component can send notifications to different channels. Each"
+" channel can integrate with different providers (e.g. Slack or Twilio "
+"SMS) by using transports."
+msgstr ""
+
+#: ../../../notifier.rst:32
+msgid "The notifier component supports the following channels:"
+msgstr ""
+
+#: ../../../notifier.rst:34
+msgid "`SMS <SMS Channel>`_ sends notifications to phones via SMS messages"
+msgstr ""
+
+#: ../../../notifier.rst:35
+msgid ""
+"`Chat <Chat Channel>`_ sends notifications to chat services like Slack "
+"and Telegram;"
+msgstr ""
+
+#: ../../../notifier.rst:37
+msgid "`Email <Email Channel>`_ integrates the :doc:`Symfony Mailer </mailer>`;"
+msgstr ""
+
+#: ../../../notifier.rst:38
+msgid "Browser uses :ref:`flash messages <flash-messages>`."
+msgstr ""
+
+#: ../../../notifier.rst:42
+msgid ""
+"Use :doc:`secrets </configuration/secrets>` to securily store your API's "
+"tokens."
+msgstr ""
+
+#: ../../../notifier.rst:48
+msgid "SMS Channel"
+msgstr ""
+
+#: ../../../notifier.rst:50
+msgid ""
+"The SMS channel uses :class:`Symfony\\\\Component\\\\Notifier\\\\Texter` "
+"classes to send SMS messages to mobile phones. This feature requires "
+"subscribing to a third-party service that sends SMS messages. Symfony "
+"provides integration with a couple popular SMS services:"
+msgstr ""
+
+#: ../../../notifier.rst:56 ../../../notifier.rst:129
+msgid "Service"
+msgstr ""
+
+#: ../../../notifier.rst:56 ../../../notifier.rst:129
+msgid "Package"
+msgstr ""
+
+#: ../../../notifier.rst:56 ../../../notifier.rst:129
+msgid "DSN"
+msgstr ""
+
+#: ../../../notifier.rst:58
+msgid "Twilio"
+msgstr ""
+
+#: ../../../notifier.rst:58
+msgid "``symfony/twilio-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:58
+msgid "``twilio://SID:TOKEN@default?from=FROM``"
+msgstr ""
+
+#: ../../../notifier.rst:59
+msgid "Nexmo"
+msgstr ""
+
+#: ../../../notifier.rst:59
+msgid "``symfony/nexmo-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:59
+msgid "``nexmo://KEY:SECRET@default?from=FROM``"
+msgstr ""
+
+#: ../../../notifier.rst:60
+msgid "OvhCloud"
+msgstr ""
+
+#: ../../../notifier.rst:60
+msgid "``symfony/ovhcloud-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:60
+msgid "``ovhcloud://KEY:SECRET@default?from=FROM``"
+msgstr ""
+
+#: ../../../notifier.rst:61
+msgid "Sinch"
+msgstr ""
+
+#: ../../../notifier.rst:61
+msgid "``symfony/sinch-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:61
+msgid "``sinch://ACCOUNT_ID:AUTH_TOKEN@default?from=FROM``"
+msgstr ""
+
+#: ../../../notifier.rst:62
+msgid "FreeMobile"
+msgstr ""
+
+#: ../../../notifier.rst:62
+msgid "``symfony/freemobile-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:62
+msgid "``freemobile://LOGIN:PASS@default?phone=PHONE``"
+msgstr ""
+
+#: ../../../notifier.rst:67
+msgid ""
+"The OvhCloud, Sinch and FreeMobile integrations were introduced in "
+"Symfony 5.1."
+msgstr ""
+
+#: ../../../notifier.rst:69
+msgid ""
+"To enable a texter, add the correct DSN in your ``.env`` file and "
+"configure the ``texter_transports``:"
+msgstr ""
+
+#: ../../../notifier.rst:122
+msgid "Chat Channel"
+msgstr ""
+
+#: ../../../notifier.rst:124
+msgid ""
+"The chat channel is used to send chat messages to users by using "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Chatter` classes. Symfony "
+"provides integration with these chat services:"
+msgstr ""
+
+#: ../../../notifier.rst:131
+msgid "Slack"
+msgstr ""
+
+#: ../../../notifier.rst:131
+msgid "``symfony/slack-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:131
+msgid "``slack://default/ID``"
+msgstr ""
+
+#: ../../../notifier.rst:132
+msgid "Telegram"
+msgstr ""
+
+#: ../../../notifier.rst:132
+msgid "``symfony/telegram-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:132
+msgid "``telegram://TOKEN@default?channel=CHAT_ID``"
+msgstr ""
+
+#: ../../../notifier.rst:133
+msgid "Mattermost"
+msgstr ""
+
+#: ../../../notifier.rst:133
+msgid "``symfony/mattermost-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:133
+msgid "``mattermost://TOKEN@ENDPOINT?channel=CHANNEL``"
+msgstr ""
+
+#: ../../../notifier.rst:134
+msgid "RocketChat"
+msgstr ""
+
+#: ../../../notifier.rst:134
+msgid "``symfony/rocketchat-notifier``"
+msgstr ""
+
+#: ../../../notifier.rst:134
+msgid "``rocketchat://TOKEN@ENDPOINT?channel=CHANNEL``"
+msgstr ""
+
+#: ../../../notifier.rst:139
+msgid ""
+"The Mattermost and RocketChat integrations were introduced in Symfony "
+"5.1. The Slack DSN changed in Symfony 5.1 to use Slack Incoming Webhooks "
+"instead of legacy tokens."
+msgstr ""
+
+#: ../../../notifier.rst:143
+msgid "Chatters are configured using the ``chatter_transports`` setting:"
+msgstr ""
+
+#: ../../../notifier.rst:193
+msgid "Email Channel"
+msgstr ""
+
+#: ../../../notifier.rst:195
+msgid ""
+"The email channel uses the :doc:`Symfony Mailer </mailer>` to send "
+"notifications using the special "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Mime\\\\NotificationEmail`. It is "
+"required to install the Twig bridge along with the Inky and CSS Inliner "
+"Twig extensions:"
+msgstr ""
+
+#: ../../../notifier.rst:205
+msgid ""
+"After this, :ref:`configure the mailer <mailer-transport-setup>`. You can"
+" also set the default \"from\" email address that should be used to send "
+"the notification emails:"
+msgstr ""
+
+#: ../../../notifier.rst:256
+msgid "Configure to use Failover or Round-Robin Transports"
+msgstr ""
+
+#: ../../../notifier.rst:258
+msgid ""
+"Besides configuring one or more separate transports, you can also use the"
+" special ``||`` and ``&&`` characters to implement a failover or round-"
+"robin transport:"
+msgstr ""
+
+#: ../../../notifier.rst:323
+msgid "Creating & Sending Notifications"
+msgstr ""
+
+#: ../../../notifier.rst:325
+msgid ""
+"To send a notification, autowire the "
+":class:`Symfony\\\\Component\\\\Notifier\\\\NotifierInterface` (service "
+"ID ``notifier``). This class has a ``send()`` method that allows you to "
+"send a "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Notification\\\\Notification`"
+" to a "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Recipient\\\\Recipient`::"
+msgstr ""
+
+#: ../../../notifier.rst:365
+msgid ""
+"The ``Notification`` is created by using two arguments: the subject and "
+"channels. The channels specify which channel (or transport) should be "
+"used to send the notification. For instance, ``['email', 'sms']`` will "
+"send both an email and sms notification to the user. It is required to "
+"specify the transport when using chatters (e.g. ``['email', "
+"'chat/telegram']``)."
+msgstr ""
+
+#: ../../../notifier.rst:371
+msgid ""
+"The default notification also has a ``content()`` and ``emoji()`` method "
+"to set the notification content and icon."
+msgstr ""
+
+#: ../../../notifier.rst:374
+msgid "Symfony provides three types of recipients:"
+msgstr ""
+
+#: ../../../notifier.rst:379
+msgid ":class:`Symfony\\\\Component\\\\Notifier\\\\Recipient\\\\NoRecipient`"
+msgstr ""
+
+#: ../../../notifier.rst:377
+msgid ""
+"This is the default and is useful when there is no need to have "
+"information about the receiver. For example, the browser channel uses the"
+" current requests's :ref:`session flashbag <flash-messages>`;"
+msgstr ""
+
+#: ../../../notifier.rst:383
+msgid ":class:`Symfony\\\\Component\\\\Notifier\\\\Recipient\\\\Recipient`"
+msgstr ""
+
+#: ../../../notifier.rst:382
+msgid ""
+"This contains only the email address of the user and can be used for "
+"messages on the email and browser channel;"
+msgstr ""
+
+#: ../../../notifier.rst:388
+msgid ":class:`Symfony\\\\Component\\\\Notifier\\\\Recipient\\\\AdminRecipient`"
+msgstr ""
+
+#: ../../../notifier.rst:386
+msgid ""
+"This can contain both email address and phonenumber of the user. This "
+"recipient can be used for all channels (depending on whether they are "
+"actually set)."
+msgstr ""
+
+#: ../../../notifier.rst:391
+msgid "Configuring Channel Policies"
+msgstr ""
+
+#: ../../../notifier.rst:393
+msgid ""
+"Instead of specifying the target channels on creation, Symfony also "
+"allows you to use notification importance levels. Update the "
+"configuration to specify what channels should be used for specific levels"
+" (using ``channel_policy``):"
+msgstr ""
+
+#: ../../../notifier.rst:470
+msgid ""
+"Now, whenever the notification's importance is set to \"high\", it will "
+"be sent using the Slack transport::"
+msgstr ""
+
+#: ../../../notifier.rst:494
+msgid "Customize Notifications"
+msgstr ""
+
+#: ../../../notifier.rst:496
+msgid ""
+"You can extend the ``Notification`` or ``Recipient`` base classes to "
+"customize their behavior. For instance, you can overwrite the "
+"``getChannels()`` method to only return ``sms`` if the invoice price is "
+"very high and the recipient has a phone number::"
+msgstr ""
+
+#: ../../../notifier.rst:530
+msgid "Customize Notification Messages"
+msgstr ""
+
+#: ../../../notifier.rst:532
+msgid ""
+"Each channel has its own notification interface that you can implement to"
+" customize the notification message. For instance, if you want to modify "
+"the message based on the chat service, implement "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Notification\\\\ChatNotificationInterface`"
+" and its ``asChatMessage()`` method::"
+msgstr ""
+
+#: ../../../notifier.rst:569
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Notification\\\\SmsNotificationInterface`"
+" and "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Notification\\\\EmailNotificationInterface`"
+" also exists to modify messages send to those channels."
+msgstr ""
+
+#: ../../../notifier.rst:576
+msgid "Disabling Delivery"
+msgstr ""
+
+#: ../../../notifier.rst:578
+msgid ""
+"While developing (or testing), you may want to disable delivery of "
+"notifications entirely. You can do this by forcing Notifier to use the "
+"``NullTransport`` for all configured texter and chatter transports only "
+"in the ``dev`` (and/or ``test``) environment:"
+msgstr ""
+
+#: ../../../notifier.rst:599
+msgid "Learn more"
+msgstr ""
+

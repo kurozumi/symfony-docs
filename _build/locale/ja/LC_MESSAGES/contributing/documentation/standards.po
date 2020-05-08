@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/documentation/standards.rst:2
+msgid "Documentation Standards"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:4
+msgid ""
+"Contributions must follow these standards to match the style and tone of "
+"the rest of the Symfony documentation."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:8
+msgid "Sphinx"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:10
+msgid ""
+"The following characters are chosen for different heading levels: level 1"
+" is ``=`` (equal sign), level 2 ``-`` (dash), level 3 ``~`` (tilde), "
+"level 4 ``.`` (dot) and level 5 ``\"`` (double quote);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:13
+msgid ""
+"Each line should break approximately after the first word that crosses "
+"the 72nd character (so most lines end up being 72-78 characters);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:15
+msgid ""
+"The ``::`` shorthand is *preferred* over ``.. code-block:: php`` to begin"
+" a PHP code block unless it results in the marker being on its own line "
+"(read `the Sphinx documentation`_ to see when you should use the "
+"shorthand);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:18
+msgid ""
+"Inline hyperlinks are **not** used. Separate the link and their target "
+"definition, which you add on the bottom of the page;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:20
+msgid "Inline markup should be closed on the same line as the open-string;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:23
+#: ../../../contributing/documentation/standards.rst:97
+msgid "Example"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:50
+msgid "Code Examples"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:52
+msgid ""
+"The code follows the :doc:`Symfony Coding Standards "
+"</contributing/code/standards>` as well as the `Twig Coding Standards`_;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:54
+msgid ""
+"The code examples should look real for a web application context. Avoid "
+"abstract or trivial examples (``foo``, ``bar``, ``demo``, etc.);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:56
+msgid ""
+"The code should follow the :doc:`Symfony Best Practices "
+"</best_practices>`."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:57
+msgid "Use ``Acme`` when the code requires a vendor name;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:58
+msgid ""
+"Use ``example.com`` as the domain of sample URLs and ``example.org`` and "
+"``example.net`` when additional domains are required. All of these "
+"domains are `reserved by the IANA`_."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:61
+msgid ""
+"To avoid horizontal scrolling on code blocks, we prefer to break a line "
+"correctly if it crosses the 85th character;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:63
+msgid ""
+"When you fold one or more lines of code, place ``...`` in a comment at "
+"the point of the fold. These comments are: ``// ...`` (PHP), ``# ...`` "
+"(Yaml/bash), ``{# ... #}`` (Twig), ``<!-- ... -->`` (XML/HTML), ``; ...``"
+" (INI), ``...`` (text);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:66
+msgid ""
+"When you fold a part of a line, e.g. a variable value, put ``...`` "
+"(without comment) at the place of the fold;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:68
+msgid "Description of the folded code: (optional)"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:70
+msgid ""
+"If you fold several lines: the description of the fold can be placed "
+"after the ``...``;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:71
+msgid ""
+"If you fold only part of a line: the description can be placed before the"
+" line;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:73
+msgid ""
+"If useful to the reader, a PHP code example should start with the "
+"namespace declaration;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:75
+msgid ""
+"When referencing classes, be sure to show the ``use`` statements at the "
+"top of your code block. You don't need to show *all* ``use`` statements "
+"in every example, just show what is actually being used in the code "
+"block;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:78
+msgid ""
+"If useful, a ``codeblock`` should begin with a comment containing the "
+"filename of the file in the code block. Don't place a blank line after "
+"this comment, unless the next line is also a comment;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:81
+msgid "You should put a ``$`` in front of every bash line."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:84
+msgid "Formats"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:86
+msgid ""
+"Configuration examples should show all supported formats using "
+":ref:`configuration blocks <docs-configuration-blocks>`. The supported "
+"formats (and their orders) are:"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:90
+msgid "**Configuration** (including services): YAML, XML, PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:91
+msgid "**Routing**: Annotations, YAML, XML, PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:92
+msgid "**Validation**: Annotations, YAML, XML, PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:93
+msgid "**Doctrine Mapping**: Annotations, YAML, XML, PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:94
+msgid "**Translation**: XML, YAML, PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:126
+msgid ""
+"In YAML you should put a space after ``{`` and before ``}`` (e.g. ``{ "
+"_controller: ... }``), but this should not be done in Twig (e.g.  "
+"``{'hello' : 'value'}``)."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:130
+msgid "Files and Directories"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:132
+msgid ""
+"When referencing directories, always add a trailing slash to avoid "
+"confusions with regular files (e.g. \"execute the ``console`` script "
+"located at the ``bin/`` directory\")."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:135
+msgid ""
+"When referencing file extensions explicitly, you should include a leading"
+" dot for every extension (e.g. \"XML files use the ``.xml`` extension\")."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:137
+msgid ""
+"When you list a Symfony file/directory hierarchy, use ``your-project/`` "
+"as the top-level directory. E.g."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:149
+msgid "English Language Standards"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:151
+msgid ""
+"Symfony documentation uses the United States English dialect, commonly "
+"called `American English`_. The `American English Oxford Dictionary`_ is "
+"used as the vocabulary reference."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:155
+msgid "In addition, documentation follows these rules:"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:157
+msgid ""
+"**Section titles**: use a variant of the title case, where the first word"
+" is always capitalized and all other words are capitalized, except for "
+"the closed-class words (read Wikipedia article about `headings and "
+"titles`_)."
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:161
+msgid "E.g.: The Vitamins are in my Fresh California Raisins"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:163
+msgid "**Punctuation**: avoid the use of `Serial (Oxford) Commas`_;"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:164
+msgid ""
+"**Pronouns**: avoid the use of `nosism`_ and always use *you* instead of "
+"*we*. (i.e. avoid the first person point of view: use the second "
+"instead);"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:166
+msgid ""
+"**Gender-neutral language**: when referencing a hypothetical person, such"
+" as *\"a user with a session cookie\"*, use gender-neutral pronouns "
+"(they/their/them). For example, instead of:"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:170
+msgid "he or she, use they"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:171
+msgid "him or her, use them"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:172
+msgid "his or her, use their"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:173
+msgid "his or hers, use theirs"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:174
+msgid "himself or herself, use themselves"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:176
+msgid ""
+"**Avoid belittling words**: Things that seem \"obvious\" or \"simple\" "
+"for the person documenting it, can be the exact opposite for the reader. "
+"To make sure everybody feels comfortable when reading the documentation, "
+"try to avoid words like:"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:181
+msgid "basically"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:182
+msgid "clearly"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:183
+msgid "easy/easily"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:184
+msgid "just"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:185
+msgid "logically"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:186
+msgid "merely"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:187
+msgid "obviously"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:188
+msgid "of course"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:189
+msgid "quick/quickly"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:190
+msgid "simply"
+msgstr ""
+
+#: ../../../contributing/documentation/standards.rst:191
+msgid "trivial"
+msgstr ""
+

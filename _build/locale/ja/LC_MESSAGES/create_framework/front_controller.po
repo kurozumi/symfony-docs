@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/front_controller.rst:2
+msgid "The Front Controller"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:4
+msgid ""
+"Up until now, our application is simplistic as there is only one page. To"
+" spice things up a little bit, let's go crazy and add another page that "
+"says goodbye::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:19
+msgid ""
+"As you can see for yourself, much of the code is exactly the same as the "
+"one we have written for the first page. Let's extract the common code "
+"that we can share between all our pages. Code sharing sounds like a good "
+"plan to create our first \"real\" framework!"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:24
+msgid ""
+"The PHP way of doing the refactoring would probably be the creation of an"
+" include file::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:36
+msgid "Let's see it in action::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:46
+msgid "And for the \"Goodbye\" page::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:54
+msgid ""
+"We have indeed moved most of the shared code into a central place, but it"
+" does not feel like a good abstraction, does it? We still have the "
+"``send()`` method for all pages, our pages do not look like templates and"
+" we are still not able to test this code properly."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:59
+msgid ""
+"Moreover, adding a new page means that we need to create a new PHP "
+"script, which name is exposed to the end user via the URL "
+"(``http://127.0.0.1:4321/bye.php``): there is a direct mapping between "
+"the PHP script name and the client URL. This is because the dispatching "
+"of the request is done by the web server directly. It might be a good "
+"idea to move this dispatching to our code for better flexibility. This "
+"can be achieved by routing all client requests to a single PHP script."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:69
+msgid ""
+"Exposing a single PHP script to the end user is a design pattern called "
+"the \":ref:`front controller <from_flat_php-front-controller>`\"."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:72
+msgid "Such a script might look like the following::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:98
+msgid "And here is for instance the new ``hello.php`` script::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:104
+msgid ""
+"In the ``front.php`` script, ``$map`` associates URL paths with their "
+"corresponding PHP script paths."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:107
+msgid ""
+"As a bonus, if the client asks for a path that is not defined in the URL "
+"map, we return a custom 404 page; you are now in control of your website."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:110
+msgid "To access a page, you must now use the ``front.php`` script:"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:112
+msgid "``http://127.0.0.1:4321/front.php/hello?name=Fabien``"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:114
+msgid "``http://127.0.0.1:4321/front.php/bye``"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:116
+msgid "``/hello`` and ``/bye`` are the page *paths*."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:120
+msgid ""
+"Most web servers like Apache or nginx are able to rewrite the incoming "
+"URLs and remove the front controller script so that your users will be "
+"able to type ``http://127.0.0.1:4321/hello?name=Fabien``, which looks "
+"much better."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:124
+msgid ""
+"The trick is the usage of the ``Request::getPathInfo()`` method which "
+"returns the path of the Request by removing the front controller script "
+"name including its sub-directories (only if needed -- see above tip)."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:130
+msgid ""
+"You don't even need to setup a web server to test the code. Instead, "
+"replace the ``$request = Request::createFromGlobals();`` call to "
+"something like ``$request = Request::create('/hello?name=Fabien');`` "
+"where the argument is the URL path you want to simulate."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:135
+msgid ""
+"Now that the web server always access the same script (``front.php``) for"
+" all pages, we can secure the code further by moving all other PHP files "
+"outside the web root directory:"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:153
+msgid ""
+"Now, configure your web server root directory to point to ``web/`` and "
+"all other files won't be accessible from the client anymore."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:156
+msgid ""
+"To test your changes in a browser "
+"(``http://localhost:4321/hello?name=Fabien``), run the :doc:`Symfony "
+"Local Web Server </setup/symfony_server>`:"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:165
+msgid ""
+"For this new structure to work, you will have to adjust some paths in "
+"various PHP files; the changes are left as an exercise for the reader."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:168
+msgid ""
+"The last thing that is repeated in each page is the call to "
+"``setContent()``. We can convert all pages to \"templates\" by just "
+"echoing the content and calling the ``setContent()`` directly from the "
+"front controller script::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:188
+msgid "And the ``hello.php`` script can now be converted to a template::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:195
+msgid "We have the first version of our framework::"
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:223
+msgid ""
+"Adding a new page is a two-step process: add an entry in the map and "
+"create a PHP template in ``src/pages/``. From a template, get the Request"
+" data via the ``$request`` variable and tweak the Response headers via "
+"the ``$response`` variable."
+msgstr ""
+
+#: ../../../create_framework/front_controller.rst:230
+msgid ""
+"If you decide to stop here, you can probably enhance your framework by "
+"extracting the URL map to a configuration file."
+msgstr ""
+

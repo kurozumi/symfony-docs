@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/configuration/twig.rst:5
+msgid "Twig Configuration Reference (TwigBundle)"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:7
+msgid ""
+"The TwigBundle integrates the Twig library in Symfony applications to "
+":ref:`render templates <templates-rendering>`. All these options are "
+"configured under the ``twig`` key in your application configuration."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:21
+msgid ""
+"When using XML, you must use the ``http://symfony.com/schema/dic/twig`` "
+"namespace and the related XSD schema is available at: "
+"``https://symfony.com/schema/dic/twig/twig-1.0.xsd``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:26
+msgid "Configuration"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:30
+msgid "`auto_reload`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:31
+msgid "`autoescape`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:32
+msgid "`autoescape_service`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:33
+msgid "`autoescape_service_method`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:34
+msgid "`base_template_class`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:35
+msgid "`cache`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:36
+msgid "`charset`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:37
+msgid "`date`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:39
+msgid "`format`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:40
+msgid "`interval_format`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:41
+msgid "`timezone`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:43
+msgid "`debug`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:44
+msgid "`default_path`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:45
+msgid "`form_themes`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:46
+msgid "`globals`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:47
+msgid "`number_format`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:49
+msgid "`decimals`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:50
+msgid "`decimal_point`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:51
+msgid "`thousands_separator`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:53
+msgid "`optimizations`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:54
+msgid "`paths`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:55
+msgid "`strict_variables`_"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:58
+msgid "auto_reload"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:60
+#: ../../../reference/configuration/twig.rst:182
+msgid "**type**: ``boolean`` **default**: ``%kernel.debug%``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:62
+msgid ""
+"If ``true``, whenever a template is rendered, Symfony checks first if its"
+" source code has changed since it was compiled. If it has changed, the "
+"template is compiled again automatically."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:69
+msgid "autoescape"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:71
+msgid "**type**: ``boolean`` or ``string`` **default**: ``'name'``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:73
+msgid ""
+"If set to ``false``, automatic escaping is disabled (you can still escape"
+" each content individually in the templates)."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:78
+msgid ""
+"Setting this option to ``false`` is dangerous and it will make your "
+"application vulnerable to `XSS attacks`_ because most third-party bundles"
+" assume that auto-escaping is enabled and they don't escape contents "
+"themselves."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:83
+msgid ""
+"If set to a string, the template contents are escaped using the strategy "
+"with that name. Allowed values are ``html``, ``js``, ``css``, ``url``, "
+"``html_attr`` and ``name``. The default value is ``name``. This strategy "
+"escapes contents according to the template name extension (e.g. it uses "
+"``html`` for ``*.html.twig`` templates and ``js`` for ``*.js.twig`` "
+"templates)."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:91
+msgid ""
+"See `autoescape_service`_ and `autoescape_service_method`_ to define your"
+" own escaping strategy."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:95
+msgid "autoescape_service"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:97
+#: ../../../reference/configuration/twig.rst:110
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:99
+msgid ""
+"As of Twig 1.17, the escaping strategy applied by default to the template"
+" is determined during compilation time based on the filename of the "
+"template. This means for example that the contents of a ``*.html.twig`` "
+"template are escaped for HTML and the contents of ``*.js.twig`` are "
+"escaped for JavaScript."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:104
+msgid ""
+"This option allows to define the Symfony service which will be used to "
+"determine the default escaping applied to the template."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:108
+msgid "autoescape_service_method"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:112
+msgid ""
+"If ``autoescape_service`` option is defined, then this option defines the"
+" method called to determine the default escaping applied to the template."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:116
+msgid "base_template_class"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:118
+msgid "**type**: ``string`` **default**: ``'Twig\\Template'``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:120
+msgid ""
+"Twig templates are compiled into PHP classes before using them to render "
+"contents. This option defines the base class from which all the template "
+"classes extend. Using a custom base template is discouraged because it "
+"will make your application harder to maintain."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:126
+msgid "cache"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:128
+msgid ""
+"**type**: ``string`` | ``false`` **default**: "
+"``'%kernel.cache_dir%/twig'``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:130
+msgid ""
+"Before using the Twig templates to render some contents, they are "
+"compiled into regular PHP code. Compilation is a costly process, so the "
+"result is cached in the directory defined by this configuration option."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:134
+msgid ""
+"Set this option to ``false`` to disable Twig template compilation. "
+"However, this is not recommended; not even in the ``dev`` environment, "
+"because the ``auto_reload`` option ensures that cached templates which "
+"have changed get compiled again."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:140
+msgid "charset"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:142
+msgid "**type**: ``string`` **default**: ``'%kernel.charset%'``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:144
+msgid ""
+"The charset used by the template files. By default it's the same as the "
+"value of the :ref:`kernel.charset container parameter <configuration-"
+"kernel-charset>`, which is ``UTF-8`` by default in Symfony applications."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:149
+msgid "date"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:151
+msgid ""
+"These options define the default values used by the ``date`` filter to "
+"format date and time values. They are useful to avoid passing the same "
+"arguments on every ``date`` filter call."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:156
+msgid "format"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:158
+msgid "**type**: ``string`` **default**: ``F j, Y H:i``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:160
+msgid ""
+"The format used by the ``date`` filter to display values when no specific"
+" format is passed as argument."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:164
+msgid "interval_format"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:166
+#, python-format
+msgid "**type**: ``string`` **default**: ``%d days``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:168
+msgid ""
+"The format used by the ``date`` filter to display ``DateInterval`` "
+"instances when no specific format is passed as argument."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:172
+msgid "timezone"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:174
+msgid ""
+"**type**: ``string`` **default**: (the value returned by "
+"``date_default_timezone_get()``)"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:176
+msgid ""
+"The timezone used when formatting date values with the ``date`` filter "
+"and no specific timezone is passed as argument."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:180
+msgid "debug"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:184
+msgid ""
+"If ``true``, the compiled templates include a ``__toString()`` method "
+"that can be used to display their nodes."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:190
+msgid "default_path"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:192
+msgid "**type**: ``string`` **default**: ``'%kernel.project_dir%/templates'``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:194
+msgid ""
+"The path to the directory where Symfony will look for the application "
+"Twig templates by default. If you store the templates in more than one "
+"directory, use the :ref:`paths <config-twig-paths>`  option too."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:201
+msgid "form_themes"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:203
+msgid ""
+"**type**: ``array`` of ``string`` **default**: "
+"``['form_div_layout.html.twig']``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:205
+msgid ""
+"Defines one or more :doc:`form themes </form/form_themes>` which are "
+"applied to all the forms of the application:"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:246
+msgid ""
+"The order in which themes are defined is important because each theme "
+"overrides all the previous one. When rendering a form field whose block "
+"is not defined in the form theme, Symfony falls back to the previous "
+"themes until the first one."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:250
+msgid ""
+"These global themes are applied to all forms, even those which use the "
+":ref:`form_theme Twig tag <reference-twig-tag-form-theme>`, but you can "
+":ref:`disable global themes for specific forms <disabling-global-themes-"
+"for-single-forms>`."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:255
+msgid "globals"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:257
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:259
+msgid ""
+"It defines the global variables injected automatically into all Twig "
+"templates. Learn more about :doc:`Twig global variables "
+"</templating/global_variables>`."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:263
+msgid "number_format"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:265
+msgid ""
+"These options define the default values used by the ``number_format`` "
+"filter to format numeric values. They are useful to avoid passing the "
+"same arguments on every ``number_format`` filter call."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:270
+msgid "decimals"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:272
+msgid "**type**: ``integer`` **default**: ``0``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:274
+msgid ""
+"The number of decimals used to format numeric values when no specific "
+"number is passed as argument to the ``number_format`` filter."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:278
+msgid "decimal_point"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:280
+msgid "**type**: ``string`` **default**: ``.``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:282
+msgid ""
+"The character used to separate the decimals from the integer part of "
+"numeric values when no specific character is passed as argument to the "
+"``number_format`` filter."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:287
+msgid "thousands_separator"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:289
+msgid "**type**: ``string`` **default**: ``,``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:291
+msgid ""
+"The character used to separate every group of thousands in numeric values"
+" when no specific character is passed as argument to the "
+"``number_format`` filter."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:295
+msgid "optimizations"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:297
+msgid "**type**: ``int`` **default**: ``-1``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:299
+msgid ""
+"Twig includes an extension called ``optimizer`` which is enabled by "
+"default in Symfony applications. This extension analyzes the templates to"
+" optimize them when being compiled. For example, if your template doesn't"
+" use the special ``loop`` variable inside a ``for`` tag, this extension "
+"removes the initialization of that unused variable."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:305
+msgid ""
+"By default, this option is ``-1``, which means that all optimizations are"
+" turned on. Set it to ``0`` to disable all the optimizations. You can "
+"even enable or disable these optimizations selectively, as explained in "
+"the Twig documentation about `the optimizer extension`_."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:313
+msgid "paths"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:315
+msgid "**type**: ``array`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:317
+msgid ""
+"Defines the directories where application templates are stored in "
+"addition to the directory defined in the :ref:`default_path option "
+"<config-twig-default-path>`:"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:359
+msgid ""
+"Read more about :ref:`template directories and namespaces <templates-"
+"namespaces>`."
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:362
+msgid "strict_variables"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:364
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/configuration/twig.rst:366
+msgid ""
+"If set to ``true``, Symfony shows an exception whenever a Twig variable, "
+"attribute or method doesn't exist. If set to ``false`` these errors are "
+"ignored and the non-existing values are replaced by ``null``."
+msgstr ""
+

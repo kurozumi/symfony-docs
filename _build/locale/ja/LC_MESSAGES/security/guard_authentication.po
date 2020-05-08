@@ -1,0 +1,390 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/guard_authentication.rst:5
+msgid "Custom Authentication System with Guard (API Token Example)"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:7
+msgid "Guard authentication can be used to:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:9
+msgid ":doc:`Build a Login Form </security/form_login_setup>`"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:10
+msgid "Create an API token authentication system (see below)"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:11
+msgid ""
+"`Social Authentication`_ (or use `HWIOAuthBundle`_ for a robust non-Guard"
+" solution)"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:12
+msgid "Integrate with some proprietary single-sign-on system"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:14
+msgid ""
+"and many more. In this example, we'll build an API token authentication "
+"system, so we can learn more about Guard in detail."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:18
+msgid "Step 1) Prepare your User Class"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:20
+msgid ""
+"Suppose you want to build an API where your clients will send an ``X"
+"-AUTH-TOKEN`` header on each request with their API token. Your job is to"
+" read this and find the associated user (if any)."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:24
+msgid ""
+"First, make sure you've followed the main :doc:`Security Guide "
+"</security>` to create your ``User`` class. Then, to keep things simple, "
+"add an ``apiToken`` property directly to your ``User`` class (the "
+"``make:entity`` command is a good way to do this):"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:45
+msgid "Don't forget to generate and execute the migration:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:53
+msgid "Step 2) Create the Authenticator Class"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:55
+msgid ""
+"To create a custom authentication system, create a class and make it "
+"implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Guard\\\\AuthenticatorInterface`."
+" Or, extend the simpler "
+":class:`Symfony\\\\Component\\\\Security\\\\Guard\\\\AbstractGuardAuthenticator`."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:59
+msgid "This requires you to implement several methods::"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:164
+msgid ""
+"Nice work! Each method is explained below: :ref:`The Guard Authenticator "
+"Methods<guard-auth-methods>`."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:167
+msgid "Step 3) Configure the Authenticator"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:169
+msgid ""
+"To finish this, make sure your authenticator is registered as a service. "
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, that happens automatically."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:173
+msgid ""
+"Finally, configure your ``firewalls`` key in ``security.yaml`` to use "
+"this authenticator:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:253
+msgid ""
+"You did it! You now have a fully-working API token authentication system."
+" If your homepage required ``ROLE_USER``, then you could test it under "
+"different conditions:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:270
+msgid "Now, learn more about what each method does."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:275
+msgid "The Guard Authenticator Methods"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:277
+msgid "Each authenticator needs the following methods:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:282
+msgid "**supports(Request $request)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:280
+msgid ""
+"This is called on *every* request and your job is to decide if the "
+"authenticator should be used for this request (return ``true``) or if it "
+"should be skipped (return ``false``)."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:286
+msgid "**getCredentials(Request $request)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:285
+msgid ""
+"Your job is to read the token (or whatever your \"authentication\" "
+"information is) from the request and return it. These credentials are "
+"passed to ``getUser()``."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:293
+msgid "**getUser($credentials, UserProviderInterface $userProvider)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:289
+msgid ""
+"The ``$credentials`` argument is the value returned by "
+"``getCredentials()``. Your job is to return an object that implements "
+"``UserInterface``. If you do, then ``checkCredentials()`` will be called."
+" If you return ``null`` (or throw an :ref:`AuthenticationException "
+"<guard-customize-error>`) authentication will fail."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:301
+msgid "**checkCredentials($credentials, UserInterface $user)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:296
+msgid ""
+"If ``getUser()`` returns a User object, this method is called. Your job "
+"is to verify if the credentials are correct. For a login form, this is "
+"where you would check that the password is correct for the user. To pass "
+"authentication, return ``true``. If you return ``false`` (or throw an "
+":ref:`AuthenticationException <guard-customize-error>`), authentication "
+"will fail."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:309
+msgid ""
+"**onAuthenticationSuccess(Request $request, TokenInterface $token, string"
+" $providerKey)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:304
+msgid ""
+"This is called after successful authentication and your job is to either "
+"return a :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` "
+"object that will be sent to the client or ``null`` to continue the "
+"request (e.g. allow the route/controller to be called like normal). Since"
+" this is an API where each request authenticates itself, you want to "
+"return ``null``."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:315
+msgid ""
+"**onAuthenticationFailure(Request $request, AuthenticationException "
+"$exception)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:312
+msgid ""
+"This is called if authentication fails. Your job is to return the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` object that "
+"should be sent to the client. The ``$exception`` will tell you *what* "
+"went wrong during authentication."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:321
+msgid "**start(Request $request, AuthenticationException $authException = null)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:318
+msgid ""
+"This is called if the client accesses a URI/resource that requires "
+"authentication, but no authentication details were sent. Your job is to "
+"return a :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` "
+"object that helps the user authenticate (e.g. a 401 response that says "
+"\"token is missing!\")."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:327
+msgid "**supportsRememberMe()**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:324
+msgid ""
+"If you want to support \"remember me\" functionality, return ``true`` "
+"from this method. You will still need to activate ``remember_me`` under "
+"your firewall for it to work. Since this is a stateless API, you do not "
+"want to support \"remember me\" functionality in this example."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:335
+msgid "**createAuthenticatedToken(UserInterface $user, string $providerKey)**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:330
+msgid ""
+"If you are implementing the "
+":class:`Symfony\\\\Component\\\\Security\\\\Guard\\\\AuthenticatorInterface`"
+" instead of extending the "
+":class:`Symfony\\\\Component\\\\Security\\\\Guard\\\\AbstractGuardAuthenticator`"
+" class, you have to implement this method. It will be called after a "
+"successful authentication to create and return the token (a class "
+"implementing "
+":class:`Symfony\\\\Component\\\\Security\\\\Guard\\\\Token\\\\GuardTokenInterface`)"
+" for the user, who was supplied as the first argument."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:337
+msgid "The picture below shows how Symfony calls Guard Authenticator methods:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:346
+msgid "Customizing Error Messages"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:348
+msgid ""
+"When ``onAuthenticationFailure()`` is called, it is passed an "
+"``AuthenticationException`` that describes *how* authentication failed "
+"via its ``$exception->getMessageKey()`` (and "
+"``$exception->getMessageData()``) method. The message will be different "
+"based on *where* authentication fails (i.e. ``getUser()`` versus "
+"``checkCredentials()``)."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:353
+msgid ""
+"But, you can also return a custom message by throwing a "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\CustomUserMessageAuthenticationException`."
+" You can throw this from ``getCredentials()``, ``getUser()`` or "
+"``checkCredentials()`` to cause a failure::"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:383
+msgid ""
+"In this case, since \"ILuvAPIs\" is a ridiculous API key, you could "
+"include an easter egg to return a custom message if someone tries this:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:394
+msgid "Manually Authenticating a User"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:396
+msgid ""
+"Sometimes you might want to manually authenticate a user - like after the"
+" user completes registration. To do that, use your authenticator and a "
+"service called ``GuardAuthenticatorHandler``::"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:425
+msgid "Avoid Authenticating the Browser on Every Request"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:427
+msgid ""
+"If you create a Guard login system that's used by a browser and you're "
+"experiencing problems with your session or CSRF tokens, the cause could "
+"be bad behavior by your authenticator. When a Guard authenticator is "
+"meant to be used by a browser, you should *not* authenticate the user on "
+"*every* request. In other words, you need to make sure the ``supports()``"
+" method *only* returns ``true`` when you actually *need* to authenticate "
+"the user. Why? Because, when ``supports()`` returns true (and "
+"authentication is ultimately successful), for security purposes, the "
+"user's session is \"migrated\" to a new session id."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:436
+msgid ""
+"This is an edge-case, and unless you're having session or CSRF token "
+"issues, you can ignore this. Here is an example of good and bad "
+"behavior::"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:450
+msgid ""
+"The problem occurs when your browser-based authenticator tries to "
+"authenticate the user on *every* request - like in the IP address-based "
+"example above. There are two possible fixes:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:454
+msgid ""
+"If you do *not* need authentication to be stored in the session, set "
+"``stateless: true`` under your firewall."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:456
+msgid ""
+"Update your authenticator to avoid authentication if the user is already "
+"authenticated:"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:488
+msgid ""
+"If you use autowiring, the ``Security``  service will automatically be "
+"passed to your authenticator."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:492
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:498
+msgid "**Can I have Multiple Authenticators?**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:495
+msgid ""
+"Yes! But when you do, you'll need to choose just *one* authenticator to "
+"be your \"entry_point\". This means you'll need to choose *which* "
+"authenticator's ``start()`` method should be called when an anonymous "
+"user tries to access a protected resource. For more details, see "
+":doc:`/security/multiple_guard_authenticators`."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:503
+msgid "**Can I use this with form_login?**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:501
+msgid ""
+"Yes! ``form_login`` is *one* way to authenticate a user, so you could use"
+" it *and* then add one or more authenticators. Using a guard "
+"authenticator doesn't collide with other ways to authenticate."
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:511
+msgid "**Can I use this with FOSUserBundle?**"
+msgstr ""
+
+#: ../../../security/guard_authentication.rst:506
+msgid ""
+"Yes! Actually, FOSUserBundle doesn't handle security: it simply gives you"
+" a ``User`` object and some routes and controllers to help with login, "
+"registration, forgot password, etc. When you use FOSUserBundle, you "
+"typically use ``form_login`` to actually authenticate the user. You can "
+"continue doing that (see previous question) or use the ``User`` object "
+"from FOSUserBundle and create your own authenticator(s) (just like in "
+"this article)."
+msgstr ""
+

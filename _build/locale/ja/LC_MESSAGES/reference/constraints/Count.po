@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Count.rst:2
+msgid "Count"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:4
+msgid ""
+"Validates that a given collection's (i.e. an array or an object that "
+"implements Countable) element count is *between* some minimum and maximum"
+" value."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:8
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:8
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:9
+#: ../../../reference/constraints/Count.rst:104
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:9
+msgid "`divisibleBy`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:10
+msgid "`divisibleByMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:11
+msgid "`exactMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:12
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:13
+msgid "`max`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:14
+msgid "`maxMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:15
+msgid "`min`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:16
+msgid "`minMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:17
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:18
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Count`"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:19
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:19
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\CountValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:23
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:25
+msgid ""
+"To verify that the ``emails`` array field contains between 1 and 5 "
+"elements you might add the following:"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:107
+msgid "divisibleBy"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:109
+msgid "**type**: ``integer`` **default**: null"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:113
+msgid "The ``divisibleBy`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:115
+msgid ""
+"Validates that the number of elements of the given collection is "
+"divisible by a certain number."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:120
+msgid ""
+"If you need to validate that other types of data different from "
+"collections are divisible by a certain number, use the :doc:`DivisibleBy "
+"</reference/constraints/DivisibleBy>` constraint."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:125
+msgid "divisibleByMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:127
+msgid ""
+"**type**: ``string`` **default**: ``The number of elements in this "
+"collection should be a multiple of {{ compared_value }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:131
+msgid "The ``divisibleByMessage`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:133
+msgid ""
+"The message that will be shown if the number of elements of the given "
+"collection is not divisible by the number defined in the ``divisibleBy`` "
+"option."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:136
+#: ../../../reference/constraints/Count.rst:152
+#: ../../../reference/constraints/Count.rst:181
+#: ../../../reference/constraints/Count.rst:208
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:139
+#: ../../../reference/constraints/Count.rst:155
+#: ../../../reference/constraints/Count.rst:184
+#: ../../../reference/constraints/Count.rst:211
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:139
+#: ../../../reference/constraints/Count.rst:155
+#: ../../../reference/constraints/Count.rst:184
+#: ../../../reference/constraints/Count.rst:211
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:141
+msgid "``{{ compared_value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:141
+msgid "The number configured in the ``divisibleBy`` option"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:145
+msgid "exactMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:147
+msgid ""
+"**type**: ``string`` **default**: ``This collection should contain "
+"exactly {{ limit }} elements.``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:149
+msgid ""
+"The message that will be shown if min and max values are equal and the "
+"underlying collection elements count is not exactly this value."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:157
+#: ../../../reference/constraints/Count.rst:186
+#: ../../../reference/constraints/Count.rst:213
+msgid "``{{ count }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:157
+#: ../../../reference/constraints/Count.rst:186
+#: ../../../reference/constraints/Count.rst:213
+msgid "The current collection size"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:158
+#: ../../../reference/constraints/Count.rst:187
+#: ../../../reference/constraints/Count.rst:214
+msgid "``{{ limit }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:158
+msgid "The exact expected collection size"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:164
+msgid "max"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:166
+#: ../../../reference/constraints/Count.rst:193
+msgid "**type**: ``integer``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:168
+msgid ""
+"This option is the \"max\" count value. Validation will fail if the given"
+" collection elements count is **greater** than this max value."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:171
+msgid "This option is required when the ``min`` option is not defined."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:174
+msgid "maxMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:176
+msgid ""
+"**type**: ``string`` **default**: ``This collection should contain {{ "
+"limit }} elements or less.``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:178
+msgid ""
+"The message that will be shown if the underlying collection elements "
+"count is more than the `max`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:187
+msgid "The upper limit"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:191
+msgid "min"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:195
+msgid ""
+"This option is the \"min\" count value. Validation will fail if the given"
+" collection elements count is **less** than this min value."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:198
+msgid "This option is required when the ``max`` option is not defined."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:201
+msgid "minMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:203
+msgid ""
+"**type**: ``string`` **default**: ``This collection should contain {{ "
+"limit }} elements or more.``"
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:205
+msgid ""
+"The message that will be shown if the underlying collection elements "
+"count is less than the `min`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/Count.rst:214
+msgid "The lower limit"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

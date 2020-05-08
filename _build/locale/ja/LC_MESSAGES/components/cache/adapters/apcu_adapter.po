@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:8
+msgid "APCu Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:10
+msgid ""
+"This adapter is a high-performance, shared memory cache. It can "
+"*significantly* increase an application's performance, as its cache "
+"contents are stored in shared memory, a component appreciably faster than"
+" many others, such as the filesystem."
+msgstr ""
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:16
+msgid ""
+"**Requirement:** The `APCu extension`_ must be installed and active to "
+"use this adapter."
+msgstr ""
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:19
+msgid ""
+"The ApcuAdapter can optionally be provided a namespace, default cache "
+"lifetime, and cache items version string as constructor arguments::"
+msgstr ""
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:41
+msgid ""
+"Use of this adapter is discouraged in write/delete heavy workloads, as "
+"these operations cause memory fragmentation that results in significantly"
+" degraded performance."
+msgstr ""
+
+#: ../../../components/cache/adapters/apcu_adapter.rst:46
+msgid ""
+"This adapter's CRUD operations are specific to the PHP SAPI it is running"
+" under. This means cache operations (such as additions, deletions, etc) "
+"using the CLI will not be available under the FPM or CGI SAPIs."
+msgstr ""
+

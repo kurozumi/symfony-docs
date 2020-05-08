@@ -1,0 +1,452 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/events.rst:5
+msgid "Form Events"
+msgstr ""
+
+#: ../../../form/events.rst:7
+msgid ""
+"The Form component provides a structured process to let you customize "
+"your forms, by making use of the :doc:`EventDispatcher component "
+"</components/event_dispatcher>`. Using form events, you may modify "
+"information or fields at different steps of the workflow: from the "
+"population of the form to the submission of the data from the request."
+msgstr ""
+
+#: ../../../form/events.rst:14
+msgid ""
+"For example, if you need to add a field depending on request values, you "
+"can register an event listener to the ``FormEvents::PRE_SUBMIT`` event as"
+" follows::"
+msgstr ""
+
+#: ../../../form/events.rst:33
+msgid "The Form Workflow"
+msgstr ""
+
+#: ../../../form/events.rst:36
+msgid "The Form Submission Workflow"
+msgstr ""
+
+#: ../../../form/events.rst:42
+msgid ""
+"1) Pre-populating the Form (``FormEvents::PRE_SET_DATA`` and "
+"``FormEvents::POST_SET_DATA``)"
+msgstr ""
+
+#: ../../../form/events.rst:47
+msgid ""
+"Two events are dispatched during pre-population of a form, when "
+":method:`Form::setData() <Symfony\\\\Component\\\\Form\\\\Form::setData>`"
+" is called: ``FormEvents::PRE_SET_DATA`` and "
+"``FormEvents::POST_SET_DATA``."
+msgstr ""
+
+#: ../../../form/events.rst:52
+msgid "A) The ``FormEvents::PRE_SET_DATA`` Event"
+msgstr ""
+
+#: ../../../form/events.rst:54
+msgid ""
+"The ``FormEvents::PRE_SET_DATA`` event is dispatched at the beginning of "
+"the ``Form::setData()`` method. It can be used to:"
+msgstr ""
+
+#: ../../../form/events.rst:57
+msgid "Modify the data given during pre-population;"
+msgstr ""
+
+#: ../../../form/events.rst:58
+msgid ""
+"Modify a form depending on the pre-populated data (adding or removing "
+"fields dynamically)."
+msgstr ""
+
+#: ../../../form/events.rst:61 ../../../form/events.rst:99
+#: ../../../form/events.rst:142 ../../../form/events.rst:173
+#: ../../../form/events.rst:205
+msgid "Data Type"
+msgstr ""
+
+#: ../../../form/events.rst:61 ../../../form/events.rst:99
+#: ../../../form/events.rst:142 ../../../form/events.rst:173
+#: ../../../form/events.rst:205
+msgid "Value"
+msgstr ""
+
+#: ../../../form/events.rst:63 ../../../form/events.rst:101
+#: ../../../form/events.rst:144 ../../../form/events.rst:175
+#: ../../../form/events.rst:207 ../../../form/events.rst:250
+#: ../../../form/events.rst:251
+msgid "Model data"
+msgstr ""
+
+#: ../../../form/events.rst:63 ../../../form/events.rst:64
+#: ../../../form/events.rst:65
+msgid "``null``"
+msgstr ""
+
+#: ../../../form/events.rst:64 ../../../form/events.rst:102
+#: ../../../form/events.rst:145 ../../../form/events.rst:176
+#: ../../../form/events.rst:208 ../../../form/events.rst:253
+msgid "Normalized data"
+msgstr ""
+
+#: ../../../form/events.rst:65 ../../../form/events.rst:103
+#: ../../../form/events.rst:146 ../../../form/events.rst:177
+#: ../../../form/events.rst:209 ../../../form/events.rst:254
+msgid "View data"
+msgstr ""
+
+#: ../../../form/events.rst:70 ../../../form/events.rst:108
+#: ../../../form/events.rst:151 ../../../form/events.rst:182
+#: ../../../form/events.rst:214
+msgid ""
+"See all form events at a glance in the :ref:`Form Events Information "
+"Table <component-form-event-table>`."
+msgstr ""
+
+#: ../../../form/events.rst:75
+msgid ""
+"During ``FormEvents::PRE_SET_DATA``, :method:`Form::setData() "
+"<Symfony\\\\Component\\\\Form\\\\Form::setData>` is locked and will throw"
+" an exception if used. If you wish to modify data, you should use "
+":method:`FormEvent::setData() "
+"<Symfony\\\\Component\\\\Form\\\\FormEvent::setData>` instead."
+msgstr ""
+
+#: ../../../form/events.rst
+msgid "``FormEvents::PRE_SET_DATA`` in the Form component"
+msgstr ""
+
+#: ../../../form/events.rst:84
+msgid ""
+"The ``Symfony\\Component\\Form\\Extension\\Core\\Type\\CollectionType`` "
+"form type relies on the "
+"``Symfony\\Component\\Form\\Extension\\Core\\EventListener\\ResizeFormListener``"
+" subscriber, listening to the ``FormEvents::PRE_SET_DATA`` event in order"
+" to reorder the form's fields depending on the data from the pre-"
+"populated object, by removing and adding all form rows."
+msgstr ""
+
+#: ../../../form/events.rst:91
+msgid "B) The ``FormEvents::POST_SET_DATA`` Event"
+msgstr ""
+
+#: ../../../form/events.rst:93
+msgid ""
+"The ``FormEvents::POST_SET_DATA`` event is dispatched at the end of the "
+":method:`Form::setData() <Symfony\\\\Component\\\\Form\\\\Form::setData>`"
+" method. This event is mostly here for reading data after having pre-"
+"populated the form."
+msgstr ""
+
+#: ../../../form/events.rst:101
+msgid "Model data injected into ``setData()``"
+msgstr ""
+
+#: ../../../form/events.rst:102
+msgid "Model data transformed using a model transformer"
+msgstr ""
+
+#: ../../../form/events.rst:103 ../../../form/events.rst:209
+msgid "Normalized data transformed using a view transformer"
+msgstr ""
+
+#: ../../../form/events.rst
+msgid "``FormEvents::POST_SET_DATA`` in the Form component"
+msgstr ""
+
+#: ../../../form/events.rst:113
+msgid ""
+"The "
+"``Symfony\\Component\\Form\\Extension\\DataCollector\\EventListener\\DataCollectorListener``"
+" class is subscribed to listen to the ``FormEvents::POST_SET_DATA`` event"
+" in order to collect information about the forms from the denormalized "
+"model and view data."
+msgstr ""
+
+#: ../../../form/events.rst:119
+msgid ""
+"2) Submitting a Form (``FormEvents::PRE_SUBMIT``, ``FormEvents::SUBMIT`` "
+"and ``FormEvents::POST_SUBMIT``)"
+msgstr ""
+
+#: ../../../form/events.rst:124
+msgid ""
+"Three events are dispatched when :method:`Form::handleRequest() "
+"<Symfony\\\\Component\\\\Form\\\\Form::handleRequest>` or "
+":method:`Form::submit() <Symfony\\\\Component\\\\Form\\\\Form::submit>` "
+"are called: ``FormEvents::PRE_SUBMIT``, ``FormEvents::SUBMIT``, "
+"``FormEvents::POST_SUBMIT``."
+msgstr ""
+
+#: ../../../form/events.rst:131
+msgid "A) The ``FormEvents::PRE_SUBMIT`` Event"
+msgstr ""
+
+#: ../../../form/events.rst:133
+msgid ""
+"The ``FormEvents::PRE_SUBMIT`` event is dispatched at the beginning of "
+"the :method:`Form::submit() "
+"<Symfony\\\\Component\\\\Form\\\\Form::submit>` method."
+msgstr ""
+
+#: ../../../form/events.rst:136
+msgid "It can be used to:"
+msgstr ""
+
+#: ../../../form/events.rst:138
+msgid "Change data from the request, before submitting the data to the form;"
+msgstr ""
+
+#: ../../../form/events.rst:139
+msgid "Add or remove form fields, before submitting the data to the form."
+msgstr ""
+
+#: ../../../form/events.rst:144 ../../../form/events.rst:145
+#: ../../../form/events.rst:146 ../../../form/events.rst:175
+#: ../../../form/events.rst:177
+msgid "Same as in ``FormEvents::POST_SET_DATA``"
+msgstr ""
+
+#: ../../../form/events.rst
+msgid "``FormEvents::PRE_SUBMIT`` in the Form component"
+msgstr ""
+
+#: ../../../form/events.rst:156
+msgid ""
+"The "
+"``Symfony\\Component\\Form\\Extension\\Core\\EventListener\\TrimListener``"
+" subscriber subscribes to the ``FormEvents::PRE_SUBMIT`` event in order "
+"to trim the request's data (for string values). The "
+"``Symfony\\Component\\Form\\Extension\\Csrf\\EventListener\\CsrfValidationListener``"
+" subscriber subscribes to the ``FormEvents::PRE_SUBMIT`` event in order "
+"to validate the CSRF token."
+msgstr ""
+
+#: ../../../form/events.rst:164
+msgid "B) The ``FormEvents::SUBMIT`` Event"
+msgstr ""
+
+#: ../../../form/events.rst:166
+msgid ""
+"The ``FormEvents::SUBMIT`` event is dispatched right before the "
+":method:`Form::submit() <Symfony\\\\Component\\\\Form\\\\Form::submit>` "
+"method transforms back the normalized data to the model and view data."
+msgstr ""
+
+#: ../../../form/events.rst:170
+msgid ""
+"It can be used to change data from the normalized representation of the "
+"data."
+msgstr ""
+
+#: ../../../form/events.rst:176
+msgid ""
+"Data from the request reverse-transformed from the request using a view "
+"transformer"
+msgstr ""
+
+#: ../../../form/events.rst:187
+msgid "At this point, you cannot add or remove fields to the form."
+msgstr ""
+
+#: ../../../form/events.rst
+msgid "``FormEvents::SUBMIT`` in the Form component"
+msgstr ""
+
+#: ../../../form/events.rst:191
+msgid ""
+"The "
+"``Symfony\\Component\\Form\\Extension\\Core\\EventListener\\FixUrlProtocolListener``"
+" subscribes to the ``FormEvents::SUBMIT`` event in order to prepend a "
+"default protocol to URL fields that were submitted without a protocol."
+msgstr ""
+
+#: ../../../form/events.rst:196
+msgid "C) The ``FormEvents::POST_SUBMIT`` Event"
+msgstr ""
+
+#: ../../../form/events.rst:198
+msgid ""
+"The ``FormEvents::POST_SUBMIT`` event is dispatched after the "
+":method:`Form::submit() <Symfony\\\\Component\\\\Form\\\\Form::submit>` "
+"once the model and view data have been denormalized."
+msgstr ""
+
+#: ../../../form/events.rst:202
+msgid "It can be used to fetch data after denormalization."
+msgstr ""
+
+#: ../../../form/events.rst:207
+msgid "Normalized data reverse-transformed using a model transformer"
+msgstr ""
+
+#: ../../../form/events.rst:208
+msgid "Same as in ``FormEvents::SUBMIT``"
+msgstr ""
+
+#: ../../../form/events.rst:219
+msgid ""
+"At this point, you cannot add or remove fields to the current form and "
+"its children."
+msgstr ""
+
+#: ../../../form/events.rst
+msgid "``FormEvents::POST_SUBMIT`` in the Form component"
+msgstr ""
+
+#: ../../../form/events.rst:224
+msgid ""
+"The "
+"``Symfony\\Component\\Form\\Extension\\DataCollector\\EventListener\\DataCollectorListener``"
+" subscribes to the ``FormEvents::POST_SUBMIT`` event in order to collect "
+"information about the forms. The "
+"``Symfony\\Component\\Form\\Extension\\Validator\\EventListener\\ValidationListener``"
+" subscribes to the ``FormEvents::POST_SUBMIT`` event in order to "
+"automatically validate the denormalized object."
+msgstr ""
+
+#: ../../../form/events.rst:232
+msgid "Registering Event Listeners or Event Subscribers"
+msgstr ""
+
+#: ../../../form/events.rst:234
+msgid ""
+"In order to be able to use Form events, you need to create an event "
+"listener or an event subscriber and register it to an event."
+msgstr ""
+
+#: ../../../form/events.rst:237
+msgid ""
+"The name of each of the \"form\" events is defined as a constant on the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormEvents` class. Additionally, "
+"each event callback (listener or subscriber method) is passed a single "
+"argument, which is an instance of "
+":class:`Symfony\\\\Component\\\\Form\\\\FormEvent`. The event object "
+"contains a reference to the current state of the form and the current "
+"data being processed."
+msgstr ""
+
+#: ../../../form/events.rst:248
+msgid "Name"
+msgstr ""
+
+#: ../../../form/events.rst:248
+msgid "``FormEvents`` Constant"
+msgstr ""
+
+#: ../../../form/events.rst:248
+msgid "Event's Data"
+msgstr ""
+
+#: ../../../form/events.rst:250
+msgid "``form.pre_set_data``"
+msgstr ""
+
+#: ../../../form/events.rst:250
+msgid "``FormEvents::PRE_SET_DATA``"
+msgstr ""
+
+#: ../../../form/events.rst:251
+msgid "``form.post_set_data``"
+msgstr ""
+
+#: ../../../form/events.rst:251
+msgid "``FormEvents::POST_SET_DATA``"
+msgstr ""
+
+#: ../../../form/events.rst:252
+msgid "``form.pre_submit``"
+msgstr ""
+
+#: ../../../form/events.rst:252
+msgid "``FormEvents::PRE_SUBMIT``"
+msgstr ""
+
+#: ../../../form/events.rst:252
+msgid "Request data"
+msgstr ""
+
+#: ../../../form/events.rst:253
+msgid "``form.submit``"
+msgstr ""
+
+#: ../../../form/events.rst:253
+msgid "``FormEvents::SUBMIT``"
+msgstr ""
+
+#: ../../../form/events.rst:254
+msgid "``form.post_submit``"
+msgstr ""
+
+#: ../../../form/events.rst:254
+msgid "``FormEvents::POST_SUBMIT``"
+msgstr ""
+
+#: ../../../form/events.rst:258
+msgid "Event Listeners"
+msgstr ""
+
+#: ../../../form/events.rst:260
+msgid ""
+"An event listener may be any type of valid callable. For example, you can"
+" define an event listener function inline right in the "
+"``addEventListener`` method of the ``FormFactory``::"
+msgstr ""
+
+#: ../../../form/events.rst:297
+msgid ""
+"When you have created a form type class, you can use one of its methods "
+"as a callback for better readability::"
+msgstr ""
+
+#: ../../../form/events.rst:330
+msgid "Event Subscribers"
+msgstr ""
+
+#: ../../../form/events.rst:332
+msgid "Event subscribers have different uses:"
+msgstr ""
+
+#: ../../../form/events.rst:334
+msgid "Improving readability;"
+msgstr ""
+
+#: ../../../form/events.rst:335
+msgid "Listening to multiple events;"
+msgstr ""
+
+#: ../../../form/events.rst:336
+msgid "Regrouping multiple listeners inside a single class."
+msgstr ""
+
+#: ../../../form/events.rst:338
+msgid "Consider the following example of a form event subscriber::"
+msgstr ""
+
+#: ../../../form/events.rst:391
+msgid ""
+"To register the event subscriber, use the ``addEventSubscriber()`` "
+"method::"
+msgstr ""
+

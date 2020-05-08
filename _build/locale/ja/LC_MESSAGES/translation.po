@@ -1,0 +1,554 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation.rst:5
+msgid "Translations"
+msgstr ""
+
+#: ../../../translation.rst:7
+msgid ""
+"The term \"internationalization\" (often abbreviated `i18n`_) refers to "
+"the process of abstracting strings and other locale-specific pieces out "
+"of your application into a layer where they can be translated and "
+"converted based on the user's locale (i.e. language and country). For "
+"text, this means wrapping each with a function capable of translating the"
+" text (or \"message\") into the language of the user::"
+msgstr ""
+
+#: ../../../translation.rst:23
+msgid ""
+"The term *locale* refers roughly to the user's language and country. It "
+"can be any string that your application uses to manage translations and "
+"other format differences (e.g. currency format). The `ISO 639-1`_ "
+"*language* code, an underscore (``_``), then the `ISO 3166-1 alpha-2`_ "
+"*country* code (e.g. ``fr_FR`` for French/France) is recommended."
+msgstr ""
+
+#: ../../../translation.rst:29
+msgid "The translation process has several steps:"
+msgstr ""
+
+#: ../../../translation.rst:31
+msgid ""
+":ref:`Enable and configure <translation-configuration>` Symfony's "
+"translation service;"
+msgstr ""
+
+#: ../../../translation.rst:34
+msgid ""
+"Abstract strings (i.e. \"messages\") by wrapping them in calls to the "
+"``Translator`` (\":ref:`translation-basic`\");"
+msgstr ""
+
+#: ../../../translation.rst:37
+msgid ""
+":ref:`Create translation resources/files <translation-resources>` for "
+"each supported locale that translate each message in the application;"
+msgstr ""
+
+#: ../../../translation.rst:40
+msgid ""
+"Determine, :doc:`set and manage the user's locale </translation/locale>` "
+"for the request and optionally :doc:`on the user's entire session "
+"</session/locale_sticky_session>`."
+msgstr ""
+
+#: ../../../translation.rst:45
+msgid "Installation"
+msgstr ""
+
+#: ../../../translation.rst:47
+msgid "First, run this command to install the translator before using it:"
+msgstr ""
+
+#: ../../../translation.rst:56
+msgid "Configuration"
+msgstr ""
+
+#: ../../../translation.rst:58
+msgid ""
+"The previous command creates an initial config file where you can define "
+"the default locale of the application and the directory where the "
+"translation files are located:"
+msgstr ""
+
+#: ../../../translation.rst:101
+msgid ""
+"The locale used in translations is the one stored on the request. This is"
+" typically set via a ``_locale`` attribute on your routes (see :ref"
+":`translation-locale-url`)."
+msgstr ""
+
+#: ../../../translation.rst:107
+msgid "Basic Translation"
+msgstr ""
+
+#: ../../../translation.rst:109
+msgid ""
+"Translation of text is done through the  ``translator`` service "
+"(:class:`Symfony\\\\Component\\\\Translation\\\\Translator`). To "
+"translate a block of text (called a *message*), use the "
+":method:`Symfony\\\\Component\\\\Translation\\\\Translator::trans` "
+"method. Suppose, for example, that you're translating a simple message "
+"from inside a controller::"
+msgstr ""
+
+#: ../../../translation.rst:127
+msgid ""
+"When this code is executed, Symfony will attempt to translate the message"
+" \"Symfony is great\" based on the ``locale`` of the user. For this to "
+"work, you need to tell Symfony how to translate the message via a "
+"\"translation resource\", which is usually a file that contains a "
+"collection of translations for a given locale. This \"dictionary\" of "
+"translations can be created in several different formats:"
+msgstr ""
+
+#: ../../../translation.rst:163
+msgid ""
+"For information on where these files should be located, see :ref"
+":`translation-resource-locations`."
+msgstr ""
+
+#: ../../../translation.rst:166
+msgid ""
+"Now, if the language of the user's locale is French (e.g. ``fr_FR`` or "
+"``fr_BE``), the message will be translated into ``J'aime Symfony``. You "
+"can also translate the message inside your :ref:`templates <translation-"
+"in-templates>`."
+msgstr ""
+
+#: ../../../translation.rst:173
+msgid "Using Real or Keyword Messages"
+msgstr ""
+
+#: ../../../translation.rst:175
+msgid ""
+"This example illustrates the two different philosophies when creating "
+"messages to be translated::"
+msgstr ""
+
+#: ../../../translation.rst:182
+msgid ""
+"In the first method, messages are written in the language of the default "
+"locale (English in this case). That message is then used as the \"id\" "
+"when creating translations."
+msgstr ""
+
+#: ../../../translation.rst:186
+msgid ""
+"In the second method, messages are actually \"keywords\" that convey the "
+"idea of the message. The keyword message is then used as the \"id\" for "
+"any translations. In this case, translations must be made for the default"
+" locale (i.e. to translate ``symfony.great`` to ``Symfony is great``)."
+msgstr ""
+
+#: ../../../translation.rst:191
+msgid ""
+"The second method is handy because the message key won't need to be "
+"changed in every translation file if you decide that the message should "
+"actually read \"Symfony is really great\" in the default locale."
+msgstr ""
+
+#: ../../../translation.rst:195
+msgid ""
+"The choice of which method to use is entirely up to you, but the "
+"\"keyword\" format is often recommended for multi-language applications, "
+"whereas for shared bundles that contain translation resources we "
+"recommend the real message, so your application can choose to disable the"
+" translator layer and you will see a readable message."
+msgstr ""
+
+#: ../../../translation.rst:201
+msgid ""
+"Additionally, the ``php`` and ``yaml`` file formats support nested ids to"
+" avoid repeating yourself if you use keywords instead of real text for "
+"your ids:"
+msgstr ""
+
+#: ../../../translation.rst:244
+msgid "The Translation Process"
+msgstr ""
+
+#: ../../../translation.rst:246
+msgid ""
+"To actually translate the message, Symfony uses the following process "
+"when using the ``trans()`` method:"
+msgstr ""
+
+#: ../../../translation.rst:249
+msgid ""
+"The ``locale`` of the current user, which is stored on the request is "
+"determined;"
+msgstr ""
+
+#: ../../../translation.rst:251
+msgid ""
+"A catalog (e.g. big collection) of translated messages is loaded from "
+"translation resources defined for the ``locale`` (e.g. ``fr_FR``). "
+"Messages from the :ref:`fallback locale <translation-fallback>` are also "
+"loaded and added to the catalog if they don't already exist. The end "
+"result is a large \"dictionary\" of translations. This catalog is cached "
+"in production to minimize performance impact."
+msgstr ""
+
+#: ../../../translation.rst:258
+msgid ""
+"If the message is located in the catalog, the translation is returned. If"
+" not, the translator returns the original message."
+msgstr ""
+
+#: ../../../translation.rst:263
+msgid ""
+"When translating strings that are not in the default domain "
+"(``messages``), you must specify the domain as the third argument of "
+"``trans()``::"
+msgstr ""
+
+#: ../../../translation.rst:272
+msgid "Message Format"
+msgstr ""
+
+#: ../../../translation.rst:274
+msgid "Sometimes, a message containing a variable needs to be translated::"
+msgstr ""
+
+#: ../../../translation.rst:279
+msgid ""
+"However, creating a translation for this string is impossible since the "
+"translator will try to look up the message including the variable "
+"portions (e.g. *\"Hello Ryan\"* or *\"Hello Fabien\"*)."
+msgstr ""
+
+#: ../../../translation.rst:283
+msgid ""
+"Another complication is when you have translations that may or may not be"
+" plural, based on some variable:"
+msgstr ""
+
+#: ../../../translation.rst:291
+msgid ""
+"To manage these situations, Symfony follows the `ICU MessageFormat`_ "
+"syntax by using PHP's :phpclass:`MessageFormatter` class. Read more about"
+" this in :doc:`/translation/message_format`."
+msgstr ""
+
+#: ../../../translation.rst:298
+msgid "Translations in Templates"
+msgstr ""
+
+#: ../../../translation.rst:300
+msgid ""
+"Most of the time, translation occurs in templates. Symfony provides "
+"native support for both Twig and PHP templates:"
+msgstr ""
+
+#: ../../../translation.rst:307
+msgid ""
+"Read :doc:`/translation/templates` for more information about the Twig "
+"tags and filters for translation."
+msgstr ""
+
+#: ../../../translation.rst:311
+msgid "Forcing the Translator Locale"
+msgstr ""
+
+#: ../../../translation.rst:313
+msgid ""
+"When translating a message, the translator uses the specified locale or "
+"the ``fallback`` locale if necessary. You can also manually specify the "
+"locale to use for translation::"
+msgstr ""
+
+#: ../../../translation.rst:325
+msgid "Extracting Translation Contents and Updating Catalogs Automatically"
+msgstr ""
+
+#: ../../../translation.rst:327
+msgid ""
+"The most time-consuming tasks when translating an application is to "
+"extract all the template contents to be translated and to keep all the "
+"translation files in sync. Symfony includes a command called "
+"``translation:update`` that helps you with these tasks:"
+msgstr ""
+
+#: ../../../translation.rst:343
+msgid "The ``translation:update`` command looks for missing translations in:"
+msgstr ""
+
+#: ../../../translation.rst:345
+msgid ""
+"Templates stored in the ``templates/`` directory (or any other directory "
+"defined in the :ref:`twig.default_path <config-twig-default-path>` and "
+":ref:`twig.paths <config-twig-paths>` config options);"
+msgstr ""
+
+#: ../../../translation.rst:348
+msgid ""
+"Any PHP file/class that injects or :doc:`autowires "
+"</service_container/autowiring>` the ``translator`` service and makes "
+"calls to the ``trans()`` function."
+msgstr ""
+
+#: ../../../translation.rst:354
+msgid "Translation Resource/File Names and Locations"
+msgstr ""
+
+#: ../../../translation.rst:356
+msgid ""
+"Symfony looks for message files (i.e. translations) in the following "
+"default locations:"
+msgstr ""
+
+#: ../../../translation.rst:358
+msgid "the ``translations/`` directory (at the root of the project);"
+msgstr ""
+
+#: ../../../translation.rst:359
+msgid "the ``Resources/translations/`` directory inside of any bundle."
+msgstr ""
+
+#: ../../../translation.rst:361
+msgid ""
+"The locations are listed here with the highest priority first. That is, "
+"you can override the translation messages of a bundle in the first "
+"directory."
+msgstr ""
+
+#: ../../../translation.rst:364
+msgid ""
+"The override mechanism works at a key level: only the overridden keys "
+"need to be listed in a higher priority message file. When a key is not "
+"found in a message file, the translator will automatically fall back to "
+"the lower priority message files."
+msgstr ""
+
+#: ../../../translation.rst:369
+msgid ""
+"The filename of the translation files is also important: each message "
+"file must be named according to the following path: "
+"``domain.locale.loader``:"
+msgstr ""
+
+#: ../../../translation.rst:372
+msgid ""
+"**domain**: An optional way to organize messages into groups. Unless "
+"parts of the application are explicitly separated from each other, it is "
+"recommended to only use default ``messages`` domain;"
+msgstr ""
+
+#: ../../../translation.rst:376
+msgid ""
+"**locale**: The locale that the translations are for (e.g. ``en_GB``, "
+"``en``, etc);"
+msgstr ""
+
+#: ../../../translation.rst:378
+msgid ""
+"**loader**: How Symfony should load and parse the file (e.g. ``xlf``, "
+"``php``, ``yaml``, etc)."
+msgstr ""
+
+#: ../../../translation.rst:381
+msgid ""
+"The loader can be the name of any registered loader. By default, Symfony "
+"provides many loaders:"
+msgstr ""
+
+#: ../../../translation.rst:384
+msgid "``.yaml``: YAML file"
+msgstr ""
+
+#: ../../../translation.rst:385
+msgid "``.xlf``: XLIFF file;"
+msgstr ""
+
+#: ../../../translation.rst:386
+msgid "``.php``: Returning a PHP array;"
+msgstr ""
+
+#: ../../../translation.rst:387
+msgid "``.csv``: CSV file;"
+msgstr ""
+
+#: ../../../translation.rst:388
+msgid "``.json``: JSON file;"
+msgstr ""
+
+#: ../../../translation.rst:389
+msgid "``.ini``: INI file;"
+msgstr ""
+
+#: ../../../translation.rst:390
+msgid "``.dat``, ``.res``: ICU resource bundle;"
+msgstr ""
+
+#: ../../../translation.rst:391
+msgid "``.mo``: Machine object format;"
+msgstr ""
+
+#: ../../../translation.rst:392
+msgid "``.po``: Portable object format;"
+msgstr ""
+
+#: ../../../translation.rst:393
+msgid "``.qt``: QT Translations XML file;"
+msgstr ""
+
+#: ../../../translation.rst:395
+msgid ""
+"The choice of which loader to use is entirely up to you and is a matter "
+"of taste. The recommended option is to use YAML for simple projects and "
+"use XLIFF if you're generating translations with specialized programs or "
+"teams."
+msgstr ""
+
+#: ../../../translation.rst:401
+msgid ""
+"Each time you create a *new* message catalog (or install a bundle that "
+"includes a translation catalog), be sure to clear your cache so that "
+"Symfony can discover the new translation resources:"
+msgstr ""
+
+#: ../../../translation.rst:411
+msgid ""
+"You can add other directories with the :ref:`paths <reference-translator-"
+"paths>` option in the configuration:"
+msgstr ""
+
+#: ../../../translation.rst:456
+msgid ""
+"You can also store translations in a database, or any other storage by "
+"providing a custom class implementing the "
+":class:`Symfony\\\\Component\\\\Translation\\\\Loader\\\\LoaderInterface`"
+" interface. See the :ref:`dic-tags-translation-loader` tag for more "
+"information."
+msgstr ""
+
+#: ../../../translation.rst:462
+msgid "Handling the User's Locale"
+msgstr ""
+
+#: ../../../translation.rst:464
+msgid ""
+"Translating happens based on the user's locale. Read "
+":doc:`/translation/locale` to learn more about how to handle it."
+msgstr ""
+
+#: ../../../translation.rst:470
+msgid "Fallback Translation Locales"
+msgstr ""
+
+#: ../../../translation.rst:472
+msgid ""
+"Imagine that the user's locale is ``es_AR`` and that you're translating "
+"the key ``Symfony is great``. To find the Spanish translation, Symfony "
+"actually checks translation resources for several locales:"
+msgstr ""
+
+#: ../../../translation.rst:476
+msgid ""
+"First, Symfony looks for the translation in a ``es_AR`` (Argentinean "
+"Spanish) translation resource (e.g. ``messages.es_AR.yaml``);"
+msgstr ""
+
+#: ../../../translation.rst:479
+msgid ""
+"If it wasn't found, Symfony looks for the translation in the parent "
+"locale, which is automatically defined only for some locales. In this "
+"example, the parent locale is ``es_419`` (Latin American Spanish);"
+msgstr ""
+
+#: ../../../translation.rst:483
+msgid ""
+"If it wasn't found, Symfony looks for the translation in a ``es`` "
+"(Spanish) translation resource (e.g. ``messages.es.yaml``);"
+msgstr ""
+
+#: ../../../translation.rst:486
+msgid ""
+"If the translation still isn't found, Symfony uses the ``fallbacks`` "
+"option, which can be configured as follows:"
+msgstr ""
+
+#: ../../../translation.rst:529
+msgid ""
+"When Symfony can't find a translation in the given locale, it will add "
+"the missing translation to the log file. For details, see :ref"
+":`reference-framework-translator-logging`."
+msgstr ""
+
+#: ../../../translation.rst:534
+msgid "Translating Database Content"
+msgstr ""
+
+#: ../../../translation.rst:536
+msgid ""
+"The translation of database content should be handled by Doctrine through"
+" the `Translatable Extension`_ or the `Translatable Behavior`_ (PHP "
+"5.4+). For more information, see the documentation for these libraries."
+msgstr ""
+
+#: ../../../translation.rst:541
+msgid "Debugging Translations"
+msgstr ""
+
+#: ../../../translation.rst:543
+msgid ""
+"When you work with many translation messages in different languages, it "
+"can be hard to keep track which translations are missing and which are "
+"not used anymore. Read :doc:`/translation/debug` to find out how to "
+"identify these messages."
+msgstr ""
+
+#: ../../../translation.rst:549
+msgid "Summary"
+msgstr ""
+
+#: ../../../translation.rst:551
+msgid ""
+"With the Symfony Translation component, creating an internationalized "
+"application no longer needs to be a painful process and boils down to "
+"these steps:"
+msgstr ""
+
+#: ../../../translation.rst:554
+msgid ""
+"Abstract messages in your application by wrapping each in the "
+":method:`Symfony\\\\Component\\\\Translation\\\\Translator::trans` "
+"method;"
+msgstr ""
+
+#: ../../../translation.rst:557
+msgid ""
+"Translate each message into multiple locales by creating translation "
+"message files. Symfony discovers and processes each file because its name"
+" follows a specific convention;"
+msgstr ""
+
+#: ../../../translation.rst:561
+msgid ""
+"Manage the user's locale, which is stored on the request, but can also be"
+" set on the user's session."
+msgstr ""
+
+#: ../../../translation.rst:565
+msgid "Learn more"
+msgstr ""
+

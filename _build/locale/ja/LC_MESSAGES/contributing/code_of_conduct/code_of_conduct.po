@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:2
+msgid "Code of Conduct"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:5
+msgid "Our Pledge"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:7
+msgid ""
+"In the interest of fostering an open and welcoming environment, we as "
+"contributors and maintainers pledge to making participation in our "
+"project and our community a harassment-free experience for everyone, "
+"regardless of age, body size, disability, ethnic origin, gender identity "
+"and expression, level of experience, education, socio-economic status, "
+"nationality, personal appearance, religion, or sexual identity and "
+"orientation."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:15
+msgid "Our Standards"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:17
+msgid ""
+"Examples of behavior that contributes to creating a positive environment "
+"include:"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:20
+msgid "Using welcoming and inclusive language"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:21
+msgid "Being respectful of differing viewpoints and experiences"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:22
+msgid "Gracefully accepting constructive criticism"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:23
+msgid "Focusing on what is best for the community"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:24
+msgid "Showing empathy towards other community members"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:26
+msgid "Examples of unacceptable behavior by participants include:"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:28
+msgid ""
+"The use of sexualized language or imagery and unwelcome sexual attention "
+"or advances"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:30
+msgid "Trolling, insulting/derogatory comments, and personal or political attacks"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:31
+msgid "Public or private harassment"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:32
+msgid ""
+"Publishing others' private information, such as a physical or electronic "
+"address, without explicit permission"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:34
+msgid ""
+"Other conduct which could reasonably be considered inappropriate in a "
+"professional setting"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:38
+msgid "Our Responsibilities"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:40
+msgid ""
+":doc:`CoC Active Response Ensurers, or "
+"CARE</contributing/code_of_conduct/care_team>`, are responsible for "
+"clarifying the standards of acceptable behavior and are expected to take "
+"appropriate and fair corrective action in response to any instances of "
+"unacceptable behavior."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:45
+msgid ""
+"CARE team members have the right and responsibility to remove, edit, or "
+"reject comments, commits, code, wiki edits, issues, and other "
+"contributions that are not aligned to this Code of Conduct, or to ban "
+"temporarily or permanently any contributor for other behaviors that they "
+"deem inappropriate, threatening, offensive, or harmful."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:52
+msgid "Scope"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:54
+msgid ""
+"This Code of Conduct applies both within project spaces and in public "
+"spaces when an individual is representing the project or its community. "
+"Examples of representing a project or community include using an official"
+" project e-mail address, posting via an official social media account, or"
+" acting as an appointed representative at an online or offline event. "
+"Representation of a project may be further defined and clarified by CARE "
+"team members."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:62
+msgid "Enforcement"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:64
+msgid ""
+"Instances of abusive, harassing, or otherwise unacceptable behavior "
+":doc:`may be reported "
+"</contributing/code_of_conduct/reporting_guidelines>` by contacting the "
+":doc:`CARE team members </contributing/code_of_conduct/care_team>`. All "
+"complaints will be reviewed and investigated and will result in a "
+"response that is deemed necessary and appropriate to the circumstances. "
+"The CARE team is obligated to maintain confidentiality with regard to the"
+" reporter of an incident. Further details of specific enforcement "
+"policies may be posted separately."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:72
+msgid ""
+"CARE team members who do not follow or enforce the Code of Conduct in "
+"good faith may face temporary or permanent repercussions as determined by"
+" the :doc:`core team </contributing/code/core_team>`."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:77
+msgid "Attribution"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:79
+msgid ""
+"This Code of Conduct is adapted from the `Contributor Covenant`_, version"
+" 1.4, available at https://www.contributor-covenant.org/version/1/4/code-"
+"of-conduct/"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/code_of_conduct.rst:83
+msgid "Related Documents"
+msgstr ""
+

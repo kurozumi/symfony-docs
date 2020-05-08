@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/upgrade_patch.rst:5
+msgid "Upgrading a Patch Version (e.g. 5.0.0 to 5.0.1)"
+msgstr ""
+
+#: ../../../setup/upgrade_patch.rst:7
+msgid ""
+"When a new patch version is released (only the last number changed), it "
+"is a release that only contains bug fixes. This means that upgrading to a"
+" new patch version should not cause any problems."
+msgstr ""
+
+#: ../../../setup/upgrade_patch.rst:11
+msgid ""
+"To upgrade to a new \"patch\" release, read the :doc:`Upgrading a Minor "
+"Version </setup/upgrade_minor>` article. Thanks to Symfony's "
+":doc:`backwards compatibility promise </contributing/code/bc>`, it's "
+"always safe to upgrade to the latest \"minor\" version."
+msgstr ""
+
+#: ../../../setup/upgrade_patch.rst:18
+msgid ""
+"It is recommended to update to a new patch version as soon as possible, "
+"as important bugs and security vulnerabilities may be fixed in these new "
+"releases."
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:2
+msgid "Upgrading other Packages"
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:4
+msgid ""
+"You may also want to upgrade the rest of your libraries. If you've done a"
+" good job with your `version constraints`_ in ``composer.json``, you can "
+"do this safely by running:"
+msgstr ""
+
+#: ../../../setup/_update_all_packages.rst.inc:14
+msgid ""
+"Beware, if you have some unspecific `version constraints`_ in your "
+"``composer.json`` (e.g. ``dev-master``), this could upgrade some non-"
+"Symfony libraries to new versions that contain backwards-compatibility "
+"breaking changes."
+msgstr ""
+

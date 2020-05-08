@@ -1,0 +1,942 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/lock.rst:6
+msgid "The Lock Component"
+msgstr ""
+
+#: ../../../components/lock.rst:8
+msgid ""
+"The Lock Component creates and manages `locks`_, a mechanism to provide "
+"exclusive access to a shared resource."
+msgstr ""
+
+#: ../../../components/lock.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/lock.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/lock.rst:23
+msgid ""
+"Locks are used to guarantee exclusive access to some shared resource. In "
+"Symfony applications, you can use locks for example to ensure that a "
+"command is not executed more than once at the same time (on the same or "
+"different servers)."
+msgstr ""
+
+#: ../../../components/lock.rst:27
+msgid ""
+"Locks are created using a "
+":class:`Symfony\\\\Component\\\\Lock\\\\LockFactory` class, which in turn"
+" requires another class to manage the storage of locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:36
+msgid ""
+"The lock is created by calling the "
+":method:`Symfony\\\\Component\\\\Lock\\\\LockFactory::createLock` method."
+" Its first argument is an arbitrary string that represents the locked "
+"resource. Then, a call to the "
+":method:`Symfony\\\\Component\\\\Lock\\\\LockInterface::acquire` method "
+"will try to acquire the lock::"
+msgstr ""
+
+#: ../../../components/lock.rst:51
+msgid ""
+"If the lock can not be acquired, the method returns ``false``. The "
+"``acquire()`` method can be safely called repeatedly, even if the lock is"
+" already acquired."
+msgstr ""
+
+#: ../../../components/lock.rst:56
+msgid ""
+"Unlike other implementations, the Lock Component distinguishes locks "
+"instances even when they are created for the same resource. If a lock has"
+" to be used by several services, they should share the same ``Lock`` "
+"instance returned by the ``LockFactory::createLock`` method."
+msgstr ""
+
+#: ../../../components/lock.rst:63
+msgid ""
+"If you don't release the lock explicitly, it will be released "
+"automatically on instance destruction. In some cases, it can be useful to"
+" lock a resource across several requests. To disable the automatic "
+"release behavior, set the third argument of the ``createLock()`` method "
+"to ``false``."
+msgstr ""
+
+#: ../../../components/lock.rst:71
+msgid "Blocking Locks"
+msgstr ""
+
+#: ../../../components/lock.rst:73
+msgid ""
+"By default, when a lock cannot be acquired, the ``acquire`` method "
+"returns ``false`` immediately. To wait (indefinitely) until the lock can "
+"be created, pass ``true`` as the argument of the ``acquire()`` method. "
+"This is called a **blocking lock** because the execution of your "
+"application stops until the lock is acquired."
+msgstr ""
+
+#: ../../../components/lock.rst:79
+msgid ""
+"Some of the built-in ``Store`` classes support this feature. When they "
+"don't, they can be decorated with the ``RetryTillSaveStore`` class::"
+msgstr ""
+
+#: ../../../components/lock.rst:94
+msgid "Expiring Locks"
+msgstr ""
+
+#: ../../../components/lock.rst:96
+msgid ""
+"Locks created remotely are difficult to manage because there is no way "
+"for the remote ``Store`` to know if the locker process is still alive. "
+"Due to bugs, fatal errors or segmentation faults, it cannot be guaranteed"
+" that ``release()`` method will be called, which would cause the resource"
+" to be locked infinitely."
+msgstr ""
+
+#: ../../../components/lock.rst:101
+msgid ""
+"The best solution in those cases is to create **expiring locks**, which "
+"are released automatically after some amount of time has passed (called "
+"TTL for *Time To Live*). This time, in seconds, is configured as the "
+"second argument of the ``createLock()`` method. If needed, these locks "
+"can also be released early with the ``release()`` method."
+msgstr ""
+
+#: ../../../components/lock.rst:107
+msgid ""
+"The trickiest part when working with expiring locks is choosing the right"
+" TTL. If it's too short, other processes could acquire the lock before "
+"finishing the job; if it's too long and the process crashes before "
+"calling the ``release()`` method, the resource will stay locked until the"
+" timeout::"
+msgstr ""
+
+#: ../../../components/lock.rst:125
+msgid ""
+"To avoid letting the lock in a locking state, it's recommended to wrap "
+"the job in a try/catch/finally block to always try to release the "
+"expiring lock."
+msgstr ""
+
+#: ../../../components/lock.rst:128
+msgid ""
+"In case of long-running tasks, it's better to start with a not too long "
+"TTL and then use the "
+":method:`Symfony\\\\Component\\\\Lock\\\\LockInterface::refresh` method "
+"to reset the TTL to its original value::"
+msgstr ""
+
+#: ../../../components/lock.rst:149
+msgid ""
+"Another useful technique for long-running tasks is to pass a custom TTL "
+"as an argument of the ``refresh()`` method to change the default lock "
+"TTL::"
+msgstr ""
+
+#: ../../../components/lock.rst:160
+msgid ""
+"This component also provides two useful methods related to expiring "
+"locks: ``getExpiringDate()`` (which returns ``null`` or a "
+"``\\DateTimeImmutable`` object) and ``isExpired()`` (which returns a "
+"boolean)."
+msgstr ""
+
+#: ../../../components/lock.rst:165
+msgid "The Owner of The Lock"
+msgstr ""
+
+#: ../../../components/lock.rst:167
+msgid ""
+"Locks that are acquired for the first time are owned by the ``Lock`` "
+"instance that acquired it. If you need to check whether the current "
+"``Lock`` instance is (still) the owner of a lock, you can use the "
+"``isAcquired()`` method::"
+msgstr ""
+
+#: ../../../components/lock.rst:175
+msgid ""
+"Because of the fact that some lock stores have expiring locks (as seen "
+"and explained above), it is possible for an instance to lose the lock it "
+"acquired automatically::"
+msgstr ""
+
+#: ../../../components/lock.rst:199
+msgid ""
+"A common pitfall might be to use the ``isAcquired()`` method to check if "
+"a lock has already been acquired by any process. As you can see in this "
+"example you have to use ``acquire()`` for this. The ``isAcquired()`` "
+"method is used to check if the lock has been acquired by the **current "
+"process** only!"
+msgstr ""
+
+#: ../../../components/lock.rst:204
+msgid ""
+"Technically, the true owners of the lock are the ones that share the same"
+" instance of ``Key``, not ``Lock``. But from a user perspective, ``Key`` "
+"is internal and you will likely only be working with the ``Lock`` "
+"instance so it's easier to think of the ``Lock`` instance as being the "
+"one that is the owner of the lock."
+msgstr ""
+
+#: ../../../components/lock.rst:210
+msgid "Available Stores"
+msgstr ""
+
+#: ../../../components/lock.rst:212
+msgid ""
+"Locks are created and managed in ``Stores``, which are classes that "
+"implement "
+":class:`Symfony\\\\Component\\\\Lock\\\\PersistingStoreInterface` and, "
+"optionally, "
+":class:`Symfony\\\\Component\\\\Lock\\\\BlockingStoreInterface`."
+msgstr ""
+
+#: ../../../components/lock.rst:216
+msgid "The component includes the following built-in store types:"
+msgstr ""
+
+#: ../../../components/lock.rst:219
+msgid "Store"
+msgstr ""
+
+#: ../../../components/lock.rst:219
+msgid "Scope"
+msgstr ""
+
+#: ../../../components/lock.rst:219
+msgid "Blocking"
+msgstr ""
+
+#: ../../../components/lock.rst:219
+msgid "Expiring"
+msgstr ""
+
+#: ../../../components/lock.rst:221
+msgid ":ref:`FlockStore <lock-store-flock>`"
+msgstr ""
+
+#: ../../../components/lock.rst:221 ../../../components/lock.rst:226
+msgid "local"
+msgstr ""
+
+#: ../../../components/lock.rst:221 ../../../components/lock.rst:222
+#: ../../../components/lock.rst:223 ../../../components/lock.rst:224
+#: ../../../components/lock.rst:225 ../../../components/lock.rst:226
+msgid "yes"
+msgstr ""
+
+#: ../../../components/lock.rst:221 ../../../components/lock.rst:222
+#: ../../../components/lock.rst:223 ../../../components/lock.rst:224
+#: ../../../components/lock.rst:225 ../../../components/lock.rst:226
+#: ../../../components/lock.rst:227
+msgid "no"
+msgstr ""
+
+#: ../../../components/lock.rst:222
+msgid ":ref:`MemcachedStore <lock-store-memcached>`"
+msgstr ""
+
+#: ../../../components/lock.rst:222 ../../../components/lock.rst:223
+#: ../../../components/lock.rst:224 ../../../components/lock.rst:225
+#: ../../../components/lock.rst:227
+msgid "remote"
+msgstr ""
+
+#: ../../../components/lock.rst:223
+msgid ":ref:`MongoDbStore <lock-store-mongodb>`"
+msgstr ""
+
+#: ../../../components/lock.rst:224
+msgid ":ref:`PdoStore <lock-store-pdo>`"
+msgstr ""
+
+#: ../../../components/lock.rst:225
+msgid ":ref:`RedisStore <lock-store-redis>`"
+msgstr ""
+
+#: ../../../components/lock.rst:226
+msgid ":ref:`SemaphoreStore <lock-store-semaphore>`"
+msgstr ""
+
+#: ../../../components/lock.rst:227
+msgid ":ref:`ZookeeperStore <lock-store-zookeeper>`"
+msgstr ""
+
+#: ../../../components/lock.rst:233 ../../../components/lock.rst:545
+msgid "FlockStore"
+msgstr ""
+
+#: ../../../components/lock.rst:235
+msgid ""
+"The FlockStore uses the file system on the local computer to create the "
+"locks. It does not support expiration, but the lock is automatically "
+"released when the PHP process is terminated::"
+msgstr ""
+
+#: ../../../components/lock.rst:247
+msgid ""
+"Beware that some file systems (such as some types of NFS) do not support "
+"locking. In those cases, it's better to use a directory on a local disk "
+"drive or a remote store based on PDO, Redis or Memcached."
+msgstr ""
+
+#: ../../../components/lock.rst:254 ../../../components/lock.rst:582
+msgid "MemcachedStore"
+msgstr ""
+
+#: ../../../components/lock.rst:256
+msgid ""
+"The MemcachedStore saves locks on a Memcached server, it requires a "
+"Memcached connection implementing the ``\\Memcached`` class. This store "
+"does not support blocking, and expects a TTL to avoid stalled locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:269
+msgid "Memcached does not support TTL lower than 1 second."
+msgstr ""
+
+#: ../../../components/lock.rst:276 ../../../components/lock.rst:615
+msgid "MongoDbStore"
+msgstr ""
+
+#: ../../../components/lock.rst:280
+msgid "The ``MongoDbStore`` was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/lock.rst:282
+msgid ""
+"The MongoDbStore saves locks on a MongoDB server ``>=2.2``, it requires a"
+" ``\\MongoDB\\Collection`` or ``\\MongoDB\\Client`` from "
+"`mongodb/mongodb`_ or a `MongoDB Connection String`_. This store does not"
+" support blocking and expects a TTL to avoid stalled locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:300
+msgid ""
+"The ``MongoDbStore`` takes the following ``$options`` (depending on the "
+"first parameter type):"
+msgstr ""
+
+#: ../../../components/lock.rst:303
+msgid "Option"
+msgstr ""
+
+#: ../../../components/lock.rst:303
+msgid "Description"
+msgstr ""
+
+#: ../../../components/lock.rst:305
+msgid "gcProbablity"
+msgstr ""
+
+#: ../../../components/lock.rst:305
+msgid ""
+"Should a TTL Index be created expressed as a probability from 0.0 to 1.0 "
+"(Defaults to ``0.001``)"
+msgstr ""
+
+#: ../../../components/lock.rst:306
+msgid "database"
+msgstr ""
+
+#: ../../../components/lock.rst:306
+msgid "The name of the database"
+msgstr ""
+
+#: ../../../components/lock.rst:307
+msgid "collection"
+msgstr ""
+
+#: ../../../components/lock.rst:307
+msgid "The name of the collection"
+msgstr ""
+
+#: ../../../components/lock.rst:308
+msgid "uriOptions"
+msgstr ""
+
+#: ../../../components/lock.rst:308
+msgid "Array of uri options for `MongoDBClient::__construct`_"
+msgstr ""
+
+#: ../../../components/lock.rst:309
+msgid "driverOptions"
+msgstr ""
+
+#: ../../../components/lock.rst:309
+msgid "Array of driver options for `MongoDBClient::__construct`_"
+msgstr ""
+
+#: ../../../components/lock.rst:312
+msgid "When the first parameter is a:"
+msgstr ""
+
+#: ../../../components/lock.rst:314
+msgid "``MongoDB\\Collection``:"
+msgstr ""
+
+#: ../../../components/lock.rst:316
+msgid "``$options['database']`` is ignored"
+msgstr ""
+
+#: ../../../components/lock.rst:317
+msgid "``$options['collection']`` is ignored"
+msgstr ""
+
+#: ../../../components/lock.rst:319
+msgid "``MongoDB\\Client``:"
+msgstr ""
+
+#: ../../../components/lock.rst:321
+msgid "``$options['database']`` is mandatory"
+msgstr ""
+
+#: ../../../components/lock.rst:322
+msgid "``$options['collection']`` is mandatory"
+msgstr ""
+
+#: ../../../components/lock.rst:324
+msgid "MongoDB Connection String:"
+msgstr ""
+
+#: ../../../components/lock.rst:326
+msgid ""
+"``$options['database']`` is used otherwise ``/path`` from the DSN, at "
+"least one is mandatory"
+msgstr ""
+
+#: ../../../components/lock.rst:327
+msgid ""
+"``$options['collection']`` is used otherwise ``?collection=`` from the "
+"DSN, at least one is mandatory"
+msgstr ""
+
+#: ../../../components/lock.rst:331
+msgid ""
+"The ``collection`` querystring parameter is not part of the `MongoDB "
+"Connection String`_ definition. It is used to allow constructing a "
+"``MongoDbStore`` using a `Data Source Name (DSN)`_ without ``$options``."
+msgstr ""
+
+#: ../../../components/lock.rst:336 ../../../components/lock.rst:655
+msgid "PdoStore"
+msgstr ""
+
+#: ../../../components/lock.rst:338
+msgid ""
+"The PdoStore saves locks in an SQL database. It requires a `PDO`_ "
+"connection, a `Doctrine DBAL Connection`_, or a `Data Source Name "
+"(DSN)`_. This store does not support blocking, and expects a TTL to avoid"
+" stalled locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:350
+msgid "This store does not support TTL lower than 1 second."
+msgstr ""
+
+#: ../../../components/lock.rst:352
+msgid ""
+"Before storing locks in the database, you must create the table that "
+"stores the information. The store provides a method called "
+":method:`Symfony\\\\Component\\\\Lock\\\\Store\\\\PdoStore::createTable` "
+"to set up this table for you according to the database engine used::"
+msgstr ""
+
+#: ../../../components/lock.rst:363
+msgid ""
+"A great way to set up the table in production is to call the "
+"``createTable()`` method in your local computer and then generate a "
+":ref:`database migration <doctrine-creating-the-database-tables-schema>`:"
+msgstr ""
+
+#: ../../../components/lock.rst:375 ../../../components/lock.rst:679
+msgid "RedisStore"
+msgstr ""
+
+#: ../../../components/lock.rst:377
+msgid ""
+"The RedisStore saves locks on a Redis server, it requires a Redis "
+"connection implementing the ``\\Redis``, ``\\RedisArray``, "
+"``\\RedisCluster`` or ``\\Predis`` classes. This store does not support "
+"blocking, and expects a TTL to avoid stalled locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:392 ../../../components/lock.rst:727
+msgid "SemaphoreStore"
+msgstr ""
+
+#: ../../../components/lock.rst:394
+msgid ""
+"The SemaphoreStore uses the `PHP semaphore functions`_ to create the "
+"locks::"
+msgstr ""
+
+#: ../../../components/lock.rst:403 ../../../components/lock.rst:708
+msgid "CombinedStore"
+msgstr ""
+
+#: ../../../components/lock.rst:405
+msgid ""
+"The CombinedStore is designed for High Availability applications because "
+"it manages several stores in sync (for example, several Redis servers). "
+"When a lock is being acquired, it forwards the call to all the managed "
+"stores, and it collects their responses. If a simple majority of stores "
+"have acquired the lock, then the lock is considered as acquired; "
+"otherwise as not acquired::"
+msgstr ""
+
+#: ../../../components/lock.rst:425
+msgid ""
+"Instead of the simple majority strategy (``ConsensusStrategy``) an "
+"``UnanimousStrategy`` can be used to require the lock to be acquired in "
+"all the stores."
+msgstr ""
+
+#: ../../../components/lock.rst:431
+msgid ""
+"In order to get high availability when using the ``ConsensusStrategy``, "
+"the minimum cluster size must be three servers. This allows the cluster "
+"to keep working when a single server fails (because this strategy "
+"requires that the lock is acquired in more than half of the servers)."
+msgstr ""
+
+#: ../../../components/lock.rst:439 ../../../components/lock.rst:749
+msgid "ZookeeperStore"
+msgstr ""
+
+#: ../../../components/lock.rst:441
+msgid ""
+"The ZookeeperStore saves locks on a `ZooKeeper`_ server. It requires a "
+"ZooKeeper connection implementing the ``\\Zookeeper`` class. This store "
+"does not support blocking and expiration but the lock is automatically "
+"released when the PHP process is terminated::"
+msgstr ""
+
+#: ../../../components/lock.rst:456
+msgid ""
+"Zookeeper does not require a TTL as the nodes used for locking are "
+"ephemeral and die when the PHP process is terminated."
+msgstr ""
+
+#: ../../../components/lock.rst:460
+msgid "Reliability"
+msgstr ""
+
+#: ../../../components/lock.rst:462
+msgid ""
+"The component guarantees that the same resource can't be lock twice as "
+"long as the component is used in the following way."
+msgstr ""
+
+#: ../../../components/lock.rst:466
+msgid "Remote Stores"
+msgstr ""
+
+#: ../../../components/lock.rst:468
+msgid ""
+"Remote stores (:ref:`MemcachedStore <lock-store-memcached>`, "
+":ref:`MongoDbStore <lock-store-mongodb>`, :ref:`PdoStore <lock-store-"
+"pdo>`, :ref:`RedisStore <lock-store-redis>` and :ref:`ZookeeperStore "
+"<lock-store-zookeeper>`) use a unique token to recognize the true owner "
+"of the lock. This token is stored in the "
+":class:`Symfony\\\\Component\\\\Lock\\\\Key` object and is used "
+"internally by the ``Lock``, therefore this key must not be shared between"
+" processes (session, caching, fork, ...)."
+msgstr ""
+
+#: ../../../components/lock.rst:480
+msgid "Do not share a key between processes."
+msgstr ""
+
+#: ../../../components/lock.rst:482
+msgid ""
+"Every concurrent process must store the ``Lock`` in the same server. "
+"Otherwise two different machines may allow two different processes to "
+"acquire the same ``Lock``."
+msgstr ""
+
+#: ../../../components/lock.rst:487
+msgid ""
+"To guarantee that the same server will always be safe, do not use "
+"Memcached behind a LoadBalancer, a cluster or round-robin DNS. Even if "
+"the main server is down, the calls must not be forwarded to a backup or "
+"failover server."
+msgstr ""
+
+#: ../../../components/lock.rst:492
+msgid "Expiring Stores"
+msgstr ""
+
+#: ../../../components/lock.rst:494
+msgid ""
+"Expiring stores (:ref:`MemcachedStore <lock-store-memcached>`, "
+":ref:`MongoDbStore <lock-store-mongodb>`, :ref:`PdoStore <lock-store-"
+"pdo>` and :ref:`RedisStore <lock-store-redis>`) guarantee that the lock "
+"is acquired only for the defined duration of time. If the task takes "
+"longer to be accomplished, then the lock can be released by the store and"
+" acquired by someone else."
+msgstr ""
+
+#: ../../../components/lock.rst:502
+msgid ""
+"The ``Lock`` provides several methods to check its health. The "
+"``isExpired()`` method checks whether or not its lifetime is over and the"
+" ``getRemainingLifetime()`` method returns its time to live in seconds."
+msgstr ""
+
+#: ../../../components/lock.rst:506
+msgid "Using the above methods, a more robust code would be::"
+msgstr ""
+
+#: ../../../components/lock.rst:527
+msgid ""
+"Choose wisely the lifetime of the ``Lock`` and check whether its "
+"remaining time to leave is enough to perform the task."
+msgstr ""
+
+#: ../../../components/lock.rst:532
+msgid ""
+"Storing a ``Lock`` usually takes a few milliseconds, but network "
+"conditions may increase that time a lot (up to a few seconds). Take that "
+"into account when choosing the right TTL."
+msgstr ""
+
+#: ../../../components/lock.rst:536
+msgid ""
+"By design, locks are stored in servers with a defined lifetime. If the "
+"date or time of the machine changes, a lock could be released sooner than"
+" expected."
+msgstr ""
+
+#: ../../../components/lock.rst:541
+msgid ""
+"To guarantee that date won't change, the NTP service should be disabled "
+"and the date should be updated when the service is stopped."
+msgstr ""
+
+#: ../../../components/lock.rst:547
+msgid ""
+"By using the file system, this ``Store`` is reliable as long as "
+"concurrent processes use the same physical directory to stores locks."
+msgstr ""
+
+#: ../../../components/lock.rst:550
+msgid ""
+"Processes must run on the same machine, virtual machine or container. Be "
+"careful when updating a Kubernetes or Swarm service because for a short "
+"period of time, there can be two running containers in parallel."
+msgstr ""
+
+#: ../../../components/lock.rst:554
+msgid ""
+"The absolute path to the directory must remain the same. Be careful of "
+"symlinks that could change at anytime: Capistrano and blue/green "
+"deployment often use that trick. Be careful when the path to that "
+"directory changes between two deployments."
+msgstr ""
+
+#: ../../../components/lock.rst:559
+msgid "Some file systems (such as some types of NFS) do not support locking."
+msgstr ""
+
+#: ../../../components/lock.rst:563
+msgid ""
+"All concurrent processes must use the same physical file system by "
+"running on the same machine and using the same absolute path to locks "
+"directory."
+msgstr ""
+
+#: ../../../components/lock.rst:566
+msgid ""
+"By definition, usage of ``FlockStore`` in an HTTP context is incompatible"
+" with multiple front servers, unless to ensure that the same resource "
+"will always be locked on the same machine or to use a well configured "
+"shared file system."
+msgstr ""
+
+#: ../../../components/lock.rst:571
+msgid ""
+"Files on the file system can be removed during a maintenance operation. "
+"For instance, to clean up the ``/tmp`` directory or after a reboot of the"
+" machine when a directory uses tmpfs. It's not an issue if the lock is "
+"released when the process ended, but it is in case of ``Lock`` reused "
+"between requests."
+msgstr ""
+
+#: ../../../components/lock.rst:578
+msgid ""
+"Do not store locks on a volatile file system if they have to be reused in"
+" several requests."
+msgstr ""
+
+#: ../../../components/lock.rst:584
+msgid ""
+"The way Memcached works is to store items in memory. That means that by "
+"using the :ref:`MemcachedStore <lock-store-memcached>` the locks are not "
+"persisted and may disappear by mistake at anytime."
+msgstr ""
+
+#: ../../../components/lock.rst:588
+msgid ""
+"If the Memcached service or the machine hosting it restarts, every lock "
+"would be lost without notifying the running processes."
+msgstr ""
+
+#: ../../../components/lock.rst:593 ../../../components/lock.rst:690
+msgid ""
+"To avoid that someone else acquires a lock after a restart, it's "
+"recommended to delay service start and wait at least as long as the "
+"longest lock TTL."
+msgstr ""
+
+#: ../../../components/lock.rst:596
+msgid ""
+"By default Memcached uses a LRU mechanism to remove old entries when the "
+"service needs space to add new items."
+msgstr ""
+
+#: ../../../components/lock.rst:601
+msgid ""
+"The number of items stored in Memcached must be under control. If it's "
+"not possible, LRU should be disabled and Lock should be stored in a "
+"dedicated Memcached service away from Cache."
+msgstr ""
+
+#: ../../../components/lock.rst:605
+msgid ""
+"When the Memcached service is shared and used for multiple usage, Locks "
+"could be removed by mistake. For instance some implementation of the "
+"PSR-6 ``clear()`` method uses the Memcached's ``flush()`` method which "
+"purges and removes everything."
+msgstr ""
+
+#: ../../../components/lock.rst:611
+msgid ""
+"The method ``flush()`` must not be called, or locks should be stored in a"
+" dedicated Memcached service away from Cache."
+msgstr ""
+
+#: ../../../components/lock.rst:619
+msgid ""
+"The locked resource name is indexed in the ``_id`` field of the lock "
+"collection. Beware that in MongoDB an indexed field's value can be `a "
+"maximum of 1024 bytes in length`_ inclusive of structural overhead."
+msgstr ""
+
+#: ../../../components/lock.rst:623
+msgid ""
+"A TTL index must be used to automatically clean up expired locks. Such an"
+" index can be created manually:"
+msgstr ""
+
+#: ../../../components/lock.rst:633
+msgid ""
+"Alternatively, the method ``MongoDbStore::createTtlIndex(int "
+"$expireAfterSeconds = 0)`` can be called once to create the TTL index "
+"during database setup. Read more about `Expire Data from Collections by "
+"Setting TTL`_ in MongoDB."
+msgstr ""
+
+#: ../../../components/lock.rst:639
+msgid ""
+"``MongoDbStore`` will attempt to automatically create a TTL index. It's "
+"recommended to set constructor option ``gcProbablity = 0.0`` to disable "
+"this behavior if you have manually dealt with TTL index creation."
+msgstr ""
+
+#: ../../../components/lock.rst:645
+msgid ""
+"This store relies on all PHP application and database nodes to have "
+"synchronized clocks for lock expiry to occur at the correct time. To "
+"ensure locks don't expire prematurely; the lock TTL should be set with "
+"enough extra time in ``expireAfterSeconds`` to account for any clock "
+"drift between nodes."
+msgstr ""
+
+#: ../../../components/lock.rst:650
+msgid ""
+"``writeConcern``, ``readConcern`` and ``readPreference`` are not "
+"specified by MongoDbStore meaning the collection's settings will take "
+"effect. Read more about `Replica Set Read and Write Semantics`_ in "
+"MongoDB."
+msgstr ""
+
+#: ../../../components/lock.rst:657
+msgid "The PdoStore relies on the `ACID`_ properties of the SQL engine."
+msgstr ""
+
+#: ../../../components/lock.rst:661
+msgid ""
+"In a cluster configured with multiple primaries, ensure writes are "
+"synchronously propagated to every nodes, or always use the same node."
+msgstr ""
+
+#: ../../../components/lock.rst:666
+msgid ""
+"Some SQL engines like MySQL allow to disable the unique constraint check."
+" Ensure that this is not the case ``SET unique_checks=1;``."
+msgstr ""
+
+#: ../../../components/lock.rst:669
+msgid ""
+"In order to purge old locks, this store uses a current datetime to define"
+" an expiration date reference. This mechanism relies on all server nodes "
+"to have synchronized clocks."
+msgstr ""
+
+#: ../../../components/lock.rst:675
+msgid ""
+"To ensure locks don't expire prematurely; the TTLs should be set with "
+"enough extra time to account for any clock drift between nodes."
+msgstr ""
+
+#: ../../../components/lock.rst:681
+msgid ""
+"The way Redis works is to store items in memory. That means that by using"
+" the :ref:`RedisStore <lock-store-redis>` the locks are not persisted and"
+" may disappear by mistake at anytime."
+msgstr ""
+
+#: ../../../components/lock.rst:685
+msgid ""
+"If the Redis service or the machine hosting it restarts, every locks "
+"would be lost without notifying the running processes."
+msgstr ""
+
+#: ../../../components/lock.rst:695
+msgid ""
+"Redis can be configured to persist items on disk, but this option would "
+"slow down writes on the service. This could go against other uses of the "
+"server."
+msgstr ""
+
+#: ../../../components/lock.rst:699
+msgid ""
+"When the Redis service is shared and used for multiple usages, locks "
+"could be removed by mistake."
+msgstr ""
+
+#: ../../../components/lock.rst:704
+msgid ""
+"The command ``FLUSHDB`` must not be called, or locks should be stored in "
+"a dedicated Redis service away from Cache."
+msgstr ""
+
+#: ../../../components/lock.rst:710
+msgid ""
+"Combined stores allow to store locks across several backends. It's a "
+"common mistake to think that the lock mechanism will be more reliable. "
+"This is wrong The ``CombinedStore`` will be, at best, as reliable as the "
+"least reliable of all managed stores. As soon as one managed store "
+"returns erroneous information, the ``CombinedStore`` won't be reliable."
+msgstr ""
+
+#: ../../../components/lock.rst:718
+msgid ""
+"All concurrent processes must use the same configuration, with the same "
+"amount of managed stored and the same endpoint."
+msgstr ""
+
+#: ../../../components/lock.rst:723
+msgid ""
+"Instead of using a cluster of Redis or Memcached servers, it's better to "
+"use a ``CombinedStore`` with a single server per managed store."
+msgstr ""
+
+#: ../../../components/lock.rst:729
+msgid ""
+"Semaphores are handled by the Kernel level. In order to be reliable, "
+"processes must run on the same machine, virtual machine or container. Be "
+"careful when updating a Kubernetes or Swarm service because for a short "
+"period of time, there can be two running containers in parallel."
+msgstr ""
+
+#: ../../../components/lock.rst:736
+msgid ""
+"All concurrent processes must use the same machine. Before starting a "
+"concurrent process on a new machine, check that other process are stopped"
+" on the old one."
+msgstr ""
+
+#: ../../../components/lock.rst:742
+msgid ""
+"When running on systemd with non-system user and option ``RemoveIPC=yes``"
+" (default value), locks are deleted by systemd when that user logs out. "
+"Check that process is run with a system user (UID <= SYS_UID_MAX) with "
+"``SYS_UID_MAX`` defined in ``/etc/login.defs``, or set the option "
+"``RemoveIPC=off`` in ``/etc/systemd/logind.conf``."
+msgstr ""
+
+#: ../../../components/lock.rst:751
+msgid ""
+"The way ZookeeperStore works is by maintaining locks as ephemeral nodes "
+"on the server. That means that by using :ref:`ZookeeperStore <lock-store-"
+"zookeeper>` the locks will be automatically released at the end of the "
+"session in case the client cannot unlock for any reason."
+msgstr ""
+
+#: ../../../components/lock.rst:756
+msgid ""
+"If the ZooKeeper service or the machine hosting it restarts, every lock "
+"would be lost without notifying the running processes."
+msgstr ""
+
+#: ../../../components/lock.rst:761
+msgid ""
+"To use ZooKeeper's high-availability feature, you can setup a cluster of "
+"multiple servers so that in case one of the server goes down, the "
+"majority will still be up and serving the requests. All the available "
+"servers in the cluster will see the same state."
+msgstr ""
+
+#: ../../../components/lock.rst:768
+msgid ""
+"As this store does not support multi-level node locks, since the clean up"
+" of intermediate nodes becomes an overhead, all locks are maintained at "
+"the root level."
+msgstr ""
+
+#: ../../../components/lock.rst:773
+msgid "Overall"
+msgstr ""
+
+#: ../../../components/lock.rst:775
+msgid ""
+"Changing the configuration of stores should be done very carefully. For "
+"instance, during the deployment of a new version. Processes with new "
+"configuration must not be started while old processes with old "
+"configuration are still running."
+msgstr ""
+

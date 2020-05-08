@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:8
+msgid "Couchbase Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:12
+msgid "The CouchbaseBucketAdapter was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:14
+msgid ""
+"This adapter stores the values in-memory using one (or more) `Couchbase "
+"server`_ instances. Unlike the :ref:`APCu adapter <apcu-adapter>`, and "
+"similarly to the :ref:`Memcached adapter <memcached-adapter>`, it is not "
+"limited to the current server's shared memory; you can store contents "
+"independent of your PHP environment. The ability to utilize a cluster of "
+"servers to provide redundancy and/or fail-over is also available."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:23
+msgid ""
+"**Requirements:** The `Couchbase PHP extension`_ as well as a `Couchbase "
+"server`_ must be installed, active, and running to use this adapter. "
+"Version ``2.6`` or greater of the `Couchbase PHP extension`_ is required "
+"for this adapter."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:27
+msgid ""
+"This adapter expects a `Couchbase Bucket`_ instance to be passed as the "
+"first parameter. A namespace and default cache lifetime can optionally be"
+" passed as the second and third parameters::"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:50
+msgid "Configure the Connection"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:52
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\CouchbaseBucketAdapter::createConnection`"
+" helper method allows creating and configuring a `Couchbase Bucket`_ "
+"class instance using a `Data Source Name (DSN)`_ or an array of DSNs::"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:82
+msgid "Configure the Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:84
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\CouchbaseBucketAdapter::createConnection`"
+" helper method also accepts an array of options as its second argument. "
+"The expected format is an associative array of ``key => value`` pairs "
+"representing option names and their respective values::"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:104
+msgid "Available Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:107
+msgid "``username`` (type: ``string``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:107
+msgid "Username for connection ``CoucbaseCluster``."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:110
+msgid "``password`` (type: ``string``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:110
+msgid "Password of connection ``CouchbaseCluster``."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:114
+msgid "``operationTimeout`` (type: ``int``, default: ``2500000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:113
+msgid ""
+"The operation timeout (in microseconds) is the maximum amount of time the"
+" library will wait for an operation to receive a response before invoking"
+" its callback with a failure status."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:117
+msgid "``configTimeout`` (type: ``int``, default: ``5000000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:117
+msgid ""
+"How long (in microseconds) the client will wait to obtain the initial "
+"configuration."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:120
+msgid "``configNodeTimeout`` (type: ``int``, default: ``2000000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:120
+msgid "Per-node configuration timeout (in microseconds)."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:123
+msgid "``viewTimeout`` (type: ``int``, default: ``75000000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:123
+msgid ""
+"The I/O timeout (in microseconds) for HTTP requests to Couchbase Views "
+"API."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:126
+msgid "``httpTimeout`` (type: ``int``, default: ``75000000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:126
+msgid "The I/O timeout (in microseconds) for HTTP queries (management API)."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:130
+msgid "``configDelay`` (type: ``int``, default: ``10000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:129
+msgid ""
+"Config refresh throttling Modify the amount of time (in microseconds) "
+"before the configiration error threshold will forcefully be set to its "
+"maximum number forcing a configuration refresh."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:133
+msgid "``htconfigIdleTimeout`` (type: ``int``, default: ``4294967295``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:133
+msgid "Idling/Persistence for HTTP bootstrap (in microseconds)."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:136
+msgid "``durabilityInterval`` (type: ``int``, default: ``100000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:136
+msgid ""
+"The time (in microseconds) the client will wait between repeated probes "
+"to a given server."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:139
+msgid "``durabilityTimeout`` (type: ``int``, default: ``5000000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:139
+msgid ""
+"The time (in microseconds) the client will spend sending repeated probes "
+"to a given key's vBucket masters and replicas before they are deemed not "
+"to have satisfied the durability requirements."
+msgstr ""
+
+#: ../../../components/cache/adapters/couchbasebucket_adapter.rst:143
+msgid ""
+"Reference the `Couchbase Bucket`_ extension's `predefined constants`_ "
+"documentation for additional information about the available options."
+msgstr ""
+

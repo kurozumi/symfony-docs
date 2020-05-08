@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_ctype.rst:7
+msgid "The Symfony Polyfill / Ctype Component"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:9
+msgid ""
+"This component provides ``ctype_*`` functions to users who run PHP "
+"versions without the ctype extension."
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following functions, no matter if the `PHP Ctype extension`_ is installed"
+" or not in your server."
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:29
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:31
+msgid ":phpfunction:`ctype_alnum`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:32
+msgid ":phpfunction:`ctype_alpha`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:33
+msgid ":phpfunction:`ctype_cntrl`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:34
+msgid ":phpfunction:`ctype_digit`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:35
+msgid ":phpfunction:`ctype_graph`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:36
+msgid ":phpfunction:`ctype_lower`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:37
+msgid ":phpfunction:`ctype_print`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:38
+msgid ":phpfunction:`ctype_punct`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:39
+msgid ":phpfunction:`ctype_space`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:40
+msgid ":phpfunction:`ctype_upper`"
+msgstr ""
+
+#: ../../../components/polyfill_ctype.rst:41
+msgid ":phpfunction:`ctype_xdigit`"
+msgstr ""
+

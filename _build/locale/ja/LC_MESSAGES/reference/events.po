@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/events.rst:2
+msgid "Built-in Symfony Events"
+msgstr ""
+
+#: ../../../reference/events.rst:4
+msgid ""
+"During the handling of an HTTP request, the Symfony framework (or any "
+"application using the :doc:`HttpKernel component "
+"</components/http_kernel>`) dispatches some :doc:`events "
+"</event_dispatcher>` which you can use to modify how the request is "
+"handled."
+msgstr ""
+
+#: ../../../reference/events.rst:10
+msgid "Kernel Events"
+msgstr ""
+
+#: ../../../reference/events.rst:12
+msgid ""
+"Each event dispatched by the HttpKernel component is a subclass of "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent`, "
+"which provides the following information:"
+msgstr ""
+
+#: ../../../reference/events.rst:18
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getRequestType`"
+msgstr ""
+
+#: ../../../reference/events.rst:17
+msgid ""
+"Returns the *type* of the request "
+"(``HttpKernelInterface::MASTER_REQUEST`` or "
+"``HttpKernelInterface::SUB_REQUEST``)."
+msgstr ""
+
+#: ../../../reference/events.rst:21
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getKernel`"
+msgstr ""
+
+#: ../../../reference/events.rst:21
+msgid "Returns the Kernel handling the request."
+msgstr ""
+
+#: ../../../reference/events.rst:24
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::getRequest`"
+msgstr ""
+
+#: ../../../reference/events.rst:24
+msgid "Returns the current ``Request`` being handled."
+msgstr ""
+
+#: ../../../reference/events.rst:27
+msgid ":method:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\KernelEvent::isMasterRequest`"
+msgstr ""
+
+#: ../../../reference/events.rst:27
+msgid "Checks if this is a master request."
+msgstr ""
+
+#: ../../../reference/events.rst:32
+msgid "``kernel.request``"
+msgstr ""
+
+#: ../../../reference/events.rst:34
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\RequestEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:36
+msgid ""
+"This event is dispatched very early in Symfony, before the controller is "
+"determined. It's useful to add information to the Request or return a "
+"Response early to stop the handling of the request."
+msgstr ""
+
+#: ../../../reference/events.rst:42
+msgid ""
+"Read more on the :ref:`kernel.request event <component-http-kernel-"
+"kernel-request>`."
+msgstr ""
+
+#: ../../../reference/events.rst:44 ../../../reference/events.rst:75
+#: ../../../reference/events.rst:107 ../../../reference/events.rst:141
+#: ../../../reference/events.rst:170 ../../../reference/events.rst:198
+#: ../../../reference/events.rst:219 ../../../reference/events.rst:292
+msgid ""
+"Execute this command to find out which listeners are registered for this "
+"event and their priorities:"
+msgstr ""
+
+#: ../../../reference/events.rst:52
+msgid "``kernel.controller``"
+msgstr ""
+
+#: ../../../reference/events.rst:54
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ControllerEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:56
+msgid ""
+"This event is dispatched after the controller to be executed has been "
+"resolved but before executing it. It's useful to initialize things later "
+"needed by the controller, such as `param converters`_, and even to change"
+" the controller entirely::"
+msgstr ""
+
+#: ../../../reference/events.rst:73
+msgid ""
+"Read more on the :ref:`kernel.controller event <component-http-kernel-"
+"kernel-controller>`."
+msgstr ""
+
+#: ../../../reference/events.rst:83
+msgid "``kernel.controller_arguments``"
+msgstr ""
+
+#: ../../../reference/events.rst:85
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ControllerArgumentsEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:87
+msgid ""
+"This event is dispatched just before a controller is called. It's useful "
+"to configure the arguments that are going to be passed to the controller."
+" Typically, this is used to map URL routing parameters to their "
+"corresponding named arguments; or pass the current request when the "
+"``Request`` type-hint is found::"
+msgstr ""
+
+#: ../../../reference/events.rst:115
+msgid "``kernel.view``"
+msgstr ""
+
+#: ../../../reference/events.rst:117
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ViewEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:119
+msgid ""
+"This event is dispatched after the controller has been executed but "
+"*only* if the controller does *not* return a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` object. It's "
+"useful to transform the returned value (e.g. a string with some HTML "
+"contents) into the ``Response`` object needed by Symfony::"
+msgstr ""
+
+#: ../../../reference/events.rst:139
+msgid ""
+"Read more on the :ref:`kernel.view event <component-http-kernel-kernel-"
+"view>`."
+msgstr ""
+
+#: ../../../reference/events.rst:149
+msgid "``kernel.response``"
+msgstr ""
+
+#: ../../../reference/events.rst:151
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ResponseEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:153
+msgid ""
+"This event is dispatched after the controller or any ``kernel.view`` "
+"listener returns a ``Response`` object. It's useful to modify or replace "
+"the response before sending it back (e.g. add/modify HTTP headers, add "
+"cookies, etc.)::"
+msgstr ""
+
+#: ../../../reference/events.rst:168
+msgid ""
+"Read more on the :ref:`kernel.response event <component-http-kernel-"
+"kernel-response>`."
+msgstr ""
+
+#: ../../../reference/events.rst:178
+msgid "``kernel.finish_request``"
+msgstr ""
+
+#: ../../../reference/events.rst:180
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\FinishRequestEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:182
+msgid ""
+"This event is dispatched after the ``kernel.response`` event. It's useful"
+" to reset the global state of the application (for example, the "
+"translator listener resets the translator's locale to the one of the "
+"parent request)::"
+msgstr ""
+
+#: ../../../reference/events.rst:206
+msgid "``kernel.terminate``"
+msgstr ""
+
+#: ../../../reference/events.rst:208
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\TerminateEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:210
+msgid ""
+"This event is dispatched after the response has been sent (after the "
+"execution of the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernel::handle` "
+"method). It's useful to perform slow or complex tasks that don't need to "
+"be completed to send the response (e.g. sending emails)."
+msgstr ""
+
+#: ../../../reference/events.rst:217
+msgid ""
+"Read more on the :ref:`kernel.terminate event <component-http-kernel-"
+"kernel-terminate>`."
+msgstr ""
+
+#: ../../../reference/events.rst:229
+msgid "``kernel.exception``"
+msgstr ""
+
+#: ../../../reference/events.rst:231
+msgid ""
+"**Event Class**: "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ExceptionEvent`"
+msgstr ""
+
+#: ../../../reference/events.rst:233
+msgid ""
+"This event is dispatched as soon as an error occurs during the handling "
+"of the HTTP request. It's useful to recover from errors or modify the "
+"exception details sent as response::"
+msgstr ""
+
+#: ../../../reference/events.rst:254
+msgid ""
+"The TwigBundle registers an "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ExceptionListener`"
+" that forwards the ``Request`` to a given controller defined by the "
+"``exception_listener.controller`` parameter."
+msgstr ""
+
+#: ../../../reference/events.rst:258
+msgid ""
+"Symfony uses the following logic to determine the HTTP status code of the"
+" response:"
+msgstr ""
+
+#: ../../../reference/events.rst:261
+msgid ""
+"If "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Response::isClientError`,"
+" "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Response::isServerError`"
+" or "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Response::isRedirect` "
+"is true, then the status code on your ``Response`` object is used;"
+msgstr ""
+
+#: ../../../reference/events.rst:266
+msgid ""
+"If the original exception implements "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpExceptionInterface`,"
+" then ``getStatusCode()`` is called on the exception and used (the "
+"headers from ``getHeaders()`` are also added);"
+msgstr ""
+
+#: ../../../reference/events.rst:271
+msgid "If both of the above aren't true, then a 500 status code is used."
+msgstr ""
+
+#: ../../../reference/events.rst:275
+msgid ""
+"If you want to overwrite the status code of the exception response, which"
+" you should not without a good reason, call "
+"``ExceptionEvent::allowCustomResponseCode()`` first and then set the "
+"status code on the response::"
+msgstr ""
+
+#: ../../../reference/events.rst:284
+msgid ""
+"The status code sent to the client in the above example will be ``204``. "
+"If ``$event->allowCustomResponseCode()`` is omitted, then the kernel will"
+" set an appropriate status code based on the type of exception thrown."
+msgstr ""
+
+#: ../../../reference/events.rst:290
+msgid ""
+"Read more on the :ref:`kernel.exception event <component-http-kernel-"
+"kernel-exception>`."
+msgstr ""
+

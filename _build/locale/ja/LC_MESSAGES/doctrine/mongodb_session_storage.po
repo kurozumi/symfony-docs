@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/mongodb_session_storage.rst:2
+msgid "How to Use MongoDbSessionHandler to Store Sessions in a MongoDB Database"
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:4
+msgid ""
+"The default Symfony session storage writes the session information to "
+"files. Some medium to large websites use a NoSQL database called MongoDB "
+"to store the session values instead of files, because databases are "
+"easier to use and scale in a multi-webserver environment."
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:9
+msgid ""
+"Symfony has a built-in solution for NoSQL database session storage called"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Storage\\\\Handler\\\\MongoDbSessionHandler`."
+" To use this, you will need to:"
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:13
+msgid "Register a ``MongoDbSessionHandler`` service;"
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:15
+msgid "Configure this under ``framework.session.handler_id`` configuration."
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:17
+msgid ""
+"To see how to configure a similar handler, see "
+":doc:`/doctrine/pdo_session_storage`."
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:20
+msgid "Setting Up the MongoDB Collection"
+msgstr ""
+
+#: ../../../doctrine/mongodb_session_storage.rst:22
+msgid ""
+"You do not need to do anything to initialize your session collection. "
+"However, you may want to add an index to improve garbage collection "
+"performance. From the `MongoDB shell`_:"
+msgstr ""
+

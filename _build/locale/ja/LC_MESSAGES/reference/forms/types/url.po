@@ -1,0 +1,572 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/url.rst:5
+msgid "UrlType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:7
+msgid ""
+"The ``UrlType`` field is a text field that prepends the submitted value "
+"with a given protocol (e.g. ``http://``) if the submitted value doesn't "
+"already have a protocol."
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:12
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:12
+msgid "``input url`` field"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:14
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:14
+msgid "`default_protocol`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:16
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:16
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:17
+msgid "`data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:18
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:19
+msgid "`empty_data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:20
+msgid "`error_bubbling`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:21
+msgid "`error_mapping`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:22
+msgid "`help`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:23
+msgid "`help_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:24
+msgid "`help_html`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:25
+msgid "`label`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:26
+msgid "`label_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:27
+msgid "`label_format`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:28
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:29
+msgid "`required`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:30
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:31
+msgid "`trim`_"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:33
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:33
+msgid ":doc:`TextType </reference/forms/types/text>`"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:35
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:35
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\UrlType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:41
+msgid "Field Options"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:44
+msgid "``default_protocol``"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:46
+msgid "**type**: ``string`` **default**: ``http``"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:48
+msgid ""
+"If a value is submitted that doesn't begin with some protocol (e.g. "
+"``http://``, ``ftp://``, etc), this protocol will be prepended to the "
+"string when the data is submitted to the form."
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:53
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:55
+msgid ""
+"These options inherit from the :doc:`FormType "
+"</reference/forms/types/form>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:2
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:4
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:4
+#: ../../../reference/forms/types/options/help_attr.rst.inc:4
+#: ../../../reference/forms/types/options/label_attr.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to an HTML field representation you "
+"can use the ``attr`` option. It's an associative array with HTML "
+"attributes as keys. This can be useful when you need to set a custom "
+"class for some widget::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:16
+msgid ""
+"Use the ``row_attr`` option if you want to add these attributes to the "
+"the :ref:`form type row <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:2
+msgid "``data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying "
+"structure."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain data (e.g. if you bind an "
+"object to the form). If you want to override this initial value for the "
+"form or an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:21
+msgid ""
+"The ``data`` option *always* overrides the value taken from the domain "
+"data (object) when rendering. This means the object value is also "
+"overridden when the form edits an already persisted object, causing it to"
+" lose its persisted value when the form is submitted."
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:2
+msgid "``empty_data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:4
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../../reference/forms/types/url.rst:66
+msgid "The default value is ``''`` (the empty string)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:3
+msgid ""
+"This option determines what value the field will *return* when the "
+"submitted value is empty (or missing). It does not set an initial value "
+"if none is provided when the form is rendered in a view."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:7
+msgid ""
+"This means it helps you handling form submission with blank fields. For "
+"example, if you want the ``name`` field to be explicitly set to ``John "
+"Doe`` when no value is selected, you can do it like this::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:16
+msgid ""
+"This will still render an empty text box, but upon submission the ``John "
+"Doe`` value will be set. Use the ``data`` or ``placeholder`` options to "
+"show this initial value in the rendered form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:20
+msgid ""
+"If a form is compound, you can set ``empty_data`` as an array, object or "
+"closure. See the :doc:`/form/use_empty_data` article for more details "
+"about these options."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:26
+msgid ""
+"If you want to set the ``empty_data`` option for your entire form class, "
+"see the :doc:`/form/use_empty_data` article."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:31
+msgid ""
+":doc:`Form data transformers </form/data_transformers>` will still be "
+"applied to the ``empty_data`` value. This means that an empty string will"
+" be cast to ``null``. Use a custom data transformer if you explicitly "
+"want to return the empty string."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_bubbling.rst.inc:2
+msgid "``error_bubbling``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_bubbling.rst.inc:4
+msgid ""
+"**type**: ``boolean`` **default**: ``false`` unless the form is "
+"``compound``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_error_bubbling_body.rst.inc:1
+msgid ""
+"If ``true``, any errors for this field will be passed to the parent field"
+" or form. For example, if set to ``true`` on a normal field, any errors "
+"for that field will be attached to the main form, not to the specific "
+"field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:2
+msgid "``error_mapping``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:6
+msgid "This option allows you to modify the target of a validation error."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:8
+msgid ""
+"Imagine you have a custom method named ``matchingCityAndZipCode()`` that "
+"validates whether the city and zip code match. Unfortunately, there is no"
+" ``matchingCityAndZipCode`` field in your form, so all that Symfony can "
+"do is display the error on top of the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:13
+msgid ""
+"With customized error mapping, you can do better: map the error to the "
+"city field so that it displays above it::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:25
+msgid "Here are the rules for the left and the right side of the mapping:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:27
+msgid "The left side contains property paths;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:28
+msgid ""
+"If the violation is generated on a property or method of a class, its "
+"path is the ``propertyName``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:30
+msgid ""
+"If the violation is generated on an entry of an ``array`` or "
+"``ArrayAccess`` object, the property path is ``[indexName]``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:32
+msgid ""
+"You can construct nested property paths by concatenating them, separating"
+" properties by dots. For example: "
+"``addresses[work].matchingCityAndZipCode``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:34
+msgid "The right side contains the names of fields in the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:36
+msgid ""
+"By default, errors for any property that is not mapped will bubble up to "
+"the parent form. You can use the dot (``.``) on the left side to map "
+"errors of all unmapped properties to a particular field. For instance, to"
+" map all these errors to the ``city`` field, use::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:2
+msgid "help"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:4
+msgid "**type**: ``string`` **default**: null"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:6
+msgid ""
+"Allows you to define a help message for the form field, which by default "
+"is rendered below the field::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:2
+msgid "help_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the element used to display the help message"
+" of the form field. Its value is an associative array with HTML attribute"
+" names as keys. These attributes can also be set in the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:2
+msgid "help_html"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:4
+msgid "**type**: ``bool`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:6
+msgid ""
+"By default, the contents of the ``help`` option are escaped before "
+"rendering them in the template. Set this option to ``true`` to not escape"
+" them, which is useful when the help contains HTML elements."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:2
+msgid "``label``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field"
+" name"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:6
+msgid ""
+"Sets the label that will be used when rendering the field. Setting to "
+"false will suppress the label. The label can also be directly set inside "
+"the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_attr.rst.inc:2
+msgid "``label_attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the ``<label>`` element, which will be used "
+"when rendering the label for the field. It's an associative array with "
+"HTML attribute as a key. This attributes can also be directly set inside "
+"the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:2
+msgid "``label_format``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:4
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:6
+msgid ""
+"Configures the string used as the label of the field, in case the "
+"``label`` option was not set. This is useful when using :ref:`keyword "
+"translation messages <translation-real-vs-keyword-messages>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:10
+msgid ""
+"If you're using keyword translation messages as labels, you often end up "
+"having multiple keyword messages for the same label (e.g. "
+"``profile_address_street``, ``invoice_address_street``). This is because "
+"the label is built for each \"path\" to a field. To avoid duplicated "
+"keyword messages, you can configure the label format to a static value, "
+"like::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:25
+msgid ""
+"This option is inherited by the child types. With the code above, the "
+"label of the ``street`` field of both forms will use the "
+"``form.address.street`` keyword message."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:29
+msgid "Two variables are available in the label format:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+#, python-format
+msgid "``%id%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+msgid ""
+"A unique identifier for the field, consisting of the complete path to the"
+" field and the field name (e.g. ``profile_address_street``);"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "``%name%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "The field name (e.g. ``street``)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:37
+msgid ""
+"The default value (``null``) results in a :ref:`\"humanized\" version "
+"<reference-twig-humanize-filter>` of the field name."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:42
+msgid ""
+"The ``label_format`` option is evaluated in the form theme. Make sure to "
+"update your templates in case you :doc:`customized form theming "
+"</form/form_customization>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:2
+msgid "``mapped``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the "
+"object, you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:2
+msgid "``required``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:4
+#: ../../../reference/forms/types/options/trim.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:6
+msgid ""
+"If true, an `HTML5 required attribute`_ will be rendered. The "
+"corresponding ``label`` will also render with a ``required`` class."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:9
+msgid ""
+"This is superficial and independent of validation. At best, if you let "
+"Symfony guess your field type, then the value of this option will be "
+"guessed from your validation information."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:15
+msgid ""
+"The required option also affects how empty data for each field is "
+"handled. For more details, see the `empty_data`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/trim.rst.inc:2
+msgid "``trim``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/trim.rst.inc:6
+msgid ""
+"If true, the whitespace of the submitted string value will be stripped "
+"via the :phpfunction:`trim` function when the data is bound. This "
+"guarantees that if a value is submitted with extra whitespace, it will be"
+" removed before the value is merged back onto the underlying object."
+msgstr ""
+

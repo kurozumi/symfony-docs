@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/lockable_trait.rst:2
+msgid "Prevent Multiple Executions of a Console Command"
+msgstr ""
+
+#: ../../../console/lockable_trait.rst:4
+msgid ""
+"A simple but effective way to prevent multiple executions of the same "
+"command in a single server is to use `locks`_. The :doc:`Lock component "
+"</components/lock>` provides multiple classes to create locks based on "
+"the filesystem (:ref:`FlockStore <lock-store-flock>`), shared memory "
+"(:ref:`SemaphoreStore <lock-store-semaphore>`) and even databases and "
+"Redis servers."
+msgstr ""
+
+#: ../../../console/lockable_trait.rst:10
+msgid ""
+"In addition, the Console component provides a PHP trait called "
+"``LockableTrait`` that adds two convenient methods to lock and release "
+"commands::"
+msgstr ""
+
+#: ../../../console/lockable_trait.rst:46
+msgid "The ``Command::SUCCESS`` constant was introduced in Symfony 5.1."
+msgstr ""
+

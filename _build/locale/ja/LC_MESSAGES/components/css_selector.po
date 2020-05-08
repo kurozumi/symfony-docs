@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/css_selector.rst:6
+#: ../../../components/css_selector.rst:52
+msgid "The CssSelector Component"
+msgstr ""
+
+#: ../../../components/css_selector.rst:8
+msgid "The CssSelector component converts CSS selectors to `XPath`_ expressions."
+msgstr ""
+
+#: ../../../components/css_selector.rst:11
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/css_selector.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/css_selector.rst:24
+msgid ""
+"This article explains how to use the CssSelector features as an "
+"independent component in any PHP application. Read the :ref:`Symfony "
+"Functional Tests <functional-tests>` article to learn about how to use it"
+" when creating Symfony tests."
+msgstr ""
+
+#: ../../../components/css_selector.rst:29
+msgid "Why to Use CSS selectors?"
+msgstr ""
+
+#: ../../../components/css_selector.rst:31
+msgid ""
+"When you're parsing an HTML or an XML document, by far the most powerful "
+"method is `XPath`_."
+msgstr ""
+
+#: ../../../components/css_selector.rst:34
+msgid ""
+"XPath expressions are incredibly flexible, so there is almost always an "
+"XPath expression that will find the element you need. Unfortunately, they"
+" can also become very complicated, and the learning curve is steep. Even "
+"common operations (such as finding an element with a particular class) "
+"can require long and unwieldy expressions."
+msgstr ""
+
+#: ../../../components/css_selector.rst:40
+msgid ""
+"Many developers -- particularly web developers -- are more comfortable "
+"using CSS selectors to find elements. As well as working in stylesheets, "
+"CSS selectors are used in JavaScript with the ``querySelectorAll()`` "
+"function and in popular JavaScript libraries such as jQuery, Prototype "
+"and MooTools."
+msgstr ""
+
+#: ../../../components/css_selector.rst:45
+msgid ""
+"CSS selectors are less powerful than XPath, but far easier to write, read"
+" and understand. Since they are less powerful, almost all CSS selectors "
+"can be converted to an XPath equivalent. This XPath expression can then "
+"be used with other functions and classes that use XPath to find elements "
+"in a document."
+msgstr ""
+
+#: ../../../components/css_selector.rst:54
+msgid ""
+"The component's only goal is to convert CSS selectors to their XPath "
+"equivalents, using "
+":method:`Symfony\\\\Component\\\\CssSelector\\\\CssSelectorConverter::toXPath`::"
+msgstr ""
+
+#: ../../../components/css_selector.rst:62
+msgid "This gives the following output:"
+msgstr ""
+
+#: ../../../components/css_selector.rst:68
+msgid ""
+"You can use this expression with, for instance, :phpclass:`DOMXPath` or "
+":phpclass:`SimpleXMLElement` to find elements in a document."
+msgstr ""
+
+#: ../../../components/css_selector.rst:73
+msgid ""
+"The :method:`Crawler::filter() "
+"<Symfony\\\\Component\\\\DomCrawler\\\\Crawler::filter>` method uses the "
+"CssSelector component to find elements based on a CSS selector string. "
+"See the :doc:`/components/dom_crawler` for more details."
+msgstr ""
+
+#: ../../../components/css_selector.rst:78
+msgid "Limitations of the CssSelector Component"
+msgstr ""
+
+#: ../../../components/css_selector.rst:80
+msgid "Not all CSS selectors can be converted to `XPath`_ equivalents."
+msgstr ""
+
+#: ../../../components/css_selector.rst:82
+msgid ""
+"There are several CSS selectors that only make sense in the context of a "
+"web-browser."
+msgstr ""
+
+#: ../../../components/css_selector.rst:85
+msgid "link-state selectors: ``:link``, ``:visited``, ``:target``"
+msgstr ""
+
+#: ../../../components/css_selector.rst:86
+msgid "selectors based on user action: ``:hover``, ``:focus``, ``:active``"
+msgstr ""
+
+#: ../../../components/css_selector.rst:87
+msgid ""
+"UI-state selectors: ``:invalid``, ``:indeterminate`` (however, "
+"``:enabled``, ``:disabled``, ``:checked`` and ``:unchecked`` are "
+"available)"
+msgstr ""
+
+#: ../../../components/css_selector.rst:90
+msgid ""
+"Pseudo-elements (``:before``, ``:after``, ``:first-line``, ``:first-"
+"letter``) are not supported because they select portions of text rather "
+"than elements."
+msgstr ""
+
+#: ../../../components/css_selector.rst:94
+msgid "Pseudo-classes are partially supported:"
+msgstr ""
+
+#: ../../../components/css_selector.rst:96
+msgid ""
+"Not supported: ``*:first-of-type``, ``*:last-of-type``, ``*:nth-of-type``"
+" and ``*:nth-last-of-type`` (all these work with an element name (e.g. "
+"``li:first-of-type``) but not with the ``*`` selector)."
+msgstr ""
+
+#: ../../../components/css_selector.rst:99
+msgid "Supported: ``*:only-of-type``."
+msgstr ""
+
+#: ../../../components/css_selector.rst:102
+msgid "Learn more"
+msgstr ""
+
+#: ../../../components/css_selector.rst:104
+msgid ":doc:`/testing`"
+msgstr ""
+
+#: ../../../components/css_selector.rst:105
+msgid ":doc:`/components/dom_crawler`"
+msgstr ""
+

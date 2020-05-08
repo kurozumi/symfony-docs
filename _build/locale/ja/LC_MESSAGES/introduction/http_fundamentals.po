@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../introduction/http_fundamentals.rst:7
+msgid "Symfony and HTTP Fundamentals"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:9
+msgid ""
+"Great news! While you're learning Symfony, you're *also* learning the "
+"fundamentals of the *web*. Symfony is closely modeled after the HTTP "
+"Request-Response flow: that *fundamental* paradigm that's behind almost "
+"*all* communication on the web."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:13
+msgid ""
+"In this article, you'll walk through the HTTP fundamentals and find out "
+"how these are applied throughout Symfony."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:17
+msgid "Requests and Responses in HTTP"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:19
+msgid ""
+"HTTP (Hypertext Transfer Protocol) is a text language that allows two "
+"machines to communicate with each other. For example, when checking for "
+"the latest `xkcd`_ comic, the following (approximate) conversation takes "
+"place:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:26
+msgid ""
+"HTTP is the term used to describe this text-based language. The goal of "
+"your server is *always* to understand text requests and return text "
+"responses."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:29
+msgid ""
+"Symfony is built from the ground up around that reality. Whether you "
+"realize it or not, HTTP is something you use every day. With Symfony, "
+"you'll learn how to master it."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:37
+msgid "Step 1: The Client Sends a Request"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:39
+msgid ""
+"Every conversation on the web starts with a *request*. The request is a "
+"text message created by a client (e.g. a browser, a smartphone app, etc) "
+"in a special format known as HTTP. The client sends that request to a "
+"server, and then waits for the response."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:44
+msgid ""
+"Take a look at the first part of the interaction (the request) between a "
+"browser and the xkcd web server:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:50
+msgid "In HTTP-speak, this HTTP request would actually look something like this:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:59
+msgid ""
+"These few lines communicate *everything* necessary about exactly which "
+"resource the client is requesting. The first line of an HTTP request is "
+"the most important, because it contains two important things: the HTTP "
+"method (GET) and the URI (``/``)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:64
+msgid ""
+"The URI (e.g. ``/``, ``/contact``, etc) is the unique address or location"
+" that identifies the resource the client wants. The HTTP method (e.g. "
+"``GET``) defines what the client wants to *do* with the resource. The "
+"HTTP methods (also known as verbs) define the few common ways that the "
+"client can act upon the resource - the most common HTTP methods are:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:70
+msgid "**GET**"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:71
+msgid "Retrieve the resource from the server (e.g. when visiting a page);"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:72
+msgid "**POST**"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:73
+msgid "Create a resource on the server (e.g. when submitting a form);"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:74
+msgid "**PUT**/**PATCH**"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:75
+msgid "Update the resource on the server (used by APIs);"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:77
+msgid "**DELETE**"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:77
+msgid "Delete the resource from the server (used by APIs)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:79
+msgid ""
+"With this in mind, you can imagine what an HTTP request might look like "
+"to delete a specific blog post, for example:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:88
+msgid ""
+"There are actually nine HTTP methods defined by the HTTP specification, "
+"but many of them are not widely used or supported. In reality, many "
+"modern browsers only support ``POST`` and ``GET`` in HTML forms. Various "
+"others are however supported in `XMLHttpRequest`_."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:93
+msgid ""
+"In addition to the first line, an HTTP request invariably contains other "
+"lines of information called request **headers**. The headers can supply a"
+" wide range of information such as the host of the resource being "
+"requested (``Host``), the response formats the client accepts "
+"(``Accept``) and the application the client is using to make the request "
+"(``User-Agent``). Many other headers exist and can be found on "
+"Wikipedia's `List of HTTP header fields`_ article."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:101
+msgid "Step 2: The Server Returns a Response"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:103
+msgid ""
+"Once a server has received the request, it knows exactly which resource "
+"the client needs (via the URI) and what the client wants to do with that "
+"resource (via the method). For example, in the case of a GET request, the"
+" server prepares the resource and returns it in an HTTP response. "
+"Consider the response from the xkcd web server:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:112
+msgid ""
+"Translated into HTTP, the response sent back to the browser will look "
+"something like this:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:126
+msgid ""
+"The HTTP response contains the requested resource (the HTML content in "
+"this case), as well as other information about the response. The first "
+"line is especially important and contains the HTTP response status code "
+"(200 in this case)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:131
+msgid ""
+"The status code communicates the overall outcome of the request back to "
+"the client. Was the request successful? Was there an error? Different "
+"status codes exist that indicate success, an error or that the client "
+"needs to do something (e.g. redirect to another page). Check out the "
+"`list of HTTP status codes`_."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:136
+msgid ""
+"Like the request, an HTTP response contains additional pieces of "
+"information known as HTTP headers. The body of the same resource could be"
+" returned in multiple different formats like HTML, XML or JSON and the "
+"``Content-Type`` header uses Internet Media Types like ``text/html`` to "
+"tell the client which format is being returned. You can see a `List of "
+"common media types`_ from IANA."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:142
+msgid ""
+"Many other headers exist, some of which are very powerful. For example, "
+"certain headers can be used to create a powerful caching system."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:146
+msgid "Requests, Responses and Web Development"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:148
+msgid ""
+"This request-response conversation is the fundamental process that drives"
+" all communication on the web."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:151
+msgid ""
+"The most important fact is this: regardless of the language you use, the "
+"type of application you build (web, mobile, JSON API) or the development "
+"philosophy you follow, the end goal of an application is **always** to "
+"understand each request and create and return the appropriate response."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:158
+msgid ""
+"To learn more about the HTTP specification, read the original `HTTP 1.1 "
+"RFC`_ or the `HTTP Bis`_, which is an active effort to clarify the "
+"original specification."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:166
+msgid "Requests and Responses in PHP"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:168
+msgid ""
+"So how do you interact with the \"request\" and create a \"response\" "
+"when using PHP? In reality, PHP abstracts you a bit from the whole "
+"process::"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:178
+msgid ""
+"As strange as it sounds, this small application is in fact taking "
+"information from the HTTP request and using it to create an HTTP "
+"response. Instead of parsing the raw HTTP request message, PHP prepares "
+"superglobal variables (such as ``$_SERVER`` and ``$_GET``) that contain "
+"all the information from the request. Similarly, instead of returning the"
+" HTTP-formatted text response, you can use the PHP :phpfunction:`header` "
+"function to create response headers and print out the actual content that"
+" will be the content portion of the response message. PHP will create a "
+"true HTTP response and return it to the client:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:198
+msgid "Requests and Responses in Symfony"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:200
+msgid ""
+"Symfony provides an alternative to the raw PHP approach via two classes "
+"that allow you to interact with the HTTP request and response in an "
+"easier way."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:204
+msgid "Symfony Request Object"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:206
+msgid ""
+"The :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` class is "
+"an object-oriented representation of the HTTP request message. With it, "
+"you have all the request information at your fingertips::"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:237
+msgid ""
+"As a bonus, the ``Request`` class does a lot of work in the background "
+"that you'll never need to worry about. For example, the ``isSecure()`` "
+"method checks the *three* different values in PHP that can indicate "
+"whether or not the user is connecting via a secured connection (i.e. "
+"HTTPS)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:243
+msgid "Symfony Response Object"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:245
+msgid ""
+"Symfony also provides a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` class: a PHP "
+"representation of an HTTP response message. This allows your application "
+"to use an object-oriented interface to construct the response that needs "
+"to be returned to the client::"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:263
+msgid ""
+"There are also several response *sub-classes* to help you return "
+":ref:`JSON <component-http-foundation-json-response>`, :ref:`redirect "
+"<redirect-response>`, :ref:`stream file downloads <component-http-"
+"foundation-serving-files>` and more."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:271
+msgid ""
+"The ``Request`` and ``Response`` classes are part of a standalone "
+"component called :doc:`symfony/http-foundation "
+"</components/http_foundation>` that you can use in *any* PHP project. "
+"This also contains classes for handling sessions, file uploads and more."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:276
+msgid ""
+"If Symfony offered nothing else, you would already have a toolkit for "
+"accessing request information and an object-oriented interface for "
+"creating the response. Even as you learn the many powerful features in "
+"Symfony, keep in mind that the goal of your application is always *to "
+"interpret a request and create the appropriate response based on your "
+"application logic*."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:283
+msgid "The Journey from the Request to the Response"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:285
+msgid ""
+"Like HTTP itself, using the ``Request`` and ``Response`` objects is "
+"pretty straightforward. The hard part of building an application is "
+"writing what comes in between. In other words, the real work comes in "
+"writing the code that interprets the request information and creates the "
+"response."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:290
+msgid ""
+"Your application probably does many things, like sending emails, handling"
+" form submissions, saving things to a database, rendering HTML pages and "
+"protecting content with security. How can you manage all of this and "
+"still keep your code organized and maintainable? Symfony was created to "
+"help you with these problems."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:300
+msgid "The Front Controller"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:302
+msgid ""
+"Traditionally, applications were built so that each \"page\" of a site "
+"was its own physical file (e.g. ``index.php``, ``contact.php``, etc.)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:305
+msgid ""
+"There are several problems with this approach, including the "
+"inflexibility of the URLs (what if you wanted to change ``blog.php`` to "
+"``news.php`` without breaking all of your links?) and the fact that each "
+"file *must* manually include some set of core files so that security, "
+"database connections and the \"look\" of the site can remain consistent."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:311
+msgid ""
+"A much better solution is to use a front controller: a single PHP file "
+"that handles every request coming into your application. For example:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:315
+msgid "``/index.php``"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:315
+#: ../../../introduction/http_fundamentals.rst:317
+#: ../../../introduction/http_fundamentals.rst:319
+msgid "executes ``index.php``"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:317
+msgid "``/index.php/contact``"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:319
+msgid "``/index.php/blog``"
+msgstr ""
+
+#: ../../../_includes/_rewrite_rule_tip.rst.inc:3
+msgid ""
+"By using rewrite rules in your :doc:`web server configuration "
+"</setup/web_server_configuration>`, the ``index.php`` won't be needed and"
+" you will have beautiful, clean URLs (e.g. ``/show``)."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:324
+msgid ""
+"Now, every request is handled exactly the same way. Instead of individual"
+" URLs executing different PHP files, the front controller is *always* "
+"executed, and the routing of different URLs to different parts of your "
+"application is done internally."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:329
+msgid "A small front controller might look like this::"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:347
+msgid ""
+"This is better, but this is still a lot of repeated work! Fortunately, "
+"Symfony can help once again."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:354
+msgid "The Symfony Application Flow"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:356
+msgid ""
+"A Symfony framework application *also* uses a front-controller file. But "
+"inside, *Symfony* is responsible for handling each incoming request and "
+"figuring out what to do:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:366
+msgid ""
+"Incoming requests are interpreted by the :doc:`Routing component "
+"</routing>` and passed to PHP functions that return ``Response`` objects."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:369
+msgid ""
+"This may not make sense yet, but as you keep reading, you'll learn about "
+":doc:`routes </routing>` and :doc:`controllers </controller>`: the two "
+"fundamental parts to creating a page. But as you go along, don't forget "
+"that no matter *how* complex your app gets, your job is always the same: "
+"read information from the Request and use it to create a Response."
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:376
+msgid "Summary: The Request-Response Flow"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:378
+msgid "Here's what we've learned so far:"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:380
+msgid "A client (e.g. a browser) sends an HTTP request;"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:381
+msgid ""
+"Each request executes the same, single file (called a \"front "
+"controller\");"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:382
+msgid "The front controller boots Symfony and passes the request information;"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:383
+msgid ""
+"Internally, Symfony uses *routes* and *controllers* to create the "
+"Response for the page (we'll learn about these soon!);"
+msgstr ""
+
+#: ../../../introduction/http_fundamentals.rst:385
+msgid ""
+"Symfony turns your ``Response`` object into the text headers and content "
+"(i.e. the HTTP response), which are sent back to the client."
+msgstr ""
+

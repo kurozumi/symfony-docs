@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../templating/hinclude.rst:5
+msgid "How to Embed Asynchronous Content with hinclude.js"
+msgstr ""
+
+#: ../../../templating/hinclude.rst:7
+msgid ""
+":ref:`Embedding controllers in templates <templates-embed-controllers>` "
+"is one of the ways to reuse contents across multiple templates. To "
+"further improve performance you can use the `hinclude.js`_ JavaScript "
+"library to embed controllers asynchronously."
+msgstr ""
+
+#: ../../../templating/hinclude.rst:12
+msgid ""
+"First, include the `hinclude.js`_ library in your page :ref:`linking to "
+"it <templates-link-to-assets>` from the template or adding it to your "
+"application JavaScript :doc:`using Webpack Encore </frontend>`."
+msgstr ""
+
+#: ../../../templating/hinclude.rst:16
+msgid ""
+"As the embedded content comes from another page (or controller for that "
+"matter), Symfony uses a version of the standard ``render()`` function to "
+"configure ``hinclude`` tags in templates:"
+msgstr ""
+
+#: ../../../templating/hinclude.rst:27
+msgid ""
+"When using the ``controller()`` function, you must also configure the "
+":ref:`fragments path option <fragments-path-config>`."
+msgstr ""
+
+#: ../../../templating/hinclude.rst:30
+msgid ""
+"When JavaScript is disabled or it takes a long time to load you can "
+"display a default content rendering some template:"
+msgstr ""
+
+#: ../../../templating/hinclude.rst:70
+msgid ""
+"You can define default templates per ``render()`` function (which will "
+"override any global default template that is defined):"
+msgstr ""
+
+#: ../../../templating/hinclude.rst:79
+msgid "Or you can also specify a string to display as the default content:"
+msgstr ""
+

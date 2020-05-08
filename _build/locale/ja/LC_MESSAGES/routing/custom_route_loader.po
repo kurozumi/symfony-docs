@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../routing/custom_route_loader.rst:5
+msgid "How to Create a custom Route Loader"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:7
+msgid ""
+"Simple applications can define all their routes in a single configuration"
+" file - usually ``config/routes.yaml`` (see :ref:`routing-creating-"
+"routes`). However, in most applications it's common to import routes "
+"definitions from different resources: PHP annotations in controller "
+"files, YAML, XML or PHP files stored in some directory, etc."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:14
+msgid "Built-in Route Loaders"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:16
+msgid "Symfony provides several route loaders for the most common needs:"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:85
+msgid ""
+"When importing resources, the key (e.g. ``app_file``) is the name of "
+"collection. Just be sure that it's unique per file so no other lines "
+"override it."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:88
+msgid ""
+"If your application needs are different, you can create your own custom "
+"route loader as explained in the next section."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:92
+msgid "What is a Custom Route Loader"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:94
+msgid ""
+"A custom route loader enables you to generate routes based on some "
+"conventions or patterns. A great example for this use-case is the "
+"`FOSRestBundle`_ where routes are generated based on the names of the "
+"action methods in a controller."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:99
+msgid ""
+"You still need to modify your routing configuration (e.g. "
+"``config/routes.yaml``) manually, even when using a custom route loader."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:105
+msgid ""
+"There are many bundles out there that use their own route loaders to "
+"accomplish cases like those described above, for instance "
+"`FOSRestBundle`_, `JMSI18nRoutingBundle`_, `KnpRadBundle`_ and "
+"`SonataAdminBundle`_."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:111
+msgid "Loading Routes"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:113
+msgid ""
+"The routes in a Symfony application are loaded by the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Routing\\\\DelegatingLoader`."
+" This loader uses several other loaders (delegates) to load resources of "
+"different types, for instance YAML files or ``@Route`` annotations in "
+"controller files. The specialized loaders implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface` and "
+"therefore have two important methods: "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" and "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load`."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:123
+msgid "Take these lines from the ``routes.yaml``:"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:155
+msgid ""
+"When the main loader parses this, it tries all registered delegate "
+"loaders and calls their "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" method with the given resource (``../src/Controller/``) and type "
+"(``annotation``) as arguments. When one of the loader returns ``true``, "
+"its "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load`"
+" method will be called, which should return a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection` containing "
+":class:`Symfony\\\\Component\\\\Routing\\\\Route` objects."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:165
+msgid ""
+"Routes loaded this way will be cached by the Router the same way as when "
+"they are defined in one of the default formats (e.g. XML, YAML, PHP "
+"file)."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:170
+msgid "Loading Routes with a Custom Service"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:172
+msgid ""
+"Using a regular Symfony service is the simplest way to load routes in a "
+"customized way. It's much easier than creating a full custom route "
+"loader, so you should always consider this option first."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:176
+msgid ""
+"To do so, define ``type: service`` as the type of the loaded routing "
+"resource and configure the service and method to call:"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:209
+msgid ""
+"In this example, the routes are loaded by calling the ``loadRoutes()`` "
+"method of the service whose ID is ``admin_route_loader``. Your service "
+"doesn't have to extend or implement any special class, but the called "
+"method must return a "
+":class:`Symfony\\\\Component\\\\Routing\\\\RouteCollection` object."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:214
+msgid ""
+"If you're using :ref:`autoconfigure <services-autoconfigure>`, your class"
+" should implement the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Routing\\\\RouteLoaderInterface`"
+" interface to be tagged automatically. If you're **not using "
+"autoconfigure**, tag it manually with ``routing.route_loader``."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:221
+msgid ""
+"The routes defined using service route loaders will be automatically "
+"cached by the framework. So whenever your service should load new routes,"
+" don't forget to clear the cache."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:227
+msgid "If your service is invokable, you don't need to precise the method to use."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:230
+msgid "Creating a custom Loader"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:232
+msgid ""
+"To load routes from some custom source (i.e. from something other than "
+"annotations, YAML or XML files), you need to create a custom route "
+"loader. This loader has to implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface`."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:236
+msgid ""
+"In most cases it is easier to extend from "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\Loader` instead of "
+"implementing "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface` "
+"yourself."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:240
+msgid ""
+"The sample loader below supports loading routing resources with a type of"
+" ``extra``. The type name should not clash with other loaders that might "
+"support the same type of resource. Make up any name specific to what you "
+"do. The resource name itself is not actually used in the example::"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:289
+msgid ""
+"Make sure the controller you specify really exists. In this case you have"
+" to create an ``extra()`` method in the ``ExtraController``::"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:306
+msgid "Now define a service for the ``ExtraLoader``:"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:346
+msgid ""
+"Notice the tag ``routing.loader``. All services with this *tag* will be "
+"marked as potential route loaders and added as specialized route loaders "
+"to the ``routing.loader`` *service*, which is an instance of "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Routing\\\\DelegatingLoader`."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:352
+msgid "Using the Custom Loader"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:354
+msgid ""
+"If you did nothing else, your custom routing loader would *not* be "
+"called. What remains to do is adding a few lines to the routing "
+"configuration:"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:387
+msgid ""
+"The important part here is the ``type`` key. Its value should be "
+"``extra`` as this is the type which the ``ExtraLoader`` supports and this"
+" will make sure its ``load()`` method gets called. The ``resource`` key "
+"is insignificant for the ``ExtraLoader``, so it is set to ``.`` (a single"
+" dot)."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:394
+msgid ""
+"The routes defined using custom route loaders will be automatically "
+"cached by the framework. So whenever you change something in the loader "
+"class itself, don't forget to clear the cache."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:399
+msgid "More Advanced Loaders"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:401
+msgid ""
+"If your custom route loader extends from "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\Loader` as shown "
+"above, you can also make use of the provided resolver, an instance of "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderResolver`, to "
+"load secondary routing resources."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:407
+msgid ""
+"You still need to implement "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::supports`"
+" and "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface::load`."
+" Whenever you want to load another resource - for instance a YAML routing"
+" configuration file - you can call the "
+":method:`Symfony\\\\Component\\\\Config\\\\Loader\\\\Loader::import` "
+"method::"
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:444
+msgid ""
+"The resource name and type of the imported routing configuration can be "
+"anything that would normally be supported by the routing configuration "
+"loader (YAML, XML, PHP, annotation, etc.)."
+msgstr ""
+
+#: ../../../routing/custom_route_loader.rst:450
+msgid ""
+"For more advanced uses, check out the `ChainRouter`_ provided by the "
+"Symfony CMF project. This router allows applications to use two or more "
+"routers combined, for example to keep using the default Symfony routing "
+"system when writing a custom router."
+msgstr ""
+

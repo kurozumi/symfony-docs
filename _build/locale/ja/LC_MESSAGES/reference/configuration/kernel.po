@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/configuration/kernel.rst:5
+msgid "Configuring in the Kernel"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:7
+msgid ""
+"Some configuration can be done on the kernel class itself (located by "
+"default at ``src/Kernel.php``). You can do this by overriding specific "
+"methods in the parent "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel` class."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:12
+msgid "Configuration"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:14
+msgid "`Charset`_"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:15
+msgid "`Project Directory`_"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:16
+msgid "`Cache Directory`_"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:17
+msgid "`Log Directory`_"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:18
+msgid "`Container Build Time`_"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:20
+msgid ""
+"In previous Symfony versions there was another configuration option to "
+"define the \"kernel name\", which is only important when :doc:`using "
+"applications with multiple kernels </configuration/multiple_kernels>`. If"
+" you need a unique ID for your kernels use the ``kernel.container_class``"
+" parameter or the ``Kernel::getContainerClass()`` method."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:29
+msgid "Charset"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:31
+msgid "**type**: ``string`` **default**: ``UTF-8``"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:33
+msgid ""
+"This option defines the charset that is used in the application. This "
+"value is exposed via the ``kernel.charset`` configuration parameter and "
+"the :method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getCharset` "
+"method."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:37
+msgid ""
+"To change this value, override the ``getCharset()`` method and return "
+"another charset::"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:55
+msgid "Project Directory"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:57
+msgid ""
+"**type**: ``string`` **default**: the directory of the project "
+"``composer.json``"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:59
+msgid ""
+"This returns the absolute path of the root directory of your Symfony "
+"project, which is used by applications to perform operations with file "
+"paths relative to the project's root directory."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:63
+msgid ""
+"By default, its value is calculated automatically as the directory where "
+"the main ``composer.json`` file is stored. This value is exposed via the "
+"``kernel.project_dir`` configuration parameter and the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getProjectDir` "
+"method."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:68
+msgid ""
+"If you don't use Composer, or have moved the ``composer.json`` file "
+"location or have deleted it entirely (for example in the production "
+"servers), you can override the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getProjectDir` "
+"method to return the right project directory::"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:88
+msgid "Cache Directory"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:90
+msgid ""
+"**type**: ``string`` **default**: "
+"``$this->getProjectDir()/var/cache/$this->environment``"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:92
+msgid ""
+"This returns the absolute path of the cache directory of your Symfony "
+"project. It's calculated automatically based on the current "
+":ref:`environment <configuration-environments>`."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:96
+msgid ""
+"This value is exposed via the ``kernel.cache_dir`` configuration "
+"parameter and the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getCacheDir` "
+"method. To change this setting, override the ``getCacheDir()`` method to "
+"return the right cache directory."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:102
+msgid "Log Directory"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:104
+msgid "**type**: ``string`` **default**: ``$this->getProjectDir()/var/log``"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:106
+msgid ""
+"This returns the absolute path of the log directory of your Symfony "
+"project. It's calculated automatically based on the current "
+":ref:`environment <configuration-environments>`."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:110
+msgid ""
+"This value is exposed via the ``kernel.logs_dir`` configuration parameter"
+" and the "
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\Kernel::getLogDir` method."
+" To change this setting, override the ``getLogDir()`` method to return "
+"the right log directory."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:116
+msgid "Container Build Time"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:118
+msgid "**type**: ``string`` **default**: the result of executing ``time()``"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:120
+msgid ""
+"Symfony follows the `reproducible builds`_ philosophy, which ensures that"
+" the result of compiling the exact same source code doesn't produce "
+"different results. This helps checking that a given binary or executable "
+"code was compiled from some trusted source code."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:125
+msgid ""
+"In practice, the compiled :doc:`service container </service_container>` "
+"of your application will always be the same if you don't change its "
+"source code. This is exposed via these configuration parameters:"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:129
+msgid "``container.build_hash``, a hash of the contents of all your source files;"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:130
+msgid ""
+"``container.build_time``, a timestamp of the moment when the container "
+"was built (the result of executing PHP's :phpfunction:`time` function);"
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:132
+msgid ""
+"``container.build_id``, the result of merging the two previous parameters"
+" and encoding the result using CRC32."
+msgstr ""
+
+#: ../../../reference/configuration/kernel.rst:135
+msgid ""
+"Since the ``container.build_time`` value will change every time you "
+"compile the application, the build will not be strictly reproducible. If "
+"you care about this, the solution is to use another configuration "
+"parameter called ``kernel.container_build_time`` and set it to a non-"
+"changing build time to achieve a strict reproducible build:"
+msgstr ""
+

@@ -1,0 +1,429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:8
+msgid "Memcached Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:10
+msgid ""
+"This adapter stores the values in-memory using one (or more) `Memcached "
+"server`_ instances. Unlike the :ref:`APCu adapter <apcu-adapter>`, and "
+"similarly to the :ref:`Redis adapter <redis-adapter>`, it is not limited "
+"to the current server's shared memory; you can store contents independent"
+" of your PHP environment. The ability to utilize a cluster of servers to "
+"provide redundancy and/or fail-over is also available."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:19
+msgid ""
+"**Requirements:** The `Memcached PHP extension`_ as well as a `Memcached "
+"server`_ must be installed, active, and running to use this adapter. "
+"Version ``2.2`` or greater of the `Memcached PHP extension`_ is required "
+"for this adapter."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:23
+msgid ""
+"This adapter expects a `Memcached`_ instance to be passed as the first "
+"parameter. A namespace and default cache lifetime can optionally be "
+"passed as the second and third parameters::"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:43
+msgid "Configure the Connection"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:45
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\MemcachedAdapter::createConnection`"
+" helper method allows creating and configuring a `Memcached`_ class "
+"instance using a `Data Source Name (DSN)`_ or an array of DSNs::"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:73
+msgid ""
+"The `Data Source Name (DSN)`_ for this adapter must use the following "
+"format:"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:79
+msgid ""
+"The DSN must include a IP/host (and an optional port) or a socket path, "
+"an optional username and password (for SASL authentication; it requires "
+"that the memcached extension was compiled with ``--enable-memcached-"
+"sasl``) and an optional weight (for prioritizing servers in a cluster; "
+"its value is an integer between ``0`` and ``100`` which defaults to "
+"``null``; a higher value means more priority)."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:86
+msgid ""
+"Below are common examples of valid DSNs showing a combination of "
+"available values::"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:108
+msgid "Configure the Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:110
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\MemcachedAdapter::createConnection`"
+" helper method also accepts an array of options as its second argument. "
+"The expected format is an associative array of ``key => value`` pairs "
+"representing option names and their respective values::"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:130
+msgid "Available Options"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:134
+msgid "``auto_eject_hosts`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:133
+msgid ""
+"Enables or disables a constant, automatic, re-balancing of the cluster by"
+" auto-ejecting hosts that have exceeded the configured "
+"``server_failure_limit``."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:140
+msgid "``buffer_writes`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:137
+msgid ""
+"Enables or disables buffered input/output operations, causing storage "
+"commands to buffer instead of being immediately sent to the remote "
+"server(s). Any action that retrieves data, quits the connection, or "
+"closes down the connection will cause the buffer to be committed."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:144
+msgid "``compression`` (type: ``bool``, default: ``true``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:143
+msgid ""
+"Enables or disables payload compression, where item values longer than "
+"100 bytes are compressed during storage and decompressed during "
+"retrieval."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:151
+msgid "``compression_type`` (type: ``string``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:147
+msgid ""
+"Specifies the compression method used on value payloads. when the "
+"**compression** option is enabled."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:150
+msgid ""
+"Valid option values include ``fastlz`` and ``zlib``, with a default value"
+" that *varies based on flags used at compilation*."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:157
+msgid "``connect_timeout`` (type: ``int``, default: ``1000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:154
+msgid ""
+"Specifies the timeout (in milliseconds) of socket connection operations "
+"when the ``no_block`` option is enabled."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:157
+#: ../../../components/cache/adapters/memcached_adapter.rst:190
+#: ../../../components/cache/adapters/memcached_adapter.rst:202
+#: ../../../components/cache/adapters/memcached_adapter.rst:222
+#: ../../../components/cache/adapters/memcached_adapter.rst:243
+msgid "Valid option values include *any positive integer*."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:164
+msgid "``distribution`` (type: ``string``, default: ``consistent``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:160
+msgid ""
+"Specifies the item key distribution method among the servers. Consistent "
+"hashing delivers better distribution and allows servers to be added to "
+"the cluster with minimal cache losses."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:164
+msgid ""
+"Valid option values include ``modula``, ``consistent``, and "
+"``virtual_bucket``."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:172
+msgid "``hash`` (type: ``string``, default: ``md5``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:167
+msgid ""
+"Specifies the hashing algorithm used for item keys. Each hash algorithm "
+"has its advantages and its disadvantages. The default is suggested for "
+"compatibility with other clients."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:171
+msgid ""
+"Valid option values include ``default``, ``md5``, ``crc``, ``fnv1_64``, "
+"``fnv1a_64``, ``fnv1_32``, ``fnv1a_32``, ``hsieh``, and ``murmur``."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:178
+msgid "``libketama_compatible`` (type: ``bool``, default: ``true``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:175
+msgid ""
+"Enables or disables \"libketama\" compatible behavior, enabling other "
+"libketama-based clients to access the keys stored by client instance "
+"transparently (like Python and Ruby). Enabling this option sets the "
+"``hash`` option to ``md5`` and the ``distribution`` option to "
+"``consistent``."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:182
+msgid "``no_block`` (type: ``bool``, default: ``true``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:181
+msgid ""
+"Enables or disables asynchronous input and output operations. This is the"
+" fastest transport option available for storage functions."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:190
+msgid "``number_of_replicas`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:185
+msgid ""
+"Specifies the number of replicas that should be stored for each item (on "
+"different servers). This does not dedicate certain memcached servers to "
+"store the replicas in, but instead stores the replicas together with all "
+"of the other objects (on the \"n\" next servers registered)."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:196
+msgid "``prefix_key`` (type: ``string``, default: an empty string)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:193
+msgid ""
+"Specifies a \"domain\" (or \"namespace\") prepended to your keys. It "
+"cannot be longer than 128 characters and reduces the maximum key size."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:196
+msgid "Valid option values include *any alphanumeric string*."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:202
+msgid "``poll_timeout`` (type: ``int``, default: ``1000``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:199
+msgid ""
+"Specifies the amount of time (in seconds) before timing out during a "
+"socket polling operation."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:210
+msgid "``randomize_replica_read`` (type: ``bool``, type: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:205
+msgid ""
+"Enables or disables randomization of the replica reads starting point. "
+"Normally the read is done from primary server and in case of a miss the "
+"read is done from \"primary+1\", then \"primary+2\", all the way to \"n\""
+" replicas. This option sets the replica reads as randomized between all "
+"available servers; it allows distributing read load to multiple servers "
+"with the expense of more write traffic."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:216
+msgid "``recv_timeout`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:213
+msgid ""
+"Specifies the amount of time (in microseconds) before timing out during "
+"an outgoing socket (read) operation. When the ``no_block`` option isn't "
+"enabled, this will allow you to still have timeouts on the reading of "
+"data."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:216
+#: ../../../components/cache/adapters/memcached_adapter.rst:229
+msgid "Valid option values include ``0`` or *any positive integer*."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:222
+msgid "``retry_timeout`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:219
+msgid ""
+"Specifies the amount of time (in seconds) before timing out and retrying "
+"a connection attempt."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:229
+msgid "``send_timeout`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:225
+msgid ""
+"Specifies the amount of time (in microseconds) before timing out during "
+"an incoming socket (send) operation. When the ``no_block`` option isn't "
+"enabled, this will allow you to still have timeouts on the sending of "
+"data."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:236
+msgid "``serializer`` (type: ``string``, default: ``php``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:232
+msgid ""
+"Specifies the serializer to use for serializing non-scalar values. The "
+"``igbinary`` options requires the igbinary PHP extension to be enabled, "
+"as well as the memcached extension to have been compiled with support for"
+" it."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:236
+msgid "Valid option values include ``php`` and ``igbinary``."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:243
+msgid "``server_failure_limit`` (type: ``int``, default: ``0``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:239
+msgid ""
+"Specifies the failure limit for server connection attempts before marking"
+" the server as \"dead\". The server will remain in the server pool unless"
+" ``auto_eject_hosts`` is enabled."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:250
+msgid "``socket_recv_size`` (type: ``int``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:246
+msgid ""
+"Specified the maximum buffer size (in bytes) in the context of incoming "
+"(receive) socket connection data."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:249
+#: ../../../components/cache/adapters/memcached_adapter.rst:256
+msgid ""
+"Valid option values include *any positive integer*, with a default value "
+"that *varies by platform and kernel configuration*."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:257
+msgid "``socket_send_size`` (type: ``int``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:253
+msgid ""
+"Specified the maximum buffer size (in bytes) in the context of outgoing "
+"(send) socket connection data."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:263
+msgid "``tcp_keepalive`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:260
+msgid ""
+"Enables or disables the \"`keep-alive`_\" `Transmission Control Protocol "
+"(TCP)`_ feature, which is a feature that helps to determine whether the "
+"other end has stopped responding by sending probes to the network peer "
+"after an idle period and closing or persisting the socket based on the "
+"response (or lack thereof)."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:269
+msgid "``tcp_nodelay`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:266
+msgid ""
+"Enables or disables the \"`no-delay`_\" (Nagle's algorithm) `Transmission"
+" Control Protocol (TCP)`_ algorithm, which is a mechanism intended to "
+"improve the efficiency of networks by reducing the overhead of TCP "
+"headers by combining a number of small outgoing messages and sending them"
+" all at once."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:280
+msgid "``use_udp`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:272
+msgid ""
+"Enables or disables the use of `User Datagram Protocol (UDP)`_ mode "
+"(instead of `Transmission Control Protocol (TCP)`_ mode), where all "
+"operations are executed in a \"fire-and-forget\" manner; no attempt to "
+"ensure the operation has been received or acted on will be made once the "
+"client has executed it."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:279
+msgid ""
+"Not all library operations are tested in this mode. Mixed TCP and UDP "
+"servers are not allowed."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:284
+msgid "``verify_key`` (type: ``bool``, default: ``false``)"
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:283
+msgid ""
+"Enables or disables testing and verifying of all keys used to ensure they"
+" are valid and fit within the design of the protocol being used."
+msgstr ""
+
+#: ../../../components/cache/adapters/memcached_adapter.rst:288
+msgid ""
+"Reference the `Memcached`_ extension's `predefined constants`_ "
+"documentation for additional information about the available options."
+msgstr ""
+

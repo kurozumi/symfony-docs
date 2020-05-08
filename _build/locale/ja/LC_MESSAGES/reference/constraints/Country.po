@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Country.rst:2
+msgid "Country"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:4
+msgid "Validates that a value is a valid `ISO 3166-1 alpha-2`_ country code."
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:7
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:7
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:8
+#: ../../../reference/constraints/Country.rst:78
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:8
+msgid "`alpha3`_"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:9
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:10
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:11
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:12
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:12
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Country`"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:13
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:13
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\CountryValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:17
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:81
+msgid "alpha3"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:85
+msgid "The ``alpha3`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:87
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:89
+msgid ""
+"If this option is ``true``, the constraint checks that the value is a "
+"`ISO 3166-1 alpha-3`_ three-letter code (e.g. France = ``FRA``) instead "
+"of the default `ISO 3166-1 alpha-2`_ two-letter code (e.g. France = "
+"``FR``)."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:96
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:98
+msgid "**type**: ``string`` **default**: ``This value is not a valid country.``"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:100
+msgid "This message is shown if the string is not a valid country code."
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:102
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:105
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:105
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:107
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Country.rst:107
+msgid "The current (invalid) country code"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

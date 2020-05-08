@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/cdn.rst:2
+msgid "Using a CDN"
+msgstr ""
+
+#: ../../../frontend/encore/cdn.rst:4
+msgid ""
+"Are you deploying to a CDN? That's awesome :) Once you've made sure that "
+"your built files are uploaded to the CDN, configure it in Encore:"
+msgstr ""
+
+#: ../../../frontend/encore/cdn.rst:28
+msgid ""
+"That's it! Internally, Webpack will now know to load assets from your CDN"
+" - e.g. ``https://my-cool-app.com.global.prod.fastly.net/dashboard.js``."
+msgstr ""
+
+#: ../../../frontend/encore/cdn.rst:33
+msgid ""
+"It's still your responsibility to put your assets on the CDN - e.g. by "
+"uploading them or by using \"origin pull\", where your CDN pulls assets "
+"directly from your web server."
+msgstr ""
+
+#: ../../../frontend/encore/cdn.rst:37
+msgid ""
+"You *do* need to make sure that the ``script`` and ``link`` tags you "
+"include on your pages also use the CDN. Fortunately, the "
+":ref:`entrypoints.json <encore-entrypointsjson-simple-description>` paths"
+" are updated to include the full URL to the CDN."
+msgstr ""
+
+#: ../../../frontend/encore/cdn.rst:42
+msgid ""
+"If you are using ``Encore.enableIntegrityHashes()`` and your CDN and your"
+" domain are not the `same-origin`_, you may need to set the "
+"``crossorigin`` option in your webpack_encore.yaml configuration to "
+"``anonymous`` or ``use-credentials`` to overcome CORS errors."
+msgstr ""
+

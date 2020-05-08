@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/security/secure_tools.rst:2
+msgid "Securely Generating Random Values"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:4
+msgid ""
+"The Symfony Security component comes with a collection of nice utilities "
+"related to security. These utilities are used by Symfony, but you should "
+"also use them if you want to solve the problem they address."
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:10
+msgid ""
+"The functions described in this article were introduced in PHP 5.6 or 7. "
+"For older PHP versions, a polyfill is provided by the `Symfony Polyfill "
+"Component`_."
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:15
+msgid "Comparing Strings"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:17
+msgid ""
+"The time it takes to compare two strings depends on their differences. "
+"This can be used by an attacker when the two strings represent a password"
+" for instance; it is known as a `Timing attack`_."
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:21
+msgid ""
+"When comparing two passwords, you should use the "
+":phpfunction:`hash_equals` function::"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:29
+msgid "Generating a Secure Random String"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:31
+msgid ""
+"Whenever you need to generate a secure random string, you are highly "
+"encouraged to use the :phpfunction:`random_bytes` function::"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:36
+msgid ""
+"The function returns a random string, suitable for cryptographic use, of "
+"the number bytes passed as an argument (10 in the above example)."
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:41
+msgid ""
+"The ``random_bytes()`` function returns a binary string which may contain"
+" the ``\\0`` character. This can cause trouble in several common "
+"scenarios, such as storing this value in a database or including it as "
+"part of the URL. The solution is to hash the value returned by "
+"``random_bytes()`` with a hashing function such as :phpfunction:`md5` or "
+":phpfunction:`sha1`."
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:48
+msgid "Generating a Secure Random Number"
+msgstr ""
+
+#: ../../../components/security/secure_tools.rst:50
+msgid ""
+"If you need to generate a cryptographically secure random integer, you "
+"should use the :phpfunction:`random_int` function::"
+msgstr ""
+

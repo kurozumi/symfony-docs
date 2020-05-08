@@ -1,0 +1,573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container.rst:6
+msgid "Service Container"
+msgstr ""
+
+#: ../../../service_container.rst:8
+msgid "Screencast"
+msgstr ""
+
+#: ../../../service_container.rst:11
+msgid ""
+"Do you prefer video tutorials? Check out the `Symfony Fundamentals "
+"screencast series`_."
+msgstr ""
+
+#: ../../../service_container.rst:13
+msgid ""
+"Your application is *full* of useful objects: a \"Mailer\" object might "
+"help you send emails while another object might help you save things to "
+"the database. Almost *everything* that your app \"does\" is actually done"
+" by one of these objects. And each time you install a new bundle, you get"
+" access to even more!"
+msgstr ""
+
+#: ../../../service_container.rst:18
+msgid ""
+"In Symfony, these useful objects are called **services** and each service"
+" lives inside a very special object called the **service container**. The"
+" container allows you to centralize the way objects are constructed. It "
+"makes your life easier, promotes a strong architecture and is super fast!"
+msgstr ""
+
+#: ../../../service_container.rst:24
+msgid "Fetching and using Services"
+msgstr ""
+
+#: ../../../service_container.rst:26
+msgid ""
+"The moment you start a Symfony app, your container *already* contains "
+"many services. These are like *tools*: waiting for you to take advantage "
+"of them. In your controller, you can \"ask\" for a service from the "
+"container by type-hinting an argument with the service's class or "
+"interface name. Want to :doc:`log </logging>` something? No problem::"
+msgstr ""
+
+#: ../../../service_container.rst:50
+msgid "What other services are available? Find out by running:"
+msgstr ""
+
+#: ../../../service_container.rst:72
+msgid ""
+"When you use these type-hints in your controller methods or inside your "
+":ref:`own services <service-container-creating-service>`, Symfony will "
+"automatically pass you the service object matching that type."
+msgstr ""
+
+#: ../../../service_container.rst:76
+msgid ""
+"Throughout the docs, you'll see how to use the many different services "
+"that live in the container."
+msgstr ""
+
+#: ../../../service_container.rst:81
+msgid ""
+"There are actually *many* more services in the container, and each "
+"service has a unique id in the container, like ``session`` or "
+"``router.default``. For a full list, you can run ``php bin/console "
+"debug:container``. But most of the time, you won't need to worry about "
+"this. See :ref:`services-wire-specific-service`. See "
+":doc:`/service_container/debug`."
+msgstr ""
+
+#: ../../../service_container.rst:93
+msgid "Creating/Configuring Services in the Container"
+msgstr ""
+
+#: ../../../service_container.rst:95
+msgid ""
+"You can also organize your *own* code into services. For example, suppose"
+" you need to show your users a random, happy message. If you put this "
+"code in your controller, it can't be re-used. Instead, you decide to "
+"create a new class::"
+msgstr ""
+
+#: ../../../service_container.rst:118
+msgid ""
+"Congratulations! You've just created your first service class! You can "
+"use it immediately inside your controller::"
+msgstr ""
+
+#: ../../../service_container.rst:134
+msgid ""
+"When you ask for the ``MessageGenerator`` service, the container "
+"constructs a new ``MessageGenerator`` object and returns it (see sidebar "
+"below). But if you never ask for the service, it's *never* constructed: "
+"saving memory and speed. As a bonus, the ``MessageGenerator`` service is "
+"only created *once*: the same instance is returned each time you ask for "
+"it."
+msgstr ""
+
+#: ../../../service_container.rst
+msgid "Automatic Service Loading in services.yaml"
+msgstr ""
+
+#: ../../../service_container.rst:144
+msgid ""
+"The documentation assumes you're using the following service "
+"configuration, which is the default config for a new project:"
+msgstr ""
+
+#: ../../../service_container.rst:209
+msgid ""
+"The value of the ``resource`` and ``exclude`` options can be any valid "
+"`glob pattern`_. The value of the ``exclude`` option can also be an array"
+" of glob patterns."
+msgstr ""
+
+#: ../../../service_container.rst:213
+msgid ""
+"Thanks to this configuration, you can automatically use any classes from "
+"the ``src/`` directory as a service, without needing to manually "
+"configure it. Later, you'll learn more about this in :ref:`service-"
+"psr4-loader`."
+msgstr ""
+
+#: ../../../service_container.rst:217
+msgid ""
+"If you'd prefer to manually wire your service, that's totally possible: "
+"see :ref:`services-explicitly-configure-wire-services`."
+msgstr ""
+
+#: ../../../service_container.rst:223
+msgid "Injecting Services/Config into a Service"
+msgstr ""
+
+#: ../../../service_container.rst:225
+msgid ""
+"What if you need to access the ``logger`` service from within "
+"``MessageGenerator``? No problem! Create a ``__construct()`` method with "
+"a ``$logger`` argument that has the ``LoggerInterface`` type-hint. Set "
+"this on a new ``$logger`` property and use it later::"
+msgstr ""
+
+#: ../../../service_container.rst:251
+msgid ""
+"That's it! The container will *automatically* know to pass the ``logger``"
+" service when instantiating the ``MessageGenerator``. How does it know to"
+" do this? :ref:`Autowiring <services-autowire>`. The key is the "
+"``LoggerInterface`` type-hint in your ``__construct()`` method and the "
+"``autowire: true`` config in ``services.yaml``. When you type-hint an "
+"argument, the container will automatically find the matching service. If "
+"it can't, you'll see a clear exception with a helpful suggestion."
+msgstr ""
+
+#: ../../../service_container.rst:259
+msgid ""
+"By the way, this method of adding dependencies to your ``__construct()`` "
+"method is called *dependency injection*. It's a scary term for a simple "
+"concept."
+msgstr ""
+
+#: ../../../service_container.rst:264
+msgid ""
+"How should you know to use ``LoggerInterface`` for the type-hint? You can"
+" either read the docs for whatever feature you're using, or get a list of"
+" autowireable type-hints by running:"
+msgstr ""
+
+#: ../../../service_container.rst:289
+msgid "Handling Multiple Services"
+msgstr ""
+
+#: ../../../service_container.rst:291
+msgid ""
+"Suppose you also want to email a site administrator each time a site "
+"update is made. To do that, you create a new class::"
+msgstr ""
+
+#: ../../../service_container.rst:328
+msgid ""
+"This needs the ``MessageGenerator`` *and* the ``Mailer`` service. That's "
+"no problem, we ask them by type hinting their class and interface names! "
+"Now, this new service is ready to be used. In a controller, for example, "
+"you can type-hint the new ``SiteUpdateManager`` class and use it::"
+msgstr ""
+
+#: ../../../service_container.rst:349
+msgid ""
+"Thanks to autowiring and your type-hints in ``__construct()``, the "
+"container creates the ``SiteUpdateManager`` object and passes it the "
+"correct argument. In most cases, this works perfectly."
+msgstr ""
+
+#: ../../../service_container.rst:356
+msgid "Manually Wiring Arguments"
+msgstr ""
+
+#: ../../../service_container.rst:358
+msgid ""
+"But there are a few cases when an argument to a service cannot be "
+"autowired. For example, suppose you want to make the admin email "
+"configurable:"
+msgstr ""
+
+#: ../../../service_container.rst:392
+msgid "If you make this change and refresh, you'll see an error:"
+msgstr ""
+
+#: ../../../service_container.rst:394
+msgid ""
+"Cannot autowire service \"App\\Updates\\SiteUpdateManager\": argument "
+"\"$adminEmail\" of method \"__construct()\" must have a type-hint or be "
+"given a value explicitly."
+msgstr ""
+
+#: ../../../service_container.rst:397
+msgid ""
+"That makes sense! There is no way that the container knows what value you"
+" want to pass here. No problem! In your configuration, you can explicitly"
+" set this argument:"
+msgstr ""
+
+#: ../../../service_container.rst:464
+msgid ""
+"Thanks to this, the container will pass ``manager@example.com`` to the "
+"``$adminEmail`` argument of ``__construct`` when creating the "
+"``SiteUpdateManager`` service. The other arguments will still be "
+"autowired."
+msgstr ""
+
+#: ../../../service_container.rst:468
+msgid ""
+"But, isn't this fragile? Fortunately, no! If you rename the "
+"``$adminEmail`` argument to something else - e.g. ``$mainEmail`` - you "
+"will get a clear exception when you reload the next page (even if that "
+"page doesn't use this service)."
+msgstr ""
+
+#: ../../../service_container.rst:475
+msgid "Service Parameters"
+msgstr ""
+
+#: ../../../service_container.rst:477
+msgid ""
+"In addition to holding service objects, the container also holds "
+"configuration, called **parameters**. The main article about Symfony "
+"configuration explains the :ref:`configuration parameters <configuration-"
+"parameters>` in detail and shows all their types (string, boolean, array,"
+" binary and PHP constant parameters)."
+msgstr ""
+
+#: ../../../service_container.rst:482
+msgid ""
+"However, there is another type of parameter related to services. In YAML "
+"config, any string which starts with ``@`` is considered as the ID of a "
+"service, instead of a regular string. In XML config, use the "
+"``type=\"service\"`` type for the parameter and in PHP config use the "
+"``Reference`` class:"
+msgstr ""
+
+#: ../../../service_container.rst:533
+msgid ""
+"Working with container parameters is straightforward using the "
+"container's accessor methods for parameters::"
+msgstr ""
+
+#: ../../../service_container.rst:547
+msgid ""
+"The used ``.`` notation is a :ref:`Symfony convention <service-naming-"
+"conventions>` to make parameters easier to read. Parameters are flat key-"
+"value elements, they can't be organized into a nested array"
+msgstr ""
+
+#: ../../../service_container.rst:554
+msgid ""
+"You can only set a parameter before the container is compiled, not at "
+"run-time. To learn more about compiling the container see "
+":doc:`/components/dependency_injection/compilation`."
+msgstr ""
+
+#: ../../../service_container.rst:561
+msgid "Choose a Specific Service"
+msgstr ""
+
+#: ../../../service_container.rst:563
+msgid ""
+"The ``MessageGenerator`` service created earlier requires a "
+"``LoggerInterface`` argument::"
+msgstr ""
+
+#: ../../../service_container.rst:581
+msgid ""
+"However, there are *multiple* services in the container that implement "
+"``LoggerInterface``, such as ``logger``, ``monolog.logger.request``, "
+"``monolog.logger.php``, etc. How does the container know which one to "
+"use?"
+msgstr ""
+
+#: ../../../service_container.rst:585
+msgid ""
+"In these situations, the container is usually configured to automatically"
+" choose one of the services - ``logger`` in this case (read more about "
+"why in :ref:`service-autowiring-alias`). But, you can control this and "
+"pass in a different logger:"
+msgstr ""
+
+#: ../../../service_container.rst:640
+msgid ""
+"This tells the container that the ``$logger`` argument to ``__construct``"
+" should use service whose id is ``monolog.logger.request``."
+msgstr ""
+
+#: ../../../service_container.rst:645
+msgid "For a full list of *all* possible services in the container, run:"
+msgstr ""
+
+#: ../../../service_container.rst:654
+msgid "Binding Arguments by Name or Type"
+msgstr ""
+
+#: ../../../service_container.rst:656
+msgid ""
+"You can also use the ``bind`` keyword to bind specific arguments by name "
+"or type:"
+msgstr ""
+
+#: ../../../service_container.rst:756
+msgid ""
+"By putting the ``bind`` key under ``_defaults``, you can specify the "
+"value of *any* argument for *any* service defined in this file! You can "
+"bind arguments by name (e.g. ``$adminEmail``), by type (e.g. "
+"``Psr\\Log\\LoggerInterface``) or both (e.g. ``Psr\\Log\\LoggerInterface "
+"$requestLogger``)."
+msgstr ""
+
+#: ../../../service_container.rst:761
+msgid ""
+"The ``bind`` config can also be applied to specific services or when "
+"loading many services at once (i.e. :ref:`service-psr4-loader`)."
+msgstr ""
+
+#: ../../../service_container.rst:767
+msgid "The autowire Option"
+msgstr ""
+
+#: ../../../service_container.rst:769
+msgid ""
+"Above, the ``services.yaml`` file has ``autowire: true`` in the "
+"``_defaults`` section so that it applies to all services defined in that "
+"file. With this setting, you're able to type-hint arguments in the "
+"``__construct()`` method of your services and the container will "
+"automatically pass you the correct arguments. This entire entry has been "
+"written around autowiring."
+msgstr ""
+
+#: ../../../service_container.rst:775
+msgid ""
+"For more details about autowiring, check out "
+":doc:`/service_container/autowiring`."
+msgstr ""
+
+#: ../../../service_container.rst:780
+msgid "The autoconfigure Option"
+msgstr ""
+
+#: ../../../service_container.rst:782
+msgid ""
+"Above, the ``services.yaml`` file has ``autoconfigure: true`` in the "
+"``_defaults`` section so that it applies to all services defined in that "
+"file. With this setting, the container will automatically apply certain "
+"configuration to your services, based on your service's *class*. This is "
+"mostly used to *auto-tag* your services."
+msgstr ""
+
+#: ../../../service_container.rst:787
+msgid ""
+"For example, to create a Twig extension, you need to create a class, "
+"register it as a service, and :doc:`tag </service_container/tags>` it "
+"with ``twig.extension``."
+msgstr ""
+
+#: ../../../service_container.rst:790
+msgid ""
+"But, with ``autoconfigure: true``, you don't need the tag. In fact, if "
+"you're using the :ref:`default services.yaml config <service-container-"
+"services-load-example>`, you don't need to do *anything*: the service "
+"will be automatically loaded. Then, ``autoconfigure`` will add the "
+"``twig.extension`` tag *for* you, because your class implements "
+"``Twig\\Extension\\ExtensionInterface``. And thanks to ``autowire``, you "
+"can even add constructor arguments without any configuration."
+msgstr ""
+
+#: ../../../service_container.rst:798
+msgid "Linting Service Definitions"
+msgstr ""
+
+#: ../../../service_container.rst:800
+msgid ""
+"The ``lint:container`` command checks that the arguments injected into "
+"services match their type declarations. It's useful to run it before "
+"deploying your application to production (e.g. in your continuous "
+"integration server):"
+msgstr ""
+
+#: ../../../service_container.rst:808
+msgid ""
+"Checking the types of all service arguments whenever the container is "
+"compiled can hurt performance. That's why this type checking is "
+"implemented in a :doc:`compiler pass "
+"</service_container/compiler_passes>` called "
+"``CheckTypeDeclarationsPass`` which is disabled by default and enabled "
+"only when executing the ``lint:container`` command. If you don't mind the"
+" performance loss, enable the compiler pass in your application."
+msgstr ""
+
+#: ../../../service_container.rst:818
+msgid "Public Versus Private Services"
+msgstr ""
+
+#: ../../../service_container.rst:820
+msgid ""
+"Every service defined is private by default. When a service is private, "
+"you cannot access it directly from the container using "
+"``$container->get()``. As a best practice, you should only create "
+"*private* services and you should fetch services using dependency "
+"injection instead of using ``$container->get()``."
+msgstr ""
+
+#: ../../../service_container.rst:825
+msgid ""
+"If you need to fetch services lazily, instead of using public services "
+"you should consider using a :ref:`service locator <service-locators>`."
+msgstr ""
+
+#: ../../../service_container.rst:828
+msgid ""
+"But, if you *do* need to make a service public, override the ``public`` "
+"setting:"
+msgstr ""
+
+#: ../../../service_container.rst:878
+msgid ""
+"As of Symfony 5.1, it is no longer possible to autowire the service "
+"container by type-hinting ``Psr\\Container\\ContainerInterface``."
+msgstr ""
+
+#: ../../../service_container.rst:884
+msgid "Importing Many Services at once with resource"
+msgstr ""
+
+#: ../../../service_container.rst:886
+msgid ""
+"You've already seen that you can import many services at once by using "
+"the ``resource`` key. For example, the default Symfony configuration "
+"contains this:"
+msgstr ""
+
+#: ../../../service_container.rst:935
+msgid ""
+"The value of the ``resource`` and ``exclude`` options can be any valid "
+"`glob pattern`_."
+msgstr ""
+
+#: ../../../service_container.rst:938
+msgid ""
+"This can be used to quickly make many classes available as services and "
+"apply some default configuration. The ``id`` of each service is its "
+"fully-qualified class name. You can override any service that's imported "
+"by using its id (class name) below (e.g. see :ref:`services-manually-"
+"wire-args`). If you override a service, none of the options (e.g. "
+"``public``) are inherited from the import (but the overridden service "
+"*does* still inherit from ``_defaults``)."
+msgstr ""
+
+#: ../../../service_container.rst:945
+msgid ""
+"You can also ``exclude`` certain paths. This is optional, but will "
+"slightly increase performance in the ``dev`` environment: excluded paths "
+"are not tracked and so modifying them will not cause the container to be "
+"rebuilt."
+msgstr ""
+
+#: ../../../service_container.rst:951
+msgid ""
+"Wait, does this mean that *every* class in ``src/`` is registered as a "
+"service? Even model classes? Actually, no. As long as you keep your "
+"imported services as :ref:`private <container-public>`, all classes in "
+"``src/`` that are *not* explicitly used as services are automatically "
+"removed from the final container. In reality, the import means that all "
+"classes are \"available to be *used* as services\" without needing to be "
+"manually configured."
+msgstr ""
+
+#: ../../../service_container.rst:959
+msgid "Multiple Service Definitions Using the Same Namespace"
+msgstr ""
+
+#: ../../../service_container.rst:961
+msgid ""
+"If you define services using the YAML config format, the PHP namespace is"
+" used as the key of each configuration, so you can't define different "
+"service configs for classes under the same namespace:"
+msgstr ""
+
+#: ../../../service_container.rst:1009
+msgid ""
+"In order to have multiple definitions, add the ``namespace`` option and "
+"use any unique string as the key of each service config:"
+msgstr ""
+
+#: ../../../service_container.rst:1029
+msgid "Explicitly Configuring Services and Arguments"
+msgstr ""
+
+#: ../../../service_container.rst:1031
+msgid ""
+"Prior to Symfony 3.3, all services and (typically) arguments were "
+"explicitly configured: it was not possible to :ref:`load services "
+"automatically <service-container-services-load-example>` and "
+":ref:`autowiring <services-autowire>` was much less common."
+msgstr ""
+
+#: ../../../service_container.rst:1035
+msgid ""
+"Both of these features are optional. And even if you use them, there may "
+"be some cases where you want to manually wire a service. For example, "
+"suppose that you want to register *2* services for the "
+"``SiteUpdateManager`` class - each with a different admin email. In this "
+"case, each needs to have a unique service id:"
+msgstr ""
+
+#: ../../../service_container.rst:1134
+msgid ""
+"In this case, *two* services are registered: "
+"``site_update_manager.superadmin`` and "
+"``site_update_manager.normal_users``. Thanks to the alias, if you type-"
+"hint ``SiteUpdateManager`` the first (``site_update_manager.superadmin``)"
+" will be passed. If you want to pass the second, you'll need to "
+":ref:`manually wire the service <services-wire-specific-service>`."
+msgstr ""
+
+#: ../../../service_container.rst:1141
+msgid ""
+"If you do *not* create the alias and are :ref:`loading all services from "
+"src/ <service-container-services-load-example>`, then *three* services "
+"have been created (the automatic service + your two services) and the "
+"automatically loaded service will be passed - by default - when you type-"
+"hint ``SiteUpdateManager``. That's why creating the alias is a good idea."
+msgstr ""
+
+#: ../../../service_container.rst:1147
+msgid "Learn more"
+msgstr ""
+

@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/dotenv.rst:6
+msgid "The Dotenv Component"
+msgstr ""
+
+#: ../../../components/dotenv.rst:8
+msgid ""
+"The Dotenv Component parses ``.env`` files to make environment variables "
+"stored in them accessible via ``$_ENV`` or ``$_SERVER``."
+msgstr ""
+
+#: ../../../components/dotenv.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/dotenv.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/dotenv.rst:23
+msgid ""
+"Sensitive information and environment-dependent settings should be "
+"defined as environment variables (as recommended for `twelve-factor "
+"applications`_). Using a ``.env`` file to store those environment "
+"variables eases development and CI management by keeping them in one "
+"\"standard\" place and agnostic of the technology stack you are using "
+"(nginx vs PHP built-in server for instance)."
+msgstr ""
+
+#: ../../../components/dotenv.rst:31
+msgid ""
+"PHP has a lot of different implementations of this \"pattern\". This "
+"implementation's goal is to replicate what ``source .env`` would do. It "
+"tries to be as similar as possible with the standard shell's behavior (so"
+" no value validation for instance)."
+msgstr ""
+
+#: ../../../components/dotenv.rst:36
+msgid "Load a ``.env`` file in your PHP application via ``Dotenv::load()``::"
+msgstr ""
+
+#: ../../../components/dotenv.rst:46
+msgid "Given the following ``.env`` file content:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:54
+msgid "Access the value with ``$_ENV`` in your code::"
+msgstr ""
+
+#: ../../../components/dotenv.rst:59
+msgid ""
+"The ``load()`` method never overwrites existing environment variables. "
+"Use the ``overload()`` method if you need to overwrite them::"
+msgstr ""
+
+#: ../../../components/dotenv.rst:65
+msgid ""
+"As you're working with the Dotenv component you'll notice that you might "
+"want to have different files depending on the environment you're working "
+"in. Typically this happens for local development or Continuous "
+"Integration where you might want to have different files for your "
+"``test`` and ``dev`` environments."
+msgstr ""
+
+#: ../../../components/dotenv.rst:70
+msgid "You can use ``Dotenv::loadEnv()`` to ease this process::"
+msgstr ""
+
+#: ../../../components/dotenv.rst:77
+msgid ""
+"The Dotenv component will then look for the correct ``.env`` file to load"
+" in the following order whereas the files loaded later override the "
+"variables defined in previously loaded files:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:81
+msgid ""
+"If ``.env`` exists, it is loaded first. In case there's no ``.env`` file "
+"but a ``.env.dist``, this one will be loaded instead."
+msgstr ""
+
+#: ../../../components/dotenv.rst:83
+msgid ""
+"If one of the previously mentioned files contains the ``APP_ENV`` "
+"variable, the variable is populated and used to load environment-specific"
+" files hereafter. If ``APP_ENV`` is not defined in either of the "
+"previously mentioned files, ``dev`` is assumed for ``APP_ENV`` and "
+"populated by default."
+msgstr ""
+
+#: ../../../components/dotenv.rst:87
+msgid ""
+"If there's a ``.env.local`` representing general local environment "
+"variables it's loaded now."
+msgstr ""
+
+#: ../../../components/dotenv.rst:88
+msgid ""
+"If there's a ``.env.$env.local`` file, this one is loaded. Otherwise, it "
+"falls back to ``.env.$env``."
+msgstr ""
+
+#: ../../../components/dotenv.rst:91
+msgid ""
+"This might look complicated at first glance but it gives you the "
+"opportunity to commit multiple environment-specific files that can then "
+"be adjusted to your local environment. Given you commit ``.env``, "
+"``.env.test`` and ``.env.dev`` to represent different configuration "
+"settings for your environments, each of them can be adjusted by using "
+"``.env.local``, ``.env.test.local`` and ``.env.dev.local`` respectively."
+msgstr ""
+
+#: ../../../components/dotenv.rst:100
+msgid ""
+"``.env.local`` is always ignored in ``test`` environment because tests "
+"should produce the same results for everyone."
+msgstr ""
+
+#: ../../../components/dotenv.rst:103
+msgid ""
+"You can adjust the variable defining the environment, default environment"
+" and test environments by passing them as additional arguments to "
+"``Dotenv::loadEnv()`` (see "
+":method:`Symfony\\\\Component\\\\Dotenv\\\\Dotenv::loadEnv` for details)."
+msgstr ""
+
+#: ../../../components/dotenv.rst:107
+msgid ""
+"You should never store a ``.env.local`` file in your code repository as "
+"it might contain sensitive information; create a ``.env`` file (or "
+"multiple environment-specific ones as shown above) with sensible defaults"
+" instead."
+msgstr ""
+
+#: ../../../components/dotenv.rst:113
+msgid ""
+"Symfony Dotenv can be used in any environment of your application: "
+"development, testing, staging and even production. However, in production"
+" it's recommended to configure real environment variables to avoid the "
+"performance overhead of parsing the ``.env`` file for every request."
+msgstr ""
+
+#: ../../../components/dotenv.rst:118
+msgid ""
+"As a ``.env`` file is a regular shell script, you can ``source`` it in "
+"your own shell scripts:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:125
+msgid "Add comments by prefixing them with ``#``:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:133
+msgid "Use environment variables in values by prefixing variables with ``$``:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:142
+msgid ""
+"The order is important when some env var depends on the value of other "
+"env vars. In the above example, ``DB_PASS`` must be defined after "
+"``DB_USER``. Moreover, if you define multiple ``.env`` files and put "
+"``DB_PASS`` first, its value will depend on the ``DB_USER`` value defined"
+" in other files instead of the value defined in this file."
+msgstr ""
+
+#: ../../../components/dotenv.rst:148
+msgid "Define a default value in case the environment variable is not set:"
+msgstr ""
+
+#: ../../../components/dotenv.rst:155
+msgid "Embed commands via ``$()`` (not supported on Windows):"
+msgstr ""
+
+#: ../../../components/dotenv.rst:163
+msgid "Note that using ``$()`` might not work depending on your shell."
+msgstr ""
+

@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/hidden.rst:5
+msgid "HiddenType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:7
+msgid "The hidden type represents a hidden input field."
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:10
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:10
+msgid "``input`` ``hidden`` field"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:12
+msgid "Overridden options"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:12
+msgid "`compound`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:13
+msgid "`error_bubbling`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:14
+msgid "`required`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:16
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:16
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:17
+msgid "`data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:18
+msgid "`empty_data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:19
+msgid "`error_mapping`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:20
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:21
+msgid "`property_path`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:22
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:24
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:24
+msgid ":doc:`FormType </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:26
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:26
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\HiddenType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:32
+msgid "Overridden Options"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:2
+msgid "``compound``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:6
+msgid ""
+"This option specifies whether the type contains child types or not. This "
+"option is managed internally for built-in types, so there is no need to "
+"configure it explicitly."
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:37
+msgid "``error_bubbling``"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:39
+msgid "**default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:41
+msgid "Pass errors to the root form, otherwise they will not be visible."
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:44
+msgid "``required``"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:46
+msgid "**default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:48
+msgid "Hidden fields cannot have a required attribute."
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:51
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:53
+msgid ""
+"These options inherit from the :doc:`FormType "
+"</reference/forms/types/form>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:2
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:4
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to an HTML field representation you "
+"can use the ``attr`` option. It's an associative array with HTML "
+"attributes as keys. This can be useful when you need to set a custom "
+"class for some widget::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:16
+msgid ""
+"Use the ``row_attr`` option if you want to add these attributes to the "
+"the :ref:`form type row <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:2
+msgid "``data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying "
+"structure."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain data (e.g. if you bind an "
+"object to the form). If you want to override this initial value for the "
+"form or an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:21
+msgid ""
+"The ``data`` option *always* overrides the value taken from the domain "
+"data (object) when rendering. This means the object value is also "
+"overridden when the form edits an already persisted object, causing it to"
+" lose its persisted value when the form is submitted."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:2
+msgid "``empty_data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:4
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../../reference/forms/types/hidden.rst:62
+msgid "The default value is ``''`` (the empty string)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:3
+msgid ""
+"This option determines what value the field will *return* when the "
+"submitted value is empty (or missing). It does not set an initial value "
+"if none is provided when the form is rendered in a view."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:7
+msgid ""
+"This means it helps you handling form submission with blank fields. For "
+"example, if you want the ``name`` field to be explicitly set to ``John "
+"Doe`` when no value is selected, you can do it like this::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:16
+msgid ""
+"This will still render an empty text box, but upon submission the ``John "
+"Doe`` value will be set. Use the ``data`` or ``placeholder`` options to "
+"show this initial value in the rendered form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:20
+msgid ""
+"If a form is compound, you can set ``empty_data`` as an array, object or "
+"closure. See the :doc:`/form/use_empty_data` article for more details "
+"about these options."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:26
+msgid ""
+"If you want to set the ``empty_data`` option for your entire form class, "
+"see the :doc:`/form/use_empty_data` article."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:31
+msgid ""
+":doc:`Form data transformers </form/data_transformers>` will still be "
+"applied to the ``empty_data`` value. This means that an empty string will"
+" be cast to ``null``. Use a custom data transformer if you explicitly "
+"want to return the empty string."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:2
+msgid "``error_mapping``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:6
+msgid "This option allows you to modify the target of a validation error."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:8
+msgid ""
+"Imagine you have a custom method named ``matchingCityAndZipCode()`` that "
+"validates whether the city and zip code match. Unfortunately, there is no"
+" ``matchingCityAndZipCode`` field in your form, so all that Symfony can "
+"do is display the error on top of the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:13
+msgid ""
+"With customized error mapping, you can do better: map the error to the "
+"city field so that it displays above it::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:25
+msgid "Here are the rules for the left and the right side of the mapping:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:27
+msgid "The left side contains property paths;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:28
+msgid ""
+"If the violation is generated on a property or method of a class, its "
+"path is the ``propertyName``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:30
+msgid ""
+"If the violation is generated on an entry of an ``array`` or "
+"``ArrayAccess`` object, the property path is ``[indexName]``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:32
+msgid ""
+"You can construct nested property paths by concatenating them, separating"
+" properties by dots. For example: "
+"``addresses[work].matchingCityAndZipCode``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:34
+msgid "The right side contains the names of fields in the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:36
+msgid ""
+"By default, errors for any property that is not mapped will bubble up to "
+"the parent form. You can use the dot (``.``) on the left side to map "
+"errors of all unmapped properties to a particular field. For instance, to"
+" map all these errors to the ``city`` field, use::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:2
+msgid "``mapped``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the "
+"object, you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/property_path.rst.inc:2
+msgid "``property_path``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/property_path.rst.inc:4
+msgid "**type**: ``PropertyPathInterface|string|null`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/property_path.rst.inc:6
+msgid ""
+"By default (when the value of this option is ``null``) form fields read "
+"from and write to the properties with the same names in the form's domain"
+" object. The ``property_path`` option lets you define which property a "
+"field reads from and writes to. The value of this option can be any "
+":doc:`valid PropertyAccess syntax </components/property_access>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+

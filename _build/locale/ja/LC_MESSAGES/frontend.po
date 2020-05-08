@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend.rst:2
+msgid "Managing CSS and JavaScript"
+msgstr ""
+
+#: ../../../frontend.rst:4
+msgid "Screencast"
+msgstr ""
+
+#: ../../../frontend.rst:7
+msgid ""
+"Do you prefer video tutorials? Check out the `Webpack Encore screencast "
+"series`_."
+msgstr ""
+
+#: ../../../frontend.rst:9
+msgid ""
+"Symfony ships with a pure-JavaScript library - called Webpack Encore - "
+"that makes working with CSS and JavaScript a joy. You can use it, use "
+"something else, or just create static CSS and JS files in your "
+"``public/`` directory and include them in your templates."
+msgstr ""
+
+#: ../../../frontend.rst:17
+msgid "Webpack Encore"
+msgstr ""
+
+#: ../../../frontend.rst:19
+msgid ""
+"`Webpack Encore`_ is a simpler way to integrate `Webpack`_ into your "
+"application. It *wraps* Webpack, giving you a clean & powerful API for "
+"bundling JavaScript modules, pre-processing CSS & JS and compiling and "
+"minifying assets. Encore gives you professional asset system that's a "
+"*delight* to use."
+msgstr ""
+
+#: ../../../frontend.rst:24
+msgid ""
+"Encore is inspired by `Webpacker`_ and `Mix`_, but stays in the spirit of"
+" Webpack: using its features, concepts and naming conventions for a "
+"familiar feel. It aims to solve the most common Webpack use cases."
+msgstr ""
+
+#: ../../../frontend.rst:30
+msgid ""
+"Encore is made by `Symfony`_ and works *beautifully* in Symfony "
+"applications. But it can be used in any PHP application and even with "
+"other server side programming languages!"
+msgstr ""
+
+#: ../../../frontend.rst:37
+msgid "Encore Documentation"
+msgstr ""
+
+#: ../../../frontend.rst:40
+msgid "Getting Started"
+msgstr ""
+
+#: ../../../frontend.rst:42
+msgid ":doc:`Installation </frontend/encore/installation>`"
+msgstr ""
+
+#: ../../../frontend.rst:43
+msgid ":doc:`First Example </frontend/encore/simple-example>`"
+msgstr ""
+
+#: ../../../frontend.rst:46
+msgid "Adding more Features"
+msgstr ""
+
+#: ../../../frontend.rst:48
+msgid ""
+":doc:`CSS Preprocessors: Sass, LESS, etc </frontend/encore/css-"
+"preprocessors>`"
+msgstr ""
+
+#: ../../../frontend.rst:49
+msgid ":doc:`PostCSS and autoprefixing </frontend/encore/postcss>`"
+msgstr ""
+
+#: ../../../frontend.rst:50
+msgid ":doc:`Enabling React.js </frontend/encore/reactjs>`"
+msgstr ""
+
+#: ../../../frontend.rst:51
+msgid ":doc:`Enabling Vue.js (vue-loader) </frontend/encore/vuejs>`"
+msgstr ""
+
+#: ../../../frontend.rst:52
+msgid ":doc:`/frontend/encore/copy-files`"
+msgstr ""
+
+#: ../../../frontend.rst:53
+msgid ":doc:`Configuring Babel </frontend/encore/babel>`"
+msgstr ""
+
+#: ../../../frontend.rst:54
+msgid ":doc:`Source maps </frontend/encore/sourcemaps>`"
+msgstr ""
+
+#: ../../../frontend.rst:55
+msgid ":doc:`Enabling TypeScript (ts-loader) </frontend/encore/typescript>`"
+msgstr ""
+
+#: ../../../frontend.rst:58
+msgid "Optimizing"
+msgstr ""
+
+#: ../../../frontend.rst:60
+msgid ""
+":doc:`Versioning (and the entrypoints.json/manifest.json files) "
+"</frontend/encore/versioning>`"
+msgstr ""
+
+#: ../../../frontend.rst:61
+msgid ":doc:`Using a CDN </frontend/encore/cdn>`"
+msgstr ""
+
+#: ../../../frontend.rst:62
+msgid ":doc:`/frontend/encore/code-splitting`"
+msgstr ""
+
+#: ../../../frontend.rst:63
+msgid ":doc:`/frontend/encore/split-chunks`"
+msgstr ""
+
+#: ../../../frontend.rst:64
+msgid ""
+":doc:`Creating a \"Shared\" entry for re-used modules </frontend/encore"
+"/shared-entry>`"
+msgstr ""
+
+#: ../../../frontend.rst:65
+msgid ":doc:`/frontend/encore/url-loader`"
+msgstr ""
+
+#: ../../../frontend.rst:68
+msgid "Guides"
+msgstr ""
+
+#: ../../../frontend.rst:70
+msgid ":doc:`Using Bootstrap CSS & JS </frontend/encore/bootstrap>`"
+msgstr ""
+
+#: ../../../frontend.rst:71
+msgid ""
+":doc:`Creating Page-Specific CSS/JS </frontend/encore/page-specific-"
+"assets>`"
+msgstr ""
+
+#: ../../../frontend.rst:72
+msgid ""
+":doc:`jQuery and Legacy Applications </frontend/encore/legacy-"
+"applications>`"
+msgstr ""
+
+#: ../../../frontend.rst:73
+msgid ""
+":doc:`Passing Information from Twig to JavaScript </frontend/encore"
+"/server-data>`"
+msgstr ""
+
+#: ../../../frontend.rst:74
+msgid ""
+":doc:`webpack-dev-server and Hot Module Replacement (HMR) "
+"</frontend/encore/dev-server>`"
+msgstr ""
+
+#: ../../../frontend.rst:75
+msgid ""
+":doc:`Adding custom loaders & plugins </frontend/encore/custom-loaders-"
+"plugins>`"
+msgstr ""
+
+#: ../../../frontend.rst:76
+msgid ":doc:`Advanced Webpack Configuration </frontend/encore/advanced-config>`"
+msgstr ""
+
+#: ../../../frontend.rst:77
+msgid ""
+":doc:`Using Encore in a Virtual Machine </frontend/encore/virtual-"
+"machine>`"
+msgstr ""
+
+#: ../../../frontend.rst:80
+msgid "Issues & Questions"
+msgstr ""
+
+#: ../../../frontend.rst:82
+msgid ":doc:`FAQ & Common Issues </frontend/encore/faq>`"
+msgstr ""
+
+#: ../../../frontend.rst:83
+msgid ":doc:`/frontend/encore/versus-assetic`"
+msgstr ""
+
+#: ../../../frontend.rst:86
+msgid "Full API"
+msgstr ""
+
+#: ../../../frontend.rst:88
+msgid "`Full API`_"
+msgstr ""
+
+#: ../../../frontend.rst:91
+msgid "Other Front-End Articles"
+msgstr ""
+

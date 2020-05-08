@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/voters.rst:7
+msgid "How to Use Voters to Check User Permissions"
+msgstr ""
+
+#: ../../../security/voters.rst:9
+msgid ""
+"Security voters are the most granular way of checking permissions (e.g. "
+"\"can this specific user edit the given item?\"). This article explains "
+"voters in detail."
+msgstr ""
+
+#: ../../../security/voters.rst:14
+msgid ""
+"Take a look at the :doc:`authorization "
+"</components/security/authorization>` article for an even deeper "
+"understanding on voters."
+msgstr ""
+
+#: ../../../security/voters.rst:19
+msgid "How Symfony Uses Voters"
+msgstr ""
+
+#: ../../../security/voters.rst:21
+msgid ""
+"In order to use voters, you have to understand how Symfony works with "
+"them. All voters are called each time you use the ``isGranted()`` method "
+"on Symfony's authorization checker or call ``denyAccessUnlessGranted()`` "
+"in a controller (which uses the authorization checker), or by "
+":ref:`access controls <security-access-control-enforcement-options>`."
+msgstr ""
+
+#: ../../../security/voters.rst:27
+msgid ""
+"Ultimately, Symfony takes the responses from all voters and makes the "
+"final decision (to allow or deny access to the resource) according to the"
+" strategy defined in the application, which can be: affirmative, "
+"consensus, unanimous or priority."
+msgstr ""
+
+#: ../../../security/voters.rst:31
+msgid ""
+"For more information take a look at :ref:`the section about access "
+"decision managers <components-security-access-decision-manager>`."
+msgstr ""
+
+#: ../../../security/voters.rst:35
+msgid "The Voter Interface"
+msgstr ""
+
+#: ../../../security/voters.rst:37
+msgid ""
+"A custom voter needs to implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface`"
+" or extend "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\Voter`,"
+" which makes creating a voter even easier::"
+msgstr ""
+
+#: ../../../security/voters.rst:54
+msgid "Setup: Checking for Access in a Controller"
+msgstr ""
+
+#: ../../../security/voters.rst:56
+msgid ""
+"Suppose you have a ``Post`` object and you need to decide whether or not "
+"the current user can *edit* or *view* the object. In your controller, "
+"you'll check access with code like this::"
+msgstr ""
+
+#: ../../../security/voters.rst:94
+msgid ""
+"The ``denyAccessUnlessGranted()`` method (and also the ``isGranted()`` "
+"method) calls out to the \"voter\" system. Right now, no voters will vote"
+" on whether or not the user can \"view\" or \"edit\" a ``Post``. But you "
+"can create your *own* voter that decides this using whatever logic you "
+"want."
+msgstr ""
+
+#: ../../../security/voters.rst:100
+msgid "Creating the custom Voter"
+msgstr ""
+
+#: ../../../security/voters.rst:102
+msgid ""
+"Suppose the logic to decide if a user can \"view\" or \"edit\" a ``Post``"
+" object is pretty complex. For example, a ``User`` can always edit or "
+"view a ``Post`` they created. And if a ``Post`` is marked as \"public\", "
+"anyone can view it. A voter for this situation would look like this::"
+msgstr ""
+
+#: ../../../security/voters.rst:177
+msgid ""
+"That's it! The voter is done! Next, :ref:`configure it <declaring-the-"
+"voter-as-a-service>`."
+msgstr ""
+
+#: ../../../security/voters.rst:179
+msgid "To recap, here's what's expected from the two abstract methods:"
+msgstr ""
+
+#: ../../../security/voters.rst:189
+msgid "``Voter::supports($attribute, $subject)``"
+msgstr ""
+
+#: ../../../security/voters.rst:182
+msgid ""
+"When ``isGranted()`` (or ``denyAccessUnlessGranted()``) is called, the "
+"first argument is passed here as ``$attribute`` (e.g. ``ROLE_USER``, "
+"``edit``) and the second argument (if any) is passed as ``$subject`` "
+"(e.g. ``null``, a ``Post`` object). Your job is to determine if your "
+"voter should vote on the attribute/subject combination. If you return "
+"true, ``voteOnAttribute()`` will be called. Otherwise, your voter is "
+"done: some other voter should process this. In this example, you return "
+"``true`` if the attribute is ``view`` or ``edit`` and if the object is a "
+"``Post`` instance."
+msgstr ""
+
+#: ../../../security/voters.rst:195
+msgid "``voteOnAttribute($attribute, $subject, TokenInterface $token)``"
+msgstr ""
+
+#: ../../../security/voters.rst:192
+msgid ""
+"If you return ``true`` from ``supports()``, then this method is called. "
+"Your job is simple: return ``true`` to allow access and ``false`` to deny"
+" access. The ``$token`` can be used to find the current user object (if "
+"any). In this example, all of the complex business logic is included to "
+"determine access."
+msgstr ""
+
+#: ../../../security/voters.rst:200
+msgid "Configuring the Voter"
+msgstr ""
+
+#: ../../../security/voters.rst:202
+msgid ""
+"To inject the voter into the security layer, you must declare it as a "
+"service and tag it with ``security.voter``. But if you're using the "
+":ref:`default services.yaml configuration <service-container-services-"
+"load-example>`, that's done automatically for you! When you :ref:`call "
+"isGranted() with view/edit and pass a Post object <how-to-use-the-voter-"
+"in-a-controller>`, your voter will be executed and you can control "
+"access."
+msgstr ""
+
+#: ../../../security/voters.rst:210
+msgid "Checking for Roles inside a Voter"
+msgstr ""
+
+#: ../../../security/voters.rst:212
+msgid ""
+"What if you want to call ``isGranted()`` from *inside* your voter - e.g. "
+"you want to see if the current user has ``ROLE_SUPER_ADMIN``. That's "
+"possible by injecting the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Security` into your "
+"voter. You can use this to, for example, *always* allow access to a user "
+"with ``ROLE_SUPER_ADMIN``::"
+msgstr ""
+
+#: ../../../security/voters.rst:247
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, you're done! Symfony will "
+"automatically pass the ``security.helper`` service when instantiating "
+"your voter (thanks to autowiring)."
+msgstr ""
+
+#: ../../../security/voters.rst:254
+msgid "Changing the Access Decision Strategy"
+msgstr ""
+
+#: ../../../security/voters.rst:256
+msgid ""
+"Normally, only one voter will vote at any given time (the rest will "
+"\"abstain\", which means they return ``false`` from ``supports()``). But "
+"in theory, you could make multiple voters vote for one action and object."
+" For instance, suppose you have one voter that checks if the user is a "
+"member of the site and a second one that checks if the user is older than"
+" 18."
+msgstr ""
+
+#: ../../../security/voters.rst:262
+msgid ""
+"To handle these cases, the access decision manager uses a \"strategy\" "
+"which you can configure. There are three strategies available:"
+msgstr ""
+
+#: ../../../security/voters.rst:266
+msgid "``affirmative`` (default)"
+msgstr ""
+
+#: ../../../security/voters.rst:266
+msgid "This grants access as soon as there is *one* voter granting access;"
+msgstr ""
+
+#: ../../../security/voters.rst:269
+msgid "``consensus``"
+msgstr ""
+
+#: ../../../security/voters.rst:269
+msgid "This grants access if there are more voters granting access than denying;"
+msgstr ""
+
+#: ../../../security/voters.rst:274
+msgid "``unanimous``"
+msgstr ""
+
+#: ../../../security/voters.rst:272
+msgid ""
+"This only grants access if there is no voter denying access. If all "
+"voters abstained from voting, the decision is based on the "
+"``allow_if_all_abstain`` config option (which defaults to ``false``);"
+msgstr ""
+
+#: ../../../security/voters.rst:282
+msgid "``priority``"
+msgstr ""
+
+#: ../../../security/voters.rst:277
+msgid ""
+"This grants or denies access by the first voter that does not abstain, "
+"based on their service priority;"
+msgstr ""
+
+#: ../../../security/voters.rst:282
+msgid "The ``priority`` version strategy was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../security/voters.rst:284
+msgid ""
+"In the above scenario, both voters should grant access in order to grant "
+"access to the user to read the post. In this case, the default strategy "
+"is no longer valid and ``unanimous`` should be used instead. You can set "
+"this in the security configuration:"
+msgstr ""
+

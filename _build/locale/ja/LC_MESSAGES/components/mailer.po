@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/mailer.rst:6
+msgid "The Mailer Component"
+msgstr ""
+
+#: ../../../components/mailer.rst:8
+msgid "The Mailer component helps sending emails."
+msgstr ""
+
+#: ../../../components/mailer.rst:10
+msgid ""
+"If you're using the Symfony Framework, read the :doc:`Symfony Framework "
+"Mailer documentation </mailer>`."
+msgstr ""
+
+#: ../../../components/mailer.rst:14
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/mailer.rst:23
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/mailer.rst:25
+msgid ""
+"The Mailer component has two main classes: a ``Transport`` and the "
+"``Mailer`` itself::"
+msgstr ""
+
+#: ../../../components/mailer.rst:34
+msgid ""
+"The ``$email`` object is created via the :doc:`Mime component "
+"</components/mime>`."
+msgstr ""
+
+#: ../../../components/mailer.rst:37
+msgid "Transport"
+msgstr ""
+
+#: ../../../components/mailer.rst:39
+msgid "The only transport that comes pre-installed is SMTP."
+msgstr ""
+
+#: ../../../components/mailer.rst:41
+msgid "Below is the list of other popular providers with built-in support:"
+msgstr ""
+
+#: ../../../components/mailer.rst:44
+msgid "Service"
+msgstr ""
+
+#: ../../../components/mailer.rst:44
+msgid "Install with"
+msgstr ""
+
+#: ../../../components/mailer.rst:46 ../../../components/mailer.rst:93
+msgid "Amazon SES"
+msgstr ""
+
+#: ../../../components/mailer.rst:46
+msgid "``composer require symfony/amazon-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:47
+msgid "Gmail"
+msgstr ""
+
+#: ../../../components/mailer.rst:47
+msgid "``composer require symfony/google-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:48
+msgid "MailChimp"
+msgstr ""
+
+#: ../../../components/mailer.rst:48
+msgid "``composer require symfony/mailchimp-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:49 ../../../components/mailer.rst:96
+msgid "Mailgun"
+msgstr ""
+
+#: ../../../components/mailer.rst:49
+msgid "``composer require symfony/mailgun-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:50 ../../../components/mailer.rst:97
+msgid "Postmark"
+msgstr ""
+
+#: ../../../components/mailer.rst:50
+msgid "``composer require symfony/postmark-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:51
+msgid "SendGrid"
+msgstr ""
+
+#: ../../../components/mailer.rst:51
+msgid "``composer require symfony/sendgrid-mailer``"
+msgstr ""
+
+#: ../../../components/mailer.rst:54
+msgid ""
+"For example, suppose you want to use Google's Gmail SMTP server. First, "
+"install it:"
+msgstr ""
+
+#: ../../../components/mailer.rst:61
+msgid "Then, use the SMTP Gmail transport::"
+msgstr ""
+
+#: ../../../components/mailer.rst:70
+msgid ""
+"Each provider provides up to 3 transports: standard SMTP, HTTP (it uses "
+"the provider's API but the body is created by the mailer component), API "
+"(it uses the full API of the provider with no control over the body "
+"creation -- features might be limited as well)."
+msgstr ""
+
+#: ../../../components/mailer.rst:77
+msgid ""
+"The mailer component provides a convenient way to create a transport from"
+" a DSN::"
+msgstr ""
+
+#: ../../../components/mailer.rst:84
+msgid ""
+"Where ``$dsn`` depends on the provider you want to use. For plain SMTP, "
+"use ``smtp://user:pass@example.com`` or ``sendmail+smtp://default`` to "
+"use the ``sendmail`` binary. To disable the transport, use "
+"``null://null``."
+msgstr ""
+
+#: ../../../components/mailer.rst:88
+msgid "For third-party providers, refer to the following table:"
+msgstr ""
+
+#: ../../../components/mailer.rst:91
+msgid "Provider"
+msgstr ""
+
+#: ../../../components/mailer.rst:91
+msgid "SMTP"
+msgstr ""
+
+#: ../../../components/mailer.rst:91
+msgid "HTTP"
+msgstr ""
+
+#: ../../../components/mailer.rst:91
+msgid "API"
+msgstr ""
+
+#: ../../../components/mailer.rst:93
+msgid "ses+smtp://ACCESS_KEY:SECRET_KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:93
+msgid "ses+https://ACCESS_KEY:SECRET_KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:93
+msgid "ses+api://ACCESS_KEY:SECRET_KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:94
+msgid "Google Gmail"
+msgstr ""
+
+#: ../../../components/mailer.rst:94
+msgid "gmail+smtp://USERNAME:PASSWORD@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:94 ../../../components/mailer.rst:97
+#: ../../../components/mailer.rst:98
+msgid "n/a"
+msgstr ""
+
+#: ../../../components/mailer.rst:95
+msgid "Mailchimp Mandrill"
+msgstr ""
+
+#: ../../../components/mailer.rst:95
+msgid "mandrill+smtp://USERNAME:PASSWORD@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:95
+msgid "mandrill+https://KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:95
+msgid "mandrill+api://KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:96
+msgid "mailgun+smtp://USERNAME:PASSWORD@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:96
+msgid "mailgun+https://KEY:DOMAIN@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:96
+msgid "mailgun+api://KEY:DOMAIN@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:97
+msgid "postmark+smtp://ID:ID@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:97
+msgid "postmark+api://KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:98
+msgid "Sendgrid"
+msgstr ""
+
+#: ../../../components/mailer.rst:98
+msgid "sendgrid+smtp://apikey:KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:98
+msgid "sendgrid+api://KEY@default"
+msgstr ""
+
+#: ../../../components/mailer.rst:103
+msgid ""
+"When using SMTP, the default timeout for sending a message before "
+"throwing an exception is the value defined in the "
+"`default_socket_timeout`_ PHP.ini option."
+msgstr ""
+
+#: ../../../components/mailer.rst:108
+msgid ""
+"The usage of ``default_socket_timeout`` as the default timeout was "
+"introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/mailer.rst:111
+msgid ""
+"Instead of choosing a specific protocol, you can also let Symfony pick "
+"the best one by omitting it from the scheme: for instance, "
+"``mailgun://KEY:DOMAIN@default`` is equivalent to "
+"``mailgun+https://KEY:DOMAIN@default``."
+msgstr ""
+
+#: ../../../components/mailer.rst:115
+msgid ""
+"If you want to override the default host for a provider (to debug an "
+"issue using a service like ``requestbin.com``), change ``default`` by "
+"your host:"
+msgstr ""
+
+#: ../../../components/mailer.rst:123
+msgid "Note that the protocol is *always* HTTPs and cannot be changed."
+msgstr ""
+
+#: ../../../components/mailer.rst:126
+msgid "High Availability"
+msgstr ""
+
+#: ../../../components/mailer.rst:128
+msgid ""
+"Symfony's mailer supports `high availability`_ via a technique called "
+"\"failover\" to ensure that emails are sent even if one mailer server "
+"fails ."
+msgstr ""
+
+#: ../../../components/mailer.rst:131
+msgid ""
+"A failover transport is configured with two or more transports and the "
+"``failover`` keyword::"
+msgstr ""
+
+#: ../../../components/mailer.rst:136
+msgid ""
+"The mailer will start using the first transport. If the sending fails, "
+"the mailer won't retry it with the other transports, but it will switch "
+"to the next transport automatically for the following deliveries."
+msgstr ""
+
+#: ../../../components/mailer.rst:141
+msgid "Load Balancing"
+msgstr ""
+
+#: ../../../components/mailer.rst:143
+msgid ""
+"Symfony's mailer supports `load balancing`_ via a technique called "
+"\"round-robin\" to distribute the mailing workload across multiple "
+"transports ."
+msgstr ""
+
+#: ../../../components/mailer.rst:146
+msgid ""
+"A round-robin transport is configured with two or more transports and the"
+" ``roundrobin`` keyword::"
+msgstr ""
+
+#: ../../../components/mailer.rst:151
+msgid ""
+"The mailer will start using a randomly selected transport and if it "
+"fails, it will retry the same delivery with the next transports until one"
+" of them succeeds (or until all of them fail)."
+msgstr ""
+
+#: ../../../components/mailer.rst:157
+msgid ""
+"The random selection of the first transport was introduced in Symfony "
+"5.1. In previous Symfony versions the first transport was always selected"
+" first."
+msgstr ""
+
+#: ../../../components/mailer.rst:161
+msgid "TLS Peer Verification"
+msgstr ""
+
+#: ../../../components/mailer.rst:163
+msgid ""
+"By default, SMTP transports perform TLS peer verification. This behavior "
+"is configurable with the ``verify_peer`` option. Although it's not "
+"recommended to disable this verification for security reasons, it can be "
+"useful while developing the application or when using a self-signed "
+"certificate::"
+msgstr ""
+
+#: ../../../components/mailer.rst:172
+msgid "The ``verify_peer`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/mailer.rst:175
+msgid "Sending emails asynchronously"
+msgstr ""
+
+#: ../../../components/mailer.rst:177
+msgid ""
+"If you want to send emails asynchronously, install the :doc:`Messenger "
+"component </components/messenger>`."
+msgstr ""
+
+#: ../../../components/mailer.rst:184
+msgid ""
+"Then, instantiate and pass a ``MessageBus`` as a second argument to "
+"``Mailer``::"
+msgstr ""
+
+#: ../../../components/mailer.rst:219
+msgid "Learn More"
+msgstr ""
+
+#: ../../../components/mailer.rst:221
+msgid ""
+"To learn more about how to use the mailer component, refer to the "
+":doc:`Symfony Framework Mailer documentation </mailer>`."
+msgstr ""
+

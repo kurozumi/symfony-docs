@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/mercure.rst:6
+msgid "The Mercure Component"
+msgstr ""
+
+#: ../../../components/mercure.rst:8
+msgid ""
+"`Mercure`_ is an open protocol allowing to push data updates to web "
+"browsers and other HTTP clients in a convenient, fast, reliable and "
+"battery-friendly way. It is especially useful to publish real-time "
+"updates of resources served through web APIs, to reactive web and mobile "
+"applications."
+msgstr ""
+
+#: ../../../components/mercure.rst:14
+msgid ""
+"The Mercure Component implements the \"publisher\" part of the Mercure "
+"Protocol."
+msgstr ""
+
+#: ../../../components/mercure.rst:17
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/mercure.rst:26
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/mercure.rst:28
+msgid "The following example shows the component in action::"
+msgstr ""
+
+#: ../../../components/mercure.rst:42
+msgid ""
+"Read the full :doc:`Mercure integration documentation </mercure>` to "
+"learn about all the features of this component and its integration with "
+"the Symfony framework."
+msgstr ""
+

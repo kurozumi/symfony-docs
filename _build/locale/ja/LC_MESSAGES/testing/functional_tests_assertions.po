@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/functional_tests_assertions.rst:5
+msgid "Functional Test specific Assertions"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:7
+msgid ""
+"When doing functional tests, sometimes you need to make complex "
+"assertions in order to check whether the ``Request``, the ``Response`` or"
+" the ``Crawler`` contain the expected information to make your test "
+"succeed."
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:11
+msgid ""
+"The following example uses plain PHPUnit to assert that the response "
+"redirects to a certain URL::"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:17
+msgid "This is the same example using the assertions provided by Symfony::"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:22
+msgid "Assertions Reference"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:25
+msgid "Response"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:29
+#: ../../../testing/functional_tests_assertions.rst:48
+#: ../../../testing/functional_tests_assertions.rst:59
+msgid ""
+"The following assertions only work if a request has been made with the "
+"``Client`` in a test case extending the ``WebTestCase`` class."
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:32
+msgid "``assertResponseIsSuccessful()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:33
+msgid "``assertResponseStatusCodeSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:34
+msgid "``assertResponseRedirects()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:35
+msgid "``assertResponseHasHeader()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:36
+msgid "``assertResponseNotHasHeader()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:37
+msgid "``assertResponseHeaderSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:38
+msgid "``assertResponseHeaderNotSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:39
+msgid "``assertResponseHasCookie()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:40
+msgid "``assertResponseNotHasCookie()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:41
+msgid "``assertResponseCookieValueSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:44
+msgid "Request"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:51
+msgid "``assertRequestAttributeValueSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:52
+msgid "``assertRouteSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:55
+msgid "Browser"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:62
+msgid "``assertBrowserHasCookie()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:63
+msgid "``assertBrowserNotHasCookie()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:64
+msgid "``assertBrowserCookieValueSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:67
+msgid "Crawler"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:71
+msgid ""
+"The following assertions only work if a request has been made with the "
+"``Client`` in a test case extending the ``WebTestCase`` class. In "
+"addition, they are not available when using `symfony/panther`_ for end-"
+"to-end testing."
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:75
+msgid "``assertSelectorExists()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:76
+msgid "``assertSelectorNotExists()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:77
+msgid ""
+"``assertSelectorTextContains()`` (note: it only checks the first selector"
+" occurrence)"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:78
+msgid ""
+"``assertSelectorTextSame()`` (note: it only checks the first selector "
+"occurrence)"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:79
+msgid ""
+"``assertSelectorTextNotContains()`` (note: it only checks the first "
+"selector occurrence)"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:80
+msgid "``assertPageTitleSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:81
+msgid "``assertPageTitleContains()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:82
+msgid "``assertInputValueSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:83
+msgid "``assertInputValueNotSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:86
+msgid "Mailer"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:90
+msgid ""
+"Starting from Symfony 5.1, the following assertions no longer require to "
+"make a request with the ``Client`` in a test case extending the "
+"``WebTestCase`` class."
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:93
+msgid "``assertEmailCount()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:94
+msgid "``assertQueuedEmailCount()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:95
+msgid "``assertEmailIsQueued()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:96
+msgid "``assertEmailIsNotQueued()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:97
+msgid "``assertEmailAttachementCount()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:98
+msgid "``assertEmailTextBodyContains()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:99
+msgid "``assertEmailTextBodyNotContains()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:100
+msgid "``assertEmailHtmlBodyContains()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:101
+msgid "``assertEmailHtmlBodyNotContains()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:102
+msgid "``assertEmailHasHeader()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:103
+msgid "``assertEmailNotHasHeader()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:104
+msgid "``assertEmailHeaderSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:105
+msgid "``assertEmailHeaderNotSame()``"
+msgstr ""
+
+#: ../../../testing/functional_tests_assertions.rst:106
+msgid "``assertEmailAddressContains()``"
+msgstr ""
+

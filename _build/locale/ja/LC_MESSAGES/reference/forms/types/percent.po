@@ -1,0 +1,768 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/percent.rst:5
+msgid "PercentType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:7
+msgid ""
+"The ``PercentType`` renders an input text field and specializes in "
+"handling percentage data. If your percentage data is stored as a decimal "
+"(e.g. ``0.95``), you can use this field out-of-the-box. If you store your"
+" data as a number (e.g. ``95``), you should set the ``type`` option to "
+"``integer``."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:12
+msgid ""
+"When ``symbol`` is not ``false``, the field will render the given string "
+"after the input."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:16
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:16
+msgid "``input`` ``text`` field"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:18
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:18
+msgid "`rounding_mode`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:19
+msgid "`scale`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:20
+msgid "`symbol`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:21
+msgid "`type`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:23
+msgid "Overridden options"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:23
+msgid "`compound`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:26
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:26
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:27
+msgid "`data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:28
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:29
+msgid "`empty_data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:30
+msgid "`error_bubbling`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:31
+msgid "`error_mapping`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:32
+msgid "`help`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:33
+msgid "`help_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:34
+msgid "`help_html`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:35
+msgid "`invalid_message`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:36
+msgid "`invalid_message_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:37
+msgid "`label`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:38
+msgid "`label_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:39
+msgid "`label_format`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:40
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:41
+msgid "`required`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:42
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:44
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:44
+msgid ":doc:`FormType </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:46
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:46
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\PercentType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:52
+msgid "Field Options"
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:2
+msgid "rounding_mode"
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:4
+msgid ""
+"**type**: ``integer`` **default**: "
+"``NumberToLocalizedStringTransformer::ROUND_HALF_UP``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:6
+msgid ""
+"If a submitted number needs to be rounded (based on the `scale`_ option),"
+" you have several configurable options for that rounding. Each option is "
+"a constant on the "
+":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\DataTransformer\\\\NumberToLocalizedStringTransformer`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:10
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_DOWN`` Round towards zero. It"
+" rounds ``1.4`` to ``1`` and ``-1.4`` to ``-1``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:13
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_FLOOR`` Round towards "
+"negative infinity. It rounds ``1.4`` to ``1`` and ``-1.4`` to ``-2``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:16
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_UP`` Round away from zero. It"
+" rounds ``1.4`` to ``2`` and ``-1.4`` to ``-2``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:19
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_CEILING`` Round towards "
+"positive infinity. It rounds ``1.4`` to ``2`` and ``-1.4`` to ``-1``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:22
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_HALF_DOWN`` Round towards the"
+" \"nearest neighbor\". If both neighbors are equidistant, round down. It "
+"rounds ``2.5`` and ``1.6`` to ``2``, ``1.5`` and ``1.4`` to ``1``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:26
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_HALF_EVEN`` Round towards the"
+" \"nearest neighbor\". If both neighbors are equidistant, round towards "
+"the even neighbor. It rounds ``2.5``, ``1.6`` and ``1.5`` to ``2`` and "
+"``1.4`` to ``1``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/rounding_mode.rst.inc:30
+msgid ""
+"``NumberToLocalizedStringTransformer::ROUND_HALF_UP`` Round towards the "
+"\"nearest neighbor\". If both neighbors are equidistant, round up. It "
+"rounds ``2.5`` to ``3``, ``1.6`` and ``1.5`` to ``2`` and ``1.4`` to "
+"``1``."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:58
+msgid "The ``rounding_mode`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:61
+msgid "scale"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:63
+msgid "**type**: ``integer`` **default**: ``0``"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:65
+msgid ""
+"This specifies how many decimals will be allowed until the field rounds "
+"the submitted value (via ``rounding_mode``). For example, if ``scale`` is"
+" set to ``2``, a submitted value of ``20.123`` will be rounded to, for "
+"example, ``20.12`` (depending on your `rounding_mode`_)."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:71
+msgid "symbol"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:73
+msgid "**type**: ``boolean`` or ``string`` **default**: ``%``"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:75
+msgid ""
+"By default, fields are rendered with a percentage sign ``%`` after the "
+"input. Setting the value to ``false`` will not display the percentage "
+"sign. Setting the value to a ``string`` (e.g. ``‱``), will show that "
+"string instead of the default ``%`` sign."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:81
+msgid "type"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:83
+msgid "**type**: ``string`` **default**: ``fractional``"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:85
+msgid ""
+"This controls how your data is stored on your object. For example, a "
+"percentage corresponding to \"55%\", might be stored as ``0.55`` or "
+"``55`` on your object. The two \"types\" handle these two cases:"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:89
+msgid ""
+"``fractional`` If your data is stored as a decimal (e.g. ``0.55``), use "
+"this type. The data will be multiplied by ``100`` before being shown to "
+"the user (e.g. ``55``). The submitted data will be divided by ``100`` on "
+"form submit so that the decimal value is stored (``0.55``);"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:95
+msgid ""
+"``integer`` If your data is stored as an integer (e.g. 55), then use this"
+" option. The raw value (``55``) is shown to the user and stored on your "
+"object. Note that this only works for integer values."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:101
+msgid "Overridden Options"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:2
+msgid "``compound``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/compound_type.rst.inc:6
+msgid ""
+"This option specifies whether the type contains child types or not. This "
+"option is managed internally for built-in types, so there is no need to "
+"configure it explicitly."
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:106
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:108
+msgid ""
+"These options inherit from the :doc:`FormType "
+"</reference/forms/types/form>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:2
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:4
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:4
+#: ../../../reference/forms/types/options/help_attr.rst.inc:4
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:4
+#: ../../../reference/forms/types/options/label_attr.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to an HTML field representation you "
+"can use the ``attr`` option. It's an associative array with HTML "
+"attributes as keys. This can be useful when you need to set a custom "
+"class for some widget::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:16
+msgid ""
+"Use the ``row_attr`` option if you want to add these attributes to the "
+"the :ref:`form type row <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:2
+msgid "``data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying "
+"structure."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain data (e.g. if you bind an "
+"object to the form). If you want to override this initial value for the "
+"form or an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:21
+msgid ""
+"The ``data`` option *always* overrides the value taken from the domain "
+"data (object) when rendering. This means the object value is also "
+"overridden when the form edits an already persisted object, causing it to"
+" lose its persisted value when the form is submitted."
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:2
+msgid "``empty_data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:4
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../../reference/forms/types/percent.rst:119
+msgid "The default value is ``''`` (the empty string)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:3
+msgid ""
+"This option determines what value the field will *return* when the "
+"submitted value is empty (or missing). It does not set an initial value "
+"if none is provided when the form is rendered in a view."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:7
+msgid ""
+"This means it helps you handling form submission with blank fields. For "
+"example, if you want the ``name`` field to be explicitly set to ``John "
+"Doe`` when no value is selected, you can do it like this::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:16
+msgid ""
+"This will still render an empty text box, but upon submission the ``John "
+"Doe`` value will be set. Use the ``data`` or ``placeholder`` options to "
+"show this initial value in the rendered form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:20
+msgid ""
+"If a form is compound, you can set ``empty_data`` as an array, object or "
+"closure. See the :doc:`/form/use_empty_data` article for more details "
+"about these options."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:26
+msgid ""
+"If you want to set the ``empty_data`` option for your entire form class, "
+"see the :doc:`/form/use_empty_data` article."
+msgstr ""
+
+#: ../../../reference/forms/types/options/empty_data.rst.inc:31
+msgid ""
+":doc:`Form data transformers </form/data_transformers>` will still be "
+"applied to the ``empty_data`` value. This means that an empty string will"
+" be cast to ``null``. Use a custom data transformer if you explicitly "
+"want to return the empty string."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_bubbling.rst.inc:2
+msgid "``error_bubbling``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_bubbling.rst.inc:4
+msgid ""
+"**type**: ``boolean`` **default**: ``false`` unless the form is "
+"``compound``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_error_bubbling_body.rst.inc:1
+msgid ""
+"If ``true``, any errors for this field will be passed to the parent field"
+" or form. For example, if set to ``true`` on a normal field, any errors "
+"for that field will be attached to the main form, not to the specific "
+"field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:2
+msgid "``error_mapping``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:6
+msgid "This option allows you to modify the target of a validation error."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:8
+msgid ""
+"Imagine you have a custom method named ``matchingCityAndZipCode()`` that "
+"validates whether the city and zip code match. Unfortunately, there is no"
+" ``matchingCityAndZipCode`` field in your form, so all that Symfony can "
+"do is display the error on top of the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:13
+msgid ""
+"With customized error mapping, you can do better: map the error to the "
+"city field so that it displays above it::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:25
+msgid "Here are the rules for the left and the right side of the mapping:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:27
+msgid "The left side contains property paths;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:28
+msgid ""
+"If the violation is generated on a property or method of a class, its "
+"path is the ``propertyName``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:30
+msgid ""
+"If the violation is generated on an entry of an ``array`` or "
+"``ArrayAccess`` object, the property path is ``[indexName]``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:32
+msgid ""
+"You can construct nested property paths by concatenating them, separating"
+" properties by dots. For example: "
+"``addresses[work].matchingCityAndZipCode``;"
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:34
+msgid "The right side contains the names of fields in the form."
+msgstr ""
+
+#: ../../../reference/forms/types/options/error_mapping.rst.inc:36
+msgid ""
+"By default, errors for any property that is not mapped will bubble up to "
+"the parent form. You can use the dot (``.``) on the left side to map "
+"errors of all unmapped properties to a particular field. For instance, to"
+" map all these errors to the ``city`` field, use::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:2
+msgid "help"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:4
+msgid "**type**: ``string`` **default**: null"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:6
+msgid ""
+"Allows you to define a help message for the form field, which by default "
+"is rendered below the field::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:2
+msgid "help_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the element used to display the help message"
+" of the form field. Its value is an associative array with HTML attribute"
+" names as keys. These attributes can also be set in the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:2
+msgid "help_html"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:4
+msgid "**type**: ``bool`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:6
+msgid ""
+"By default, the contents of the ``help`` option are escaped before "
+"rendering them in the template. Set this option to ``true`` to not escape"
+" them, which is useful when the help contains HTML elements."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:2
+msgid "``invalid_message``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:4
+msgid "**type**: ``string`` **default**: ``This value is not valid``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:6
+msgid ""
+"This is the validation error message that's used if the data entered into"
+" this field doesn't make sense (i.e. fails validation)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:9
+msgid ""
+"This might happen, for example, if the user enters a nonsense string into"
+" a :doc:`TimeType </reference/forms/types/time>` field that cannot be "
+"converted into a real time or if the user enters a string (e.g. "
+"``apple``) into a number field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:14
+msgid ""
+"Normal (business logic) validation (such as when setting a minimum length"
+" for a field) should be set using validation messages with your "
+"validation rules (:ref:`reference <validation-constraint-"
+"configuration>`)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:2
+msgid "``invalid_message_parameters``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:6
+msgid ""
+"When setting the ``invalid_message`` option, you may need to include some"
+" variables in the string. This can be done by adding placeholders to that"
+" option and including the variables in this option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:2
+msgid "``label``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field"
+" name"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label.rst.inc:6
+msgid ""
+"Sets the label that will be used when rendering the field. Setting to "
+"false will suppress the label. The label can also be directly set inside "
+"the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_attr.rst.inc:2
+msgid "``label_attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the ``<label>`` element, which will be used "
+"when rendering the label for the field. It's an associative array with "
+"HTML attribute as a key. This attributes can also be directly set inside "
+"the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:2
+msgid "``label_format``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:4
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:6
+msgid ""
+"Configures the string used as the label of the field, in case the "
+"``label`` option was not set. This is useful when using :ref:`keyword "
+"translation messages <translation-real-vs-keyword-messages>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:10
+msgid ""
+"If you're using keyword translation messages as labels, you often end up "
+"having multiple keyword messages for the same label (e.g. "
+"``profile_address_street``, ``invoice_address_street``). This is because "
+"the label is built for each \"path\" to a field. To avoid duplicated "
+"keyword messages, you can configure the label format to a static value, "
+"like::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:25
+msgid ""
+"This option is inherited by the child types. With the code above, the "
+"label of the ``street`` field of both forms will use the "
+"``form.address.street`` keyword message."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:29
+msgid "Two variables are available in the label format:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+#, python-format
+msgid "``%id%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:32
+msgid ""
+"A unique identifier for the field, consisting of the complete path to the"
+" field and the field name (e.g. ``profile_address_street``);"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "``%name%``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:35
+msgid "The field name (e.g. ``street``)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:37
+msgid ""
+"The default value (``null``) results in a :ref:`\"humanized\" version "
+"<reference-twig-humanize-filter>` of the field name."
+msgstr ""
+
+#: ../../../reference/forms/types/options/label_format.rst.inc:42
+msgid ""
+"The ``label_format`` option is evaluated in the form theme. Make sure to "
+"update your templates in case you :doc:`customized form theming "
+"</form/form_customization>`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:2
+msgid "``mapped``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the "
+"object, you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:2
+msgid "``required``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:6
+msgid ""
+"If true, an `HTML5 required attribute`_ will be rendered. The "
+"corresponding ``label`` will also render with a ``required`` class."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:9
+msgid ""
+"This is superficial and independent of validation. At best, if you let "
+"Symfony guess your field type, then the value of this option will be "
+"guessed from your validation information."
+msgstr ""
+
+#: ../../../reference/forms/types/options/required.rst.inc:15
+msgid ""
+"The required option also affects how empty data for each field is "
+"handled. For more details, see the `empty_data`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+

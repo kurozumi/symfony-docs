@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/processors.rst:2
+msgid "How to Add extra Data to Log Messages via a Processor"
+msgstr ""
+
+#: ../../../logging/processors.rst:4
+msgid ""
+"`Monolog`_ allows you to process every record before logging it by adding"
+" some extra data. This is the role of a processor, which can be applied "
+"for the whole handler stack or only for a specific handler or channel."
+msgstr ""
+
+#: ../../../logging/processors.rst:8
+msgid ""
+"A processor is a callable receiving the record as its first argument. "
+"Processors are configured using the ``monolog.processor`` DIC tag. See "
+"the :ref:`reference about it <dic_tags-monolog-processor>`."
+msgstr ""
+
+#: ../../../logging/processors.rst:13
+msgid "Adding a Session/Request Token"
+msgstr ""
+
+#: ../../../logging/processors.rst:15
+msgid ""
+"Sometimes it is hard to tell which entries in the log belong to which "
+"session and/or request. The following example will add a unique token for"
+" each request using a processor::"
+msgstr ""
+
+#: ../../../logging/processors.rst:50
+msgid ""
+"Next, register your class as a service, as well as a formatter that uses "
+"the extra information:"
+msgstr ""
+
+#: ../../../logging/processors.rst:107
+msgid "Finally, set the formatter to be used on whatever handler you want:"
+msgstr ""
+
+#: ../../../logging/processors.rst:159
+msgid ""
+"If you use several handlers, you can also register a processor at the "
+"handler level or at the channel level instead of registering it globally "
+"(see the following sections)."
+msgstr ""
+
+#: ../../../logging/processors.rst:163
+msgid ""
+"Symfony's MonologBridge provides processors that can be registered inside"
+" your application."
+msgstr ""
+
+#: ../../../logging/processors.rst:167
+msgid ":class:`Symfony\\\\Bridge\\\\Monolog\\\\Processor\\\\DebugProcessor`"
+msgstr ""
+
+#: ../../../logging/processors.rst:166
+msgid ""
+"Adds additional information useful for debugging like a timestamp or an "
+"error message to the record."
+msgstr ""
+
+#: ../../../logging/processors.rst:171
+msgid ":class:`Symfony\\\\Bridge\\\\Monolog\\\\Processor\\\\TokenProcessor`"
+msgstr ""
+
+#: ../../../logging/processors.rst:170
+msgid ""
+"Adds information from the current user's token to the record namely "
+"username, roles and whether the user is authenticated."
+msgstr ""
+
+#: ../../../logging/processors.rst:175
+msgid ":class:`Symfony\\\\Bridge\\\\Monolog\\\\Processor\\\\WebProcessor`"
+msgstr ""
+
+#: ../../../logging/processors.rst:174
+msgid ""
+"Overrides data from the request using the data inside Symfony's request "
+"object."
+msgstr ""
+
+#: ../../../logging/processors.rst:178
+msgid ":class:`Symfony\\\\Bridge\\\\Monolog\\\\Processor\\\\RouteProcessor`"
+msgstr ""
+
+#: ../../../logging/processors.rst:178
+msgid ""
+"Adds information about current route (controller, action, route "
+"parameters)."
+msgstr ""
+
+#: ../../../logging/processors.rst:181
+msgid ":class:`Symfony\\\\Bridge\\\\Monolog\\\\Processor\\\\ConsoleCommandProcessor`"
+msgstr ""
+
+#: ../../../logging/processors.rst:181
+msgid "Adds information about current console command."
+msgstr ""
+
+#: ../../../logging/processors.rst:185
+msgid ""
+"Check out the `built-in Monolog processors`_ to learn more about how to "
+"create these processors."
+msgstr ""
+
+#: ../../../logging/processors.rst:189
+msgid "Registering Processors per Handler"
+msgstr ""
+
+#: ../../../logging/processors.rst:191
+msgid ""
+"You can register a processor per handler using the ``handler`` option of "
+"the ``monolog.processor`` tag:"
+msgstr ""
+
+#: ../../../logging/processors.rst:233
+msgid "Registering Processors per Channel"
+msgstr ""
+
+#: ../../../logging/processors.rst:235
+msgid ""
+"You can register a processor per channel using the ``channel`` option of "
+"the ``monolog.processor`` tag:"
+msgstr ""
+

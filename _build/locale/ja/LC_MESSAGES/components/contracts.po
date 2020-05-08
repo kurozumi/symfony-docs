@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/contracts.rst:6
+msgid "The Contracts Component"
+msgstr ""
+
+#: ../../../components/contracts.rst:8
+msgid ""
+"The Contracts component provides a set of abstractions extracted out of "
+"the Symfony components. They can be used to build on semantics that the "
+"Symfony components proved useful - and that already have battle-tested "
+"implementations."
+msgstr ""
+
+#: ../../../components/contracts.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/contracts.rst:15
+msgid ""
+"Contracts are provided as separate packages, so you can install only the "
+"ones your projects really need:"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/contracts.rst:29
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/contracts.rst:31
+msgid ""
+"The abstractions in this package are useful to achieve loose coupling and"
+" interoperability. By using the provided interfaces as type hints, you "
+"are able to reuse any implementations that match their contracts. It "
+"could be a Symfony component, or another package provided by the PHP "
+"community at large."
+msgstr ""
+
+#: ../../../components/contracts.rst:36
+msgid ""
+"Depending on their semantics, some interfaces can be combined with "
+":doc:`autowiring </service_container/autowiring>` to seamlessly inject a "
+"service in your classes."
+msgstr ""
+
+#: ../../../components/contracts.rst:40
+msgid ""
+"Others might be useful as labeling interfaces, to hint about a specific "
+"behavior that can be enabled when using :ref:`autoconfiguration "
+"<services-autoconfigure>` or manual :doc:`service tagging "
+"</service_container/tags>` (or any other means provided by your "
+"framework.)"
+msgstr ""
+
+#: ../../../components/contracts.rst:46
+msgid "Design Principles"
+msgstr ""
+
+#: ../../../components/contracts.rst:48
+msgid "Contracts are split by domain, each into their own sub-namespaces;"
+msgstr ""
+
+#: ../../../components/contracts.rst:49
+msgid ""
+"Contracts are small and consistent sets of PHP interfaces, traits, "
+"normative docblocks and reference test suites when applicable, ...;"
+msgstr ""
+
+#: ../../../components/contracts.rst:51
+msgid "Contracts must have a proven implementation to enter this repository;"
+msgstr ""
+
+#: ../../../components/contracts.rst:52
+msgid "Contracts must be backward compatible with existing Symfony components."
+msgstr ""
+
+#: ../../../components/contracts.rst:54
+msgid ""
+"Packages that implement specific contracts should list them in the "
+"``provide`` section of their ``composer.json`` file, using the "
+"``symfony/*-implementation`` convention. For example:"
+msgstr ""
+
+#: ../../../components/contracts.rst:68
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../../components/contracts.rst:71
+msgid "How Is this Different From PHP-FIG's PSRs?"
+msgstr ""
+
+#: ../../../components/contracts.rst:73
+msgid ""
+"When applicable, the provided contracts are built on top of `PHP-FIG`_'s "
+"PSRs. However, PHP-FIG has different goals and different processes. "
+"Symfony Contracts focuses  on providing abstractions that are useful on "
+"their own while still compatible with implementations provided by "
+"Symfony."
+msgstr ""
+

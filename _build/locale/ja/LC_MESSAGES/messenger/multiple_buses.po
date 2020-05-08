@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../messenger/multiple_buses.rst:5
+msgid "Multiple Buses"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:7
+msgid ""
+"A common architecture when building applications is to separate commands "
+"from queries. Commands are actions that do something and queries fetch "
+"data. This is called CQRS (Command Query Responsibility Segregation). See"
+" Martin Fowler's `article about CQRS`_ to learn more. This architecture "
+"could be used together with the Messenger component by defining multiple "
+"buses."
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:13
+msgid ""
+"A **command bus** is a little different from a **query bus**. For "
+"example, command buses usually don't provide any results and query buses "
+"are rarely asynchronous. You can configure these buses and their rules by"
+" using middleware."
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:17
+msgid ""
+"It might also be a good idea to separate actions from reactions by "
+"introducing an **event bus**. The event bus could have zero or more "
+"subscribers."
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:99
+msgid "This will create three new services:"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:101
+msgid ""
+"``command.bus``: autowireable with the "
+":class:`Symfony\\\\Component\\\\Messenger\\\\MessageBusInterface` type-"
+"hint (because this is the ``default_bus``);"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:104
+msgid "``query.bus``: autowireable with ``MessageBusInterface $queryBus``;"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:106
+msgid "``event.bus``: autowireable with ``MessageBusInterface $eventBus``."
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:109
+msgid "Restrict Handlers per Bus"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:111
+msgid ""
+"By default, each handler will be available to handle messages on *all* of"
+" your buses. To prevent dispatching a message to the wrong bus without an"
+" error, you can restrict each handler to a specific bus using the "
+"``messenger.message_handler`` tag:"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:150
+msgid ""
+"This way, the ``App\\MessageHandler\\SomeCommandHandler`` handler will "
+"only be known by the ``command.bus`` bus."
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:153
+msgid ""
+"You can also automatically add this tag to a number of classes by "
+"following a naming convention and registering all of the handler services"
+" by name with the correct tag:"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:216
+msgid "Debugging the Buses"
+msgstr ""
+
+#: ../../../messenger/multiple_buses.rst:218
+msgid ""
+"The ``debug:messenger`` command lists available messages & handlers per "
+"bus. You can also restrict the list to a specific bus by providing its "
+"name as argument."
+msgstr ""
+

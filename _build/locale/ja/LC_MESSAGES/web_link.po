@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../web_link.rst:5
+msgid "Asset Preloading and Resource Hints with HTTP/2 and WebLink"
+msgstr ""
+
+#: ../../../web_link.rst:7
+msgid ""
+"Symfony provides native support (via the :doc:`WebLink component "
+"</components/web_link>`) for managing ``Link`` HTTP headers, which are "
+"the key to improve the application performance when using HTTP/2 and "
+"preloading capabilities of modern web browsers."
+msgstr ""
+
+#: ../../../web_link.rst:11
+msgid ""
+"``Link`` headers are used in `HTTP/2 Server Push`_ and W3C's `Resource "
+"Hints`_ to push resources (e.g. CSS and JavaScript files) to clients "
+"before they even know that they need them. WebLink also enables other "
+"optimizations that work with HTTP 1.x:"
+msgstr ""
+
+#: ../../../web_link.rst:16
+msgid ""
+"Asking the browser to fetch or to render another web page in the "
+"background;"
+msgstr ""
+
+#: ../../../web_link.rst:17
+msgid "Making early DNS lookups, TCP handshakes or TLS negotiations."
+msgstr ""
+
+#: ../../../web_link.rst:19
+msgid ""
+"Something important to consider is that all these HTTP/2 features require"
+" a secure HTTPS connection, even when working on your local machine. The "
+"main web servers (Apache, nginx, Caddy, etc.) support this, but you can "
+"also use the `Docker installer and runtime for Symfony`_ created by Kévin"
+" Dunglas, from the Symfony community."
+msgstr ""
+
+#: ../../../web_link.rst:26
+msgid "Preloading Assets"
+msgstr ""
+
+#: ../../../web_link.rst:28
+msgid "Imagine that your application includes a web page like this:"
+msgstr ""
+
+#: ../../../web_link.rst:46
+msgid ""
+"Following the traditional HTTP workflow, when this page is served "
+"browsers will make one request for the HTML page and another request for "
+"the linked CSS file. However, thanks to HTTP/2 your application can start"
+" sending the CSS file contents even before browsers request them."
+msgstr ""
+
+#: ../../../web_link.rst:51
+msgid "To do that, first install the WebLink component:"
+msgstr ""
+
+#: ../../../web_link.rst:57
+msgid ""
+"Now, update the template to use the ``preload()`` Twig function provided "
+"by WebLink. The `\"as\" attribute`_ is mandatory because browsers need it"
+" to apply correct prioritization and the content security policy:"
+msgstr ""
+
+#: ../../../web_link.rst:68
+msgid ""
+"If you reload the page, the perceived performance will improve because "
+"the server responded with both the HTML page and the CSS file when the "
+"browser only requested the HTML page."
+msgstr ""
+
+#: ../../../web_link.rst:74
+msgid "You can preload an asset by wrapping it with the ``preload()`` function:"
+msgstr ""
+
+#: ../../../web_link.rst:83
+msgid ""
+"Additionally, according to `the Priority Hints specification`_, you can "
+"signal the priority of the resource to download using the ``importance`` "
+"attribute:"
+msgstr ""
+
+#: ../../../web_link.rst:94
+msgid "How does it work?"
+msgstr ""
+
+#: ../../../web_link.rst:96
+msgid ""
+"The WebLink component manages the ``Link`` HTTP headers added to the "
+"response. When using the ``preload()`` function in the previous example, "
+"the following header was added to the response: ``Link </app.css>; "
+"rel=\"preload\"; as=\"style\"`` According to `the Preload "
+"specification`_, when an HTTP/2 server detects that the original (HTTP "
+"1.x) response contains this HTTP header, it will automatically trigger a "
+"push for the related file in the same HTTP/2 connection."
+msgstr ""
+
+#: ../../../web_link.rst:103
+msgid ""
+"Popular proxy services and CDNs including `Cloudflare`_, `Fastly`_ and "
+"`Akamai`_ also leverage this feature. It means that you can push "
+"resources to clients and improve performance of your applications in "
+"production right now."
+msgstr ""
+
+#: ../../../web_link.rst:107
+msgid ""
+"If you want to prevent the push but let the browser preload the resource "
+"by issuing an early separate HTTP request, use the ``nopush`` option:"
+msgstr ""
+
+#: ../../../web_link.rst:118
+msgid "Resource Hints"
+msgstr ""
+
+#: ../../../web_link.rst:120
+msgid ""
+"`Resource Hints`_ are used by applications to help browsers when deciding"
+" which resources should be downloaded, preprocessed or connected to "
+"first."
+msgstr ""
+
+#: ../../../web_link.rst:123
+msgid ""
+"The WebLink component provides the following Twig functions to send those"
+" hints:"
+msgstr ""
+
+#: ../../../web_link.rst:125
+msgid ""
+"``dns_prefetch()``: \"indicates an origin (e.g. "
+"``https://foo.cloudfront.net``) that will be used to fetch required "
+"resources, and that the user agent should resolve as early as possible\"."
+msgstr ""
+
+#: ../../../web_link.rst:128
+msgid ""
+"``preconnect()``: \"indicates an origin (e.g. ``https://www.google-"
+"analytics.com``) that will be used to fetch required resources. "
+"Initiating an early connection, which includes the DNS lookup, TCP "
+"handshake, and optional TLS negotiation, allows the user agent to mask "
+"the high latency costs of establishing a connection\"."
+msgstr ""
+
+#: ../../../web_link.rst:132
+msgid ""
+"``prefetch()``: \"identifies a resource that might be required by the "
+"next navigation, and that the user agent *should* fetch, such that the "
+"user agent can deliver a faster response once the resource is requested "
+"in the future\"."
+msgstr ""
+
+#: ../../../web_link.rst:135
+msgid ""
+"``prerender()``: \"identifies a resource that might be required by the "
+"next navigation, and that the user agent *should* fetch and execute, such"
+" that the user agent can deliver a faster response once the resource is "
+"requested later\"."
+msgstr ""
+
+#: ../../../web_link.rst:139
+msgid ""
+"The component also supports sending HTTP links not related to performance"
+" and any link implementing the `PSR-13`_ standard. For instance, any "
+"`link defined in the HTML specification`_:"
+msgstr ""
+
+#: ../../../web_link.rst:151
+msgid ""
+"The previous snippet will result in this HTTP header being sent to the "
+"client: ``Link: </index.jsonld>; rel=\"alternate\",</app.css>; "
+"rel=\"preload\"; nopush``"
+msgstr ""
+
+#: ../../../web_link.rst:154
+msgid ""
+"You can also add links to the HTTP response directly from controllers and"
+" services::"
+msgstr ""
+
+#: ../../../web_link.rst:183
+msgid ""
+"WebLink can be used :doc:`as a standalone PHP library "
+"</components/web_link>` without requiring the entire Symfony framework."
+msgstr ""
+

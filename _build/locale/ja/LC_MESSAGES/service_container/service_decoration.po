@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/service_decoration.rst:5
+msgid "How to Decorate Services"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:7
+msgid "When overriding an existing definition, the original service is lost:"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:57
+msgid ""
+"Most of the time, that's exactly what you want to do. But sometimes, you "
+"might want to decorate the old one instead (i.e. apply the `Decorator "
+"pattern`_). In this case, the old service should be kept around to be "
+"able to reference it in the new one. This configuration replaces "
+"``App\\Mailer`` with a new one, but keeps a reference of the old one as "
+"``.inner``:"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:115
+msgid ""
+"The ``decorates`` option tells the container that the "
+"``App\\DecoratingMailer`` service replaces the ``App\\Mailer`` service. "
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, the decorated service is automatically"
+" injected when the constructor of the decorating service has one argument"
+" type-hinted with the decorated service class."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:121
+msgid ""
+"If you are not using autowiring or the decorating service has more than "
+"one constructor argument type-hinted with the decorated service class, "
+"you must inject the decorated service explicitly (the ID of the decorated"
+" service is automatically changed to ``'.inner'``):"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:180
+msgid ""
+"The special ``.inner`` value was introduced in Symfony 5.1. In previous "
+"versions you needed to use: ``decorating_service_id + '.inner'``."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:185
+msgid ""
+"The visibility of the decorated ``App\\Mailer`` service (which is an "
+"alias for the new service) will still be the same as the original "
+"``App\\Mailer`` visibility."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:191
+msgid ""
+"The generated inner id is based on the id of the decorator service "
+"(``App\\DecoratingMailer`` here), not of the decorated service "
+"(``App\\Mailer`` here). You can control the inner service name via the "
+"``decoration_inner_name`` option:"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:249
+msgid "Decoration Priority"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:251
+msgid ""
+"When applying multiple decorators to a service, you can control their "
+"order with the ``decoration_priority`` option. Its value is an integer "
+"that defaults to ``0`` and higher priorities mean that decorators will be"
+" applied earlier."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:314
+msgid "The generated code will be the following::"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:319
+msgid "Control the Behavior When the Decorated Service Does Not Exist"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:321
+msgid ""
+"When you decorate a service that doesn't exist, the "
+"``decoration_on_invalid`` option allows you to choose the behavior to "
+"adopt."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:324
+msgid "Three different behaviors are available:"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:326
+msgid ""
+"``exception``: A ``ServiceNotFoundException`` will be thrown telling that"
+" decorator's dependency is missing. (default)"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:327
+msgid "``ignore``: The container will remove the decorator."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:328
+msgid ""
+"``null``: The container will keep the decorator service and will set the "
+"decorated one to ``null``."
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:380
+msgid ""
+"When using ``null``, you may have to update the decorator constructor in "
+"order to make decorated dependency nullable::"
+msgstr ""
+
+#: ../../../service_container/service_decoration.rst:408
+msgid ""
+"Sometimes, you may want to add a compiler pass that creates service "
+"definitions on the fly. If you want to decorate such a service, be sure "
+"that your compiler pass is registered with "
+"``PassConfig::TYPE_BEFORE_OPTIMIZATION`` type so that the decoration pass"
+" will be able to find the created services."
+msgstr ""
+

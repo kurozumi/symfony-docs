@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/legacy-applications.rst:2
+msgid "jQuery Plugins and Legacy Applications"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:4
+msgid ""
+"Inside Webpack, when you require a module, it does *not* (usually) set a "
+"global variable. Instead, it just returns a value:"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:12
+msgid ""
+"In practice, this will cause problems with some outside libraries that "
+"*rely* on jQuery to be global *or* if *your* JavaScript isn't being "
+"processed through Webpack (e.g. you have some JavaScript in your "
+"templates) and you need jQuery. Both will cause similar errors:"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:22
+msgid "The fix depends on what code is causing the problem."
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:27
+msgid "Fixing jQuery Plugins that Expect jQuery to be Global"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:29
+msgid ""
+"jQuery plugins often expect that jQuery is already available via the "
+"``$`` or ``jQuery`` global variables. To fix this, call "
+"``autoProvidejQuery()`` from your ``webpack.config.js`` file:"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:40
+msgid ""
+"After restarting Encore, Webpack will look for all uninitialized ``$`` "
+"and ``jQuery`` variables and automatically require ``jquery`` and set "
+"those variables for you. It \"rewrites\" the \"bad\" code to be correct."
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:44
+msgid ""
+"Internally, this ``autoProvidejQuery()`` method calls the "
+"``autoProvideVariables()`` method from Encore. In practice, it's "
+"equivalent to doing:"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:61
+msgid "Accessing jQuery from outside of Webpack JavaScript Files"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:63
+msgid ""
+"If *your* code needs access to ``$`` or ``jQuery`` and you are inside of "
+"a file that's processed by Webpack/Encore, you should remove any \"$ is "
+"not defined\" errors by requiring jQuery: ``var $ = require('jquery')``."
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:67
+msgid ""
+"But if you also need to provide access to ``$`` and ``jQuery`` variables "
+"outside of JavaScript files processed by Webpack (e.g. JavaScript that "
+"still lives in your templates), you need to manually set these as global "
+"variables in some JavaScript file that is loaded before your legacy code."
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:72
+msgid ""
+"For example, in your ``app.js`` file that's processed by Webpack and "
+"loaded on every page, add:"
+msgstr ""
+
+#: ../../../frontend/encore/legacy-applications.rst:83
+msgid ""
+"The ``global`` variable is a special way of setting things in the "
+"``window`` variable. In a web context, using ``global`` and ``window`` "
+"are equivalent, except that ``window.jQuery`` won't work when using "
+"``autoProvidejQuery()``. In other words, use ``global``."
+msgstr ""
+

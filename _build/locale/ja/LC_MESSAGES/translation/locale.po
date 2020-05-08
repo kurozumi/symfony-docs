@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/locale.rst:5
+msgid "How to Work with the User's Locale"
+msgstr ""
+
+#: ../../../translation/locale.rst:7
+msgid ""
+"The locale of the current user is stored in the request and is accessible"
+" via the ``Request`` object::"
+msgstr ""
+
+#: ../../../translation/locale.rst:17
+msgid ""
+"To set the user's locale, you may want to create a custom event listener "
+"so that it's set before any other parts of the system (i.e. the "
+"translator) need it::"
+msgstr ""
+
+#: ../../../translation/locale.rst:31
+msgid ""
+"The custom listener must be called **before** ``LocaleListener``, which "
+"initializes the locale based on the current request. To do so, set your "
+"listener priority to a higher value than ``LocaleListener`` priority "
+"(which you can obtain running the ``debug:event kernel.request`` "
+"command)."
+msgstr ""
+
+#: ../../../translation/locale.rst:36
+msgid ""
+"Read :doc:`/session/locale_sticky_session` for more information on making"
+" the user's locale \"sticky\" to their session."
+msgstr ""
+
+#: ../../../translation/locale.rst:41
+msgid ""
+"Setting the locale using ``$request->setLocale()`` in the controller is "
+"too late to affect the translator. Either set the locale via a listener "
+"(like above), the URL (see next) or call ``setLocale()`` directly on the "
+"``translator`` service."
+msgstr ""
+
+#: ../../../translation/locale.rst:46
+msgid ""
+"See the :ref:`translation-locale-url` section below about setting the "
+"locale via routing."
+msgstr ""
+
+#: ../../../translation/locale.rst:52
+msgid "The Locale and the URL"
+msgstr ""
+
+#: ../../../translation/locale.rst:54
+msgid ""
+"Since you can store the locale of the user in the session, it may be "
+"tempting to use the same URL to display a resource in different languages"
+" based on the user's locale. For example, "
+"``http://www.example.com/contact`` could show content in English for one "
+"user and French for another user. Unfortunately, this violates a "
+"fundamental rule of the Web: that a particular URL returns the same "
+"resource regardless of the user. To further muddy the problem, which "
+"version of the content would be indexed by search engines?"
+msgstr ""
+
+#: ../../../translation/locale.rst:62
+msgid ""
+"A better policy is to include the locale in the URL using the "
+":ref:`special _locale parameter <routing-locale-parameter>`:"
+msgstr ""
+
+#: ../../../translation/locale.rst:106
+msgid ""
+"When using the special ``_locale`` parameter in a route, the matched "
+"locale is *automatically set on the Request* and can be retrieved via the"
+" :method:`Symfony\\\\Component\\\\HttpFoundation\\\\Request::getLocale` "
+"method. In other words, if a user visits the URI ``/fr/contact``, the "
+"locale ``fr`` will automatically be set as the locale for the current "
+"request."
+msgstr ""
+
+#: ../../../translation/locale.rst:112
+msgid ""
+"You can now use the locale to create routes to other translated pages in "
+"your application."
+msgstr ""
+
+#: ../../../translation/locale.rst:117
+msgid ""
+"Define the locale requirement as a :ref:`container parameter "
+"<configuration-parameters>` to avoid hardcoding its value in all your "
+"routes."
+msgstr ""
+
+#: ../../../translation/locale.rst:126
+msgid "Setting a Default Locale"
+msgstr ""
+
+#: ../../../translation/locale.rst:128
+msgid ""
+"What if the user's locale hasn't been determined? You can guarantee that "
+"a locale is set on each user's request by defining a ``default_locale`` "
+"for the framework:"
+msgstr ""
+

@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/helpers/processhelper.rst:5
+msgid "Process Helper"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:7
+msgid ""
+"The Process Helper shows processes as they're running and reports useful "
+"information about process status."
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:10
+msgid ""
+"To display process details, use the "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProcessHelper` and "
+"run your command with verbosity. For example, running the following code "
+"with a very verbose verbosity (e.g. ``-vv``)::"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:21
+msgid "will result in this output:"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:25
+msgid ""
+"It will result in more detailed output with debug verbosity (e.g. "
+"``-vvv``):"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:29
+msgid "In case the process fails, debugging is easier:"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:34
+msgid "Arguments"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:36
+msgid "There are three ways to use the process helper:"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:38
+msgid "Using a command line string::"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:43
+msgid "An array of arguments::"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:50
+msgid ""
+"When running the helper against an array of arguments, be aware that "
+"these will be automatically escaped."
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:53
+msgid "Passing a :class:`Symfony\\\\Component\\\\Process\\\\Process` instance::"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:63
+msgid "Customized Display"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:65
+msgid ""
+"You can display a customized error message using the third argument of "
+"the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\ProcessHelper::run`"
+" method::"
+msgstr ""
+
+#: ../../../components/console/helpers/processhelper.rst:70
+msgid ""
+"A custom process callback can be passed as the fourth argument. Refer to "
+"the :doc:`Process Component </components/process>` for callback "
+"documentation::"
+msgstr ""
+

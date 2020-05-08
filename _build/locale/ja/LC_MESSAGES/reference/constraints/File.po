@@ -1,0 +1,696 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/File.rst:2
+msgid "File"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:4
+msgid ""
+"Validates that a value is a valid \"file\", which can be one of the "
+"following:"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:6
+msgid ""
+"A string (or object with a ``__toString()`` method) path to an existing "
+"file;"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:8
+msgid ""
+"A valid :class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\File` "
+"object (including objects of "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile` "
+"class)."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:11
+msgid ""
+"This constraint is commonly used in forms with the :doc:`FileType "
+"</reference/forms/types/file>` form field."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:16
+msgid ""
+"If the file you're validating is an image, try the :doc:`Image "
+"</reference/constraints/Image>` constraint."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:20
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:20
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:21
+#: ../../../reference/constraints/File.rst:159
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:21
+msgid "`binaryFormat`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:22
+msgid "`disallowEmptyMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:23
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:24
+msgid "`maxSize`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:25
+msgid "`maxSizeMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:26
+msgid "`mimeTypes`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:27
+msgid "`mimeTypesMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:28
+msgid "`notFoundMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:29
+msgid "`notReadableMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:30
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:31
+msgid "`uploadCantWriteErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:32
+msgid "`uploadErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:33
+msgid "`uploadExtensionErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:34
+msgid "`uploadFormSizeErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:35
+msgid "`uploadIniSizeErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:36
+msgid "`uploadNoFileErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:37
+msgid "`uploadNoTmpDirErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:38
+msgid "`uploadPartialErrorMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:39
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:39
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\File`"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:40
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:40
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\FileValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:44
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:46
+msgid ""
+"This constraint is most commonly used on a property that will be rendered"
+" in a form as a :doc:`FileType </reference/forms/types/file>` field. For "
+"example, suppose you're creating an author form where you can upload a "
+"\"bio\" PDF for the author. In your form, the ``bioFile`` property would "
+"be a ``file`` type. The ``Author`` class might look as follows::"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:72
+msgid ""
+"To guarantee that the ``bioFile`` ``File`` object is valid and that it is"
+" below a certain file size and a valid PDF, add the following:"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:152
+msgid ""
+"The ``bioFile`` property is validated to guarantee that it is a real "
+"file. Its size and mime type are also validated because the appropriate "
+"options have been specified."
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:162
+msgid "binaryFormat"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:164
+msgid "**type**: ``boolean`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:166
+msgid ""
+"When ``true``, the sizes will be displayed in messages with binary-"
+"prefixed units (KiB, MiB). When ``false``, the sizes will be displayed "
+"with SI-prefixed units (kB, MB). When ``null``, then the binaryFormat "
+"will be guessed from the value defined in the ``maxSize`` option."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:171
+#: ../../../reference/constraints/File.rst:212
+msgid ""
+"For more information about the difference between binary and SI prefixes,"
+" see `Wikipedia: Binary prefix`_."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:175
+msgid "disallowEmptyMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:177
+msgid "**type**: ``string`` **default**: ``An empty file is not allowed.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:179
+msgid ""
+"This constraint checks if the uploaded file is empty (i.e. 0 bytes). If "
+"it is, this message is displayed."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:182
+#: ../../../reference/constraints/File.rst:222
+#: ../../../reference/constraints/File.rst:263
+#: ../../../reference/constraints/File.rst:283
+#: ../../../reference/constraints/File.rst:299
+#: ../../../reference/constraints/File.rst:357
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:185
+#: ../../../reference/constraints/File.rst:225
+#: ../../../reference/constraints/File.rst:266
+#: ../../../reference/constraints/File.rst:286
+#: ../../../reference/constraints/File.rst:302
+#: ../../../reference/constraints/File.rst:360
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:185
+#: ../../../reference/constraints/File.rst:225
+#: ../../../reference/constraints/File.rst:266
+#: ../../../reference/constraints/File.rst:286
+#: ../../../reference/constraints/File.rst:302
+#: ../../../reference/constraints/File.rst:360
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:187
+#: ../../../reference/constraints/File.rst:227
+#: ../../../reference/constraints/File.rst:268
+#: ../../../reference/constraints/File.rst:288
+#: ../../../reference/constraints/File.rst:304
+msgid "``{{ file }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:187
+#: ../../../reference/constraints/File.rst:227
+#: ../../../reference/constraints/File.rst:268
+#: ../../../reference/constraints/File.rst:288
+#: ../../../reference/constraints/File.rst:304
+msgid "Absolute file path"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:188
+#: ../../../reference/constraints/File.rst:229
+#: ../../../reference/constraints/File.rst:269
+msgid "``{{ name }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:188
+#: ../../../reference/constraints/File.rst:229
+#: ../../../reference/constraints/File.rst:269
+msgid "Base file name"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:194
+msgid "maxSize"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:196
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:198
+msgid ""
+"If set, the size of the underlying file must be below this file size in "
+"order to be valid. The size of the file can be given in one of the "
+"following formats:"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:203
+msgid "Suffix"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:203
+msgid "Unit Name"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:203
+msgid "Value"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:203
+msgid "Example"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:205
+msgid "(none)"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:205
+msgid "byte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:205
+msgid "1 byte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:205
+msgid "``4096``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:206
+msgid "``k``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:206
+msgid "kilobyte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:206
+msgid "1,000 bytes"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:206
+msgid "``200k``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:207
+msgid "``M``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:207
+msgid "megabyte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:207
+msgid "1,000,000 bytes"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:207
+msgid "``2M``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:208
+msgid "``Ki``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:208
+msgid "kibibyte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:208
+msgid "1,024 bytes"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:208
+msgid "``32Ki``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:209
+msgid "``Mi``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:209
+msgid "mebibyte"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:209
+msgid "1,048,576 bytes"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:209
+msgid "``8Mi``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:216
+msgid "maxSizeMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:218
+msgid ""
+"**type**: ``string`` **default**: ``The file is too large ({{ size }} {{ "
+"suffix }}). Allowed maximum size is {{ limit }} {{ suffix }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:220
+msgid "The message displayed if the file is larger than the `maxSize`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:228
+#: ../../../reference/constraints/File.rst:362
+msgid "``{{ limit }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:228
+#: ../../../reference/constraints/File.rst:362
+msgid "Maximum file size allowed"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:230
+msgid "``{{ size }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:230
+msgid "File size of the given file"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:231
+#: ../../../reference/constraints/File.rst:363
+msgid "``{{ suffix }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:231
+#: ../../../reference/constraints/File.rst:363
+msgid "Suffix for the used file size unit (see above)"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:235
+msgid "mimeTypes"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:237
+msgid "**type**: ``array`` or ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:239
+msgid ""
+"If set, the validator will check that the mime type of the underlying "
+"file is equal to the given mime type (if a string) or exists in the "
+"collection of given mime types (if an array)."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:243
+msgid "You can find a list of existing mime types on the `IANA website`_."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:247
+msgid ""
+"When using this constraint on a :doc:`FileType field "
+"</reference/forms/types/file>`, the value of the ``mimeTypes`` option is "
+"also used in the ``accept`` attribute of the related ``<input "
+"type=\"file\"/>`` HTML element."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:251
+msgid ""
+"This behavior is applied only when using :ref:`form type guessing <form-"
+"type-guessing>` (i.e. the form type is not defined explicitly in the "
+"``->add()`` method of the form builder) and when the field doesn't define"
+" its own ``accept`` value."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:256
+msgid "mimeTypesMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:258
+msgid ""
+"**type**: ``string`` **default**: ``The mime type of the file is invalid "
+"({{ type }}). Allowed mime types are {{ types }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:260
+msgid ""
+"The message displayed if the mime type of the file is not a valid mime "
+"type per the `mimeTypes`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:270
+msgid "``{{ type }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:270
+msgid "The MIME type of the given file"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:271
+msgid "``{{ types }}``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:271
+msgid "The list of allowed MIME types"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:275
+msgid "notFoundMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:277
+msgid "**type**: ``string`` **default**: ``The file could not be found.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:279
+msgid ""
+"The message displayed if no file can be found at the given path. This "
+"error is only likely if the underlying value is a string path, as a "
+"``File`` object cannot be constructed with an invalid file path."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:292
+msgid "notReadableMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:294
+msgid "**type**: ``string`` **default**: ``The file is not readable.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:296
+msgid ""
+"The message displayed if the file exists, but the PHP ``is_readable()`` "
+"function fails when passed the path to the file."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:310
+msgid "uploadCantWriteErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:312
+msgid "**type**: ``string`` **default**: ``Cannot write temporary file to disk.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:314
+msgid ""
+"The message that is displayed if the uploaded file can't be stored in the"
+" temporary folder."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:317
+#: ../../../reference/constraints/File.rst:327
+#: ../../../reference/constraints/File.rst:337
+#: ../../../reference/constraints/File.rst:347
+#: ../../../reference/constraints/File.rst:373
+#: ../../../reference/constraints/File.rst:383
+#: ../../../reference/constraints/File.rst:392
+msgid "This message has no parameters."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:320
+msgid "uploadErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:322
+msgid "**type**: ``string`` **default**: ``The file could not be uploaded.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:324
+msgid ""
+"The message that is displayed if the uploaded file could not be uploaded "
+"for some unknown reason."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:330
+msgid "uploadExtensionErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:332
+msgid ""
+"**type**: ``string`` **default**: ``A PHP extension caused the upload to "
+"fail.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:334
+msgid ""
+"The message that is displayed if a PHP extension caused the file upload "
+"to fail."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:340
+msgid "uploadFormSizeErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:342
+msgid "**type**: ``string`` **default**: ``The file is too large.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:344
+msgid ""
+"The message that is displayed if the uploaded file is larger than allowed"
+" by the HTML file input field."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:350
+msgid "uploadIniSizeErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:352
+msgid ""
+"**type**: ``string`` **default**: ``The file is too large. Allowed "
+"maximum size is {{ limit }} {{ suffix }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:354
+msgid ""
+"The message that is displayed if the uploaded file is larger than the "
+"``upload_max_filesize`` ``php.ini`` setting."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:367
+msgid "uploadNoFileErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:369
+msgid "**type**: ``string`` **default**: ``No file was uploaded.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:371
+msgid "The message that is displayed if no file was uploaded."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:376
+msgid "uploadNoTmpDirErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:378
+msgid ""
+"**type**: ``string`` **default**: ``No temporary folder was configured in"
+" php.ini.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:380
+msgid ""
+"The message that is displayed if the php.ini setting ``upload_tmp_dir`` "
+"is missing."
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:386
+msgid "uploadPartialErrorMessage"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:388
+msgid ""
+"**type**: ``string`` **default**: ``The file was only partially "
+"uploaded.``"
+msgstr ""
+
+#: ../../../reference/constraints/File.rst:390
+msgid ""
+"The message that is displayed if the uploaded file is only partially "
+"uploaded."
+msgstr ""
+

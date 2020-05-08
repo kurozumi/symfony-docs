@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_intl_normalizer.rst:7
+msgid "The Symfony Polyfill / Intl Normalizer Component"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:9
+msgid ""
+"This component provides a fallback implementation for the ``Normalizer`` "
+"class to users who run PHP versions without the ``intl`` extension."
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following classes and functions, no matter if the `PHP intl extension`_ "
+"is installed or not in your server."
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:29
+msgid "Provided Classes"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:31
+msgid ":phpclass:`Normalizer`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:34
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:36
+msgid ":phpfunction:`normalizer_is_normalized`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:37
+msgid ":phpfunction:`normalizer_normalize`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_normalizer.rst:41
+msgid ""
+"Symfony provides more polyfills for other classes and functions related "
+"to the Intl PHP extension: :doc:`polyfill-intl-grapheme "
+"</components/polyfill_intl_grapheme>`, :doc:`polyfill-intl-idn "
+"</components/polyfill_intl_idn>`, :doc:`polyfill-intl-icu "
+"</components/polyfill_intl_icu>`, and :doc:`polyfill-intl-"
+"messageformatter </components/polyfill_intl_messageformatter>`."
+msgstr ""
+

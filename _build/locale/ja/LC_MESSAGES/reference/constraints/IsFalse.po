@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/IsFalse.rst:2
+msgid "IsFalse"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:4
+msgid ""
+"Validates that a value is ``false``. Specifically, this checks to see if "
+"the value is exactly ``false``, exactly the integer ``0``, or exactly the"
+" string \"``0``\"."
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:8
+msgid "Also see :doc:`IsTrue <IsTrue>`."
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:11
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:11
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:12
+#: ../../../reference/constraints/IsFalse.rst:111
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:12
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:13
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\IsFalse`"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:16
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\IsFalseValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:20
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:22
+msgid ""
+"The ``IsFalse`` constraint can be applied to a property or a \"getter\" "
+"method, but is most commonly useful in the latter case. For example, "
+"suppose that you want to guarantee that some ``state`` property is *not* "
+"in a dynamic ``invalidStates`` array. First, you'd create a \"getter\" "
+"method::"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:36
+msgid ""
+"In this case, the underlying object is only valid if the "
+"``isStateInvalid()`` method returns **false**:"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:116
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:118
+msgid "**type**: ``string`` **default**: ``This value should be false.``"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:120
+msgid "This message is shown if the underlying data is not false."
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:122
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:125
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:125
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:127
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/IsFalse.rst:127
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller/soap_web_service.rst:7
+msgid "How to Create a SOAP Web Service in a Symfony Controller"
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:9
+msgid ""
+"Setting up a controller to act as a SOAP server is aided by a couple "
+"tools. Those tools expect you to have the `PHP SOAP`_ extension "
+"installed. As the PHP SOAP extension cannot currently generate a WSDL, "
+"you must either create one from scratch or use a 3rd party generator."
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:16
+msgid ""
+"There are several SOAP server implementations available for use with PHP."
+" `Laminas SOAP`_ and `NuSOAP`_ are two examples. Although the PHP SOAP "
+"extension is used in these examples, the general idea should still be "
+"applicable to other implementations."
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:21
+msgid ""
+"SOAP works by exposing the methods of a PHP object to an external entity "
+"(i.e. the person using the SOAP service). To start, create a class - "
+"``HelloService`` - which represents the functionality that you'll expose "
+"in your SOAP service. In this case, the SOAP service will allow the "
+"client to call a method called ``hello``, which happens to send an "
+"email::"
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:52
+msgid ""
+"Next, make sure that your new class is registered as a service. If you're"
+" using the :ref:`default services configuration <service-container-"
+"services-load-example>`, you don't need to do anything!"
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:56
+msgid ""
+"Finally, below is an example of a controller that is capable of handling "
+"a SOAP request. Because ``index()`` is accessible via ``/soap``, the WSDL"
+" document can be retrieved via ``/soap?wsdl``::"
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:88
+msgid ""
+"Take note of the calls to ``ob_start()`` and ``ob_get_clean()``. These "
+"methods control `output buffering`_ which allows you to \"trap\" the "
+"echoed output of ``$server->handle()``. This is necessary because Symfony"
+" expects your controller to return a ``Response`` object with the output "
+"as its \"content\". You must also remember to set the ``\"Content-"
+"Type\"`` header to ``\"text/xml\"``, as this is what the client will "
+"expect. So, you use ``ob_start()`` to start buffering the STDOUT and use "
+"``ob_get_clean()`` to dump the echoed output into the content of the "
+"Response and clear the output buffer. Finally, you're ready to return the"
+" ``Response``."
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:98
+msgid ""
+"Below is an example calling the service using a `NuSOAP`_ client. This "
+"example assumes that the ``index()`` method in the controller above is "
+"accessible via the route ``/soap``::"
+msgstr ""
+
+#: ../../../controller/soap_web_service.rst:106
+msgid "An example WSDL is below."
+msgstr ""
+

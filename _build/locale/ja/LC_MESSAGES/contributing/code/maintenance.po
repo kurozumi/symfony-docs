@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/maintenance.rst:2
+msgid "Maintenance"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:4
+msgid ""
+"During the lifetime of a minor version, new releases (patch versions) are"
+" published on a monthly basis. This document describes the boundaries of "
+"acceptable changes."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:8
+msgid "**Bug fixes** are accepted under the following conditions:"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:10
+msgid "The change does not break valid unit tests;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:11
+msgid "New unit tests cover the bug fix;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:12
+msgid "The current buggy behavior is not widely used as a \"feature\"."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:16
+msgid ""
+"When documentation (or PHPDoc) is not in sync with the code, code "
+"behavior should always be considered as being the correct one."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:19
+msgid "Besides bug fixes, other minor changes can be accepted in a patch version:"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:21
+msgid ""
+"**Performance improvement**: Performance improvement should only be "
+"accepted if the changes are local (located in one class) and only for "
+"algorithmic issues (any such patches must come with numbers that show a "
+"significant improvement on real-world code);"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:26
+msgid ""
+"**Newer versions of PHP**: Fixes that add support for newer versions of "
+"PHP are acceptable if they don't break the unit test suite;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:29
+msgid ""
+"**Newer versions of popular OSes**: Fixes that add support for newer "
+"versions of popular OSes (Linux, MacOS and Windows) are acceptable if "
+"they don't break the unit test suite;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:33
+msgid "**Translations**: Translation updates and additions are accepted;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:35
+msgid ""
+"**External data**: Updates for external data included in Symfony can be "
+"updated (like ICU for instance);"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:38
+msgid ""
+"**Version updates for Composer dependencies**: Changing the minimal "
+"version of a dependency is possible, bumping to a major one or increasing"
+" PHP minimal version is not;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:42
+msgid ""
+"**Coding standard and refactoring**: Coding standard fixes or code "
+"refactoring are not recommended but can be accepted for consistency with "
+"the existing code base, if they are not too invasive, and if merging them"
+" on master would not lead to complex branch merging;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:47
+msgid "**Tests**: Tests that increase the code coverage can be added."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:49
+msgid ""
+"Anything not explicitly listed above should be done on the next minor or "
+"major version instead (aka the *master* branch). For instance, the "
+"following changes are never accepted in a patch version:"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:53
+msgid "**New features**;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:55
+msgid ""
+"**Backward compatibility breaks**: Note that backward compatibility "
+"breaks can be done when fixing a security issue if it would not be "
+"possible to fix it otherwise;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:59
+msgid ""
+"**Support for external platforms**: Adding support for new platforms "
+"(like Google App Engine) cannot be done in patch versions;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:62
+msgid ""
+"**Exception messages**: Exception messages must not be changed as some "
+"automated systems might rely on them (even if this is not recommended);"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:65
+msgid "**Adding new Composer dependencies**;"
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:67
+msgid ""
+"**Support for newer major versions of Composer dependencies**: Taking "
+"into account support for newer versions of an existing dependency is not "
+"acceptable."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:71
+msgid ""
+"**Web design**: Changing the web design of built-in pages like "
+"exceptions, the toolbar or the profiler is not allowed."
+msgstr ""
+
+#: ../../../contributing/code/maintenance.rst:76
+msgid ""
+"This policy is designed to enable a continuous upgrade path that allows "
+"one to move forward with newest Symfony versions in the safest way. One "
+"should be able to move PHP versions, OS or Symfony versions almost "
+"independently. That's the reason why supporting the latest PHP versions "
+"or OS features is considered as bug fixes."
+msgstr ""
+

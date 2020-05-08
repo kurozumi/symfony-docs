@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/form_login.rst:5
+msgid "Using the form_login Authentication Provider"
+msgstr ""
+
+#: ../../../security/form_login.rst:9
+msgid ""
+"To have complete control over your login form, we recommend building a "
+":doc:`form login authentication with Guard </security/form_login_setup>`."
+msgstr ""
+
+#: ../../../security/form_login.rst:12
+msgid ""
+"Symfony comes with a built-in ``form_login`` system that handles a login "
+"form POST automatically. Before you start, make sure you've followed the "
+":doc:`Security Guide </security>` to create your User class."
+msgstr ""
+
+#: ../../../security/form_login.rst:17
+msgid "form_login Setup"
+msgstr ""
+
+#: ../../../security/form_login.rst:19
+msgid "First, enable ``form_login`` under your firewall:"
+msgstr ""
+
+#: ../../../security/form_login.rst:73
+msgid ""
+"The ``login_path`` and ``check_path`` can also be route names (but cannot"
+" have mandatory wildcards - e.g. ``/login/{foo}`` where ``foo`` has no "
+"default value)."
+msgstr ""
+
+#: ../../../security/form_login.rst:77
+msgid ""
+"Now, when the security system initiates the authentication process, it "
+"will redirect the user to the login form ``/login``. Implementing this "
+"login form is your job. First, create a new ``SecurityController``::"
+msgstr ""
+
+#: ../../../security/form_login.rst:90
+msgid ""
+"Next, configure the route that you earlier used under your ``form_login``"
+" configuration (``login``):"
+msgstr ""
+
+#: ../../../security/form_login.rst:145
+msgid "Great! Next, add the logic to ``login()`` that displays the login form::"
+msgstr ""
+
+#: ../../../security/form_login.rst:166
+msgid ""
+"If you get an error that the ``$authenticationUtils`` argument is "
+"missing, it's probably because the controllers of your application are "
+"not defined as services and tagged with the "
+"``controller.service_arguments`` tag, as done in the :ref:`default "
+"services.yaml configuration <service-container-services-load-example>`."
+msgstr ""
+
+#: ../../../security/form_login.rst:171
+msgid ""
+"Don't let this controller confuse you. As you'll see in a moment, when "
+"the user submits the form, the security system automatically handles the "
+"form submission for you. If the user submits an invalid username or "
+"password, this controller reads the form submission error from the "
+"security system, so that it can be displayed back to the user."
+msgstr ""
+
+#: ../../../security/form_login.rst:177
+msgid ""
+"In other words, your job is to *display* the login form and any login "
+"errors that may have occurred, but the security system itself takes care "
+"of checking the submitted username and password and authenticating the "
+"user."
+msgstr ""
+
+#: ../../../security/form_login.rst:181
+msgid "Finally, create the template:"
+msgstr ""
+
+#: ../../../security/form_login.rst:210
+msgid ""
+"The ``error`` variable passed into the template is an instance of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AuthenticationException`."
+" It may contain more information - or even sensitive information - about "
+"the authentication failure, so use it wisely!"
+msgstr ""
+
+#: ../../../security/form_login.rst:215
+msgid "The form can look like anything, but it usually follows some conventions:"
+msgstr ""
+
+#: ../../../security/form_login.rst:217
+msgid ""
+"The ``<form>`` element sends a ``POST`` request to the ``login`` route, "
+"since that's what you configured under the ``form_login`` key in "
+"``security.yaml``;"
+msgstr ""
+
+#: ../../../security/form_login.rst:219
+msgid ""
+"The username field has the name ``_username`` and the password field has "
+"the name ``_password``."
+msgstr ""
+
+#: ../../../security/form_login.rst:224
+msgid ""
+"Actually, all of this can be configured under the ``form_login`` key. See"
+" :ref:`reference-security-firewall-form-login` for more details."
+msgstr ""
+
+#: ../../../security/form_login.rst:229
+msgid ""
+"This login form is currently not protected against CSRF attacks. Read "
+":ref:`form_login-csrf` on how to protect your login form."
+msgstr ""
+
+#: ../../../security/form_login.rst:232
+msgid ""
+"And that's it! When you submit the form, the security system will "
+"automatically check the user's credentials and either authenticate the "
+"user or send the user back to the login form where the error can be "
+"displayed."
+msgstr ""
+
+#: ../../../security/form_login.rst:236
+msgid "To review the whole process:"
+msgstr ""
+
+#: ../../../security/form_login.rst:238
+msgid "The user tries to access a resource that is protected;"
+msgstr ""
+
+#: ../../../security/form_login.rst:239
+msgid ""
+"The firewall initiates the authentication process by redirecting the user"
+" to the login form (``/login``);"
+msgstr ""
+
+#: ../../../security/form_login.rst:241
+msgid ""
+"The ``/login`` page renders login form via the route and controller "
+"created in this example;"
+msgstr ""
+
+#: ../../../security/form_login.rst:243
+msgid "The user submits the login form to ``/login``;"
+msgstr ""
+
+#: ../../../security/form_login.rst:244
+msgid ""
+"The security system intercepts the request, checks the user's submitted "
+"credentials, authenticates the user if they are correct, and sends the "
+"user back to the login form if they are not."
+msgstr ""
+
+#: ../../../security/form_login.rst:251
+msgid "CSRF Protection in Login Forms"
+msgstr ""
+
+#: ../../../security/form_login.rst:253
+msgid ""
+"`Login CSRF attacks`_ can be prevented using the same technique of adding"
+" hidden CSRF tokens into the login forms. The Security component already "
+"provides CSRF protection, but you need to configure some options before "
+"using it."
+msgstr ""
+
+#: ../../../security/form_login.rst:257
+msgid ""
+"First, configure the CSRF token provider used by the form login in your "
+"security configuration. You can set this to use the default provider "
+"available in the security component:"
+msgstr ""
+
+#: ../../../security/form_login.rst:317
+msgid ""
+"Then, use the ``csrf_token()`` function in the Twig template to generate "
+"a CSRF token and store it as a hidden field of the form. By default, the "
+"HTML field must be called ``_csrf_token`` and the string used to generate"
+" the value must be ``authenticate``:"
+msgstr ""
+
+#: ../../../security/form_login.rst:337
+msgid "After this, you have protected your login form against CSRF attacks."
+msgstr ""
+
+#: ../../../security/form_login.rst:341
+msgid ""
+"You can change the name of the field by setting ``csrf_parameter`` and "
+"change the token ID by setting  ``csrf_token_id`` in your configuration:"
+msgstr ""
+
+#: ../../../security/form_login.rst:403
+msgid "Redirecting after Success"
+msgstr ""
+
+#: ../../../security/form_login.rst:405
+msgid ""
+"By default, the form will redirect to the URL the user requested (i.e. "
+"the URL which triggered the login form being shown). For example, if the "
+"user requested ``http://www.example.com/admin/post/18/edit``, then after "
+"they have successfully logged in, they will be sent back to "
+"``http://www.example.com/admin/post/18/edit``."
+msgstr ""
+
+#: ../../../security/form_login.rst:410
+msgid ""
+"This is done by storing the requested URL in the session. If no URL is "
+"present in the session (perhaps the user went directly to the login "
+"page), then the user is redirected to ``/`` (i.e. the homepage). You can "
+"change this behavior in several ways."
+msgstr ""
+
+#: ../../../security/form_login.rst:416
+msgid "Changing the default Page"
+msgstr ""
+
+#: ../../../security/form_login.rst:418
+msgid ""
+"Define the ``default_target_path`` option to change the page where the "
+"user is redirected to if no previous page was stored in the session. The "
+"value can be a relative/absolute URL or a Symfony route name:"
+msgstr ""
+
+#: ../../../security/form_login.rst:476
+msgid "Always Redirect to the default Page"
+msgstr ""
+
+#: ../../../security/form_login.rst:478
+msgid ""
+"Define the ``always_use_default_target_path`` boolean option to ignore "
+"the previously requested URL and always redirect to the default page:"
+msgstr ""
+
+#: ../../../security/form_login.rst:538
+msgid "Control the Redirect Using Request Parameters"
+msgstr ""
+
+#: ../../../security/form_login.rst:540
+msgid ""
+"The URL to redirect after the login can be defined using the "
+"``_target_path`` parameter of GET and POST requests. Its value must be a "
+"relative or absolute URL, not a Symfony route name."
+msgstr ""
+
+#: ../../../security/form_login.rst:544
+msgid "Defining the redirect URL via GET using a query string parameter:"
+msgstr ""
+
+#: ../../../security/form_login.rst:550
+msgid "Defining the redirect URL via POST using a hidden form field:"
+msgstr ""
+
+#: ../../../security/form_login.rst:563
+msgid "Using the Referring URL"
+msgstr ""
+
+#: ../../../security/form_login.rst:565
+msgid ""
+"In case no previous URL was stored in the session and no ``_target_path``"
+" parameter is included in the request, you may use the value of the "
+"``HTTP_REFERER`` header instead, as this will often be the same. Define "
+"the ``use_referer`` boolean option to enable this behavior:"
+msgstr ""
+
+#: ../../../security/form_login.rst:626
+msgid ""
+"The referrer URL is only used when it is different from the URL generated"
+" by the ``login_path`` route to avoid a redirection loop."
+msgstr ""
+
+#: ../../../security/form_login.rst:632
+msgid "Redirecting after Failure"
+msgstr ""
+
+#: ../../../security/form_login.rst:634
+msgid ""
+"After a failed login (e.g. an invalid username or password was "
+"submitted), the user is redirected back to the login form itself. Use the"
+" ``failure_path`` option to define a new target via a relative/absolute "
+"URL or a Symfony route name:"
+msgstr ""
+
+#: ../../../security/form_login.rst:692
+msgid "This option can also be set via the ``_failure_path`` request parameter:"
+msgstr ""
+
+#: ../../../security/form_login.rst:709
+msgid "Customizing the Target and Failure Request Parameters"
+msgstr ""
+
+#: ../../../security/form_login.rst:711
+msgid ""
+"The name of the request attributes used to define the success and failure"
+" login redirects can be customized using the  ``target_path_parameter`` "
+"and ``failure_path_parameter`` options of the firewall that defines the "
+"login form."
+msgstr ""
+
+#: ../../../security/form_login.rst:770
+msgid ""
+"Using the above configuration, the query string parameters and hidden "
+"form fields are now fully customized:"
+msgstr ""
+

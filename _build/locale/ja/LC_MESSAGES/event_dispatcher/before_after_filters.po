@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../event_dispatcher/before_after_filters.rst:5
+msgid "How to Set Up Before and After Filters"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:7
+msgid ""
+"It is quite common in web application development to need some logic to "
+"be executed just before or just after your controller actions acting as "
+"filters or hooks."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:11
+msgid ""
+"Some web frameworks define methods like ``preExecute()`` and "
+"``postExecute()``, but there is no such thing in Symfony. The good news "
+"is that there is a much better way to interfere with the Request -> "
+"Response process using the :doc:`EventDispatcher component "
+"</components/event_dispatcher>`."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:17
+msgid "Token Validation Example"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:19
+msgid ""
+"Imagine that you need to develop an API where some controllers are public"
+" but some others are restricted to one or some clients. For these private"
+" features, you might provide a token to your clients to identify "
+"themselves."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:23
+msgid ""
+"So, before executing your controller action, you need to check if the "
+"action is restricted or not. If it is restricted, you need to validate "
+"the provided token."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:29
+msgid ""
+"Please note that for simplicity in this recipe, tokens will be defined in"
+" config and neither database setup nor authentication via the Security "
+"component will be used."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:34
+msgid "Before Filters with the ``kernel.controller`` Event"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:36
+msgid "First, define some token configuration as parameters:"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:74
+msgid "Tag Controllers to Be Checked"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:76
+msgid ""
+"A ``kernel.controller`` (aka ``KernelEvents::CONTROLLER``) listener gets "
+"notified on *every* request, right before the controller is executed. So,"
+" first, you need some way to identify if the controller that matches the "
+"request needs token validation."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:80
+msgid ""
+"A clean and easy way is to create an empty interface and make the "
+"controllers implement it::"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:90
+msgid "A controller that implements this interface looks like this::"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:107
+msgid "Creating an Event Subscriber"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:109
+msgid ""
+"Next, you'll need to create an event subscriber, which will hold the "
+"logic that you want to be executed before your controllers. If you're not"
+" familiar with event subscribers, you can learn more about them at "
+":doc:`/event_dispatcher`::"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:157
+msgid ""
+"That's it! Your ``services.yaml`` file should already be setup to load "
+"services from the ``EventSubscriber`` directory. Symfony takes care of "
+"the rest. Your ``TokenSubscriber`` ``onKernelController()`` method will "
+"be executed on each request. If the controller that is about to be "
+"executed implements ``TokenAuthenticatedController``, token "
+"authentication is applied. This lets you have a \"before\" filter on any "
+"controller you want."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:166
+msgid ""
+"If your subscriber is *not* called on each request, double-check that "
+"you're :ref:`loading services <service-container-services-load-example>` "
+"from the ``EventSubscriber`` directory and have :ref:`autoconfigure "
+"<services-autoconfigure>` enabled. You can also manually add the "
+"``kernel.event_subscriber`` tag."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:172
+msgid "After Filters with the ``kernel.response`` Event"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:174
+msgid ""
+"In addition to having a \"hook\" that's executed *before* your "
+"controller, you can also add a hook that's executed *after* your "
+"controller. For this example, imagine that you want to add a ``sha1`` "
+"hash (with a salt using that token) to all responses that have passed "
+"this token authentication."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:179
+msgid ""
+"Another core Symfony event - called ``kernel.response`` (aka "
+"``KernelEvents::RESPONSE``) - is notified on every request, but after the"
+" controller returns a Response object. To create an \"after\" listener, "
+"create a listener class and register it as a service on this event."
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:184
+msgid ""
+"For example, take the ``TokenSubscriber`` from the previous example and "
+"first record the authentication token inside the request attributes. This"
+" will serve as a basic flag that this request underwent token "
+"authentication::"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:203
+msgid ""
+"Now, configure the subscriber to listen to another event and add "
+"``onKernelResponse()``. This will look for the ``auth_token`` flag on the"
+" request object and set a custom header on the response if it's found::"
+msgstr ""
+
+#: ../../../event_dispatcher/before_after_filters.rst:232
+msgid ""
+"That's it! The ``TokenSubscriber`` is now notified before every "
+"controller is executed (``onKernelController()``) and after every "
+"controller returns a response (``onKernelResponse()``). By making "
+"specific controllers implement the ``TokenAuthenticatedController`` "
+"interface, your listener knows which controllers it should take action "
+"on. And by storing a value in the request's \"attributes\" bag, the "
+"``onKernelResponse()`` method knows to add the extra header. Have fun!"
+msgstr ""
+

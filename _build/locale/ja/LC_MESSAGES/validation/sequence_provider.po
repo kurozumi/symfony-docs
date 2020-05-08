@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../validation/sequence_provider.rst:6
+msgid "How to Sequentially Apply Validation Groups"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:8
+msgid ""
+"In some cases, you want to validate your groups by steps. To do this, you"
+" can use the ``GroupSequence`` feature. In this case, an object defines a"
+" group sequence, which determines the order groups should be validated."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:12
+msgid ""
+"For example, suppose you have a ``User`` class and want to validate that "
+"the username and the password are different only if all other validation "
+"passes (in order to avoid multiple error messages)."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:125
+msgid ""
+"In this example, it will first validate all constraints in the group "
+"``User`` (which is the same as the ``Default`` group). Only if all "
+"constraints in that group are valid, the second group, ``Strict``, will "
+"be validated."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:131
+msgid ""
+"As you have already seen in :doc:`/validation/groups`, the ``Default`` "
+"group and the group containing the class name (e.g. ``User``) were "
+"identical. However, when using Group Sequences, they are no longer "
+"identical. The ``Default`` group will now reference the group sequence, "
+"instead of all constraints that do not belong to any group."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:137
+msgid ""
+"This means that you have to use the ``{ClassName}`` (e.g. ``User``) group"
+" when specifying a group sequence. When using ``Default``, you get an "
+"infinite recursion (as the ``Default`` group references the group "
+"sequence, which will contain the ``Default`` group which references the "
+"same group sequence, ...)."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:145
+msgid ""
+"Calling ``validate()`` with a group in the sequence (``Strict`` in "
+"previous example) will cause a validation **only** with that group and "
+"not with all the groups in the sequence. This is because sequence is now "
+"referred to ``Default`` group validation."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:150
+msgid ""
+"You can also define a group sequence in the ``validation_groups`` form "
+"option::"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:169
+msgid "Group Sequence Providers"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:171
+msgid ""
+"Imagine a ``User`` entity which can be a normal user or a premium user. "
+"When it's a premium user, some extra constraints should be added to the "
+"user entity (e.g. the credit card details). To dynamically determine "
+"which groups should be activated, you can create a Group Sequence "
+"Provider. First, create the entity and a new constraint group called "
+"``Premium``:"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:269
+msgid ""
+"Now, change the ``User`` class to implement "
+":class:`Symfony\\\\Component\\\\Validator\\\\GroupSequenceProviderInterface`"
+" and add the "
+":method:`Symfony\\\\Component\\\\Validator\\\\GroupSequenceProviderInterface::getGroupSequence`,"
+" method, which should return an array of groups to use::"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:299
+msgid ""
+"At last, you have to notify the Validator component that your ``User`` "
+"class provides a sequence of groups to be validated:"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:360
+msgid "How to Sequentially Apply Constraints on a Single Property"
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:362
+msgid ""
+"Sometimes, you may want to apply constraints sequentially on a single "
+"property. The :doc:`Sequentially "
+"constraint</reference/constraints/Sequentially>` can solve this for you "
+"in a more straightforward way than using a ``GroupSequence``."
+msgstr ""
+
+#: ../../../validation/sequence_provider.rst:368
+msgid "The ``Sequentially`` constraint was introduced in Symfony 5.1."
+msgstr ""
+

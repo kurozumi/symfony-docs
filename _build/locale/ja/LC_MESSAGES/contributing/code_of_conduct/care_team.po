@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code_of_conduct/care_team.rst:2
+msgid "CARE Team"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:5
+msgid "Our Pledge"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:7
+msgid ""
+"In the interest of fostering an open and welcoming environment, the "
+"\"Code of Conduct Active Response Ensurers\", or CARE team, pledge to "
+"ensure that the spirit of the :doc:`Code of Conduct "
+"</contributing/code_of_conduct/index>` is respected. Our main priority is"
+" to ensure the safety of our community members. The second goal is to "
+"help educate the community as a whole to be aware of the Code of Conduct "
+"and how to help implement its spirit throughout the community. In case "
+"these goals conflict, we will prioritize safety of community members over"
+" all other goals."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:16
+msgid ""
+"If you think there is or has been a violation to the Code of Conduct "
+"please contact the CARE team or if you prefer contact only individual "
+"members of the CARE team."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:20
+msgid "Members"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:22
+msgid ""
+"Here are all the members of the CARE team (in alphabetic order). You can "
+"contact any of them directly using the contact details below or you can "
+"also contact all of them at once by emailing **care@symfony.com**:"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:26
+msgid "**Emilie Lorenzo**"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:28
+msgid "*E-mail*: emilie.lorenzo [at] symfony.com"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:29
+msgid "*Twitter*: `@EmilieLorenzo <https://twitter.com/EmilieLorenzo>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:30
+msgid ""
+"*SymfonyConnect*: `emilielorenzo "
+"<https://connect.symfony.com/profile/emilielorenzo>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:32
+msgid "**Michelle Sanver**"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:34
+msgid "*E-mail*: michelle [at] liip.ch"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:35
+msgid "*Twitter*: `@michellesanver <https://twitter.com/michellesanver>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:36
+msgid ""
+"*SymfonyConnect*: `michellesanver "
+"<https://connect.symfony.com/profile/michellesanver>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:38
+msgid "**Tobias Nyholm**"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:40
+msgid "*E-mail*: tobias.nyholm [at] gmail.com"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:41
+msgid "*Twitter*: `@tobiasnyholm <https://twitter.com/tobiasnyholm>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:42
+msgid "*SymfonyConnect*: `tobias <https://connect.symfony.com/profile/tobias>`_"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:45
+msgid "About the CARE Team"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:47
+msgid ""
+"The :doc:`Symfony project leader </contributing/code/core_team>` appoints"
+" the CARE team with candidates they see fit. The CARE team will consist "
+"of at least 3 people. The team should be representing as many "
+"demographics as possible, ideally from different employers."
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:53
+msgid "CARE Team Transparency Reports"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:55
+msgid "The CARE team publishes a transparency report at the end of each year:"
+msgstr ""
+
+#: ../../../contributing/code_of_conduct/care_team.rst:57
+msgid "`Symfony Code of Conduct Transparency Report 2018`_."
+msgstr ""
+

@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_mbstring.rst:7
+msgid "The Symfony Polyfill / Mbstring Component"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:9
+msgid ""
+"This component provides a partial, native PHP implementation for the "
+"``mbstring`` PHP extension."
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following constants and functions, no matter if the `PHP mbstring "
+"extension`_ is installed or not in your server."
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:29
+msgid "Provided Constants"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:31
+msgid "``MB_CASE_UPPER`` (value = ``0``)"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:32
+msgid "``MB_CASE_LOWER`` (value = ``1``)"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:33
+msgid "``MB_CASE_TITLE`` (value = ``2``)"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:36
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:38
+msgid ":phpfunction:`mb_check_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:39
+msgid ":phpfunction:`mb_chr`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:40
+msgid ":phpfunction:`mb_convert_case`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:41
+msgid ":phpfunction:`mb_convert_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:42
+msgid ":phpfunction:`mb_convert_variables`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:43
+msgid ":phpfunction:`mb_decode_mimeheader`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:44
+msgid ":phpfunction:`mb_decode_numericentity`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:45
+msgid ":phpfunction:`mb_detect_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:46
+msgid ":phpfunction:`mb_detect_order`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:47
+msgid ":phpfunction:`mb_encode_mimeheader`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:48
+msgid ":phpfunction:`mb_encode_numericentity`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:49
+msgid ":phpfunction:`mb_encoding_aliases`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:50
+msgid ":phpfunction:`mb_get_info`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:51
+msgid ":phpfunction:`mb_http_input`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:52
+msgid ":phpfunction:`mb_http_output`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:53
+msgid ":phpfunction:`mb_internal_encoding`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:54
+msgid ":phpfunction:`mb_language`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:55
+msgid ":phpfunction:`mb_list_encodings`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:56
+msgid ":phpfunction:`mb_ord`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:57
+msgid ":phpfunction:`mb_output_handler`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:58
+msgid ":phpfunction:`mb_parse_str`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:59
+msgid ":phpfunction:`mb_scrub`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:60
+msgid ":phpfunction:`mb_stripos`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:61
+msgid ":phpfunction:`mb_stristr`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:62
+msgid ":phpfunction:`mb_strlen`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:63
+msgid ":phpfunction:`mb_strpos`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:64
+msgid ":phpfunction:`mb_strrchr`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:65
+msgid ":phpfunction:`mb_strrichr`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:66
+msgid ":phpfunction:`mb_strripos`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:67
+msgid ":phpfunction:`mb_strrpos`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:68
+msgid ":phpfunction:`mb_strstr`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:69
+msgid ":phpfunction:`mb_strtolower`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:70
+msgid ":phpfunction:`mb_strtoupper`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:71
+msgid ":phpfunction:`mb_strwidth`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:72
+msgid ":phpfunction:`mb_substitute_character`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:73
+msgid ":phpfunction:`mb_substr_count`"
+msgstr ""
+
+#: ../../../components/polyfill_mbstring.rst:74
+msgid ":phpfunction:`mb_substr`"
+msgstr ""
+

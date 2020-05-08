@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/var_exporter.rst:6
+msgid "The VarExporter Component"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:8
+msgid ""
+"The VarExporter component exports any serializable PHP data structure to "
+"plain PHP code and allows to instantiate and populate objects without "
+"calling their constructors."
+msgstr ""
+
+#: ../../../components/var_exporter.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/var_exporter.rst:22
+msgid "Exporting/Serializing Variables"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:24
+msgid ""
+"The main feature of this component is to serialize PHP data structures to"
+" plain PHP code, similar to PHP's :phpfunction:`var_export` function::"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:36
+msgid ""
+"The reason to use this component instead of ``serialize()`` or "
+"``igbinary`` is performance: thanks to `OPcache`_, the resulting code is "
+"significantly faster and more memory efficient than using "
+"``unserialize()`` or ``igbinary_unserialize()``."
+msgstr ""
+
+#: ../../../components/var_exporter.rst:40
+msgid "In addition, there are some minor differences:"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:42
+msgid ""
+"If the original variable defines them, all the semantics associated with "
+"``serialize()`` (such as ``__wakeup()``, ``__sleep()``, and "
+"``Serializable``) are preserved (``var_export()`` ignores them);"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:45
+msgid ""
+"References involving ``SplObjectStorage``, ``ArrayObject`` or "
+"``ArrayIterator`` instances are preserved;"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:47
+msgid ""
+"Missing classes throw a ``ClassNotFoundException`` instead of being "
+"unserialized to ``PHP_Incomplete_Class`` objects;"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:49
+msgid ""
+"``Reflection*``, ``IteratorIterator`` and ``RecursiveIteratorIterator`` "
+"classes throw an exception when being serialized."
+msgstr ""
+
+#: ../../../components/var_exporter.rst:52
+msgid ""
+"The exported data is a `PSR-2`_ compatible PHP file. Consider for example"
+" the following class hierarchy::"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:75
+msgid ""
+"When exporting the ``ConcreteClass`` data with VarExporter, the generated"
+" PHP file looks like this::"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:99
+msgid "Instantiating PHP Classes"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:101
+msgid ""
+"The other main feature provided by this component is an instantiator "
+"which can create objects and set their properties without calling their "
+"constructors or any other methods::"
+msgstr ""
+
+#: ../../../components/var_exporter.rst:118
+msgid ""
+"Instances of ``ArrayObject``, ``ArrayIterator`` and ``SplObjectHash`` can"
+" be created by using the special ``\"\\0\"`` property name to define "
+"their internal value::"
+msgstr ""
+

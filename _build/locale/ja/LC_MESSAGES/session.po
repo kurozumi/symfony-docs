@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../session.rst:2
+msgid "Sessions"
+msgstr ""
+
+#: ../../../session.rst:4
+msgid ""
+"Symfony provides a session object and several utilities that you can use "
+"to store information about the user between requests."
+msgstr ""
+
+#: ../../../session.rst:8
+msgid "Configuration"
+msgstr ""
+
+#: ../../../session.rst:10
+msgid ""
+"Sessions are provided by the `HttpFoundation component`_, which is "
+"included in all Symfony applications, no matter how you installed it. "
+"Before using the sessions, check their default configuration:"
+msgstr ""
+
+#: ../../../session.rst:71
+msgid ""
+"Setting the ``handler_id`` config option to ``null`` means that Symfony "
+"will use the native PHP session mechanism. The session metadata files "
+"will be stored outside of the Symfony application, in a directory "
+"controlled by PHP. Although this usually simplify things, some session "
+"expiration related options may not work as expected if other applications"
+" that write to the same directory have short max lifetime settings."
+msgstr ""
+
+#: ../../../session.rst:78
+msgid ""
+"If you prefer, you can use the ``session.handler.native_file`` service as"
+" ``handler_id`` to let Symfony manage the sessions itself. Another useful"
+" option is ``save_path``, which defines the directory where Symfony will "
+"store the session metadata files:"
+msgstr ""
+
+#: ../../../session.rst:123
+msgid ""
+"Check out the Symfony config reference to learn more about the other "
+"available :ref:`Session configuration options <config-framework-"
+"session>`. Also, if you prefer to store session metadata in a database "
+"instead of the filesystem, check out this article: "
+":doc:`/doctrine/pdo_session_storage`."
+msgstr ""
+
+#: ../../../session.rst:129
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../session.rst:131
+msgid ""
+"Symfony provides a session service that is injected in your services and "
+"controllers if you type-hint an argument with "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\SessionInterface`::"
+msgstr ""
+
+#: ../../../session.rst:163
+msgid ""
+"Every ``SessionInterface`` implementation is supported. If you have your "
+"own implementation, type-hint this in the argument instead."
+msgstr ""
+
+#: ../../../session.rst:166
+msgid ""
+"Stored attributes remain in the session for the remainder of that user's "
+"session. By default, session attributes are key-value pairs managed with "
+"the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Attribute\\\\AttributeBag`"
+" class."
+msgstr ""
+
+#: ../../../session.rst:171
+msgid ""
+"If your application needs are complex, you may prefer to use "
+":ref:`namespaced session attributes <namespaced-attributes>` which are "
+"managed with the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Attribute\\\\NamespacedAttributeBag`"
+" class. Before using them, override the ``session`` service definition to"
+" replace the default ``AttributeBag`` by the ``NamespacedAttributeBag``:"
+msgstr ""
+
+#: ../../../session.rst:193
+msgid "Avoid Starting Sessions for Anonymous Users"
+msgstr ""
+
+#: ../../../session.rst:195
+msgid ""
+"Sessions are automatically started whenever you read, write or even check"
+" for the existence of data in the session. This may hurt your application"
+" performance because all users will receive a session cookie. In order to"
+" prevent that, you must *completely* avoid accessing the session."
+msgstr ""
+
+#: ../../../session.rst:200
+msgid ""
+"For example, if your templates include some code to display the "
+":ref:`flash messages <flash-messages>`, sessions will start even if the "
+"user is not logged in and even if you haven't created any flash messages."
+" To avoid this behavior, add a check before trying to access the flash "
+"messages:"
+msgstr ""
+
+#: ../../../session.rst:217
+msgid "More about Sessions"
+msgstr ""
+

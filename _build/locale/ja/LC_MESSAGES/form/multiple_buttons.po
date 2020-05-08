@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/multiple_buttons.rst:5
+msgid "How to Submit a Form with Multiple Buttons"
+msgstr ""
+
+#: ../../../form/multiple_buttons.rst:7
+msgid ""
+"When your form contains more than one submit button, you will want to "
+"check which of the buttons was clicked to adapt the program flow in your "
+"controller. To do this, add a second button with the caption \"Save and "
+"add\" to your form::"
+msgstr ""
+
+#: ../../../form/multiple_buttons.rst:18
+msgid ""
+"In your controller, use the button's "
+":method:`Symfony\\\\Component\\\\Form\\\\ClickableInterface::isClicked` "
+"method for querying if the \"Save and add\" button was clicked::"
+msgstr ""
+
+#: ../../../form/multiple_buttons.rst:32
+msgid ""
+"Or you can get the button's name by using the "
+":method:`Symfony\\\\Component\\\\Form\\\\Form::getClickedButton` method "
+"of the form::"
+msgstr ""
+

@@ -1,0 +1,765 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/twig_reference.rst:5
+msgid "Twig Extensions Defined by Symfony"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:7
+msgid ""
+":ref:`Twig <twig-language>` is the template engine used in Symfony "
+"applications. There are tens of `default filters and functions defined by"
+" Twig`_, but Symfony also defines some filters, functions and tags to "
+"integrate the various Symfony components with Twig templates. This "
+"article explains them all."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:14
+msgid ""
+"If these extensions provided by Symfony are not enough, you can "
+":doc:`create a custom Twig extension </templating/twig_extension>` to "
+"define even more filters and functions."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:21
+msgid "Functions"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:26
+msgid "render"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:32
+#: ../../../reference/twig_reference.rst:50
+msgid "``uri``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:33
+#: ../../../reference/twig_reference.rst:51
+msgid "**type**: ``string`` | ``ControllerReference``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:35
+#: ../../../reference/twig_reference.rst:53
+msgid "``options`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:35
+#: ../../../reference/twig_reference.rst:53
+#: ../../../reference/twig_reference.rst:76
+#: ../../../reference/twig_reference.rst:78
+#: ../../../reference/twig_reference.rst:196
+#: ../../../reference/twig_reference.rst:218
+#: ../../../reference/twig_reference.rst:319
+#: ../../../reference/twig_reference.rst:528
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:37
+msgid ""
+"Makes a request to the given internal URI or controller and returns the "
+"result. The render strategy can be specified in the ``strategy`` key of "
+"the options. It's commonly used to :ref:`embed controllers in templates "
+"<templates-embed-controllers>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:44
+msgid "render_esi"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:55
+msgid ""
+"It's similar to the `render`_ function and defines the same arguments. "
+"However, it generates an ESI tag when :doc:`ESI support "
+"</http_cache/esi>` is enabled or falls back to the behavior of `render`_ "
+"otherwise."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:61
+msgid ""
+"The ``render_esi()`` function is an example of the shortcut functions of "
+"``render``. It automatically sets the strategy based on what's given in "
+"the function name, e.g. ``render_hinclude()`` will use the hinclude.js "
+"strategy. This works for all ``render_*()`` functions."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:67
+msgid "controller"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:73
+msgid "``controller``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:74
+#: ../../../reference/twig_reference.rst:94
+#: ../../../reference/twig_reference.rst:151
+#: ../../../reference/twig_reference.rst:168
+#: ../../../reference/twig_reference.rst:181
+#: ../../../reference/twig_reference.rst:194
+#: ../../../reference/twig_reference.rst:216
+#: ../../../reference/twig_reference.rst:238
+#: ../../../reference/twig_reference.rst:252
+#: ../../../reference/twig_reference.rst:303
+#: ../../../reference/twig_reference.rst:317
+#: ../../../reference/twig_reference.rst:370
+#: ../../../reference/twig_reference.rst:383
+#: ../../../reference/twig_reference.rst:421
+#: ../../../reference/twig_reference.rst:439
+#: ../../../reference/twig_reference.rst:457
+#: ../../../reference/twig_reference.rst:469
+#: ../../../reference/twig_reference.rst:484
+#: ../../../reference/twig_reference.rst:544
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:75
+msgid "``attributes`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:78
+msgid "``query`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:80
+msgid ""
+"Returns an instance of ``ControllerReference`` to be used with functions "
+"like :ref:`render() <reference-twig-function-render>` and "
+":ref:`render_esi() <reference-twig-function-render-esi>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:87
+msgid "asset"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:93
+#: ../../../reference/twig_reference.rst:238
+#: ../../../reference/twig_reference.rst:252
+msgid "``path``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:96
+#: ../../../reference/twig_reference.rst:119
+msgid "``packageName`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:96
+#: ../../../reference/twig_reference.rst:119
+msgid "**type**: ``string`` | ``null`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:98
+msgid ""
+"Returns the public path of the given asset path (which can be a CSS file,"
+" a JavaScript file, an image path, etc.). This function takes into "
+"account where the application is installed (e.g. in case the project is "
+"accessed in a host subdirectory) and the optional asset package base "
+"path."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:103
+msgid ""
+"Symfony provides various cache busting implementations via the :ref"
+":`reference-framework-assets-version`, :ref:`reference-assets-version-"
+"strategy`, and :ref:`reference-assets-json-manifest-path` configuration "
+"options."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:109
+msgid ""
+"Read more about :ref:`linking to web assets from templates <templates-"
+"link-to-assets>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:112
+msgid "asset_version"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:121
+msgid ""
+"Returns the current version of the package, more information in :ref"
+":`templates-link-to-assets`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:127
+msgid "csrf_token"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:134
+msgid "``intention``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:134
+msgid "**type**: ``string`` - an arbitrary string used to identify the token."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:136
+msgid ""
+"Renders a CSRF token. Use this function if you want :doc:`CSRF protection"
+" </security/csrf>` in a regular HTML form not managed by the Symfony Form"
+" component."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:140
+msgid "is_granted"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:146
+msgid "``role``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:147
+msgid "**type**: ``string``, ``string[]``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:148
+msgid "``object`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:149
+msgid "**type**: ``object``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:151
+msgid "``field`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:153
+msgid ""
+"Returns ``true`` if the current user has the given role. If several roles"
+" are passed in an array, ``true`` is returned if the user has at least "
+"one of them."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:157
+msgid ""
+"Optionally, an object can be passed to be used by the voter. More "
+"information can be found in :ref:`security-template`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:161
+msgid "logout_path"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:168
+#: ../../../reference/twig_reference.rst:181
+msgid "``key`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:170
+msgid ""
+"Generates a relative logout URL for the given firewall. If no key is "
+"provided, the URL is generated for the current firewall the user is "
+"logged into."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:174
+msgid "logout_url"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:183
+msgid ""
+"Equal to the `logout_path`_ function, but it'll generate an absolute URL "
+"instead of a relative one."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:187
+msgid "path"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:193
+#: ../../../reference/twig_reference.rst:215
+msgid "``name``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:195
+#: ../../../reference/twig_reference.rst:217
+msgid "``parameters`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:198
+msgid "``relative`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:198
+#: ../../../reference/twig_reference.rst:220
+#: ../../../reference/twig_reference.rst:340
+#: ../../../reference/twig_reference.rst:357
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:200
+msgid ""
+"Returns the relative URL (without the scheme and host) for the given "
+"route. If ``relative`` is enabled, it'll create a path relative to the "
+"current path."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:205
+#: ../../../reference/twig_reference.rst:227
+msgid ""
+"Read more about :doc:`Symfony routing </routing>` and about "
+":ref:`creating links in Twig templates <templates-link-to-pages>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:209
+msgid "url"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:220
+msgid "``schemeRelative`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:222
+msgid ""
+"Returns the absolute URL (with scheme and host) for the given route. If "
+"``schemeRelative`` is enabled, it'll create a scheme-relative URL."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:231
+msgid "absolute_url"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:240
+msgid ""
+"Returns the absolute URL (with scheme and host) from the passed relative "
+"path. Combine it with the :ref:`asset() function <reference-twig-"
+"function-asset>` to generate absolute URLs for web assets. Read more "
+"about :ref:`Linking to CSS, JavaScript and Image Assets <templates-link-"
+"to-assets>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:245
+msgid "relative_path"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:254
+msgid ""
+"Returns the relative path from the passed absolute URL. For example, "
+"assume you're on the following page in your app: "
+"``http://example.com/products/hover-board``."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:267
+msgid "expression"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:269
+msgid ""
+"Creates an "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\Expression` related"
+" to the :doc:`ExpressionLanguage component "
+"</components/expression_language>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:273
+msgid "Form Related Functions"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:275
+msgid ""
+"The following functions related to Symfony Forms are also available. They"
+" are explained in the article about :doc:`customizing form rendering "
+"</form/form_customization>`:"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:278
+msgid ":ref:`form() <reference-forms-twig-form>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:279
+msgid ":ref:`form_start() <reference-forms-twig-start>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:280
+msgid ":ref:`form_end() <reference-forms-twig-end>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:281
+msgid ":ref:`form_widget() <reference-forms-twig-widget>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:282
+msgid ":ref:`form_errors() <reference-forms-twig-errors>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:283
+msgid ":ref:`form_label() <reference-forms-twig-label>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:284
+msgid ":ref:`form_help() <reference-forms-twig-help>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:285
+msgid ":ref:`form_row() <reference-forms-twig-row>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:286
+msgid ":ref:`form_rest() <reference-forms-twig-rest>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:291
+msgid "Filters"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:296
+msgid "humanize"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:303
+#: ../../../reference/twig_reference.rst:457
+msgid "``text``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:305
+msgid ""
+"Makes a technical name human readable (i.e. replaces underscores by "
+"spaces or transforms camelCase text like ``helloWorld`` to ``hello "
+"world`` and then capitalizes the string)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:310
+#: ../../../reference/twig_reference.rst:521
+msgid "trans"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:316
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:318
+msgid "``arguments`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:320
+#: ../../../reference/twig_reference.rst:529
+msgid "``domain`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:321
+#: ../../../reference/twig_reference.rst:323
+#: ../../../reference/twig_reference.rst:443
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:323
+#: ../../../reference/twig_reference.rst:532
+msgid "``locale`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:325
+msgid ""
+"Translates the text into the current language. More information in "
+":ref:`Translation Filters <translation-filters>`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:329
+msgid "yaml_encode"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:335
+msgid "``input``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:336
+#: ../../../reference/twig_reference.rst:353
+msgid "**type**: ``mixed``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:337
+#: ../../../reference/twig_reference.rst:354
+msgid "``inline`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:338
+#: ../../../reference/twig_reference.rst:355
+msgid "**type**: ``integer`` **default**: ``0``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:340
+#: ../../../reference/twig_reference.rst:357
+msgid "``dumpObjects`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:342
+msgid ""
+"Transforms the input into YAML syntax. See :ref:`components-yaml-dump` "
+"for more information."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:346
+msgid "yaml_dump"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:352
+msgid "``value``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:359
+msgid ""
+"Does the same as `yaml_encode() <yaml_encode>`_, but includes the type in"
+" the output."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:363
+msgid "abbr_class"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:370
+msgid "``class``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:372
+msgid ""
+"Generates an ``<abbr>`` element with the short name of a PHP class (the "
+"FQCN will be shown in a tooltip when a user hovers over the element)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:376
+msgid "abbr_method"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:383
+msgid "``method``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:385
+msgid ""
+"Generates an ``<abbr>`` element using the ``FQCN::method()`` syntax. If "
+"``method`` is ``Closure``, ``Closure`` will be used instead and if "
+"``method`` doesn't have a class name, it's shown as a function "
+"(``method()``)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:390
+msgid "format_args"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:397
+#: ../../../reference/twig_reference.rst:409
+msgid "``args``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:397
+#: ../../../reference/twig_reference.rst:409
+msgid "**type**: ``array``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:399
+msgid ""
+"Generates a string with the arguments and their types (within ``<em>`` "
+"elements)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:402
+msgid "format_args_as_text"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:411
+msgid "Equal to the `format_args`_ filter, but without using HTML tags."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:414
+msgid "file_excerpt"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:420
+#: ../../../reference/twig_reference.rst:438
+#: ../../../reference/twig_reference.rst:468
+#: ../../../reference/twig_reference.rst:484
+msgid "``file``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:422
+#: ../../../reference/twig_reference.rst:440
+#: ../../../reference/twig_reference.rst:471
+msgid "``line``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:423
+#: ../../../reference/twig_reference.rst:425
+#: ../../../reference/twig_reference.rst:441
+#: ../../../reference/twig_reference.rst:471
+msgid "**type**: ``integer``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:425
+msgid "``srcContext`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:427
+msgid ""
+"Generates an excerpt of a code file around the given ``line`` number. The"
+" ``srcContext`` argument defines the total number of lines to display "
+"around the given line number (use ``-1`` to display the whole file)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:432
+msgid "format_file"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:443
+msgid "``text`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:445
+msgid ""
+"Generates the file path inside an ``<a>`` element. If the path is inside "
+"the kernel root directory, the kernel root directory path is replaced by "
+"``kernel.project_dir`` (showing the full path in a tooltip on hover)."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:450
+msgid "format_file_from_text"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:459
+msgid "Uses `format_file`_ to improve the output of default PHP errors."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:462
+msgid "file_link"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:473
+msgid ""
+"Generates a link to the provided file and line number using a "
+"preconfigured scheme."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:477
+msgid "file_relative"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:486
+msgid ""
+"It transforms the given absolute file path into a new file path relative "
+"to project's root directory:"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:494
+msgid ""
+"If the given file path is out of the project directory, a ``null`` value "
+"will be returned."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:500
+msgid "Tags"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:505
+msgid "form_theme"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:511
+msgid "``form``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:512
+msgid "**type**: ``FormView``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:514
+msgid "``resources``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:514
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:516
+msgid ""
+"Sets the resources to override the form theme for the given form view "
+"instance. You can use ``_self`` as resources to set it to the current "
+"resource. More information in :doc:`/form/form_customization`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:527
+msgid "``vars`` *(optional)*"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:530
+#: ../../../reference/twig_reference.rst:532
+msgid "**type**: ``string`` **default**: ``string``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:534
+msgid ""
+"Renders the translation of the content. More information in :ref"
+":`translation-tags`."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:537
+msgid "trans_default_domain"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:544
+msgid "``domain``"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:546
+msgid "This will set the default domain in the current template."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:549
+msgid "stopwatch"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:555
+msgid ""
+"This will time the run time of the code inside it and put that on the "
+"timeline of the WebProfilerBundle."
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:561
+msgid "Tests"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:563
+msgid ""
+"The following tests related to Symfony Forms are available. They are "
+"explained in the article about :doc:`customizing form rendering "
+"</form/form_customization>`:"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:566
+msgid ":ref:`selectedchoice() <form-twig-selectedchoice>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:567
+msgid ":ref:`rootform() <form-twig-rootform>`"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:570
+msgid "Global Variables"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:573
+msgid "app"
+msgstr ""
+
+#: ../../../reference/twig_reference.rst:575
+msgid ""
+"The ``app`` variable is injected automatically by Symfony in all "
+"templates and provides access to lots of useful application information. "
+"Read more about the :ref:`Twig global app variable <twig-app-variable>`."
+msgstr ""
+

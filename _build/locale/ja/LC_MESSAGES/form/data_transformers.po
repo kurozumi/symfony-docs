@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/data_transformers.rst:5
+msgid "How to Use Data Transformers"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:7
+msgid ""
+"Data transformers are used to translate the data for a field into a "
+"format that can be displayed in a form (and back on submit). They're "
+"already used internally for many field types. For example, the "
+":doc:`DateType </reference/forms/types/date>` field can be rendered as a "
+"``yyyy-MM-dd``-formatted input text box. Internally, a data transformer "
+"converts the starting ``DateTime`` value of the field into the ``yyyy-MM-"
+"dd`` string to render the form, and then back into a ``DateTime`` object "
+"on submit."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:16
+msgid ""
+"When a form field has the ``inherit_data`` option set to ``true``, data "
+"transformers are not applied to that field."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:21
+msgid ""
+"If, instead of transforming the representation of a value, you need to "
+"map values to a form field and back, you should use a data mapper. Check "
+"out :doc:`/form/data_mappers`."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:28
+msgid "Simple Example: Transforming String Tags from User Input to an Array"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:30
+msgid "Suppose you have a Task form with a tags ``text`` type::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:58
+msgid ""
+"Internally the ``tags`` are stored as an array, but displayed to the user"
+" as a simple comma separated string to make them easier to edit."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:61
+msgid ""
+"This is a *perfect* time to attach a custom data transformer to the "
+"``tags`` field. The easiest way to do this is with the "
+":class:`Symfony\\\\Component\\\\Form\\\\CallbackTransformer` class::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:96
+msgid ""
+"The ``CallbackTransformer`` takes two callback functions as arguments. "
+"The first transforms the original value into a format that'll be used to "
+"render the field. The second does the reverse: it transforms the "
+"submitted value back into the format you'll use in your code."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:103
+msgid ""
+"The ``addModelTransformer()`` method accepts *any* object that implements"
+" :class:`Symfony\\\\Component\\\\Form\\\\DataTransformerInterface` - so "
+"you can create your own classes, instead of putting all the logic in the "
+"form (see the next section)."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:107
+msgid ""
+"You can also add the transformer, right when adding the field by changing"
+" the format slightly::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:119
+msgid "Harder Example: Transforming an Issue Number into an Issue Entity"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:121
+msgid ""
+"Say you have a many-to-one relation from the Task entity to an Issue "
+"entity (i.e. each Task has an optional foreign key to its related Issue)."
+" Adding a list box with all possible issues could eventually get *really*"
+" long and take a long time to load. Instead, you decide you want to add a"
+" text box, where the user can enter the issue number."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:127
+msgid "Start by setting up the text field like normal::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:157
+msgid ""
+"Good start! But if you stopped here and submitted the form, the Task's "
+"``issue`` property would be a string (e.g. \"55\"). How can you transform"
+" this into an ``Issue`` entity on submit?"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:162
+msgid "Creating the Transformer"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:164
+msgid ""
+"You could use the ``CallbackTransformer`` like earlier. But since this is"
+" a bit more complex, creating a new transformer class will keep the "
+"``TaskType`` form class simpler."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:167
+msgid ""
+"Create an ``IssueToNumberTransformer`` class: it will be responsible for "
+"converting to and from the issue number and the ``Issue`` object::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:236
+msgid ""
+"Just like in the first example, a transformer has two directions. The "
+"``transform()`` method is responsible for converting the data used in "
+"your code to a format that can be rendered in your form (e.g. an "
+"``Issue`` object to its ``id``, a string). The ``reverseTransform()`` "
+"method does the reverse: it converts the submitted value back into the "
+"format you want (e.g. convert the ``id`` back to the ``Issue`` object)."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:242
+msgid ""
+"To cause a validation error, throw a "
+":class:`Symfony\\\\Component\\\\Form\\\\Exception\\\\TransformationFailedException`."
+" But the message you pass to this exception won't be shown to the user. "
+"You'll set that message with the ``invalid_message`` option (see below)."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:248
+msgid ""
+"When ``null`` is passed to the ``transform()`` method, your transformer "
+"should return an equivalent value of the type it is transforming to (e.g."
+" an empty string, 0 for integers or 0.0 for floats)."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:253
+msgid "Using the Transformer"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:255
+msgid ""
+"Next, you need to use the ``IssueToNumberTransformer`` object inside of "
+"``TaskType`` and add it to the ``issue`` field. No problem! Add a "
+"``__construct()`` method and type-hint the new class::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:294
+msgid ""
+"Whenever the transformer throws an exception, the ``invalid_message`` is "
+"shown to the user. Instead of showing the same message every time, you "
+"can set the end-user error message in the data transformer using the "
+"``setInvalidMessage()`` method. It also allows you to include user "
+"values::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:329
+msgid ""
+"That's it! If you're using the :ref:`default services.yaml configuration "
+"<service-container-services-load-example>`, Symfony will automatically "
+"know to pass your ``TaskType`` an instance of the "
+"``IssueToNumberTransformer`` thanks to :ref:`autowire <services-"
+"autowire>` and :ref:`autoconfigure <services-autoconfigure>`. Otherwise, "
+":ref:`register the form class as a service <service-container-creating-"
+"service>` and :doc:`tag it </service_container/tags>` with the "
+"``form.type`` tag."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:337
+msgid "Now, you can use your ``TaskType``::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:344
+msgid ""
+"Cool, you're done! Your user will be able to enter an issue number into "
+"the text field, which will be transformed back into an Issue object. This"
+" means that, after a successful submission, the Form component will pass "
+"a real ``Issue`` object to ``Task::setIssue()`` instead of the issue "
+"number."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:349
+msgid ""
+"If the issue isn't found, a form error will be created for that field and"
+" its error message can be controlled with the ``invalid_message`` field "
+"option."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:354
+msgid ""
+"Be careful when adding your transformers. For example, the following is "
+"**wrong**, as the transformer would be applied to the entire form, "
+"instead of just this field::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:366
+msgid "Creating a Reusable issue_selector Field"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:368
+msgid ""
+"In the above example, you applied the transformer to a normal ``text`` "
+"field. But if you do this transformation a lot, it might be better to "
+":doc:`create a custom field type </form/create_custom_field_type>`. that "
+"does this automatically."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:373
+msgid "First, create the custom field type class::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:411
+msgid ""
+"Great! This will act and render like a text field (``getParent()``), but "
+"will automatically have the data transformer *and* a nice default value "
+"for the ``invalid_message`` option."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:414
+msgid ""
+"As long as you're using :ref:`autowire <services-autowire>` and "
+":ref:`autoconfigure <services-autoconfigure>`, you can start using the "
+"form immediately::"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:439
+msgid ""
+"If you're not using ``autowire`` and ``autoconfigure``, see "
+":doc:`/form/create_custom_field_type` for how to configure your new "
+"``IssueSelectorType``."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:445
+msgid "About Model and View Transformers"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:447
+msgid ""
+"In the above example, the transformer was used as a \"model\" "
+"transformer. In fact, there are two different types of transformers and "
+"three different types of underlying data."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:454
+msgid "In any form, the three different types of data are:"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:456
+msgid ""
+"**Model data** - This is the data in the format used in your application "
+"(e.g. an ``Issue`` object). If you call ``Form::getData()`` or "
+"``Form::setData()``, you're dealing with the \"model\" data."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:460
+msgid ""
+"**Norm Data** - This is a normalized version of your data and is commonly"
+" the same as your \"model\" data (though not in our example). It's not "
+"commonly used directly."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:464
+msgid ""
+"**View Data** - This is the format that's used to fill in the form fields"
+" themselves. It's also the format in which the user will submit the data."
+" When you call ``Form::submit($data)``, the ``$data`` is in the \"view\" "
+"data format."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:468
+msgid ""
+"The two different types of transformers help convert to and from each of "
+"these types of data:"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:473
+msgid "**Model transformers**:"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:472
+msgid "``transform()``: \"model data\" => \"norm data\""
+msgstr ""
+
+#: ../../../form/data_transformers.rst:473
+msgid "``reverseTransform()``: \"norm data\" => \"model data\""
+msgstr ""
+
+#: ../../../form/data_transformers.rst:477
+msgid "**View transformers**:"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:476
+msgid "``transform()``: \"norm data\" => \"view data\""
+msgstr ""
+
+#: ../../../form/data_transformers.rst:477
+msgid "``reverseTransform()``: \"view data\" => \"norm data\""
+msgstr ""
+
+#: ../../../form/data_transformers.rst:479
+msgid "Which transformer you need depends on your situation."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:481
+msgid "To use the view transformer, call ``addViewTransformer()``."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:484
+msgid "So why Use the Model Transformer?"
+msgstr ""
+
+#: ../../../form/data_transformers.rst:486
+msgid ""
+"In this example, the field is a ``text`` field, and a text field is "
+"always expected to be a simple, scalar format in the \"norm\" and "
+"\"view\" formats. For this reason, the most appropriate transformer was "
+"the \"model\" transformer (which converts to/from the *norm* format - "
+"string issue number - to the *model* format - Issue object)."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:492
+msgid ""
+"The difference between the transformers is subtle and you should always "
+"think about what the \"norm\" data for a field should really be. For "
+"example, the \"norm\" data for a ``text`` field is a string, but is a "
+"``DateTime`` object for a ``date`` field."
+msgstr ""
+
+#: ../../../form/data_transformers.rst:499
+msgid ""
+"As a general rule, the normalized data should contain as much information"
+" as possible."
+msgstr ""
+

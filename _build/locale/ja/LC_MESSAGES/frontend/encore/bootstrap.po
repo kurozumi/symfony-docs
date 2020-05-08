@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/bootstrap.rst:2
+msgid "Using Bootstrap CSS & JS"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:4
+msgid ""
+"Want to use Bootstrap (or something similar) in your project? No problem!"
+" First, install it. To be able to customize things further, we'll install"
+" ``bootstrap``:"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:13
+msgid "Importing Bootstrap Styles"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:15
+msgid ""
+"Now that ``bootstrap`` lives in your ``node_modules/`` directory, you can"
+" import it from any Sass or JavaScript file. For example, if you already "
+"have a ``global.scss`` file, import it from there:"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:29
+msgid ""
+"That's it! This imports the "
+"``node_modules/bootstrap/scss/bootstrap.scss`` file into ``global.scss``."
+" You can even customize the Bootstrap variables first!"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:34
+msgid ""
+"If you don't need *all* of Bootstrap's features, you can include specific"
+" files in the ``bootstrap`` directory instead - e.g. "
+"``~bootstrap/scss/alert``."
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:38
+msgid "Importing Bootstrap JavaScript"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:40
+msgid ""
+"Bootstrap JavaScript requires jQuery and Popper.js, so make sure you have"
+" this installed:"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:46
+msgid "Now, require bootstrap from any of your JavaScript files:"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:66
+msgid "Using other Bootstrap / jQuery Plugins"
+msgstr ""
+
+#: ../../../frontend/encore/bootstrap.rst:68
+msgid ""
+"If you need to use jQuery plugins that work well with jQuery, you may "
+"need to use Encore's :ref:`autoProvidejQuery() <encore-autoprovide-"
+"jquery>` method so that these plugins know where to find jQuery. Then, "
+"you can include the needed JavaScript and CSS like normal:"
+msgstr ""
+

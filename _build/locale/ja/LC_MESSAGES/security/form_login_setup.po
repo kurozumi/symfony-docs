@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/form_login_setup.rst:2
+msgid "How to Build a Login Form"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:6
+msgid ""
+"If you're looking for the ``form_login`` firewall option, see "
+":doc:`/security/form_login`."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:9
+msgid ""
+"Ready to create a login form? First, make sure you've followed the main "
+":doc:`Security Guide </security>` to install security and create your "
+"``User`` class."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:14
+msgid "Generating the Login Form"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:16
+msgid ""
+"Creating a powerful login form can be bootstrapped with the ``make:auth``"
+" command from `MakerBundle`_. Depending on your setup, you may be asked "
+"different questions and your generated code may be slightly different:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:45
+msgid ""
+"Support for login form authentication was added to ``make:auth`` in "
+"MakerBundle 1.8."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:47
+msgid ""
+"This generates the following: 1) a login route & controller, 2) a "
+"template that renders the login form, 3) a :doc:`Guard authenticator "
+"</security/guard_authentication>` class that processes the login submit "
+"and 4) updates the main security config file."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:51
+msgid "**Step 1.** The ``/login`` route & controller::"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:80
+msgid ""
+"Edit the ``security.yaml`` file in order to allow access for anyone to "
+"the ``/login`` route:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:127
+msgid ""
+"**Step 2.** The template has very little to do with security: it just "
+"generates a traditional HTML form that submits to ``/login``:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:169
+msgid "**Step 3.** The Guard authenticator processes the form submit::"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:271
+msgid ""
+"**Step 4.** Updates the main security config file to enable the Guard "
+"authenticator:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:331
+msgid "Finishing the Login Form"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:333
+msgid ""
+"Woh. The ``make:auth`` command just did a *lot* of work for you. But, "
+"you're not done yet. First, go to ``/login`` to see the new login form. "
+"Feel free to customize this however you want."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:337
+msgid ""
+"When you submit the form, the ``LoginFormAuthenticator`` will intercept "
+"the request, read the email (or whatever field you're using) & password "
+"from the form, find the ``User`` object, validate the CSRF token and "
+"check the password."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:341
+msgid ""
+"But, depending on your setup, you'll need to finish one or more TODOs "
+"before the whole process works. You will *at least* need to fill in "
+"*where* you want your user to be redirected after success:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:359
+msgid ""
+"Unless you have any other TODOs in that file, that's it! If you're "
+"loading users from the database, make sure you've loaded some :ref:`dummy"
+" users <doctrine-fixtures>`. Then, try to login."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:363
+msgid ""
+"If you're successful, the web debug toolbar will tell you who you are and"
+" what roles you have:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:369
+msgid ""
+"The Guard authentication system is powerful, and you can customize your "
+"authenticator class to do whatever you need. To learn more about what the"
+" individual methods do, see :doc:`/security/guard_authentication`."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:374
+msgid "Controlling Error Messages"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:376
+msgid ""
+"You can cause authentication to fail with a custom message at any step by"
+" throwing a custom "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\CustomUserMessageAuthenticationException`."
+" This is an easy way to control the error message."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:380
+msgid ""
+"But in some cases, like if you return ``false`` from "
+"``checkCredentials()``, you may see an error that comes from the core of "
+"Symfony - like ``Invalid credentials.``."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:383
+msgid ""
+"To customize this message, you could throw a "
+"``CustomUserMessageAuthenticationException`` instead. Or, you can "
+":doc:`translate </translation>` the message through the ``security`` "
+"domain:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:416
+msgid ""
+"If the message isn't translated, make sure you've installed the "
+"``translator`` and try clearing your cache:"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:424
+msgid "Redirecting to the Last Accessed Page with ``TargetPathTrait``"
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:426
+msgid ""
+"The last request URI is stored in a session variable named "
+"``_security.<your providerKey>.target_path`` (e.g. "
+"``_security.main.target_path`` if the name of your firewall is ``main``)."
+" Most of the times you don't have to deal with this low level session "
+"variable. However, the "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Util\\\\TargetPathTrait`"
+" utility can be used to read (like in the example above) or set this "
+"value manually."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:433
+msgid ""
+"When the user tries to access a restricted page, they are being "
+"redirected to the login page. At that point target path will be set. "
+"After a successful login, the user will be redirected to this previously "
+"set target path."
+msgstr ""
+
+#: ../../../security/form_login_setup.rst:437
+msgid ""
+"If you also want to apply this behavior to public pages, you can create "
+"an :doc:`event subscriber </event_dispatcher>` to set the target path "
+"manually whenever the user browses a page::"
+msgstr ""
+

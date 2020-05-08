@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/community/review-comments.rst:2
+msgid "Respectful Review Comments"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:4
+msgid ""
+":doc:`Reviewing issues and pull requests "
+"</contributing/community/reviews>` is a great way to get started with "
+"contributing to the Symfony community. Anyone can do it! But before you "
+"give a comment, take a step back and think, is what you are about to say "
+"actually what you intend?"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:9
+msgid ""
+"Communicating over the Internet with nothing but text can pose a big "
+"challenge, especially if you remember that the Symfony community is "
+"world-wide and is composed of a wide variety of people with differing "
+"ideas and opinions."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:14
+msgid ""
+"Not everyone speaks English or is able to use a keyboard. Some might have"
+" dyslexia or similar conditions that affect their writing."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:17
+msgid ""
+"Not to mention that some might have a bad experience from previous "
+"contributions (to other projects)."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:20
+msgid ""
+"You're not alone in this. This guide will try to help you write "
+"constructive, respectful and helpful reviews and replies."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:25
+msgid ""
+"This guide is not about lecturing you to \"conform\" or give-up your "
+"ideas and opinions but helping you to better communicate, prevent "
+"possible confusion, and keeping the Symfony community a welcoming place "
+"for everyone. **You are free to disagree with someone's opinions, but "
+"don't be disrespectful.**"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:31
+msgid ""
+"First of, accept that many programming decisions are opinions. Discuss "
+"trade offs, which you prefer, and reach a resolution quickly. It's not "
+"about being right or wrong, but using what works."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:36
+msgid "Tone of Voice"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:38
+msgid ""
+"We don't expect you to be completely formal, or to even write error-free "
+"English. Just remember this: don't swear, and be respectful to others."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:41
+msgid ""
+"Don't reply in anger or with an aggressive tone. If you're angry, we "
+"understand that, but swearing/cursing and name calling doesn't really "
+"encourage anyone to help you. Take a deep breath, count to 10 and try to "
+"*clearly* explain what problems you encounter."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:47
+msgid "Inclusive Language"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:49
+msgid ""
+"In an effort to be inclusive to a wide group of people, it's recommended "
+"to use personal pronouns that don't suggest a particular gender. Unless "
+"someone has stated their pronouns, use \"they\", \"them\" instead of "
+"\"he\", \"she\", \"his\", \"hers\", \"his/hers\", \"he/she\", etc."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:54
+msgid ""
+"Try to avoid using wording that may be considered excluding, needlessly "
+"gendered (e.g. words that have a male or female base), racially motivated"
+" or singles out a particular group in society. For example, it's "
+"recommended to use words like \"folks\", \"team\", \"everyone\" instead "
+"of \"guys\", \"ladies\", \"yanks\", etc."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:60
+msgid "Giving Positive Feedback"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:62
+msgid ""
+"While reviewing issues and pull requests you may run into some "
+"suggestions (including patches) that don't reflect your ideas, are not "
+"good, or downright wrong."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:65
+msgid ""
+"Now, when you prepare your comment, consider the amount of work and time "
+"the author has spent on their idea and how your response would make them "
+"feel."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:68
+msgid ""
+"Did you correctly understand their intention? Or are you making "
+"assumptions? Whatever your response, be explicit. Remember people don't "
+"always understand your intentions online."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:72
+msgid ""
+"Avoid using terms that could be seen as referring to personal traits "
+"(\"dumb\", \"stupid\"). Assume everyone is intelligent and well-meaning."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:77
+msgid ""
+"Good questions avoid judgment and avoid assumptions about the author's "
+"perspective."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:79
+msgid ""
+"Maybe you can ask for clarification? Suggest an alternative? Or provide a"
+" simple explanation *why* you disagree with their proposal."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:82
+msgid "``This looks wrong. Are you sure it's correct?`` (e.g. typo/syntax error)"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:84
+msgid "``What do you think of \"RequestFactory\" instead of RequestCreator?``"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:86
+msgid ""
+"Even if something *is* really wrong or \"a bad idea\", stay respectful "
+"and don't get into endless you-are-wrong discussions or \"flame wars\"."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:89
+msgid ""
+"Don't use hyperbole (\"always\", \"never\", \"endlessly\", \"nothing\", "
+"\"worst\", \"horrible\", \"terrible\")."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:91
+msgid ""
+"**Don't:** *\"I don't like how you wrote this code\"* - there is no clear"
+" explanation why you don't like how it's written."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:94
+msgid ""
+"**Better:** *\"I find it hard to read this code as there are many nested "
+"if statements, can you make it more readable? By encapsulating some of "
+"the details or maybe adding some comments to explain the overall "
+"logic.\"* - You explain why you find the code hard to read *and* give "
+"some suggestions for improvement."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:98
+msgid "If a piece of code is in fact wrong, explain why:"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:100
+msgid ""
+"\"This code doesn't comply with Symfony's CS rules. Please see [...] for "
+"details.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:102
+msgid ""
+"\"Symfony 3 still uses PHP 5 and doesn't allow the usage of scalar type-"
+"hints.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:104
+msgid ""
+"\"I think the code is less readable now.\" - careful here, be sure "
+"explain why you think the code is less readable, and maybe give some "
+"suggestions?"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:107
+msgid "**Examples of valid reasons to reject:**"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:109
+msgid ""
+"\"We tried that in the past (link to the relevant PR) but we needed to "
+"revert it for XXX reason.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:111
+msgid ""
+"\"That change would introduce too many merge conflicts when merging up "
+"Symfony branches. In the past we've always rejected changes like this.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:114
+msgid ""
+"\"I profiled this change and it hurts performance significantly\" - if "
+"you don't profile, it's an opinion, so we can ignore"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:116
+msgid ""
+"\"Code doesn't match Symfony's CS rules (e.g. use ``[]`` instead of "
+"``array()``)\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:118
+msgid ""
+"\"We only provide integration with very popular projects (e.g. we "
+"integrate Bootstrap but not your own CSS framework)\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:120
+msgid ""
+"\"This would require adding lots of code and making lots of changes for a"
+" feature that doesn't look so important. That could hurt maintaining in "
+"the future.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:124
+msgid "Asking for Changes"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:126
+msgid ""
+"Rarely something is perfect from the start, while the code itself is "
+"good. It may not be optimal or conform the Symfony coding style."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:129
+msgid ""
+"Again, understand the author already spent time on the issue and asking "
+"for (small) changes may be misinterpreted or seen as a personal attack."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:132
+msgid ""
+"Be thankful for their work (so far), stay positive and really help them "
+"to make the contribution a great one. *Especially if they are a first "
+"time contributor.*"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:136
+msgid ""
+"Use words like \"Please\", \"Thank you\" and \"Could you\" instead of "
+"making demands;"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:138
+msgid ""
+"\"Thank you for your work so far. I left some suggestions for improvement"
+" to make the code more readable.\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:141
+msgid ""
+"\"Your code contains some coding-style problems, can you fix these before"
+" we merge? Thank you\""
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:144
+msgid ""
+"\"Please use 4 spaces instead of tabs\", \"This needs be on the previous "
+"line\";"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:146
+msgid ""
+"During a pull request review you can usually leave more then one comment,"
+" you don't have to use \"Please\" all the time. But it wouldn't hurt."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:149
+msgid ""
+"It may not seem like much, but saying \"Thank you\" does make others feel"
+" more welcome."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:154
+msgid "Preventing Escalations"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:156
+msgid ""
+"Sometimes when people receive feedback they may get defensive. In that "
+"case, it is better to try to approach the discussion in a different way, "
+"to not escalate further."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:160
+msgid ""
+"If you want someone to mediate, please join the ``#contribs`` channel on "
+"`Symfony Slack`_, to have a safe environment and keep working together on"
+" the common goals."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:164
+msgid "Using Humor"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:166
+msgid ""
+"In short: Extreme misbehavior will not be tolerated and may even get you "
+"banned; Keep it real and friendly."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:169
+msgid ""
+"**Don't use sarcasm for a serious topic, that's not something that "
+"belongs to the Symfony community.** And don't marginalize someone's "
+"problems; ``Well I guess that's not supposed to happen? 😆``."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:173
+msgid ""
+"Even if someone's explanation is \"inviting to joke about it\", it's a "
+"real problem to them. Making jokes about this doesn't help with solving "
+"their problem and only makes them *feel stupid*. Instead try to discover "
+"what the problem is really about."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:179
+msgid "Final Words"
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:181
+msgid ""
+"Don't feel bad if you \"failed\" to follow these tips. As long as your "
+"intentions were good and you didn't really offend or insult anyone; you "
+"can explain you misunderstood, you didn't mean to marginalize or simply "
+"failed."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:186
+msgid ""
+"But don't say it \"just because\", if your apology is not really meant "
+"you *will* lose credibility and respect from other developers."
+msgstr ""
+
+#: ../../../contributing/community/review-comments.rst:189
+msgid "*Do unto others as you would have them do unto you.*"
+msgstr ""
+

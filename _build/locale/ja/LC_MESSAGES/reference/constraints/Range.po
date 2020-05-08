@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Range.rst:2
+msgid "Range"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:4
+msgid ""
+"Validates that a given number or ``DateTime`` object is *between* some "
+"minimum and maximum."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:7
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:7
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:8
+#: ../../../reference/constraints/Range.rst:316
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:8
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:9
+msgid "`invalidMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:10
+msgid "`max`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:11
+msgid "`maxMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:12
+msgid "`maxPropertyPath`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:13
+msgid "`min`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:14
+msgid "`minMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:15
+msgid "`minPropertyPath`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:16
+msgid "`notInRangeMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:17
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:18
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Range`"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:19
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:19
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\RangeValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:23
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:25
+msgid ""
+"To verify that the \"height\" field of a class is between \"120\" and "
+"\"180\", you might add the following:"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:101
+msgid "Date Ranges"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:103
+msgid ""
+"This constraint can be used to compare ``DateTime`` objects against date "
+"ranges. The minimum and maximum date of the range should be given as any "
+"date string `accepted by the DateTime constructor`_. For example, you "
+"could check that a date must lie within the current year like this:"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:175
+msgid ""
+"Be aware that PHP will use the server's configured timezone to interpret "
+"these dates. If you want to fix the timezone, append it to the date "
+"string:"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:245
+msgid ""
+"The ``DateTime`` class also accepts relative dates or times. For example,"
+" you can check that a delivery date starts within the next five hours "
+"like this:"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:321
+msgid "invalidMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:323
+msgid "**type**: ``string`` **default**: ``This value should be a valid number.``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:325
+msgid ""
+"The message that will be shown if the underlying value is not a number "
+"(per the :phpfunction:`is_numeric` PHP function)."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:328
+#: ../../../reference/constraints/Range.rst:353
+#: ../../../reference/constraints/Range.rst:397
+#: ../../../reference/constraints/Range.rst:432
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:331
+#: ../../../reference/constraints/Range.rst:356
+#: ../../../reference/constraints/Range.rst:400
+#: ../../../reference/constraints/Range.rst:435
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:331
+#: ../../../reference/constraints/Range.rst:356
+#: ../../../reference/constraints/Range.rst:400
+#: ../../../reference/constraints/Range.rst:435
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:333
+#: ../../../reference/constraints/Range.rst:359
+#: ../../../reference/constraints/Range.rst:403
+#: ../../../reference/constraints/Range.rst:439
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:333
+#: ../../../reference/constraints/Range.rst:359
+#: ../../../reference/constraints/Range.rst:403
+#: ../../../reference/constraints/Range.rst:439
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:337
+msgid "max"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:339
+#: ../../../reference/constraints/Range.rst:383
+msgid "**type**: ``number`` or ``string`` (date format)"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:341
+msgid ""
+"This required option is the \"max\" value. Validation will fail if the "
+"given value is **greater** than this max value."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:345
+msgid "maxMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:347
+msgid ""
+"**type**: ``string`` **default**: ``This value should be {{ limit }} or "
+"less.``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:349
+msgid ""
+"The message that will be shown if the underlying value is more than the "
+"`max`_ option, and no `min`_ option has been defined (if both are "
+"defined, use `notInRangeMessage`_)."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:358
+#: ../../../reference/constraints/Range.rst:402
+msgid "``{{ limit }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:358
+#: ../../../reference/constraints/Range.rst:437
+msgid "The upper limit"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:363
+msgid "maxPropertyPath"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:365
+#: ../../../reference/constraints/Range.rst:409
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:367
+msgid "It defines the object property whose value is used as ``max`` option."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:369
+msgid ""
+"For example, if you want to compare the ``$submittedDate`` property of "
+"some object with regard to the ``$deadline`` property of the same object,"
+" use ``maxPropertyPath=\"deadline\"`` in the range constraint of "
+"``$submittedDate``."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:375
+msgid ""
+"When using this option, its value is available in error messages as the "
+"``{{ max_limit_path }}`` placeholder. Although it's not intended to "
+"include it in the error messages displayed to end users, it's useful when"
+" using APIs for doing any mapping logic on client-side."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:381
+msgid "min"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:385
+msgid ""
+"This required option is the \"min\" value. Validation will fail if the "
+"given value is **less** than this min value."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:389
+msgid "minMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:391
+msgid ""
+"**type**: ``string`` **default**: ``This value should be {{ limit }} or "
+"more.``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:393
+msgid ""
+"The message that will be shown if the underlying value is less than the "
+"`min`_ option, and no `max`_ option has been defined (if both are "
+"defined, use `notInRangeMessage`_)."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:402
+#: ../../../reference/constraints/Range.rst:438
+msgid "The lower limit"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:407
+msgid "minPropertyPath"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:411
+msgid "It defines the object property whose value is used as ``min`` option."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:413
+msgid ""
+"For example, if you want to compare the ``$endDate`` property of some "
+"object with regard to the ``$startDate`` property of the same object, use"
+" ``minPropertyPath=\"startDate\"`` in the range constraint of "
+"``$endDate``."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:419
+msgid ""
+"When using this option, its value is available in error messages as the "
+"``{{ min_limit_path }}`` placeholder. Although it's not intended to "
+"include it in the error messages displayed to end users, it's useful when"
+" using APIs for doing any mapping logic on client-side."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:425
+msgid "notInRangeMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:427
+msgid ""
+"**type**: ``string`` **default**: ``This value should be between {{ min "
+"}} and {{ max }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:429
+msgid ""
+"The message that will be shown if the underlying value is less than the "
+"`min`_ option or greater than the `max`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:437
+msgid "``{{ max }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Range.rst:438
+msgid "``{{ min }}``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

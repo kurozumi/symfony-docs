@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/ldap.rst:6
+msgid "The Ldap Component"
+msgstr ""
+
+#: ../../../components/ldap.rst:8
+msgid ""
+"The Ldap component provides a means to connect to an LDAP server "
+"(OpenLDAP or Active Directory)."
+msgstr ""
+
+#: ../../../components/ldap.rst:11
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/ldap.rst:20
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/ldap.rst:22
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Ldap\\\\Ldap` class provides methods "
+"to authenticate and query against an LDAP server."
+msgstr ""
+
+#: ../../../components/ldap.rst:25
+msgid ""
+"The ``Ldap`` class uses an "
+":class:`Symfony\\\\Component\\\\Ldap\\\\Adapter\\\\AdapterInterface` to "
+"communicate with an LDAP server. The :class:`adapter "
+"<Symfony\\\\Component\\\\Ldap\\\\Adapter\\\\ExtLdap\\\\Adapter>` for "
+"PHP's built-in LDAP extension, for example, can be configured using the "
+"following options:"
+msgstr ""
+
+#: ../../../components/ldap.rst:31
+msgid "``host``"
+msgstr ""
+
+#: ../../../components/ldap.rst:31
+msgid "IP or hostname of the LDAP server"
+msgstr ""
+
+#: ../../../components/ldap.rst:34
+msgid "``port``"
+msgstr ""
+
+#: ../../../components/ldap.rst:34
+msgid "Port used to access the LDAP server"
+msgstr ""
+
+#: ../../../components/ldap.rst:37
+msgid "``version``"
+msgstr ""
+
+#: ../../../components/ldap.rst:37
+msgid "The version of the LDAP protocol to use"
+msgstr ""
+
+#: ../../../components/ldap.rst:40
+msgid "``encryption``"
+msgstr ""
+
+#: ../../../components/ldap.rst:40
+msgid "The encryption protocol: ``ssl``, ``tls`` or ``none`` (default)"
+msgstr ""
+
+#: ../../../components/ldap.rst:44
+msgid "``connection_string``"
+msgstr ""
+
+#: ../../../components/ldap.rst:43
+msgid ""
+"You may use this option instead of ``host`` and ``port`` to connect to "
+"the LDAP server"
+msgstr ""
+
+#: ../../../components/ldap.rst:47
+msgid "``optReferrals``"
+msgstr ""
+
+#: ../../../components/ldap.rst:47
+msgid ""
+"Specifies whether to automatically follow referrals returned by the LDAP "
+"server"
+msgstr ""
+
+#: ../../../components/ldap.rst:51
+msgid "``options``"
+msgstr ""
+
+#: ../../../components/ldap.rst:50
+msgid ""
+"LDAP server's options as defined in :class:`ConnectionOptions "
+"<Symfony\\\\Component\\\\Ldap\\\\Adapter\\\\ExtLdap\\\\ConnectionOptions>`"
+msgstr ""
+
+#: ../../../components/ldap.rst:53
+msgid "For example, to connect to a start-TLS secured LDAP server::"
+msgstr ""
+
+#: ../../../components/ldap.rst:62
+msgid "Or you could directly specify a connection string::"
+msgstr ""
+
+#: ../../../components/ldap.rst:68
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Ldap\\\\Ldap::bind` method "
+"authenticates a previously configured connection using both the "
+"distinguished name (DN) and the password of a user::"
+msgstr ""
+
+#: ../../../components/ldap.rst:77
+msgid ""
+"Once bound (or if you enabled anonymous authentication on your LDAP "
+"server), you may query the LDAP server using the "
+":method:`Symfony\\\\Component\\\\Ldap\\\\Ldap::query` method::"
+msgstr ""
+
+#: ../../../components/ldap.rst:91
+msgid ""
+"By default, LDAP entries are lazy-loaded. If you wish to fetch all "
+"entries in a single call and do something with the results' array, you "
+"may use the "
+":method:`Symfony\\\\Component\\\\Ldap\\\\Adapter\\\\ExtLdap\\\\Collection::toArray`"
+" method::"
+msgstr ""
+
+#: ../../../components/ldap.rst:104
+msgid ""
+"By default, LDAP queries use the "
+"``Symfony\\Component\\Ldap\\Adapter\\QueryInterface::SCOPE_SUB`` scope, "
+"which corresponds to the ``LDAP_SCOPE_SUBTREE`` scope of the "
+":phpfunction:`ldap_search` function. You can also use ``SCOPE_BASE`` "
+"(related to the ``LDAP_SCOPE_BASE`` scope of :phpfunction:`ldap_read`) "
+"and ``SCOPE_ONE`` (related to the ``LDAP_SCOPE_ONELEVEL`` scope of "
+":phpfunction:`ldap_list`)::"
+msgstr ""
+
+#: ../../../components/ldap.rst:115
+msgid "Creating or Updating Entries"
+msgstr ""
+
+#: ../../../components/ldap.rst:117
+msgid ""
+"The Ldap component provides means to create new LDAP entries, update or "
+"even delete existing ones::"
+msgstr ""
+
+#: ../../../components/ldap.rst:149
+msgid "Batch Updating"
+msgstr ""
+
+#: ../../../components/ldap.rst:151
+msgid ""
+"Use the entry manager's "
+":method:`Symfony\\\\Component\\\\Ldap\\\\Adapter\\\\ExtLdap\\\\EntryManager::applyOperations`"
+" method to update multiple attributes at once::"
+msgstr ""
+
+#: ../../../components/ldap.rst:171
+msgid ""
+"Possible operation types are ``LDAP_MODIFY_BATCH_ADD``, "
+"``LDAP_MODIFY_BATCH_REMOVE``, ``LDAP_MODIFY_BATCH_REMOVE_ALL``, "
+"``LDAP_MODIFY_BATCH_REPLACE``. Parameter ``$values`` must be ``NULL`` "
+"when using ``LDAP_MODIFY_BATCH_REMOVE_ALL`` operation type."
+msgstr ""
+

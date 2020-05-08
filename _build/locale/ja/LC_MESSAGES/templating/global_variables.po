@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../templating/global_variables.rst:5
+msgid "How to Inject Variables Automatically into all Templates"
+msgstr ""
+
+#: ../../../templating/global_variables.rst:7
+msgid ""
+"Twig allows to inject automatically one or more variables into all "
+"templates. These global variables are defined in the ``twig.globals`` "
+"option inside the main Twig configuration file:"
+msgstr ""
+
+#: ../../../templating/global_variables.rst:49
+msgid ""
+"Now, the variable ``ga_tracking`` is available in all Twig templates, so "
+"you can use it without having to pass it explicitly from the controller "
+"or service that renders the template:"
+msgstr ""
+
+#: ../../../templating/global_variables.rst:58
+msgid "Referencing Services"
+msgstr ""
+
+#: ../../../templating/global_variables.rst:60
+msgid ""
+"In addition to static values, Twig global variables can also reference "
+"services from the :doc:`service container </service_container>`. The main"
+" drawback is that these services are not loaded lazily. In other words, "
+"as soon as Twig is loaded, your service is instantiated, even if you "
+"never use that global variable."
+msgstr ""
+
+#: ../../../templating/global_variables.rst:65
+msgid ""
+"To define a service as a global Twig variable, prefix the service ID "
+"string with the ``@`` character, which is the usual syntax to :ref:`refer"
+" to services in container parameters <service-container-parameters>`:"
+msgstr ""
+
+#: ../../../templating/global_variables.rst:108
+msgid ""
+"Now you can use the ``uuid`` variable in any Twig template to access to "
+"the ``UuidGenerator`` service:"
+msgstr ""
+

@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/insulating_clients.rst:5
+msgid "How to Test the Interaction of several Clients"
+msgstr ""
+
+#: ../../../testing/insulating_clients.rst:7
+msgid ""
+"If you need to simulate an interaction between different clients (think "
+"of a chat for instance), create several clients::"
+msgstr ""
+
+#: ../../../testing/insulating_clients.rst:22
+msgid ""
+"This works except when your code maintains a global state or if it "
+"depends on a third-party library that has some kind of global state. In "
+"such a case, you can insulate your clients::"
+msgstr ""
+
+#: ../../../testing/insulating_clients.rst:41
+msgid ""
+"Insulated clients transparently execute their requests in a dedicated and"
+" clean PHP process, thus avoiding any side effects."
+msgstr ""
+
+#: ../../../testing/insulating_clients.rst:46
+msgid ""
+"As an insulated client is slower, you can keep one client in the main "
+"process, and insulate the other ones."
+msgstr ""
+
+#: ../../../testing/insulating_clients.rst:51
+msgid ""
+"Insulating tests requires some serializing and unserializing operations. "
+"If your test includes data that can't be serialized, such as file streams"
+" when using the ``UploadedFile`` class, you'll see an exception about "
+"*\"serialization is not allowed\"*. This is a technical limitation of "
+"PHP, so the only solution is to disable insulation for those tests."
+msgstr ""
+

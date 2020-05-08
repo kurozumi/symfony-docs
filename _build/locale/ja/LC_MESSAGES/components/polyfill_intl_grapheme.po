@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_intl_grapheme.rst:7
+msgid "The Symfony Polyfill / Intl Grapheme Component"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:9
+msgid ""
+"This component provides a partial, native PHP implementation of the "
+"``grapheme_*`` functions to users who run PHP versions without the "
+"``intl`` extension."
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:14
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:23
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:25
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following constants and functions, no matter if the `PHP intl extension`_"
+" is installed or not in your server."
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:30
+msgid "Provided Constants"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:32
+msgid "``GRAPHEME_EXTR_COUNT`` (value = ``0``)"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:33
+msgid "``GRAPHEME_EXTR_MAXBYTES`` (value = ``1``)"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:34
+msgid "``GRAPHEME_EXTR_MAXCHARS`` (value = ``2``)"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:37
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:39
+msgid ":phpfunction:`grapheme_extract`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:40
+msgid ":phpfunction:`grapheme_stripos`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:41
+msgid ":phpfunction:`grapheme_stristr`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:42
+msgid ":phpfunction:`grapheme_strlen`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:43
+msgid ":phpfunction:`grapheme_strpos`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:44
+msgid ":phpfunction:`grapheme_strripos`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:45
+msgid ":phpfunction:`grapheme_strrpos`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:46
+msgid ":phpfunction:`grapheme_strstr`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:47
+msgid ":phpfunction:`grapheme_substr`"
+msgstr ""
+
+#: ../../../components/polyfill_intl_grapheme.rst:51
+msgid ""
+"Symfony provides more polyfills for other classes and functions related "
+"to the Intl PHP extension: :doc:`polyfill-intl-icu "
+"</components/polyfill_intl_icu>`, :doc:`polyfill-intl-idn "
+"</components/polyfill_intl_idn>`, :doc:`polyfill-intl-messageformatter "
+"</components/polyfill_intl_messageformatter>`, and :doc:`polyfill-intl-"
+"normalizer </components/polyfill_intl_normalizer>`."
+msgstr ""
+

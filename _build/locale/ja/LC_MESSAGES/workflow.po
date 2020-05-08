@@ -1,0 +1,574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../workflow.rst:2
+msgid "Workflow"
+msgstr ""
+
+#: ../../../workflow.rst:4
+msgid ""
+"Using the Workflow component inside a Symfony application requires to "
+"know first some basic theory and concepts about workflows and state "
+"machines. :doc:`Read this article </workflow/workflow-and-state-machine>`"
+" for a quick overview."
+msgstr ""
+
+#: ../../../workflow.rst:9
+msgid "Installation"
+msgstr ""
+
+#: ../../../workflow.rst:11
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the workflow feature before using it:"
+msgstr ""
+
+#: ../../../workflow.rst:19
+msgid "Configuration"
+msgstr ""
+
+#: ../../../workflow.rst:21
+msgid ""
+"To see all configuration options, if you are using the component inside a"
+" Symfony project run this command:"
+msgstr ""
+
+#: ../../../workflow.rst:29
+msgid "Creating a Workflow"
+msgstr ""
+
+#: ../../../workflow.rst:31
+msgid ""
+"A workflow is a process or a lifecycle that your objects go through. Each"
+" step or stage in the process is called a *place*. You do also define "
+"*transitions* to that describes the action to get from one place to "
+"another."
+msgstr ""
+
+#: ../../../workflow.rst:37
+msgid ""
+"A set of places and transitions creates a **definition**. A workflow "
+"needs a ``Definition`` and a way to write the states to the objects (i.e."
+" an instance of a "
+":class:`Symfony\\\\Component\\\\Workflow\\\\MarkingStore\\\\MarkingStoreInterface`.)"
+msgstr ""
+
+#: ../../../workflow.rst:41
+msgid ""
+"Consider the following example for a blog post. A post can have these "
+"places: ``draft``, ``reviewed``, ``rejected``, ``published``. You can "
+"define the workflow like this:"
+msgstr ""
+
+#: ../../../workflow.rst:163
+msgid ""
+"If you are creating your first workflows, consider using the "
+"``workflow:dump`` command to :doc:`debug the workflow contents </workflow"
+"/dumping-workflows>`."
+msgstr ""
+
+#: ../../../workflow.rst:166
+msgid ""
+"The configured property will be used via it's implemented getter/setter "
+"methods by the marking store::"
+msgstr ""
+
+#: ../../../workflow.rst:189
+msgid ""
+"The marking store type could be \"multiple_state\" or \"single_state\". A"
+" single state marking store does not support a model being on multiple "
+"places at the same time. This means a \"workflow\" must use a "
+"\"multiple_state\" marking store and a \"state_machine\" must use a "
+"\"single_state\" marking store. Symfony configures the marking store "
+"according to the \"type\" by default, so it's preferable to not configure"
+" it."
+msgstr ""
+
+#: ../../../workflow.rst:196
+msgid ""
+"A single state marking store uses a ``string`` to store the data. A "
+"multiple state marking store uses an ``array`` to store the data."
+msgstr ""
+
+#: ../../../workflow.rst:201
+msgid ""
+"The ``marking_store.type`` (the default value depends on the ``type`` "
+"value) and ``property`` (default value ``['marking']``) attributes of the"
+" ``marking_store`` option are optional. If omitted, their default values "
+"will be used. It's highly recommenced to use the default value."
+msgstr ""
+
+#: ../../../workflow.rst:208
+msgid ""
+"Setting the ``audit_trail.enabled`` option to ``true`` makes the "
+"application generate detailed log messages for the workflow activity."
+msgstr ""
+
+#: ../../../workflow.rst:211
+msgid ""
+"With this workflow named ``blog_publishing``, you can get help to decide "
+"what actions are allowed on a blog post::"
+msgstr ""
+
+#: ../../../workflow.rst:234
+msgid "Accessing the Workflow in a Class"
+msgstr ""
+
+#: ../../../workflow.rst:236
+msgid ""
+"To access workflow inside a class, use dependency injection and inject "
+"the registry in the constructor::"
+msgstr ""
+
+#: ../../../workflow.rst:266
+msgid "Using Events"
+msgstr ""
+
+#: ../../../workflow.rst:268
+msgid ""
+"To make your workflows more flexible, you can construct the ``Workflow`` "
+"object with an ``EventDispatcher``. You can now create event listeners to"
+" block transitions (i.e. depending on the data in the blog post) and do "
+"additional actions when a workflow operation happened (e.g. sending "
+"announcements)."
+msgstr ""
+
+#: ../../../workflow.rst:274
+msgid "Each step has three events that are fired in order:"
+msgstr ""
+
+#: ../../../workflow.rst:276
+msgid "An event for every workflow;"
+msgstr ""
+
+#: ../../../workflow.rst:277
+msgid "An event for the workflow concerned;"
+msgstr ""
+
+#: ../../../workflow.rst:278
+msgid ""
+"An event for the workflow concerned with the specific transition or place"
+" name."
+msgstr ""
+
+#: ../../../workflow.rst:280
+msgid ""
+"When a state transition is initiated, the events are dispatched in the "
+"following order:"
+msgstr ""
+
+#: ../../../workflow.rst:290 ../../../workflow.rst:292
+#: ../../../workflow.rst:410
+msgid "``workflow.guard``"
+msgstr ""
+
+#: ../../../workflow.rst:284
+msgid ""
+"Validate whether the transition is blocked or not (see :ref:`guard events"
+" <workflow-usage-guard-events>` and :ref:`blocking transitions <workflow-"
+"blocking-transitions>`)."
+msgstr ""
+
+#: ../../../workflow.rst:288 ../../../workflow.rst:297
+#: ../../../workflow.rst:306 ../../../workflow.rst:317
+#: ../../../workflow.rst:326 ../../../workflow.rst:335
+#: ../../../workflow.rst:345
+msgid "The three events being dispatched are:"
+msgstr ""
+
+#: ../../../workflow.rst:291 ../../../workflow.rst:411
+msgid "``workflow.[workflow name].guard``"
+msgstr ""
+
+#: ../../../workflow.rst:292 ../../../workflow.rst:412
+msgid "``workflow.[workflow name].guard.[transition name]``"
+msgstr ""
+
+#: ../../../workflow.rst:299 ../../../workflow.rst:301
+msgid "``workflow.leave``"
+msgstr ""
+
+#: ../../../workflow.rst:295
+msgid "The subject is about to leave a place."
+msgstr ""
+
+#: ../../../workflow.rst:300
+msgid "``workflow.[workflow name].leave``"
+msgstr ""
+
+#: ../../../workflow.rst:301
+msgid "``workflow.[workflow name].leave.[place name]``"
+msgstr ""
+
+#: ../../../workflow.rst:308 ../../../workflow.rst:310
+msgid "``workflow.transition``"
+msgstr ""
+
+#: ../../../workflow.rst:304
+msgid "The subject is going through this transition."
+msgstr ""
+
+#: ../../../workflow.rst:309
+msgid "``workflow.[workflow name].transition``"
+msgstr ""
+
+#: ../../../workflow.rst:310
+msgid "``workflow.[workflow name].transition.[transition name]``"
+msgstr ""
+
+#: ../../../workflow.rst:319 ../../../workflow.rst:321
+msgid "``workflow.enter``"
+msgstr ""
+
+#: ../../../workflow.rst:313
+msgid ""
+"The subject is about to enter a new place. This event is triggered just "
+"before the subject places are updated, which means that the marking of "
+"the subject is not yet updated with the new places."
+msgstr ""
+
+#: ../../../workflow.rst:320
+msgid "``workflow.[workflow name].enter``"
+msgstr ""
+
+#: ../../../workflow.rst:321
+msgid "``workflow.[workflow name].enter.[place name]``"
+msgstr ""
+
+#: ../../../workflow.rst:328 ../../../workflow.rst:330
+msgid "``workflow.entered``"
+msgstr ""
+
+#: ../../../workflow.rst:324
+msgid "The subject has entered in the places and the marking is updated."
+msgstr ""
+
+#: ../../../workflow.rst:329
+msgid "``workflow.[workflow name].entered``"
+msgstr ""
+
+#: ../../../workflow.rst:330
+msgid "``workflow.[workflow name].entered.[place name]``"
+msgstr ""
+
+#: ../../../workflow.rst:337 ../../../workflow.rst:340
+msgid "``workflow.completed``"
+msgstr ""
+
+#: ../../../workflow.rst:333
+msgid "The object has completed this transition."
+msgstr ""
+
+#: ../../../workflow.rst:338
+msgid "``workflow.[workflow name].completed``"
+msgstr ""
+
+#: ../../../workflow.rst:339
+msgid "``workflow.[workflow name].completed.[transition name]``"
+msgstr ""
+
+#: ../../../workflow.rst:347 ../../../workflow.rst:357
+msgid "``workflow.announce``"
+msgstr ""
+
+#: ../../../workflow.rst:343
+msgid "Triggered for each transition that now is accessible for the subject."
+msgstr ""
+
+#: ../../../workflow.rst:348
+msgid "``workflow.[workflow name].announce``"
+msgstr ""
+
+#: ../../../workflow.rst:349
+msgid "``workflow.[workflow name].announce.[transition name]``"
+msgstr ""
+
+#: ../../../workflow.rst:351
+msgid "You can avoid triggering those events by using the context::"
+msgstr ""
+
+#: ../../../workflow.rst:357
+msgid ""
+"The ``Workflow::DISABLE_ANNOUNCE_EVENT`` constant was introduced in "
+"Symfony 5.1."
+msgstr ""
+
+#: ../../../workflow.rst:361
+msgid ""
+"The leaving and entering events are triggered even for transitions that "
+"stay in same place."
+msgstr ""
+
+#: ../../../workflow.rst:364
+msgid ""
+"Here is an example of how to enable logging for every time a "
+"\"blog_publishing\" workflow leaves a place::"
+msgstr ""
+
+#: ../../../workflow.rst:402
+msgid "Guard Events"
+msgstr ""
+
+#: ../../../workflow.rst:404
+msgid ""
+"There are a special kind of events called \"Guard events\". Their event "
+"listeners are invoked every time a call to ``Workflow::can``, "
+"``Workflow::apply`` or ``Workflow::getEnabledTransitions`` is executed. "
+"With the guard events you may add custom logic to decide which "
+"transitions should be blocked or not. Here is a list of the guard event "
+"names."
+msgstr ""
+
+#: ../../../workflow.rst:414
+msgid ""
+"This example stops any blog post being transitioned to \"reviewed\" if it"
+" is missing a title::"
+msgstr ""
+
+#: ../../../workflow.rst:443
+msgid ""
+"The optional second argument of ``setBlocked()`` was introduced in "
+"Symfony 5.1."
+msgstr ""
+
+#: ../../../workflow.rst:446
+msgid "Event Methods"
+msgstr ""
+
+#: ../../../workflow.rst:448
+msgid ""
+"Each workflow event is an instance of "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event`. This means "
+"that each event has access to the following information:"
+msgstr ""
+
+#: ../../../workflow.rst:452
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event::getMarking`"
+msgstr ""
+
+#: ../../../workflow.rst:452
+msgid ""
+"Returns the :class:`Symfony\\\\Component\\\\Workflow\\\\Marking` of the "
+"workflow."
+msgstr ""
+
+#: ../../../workflow.rst:455
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event::getSubject`"
+msgstr ""
+
+#: ../../../workflow.rst:455
+msgid "Returns the object that dispatches the event."
+msgstr ""
+
+#: ../../../workflow.rst:458
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event::getTransition`"
+msgstr ""
+
+#: ../../../workflow.rst:458
+msgid ""
+"Returns the :class:`Symfony\\\\Component\\\\Workflow\\\\Transition` that "
+"dispatches the event."
+msgstr ""
+
+#: ../../../workflow.rst:461
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event::getWorkflowName`"
+msgstr ""
+
+#: ../../../workflow.rst:461
+msgid "Returns a string with the name of the workflow that triggered the event."
+msgstr ""
+
+#: ../../../workflow.rst:464
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event::getMetadata`"
+msgstr ""
+
+#: ../../../workflow.rst:464
+msgid "Returns a metadata."
+msgstr ""
+
+#: ../../../workflow.rst:466
+msgid ""
+"For Guard Events, there is an extended "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\GuardEvent` class. "
+"This class has these additonal methods:"
+msgstr ""
+
+#: ../../../workflow.rst:470
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\GuardEvent::isBlocked`"
+msgstr ""
+
+#: ../../../workflow.rst:470
+msgid "Returns if transition is blocked."
+msgstr ""
+
+#: ../../../workflow.rst:473
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\GuardEvent::setBlocked`"
+msgstr ""
+
+#: ../../../workflow.rst:473
+msgid "Sets the blocked value."
+msgstr ""
+
+#: ../../../workflow.rst:477
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\GuardEvent::getTransitionBlockerList`"
+msgstr ""
+
+#: ../../../workflow.rst:476
+msgid ""
+"Returns the event "
+":class:`Symfony\\\\Component\\\\Workflow\\\\TransitionBlockerList`. See "
+":ref:`blocking transitions <workflow-blocking-transitions>`."
+msgstr ""
+
+#: ../../../workflow.rst:480
+msgid ":method:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\GuardEvent::addTransitionBlocker`"
+msgstr ""
+
+#: ../../../workflow.rst:480
+msgid ""
+"Add a :class:`Symfony\\\\Component\\\\Workflow\\\\TransitionBlocker` "
+"instance."
+msgstr ""
+
+#: ../../../workflow.rst:485
+msgid "Blocking Transitions"
+msgstr ""
+
+#: ../../../workflow.rst:487
+msgid ""
+"The execution of the workflow can be controlled by executing custom logic"
+" to decide if the current transition is blocked or allowed before "
+"applying it. This feature is provided by \"guards\", which can be used in"
+" two ways."
+msgstr ""
+
+#: ../../../workflow.rst:491
+msgid ""
+"First, you can listen to :ref:`the guard events <workflow-usage-guard-"
+"events>`. Alternatively, you can define a ``guard`` configuration option "
+"for the transition. The value of this option is any valid expression "
+"created with the :doc:`ExpressionLanguage component "
+"</components/expression_language>`:"
+msgstr ""
+
+#: ../../../workflow.rst:599
+msgid ""
+"You can also use transition blockers to block and return a user-friendly "
+"error message when you stop a transition from happening. In the example "
+"we get this message from the "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event`'s metadata, "
+"giving you a central place to manage the text."
+msgstr ""
+
+#: ../../../workflow.rst:605
+msgid ""
+"This example has been simplified; in production you may prefer to use the"
+" :doc:`Translation </translation>` component to manage messages in one "
+"place::"
+msgstr ""
+
+#: ../../../workflow.rst:641
+msgid "Usage in Twig"
+msgstr ""
+
+#: ../../../workflow.rst:643
+msgid ""
+"Symfony defines several Twig functions to manage workflows and reduce the"
+" need of domain logic in your templates:"
+msgstr ""
+
+#: ../../../workflow.rst:647
+msgid "``workflow_can()``"
+msgstr ""
+
+#: ../../../workflow.rst:647
+msgid "Returns ``true`` if the given object can make the given transition."
+msgstr ""
+
+#: ../../../workflow.rst:650
+msgid "``workflow_transitions()``"
+msgstr ""
+
+#: ../../../workflow.rst:650
+msgid "Returns an array with all the transitions enabled for the given object."
+msgstr ""
+
+#: ../../../workflow.rst:653
+msgid "``workflow_marked_places()``"
+msgstr ""
+
+#: ../../../workflow.rst:653
+msgid "Returns an array with the place names of the given marking."
+msgstr ""
+
+#: ../../../workflow.rst:656
+msgid "``workflow_has_marked_place()``"
+msgstr ""
+
+#: ../../../workflow.rst:656
+msgid "Returns ``true`` if the marking of the given object has the given state."
+msgstr ""
+
+#: ../../../workflow.rst:658
+msgid "The following example shows these functions in action:"
+msgstr ""
+
+#: ../../../workflow.rst:691
+msgid "Storing Metadata"
+msgstr ""
+
+#: ../../../workflow.rst:693
+msgid ""
+"In case you need it, you can store arbitrary metadata in workflows, their"
+" places, and their transitions using the ``metadata`` option. This "
+"metadata can be as simple as the title of the workflow or as complex as "
+"your own application requires:"
+msgstr ""
+
+#: ../../../workflow.rst:808
+msgid "Then you can access this metadata in your controller as follows::"
+msgstr ""
+
+#: ../../../workflow.rst:834
+msgid ""
+"There is a ``getMetadata()`` method that works with all kinds of "
+"metadata::"
+msgstr ""
+
+#: ../../../workflow.rst:845
+msgid "In a :ref:`flash message <flash-messages>` in your controller::"
+msgstr ""
+
+#: ../../../workflow.rst:853
+msgid ""
+"Metadata can also be accessed in a Listener, from the "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Event\\\\Event` object."
+msgstr ""
+
+#: ../../../workflow.rst:855
+msgid ""
+"In Twig templates, metadata is available via the ``workflow_metadata()`` "
+"function:"
+msgstr ""
+
+#: ../../../workflow.rst:888
+msgid "Learn more"
+msgstr ""
+

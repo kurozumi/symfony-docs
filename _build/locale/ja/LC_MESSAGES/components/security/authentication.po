@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/security/authentication.rst:5
+msgid "Authentication"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:7
+msgid ""
+"When a request points to a secured area, and one of the listeners from "
+"the firewall map is able to extract the user's credentials from the "
+"current :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` "
+"object, it should create a token, containing these credentials. The next "
+"thing the listener should do is ask the authentication manager to "
+"validate the given token, and return an *authenticated* token if the "
+"supplied credentials were found to be valid. The listener should then "
+"store the authenticated token using :class:`the token storage "
+"<Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\Storage\\\\TokenStorageInterface>`::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:63
+msgid ""
+"A token can be of any class, as long as it implements "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\TokenInterface`."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:67
+msgid "The Authentication Manager"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:69
+msgid ""
+"The default authentication manager is an instance of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\AuthenticationProviderManager`::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:87
+msgid ""
+"The ``AuthenticationProviderManager``, when instantiated, receives "
+"several authentication providers, each supporting a different type of "
+"token."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:92
+msgid ""
+"You may write your own authentication manager, the only requirement is "
+"that it implements "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\AuthenticationManagerInterface`."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:98
+msgid "Authentication Providers"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:100
+msgid ""
+"Each provider (since it implements "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\AuthenticationProviderInterface`)"
+" has a "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\AuthenticationProviderInterface::supports`"
+" method by which the ``AuthenticationProviderManager`` can determine if "
+"it supports the given token. If this is the case, the manager then calls "
+"the provider's "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\AuthenticationProviderInterface::authenticate`"
+" method. This method should return an authenticated token or throw an "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AuthenticationException`"
+" (or any other exception extending it)."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:111
+msgid "Authenticating Users by their Username and Password"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:113
+msgid ""
+"An authentication provider will attempt to authenticate a user based on "
+"the credentials they provided. Usually these are a username and a "
+"password. Most web applications store their user's username and a hash of"
+" the user's password combined with a randomly generated salt. This means "
+"that the average authentication would consist of fetching the salt and "
+"the hashed password from the user data storage, hash the password the "
+"user has just provided (e.g. using a login form) with the salt and "
+"compare both to determine if the given password is valid."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:122
+msgid ""
+"This functionality is offered by the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\DaoAuthenticationProvider`."
+" It fetches the user's data from a "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\UserProviderInterface`,"
+" uses a "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface`"
+" to create a hash of the password and returns an authenticated token if "
+"the password was valid::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:160
+msgid ""
+"The example above demonstrates the use of the \"in-memory\" user "
+"provider, but you may use any user provider, as long as it implements "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\UserProviderInterface`."
+" It is also possible to let multiple user providers try to find the "
+"user's data, using the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\ChainUserProvider`."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:167
+msgid "The Password Encoder Factory"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:169
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\DaoAuthenticationProvider`"
+" uses an encoder factory to create a password encoder for a given type of"
+" user. This allows you to use different encoding strategies for different"
+" types of users. The default "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\EncoderFactory`"
+" receives an array of encoders::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:190
+msgid ""
+"Each encoder should implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface`"
+" or be an array with a ``class`` and an ``arguments`` key, which allows "
+"the encoder factory to construct the encoder only when it is needed."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:195
+msgid "Creating a custom Password Encoder"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:197
+msgid ""
+"There are many built-in password encoders. But if you need to create your"
+" own, it needs to follow these rules:"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:200
+msgid ""
+"The class must implement "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface`;"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:202
+msgid ""
+"The implementations of "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface::encodePassword`"
+" and "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface::isPasswordValid`"
+" must first of all make sure the password is not too long, i.e. the "
+"password length is no longer than 4096 characters. This is for security "
+"reasons (see `CVE-2013-5750`_), and you can use the "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\BasePasswordEncoder::isPasswordTooLong`"
+" method for this check::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:236
+msgid "Using Password Encoders"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:238
+msgid ""
+"When the "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\EncoderFactory::getEncoder`"
+" method of the password encoder factory is called with the user object as"
+" its first argument, it will return an encoder of type "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Encoder\\\\PasswordEncoderInterface`"
+" which should be used to encode this user's password::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:258
+msgid ""
+"Now, when you want to check if the submitted password (e.g. when trying "
+"to log in) is correct, you can use::"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:274
+msgid "Authentication Events"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:276
+msgid "The security component provides the following authentication events:"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:279
+msgid "Name"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:279
+msgid "Event Constant"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:279
+msgid "Argument Passed to the Listener"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:281
+msgid "security.authentication.success"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:281
+msgid "``AuthenticationEvents::AUTHENTICATION_SUCCESS``"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:281
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Event\\\\AuthenticationEvent`"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:282
+msgid "security.authentication.failure"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:282
+msgid "``AuthenticationEvents::AUTHENTICATION_FAILURE``"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:282
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Event\\\\AuthenticationFailureEvent`"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:283
+msgid "security.interactive_login"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:283
+msgid "``SecurityEvents::INTERACTIVE_LOGIN``"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:283
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Event\\\\InteractiveLoginEvent`"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:284
+msgid "security.switch_user"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:284
+msgid "``SecurityEvents::SWITCH_USER``"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:284
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Event\\\\SwitchUserEvent`"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:285
+msgid "security.logout_on_change"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:285
+msgid "``Symfony\\Component\\Security\\Http\\Event\\DeauthenticatedEvent``"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:285
+msgid ":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Event\\\\DeauthenticatedEvent`"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:289
+msgid "Authentication Success and Failure Events"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:291
+msgid ""
+"When a provider authenticates the user, a "
+"``security.authentication.success`` event is dispatched. But beware - "
+"this event may fire, for example, on *every* request if you have session-"
+"based authentication, if ``always_authenticate_before_granting`` is "
+"enabled or if token is not authenticated before AccessListener is "
+"invoked. See ``security.interactive_login`` below if you need to do "
+"something when a user *actually* logs in."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:297
+msgid ""
+"When a provider attempts authentication but fails (i.e. throws an "
+"``AuthenticationException``), a ``security.authentication.failure`` event"
+" is dispatched. You could listen on the "
+"``security.authentication.failure`` event, for example, in order to log "
+"failed login attempts."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:303
+msgid "Security Events"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:305
+msgid ""
+"The ``security.interactive_login`` event is triggered after a user has "
+"actively logged into your website.  It is important to distinguish this "
+"action from non-interactive authentication methods, such as:"
+msgstr ""
+
+#: ../../../components/security/authentication.rst:309
+msgid "authentication based on your session."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:310
+msgid "authentication using a HTTP basic header."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:312
+msgid ""
+"You could listen on the ``security.interactive_login`` event, for "
+"example, in order to give your user a welcome flash message every time "
+"they log in."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:315
+msgid ""
+"The ``security.switch_user`` event is triggered every time you activate "
+"the ``switch_user`` firewall listener."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:318
+msgid ""
+"The ``Symfony\\Component\\Security\\Http\\Event\\DeauthenticatedEvent`` "
+"event is triggered when a token has been deauthenticated because of a "
+"user change, it can help you doing some clean-up task when a logout has "
+"been triggered."
+msgstr ""
+
+#: ../../../components/security/authentication.rst:323
+msgid ""
+"For more information on switching users, see "
+":doc:`/security/impersonating_user`."
+msgstr ""
+

@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/conventions.rst:2
+msgid "Conventions"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:4
+msgid ""
+"The :doc:`standards` document describes the coding standards for the "
+"Symfony projects and the internal and third-party bundles. This document "
+"describes coding standards and conventions used in the core framework to "
+"make it more consistent and predictable. You are encouraged to follow "
+"them in your own code, but you don't need to."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:11
+msgid "Method Names"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:13
+msgid ""
+"When an object has a \"main\" many relation with related \"things\" "
+"(objects, parameters, ...), the method names are normalized:"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:16
+#: ../../../contributing/code/conventions.rst:46
+msgid "``get()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:17
+#: ../../../contributing/code/conventions.rst:48
+msgid "``set()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:18
+#: ../../../contributing/code/conventions.rst:52
+msgid "``has()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:19
+#: ../../../contributing/code/conventions.rst:54
+msgid "``all()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:20
+#: ../../../contributing/code/conventions.rst:56
+msgid "``replace()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:21
+#: ../../../contributing/code/conventions.rst:58
+msgid "``remove()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:22
+#: ../../../contributing/code/conventions.rst:60
+msgid "``clear()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:23
+#: ../../../contributing/code/conventions.rst:62
+msgid "``isEmpty()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:24
+#: ../../../contributing/code/conventions.rst:64
+msgid "``add()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:25
+#: ../../../contributing/code/conventions.rst:66
+msgid "``register()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:26
+#: ../../../contributing/code/conventions.rst:68
+msgid "``count()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:27
+#: ../../../contributing/code/conventions.rst:70
+msgid "``keys()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:29
+msgid ""
+"The usage of these methods is only allowed when it is clear that there is"
+" a main relation:"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:32
+msgid "a ``CookieJar`` has many ``Cookie`` objects;"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:34
+msgid ""
+"a Service ``Container`` has many services and many parameters (as "
+"services is the main relation, the naming convention is used for this "
+"relation);"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:37
+msgid ""
+"a Console ``Input`` has many arguments and many options. There is no "
+"\"main\" relation, and so the naming convention does not apply."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:40
+msgid ""
+"For many relations where the convention does not apply, the following "
+"methods must be used instead (where ``XXX`` is the name of the related "
+"thing):"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:44
+msgid "Main Relation"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:44
+msgid "Other Relations"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:46
+msgid "``getXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:48
+msgid "``setXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:50
+#: ../../../contributing/code/conventions.rst:70
+msgid "n/a"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:50
+msgid "``replaceXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:52
+msgid "``hasXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:54
+msgid "``getXXXs()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:56
+msgid "``setXXXs()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:58
+msgid "``removeXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:60
+msgid "``clearXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:62
+msgid "``isEmptyXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:64
+msgid "``addXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:66
+msgid "``registerXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:68
+msgid "``countXXX()``"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:75
+msgid ""
+"While ``setXXX()`` and ``replaceXXX()`` are very similar, there is one "
+"notable difference: ``setXXX()`` may replace, or add new elements to the "
+"relation. ``replaceXXX()``, on the other hand, cannot add new elements. "
+"If an unrecognized key is passed to ``replaceXXX()`` it must throw an "
+"exception."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:83
+msgid "Deprecating Code"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:85
+msgid ""
+"From time to time, some classes and/or methods are deprecated in the "
+"framework; that happens when a feature implementation cannot be changed "
+"because of backward compatibility issues, but we still want to propose a "
+"\"better\" alternative. In that case, the old implementation can be "
+"**deprecated**."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:90
+msgid ""
+"Deprecations must only be introduced on the next minor version of the "
+"impacted component (or bundle, or bridge, or contract). They can "
+"exceptionally be introduced on previous supported versions if they are "
+"critical."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:94
+msgid ""
+"A new class (or interface, or trait) cannot be introduced as deprecated, "
+"or contain deprecated methods."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:97
+msgid "A new method cannot be introduced as deprecated."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:99
+msgid ""
+"A feature is marked as deprecated by adding a ``@deprecated`` PHPDoc to "
+"relevant classes, methods, properties, ...::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:106
+msgid ""
+"The deprecation message must indicate the version in which the feature "
+"was deprecated, and whenever possible, how it was replaced::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:113
+msgid ""
+"When the replacement is in another namespace than the deprecated class, "
+"its FQCN must be used::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:119
+msgid ""
+"A deprecation must also be triggered to help people with the migration "
+"(requires the ``symfony/deprecation-contracts`` package)::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:124
+msgid ""
+"When deprecating a whole class the ``trigger_error()`` call should be "
+"placed after the use declarations, like in this example from "
+"`ServiceRouterLoader`_::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:140
+msgid ""
+"The deprecation must be added to the ``CHANGELOG.md`` file of the "
+"impacted component::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:147
+msgid ""
+"It must also be added to the ``UPGRADE.md`` file of the targeted minor "
+"version (``UPGRADE-4.4.md`` in our example)::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:155
+msgid ""
+"Finally, its consequences must be added to the ``UPGRADE.md`` file of the"
+" next major version (``UPGRADE-5.0.md`` in our example)::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:163
+msgid "All these tasks are mandatory and must be done in the same pull request."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:166
+msgid "Removing Deprecated Code"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:168
+msgid ""
+"Removing deprecated code can only be done once every 2 years, on the next"
+" major version of the impacted component (``master`` branch)."
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:171
+msgid ""
+"When removing deprecated code, the consequences of the deprecation must "
+"be added to the ``CHANGELOG.md`` file of the impacted component::"
+msgstr ""
+
+#: ../../../contributing/code/conventions.rst:179
+msgid "This task is mandatory and must be done in the same pull request."
+msgstr ""
+

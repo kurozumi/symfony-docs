@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/message_format.rst:5
+msgid "How to Translate Messages using the ICU MessageFormat"
+msgstr ""
+
+#: ../../../translation/message_format.rst:7
+msgid ""
+"Messages (i.e. strings) in applications are almost never completely "
+"static. They contain variables or other complex logic like pluralization."
+" In order to handle this, the Translator component supports the `ICU "
+"MessageFormat`_ syntax."
+msgstr ""
+
+#: ../../../translation/message_format.rst:13
+msgid ""
+"You can test out examples of the ICU MessageFormatter in this `online "
+"editor`_."
+msgstr ""
+
+#: ../../../translation/message_format.rst:16
+msgid "Using the ICU Message Format"
+msgstr ""
+
+#: ../../../translation/message_format.rst:18
+msgid ""
+"In order to use the ICU Message Format, the message domain has to be "
+"suffixed with ``+intl-icu``:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:22
+msgid "Normal file name"
+msgstr ""
+
+#: ../../../translation/message_format.rst:22
+msgid "ICU Message Format filename"
+msgstr ""
+
+#: ../../../translation/message_format.rst:24
+msgid "``messages.en.yaml``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:24
+msgid "``messages+intl-icu.en.yaml``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:25
+msgid "``messages.fr_FR.xlf``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:25
+msgid "``messages+intl-icu.fr_FR.xlf``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:26
+msgid "``admin.en.yaml``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:26
+msgid "``admin+intl-icu.en.yaml``"
+msgstr ""
+
+#: ../../../translation/message_format.rst:29
+msgid ""
+"All messages in this file will now be processed by the "
+":phpclass:`MessageFormatter` during translation."
+msgstr ""
+
+#: ../../../translation/message_format.rst:35
+msgid "Message Placeholders"
+msgstr ""
+
+#: ../../../translation/message_format.rst:37
+msgid ""
+"The basic usage of the MessageFormat allows you to use placeholders "
+"(called *arguments* in ICU MessageFormat) in your messages:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:72
+msgid ""
+"With the previous format, placeholders were often named between ``%``. "
+"This character is no longer valid with the ICU MessageFormat syntax. Be "
+"careful to rename your parameters."
+msgstr ""
+
+#: ../../../translation/message_format.rst:76
+msgid ""
+"Everything within the curly braces (``{...}``) is processed by the "
+"formatter and replaced by its placeholder::"
+msgstr ""
+
+#: ../../../translation/message_format.rst:86
+msgid "Selecting Different Messages Based on a Condition"
+msgstr ""
+
+#: ../../../translation/message_format.rst:88
+msgid ""
+"The curly brace syntax allows to \"modify\" the output of the variable. "
+"One of these functions is the ``select`` function. It acts like PHP's "
+"`switch statement`_ and allows to use different strings based on the "
+"value of the variable. A typical usage of this is gender:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:135
+msgid ""
+"This might look very complex. The basic syntax for all functions is "
+"``{variable_name, function_name, function_statement}`` (where, as you see"
+" later, ``function_statement`` is optional for some functions). In this "
+"case, the function name is ``select`` and its statement contains the "
+"\"cases\" of this select. This function is applied over the "
+"``organizer_gender`` variable::"
+msgstr ""
+
+#: ../../../translation/message_format.rst:153
+msgid ""
+"The ``{...}`` syntax alternates between \"literal\" and \"code\" mode. "
+"This allows you to use literal text in the select statements:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:156
+msgid ""
+"The first ``{organizer_gender, select, ...}`` block starts the \"code\" "
+"mode, which means ``organizer_gender`` is processed as a variable."
+msgstr ""
+
+#: ../../../translation/message_format.rst:158
+msgid ""
+"The inner ``{... has invited you for her party!}`` block brings you back "
+"in \"literal\" mode, meaning the text is not processed."
+msgstr ""
+
+#: ../../../translation/message_format.rst:160
+msgid ""
+"Inside this block, ``{organizer_name}`` starts \"code\" mode again, "
+"allowing ``organizer_name`` to be processed as variable."
+msgstr ""
+
+#: ../../../translation/message_format.rst:165
+msgid ""
+"While it might seem more logical to only put ``her``, ``his`` or "
+"``their`` in the switch statement, it is better to use \"complex "
+"arguments\" at the outermost structure of the message. The strings are in"
+" this way better readable for translators and, as you can see in the "
+"``other`` case, other parts of the sentence might be influenced by the "
+"variables."
+msgstr ""
+
+#: ../../../translation/message_format.rst:175
+msgid "Pluralization"
+msgstr ""
+
+#: ../../../translation/message_format.rst:177
+msgid ""
+"Another interesting function is ``plural``. It allows you to handle "
+"pluralization in your messages (e.g. ``There are 3 apples`` vs ``There is"
+" one apple``). The function looks very similar to the ``select`` "
+"function:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:219
+msgid ""
+"Pluralization rules are actually quite complex and differ for each "
+"language. For instance, Russian uses different plural forms for numbers "
+"ending with 1; numbers ending with 2, 3 or 4; numbers ending with 5, 6, "
+"7, 8 or 9; and even some exceptions of this!"
+msgstr ""
+
+#: ../../../translation/message_format.rst:224
+msgid ""
+"In order to properly translate this, the possible cases in the ``plural``"
+" function are also different for each language. For instance, Russian has"
+" ``one``, ``few``, ``many`` and ``other``, while English has only ``one``"
+" and ``other``. The full list of possible cases can be found in Unicode's"
+" `Language Plural Rules`_ document. By prefixing with ``=``, you can "
+"match exact values (like ``0`` in the above example)."
+msgstr ""
+
+#: ../../../translation/message_format.rst:231
+msgid "Usage of this string is the same as with variables and select::"
+msgstr ""
+
+#: ../../../translation/message_format.rst:241
+msgid ""
+"You can also set an ``offset`` variable to determine whether the "
+"pluralization should be offset (e.g. in sentences like ``You and # other "
+"people`` / ``You and # other person``)."
+msgstr ""
+
+#: ../../../translation/message_format.rst:247
+msgid ""
+"When combining the ``select`` and ``plural`` functions, try to still have"
+" ``select`` as outermost function:"
+msgstr ""
+
+#: ../../../translation/message_format.rst
+msgid "Using Ranges in Messages"
+msgstr ""
+
+#: ../../../translation/message_format.rst:278
+msgid ""
+"The pluralization in the legacy Symfony syntax could be used with custom "
+"ranges (e.g. have a different messages for 0-12, 12-40 and 40+). The ICU "
+"message format does not have this feature. Instead, this logic should be "
+"moved to PHP code::"
+msgstr ""
+
+#: ../../../translation/message_format.rst:298
+msgid "Additional Placeholder Functions"
+msgstr ""
+
+#: ../../../translation/message_format.rst:300
+msgid ""
+"Besides these, the ICU MessageFormat comes with a couple other "
+"interesting functions."
+msgstr ""
+
+#: ../../../translation/message_format.rst:303
+msgid "Ordinal"
+msgstr ""
+
+#: ../../../translation/message_format.rst:305
+msgid ""
+"Similar to ``plural``, ``selectordinal`` allows you to use numbers as "
+"ordinal scale:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:373
+msgid ""
+"The possible cases for this are also shown in Unicode's `Language Plural "
+"Rules`_ document."
+msgstr ""
+
+#: ../../../translation/message_format.rst:376
+msgid "Date and Time"
+msgstr ""
+
+#: ../../../translation/message_format.rst:378
+msgid ""
+"The date and time function allows you to format dates in the target "
+"locale using the :phpclass:`IntlDateFormatter`:"
+msgstr ""
+
+#: ../../../translation/message_format.rst:410
+msgid ""
+"The \"function statement\" for the ``time`` and ``date`` functions can be"
+" one of ``short``, ``medium``, ``long`` or ``full``, which correspond to "
+"the `constants defined by the IntlDateFormatter class`_::"
+msgstr ""
+
+#: ../../../translation/message_format.rst:418
+msgid "Numbers"
+msgstr ""
+
+#: ../../../translation/message_format.rst:420
+msgid ""
+"The ``number`` formatter allows you to format numbers using Intl's "
+":phpclass:`NumberFormatter`:"
+msgstr ""
+

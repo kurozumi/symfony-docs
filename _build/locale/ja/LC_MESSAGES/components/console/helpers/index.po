@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/helpers/index.rst:5
+msgid "The Console Helpers"
+msgstr ""
+
+#: ../../../components/console/helpers/index.rst:17
+msgid ""
+"The Console component comes with some useful helpers. These helpers "
+"contain function to ease some common tasks."
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:1
+msgid ":doc:`/components/console/helpers/formatterhelper`"
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:2
+msgid ":doc:`/components/console/helpers/processhelper`"
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:3
+msgid ":doc:`/components/console/helpers/progressbar`"
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:4
+msgid ":doc:`/components/console/helpers/questionhelper`"
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:5
+msgid ":doc:`/components/console/helpers/table`"
+msgstr ""
+
+#: ../../../components/console/helpers/map.rst.inc:6
+msgid ":doc:`/components/console/helpers/debug_formatter`"
+msgstr ""
+

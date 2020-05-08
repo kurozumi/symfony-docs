@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/error_handler.rst:8
+msgid "The ErrorHandler Component"
+msgstr ""
+
+#: ../../../components/error_handler.rst:10
+msgid ""
+"The ErrorHandler component provides tools to manage errors and ease "
+"debugging PHP code."
+msgstr ""
+
+#: ../../../components/error_handler.rst:14
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/error_handler.rst:23
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/error_handler.rst:25
+msgid ""
+"The ErrorHandler component provides several tools to help you debug PHP "
+"code. Call this method (e.g. in your :ref:`front controller "
+"<architecture-front-controller>`) to enable all of them in your "
+"application::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:38
+msgid ""
+"Keep reading this article to learn more about each feature, including how"
+" to enable each of them separately."
+msgstr ""
+
+#: ../../../components/error_handler.rst:43
+msgid ""
+"You should never enable the debug tools, except for the error handler, in"
+" a production environment as they might disclose sensitive information to"
+" the user."
+msgstr ""
+
+#: ../../../components/error_handler.rst:49
+msgid "Turning PHP Errors into Exceptions"
+msgstr ""
+
+#: ../../../components/error_handler.rst:51
+msgid ""
+"The :class:`Symfony\\\\Component\\\\ErrorHandler\\\\ErrorHandler` class "
+"catches PHP errors and uncaught PHP exceptions and turns them into PHP's "
+":phpclass:`ErrorException` objects, except for fatal PHP errors, which "
+"are turned into Symfony's "
+":class:`Symfony\\\\Component\\\\ErrorHandler\\\\Error\\\\FatalError` "
+"objects."
+msgstr ""
+
+#: ../../../components/error_handler.rst:57
+msgid ""
+"If the application uses the FrameworkBundle, this error handler is "
+"enabled by default in the :ref:`production environment <configuration-"
+"environments>` because it generates better error logs."
+msgstr ""
+
+#: ../../../components/error_handler.rst:61
+msgid ""
+"Use the following code (e.g. in your :ref:`front controller "
+"<architecture-front-controller>`) to enable this error handler::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:69
+msgid "Catching PHP Function Errors and Turning Them into Exceptions"
+msgstr ""
+
+#: ../../../components/error_handler.rst:71
+msgid "Consider the following example::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:77
+msgid ""
+"Most PHP core functions were written before exception handling was "
+"introduced, so they return ``false`` or ``null`` in case of error instead"
+" of throwing an exception. That's why you need to add something like "
+"these to check for errors::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:98
+msgid ""
+"To simplify this code, the "
+":class:`Symfony\\\\Component\\\\ErrorHandler\\\\ErrorHandler` class "
+"provides a "
+":method:`Symfony\\\\Component\\\\ErrorHandler\\\\ErrorHandler::call` "
+"method that throws an exception automatically when a PHP error occurs::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:104
+msgid ""
+"The first argument of ``call()`` is the name of the PHP function to "
+"execute and the rest of arguments are passed to the PHP function. The "
+"result of the PHP function is returned as the result of ``call()``."
+msgstr ""
+
+#: ../../../components/error_handler.rst:108
+msgid ""
+"You can pass any PHP callable as the first argument of ``call()``, so you"
+" can wrap several function calls inside an anonymous function::"
+msgstr ""
+
+#: ../../../components/error_handler.rst:124
+msgid "Class Loading Debugger"
+msgstr ""
+
+#: ../../../components/error_handler.rst:126
+msgid ""
+"The :class:`Symfony\\\\Component\\\\ErrorHandler\\\\DebugClassLoader` "
+"class throws more useful exceptions when a class isn't found by the "
+"registered autoloaders (e.g. looks for typos in the class names and "
+"suggest the right class name)."
+msgstr ""
+
+#: ../../../components/error_handler.rst:130
+msgid ""
+"In practice, this debugger looks for all registered autoloaders that "
+"implement a ``findFile()`` method and replaces them by its own method to "
+"find class files."
+msgstr ""
+
+#: ../../../components/error_handler.rst:133
+msgid ""
+"Use the following code (e.g. in your :ref:`front controller "
+"<architecture-front-controller>`) to enable this class loading debugger::"
+msgstr ""
+

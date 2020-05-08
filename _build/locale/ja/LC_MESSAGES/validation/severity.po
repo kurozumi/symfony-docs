@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../validation/severity.rst:6
+msgid "How to Handle Different Error Levels"
+msgstr ""
+
+#: ../../../validation/severity.rst:8
+msgid ""
+"Sometimes, you may want to display constraint validation error messages "
+"differently based on some rules. For example, you have a registration "
+"form for new users where they enter some personal information and choose "
+"their authentication credentials. They would have to choose a username "
+"and a secure password, but providing bank account information would be "
+"optional. Nonetheless, you want to make sure that these optional fields, "
+"if entered, are still valid, but display their errors differently."
+msgstr ""
+
+#: ../../../validation/severity.rst:16
+msgid "The process to achieve this behavior consists of two steps:"
+msgstr ""
+
+#: ../../../validation/severity.rst:18
+msgid "Apply different error levels to the validation constraints;"
+msgstr ""
+
+#: ../../../validation/severity.rst:19
+msgid "Customize your error messages depending on the configured error level."
+msgstr ""
+
+#: ../../../validation/severity.rst:22
+msgid "1. Assigning the Error Level"
+msgstr ""
+
+#: ../../../validation/severity.rst:24
+msgid ""
+"Use the ``payload`` option to configure the error level for each "
+"constraint:"
+msgstr ""
+
+#: ../../../validation/severity.rst:129
+msgid "2. Customize the Error Message Template"
+msgstr ""
+
+#: ../../../validation/severity.rst:131
+msgid ""
+"When validation of the ``User`` object fails, you can retrieve the "
+"constraint that caused a particular failure using the "
+":method:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolation::getConstraint`"
+" method. Each constraint exposes the attached payload as a public "
+"property::"
+msgstr ""
+
+#: ../../../validation/severity.rst:142
+msgid ""
+"For example, you can leverage this to customize the ``form_errors`` block"
+" so that the severity is added as an additional HTML class:"
+msgstr ""
+
+#: ../../../validation/severity.rst:159
+msgid ""
+"For more information on customizing form rendering, see "
+":doc:`/form/form_customization`."
+msgstr ""
+

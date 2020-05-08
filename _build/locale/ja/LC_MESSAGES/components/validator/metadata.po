@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/validator/metadata.rst:5
+msgid "Metadata"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:7
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Validator\\\\Mapping\\\\ClassMetadata` "
+"class represents and manages all the configured constraints on a given "
+"class."
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:11
+msgid "Properties"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:13
+msgid ""
+"The Validator component can validate public, protected or private "
+"properties. The following example shows how to validate that the "
+"``$firstName`` property of the ``Author`` class has at least 3 "
+"characters::"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:36
+msgid "Getters"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:38
+msgid ""
+"Constraints can also be applied to the value returned by any public "
+"*getter* method, which are the methods whose names start with ``get``, "
+"``has`` or ``is``. This feature allows to validate your objects "
+"dynamically."
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:42
+msgid ""
+"Suppose that, for security reasons, you want to validate that a password "
+"field doesn't match the first name of the user. First, create a public "
+"method called ``isPasswordSafe()`` to define this custom validation "
+"logic::"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:51
+#: ../../../components/validator/metadata.rst:85
+msgid "Then, add the Validator component configuration to the class::"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:68
+msgid "Classes"
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:70
+msgid ""
+"Some constraints allow to validate the entire object. For example, the "
+":doc:`Callback </reference/constraints/Callback>` constraint is a generic"
+" constraint that's applied to the class itself."
+msgstr ""
+
+#: ../../../components/validator/metadata.rst:74
+msgid ""
+"Suppose that the class defines a ``validate()`` method to hold its custom"
+" validation logic::"
+msgstr ""
+

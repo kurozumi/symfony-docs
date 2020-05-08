@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/documentation/format.rst:2
+msgid "Documentation Format"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:4
+msgid ""
+"The Symfony documentation uses `reStructuredText`_ as its markup language"
+" and `Sphinx`_ for generating the documentation in the formats read by "
+"the end users, such as HTML and PDF."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:9
+msgid "reStructuredText"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:11
+msgid ""
+"reStructuredText is a plain text markup syntax similar to Markdown, but "
+"much stricter with its syntax. If you are new to reStructuredText, take "
+"some time to familiarize with this format by reading the existing "
+"`Symfony documentation`_ source code."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:16
+msgid ""
+"If you want to learn more about this format, check out the "
+"`reStructuredText Primer`_ tutorial and the `reStructuredText "
+"Reference`_."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:21
+msgid ""
+"If you are familiar with Markdown, be careful as things are sometimes "
+"very similar but different:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:24
+msgid "Lists starts at the beginning of a line (no indentation is allowed);"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:25
+msgid "Inline code blocks use double-ticks (````like this````)."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:28
+msgid "Sphinx"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:30
+msgid ""
+"Sphinx_ is a build system that provides tools to create documentation "
+"from reStructuredText documents. As such, it adds new directives and "
+"interpreted text roles to the standard reStructuredText markup. Read more"
+" about the `Sphinx Markup Constructs`_."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:35
+msgid "Syntax Highlighting"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:37
+msgid ""
+"PHP is the default syntax highlighter applied to all code blocks. You can"
+" change it with the ``code-block`` directive:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:48
+msgid ""
+"Besides all of the major programming languages, the syntax highlighter "
+"supports all kinds of markup and configuration languages. Check out the "
+"list of `supported languages`_ on the syntax highlighter website."
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:55
+msgid "Configuration Blocks"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:57
+msgid ""
+"Whenever you include a configuration sample, use the ``configuration-"
+"block`` directive to show the configuration in all supported "
+"configuration formats (``PHP``, ``YAML`` and ``XML``). Example:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:77
+msgid "The previous reStructuredText snippet renders as follow:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:93
+msgid "The current list of supported formats are the following:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:96
+msgid "Markup Format"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:96
+msgid "Use It to Display"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:98
+msgid "``html``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:98
+msgid "HTML"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:99
+msgid "``xml``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:99
+msgid "XML"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:100
+msgid "``php``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:100
+msgid "PHP"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:101
+msgid "``yaml``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:101
+msgid "YAML"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:102
+msgid "``twig``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:102
+msgid "Pure Twig markup"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:103
+msgid "``html+twig``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:103
+msgid "Twig markup blended with HTML"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:104
+msgid "``html+php``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:104
+msgid "PHP code blended with HTML"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:105
+msgid "``ini``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:105
+msgid "INI"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:106
+msgid "``php-annotations``"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:106
+msgid "PHP Annotations"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:110
+msgid "Adding Links"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:112
+msgid ""
+"The most common type of links are **internal links** to other "
+"documentation pages, which use the following syntax:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:119
+msgid ""
+"The page name should not include the file extension (``.rst``). For "
+"example:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:129
+msgid ""
+"The title of the linked page will be automatically used as the text of "
+"the link. If you want to modify that title, use this alternative syntax:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:138
+msgid ""
+"Although they are technically correct, avoid the use of relative internal"
+" links such as the following, because they break the references in the "
+"generated PDF documentation:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:150
+msgid ""
+"**Links to the API** follow a different syntax, where you must specify "
+"the type of the linked resource (``class`` or ``method``):"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:159
+msgid "**Links to the PHP documentation** follow a pretty similar syntax:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:170
+msgid "New Features, Behavior Changes or Deprecations"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:172
+msgid ""
+"If you are documenting a brand new feature, a change or a deprecation "
+"that's been made in Symfony, you should precede your description of the "
+"change with the corresponding directive and a short description:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:176
+msgid ""
+"For a new feature or a behavior change use the ``.. versionadded:: 5.x`` "
+"directive:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:185
+msgid ""
+"If you are documenting a behavior change, it may be helpful to *briefly* "
+"describe how the behavior has changed:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:195
+msgid "For a deprecation use the ``.. deprecated:: 5.x`` directive:"
+msgstr ""
+
+#: ../../../contributing/documentation/format.rst:203
+msgid ""
+"Whenever a new major version of Symfony is released (e.g. 6.0, 7.0, etc),"
+" a new branch of the documentation is created from the ``master`` branch."
+" At this point, all the ``versionadded`` and ``deprecated`` tags for "
+"Symfony versions that have a lower major version will be removed. For "
+"example, if Symfony 6.0 were released today, 5.0 to 5.4 ``versionadded`` "
+"and ``deprecated`` tags would be removed from the new ``6.0`` branch."
+msgstr ""
+

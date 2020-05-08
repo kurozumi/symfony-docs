@@ -1,0 +1,530 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/symfony_server.rst:2
+msgid "Symfony Local Web Server"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:4
+msgid ""
+"You can run Symfony applications with any web server (Apache, nginx, the "
+"internal PHP web server, etc.). However, Symfony provides its own web "
+"server to make you more productive while developing your applications."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:8
+msgid ""
+"Although this server is not intended for production use, it supports "
+"HTTP/2, TLS/SSL, automatic generation of security certificates, local "
+"domains, and many other features that sooner or later you'll need when "
+"developing web projects. Moreover, the server is not tied to Symfony and "
+"you can also use it with any PHP application and even with HTML/SPA "
+"(single page applications)."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:17
+msgid ""
+"The Symfony server is part of the ``symfony`` binary created when you "
+"`install Symfony`_ and has support for Linux, macOS and Windows."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:22
+msgid ""
+"The Symfony binary is developped internally at Symfony. If you want to "
+"report a bug or suggest a new feature, please create an issue on "
+"`symfony/cli`_."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:27
+msgid "Getting Started"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:29
+msgid ""
+"The Symfony server is started once per project, so you may end up with "
+"several instances (each of them listening to a different port). This is "
+"the common workflow to serve a Symfony project:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:44
+msgid ""
+"Running the server this way makes it display the log messages in the "
+"console, so you won't be able to run other commands at the same time. If "
+"you prefer, you can run the Symfony server in the background:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:61
+msgid "Enabling PHP-FPM"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:63
+msgid ""
+"When the server starts it will check for common patterns like "
+"``web/app.php``, ``web/app_dev.php`` or ``public/index.php``. If a file "
+"like this is found the server will automatically start with PHP-FPM "
+"enabled. Otherwise the server will start without PHP-FPM and will show a "
+"``Page not found`` page when trying to access a ``.php`` file in the "
+"browser."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:71
+msgid ""
+"When an ``index.html`` and a front controller like e.g. ``index.php`` are"
+" both present the server will still start with PHP-FPM enabled but the "
+"``index.html`` will take precedence over the front controller. This means"
+" when an ``index.html`` file is present in ``public`` or ``web``, it will"
+" be displayed instead of the ``index.php`` which would show e.g. the "
+"Symfony application."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:79
+msgid "Enabling TLS"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:81
+msgid ""
+"Browsing the secure version of your applications locally is important to "
+"detect problems with mixed content early, and to run libraries that only "
+"run in HTTPS. Traditionally this has been painful and complicated to set "
+"up, but the Symfony server automates everything. First, run this command:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:90
+msgid ""
+"This command creates a local certificate authority, registers it in your "
+"system trust store, registers it in Firefox (this is required only for "
+"that browser) and creates a default certificate for ``localhost`` and "
+"``127.0.0.1``. In other words, it does everything for you."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:95
+msgid ""
+"Before browsing your local application with HTTPS instead of HTTP, "
+"restart its server stopping and starting it again."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:99
+msgid "Different PHP Settings Per Project"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:102
+msgid "Selecting a Different PHP Version"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:104
+msgid ""
+"If you have multiple PHP versions installed on your computer, you can "
+"tell Symfony which one to use creating a file called ``.php-version`` at "
+"the project root directory:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:120
+msgid ""
+"The Symfony server traverses the directory structure up to the root "
+"directory, so you can create a ``.php-version`` file in some parent "
+"directory to set the same PHP version for a group of projects under that "
+"directory."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:125
+msgid ""
+"Run the command below if you don't remember all the PHP versions "
+"installed on your computer:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:137
+msgid "Overriding PHP Config Options Per Project"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:139
+msgid ""
+"You can change the value of any PHP runtime config option per project by "
+"creating a file called ``php.ini`` at the project root directory. Add "
+"only the options you want to override:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:153
+msgid "Running Commands with Different PHP Versions"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:155
+msgid ""
+"When running different PHP versions, it is useful to use the main "
+"``symfony`` command as a wrapper for the ``php`` command. This allows you"
+" to always select the most appropriate PHP version according to the "
+"project which is running the commands. It also loads the env vars "
+"automatically, which is important when running non-Symfony commands:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:171
+msgid "Local Domain Names"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:173
+msgid ""
+"By default, projects are accessible at some random port of the "
+"``127.0.0.1`` local IP. However, sometimes it is preferable to associate "
+"a domain name to them:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:176
+msgid ""
+"It's more convenient when you work continuously on the same project "
+"because port numbers can change but domains don't;"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:178
+msgid "The behavior of some applications depend on their domains/subdomains;"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:179
+msgid "To have stable endpoints, such as the local redirection URL for OAuth2."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:182
+msgid "Setting up the Local Proxy"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:184
+msgid ""
+"Local domains are possible thanks to a local proxy provided by the "
+"Symfony server. If this is the first time you run the proxy, you must "
+"configure it as follows:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:187
+msgid "Open the **proxy settings** of your operating system:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:189
+msgid "`Proxy settings in Windows`_;"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:190
+msgid "`Proxy settings in macOS`_;"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:191
+msgid "`Proxy settings in Ubuntu`_."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:193
+msgid ""
+"Set the following URL as the value of the **Automatic Proxy "
+"Configuration**: ``http://127.0.0.1:7080/proxy.pac``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:196
+msgid "Now run this command to start the proxy:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:204
+msgid ""
+"Some browsers (e.g. Chrome) require a full restart after starting the "
+"proxy. Otherwise, you'll see a *\"This webpage is not available\"* error "
+"(``ERR_NAME_NOT_RESOLVED``)."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:208
+msgid "Defining the Local Domain"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:210
+msgid ""
+"By default, Symfony proposes ``.wip`` (for *Work in Progress*) for the "
+"local domains. You can define a local domain for your project as follows:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:218
+msgid ""
+"If you have installed the local proxy as explained in the previous "
+"section, you can now browse ``https://my-domain.wip`` to access your "
+"local project with the new custom domain."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:224
+msgid ""
+"Browse the http://127.0.0.1:7080 URL to get the full list of local "
+"project directories, their custom domains, and port numbers."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:227
+msgid ""
+"When running console commands, add the ``https_proxy`` env var to make "
+"custom domains work:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:236
+msgid ""
+"Although env var names are always defined in uppercase, the "
+"``https_proxy`` env var `is treated differently`_ than other env vars and"
+" its name must be spelled in lowercase."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:242
+msgid ""
+"If you prefer to use a different TLD, edit the ``~/.symfony/proxy.json`` "
+"file (where ``~`` means the path to your user directory) and change the "
+"value of the ``tld`` option from ``wip`` to any other TLD."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:247
+msgid "Long-Running Commands"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:249
+msgid ""
+"Long-running commands, such as the ones that compile front-end web "
+"assets, block the terminal and you can't run other commands at the same "
+"time. The Symfony server provides a ``run`` command to wrap them as "
+"follows:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:273
+msgid "Docker Integration"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:275
+msgid ""
+"The local Symfony server provides full `Docker`_ integration for projects"
+" that use it."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:278
+msgid ""
+"When the web server detects that Docker Compose is running for the "
+"project, it automatically exposes environment variables according to the "
+"exposed port and the name of the ``docker-compose`` services."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:282
+msgid "Consider the following configuration:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:291
+msgid ""
+"The web server detects that a service exposing port ``3306`` is running "
+"for the project. It understands that this is a MySQL service and creates "
+"environment variables accordingly with the service name (``database``) as"
+" a prefix: ``DATABASE_URL``, ``DATABASE_HOST``, ..."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:296
+msgid ""
+"If the ``docker-compose.yaml`` names do not match Symfony's conventions, "
+"add a label to override the environment variables prefix:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:308
+msgid ""
+"In this example, the service is named ``db``, so environment variables "
+"would be prefixed with ``DB_``, but as the ``com.symfony.server.service-"
+"prefix`` is set to ``DATABASE``, the web server creates environment "
+"variables starting with ``DATABASE_`` instead as expected by the default "
+"Symfony configuration."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:313
+msgid ""
+"Here is the list of supported services with their ports and default "
+"Symfony prefixes:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:317
+msgid "Service"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:317
+msgid "Port"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:317
+msgid "Symfony default prefix"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:319
+msgid "MySQL"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:319
+msgid "3306"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:319 ../../../setup/symfony_server.rst:320
+msgid "``DATABASE_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:320
+msgid "PostgreSQL"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:320
+msgid "5432"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:321
+msgid "Redis"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:321
+msgid "6379"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:321
+msgid "``REDIS_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:322
+msgid "Memcached"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:322
+msgid "11211"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:322
+msgid "``MEMCACHED_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:323
+msgid "RabbitMQ"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:323
+msgid "5672"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:323
+msgid ""
+"``RABBITMQ_`` (set user and pass via Docker ``RABBITMQ_DEFAULT_USER`` and"
+" ``RABBITMQ_DEFAULT_PASS`` env var)"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:324
+msgid "Elasticsearch"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:324
+msgid "9200"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:324
+msgid "``ELASTICSEARCH_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:325
+msgid "MongoDB"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:325
+msgid "27017"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:325
+msgid "``MONGODB_`` (set the database via a Docker ``MONGO_DATABASE`` env var)"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:326
+msgid "Kafka"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:326
+msgid "9092"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:326
+msgid "``KAFKA_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:327
+msgid "MailCatcher"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:327
+msgid "1025/1080 or 25/80"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:327
+msgid "``MAILER_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:329
+msgid "Blackfire"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:329
+msgid "8707"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:329
+msgid "``BLACKFIRE_``"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:332
+msgid "You can open web management interfaces for the services that expose them:"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:339
+msgid "Or click on the links in the \"Server\" section of the web debug toolbar."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:343
+msgid ""
+"To debug and list all exported environment variables, run ``symfony "
+"var:export``."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:348
+msgid ""
+"For some services, the web server also exposes environment variables "
+"understood by CLI tools related to the service. For instance, running "
+"``symfony run psql`` will connect you automatically to the PostgreSQL "
+"server running in a container without having to specify the username, "
+"password, or database name."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:354
+msgid ""
+"When Docker services are running, browse a page of your Symfony "
+"application and check the \"Symfony Server\" section in the web debug "
+"toolbar; you'll see that \"Docker Compose\" is \"Up\"."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:359
+msgid "SymfonyCloud Integration"
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:361
+msgid ""
+"The local Symfony server provides full, but optional, integration with "
+"`SymfonyCloud`_, a service optimized to run your Symfony applications on "
+"the cloud. It provides features such as creating environments, "
+"backups/snapshots, and even access to a copy of the production data from "
+"your local machine to help debug any issues."
+msgstr ""
+
+#: ../../../setup/symfony_server.rst:367
+msgid "`Read SymfonyCloud technical docs`_."
+msgstr ""
+

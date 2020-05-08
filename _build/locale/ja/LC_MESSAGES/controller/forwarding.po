@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller/forwarding.rst:5
+msgid "How to Forward Requests to another Controller"
+msgstr ""
+
+#: ../../../controller/forwarding.rst:7
+msgid ""
+"Though not very common, you can also forward to another controller "
+"internally with the ``forward()`` method provided by the "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\AbstractController`"
+" class."
+msgstr ""
+
+#: ../../../controller/forwarding.rst:12
+msgid ""
+"Instead of redirecting the user's browser, this makes an \"internal\" "
+"sub-request and calls the defined controller. The ``forward()`` method "
+"returns the :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` "
+"object that is returned from *that* controller::"
+msgstr ""
+
+#: ../../../controller/forwarding.rst:29
+msgid ""
+"The array passed to the method becomes the arguments for the resulting "
+"controller. The target controller method might look something like this::"
+msgstr ""
+
+#: ../../../controller/forwarding.rst:37
+msgid ""
+"Just like when creating a controller for a route, the order of the "
+"arguments of the ``fancy()`` method doesn't matter: the matching is done "
+"by name."
+msgstr ""
+

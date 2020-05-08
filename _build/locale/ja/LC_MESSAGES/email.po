@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../email.rst:5
+msgid "Swift Mailer"
+msgstr ""
+
+#: ../../../email.rst:9
+msgid ""
+"In Symfony 4.3, the :doc:`Mailer </mailer>` component was introduced and "
+"can be used instead of Swift Mailer."
+msgstr ""
+
+#: ../../../email.rst:12
+msgid ""
+"Symfony provides a mailer feature based on the popular `Swift Mailer`_ "
+"library via the `SwiftMailerBundle`_. This mailer supports sending "
+"messages with your own mail servers as well as using popular email "
+"providers like `Mandrill`_, `SendGrid`_, and `Amazon SES`_."
+msgstr ""
+
+#: ../../../email.rst:18
+msgid "Installation"
+msgstr ""
+
+#: ../../../email.rst:20
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the Swift Mailer based mailer before using it:"
+msgstr ""
+
+#: ../../../email.rst:27
+msgid ""
+"If your application doesn't use Symfony Flex, follow the installation "
+"instructions on `SwiftMailerBundle`_."
+msgstr ""
+
+#: ../../../email.rst:33
+msgid "Configuration"
+msgstr ""
+
+#: ../../../email.rst:35
+msgid ""
+"The ``config/packages/swiftmailer.yaml`` file that's created when "
+"installing the mailer provides all the initial config needed to send "
+"emails, except your mail server connection details. Those parameters are "
+"defined in the ``MAILER_URL`` environment variable in the ``.env`` file:"
+msgstr ""
+
+#: ../../../email.rst:52
+msgid ""
+"If the username, password or host contain any character considered "
+"special in a URI (such as ``+``, ``@``, ``$``, ``#``, ``/``, ``:``, "
+"``*``, ``!``), you must encode them. See `RFC 3986`_ for the full list of"
+" reserved characters or use the :phpfunction:`urlencode` function to "
+"encode them."
+msgstr ""
+
+#: ../../../email.rst:57
+msgid ""
+"Refer to the :doc:`SwiftMailer configuration reference "
+"</reference/configuration/swiftmailer>` for the detailed explanation of "
+"all the available config options."
+msgstr ""
+
+#: ../../../email.rst:61
+msgid "Sending Emails"
+msgstr ""
+
+#: ../../../email.rst:63
+msgid ""
+"The Swift Mailer library works by creating, configuring and then sending "
+"``Swift_Message`` objects. The \"mailer\" is responsible for the actual "
+"delivery of the message and is accessible via the ``Swift_Mailer`` "
+"service. Overall, sending an email is pretty straightforward::"
+msgstr ""
+
+#: ../../../email.rst:98
+msgid ""
+"To keep things decoupled, the email body has been stored in a template "
+"and rendered with the ``renderView()`` method. The "
+"``registration.html.twig`` template might look something like this:"
+msgstr ""
+
+#: ../../../email.rst:117
+msgid ""
+"The ``$message`` object supports many more options, such as including "
+"attachments, adding HTML content, and much more. Refer to the `Creating "
+"Messages`_ section of the Swift Mailer documentation for more details."
+msgstr ""
+
+#: ../../../email.rst:124
+msgid "Using Gmail to Send Emails"
+msgstr ""
+
+#: ../../../email.rst:126
+msgid ""
+"During development, you might prefer to send emails using Gmail instead "
+"of setting up a regular SMTP server. To do that, update the "
+"``MAILER_URL`` of your ``.env`` file to this:"
+msgstr ""
+
+#: ../../../email.rst:135
+msgid ""
+"The ``gmail`` transport is a shortcut that uses the ``smtp`` transport, "
+"``ssl`` encryption, ``login`` auth mode and ``smtp.gmail.com`` host. If "
+"your app uses other encryption or auth mode, you must override those "
+"values (:doc:`see mailer config reference "
+"</reference/configuration/swiftmailer>`):"
+msgstr ""
+
+#: ../../../email.rst:145
+msgid ""
+"If your Gmail account uses 2-Step-Verification, you must `generate an App"
+" password`_ and use it as the value of the mailer password. You must also"
+" ensure that you `allow less secure applications to access your Gmail "
+"account`_."
+msgstr ""
+
+#: ../../../email.rst:150
+msgid "Using Cloud Services to Send Emails"
+msgstr ""
+
+#: ../../../email.rst:152
+msgid ""
+"Cloud mailing services are a popular option for companies that don't want"
+" to set up and maintain their own reliable mail servers. To use these "
+"services in a Symfony app, update the value of ``MAILER_URL`` in the "
+"``.env`` file. For example, for `Amazon SES`_ (Simple Email Service):"
+msgstr ""
+
+#: ../../../email.rst:163
+msgid ""
+"Use the same technique for other mail services, as most of the time there"
+" is nothing more to it than configuring an SMTP endpoint."
+msgstr ""
+
+#: ../../../email.rst:167
+msgid "How to Work with Emails during Development"
+msgstr ""
+
+#: ../../../email.rst:169
+msgid ""
+"When developing an application which sends email, you will often not want"
+" to actually send the email to the specified recipient during "
+"development. If you are using the SwiftmailerBundle with Symfony, you can"
+" achieve this through configuration settings without having to make any "
+"changes to your application's code at all. There are two main choices "
+"when it comes to handling email during development: (a) disabling the "
+"sending of email altogether or (b) sending all email to a specific "
+"address (with optional exceptions)."
+msgstr ""
+
+#: ../../../email.rst:179
+msgid "Disabling Sending"
+msgstr ""
+
+#: ../../../email.rst:181
+msgid ""
+"You can disable sending email by setting the ``disable_delivery`` option "
+"to ``true``, which is the default value used by Symfony in the ``test`` "
+"environment (email messages will continue to be sent in the other "
+"environments):"
+msgstr ""
+
+#: ../../../email.rst:217
+msgid "Sending to a Specified Address(es)"
+msgstr ""
+
+#: ../../../email.rst:219
+msgid ""
+"You can also choose to have all email sent to a specific address or a "
+"list of addresses, instead of the address actually specified when sending"
+" the message. This can be done via the ``delivery_addresses`` option:"
+msgstr ""
+
+#: ../../../email.rst:255
+msgid ""
+"Now, suppose you're sending an email to ``recipient@example.com`` in a "
+"controller::"
+msgstr ""
+
+#: ../../../email.rst:275
+msgid ""
+"In the ``dev`` environment, the email will instead be sent to "
+"``dev@example.com``. Swift Mailer will add an extra header to the email, "
+"``X-Swift-To``, containing the replaced address, so you can still see who"
+" it would have been sent to."
+msgstr ""
+
+#: ../../../email.rst:281
+msgid ""
+"In addition to the ``to`` addresses, this will also stop the email being "
+"sent to any ``CC`` and ``BCC`` addresses set for it. Swift Mailer will "
+"add additional headers to the email with the overridden addresses in "
+"them. These are ``X-Swift-Cc`` and ``X-Swift-Bcc`` for the ``CC`` and "
+"``BCC`` addresses respectively."
+msgstr ""
+
+#: ../../../email.rst:290
+msgid "Sending to a Specified Address but with Exceptions"
+msgstr ""
+
+#: ../../../email.rst:292
+msgid ""
+"Suppose you want to have all email redirected to a specific address, "
+"(like in the above scenario to ``dev@example.com``). But then you may "
+"want email sent to some specific email addresses to go through after all,"
+" and not be redirected (even if it is in the dev environment). This can "
+"be done by adding the ``delivery_whitelist`` option:"
+msgstr ""
+
+#: ../../../email.rst:345
+msgid ""
+"In the above example all email messages will be redirected to "
+"``dev@example.com`` and messages sent to the ``admin@mydomain.com`` "
+"address or to any email address belonging to the domain "
+"``specialdomain.com`` will also be delivered as normal."
+msgstr ""
+
+#: ../../../email.rst:351
+msgid ""
+"The ``delivery_whitelist`` option is ignored unless the "
+"``delivery_addresses`` option is defined."
+msgstr ""
+
+#: ../../../email.rst:354
+msgid "Viewing from the Web Debug Toolbar"
+msgstr ""
+
+#: ../../../email.rst:356
+msgid ""
+"You can view any email sent during a single response when you are in the "
+"``dev`` environment using the web debug toolbar. The email icon in the "
+"toolbar will show how many emails were sent. If you click it, a report "
+"will open showing the details of the sent emails."
+msgstr ""
+
+#: ../../../email.rst:361
+msgid ""
+"If you're sending an email and then immediately redirecting to another "
+"page, the web debug toolbar will not display an email icon or a report on"
+" the next page."
+msgstr ""
+
+#: ../../../email.rst:365
+msgid ""
+"Instead, you can set the ``intercept_redirects`` option to ``true`` in "
+"the ``dev`` environment, which will cause the redirect to stop and allow "
+"you to open the report with details of the sent emails."
+msgstr ""
+
+#: ../../../email.rst:403
+msgid ""
+"Alternatively, you can open the profiler after the redirect and search by"
+" the submit URL used on the previous request (e.g. ``/contact/handle``). "
+"The profiler's search feature allows you to load the profiler information"
+" for any past requests."
+msgstr ""
+
+#: ../../../email.rst:410
+msgid ""
+"In addition to the features provided by Symfony, there are applications "
+"that can help you test emails during application development, like "
+"`MailCatcher`_, `Mailtrap`_ and `MailHog`_."
+msgstr ""
+
+#: ../../../email.rst:415
+msgid "How to Spool Emails"
+msgstr ""
+
+#: ../../../email.rst:417
+msgid ""
+"The default behavior of the Symfony mailer is to send the email messages "
+"immediately. You may, however, want to avoid the performance hit of the "
+"communication to the email server, which could cause the user to wait for"
+" the next page to load while the email is sending. This can be avoided by"
+" choosing to \"spool\" the emails instead of sending them directly."
+msgstr ""
+
+#: ../../../email.rst:423
+msgid ""
+"This makes the mailer to not attempt to send the email message but "
+"instead save it somewhere such as a file. Another process can then read "
+"from the spool and take care of sending the emails in the spool. "
+"Currently only spooling to file or memory is supported."
+msgstr ""
+
+#: ../../../email.rst:431
+msgid "Spool Using Memory"
+msgstr ""
+
+#: ../../../email.rst:433
+msgid ""
+"When you use spooling to store the emails to memory, they will get sent "
+"right before the kernel terminates. This means the email only gets sent "
+"if the whole request got executed without any unhandled exception or any "
+"errors. To configure this spool, use the following configuration:"
+msgstr ""
+
+#: ../../../email.rst:473
+msgid "Spool Using Files"
+msgstr ""
+
+#: ../../../email.rst:475
+msgid ""
+"When you use the filesystem for spooling, Symfony creates a folder in the"
+" given path for each mail service (e.g. \"default\" for the default "
+"service). This folder will contain files for each email in the spool. So "
+"make sure this directory is writable by Symfony (or your webserver/php)!"
+msgstr ""
+
+#: ../../../email.rst:480
+msgid "In order to use the spool with files, use the following configuration:"
+msgstr ""
+
+#: ../../../email.rst:526
+msgid ""
+"If you want to store the spool somewhere with your project directory, "
+"remember that you can use the ``%kernel.project_dir%`` parameter to "
+"reference the project's root:"
+msgstr ""
+
+#: ../../../email.rst:534
+msgid ""
+"Now, when your app sends an email, it will not actually be sent but "
+"instead added to the spool. Sending the messages from the spool is done "
+"separately. There is a console command to send the messages in the spool:"
+msgstr ""
+
+#: ../../../email.rst:542
+msgid "It has an option to limit the number of messages to be sent:"
+msgstr ""
+
+#: ../../../email.rst:548
+msgid "You can also set the time limit in seconds:"
+msgstr ""
+
+#: ../../../email.rst:554
+msgid ""
+"In practice you will not want to run this manually. Instead, the console "
+"command should be triggered by a cron job or scheduled task and run at a "
+"regular interval."
+msgstr ""
+
+#: ../../../email.rst:560
+msgid ""
+"When you create a message with SwiftMailer, it generates a "
+"``Swift_Message`` class. If the ``swiftmailer`` service is lazy loaded, "
+"it generates instead a proxy class named "
+"``Swift_Message_<someRandomCharacters>``."
+msgstr ""
+
+#: ../../../email.rst:564
+msgid ""
+"If you use the memory spool, this change is transparent and has no "
+"impact. But when using the filesystem spool, the message class is "
+"serialized in a file with the randomized class name. The problem is that "
+"this random class name changes on every cache clear."
+msgstr ""
+
+#: ../../../email.rst:569
+msgid ""
+"So if you send a mail and then you clear the cache, on the next execution"
+" of ``swiftmailer:spool:send`` an error will raise because the class "
+"``Swift_Message_<someRandomCharacters>`` doesn't exist (anymore)."
+msgstr ""
+
+#: ../../../email.rst:573
+msgid ""
+"The solutions are either to use the memory spool or to load the "
+"``swiftmailer`` service without the ``lazy`` option (see "
+":doc:`/service_container/lazy_services`)."
+msgstr ""
+
+#: ../../../email.rst:577
+msgid "How to Test that an Email is Sent in a Functional Test"
+msgstr ""
+
+#: ../../../email.rst:579
+msgid ""
+"Sending emails with Symfony is pretty straightforward thanks to the "
+"SwiftmailerBundle, which leverages the power of the `Swift Mailer`_ "
+"library."
+msgstr ""
+
+#: ../../../email.rst:582
+msgid ""
+"To functionally test that an email was sent, and even assert the email "
+"subject, content or any other headers, you can use :doc:`the Symfony "
+"Profiler </profiler>`."
+msgstr ""
+
+#: ../../../email.rst:585
+msgid "Start with a controller action that sends an email::"
+msgstr ""
+
+#: ../../../email.rst:600
+msgid ""
+"In your functional test, use the ``swiftmailer`` collector on the "
+"profiler to get information about the messages sent on the previous "
+"request::"
+msgstr ""
+
+#: ../../../email.rst:640
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../email.rst:643
+msgid "Problem: The Collector Object Is ``null``"
+msgstr ""
+
+#: ../../../email.rst:645
+msgid ""
+"The email collector is only available when the profiler is enabled and "
+"collects information, as explained in :doc:`/testing/profiling`."
+msgstr ""
+
+#: ../../../email.rst:649
+msgid "Problem: The Collector Doesn't Contain the Email"
+msgstr ""
+
+#: ../../../email.rst:651
+msgid ""
+"If a redirection is performed after sending the email (for example when "
+"you send an email after a form is processed and before redirecting to "
+"another page), make sure that the test client doesn't follow the "
+"redirects, as explained in :doc:`/testing`. Otherwise, the collector will"
+" contain the information of the redirected page and the email won't be "
+"accessible."
+msgstr ""
+

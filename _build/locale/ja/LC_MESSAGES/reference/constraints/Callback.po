@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Callback.rst:2
+msgid "Callback"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:4
+msgid ""
+"The purpose of the Callback constraint is to create completely custom "
+"validation rules and to assign any validation errors to specific fields "
+"on your object. If you're using validation with forms, this means that "
+"instead of displaying custom errors at the top of the form, you can "
+"display them next to the field they apply to."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:10
+msgid ""
+"This process works by specifying one or more *callback* methods, each of "
+"which will be called during the validation process. Each of those methods"
+" can do anything, including creating and assigning validation errors."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:16
+msgid ""
+"A callback method itself doesn't *fail* or return any value. Instead, as "
+"you'll see in the example, a callback method has the ability to directly "
+"add validator \"violations\"."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:21
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:21
+msgid ""
+":ref:`class <validation-class-target>` or :ref:`property/method "
+"<validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:22
+#: ../../../reference/constraints/Callback.rst:255
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:22
+msgid ":ref:`callback <callback-option>`"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:23
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:24
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:25
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:25
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Callback`"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:26
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:26
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\CallbackValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:30
+msgid "Configuration"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:95
+msgid "The Callback Method"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:97
+msgid ""
+"The callback method is passed a special ``ExecutionContextInterface`` "
+"object. You can set \"violations\" directly on this object and determine "
+"to which field those errors should be attributed::"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:124
+msgid "Static Callbacks"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:126
+msgid ""
+"You can also use the constraint with static methods. Since static methods"
+" don't have access to the object instance, they receive the object as the"
+" first argument::"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:144
+msgid "External Callbacks and Closures"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:146
+msgid ""
+"If you want to execute a static callback method that is not located in "
+"the class of the validated object, you can configure the constraint to "
+"invoke an array callable as supported by PHP's "
+":phpfunction:`call_user_func` function. Suppose your validation function "
+"is ``Acme\\Validator::validate()``::"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:163
+msgid "You can then use the following configuration to invoke this validator:"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:226
+msgid ""
+"The Callback constraint does *not* support global callback functions nor "
+"is it possible to specify a global function or a service method as "
+"callback. To validate using a service, you should :doc:`create a custom "
+"validation constraint </validation/custom_constraint>` and add that new "
+"constraint to your class."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:232
+msgid ""
+"When configuring the constraint via PHP, you can also pass a closure to "
+"the constructor of the Callback constraint::"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:260
+msgid "``callback``"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:262
+msgid ""
+"**type**: ``string``, ``array`` or ``Closure`` [:ref:`default option "
+"<validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:264
+msgid ""
+"The callback option accepts three different formats for specifying the "
+"callback method:"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:267
+msgid "A **string** containing the name of a concrete or static method;"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:269
+msgid "An array callable with the format ``['<Class>', '<method>']``;"
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:271
+msgid "A closure."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:273
+msgid ""
+"Concrete callbacks receive an "
+":class:`Symfony\\\\Component\\\\Validator\\\\Context\\\\ExecutionContextInterface`"
+" instance as only argument."
+msgstr ""
+
+#: ../../../reference/constraints/Callback.rst:276
+msgid ""
+"Static or closure callbacks receive the validated object as the first "
+"argument and the "
+":class:`Symfony\\\\Component\\\\Validator\\\\Context\\\\ExecutionContextInterface`"
+" instance as the second argument."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

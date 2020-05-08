@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/injection_types.rst:5
+msgid "Types of Injection"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:7
+msgid ""
+"Making a class's dependencies explicit and requiring that they be "
+"injected into it is a good way of making a class more reusable, testable "
+"and decoupled from others."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:11
+msgid ""
+"There are several ways that the dependencies can be injected. Each "
+"injection point has advantages and disadvantages to consider, as well as "
+"different ways of working with them when using the service container."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:16
+msgid "Constructor Injection"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:18
+msgid ""
+"The most common way to inject dependencies is via a class's constructor. "
+"To do this you need to add an argument to the constructor signature to "
+"accept the dependency::"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:37
+msgid ""
+"You can specify what service you would like to inject into this in the "
+"service container configuration:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:86
+msgid ""
+"Type hinting the injected object means that you can be sure that a "
+"suitable dependency has been injected. By type-hinting, you'll get a "
+"clear error immediately if an unsuitable dependency is injected. By type "
+"hinting using an interface rather than a class you can make the choice of"
+" dependency more flexible. And assuming you only use methods defined in "
+"the interface, you can gain that flexibility and still safely use the "
+"object."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:93
+msgid "There are several advantages to using constructor injection:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:95
+msgid ""
+"If the dependency is a requirement and the class cannot work without it "
+"then injecting it via the constructor ensures it is present when the "
+"class is used as the class cannot be constructed without it."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:99
+msgid ""
+"The constructor is only ever called once when the object is created, so "
+"you can be sure that the dependency will not change during the object's "
+"lifetime."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:103
+msgid ""
+"These advantages do mean that constructor injection is not suitable for "
+"working with optional dependencies. It is also more difficult to use in "
+"combination with class hierarchies: if a class uses constructor injection"
+" then extending it and overriding the constructor becomes problematic."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:109
+msgid "Immutable-setter Injection"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:111
+msgid ""
+"Another possible injection is to use a method which returns a separate "
+"instance by cloning the original service, this approach allows you to "
+"make a service immutable::"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:136
+msgid "In order to use this type of injection, don't forget to configure it:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:183
+msgid ""
+"If you decide to use autowiring, this type of injection requires that you"
+" add a ``@return static`` docblock in order for the container to be "
+"capable of registering the method."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:187
+msgid ""
+"This approach is useful if you need to configure your service according "
+"to your needs, so, here's the advantages of immutable-setters:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:190
+msgid ""
+"Immutable setters works with optional dependencies, this way, if you "
+"don't need a dependency, the setter don't need to be called."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:193
+msgid ""
+"Like the constructor injection, using immutable setters force the "
+"dependency to stay the same during the lifetime of a service."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:196
+msgid ""
+"This type of injection works well with traits as the service can be "
+"composed, this way, adapting the service to your application requirements"
+" is easier."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:199
+msgid ""
+"The setter can be called multiple times, this way, adding a dependency to"
+" a collection becomes easier and allows you to add a variable number of "
+"dependencies."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:202
+msgid "The disadvantages are:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:204
+msgid ""
+"As the setter call is optional, a dependency can be null during "
+"execution, you must check that the dependency is available before calling"
+" it."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:207
+msgid ""
+"Unless the service is declared lazy, it is incompatible with services "
+"that reference each other in what are called circular loops."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:211
+msgid "Setter Injection"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:213
+msgid ""
+"Another possible injection point into a class is by adding a setter "
+"method that accepts the dependency::"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:276
+msgid "This time the advantages are:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:278
+msgid ""
+"Setter injection works well with optional dependencies. If you do not "
+"need the dependency, then do not call the setter."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:281
+msgid ""
+"You can call the setter multiple times. This is particularly useful if "
+"the method adds the dependency to a collection. You can then have a "
+"variable number of dependencies."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:285
+msgid ""
+"Like the immutable-setter one, this type of injection works well with "
+"traits and allows you to compose your service."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:288
+msgid "The disadvantages of setter injection are:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:290
+msgid ""
+"The setter can be called more than just at the time of construction so "
+"you cannot be sure the dependency is not replaced during the lifetime of "
+"the object (except by explicitly writing the setter method to check if it"
+" has already been called)."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:295
+msgid ""
+"You cannot be sure the setter will be called and so you need to add "
+"checks that any required dependencies are injected."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:299
+msgid "Property Injection"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:301
+msgid "Another possibility is setting public fields of the class directly::"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:356
+msgid ""
+"There are mainly only disadvantages to using property injection, it is "
+"similar to setter injection but with these additional important problems:"
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:359
+msgid ""
+"You cannot control when the dependency is set at all, it can be changed "
+"at any point in the object's lifetime."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:362
+msgid ""
+"You cannot use type hinting so you cannot be sure what dependency is "
+"injected except by writing into the class code to explicitly test the "
+"class instance before using it."
+msgstr ""
+
+#: ../../../service_container/injection_types.rst:366
+msgid ""
+"But, it is useful to know that this can be done with the service "
+"container, especially if you are working with code that is out of your "
+"control, such as in a third party library, which uses public properties "
+"for its dependencies."
+msgstr ""
+

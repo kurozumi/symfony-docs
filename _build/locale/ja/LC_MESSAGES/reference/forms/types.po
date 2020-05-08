@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types.rst:5
+msgid "Form Types Reference"
+msgstr ""
+
+#: ../../../reference/forms/types.rst:55
+msgid ""
+"A form is composed of *fields*, each of which are built with the help of "
+"a field *type* (e.g. ``TextType``, ``ChoiceType``, etc). Symfony comes "
+"standard with a large list of field types that can be used in your "
+"application."
+msgstr ""
+
+#: ../../../reference/forms/types.rst:60
+msgid "Supported Field Types"
+msgstr ""
+
+#: ../../../reference/forms/types.rst:62
+msgid "The following field types are natively available in Symfony:"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:2
+msgid "Text Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:4
+msgid ":doc:`TextType </reference/forms/types/text>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:5
+msgid ":doc:`TextareaType </reference/forms/types/textarea>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:6
+msgid ":doc:`EmailType </reference/forms/types/email>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:7
+msgid ":doc:`IntegerType </reference/forms/types/integer>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:8
+msgid ":doc:`MoneyType </reference/forms/types/money>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:9
+msgid ":doc:`NumberType </reference/forms/types/number>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:10
+msgid ":doc:`PasswordType </reference/forms/types/password>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:11
+msgid ":doc:`PercentType </reference/forms/types/percent>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:12
+msgid ":doc:`SearchType </reference/forms/types/search>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:13
+msgid ":doc:`UrlType </reference/forms/types/url>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:14
+msgid ":doc:`RangeType </reference/forms/types/range>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:15
+msgid ":doc:`TelType </reference/forms/types/tel>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:16
+msgid ":doc:`ColorType </reference/forms/types/color>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:19
+msgid "Choice Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:21
+msgid ":doc:`ChoiceType </reference/forms/types/choice>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:22
+msgid ":doc:`EntityType </reference/forms/types/entity>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:23
+msgid ":doc:`CountryType </reference/forms/types/country>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:24
+msgid ":doc:`LanguageType </reference/forms/types/language>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:25
+msgid ":doc:`LocaleType </reference/forms/types/locale>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:26
+msgid ":doc:`TimezoneType </reference/forms/types/timezone>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:27
+msgid ":doc:`CurrencyType </reference/forms/types/currency>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:30
+msgid "Date and Time Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:32
+msgid ":doc:`DateType </reference/forms/types/date>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:33
+msgid ":doc:`DateIntervalType </reference/forms/types/dateinterval>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:34
+msgid ":doc:`DateTimeType </reference/forms/types/datetime>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:35
+msgid ":doc:`TimeType </reference/forms/types/time>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:36
+msgid ":doc:`BirthdayType </reference/forms/types/birthday>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:37
+msgid ":doc:`WeekType </reference/forms/types/week>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:40
+msgid "Other Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:42
+msgid ":doc:`CheckboxType </reference/forms/types/checkbox>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:43
+msgid ":doc:`FileType </reference/forms/types/file>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:44
+msgid ":doc:`RadioType </reference/forms/types/radio>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:47
+msgid "Field Groups"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:49
+msgid ":doc:`CollectionType </reference/forms/types/collection>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:50
+msgid ":doc:`RepeatedType </reference/forms/types/repeated>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:53
+msgid "Hidden Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:55
+msgid ":doc:`HiddenType </reference/forms/types/hidden>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:58
+msgid "Buttons"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:60
+msgid ":doc:`ButtonType </reference/forms/types/button>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:61
+msgid ":doc:`ResetType </reference/forms/types/reset>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:62
+msgid ":doc:`SubmitType </reference/forms/types/submit>`"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:65
+msgid "Base Fields"
+msgstr ""
+
+#: ../../../reference/forms/types/map.rst.inc:67
+msgid ":doc:`FormType </reference/forms/types/form>`"
+msgstr ""
+

@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/postcss.rst:2
+msgid "PostCSS and autoprefixing (postcss-loader)"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:4
+msgid ""
+"`PostCSS`_ is a CSS post-processing tool that can transform your CSS in a"
+" lot of cool ways, like `autoprefixing`_, `linting`_ and more!"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:7
+msgid ""
+"First, download ``postcss-loader`` and any plugins you want, like "
+"``autoprefixer``:"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:13
+msgid "Next, create a ``postcss.config.js`` file at the root of your project:"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:27
+msgid "Then, enable the loader in Encore!"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:38
+msgid "Because you just modified ``webpack.config.js``, stop and restart Encore."
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:40
+msgid ""
+"That's it! The ``postcss-loader`` will now be used for all CSS, Sass, etc"
+" files. You can also pass options to the `postcss-loader`_ by passing a "
+"callback:"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:60
+msgid "Adding browserslist to ``package.json``"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:62
+msgid ""
+"The ``autoprefixer`` (and many other tools) need to know what browsers "
+"you want to support. The best-practice is to configure this directly in "
+"your ``package.json`` (so that all the tools can read this):"
+msgstr ""
+
+#: ../../../frontend/encore/postcss.rst:77
+msgid "See `browserslist`_ for more details on the syntax."
+msgstr ""
+

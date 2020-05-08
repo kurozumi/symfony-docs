@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/git.rst:2
+msgid "Git"
+msgstr ""
+
+#: ../../../contributing/code/git.rst:4
+msgid ""
+"This document explains some conventions and specificities in the way we "
+"manage the Symfony code with Git."
+msgstr ""
+
+#: ../../../contributing/code/git.rst:8
+msgid "Pull Requests"
+msgstr ""
+
+#: ../../../contributing/code/git.rst:10
+msgid ""
+"Whenever a pull request is merged, all the information contained in the "
+"pull request (including comments) is saved in the repository."
+msgstr ""
+
+#: ../../../contributing/code/git.rst:13
+msgid ""
+"You can identify pull request merges as the commit message always follows"
+" this pattern:"
+msgstr ""
+
+#: ../../../contributing/code/git.rst:20
+msgid ""
+"The PR reference allows you to have a look at the original pull request "
+"on GitHub: https://github.com/symfony/symfony/pull/1111. But all the "
+"information you can get on GitHub is also available from the repository "
+"itself."
+msgstr ""
+
+#: ../../../contributing/code/git.rst:24
+msgid ""
+"The merge commit message contains the original message from the author of"
+" the changes. Often, this can help understand what the changes were about"
+" and the reasoning behind the changes."
+msgstr ""
+
+#: ../../../contributing/code/git.rst:28
+msgid ""
+"Moreover, the full discussion that might have occurred back then is also "
+"stored as a Git note (before March 22 2013, the discussion was part of "
+"the main merge commit message). To get access to these notes, add this "
+"line to your ``.git/config`` file:"
+msgstr ""
+
+#: ../../../contributing/code/git.rst:37
+msgid ""
+"After a fetch, getting the GitHub discussion for a commit is then a "
+"matter of adding ``--show-notes=github-comments`` to the ``git show`` "
+"command:"
+msgstr ""
+

@@ -1,0 +1,372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup.rst:5
+msgid "Installing & Setting up the Symfony Framework"
+msgstr ""
+
+#: ../../../setup.rst:7
+msgid "Screencast"
+msgstr ""
+
+#: ../../../setup.rst:10
+msgid ""
+"Do you prefer video tutorials? Check out the `Stellar Development with "
+"Symfony`_ screencast series."
+msgstr ""
+
+#: ../../../setup.rst:16
+msgid "Technical Requirements"
+msgstr ""
+
+#: ../../../setup.rst:18
+msgid "Before creating your first Symfony application you must:"
+msgstr ""
+
+#: ../../../setup.rst:20
+msgid ""
+"Install PHP 7.2.5 or higher and these PHP extensions (which are installed"
+" and enabled by default in most PHP 7 installations): `Ctype`_, `iconv`_,"
+" `JSON`_, `PCRE`_, `Session`_, `SimpleXML`_, and `Tokenizer`_;"
+msgstr ""
+
+#: ../../../setup.rst:23
+msgid "`Install Composer`_, which is used to install PHP packages."
+msgstr ""
+
+#: ../../../setup.rst:25
+msgid ""
+"Optionally, you can also `install Symfony CLI`_. This creates a binary "
+"called ``symfony`` that provides all the tools you need to develop and "
+"run your Symfony application locally."
+msgstr ""
+
+#: ../../../setup.rst:29
+msgid ""
+"The ``symfony`` binary also provides a tool to check if your computer "
+"meets all requirements. Open your console terminal and run this command:"
+msgstr ""
+
+#: ../../../setup.rst:38
+msgid ""
+"The Symfony binary is developped internally at Symfony. If you want to "
+"report a bug or suggest a new feature, please create an issue on "
+"`symfony/cli`_."
+msgstr ""
+
+#: ../../../setup.rst:45
+msgid "Creating Symfony Applications"
+msgstr ""
+
+#: ../../../setup.rst:47
+msgid ""
+"Open your console terminal and run any of these commands to create a new "
+"Symfony application:"
+msgstr ""
+
+#: ../../../setup.rst:58
+msgid ""
+"The only difference between these two commands is the number of packages "
+"installed by default. The ``--full`` option installs all the packages "
+"that you usually need to build web applications, so the installation size"
+" will be bigger."
+msgstr ""
+
+#: ../../../setup.rst:62
+msgid ""
+"If you're not using the Symfony binary, run these commands to create the "
+"new Symfony application using Composer:"
+msgstr ""
+
+#: ../../../setup.rst:73
+msgid ""
+"No matter which command you run to create the Symfony application. All of"
+" them will create a new ``my_project_name/`` directory, download some "
+"dependencies into it and even generate the basic directories and files "
+"you'll need to get started. In other words, your new application is "
+"ready!"
+msgstr ""
+
+#: ../../../setup.rst:80
+msgid ""
+"The project's cache and logs directory (by default, "
+"``<project>/var/cache/`` and ``<project>/var/log/``) must be writable by "
+"the web server. If you have any issue, read how to :doc:`set up "
+"permissions for Symfony applications </setup/file_permissions>`."
+msgstr ""
+
+#: ../../../setup.rst:85
+msgid "Running Symfony Applications"
+msgstr ""
+
+#: ../../../setup.rst:87
+msgid ""
+"In production, you should install a webserver like Nginx or Apache and "
+":doc:`configure it to run Symfony </setup/web_server_configuration>`. "
+"This method can also be used if you're not using the Symfony local web "
+"server for development."
+msgstr ""
+
+#: ../../../setup.rst:92
+msgid ""
+"However for local development, the most convenient way of running Symfony"
+" is by using the :doc:`local web server </setup/symfony_server>` provided"
+" by the ``symfony`` binary. This local server provides among other things"
+" support for HTTP/2, concurrent requests, TLS/SSL and automatic "
+"generation of security certificates."
+msgstr ""
+
+#: ../../../setup.rst:98
+msgid ""
+"Open your console terminal, move into your new project directory and "
+"start the local web server as follows:"
+msgstr ""
+
+#: ../../../setup.rst:106
+msgid ""
+"Open your browser and navigate to ``http://localhost:8000/``. If "
+"everything is working, you'll see a welcome page. Later, when you are "
+"finished working, stop the server by pressing ``Ctrl+C`` from your "
+"terminal."
+msgstr ""
+
+#: ../../../setup.rst:112
+msgid ""
+"The web server works with any PHP application, not only Symfony projects,"
+" so it's a very useful generic development tool."
+msgstr ""
+
+#: ../../../setup.rst:118
+msgid "Setting up an Existing Symfony Project"
+msgstr ""
+
+#: ../../../setup.rst:120
+msgid ""
+"In addition to creating new Symfony projects, you will also work on "
+"projects already created by other developers. In that case, you only need"
+" to get the project code and install the dependencies with Composer. "
+"Assuming your team uses Git, setup your project with the following "
+"commands:"
+msgstr ""
+
+#: ../../../setup.rst:135
+msgid ""
+"You'll probably also need to customize your :ref:`.env file <config-dot-"
+"env>` and do a few other project-specific tasks (e.g. creating a "
+"database). When working on a existing Symfony application for the first "
+"time, it may be useful to run this command which displays information "
+"about the project:"
+msgstr ""
+
+#: ../../../setup.rst:147
+msgid "Installing Packages"
+msgstr ""
+
+#: ../../../setup.rst:149
+msgid ""
+"A common practice when developing Symfony applications is to install "
+"packages (Symfony calls them :doc:`bundles </bundles>`) that provide "
+"ready-to-use features. Packages usually require some setup before using "
+"them (editing some file to enable the bundle, creating some file to add "
+"some initial config, etc.)"
+msgstr ""
+
+#: ../../../setup.rst:154
+msgid ""
+"Most of the time this setup can be automated and that's why Symfony "
+"includes `Symfony Flex`_, a tool to simplify the installation/removal of "
+"packages in Symfony applications. Technically speaking, Symfony Flex is a"
+" Composer plugin that is installed by default when creating a new Symfony"
+" application and which **automates the most common tasks of Symfony "
+"applications**."
+msgstr ""
+
+#: ../../../setup.rst:162
+msgid "You can also :doc:`add Symfony Flex to an existing project </setup/flex>`."
+msgstr ""
+
+#: ../../../setup.rst:164
+msgid ""
+"Symfony Flex modifies the behavior of the ``require``, ``update``, and "
+"``remove`` Composer commands to provide advanced features. Consider the "
+"following example:"
+msgstr ""
+
+#: ../../../setup.rst:173
+msgid ""
+"If you execute that command in a Symfony application which doesn't use "
+"Flex, you'll see a Composer error explaining that ``logger`` is not a "
+"valid package name. However, if the application has Symfony Flex "
+"installed, that command installs and enables all the packages needed to "
+"use the official Symfony logger."
+msgstr ""
+
+#: ../../../setup.rst:180
+msgid ""
+"This is possible because lots of Symfony packages/bundles define "
+"**\"recipes\"**, which are a set of automated instructions to install and"
+" enable packages into Symfony applications. Flex keeps tracks of the "
+"recipes it installed in a ``symfony.lock`` file, which must be committed "
+"to your code repository."
+msgstr ""
+
+#: ../../../setup.rst:185
+msgid ""
+"Symfony Flex recipes are contributed by the community and they are stored"
+" in two public repositories:"
+msgstr ""
+
+#: ../../../setup.rst:188
+msgid ""
+"`Main recipe repository`_, is a curated list of recipes for high quality "
+"and maintained packages. Symfony Flex only looks in this repository by "
+"default."
+msgstr ""
+
+#: ../../../setup.rst:191
+msgid ""
+"`Contrib recipe repository`_, contains all the recipes created by the "
+"community. All of them are guaranteed to work, but their associated "
+"packages could be unmaintained. Symfony Flex will ask your permission "
+"before installing any of these recipes."
+msgstr ""
+
+#: ../../../setup.rst:196
+msgid ""
+"Read the `Symfony Recipes documentation`_ to learn everything about how "
+"to create recipes for your own packages."
+msgstr ""
+
+#: ../../../setup.rst:202
+msgid "Symfony Packs"
+msgstr ""
+
+#: ../../../setup.rst:204
+msgid ""
+"Sometimes a single feature requires installing several packages and "
+"bundles. Instead of installing them individually, Symfony provides "
+"**packs**, which are Composer metapackages that include several "
+"dependencies."
+msgstr ""
+
+#: ../../../setup.rst:208
+msgid ""
+"For example, to add debugging features in your application, you can run "
+"the ``composer require --dev debug`` command. This installs the ``symfony"
+"/debug-pack``, which in turn installs several packages like ``symfony"
+"/debug-bundle``, ``symfony/monolog-bundle``, ``symfony/var-dumper``, etc."
+msgstr ""
+
+#: ../../../setup.rst:213
+msgid ""
+"By default, when installing Symfony packs, your ``composer.json`` file "
+"shows the pack dependency (e.g. ``\"symfony/debug-pack\": \"^1.0\"``) "
+"instead of the actual packages installed. To show the packages, add the "
+"``--unpack`` option when installing a pack (e.g. ``composer require debug"
+" --dev --unpack``) or run this command to unpack the already installed "
+"packs: ``composer unpack PACK_NAME`` (e.g. ``composer unpack debug``)."
+msgstr ""
+
+#: ../../../setup.rst:223
+msgid "Checking Security Vulnerabilities"
+msgstr ""
+
+#: ../../../setup.rst:225
+msgid ""
+"The ``symfony`` binary created when you `install Symfony CLI`_ provides a"
+" command to check whether your project's dependencies contain any known "
+"security vulnerability:"
+msgstr ""
+
+#: ../../../setup.rst:233
+msgid ""
+"A good security practice is to execute this command regularly to be able "
+"to update or replace compromised dependencies as soon as possible. The "
+"security check is done locally by cloning the public `PHP security "
+"advisories database`_, so your ``composer.lock`` file is not sent on the "
+"network."
+msgstr ""
+
+#: ../../../setup.rst:240
+msgid ""
+"The ``check:security`` command terminates with a non-zero exit code if "
+"any of your dependencies is affected by a known security vulnerability. "
+"This way you can add it to your project build process and your continuous"
+" integration workflows to make them fail when there are vulnerabilities."
+msgstr ""
+
+#: ../../../setup.rst:246
+msgid "Symfony LTS Versions"
+msgstr ""
+
+#: ../../../setup.rst:248
+msgid ""
+"According to the :doc:`Symfony release process "
+"</contributing/community/releases>`, \"long-term support\" (or LTS for "
+"short) versions are published every two years. Check out the `Symfony "
+"releases`_ to know which is the latest LTS version."
+msgstr ""
+
+#: ../../../setup.rst:252
+msgid ""
+"By default, the command that creates new Symfony applications uses the "
+"latest stable version. If you want to use an LTS version, add the "
+"``--version`` option:"
+msgstr ""
+
+#: ../../../setup.rst:266
+msgid ""
+"The ``lts`` and ``next`` shortcuts are only available when using Symfony "
+"to create new projects. If you use Composer, you need to tell the exact "
+"version:"
+msgstr ""
+
+#: ../../../setup.rst:274
+msgid "The Symfony Demo application"
+msgstr ""
+
+#: ../../../setup.rst:276
+msgid ""
+"`The Symfony Demo Application`_ is a fully-functional application that "
+"shows the recommended way to develop Symfony applications. It's a great "
+"learning tool for Symfony newcomers and its code contains tons of "
+"comments and helpful notes."
+msgstr ""
+
+#: ../../../setup.rst:280
+msgid ""
+"Run this command to create a new project based on the Symfony Demo "
+"application:"
+msgstr ""
+
+#: ../../../setup.rst:287
+msgid "Start Coding!"
+msgstr ""
+
+#: ../../../setup.rst:289
+msgid ""
+"With setup behind you, it's time to :doc:`Create your first page in "
+"Symfony </page_creation>`."
+msgstr ""
+
+#: ../../../setup.rst:292
+msgid "Learn More"
+msgstr ""
+

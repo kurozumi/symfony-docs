@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../testing/bootstrap.rst:2
+msgid "How to Customize the Bootstrap Process before Running Tests"
+msgstr ""
+
+#: ../../../testing/bootstrap.rst:4
+msgid ""
+"Sometimes when running tests, you need to do additional bootstrap work "
+"before running those tests. For example, if you're running a functional "
+"test and have introduced a new translation resource, then you will need "
+"to clear your cache before running those tests."
+msgstr ""
+
+#: ../../../testing/bootstrap.rst:9
+msgid "To do this, first add a file that executes your bootstrap work::"
+msgstr ""
+
+#: ../../../testing/bootstrap.rst:23
+msgid ""
+"Then, configure ``phpunit.xml.dist`` to execute this ``bootstrap.php`` "
+"file before running the tests:"
+msgstr ""
+
+#: ../../../testing/bootstrap.rst:36
+msgid ""
+"Now, you can define in your ``phpunit.xml.dist`` file which environment "
+"you want the cache to be cleared:"
+msgstr ""
+
+#: ../../../testing/bootstrap.rst:51
+msgid ""
+"This now becomes an environment variable (i.e. ``$_ENV``) that's "
+"available in the custom bootstrap file (``tests/bootstrap.php``)."
+msgstr ""
+

@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/documentation/translations.rst:2
+msgid "Translations"
+msgstr ""
+
+#: ../../../contributing/documentation/translations.rst:4
+msgid ""
+"The official Symfony documentation is published only in English. You can "
+"read about the reasons in `this blog post`_."
+msgstr ""
+
+#: ../../../contributing/documentation/translations.rst:7
+msgid ""
+"We have taken steps to improve the experience when using `Google "
+"Translate`_ to prevent code blocks from being translated."
+msgstr ""
+
+#: ../../../contributing/documentation/translations.rst:10
+msgid ""
+"To translate any page in our documentation please copy any URL from the "
+"documentation and paste it into the form on the Google Translate site."
+msgstr ""
+

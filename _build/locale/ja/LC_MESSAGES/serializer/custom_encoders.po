@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../serializer/custom_encoders.rst:5
+msgid "How to Create your Custom Encoder"
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:7
+msgid ""
+"The :doc:`Serializer Component </components/serializer>` uses Normalizers"
+" to transform any data to an array. Then, by leveraging *Encoders*, that "
+"data can be converted into any data-structure (e.g. JSON)."
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:11
+msgid ""
+"The Component provides several built-in encoders that are described "
+":doc:`in the serializer component </components/serializer>` but you may "
+"want to use another structure that's not supported."
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:16
+msgid "Creating a new encoder"
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:18
+msgid ""
+"Imagine you want to serialize and deserialize YAML. For that you'll have "
+"to create your own encoder that uses the :doc:`Yaml Component "
+"</components/yaml>`::"
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:53
+msgid ""
+"If you need access to ``$context`` in your ``supportsDecoding`` or "
+"``supportsEncoding`` method, make sure to implement "
+"``Symfony\\Component\\Serializer\\Encoder\\ContextAwareDecoderInterface``"
+" or "
+"``Symfony\\Component\\Serializer\\Encoder\\ContextAwareEncoderInterface``"
+" accordingly."
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:60
+msgid "Registering it in your app"
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:62
+msgid ""
+"If you use the Symfony Framework. then you probably want to register this"
+" encoder as a service in your app. If you're using the :ref:`default "
+"services.yaml configuration <service-container-services-load-example>`, "
+"that's done automatically!"
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:68
+msgid ""
+"If you're not using :ref:`autoconfigure <service_autoconfigure>`, make "
+"sure to register your class as a service and tag it with "
+"``serializer.encoder``."
+msgstr ""
+
+#: ../../../serializer/custom_encoders.rst:71
+msgid "Now you'll be able to serialize and deserialize YAML!"
+msgstr ""
+

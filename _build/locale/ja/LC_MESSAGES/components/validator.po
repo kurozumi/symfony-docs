@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/validator.rst:6
+msgid "The Validator Component"
+msgstr ""
+
+#: ../../../components/validator.rst:8
+msgid ""
+"The Validator component provides tools to validate values following the "
+"`JSR-303 Bean Validation specification`_."
+msgstr ""
+
+#: ../../../components/validator.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/validator.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/validator.rst:25
+msgid ""
+"This article explains how to use the Validator features as an independent"
+" component in any PHP application. Read the :doc:`/validation` article to"
+" learn about how to validate data and entities in Symfony applications."
+msgstr ""
+
+#: ../../../components/validator.rst:29
+msgid "The Validator component behavior is based on two concepts:"
+msgstr ""
+
+#: ../../../components/validator.rst:31
+msgid "Constraints, which define the rules to be validated;"
+msgstr ""
+
+#: ../../../components/validator.rst:32
+msgid ""
+"Validators, which are the classes that contain the actual validation "
+"logic."
+msgstr ""
+
+#: ../../../components/validator.rst:34
+msgid ""
+"The following example shows how to validate that a string is at least 10 "
+"characters long::"
+msgstr ""
+
+#: ../../../components/validator.rst:54
+msgid ""
+"The  ``validate()`` method returns the list of violations as an object "
+"that implements "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolationListInterface`."
+" If you have lots of validation errors, you can filter them by error "
+"code::"
+msgstr ""
+
+#: ../../../components/validator.rst:66
+msgid "Retrieving a Validator Instance"
+msgstr ""
+
+#: ../../../components/validator.rst:68
+msgid ""
+"The Validator object (that implements "
+":class:`Symfony\\\\Component\\\\Validator\\\\Validator\\\\ValidatorInterface`)"
+" is the main access point of the Validator component. To create a new "
+"instance of it, it's recommended to use the "
+":class:`Symfony\\\\Component\\\\Validator\\\\Validation` class::"
+msgstr ""
+
+#: ../../../components/validator.rst:76
+msgid ""
+"This ``$validator`` object can validate simple variables such as strings,"
+" numbers and arrays, but it can't validate objects. To do so, configure "
+"the ``Validator`` as explained in the next sections."
+msgstr ""
+
+#: ../../../components/validator.rst:81
+msgid "Learn More"
+msgstr ""
+

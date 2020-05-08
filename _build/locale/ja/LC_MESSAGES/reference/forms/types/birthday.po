@@ -1,0 +1,643 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/birthday.rst:5
+msgid "BirthdayType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:7
+msgid ""
+"A :doc:`DateType </reference/forms/types/date>` field that specializes in"
+" handling birth date data."
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:10
+msgid ""
+"Can be rendered as a single text box, three text boxes (month, day and "
+"year), or three select boxes."
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:13
+msgid ""
+"This type is essentially the same as the :doc:`DateType "
+"</reference/forms/types/date>` type, but with a more appropriate default "
+"for the `years`_ option. The `years`_ option defaults to 120 years ago to"
+" the current year."
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:18
+msgid "Underlying Data Type"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:18
+msgid ""
+"can be ``DateTime``, ``string``, ``timestamp``, or ``array`` (see the "
+":ref:`input option <form-reference-date-input>`)"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:21
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:21
+msgid ""
+"can be three select boxes or 1 or 3 text boxes, based on the `widget`_ "
+"option"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:23
+msgid "Overridden options"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:23
+msgid "`years`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:25
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:25
+msgid "from the :doc:`DateType </reference/forms/types/date>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:27
+msgid "`choice_translation_domain`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:28
+msgid "`days`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:29
+msgid "`placeholder`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:30
+msgid "`format`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:31
+msgid "`input`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:32
+msgid "`input_format`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:33
+msgid "`model_timezone`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:34
+msgid "`months`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:35
+msgid "`view_timezone`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:36
+msgid "`widget`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:38
+msgid "from the :doc:`FormType </reference/forms/types/form>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:40
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:41
+msgid "`data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:42
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:43
+msgid "`help`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:44
+msgid "`help_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:45
+msgid "`help_html`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:46
+msgid "`inherit_data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:47
+msgid "`invalid_message`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:48
+msgid "`invalid_message_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:49
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:50
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:52
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:52
+msgid ":doc:`DateType </reference/forms/types/date>`"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:54
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:54
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\BirthdayType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:60
+msgid "Overridden Options"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:63
+msgid "``years``"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:65
+msgid "**type**: ``array`` **default**: 120 years ago to the current year"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:67
+msgid ""
+"List of years available to the year field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:71
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:73
+msgid ""
+"These options inherit from the :doc:`DateType "
+"</reference/forms/types/date>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/choice_translation_domain.rst.inc:2
+msgid "``choice_translation_domain``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/choice_translation_domain.rst.inc:4
+msgid "**type**: ``string``, ``boolean`` or ``null``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/choice_translation_domain.rst.inc:6
+msgid ""
+"This option determines if the choice values should be translated and in "
+"which translation domain."
+msgstr ""
+
+#: ../../../reference/forms/types/options/choice_translation_domain.rst.inc:9
+msgid ""
+"The values of the ``choice_translation_domain`` option can be ``true`` "
+"(reuse the current translation domain), ``false`` (disable translation), "
+"``null`` (uses the parent translation domain or the default domain) or a "
+"string which represents the exact translation domain to use."
+msgstr ""
+
+#: ../../../reference/forms/types/options/days.rst.inc:2
+msgid "``days``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/days.rst.inc:4
+msgid "**type**: ``array`` **default**: 1 to 31"
+msgstr ""
+
+#: ../../../reference/forms/types/options/days.rst.inc:6
+msgid ""
+"List of days available to the day field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:80
+msgid "``placeholder``"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:82
+msgid "**type**: ``string`` | ``array``"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:84
+msgid ""
+"If your widget option is set to ``choice``, then this field will be "
+"represented as a series of ``select`` boxes. When the placeholder value "
+"is a string, it will be used as the **blank value** of all select boxes::"
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:92
+msgid ""
+"Alternatively, you can use an array that configures different placeholder"
+" values for the year, month and day fields::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_format.rst.inc:2
+msgid "``format``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_format.rst.inc:4
+msgid ""
+"**type**: ``integer`` or ``string`` **default**: "
+"`IntlDateFormatter::MEDIUM`_ (or ``yyyy-MM-dd`` if `widget`_ is "
+"``single_text``)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_format.rst.inc:7
+msgid ""
+"Option passed to the ``IntlDateFormatter`` class, used to transform user "
+"input into the proper format. This is critical when the `widget`_ option "
+"is set to ``single_text`` and will define how the user will input the "
+"data. By default, the format is determined based on the current user "
+"locale: meaning that *the expected format will be different for different"
+" users*. You can override it by passing the format as a string."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_format.rst.inc:14
+msgid "For more information on valid formats, see `Date/Time Format Syntax`_::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_format.rst.inc:27
+msgid ""
+"If you want your field to be rendered as an HTML5 \"date\" field, you "
+"have to use a ``single_text`` widget with the ``yyyy-MM-dd`` format (the "
+"`RFC 3339`_ format) which is the default value if you use the "
+"``single_text`` widget."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:2
+msgid "``input``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:4
+msgid "**type**: ``string`` **default**: ``datetime``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:6
+msgid ""
+"The format of the *input* data - i.e. the format that the date is stored "
+"on your underlying object. Valid values are:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:9
+msgid "``string`` (e.g. ``2011-06-05``)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:10
+msgid "``datetime`` (a ``DateTime`` object)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:11
+msgid "``datetime_immutable`` (a ``DateTimeImmutable`` object)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:12
+msgid "``array`` (e.g. ``['year' => 2011, 'month' => 06, 'day' => 05]``)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:13
+msgid "``timestamp`` (e.g. ``1307232000``)"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input.rst.inc:15
+msgid ""
+"The value that comes back from the form will also be normalized back into"
+" this format."
+msgstr ""
+
+#: ../../../reference/forms/types/options/_date_limitation.rst.inc:3
+msgid ""
+"If ``timestamp`` is used, ``DateType`` is limited to dates between Fri, "
+"13 Dec 1901 20:45:54 GMT and Tue, 19 Jan 2038 03:14:07 GMT on 32bit "
+"systems. This is due to a `limitation in PHP itself`_."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input_format.rst.inc:2
+msgid "input_format"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input_format.rst.inc:4
+msgid "**type**: ``string`` **default**: ``Y-m-d``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_input_format_description.rst.inc:1
+msgid ""
+"If the ``input`` option is set to ``string``, this option specifies the "
+"format of the date. This must be a valid `PHP date format`_."
+msgstr ""
+
+#: ../../../reference/forms/types/options/model_timezone.rst.inc:2
+msgid "``model_timezone``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/model_timezone.rst.inc:4
+#: ../../../reference/forms/types/options/view_timezone.rst.inc:4
+msgid "**type**: ``string`` **default**: system default timezone"
+msgstr ""
+
+#: ../../../reference/forms/types/options/model_timezone.rst.inc:6
+msgid ""
+"Timezone that the input data is stored in. This must be one of the `PHP "
+"supported timezones`_."
+msgstr ""
+
+#: ../../../reference/forms/types/options/months.rst.inc:2
+msgid "``months``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/months.rst.inc:4
+msgid "**type**: ``array`` **default**: 1 to 12"
+msgstr ""
+
+#: ../../../reference/forms/types/options/months.rst.inc:6
+msgid ""
+"List of months available to the month field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/view_timezone.rst.inc:2
+msgid "``view_timezone``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/view_timezone.rst.inc:6
+msgid ""
+"Timezone for how the data should be shown to the user (and therefore also"
+" the data that the user submits). This must be one of the `PHP supported "
+"timezones`_."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget.rst.inc:2
+msgid "``widget``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget_description.rst.inc:1
+msgid "**type**: ``string`` **default**: ``choice``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget_description.rst.inc:3
+msgid ""
+"The basic way in which this field should be rendered. Can be one of the "
+"following:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget_description.rst.inc:6
+msgid ""
+"``choice``: renders three select inputs. The order of the selects is "
+"defined in the `format`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget_description.rst.inc:9
+msgid "``text``: renders a three field input of type ``text`` (month, day, year)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/date_widget_description.rst.inc:11
+msgid ""
+"``single_text``: renders a single input of type ``date``. User's input is"
+" validated based on the `format`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/birthday.rst:115
+msgid ""
+"These options inherit from the :doc:`FormType "
+"</reference/forms/types/form>`:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:2
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:4
+#: ../../../reference/forms/types/options/help_attr.rst.inc:4
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to an HTML field representation you "
+"can use the ``attr`` option. It's an associative array with HTML "
+"attributes as keys. This can be useful when you need to set a custom "
+"class for some widget::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:16
+msgid ""
+"Use the ``row_attr`` option if you want to add these attributes to the "
+"the :ref:`form type row <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:2
+msgid "``data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying "
+"structure."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain data (e.g. if you bind an "
+"object to the form). If you want to override this initial value for the "
+"form or an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:21
+msgid ""
+"The ``data`` option *always* overrides the value taken from the domain "
+"data (object) when rendering. This means the object value is also "
+"overridden when the form edits an already persisted object, causing it to"
+" lose its persisted value when the form is submitted."
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:2
+msgid "help"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:4
+msgid "**type**: ``string`` **default**: null"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:6
+msgid ""
+"Allows you to define a help message for the form field, which by default "
+"is rendered below the field::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:2
+msgid "help_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the element used to display the help message"
+" of the form field. Its value is an associative array with HTML attribute"
+" names as keys. These attributes can also be set in the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:2
+msgid "help_html"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:4
+msgid "**type**: ``bool`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:6
+msgid ""
+"By default, the contents of the ``help`` option are escaped before "
+"rendering them in the template. Set this option to ``true`` to not escape"
+" them, which is useful when the help contains HTML elements."
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:2
+msgid "``inherit_data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:6
+msgid ""
+"This option determines if the form will inherit data from its parent "
+"form. This can be useful if you have a set of fields that are duplicated "
+"across multiple forms. See :doc:`/form/inherit_data_option`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:12
+msgid ""
+"When a field has the ``inherit_data`` option set, it uses the data of the"
+" parent form as is. This means that :doc:`Data Transformers "
+"</form/data_transformers>` won't be applied to that field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:2
+msgid "``invalid_message``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:4
+msgid "**type**: ``string`` **default**: ``This value is not valid``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:6
+msgid ""
+"This is the validation error message that's used if the data entered into"
+" this field doesn't make sense (i.e. fails validation)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:9
+msgid ""
+"This might happen, for example, if the user enters a nonsense string into"
+" a :doc:`TimeType </reference/forms/types/time>` field that cannot be "
+"converted into a real time or if the user enters a string (e.g. "
+"``apple``) into a number field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:14
+msgid ""
+"Normal (business logic) validation (such as when setting a minimum length"
+" for a field) should be set using validation messages with your "
+"validation rules (:ref:`reference <validation-constraint-"
+"configuration>`)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:2
+msgid "``invalid_message_parameters``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:6
+msgid ""
+"When setting the ``invalid_message`` option, you may need to include some"
+" variables in the string. This can be done by adding placeholders to that"
+" option and including the variables in this option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:2
+msgid "``mapped``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the "
+"object, you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+

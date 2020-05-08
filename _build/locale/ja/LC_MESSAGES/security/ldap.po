@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/ldap.rst:5 ../../../security/ldap.rst:302
+msgid "Authenticating against an LDAP server"
+msgstr ""
+
+#: ../../../security/ldap.rst:7
+msgid "Symfony provides different means to work with an LDAP server."
+msgstr ""
+
+#: ../../../security/ldap.rst:9
+msgid "The Security component offers:"
+msgstr ""
+
+#: ../../../security/ldap.rst:11
+msgid ""
+"The ``ldap`` :doc:`user provider</security/user_provider>`, using the "
+":class:`Symfony\\\\Component\\\\Ldap\\\\Security\\\\LdapUserProvider` "
+"class. Like all other user providers, it can be used with any "
+"authentication provider."
+msgstr ""
+
+#: ../../../security/ldap.rst:16
+msgid ""
+"The ``form_login_ldap`` authentication provider, for authenticating "
+"against an LDAP server using a login form. Like all other authentication "
+"providers, it can be used with any user provider."
+msgstr ""
+
+#: ../../../security/ldap.rst:20
+msgid ""
+"The ``http_basic_ldap`` authentication provider, for authenticating "
+"against an LDAP server using HTTP Basic. Like all other authentication "
+"providers, it can be used with any user provider."
+msgstr ""
+
+#: ../../../security/ldap.rst:24
+msgid "This means that the following scenarios will work:"
+msgstr ""
+
+#: ../../../security/ldap.rst:26
+msgid ""
+"Checking a user's password and fetching user information against an LDAP "
+"server. This can be done using both the LDAP user provider and either the"
+" LDAP form login or LDAP HTTP Basic authentication providers."
+msgstr ""
+
+#: ../../../security/ldap.rst:30
+msgid ""
+"Checking a user's password against an LDAP server while fetching user "
+"information from another source (database using FOSUserBundle, for "
+"example)."
+msgstr ""
+
+#: ../../../security/ldap.rst:34
+msgid ""
+"Loading user information from an LDAP server, while using another "
+"authentication strategy (token-based pre-authentication, for example)."
+msgstr ""
+
+#: ../../../security/ldap.rst:38
+msgid "Installation"
+msgstr ""
+
+#: ../../../security/ldap.rst:40
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the Ldap component before using it:"
+msgstr ""
+
+#: ../../../security/ldap.rst:48
+msgid "Ldap Configuration Reference"
+msgstr ""
+
+#: ../../../security/ldap.rst:50
+msgid ""
+"See :doc:`/reference/configuration/security` for the full LDAP "
+"configuration reference (``form_login_ldap``, ``http_basic_ldap``, "
+"``ldap``). Some of the more interesting options are explained below."
+msgstr ""
+
+#: ../../../security/ldap.rst:55
+msgid "Configuring the LDAP client"
+msgstr ""
+
+#: ../../../security/ldap.rst:57
+msgid ""
+"All mechanisms actually need an LDAP client previously configured. The "
+"providers are configured to use a default service named ``ldap``, but you"
+" can override this setting in the security component's configuration."
+msgstr ""
+
+#: ../../../security/ldap.rst:62
+msgid ""
+"An LDAP client can be configured using the built-in `LDAP PHP extension`_"
+" with the following service definition:"
+msgstr ""
+
+#: ../../../security/ldap.rst:130
+msgid "Fetching Users Using the LDAP User Provider"
+msgstr ""
+
+#: ../../../security/ldap.rst:132
+msgid ""
+"If you want to fetch user information from an LDAP server, you may want "
+"to use the ``ldap`` user provider."
+msgstr ""
+
+#: ../../../security/ldap.rst:201
+msgid ""
+"The Security component escapes provided input data when the LDAP user "
+"provider is used. However, the LDAP component itself does not provide any"
+" escaping yet. Thus, it's your responsibility to prevent LDAP injection "
+"attacks when using the component directly."
+msgstr ""
+
+#: ../../../security/ldap.rst:208
+msgid ""
+"The user configured above in the user provider is only used to retrieve "
+"data. It's a static user defined by its username and password (for "
+"improved security, define the password as an environment variable)."
+msgstr ""
+
+#: ../../../security/ldap.rst:212
+msgid ""
+"If your LDAP server allows to retrieve information anonymously, you can "
+"set the ``search_dn`` and ``search_password`` options to ``null``."
+msgstr ""
+
+#: ../../../security/ldap.rst:215
+msgid "The ``ldap`` user provider supports many different configuration options:"
+msgstr ""
+
+#: ../../../security/ldap.rst:218 ../../../security/ldap.rst:311
+msgid "service"
+msgstr ""
+
+#: ../../../security/ldap.rst:220 ../../../security/ldap.rst:313
+msgid "**type**: ``string`` **default**: ``ldap``"
+msgstr ""
+
+#: ../../../security/ldap.rst:222 ../../../security/ldap.rst:315
+msgid ""
+"This is the name of your configured LDAP client. You can freely choose "
+"the name, but it must be unique in your application and it cannot start "
+"with a number or contain white spaces."
+msgstr ""
+
+#: ../../../security/ldap.rst:227
+msgid "base_dn"
+msgstr ""
+
+#: ../../../security/ldap.rst:229 ../../../security/ldap.rst:236
+#: ../../../security/ldap.rst:244 ../../../security/ldap.rst:261
+#: ../../../security/ldap.rst:284 ../../../security/ldap.rst:335
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../security/ldap.rst:231
+msgid "This is the base DN for the directory"
+msgstr ""
+
+#: ../../../security/ldap.rst:234
+msgid "search_dn"
+msgstr ""
+
+#: ../../../security/ldap.rst:238
+msgid ""
+"This is your read-only user's DN, which will be used to authenticate "
+"against the LDAP server in order to fetch the user's information."
+msgstr ""
+
+#: ../../../security/ldap.rst:242
+msgid "search_password"
+msgstr ""
+
+#: ../../../security/ldap.rst:246
+msgid ""
+"This is your read-only user's password, which will be used to "
+"authenticate against the LDAP server in order to fetch the user's "
+"information."
+msgstr ""
+
+#: ../../../security/ldap.rst:250
+msgid "default_roles"
+msgstr ""
+
+#: ../../../security/ldap.rst:252
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../security/ldap.rst:254
+msgid ""
+"This is the default role you wish to give to a user fetched from the LDAP"
+" server. If you do not configure this key, your users won't have any "
+"roles, and will not be considered as authenticated fully."
+msgstr ""
+
+#: ../../../security/ldap.rst:259
+msgid "uid_key"
+msgstr ""
+
+#: ../../../security/ldap.rst:263
+msgid ""
+"This is the entry's key to use as its UID. Depends on your LDAP server "
+"implementation. Commonly used values are:"
+msgstr ""
+
+#: ../../../security/ldap.rst:266
+msgid "``sAMAccountName`` (default)"
+msgstr ""
+
+#: ../../../security/ldap.rst:267
+msgid "``userPrincipalName``"
+msgstr ""
+
+#: ../../../security/ldap.rst:268
+msgid "``uid``"
+msgstr ""
+
+#: ../../../security/ldap.rst:270
+msgid ""
+"If you pass ``null`` as the value of this option, the default UID key is "
+"used ``sAMAccountName``."
+msgstr ""
+
+#: ../../../security/ldap.rst:274
+msgid "extra_fields"
+msgstr ""
+
+#: ../../../security/ldap.rst:276
+msgid "**type**: ``array`` **default**: ``null``"
+msgstr ""
+
+#: ../../../security/ldap.rst:278
+msgid ""
+"Defines the custom fields to pull from the LDAP server. If any field does"
+" not exist, an ``\\InvalidArgumentException`` will be thrown."
+msgstr ""
+
+#: ../../../security/ldap.rst:282
+msgid "filter"
+msgstr ""
+
+#: ../../../security/ldap.rst:286
+msgid ""
+"This key lets you configure which LDAP query will be used. The "
+"``{uid_key}`` string will be replaced by the value of the ``uid_key`` "
+"configuration value (by default, ``sAMAccountName``), and the "
+"``{username}`` string will be replaced by the username you are trying to "
+"load."
+msgstr ""
+
+#: ../../../security/ldap.rst:291
+msgid ""
+"For example, with a ``uid_key`` of ``uid``, and if you are trying to load"
+" the user ``fabpot``, the final string will be: ``(uid=fabpot)``."
+msgstr ""
+
+#: ../../../security/ldap.rst:294
+msgid ""
+"If you pass ``null`` as the value of this option, the default filter is "
+"used ``({uid_key}={username})``."
+msgstr ""
+
+#: ../../../security/ldap.rst:297
+msgid "In order to prevent `LDAP injection`_, the username will be escaped."
+msgstr ""
+
+#: ../../../security/ldap.rst:299
+msgid "The syntax for the ``filter`` key is defined by `RFC4515`_."
+msgstr ""
+
+#: ../../../security/ldap.rst:304
+msgid ""
+"Authenticating against an LDAP server can be done using either the form "
+"login or the HTTP Basic authentication providers."
+msgstr ""
+
+#: ../../../security/ldap.rst:307
+msgid ""
+"They are configured exactly as their non-LDAP counterparts, with the "
+"addition of two configuration keys and one optional key:"
+msgstr ""
+
+#: ../../../security/ldap.rst:320
+msgid "dn_string"
+msgstr ""
+
+#: ../../../security/ldap.rst:322
+msgid "**type**: ``string`` **default**: ``{username}``"
+msgstr ""
+
+#: ../../../security/ldap.rst:324
+msgid ""
+"This key defines the form of the string used in order to compose the DN "
+"of the user, from the username. The ``{username}`` string is replaced by "
+"the actual username of the person trying to authenticate."
+msgstr ""
+
+#: ../../../security/ldap.rst:328
+msgid ""
+"For example, if your users have DN strings in the form "
+"``uid=einstein,dc=example,dc=com``, then the ``dn_string`` will be "
+"``uid={username},dc=example,dc=com``."
+msgstr ""
+
+#: ../../../security/ldap.rst:333
+msgid "query_string"
+msgstr ""
+
+#: ../../../security/ldap.rst:337
+msgid ""
+"This (optional) key makes the user provider search for a user and then "
+"use the found DN for the bind process. This is useful when using multiple"
+" LDAP user providers with different ``base_dn``. The value of this option"
+" must be a valid search string (e.g. ``uid=\"{username}\"``). The "
+"placeholder value will be replaced by the actual username."
+msgstr ""
+
+#: ../../../security/ldap.rst:343
+msgid ""
+"When this option is used, ``query_string`` will search in the DN "
+"specified by ``dn_string`` and the DN resulted of the ``query_string`` "
+"will be used to authenticate the user with their password. Following the "
+"previous example, if your users have the following two DN: "
+"``dc=companyA,dc=example,dc=com`` and ``dc=companyB,dc=example,dc=com``, "
+"then ``dn_string`` should be ``dc=example,dc=com``."
+msgstr ""
+
+#: ../../../security/ldap.rst:350
+msgid ""
+"Bear in mind that usernames must be unique across both DN, as the "
+"authentication provider won't be able to select the correct user for the "
+"bind process if more than one is found."
+msgstr ""
+
+#: ../../../security/ldap.rst:354
+msgid ""
+"Examples are provided below, for both ``form_login_ldap`` and "
+"``http_basic_ldap``."
+msgstr ""
+
+#: ../../../security/ldap.rst:358
+msgid "Configuration example for form login"
+msgstr ""
+
+#: ../../../security/ldap.rst:414
+msgid "Configuration example for HTTP Basic"
+msgstr ""
+
+#: ../../../security/ldap.rst:473
+msgid "Configuration example for form login and query_string"
+msgstr ""
+

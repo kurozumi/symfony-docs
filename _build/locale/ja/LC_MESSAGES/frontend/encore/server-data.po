@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/server-data.rst:2
+msgid "Passing Information from Twig to JavaScript"
+msgstr ""
+
+#: ../../../frontend/encore/server-data.rst:4
+msgid ""
+"In Symfony applications, you may find that you need to pass some dynamic "
+"data (e.g. user information) from Twig to your JavaScript code. One great"
+" way to pass dynamic configuration is by storing information in ``data`` "
+"attributes and reading them later in JavaScript. For example:"
+msgstr ""
+
+#: ../../../frontend/encore/server-data.rst:15
+msgid "Fetch this in JavaScript:"
+msgstr ""
+
+#: ../../../frontend/encore/server-data.rst:29
+msgid ""
+"When `accessing data attributes from JavaScript`_, the attribute names "
+"are converted from dash-style to camelCase. For example, ``data-is-"
+"authenticated`` becomes ``isAuthenticated`` and ``data-number-of-"
+"reviews`` becomes ``numberOfReviews``."
+msgstr ""
+
+#: ../../../frontend/encore/server-data.rst:34
+msgid ""
+"There is no size limit for the value of the ``data-`` attributes, so you "
+"can store any content. In Twig, use the ``html_attr`` escaping strategy "
+"to avoid messing with HTML attributes. For example, if your ``User`` "
+"object has some ``getProfileData()`` method that returns an array, you "
+"could do the following:"
+msgstr ""
+

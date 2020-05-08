@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/psr7.rst:5
+msgid "The PSR-7 Bridge"
+msgstr ""
+
+#: ../../../components/psr7.rst:7
+msgid ""
+"The PSR-7 bridge converts :doc:`HttpFoundation "
+"</components/http_foundation>` objects from and to objects implementing "
+"HTTP message interfaces defined by the `PSR-7`_."
+msgstr ""
+
+#: ../../../components/psr7.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/psr7.rst:20
+msgid ""
+"The bridge also needs a PSR-7 and `PSR-17`_ implementation to convert "
+"HttpFoundation objects to PSR-7 objects. The following command installs "
+"the ``nyholm/psr7`` library, a lightweight and fast PSR-7 implementation,"
+" but you can use any of the `libraries that implement psr/http-factory-"
+"implementation`_:"
+msgstr ""
+
+#: ../../../components/psr7.rst:30
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/psr7.rst:33
+msgid "Converting from HttpFoundation Objects to PSR-7"
+msgstr ""
+
+#: ../../../components/psr7.rst:35
+msgid ""
+"The bridge provides an interface of a factory called "
+":class:`Symfony\\\\Bridge\\\\PsrHttpMessage\\\\HttpMessageFactoryInterface`"
+" that builds objects implementing PSR-7 interfaces from HttpFoundation "
+"objects."
+msgstr ""
+
+#: ../../../components/psr7.rst:39
+msgid ""
+"The following code snippet explains how to convert a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` to a "
+"``Nyholm\\Psr7\\ServerRequest`` class implementing the "
+"``Psr\\Http\\Message\\ServerRequestInterface`` interface::"
+msgstr ""
+
+#: ../../../components/psr7.rst:54
+msgid ""
+"And now from a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` to a "
+"``Nyholm\\Psr7\\Response`` class implementing the "
+"``Psr\\Http\\Message\\ResponseInterface`` interface::"
+msgstr ""
+
+#: ../../../components/psr7.rst:69
+msgid "Converting Objects implementing PSR-7 Interfaces to HttpFoundation"
+msgstr ""
+
+#: ../../../components/psr7.rst:71
+msgid ""
+"On the other hand, the bridge provide a factory interface called "
+":class:`Symfony\\\\Bridge\\\\PsrHttpMessage\\\\HttpFoundationFactoryInterface`"
+" that builds HttpFoundation objects from objects implementing PSR-7 "
+"interfaces."
+msgstr ""
+
+#: ../../../components/psr7.rst:75
+msgid ""
+"The next snippet explain how to convert an object implementing the "
+"``Psr\\Http\\Message\\ServerRequestInterface`` interface to a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Request` instance::"
+msgstr ""
+
+#: ../../../components/psr7.rst:86
+msgid ""
+"From an object implementing the ``Psr\\Http\\Message\\ResponseInterface``"
+" to a :class:`Symfony\\\\Component\\\\HttpFoundation\\\\Response` "
+"instance::"
+msgstr ""
+

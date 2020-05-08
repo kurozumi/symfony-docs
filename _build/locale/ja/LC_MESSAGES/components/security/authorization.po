@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/security/authorization.rst:5
+msgid "Authorization"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:7
+msgid ""
+"When any of the authentication providers (see "
+":ref:`authentication_providers`) has verified the still-unauthenticated "
+"token, an authenticated token will be returned. The authentication "
+"listener should set this token directly in the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\Storage\\\\TokenStorageInterface`"
+" using its "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\Storage\\\\TokenStorageInterface::setToken`"
+" method."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:14
+msgid ""
+"From then on, the user is authenticated, i.e. identified. Now, other "
+"parts of the application can use the token to decide whether or not the "
+"user may request a certain URI, or modify a certain object. This decision"
+" will be made by an instance of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AccessDecisionManagerInterface`."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:19
+msgid "An authorization decision will always be based on a few things:"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:23
+msgid "The current token"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:22
+msgid ""
+"For instance, the token's "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\TokenInterface::getRoles`"
+" method may be used to retrieve the roles of the current user (e.g. "
+"``ROLE_SUPER_ADMIN``), or a decision may be based on the class of the "
+"token."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:26
+msgid "A set of attributes"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:26
+msgid ""
+"Each attribute stands for a certain right the user should have, e.g. "
+"``ROLE_ADMIN`` to make sure the user is an administrator."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:30
+msgid "An object (optional)"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:29
+msgid ""
+"Any object for which access control needs to be checked, like an article "
+"or a comment object."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:35
+msgid "Access Decision Manager"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:37
+msgid ""
+"Since deciding whether or not a user is authorized to perform a certain "
+"action can be a complicated process, the standard "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AccessDecisionManager`"
+" itself depends on multiple voters, and makes a final verdict based on "
+"all the votes (either positive, negative or neutral) it has received. It "
+"recognizes several strategies:"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:44
+msgid "``affirmative`` (default)"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:44
+msgid "grant access as soon as there is one voter granting access;"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:47
+msgid "``consensus``"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:47
+msgid ""
+"grant access if there are more voters granting access than there are "
+"denying;"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:50
+msgid "``unanimous``"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:50
+msgid "only grant access if none of the voters has denied access;"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:57
+msgid "``priority``"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:53
+msgid "grants or denies access by the first voter that does not abstain;"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:57
+msgid "The ``priority`` version strategy was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:59
+msgid "Usage of the available options in detail::"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:84
+msgid ""
+"You can change the default strategy in the :ref:`configuration <security-"
+"voters-change-strategy>`."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:88
+msgid "Voters"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:90
+msgid ""
+"Voters are instances of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface`,"
+" which means they have to implement a few methods which allows the "
+"decision manager to use them:"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:99
+msgid "``vote(TokenInterface $token, $object, array $attributes)``"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:96
+msgid ""
+"this method will do the actual voting and return a value equal to one of "
+"the class constants of "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\VoterInterface`,"
+" i.e. ``VoterInterface::ACCESS_GRANTED``, "
+"``VoterInterface::ACCESS_DENIED`` or ``VoterInterface::ACCESS_ABSTAIN``;"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:101
+msgid ""
+"The Security component contains some standard voters which cover many use"
+" cases:"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:105
+msgid "AuthenticatedVoter"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:107
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\AuthenticatedVoter`"
+" voter supports the attributes ``IS_AUTHENTICATED_FULLY``, "
+"``IS_AUTHENTICATED_REMEMBERED``, ``IS_AUTHENTICATED_ANONYMOUSLY``, to "
+"grant access based on the current level of authentication, i.e. is the "
+"user fully authenticated, or only based on a \"remember-me\" cookie, or "
+"even authenticated anonymously?"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:114
+msgid ""
+"It also supports the attributes ``IS_ANONYMOUS``, ``IS_REMEMBERED``, "
+"``IS_IMPERSONATED`` to grant access based on a specific state of "
+"authentication."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:120
+msgid ""
+"The ``IS_ANONYMOUS``, ``IS_REMEMBERED`` and ``IS_IMPERSONATED`` "
+"attributes were introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:140
+msgid "RoleVoter"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:142
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\RoleVoter`"
+" supports attributes starting with ``ROLE_`` and grants access to the "
+"user when at least one required ``ROLE_*`` attribute can be found in the "
+"array of roles returned by the token's "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\TokenInterface::getRoles`"
+" method::"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:155
+msgid "RoleHierarchyVoter"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:157
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\RoleHierarchyVoter`"
+" extends "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\RoleVoter`"
+" and provides some additional functionality: it knows how to handle a "
+"hierarchy of roles. For instance, a ``ROLE_SUPER_ADMIN`` role may have "
+"sub-roles ``ROLE_ADMIN`` and ``ROLE_USER``, so that when a certain object"
+" requires the user to have the ``ROLE_ADMIN`` role, it grants access to "
+"users who in fact have the ``ROLE_ADMIN`` role, but also to users having "
+"the ``ROLE_SUPER_ADMIN`` role::"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:178
+msgid "ExpressionVoter"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:180
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\Voter\\\\ExpressionVoter`"
+" grants access based on the evaluation of expressions created with the "
+":doc:`ExpressionLanguage component </components/expression_language>`. "
+"These expressions have access to a number of :ref:`special security "
+"variables <security-expression-variables>`::"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:214
+msgid ""
+"When you make your own voter, you can use its constructor to inject any "
+"dependencies it needs to come to a decision."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:218
+msgid "Roles"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:220
+msgid ""
+"Roles are strings that give expression to a certain right the user has "
+"(e.g. *\"edit a blog post\"*, *\"create an invoice\"*). You can freely "
+"choose those strings. The only requirement is that they must start with "
+"the ``ROLE_`` prefix (e.g. ``ROLE_POST_EDIT``, ``ROLE_INVOICE_CREATE``)."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:226
+msgid "Using the Decision Manager"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:229
+msgid "The Access Listener"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:231
+msgid ""
+"The access decision manager can be used at any point in a request to "
+"decide whether or not the current user is entitled to access a given "
+"resource. One optional, but useful, method for restricting access based "
+"on a URL pattern is the "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Firewall\\\\AccessListener`,"
+" which is one of the firewall listeners (see :ref:`firewall_listeners`) "
+"that is triggered for each request matching the firewall map (see "
+":ref:`firewall`)."
+msgstr ""
+
+#: ../../../components/security/authorization.rst:238
+msgid ""
+"It uses an access map (which should be an instance of "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\AccessMapInterface`) "
+"which contains request matchers and a corresponding set of attributes "
+"that are required for the current user to get access to the application::"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:260
+msgid "Authorization Checker"
+msgstr ""
+
+#: ../../../components/security/authorization.rst:262
+msgid ""
+"The access decision manager is also available to other parts of the "
+"application via the "
+":method:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AuthorizationChecker::isGranted`"
+" method of the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authorization\\\\AuthorizationChecker`."
+" A call to this method will directly delegate the question to the access "
+"decision manager::"
+msgstr ""
+

@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../validation/translations.rst:5
+msgid "How to Translate Validation Constraint Messages"
+msgstr ""
+
+#: ../../../validation/translations.rst:7
+msgid ""
+"If you're using validation constraints with the Form component, you can "
+"translate the error messages by creating a translation resource for the "
+"``validators`` :ref:`domain <translation-resource-locations>`."
+msgstr ""
+
+#: ../../../validation/translations.rst:11
+msgid ""
+"To start, suppose you've created a plain-old-PHP object that you need to "
+"use somewhere in your application::"
+msgstr ""
+
+#: ../../../validation/translations.rst:22
+msgid ""
+"Add constraints through any of the supported methods. Set the message "
+"option to the translation source text. For example, to guarantee that the"
+" ``$name`` property is not empty, add the following:"
+msgstr ""
+
+#: ../../../validation/translations.rst:87
+msgid ""
+"Now, create a ``validators`` catalog file in the ``translations/`` "
+"directory:"
+msgstr ""
+
+#: ../../../validation/translations.rst:118
+msgid ""
+"You may need to clear your cache (even in the dev environment) after "
+"creating this file for the first time."
+msgstr ""
+

@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Traverse.rst:2
+msgid "Traverse"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:4
+msgid ""
+"Object properties are only validated if they are accessible, either by "
+"being public or having public accessor methods (e.g. a public getter). If"
+" your object needs to be traversed to validate its data, you can use this"
+" constraint."
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:10
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:10
+msgid ":ref:`class <validation-class-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:12
+#: ../../../reference/constraints/Traverse.rst:142
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:13
+msgid ":ref:`traverse <traverse-option>`"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Traverse`"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:19
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:21
+msgid ""
+"In the following example, create two classes ``BookCollection`` and "
+"``Book`` that all have constraints on their properties."
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:132
+msgid ""
+"When the object implements ``\\Traversable`` (like here with its child "
+"``\\IteratorAggregate``), its traversal strategy will implicitly be set "
+"and the object will be iterated over without defining the constraint. "
+"It's mostly useful to add it to be explicit or to disable the traversal "
+"using the ``traverse`` option. If a public getter exists to return the "
+"inner books collection like ``getBooks(): Collection``, the "
+":doc:`/reference/constraints/Valid` constraint can be used on the "
+"``$books`` property instead."
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:144
+msgid "The ``groups`` option is not available for this constraint."
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:149
+msgid "``traverse``"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:151
+msgid "**type**: ``bool`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/constraints/Traverse.rst:153
+msgid ""
+"Instances of ``\\Traversable`` are traversed by default, use this option "
+"to disable validating:"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

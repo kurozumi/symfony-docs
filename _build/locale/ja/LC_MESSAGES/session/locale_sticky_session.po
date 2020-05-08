@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../session/locale_sticky_session.rst:5
+msgid "Making the Locale \"Sticky\" during a User's Session"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:7
+msgid ""
+"Symfony stores the locale setting in the Request, which means that this "
+"setting is not automatically saved (\"sticky\") across requests. But, you"
+" *can* store the locale in the session, so that it's used on subsequent "
+"requests."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:14
+msgid "Creating a LocaleSubscriber"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:16
+msgid ""
+"Create a :ref:`new event subscriber <events-subscriber>`. Typically, "
+"``_locale`` is used as a routing parameter to signify the locale, though "
+"you can determine the correct locale however you want::"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:61
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, you're done! Symfony will "
+"automatically know about the event subscriber and call the "
+"``onKernelRequest`` method on each request."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:65
+msgid ""
+"To see it working, either set the ``_locale`` key on the session manually"
+" (e.g. via some \"Change Locale\" route & controller), or create a route "
+"with the :ref:`_locale default <translation-locale-url>`."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst
+msgid "Explicitly Configure the Subscriber"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:70
+msgid ""
+"You can also explicitly configure it, in order to pass in the "
+":ref:`default_locale <config-framework-default_locale>`:"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:114
+msgid ""
+"That's it! Now celebrate by changing the user's locale and seeing that "
+"it's sticky throughout the request."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:117
+msgid ""
+"Remember, to get the user's locale, always use the "
+":method:`Request::getLocale "
+"<Symfony\\\\Component\\\\HttpFoundation\\\\Request::getLocale>` method::"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:129
+msgid "Setting the Locale Based on the User's Preferences"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:131
+msgid ""
+"You might want to improve this technique even further and define the "
+"locale based on the user entity of the logged in user. However, since the"
+" ``LocaleSubscriber`` is called before the ``FirewallListener``, which is"
+" responsible for handling authentication and setting the user token on "
+"the ``TokenStorage``, you have no access to the user which is logged in."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:137
+msgid ""
+"Suppose you have a ``locale`` property on your ``User`` entity and want "
+"to use this as the locale for the given user. To accomplish this, you can"
+" hook into the login process and update the user's session with this "
+"locale value before they are redirected to their first page."
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:142
+msgid ""
+"To do this, you need an event subscriber on the "
+"``security.interactive_login`` event::"
+msgstr ""
+
+#: ../../../session/locale_sticky_session.rst:185
+msgid ""
+"In order to update the language immediately after a user has changed "
+"their language preferences, you also need to update the session when you "
+"change the ``User`` entity."
+msgstr ""
+

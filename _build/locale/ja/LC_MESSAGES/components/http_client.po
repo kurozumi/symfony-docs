@@ -1,0 +1,897 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/http_client.rst:6
+msgid "The HttpClient Component"
+msgstr ""
+
+#: ../../../components/http_client.rst:8
+msgid ""
+"The HttpClient component is a low-level HTTP client with support for both"
+" PHP stream wrappers and cURL. It provides utilities to consume APIs and "
+"supports synchronous and asynchronous operations."
+msgstr ""
+
+#: ../../../components/http_client.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/http_client.rst:22
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../components/http_client.rst:24
+msgid ""
+"Use the :class:`Symfony\\\\Component\\\\HttpClient\\\\HttpClient` class "
+"to create the low-level HTTP client that makes requests, like the "
+"following ``GET`` request::"
+msgstr ""
+
+#: ../../../components/http_client.rst:42
+msgid "Performance"
+msgstr ""
+
+#: ../../../components/http_client.rst:44
+msgid ""
+"The component is built for maximum HTTP performance. By design, it is "
+"compatible with HTTP/2 and with doing concurrent asynchronous streamed "
+"and multiplexed requests/responses. Even when doing regular synchronous "
+"calls, this design allows keeping connections to remote hosts open "
+"between requests, improving performance by saving repetitive DNS "
+"resolution, SSL negotiation, etc."
+msgstr ""
+
+#: ../../../components/http_client.rst:51
+msgid "Enabling cURL Support"
+msgstr ""
+
+#: ../../../components/http_client.rst:53
+msgid ""
+"This component supports both the native PHP streams and cURL to make the "
+"HTTP requests. Both are interchangeable and provide the same features, "
+"including concurrent requests and HTTP/2 support."
+msgstr ""
+
+#: ../../../components/http_client.rst:57
+msgid ""
+"``HttpClient::create()`` selects the cURL transport if the `cURL PHP "
+"extension`_ is enabled and falls back to PHP streams otherwise. If you "
+"prefer to select the transport explicitly, use the following classes to "
+"create the client::"
+msgstr ""
+
+#: ../../../components/http_client.rst:70
+msgid ""
+"When using this component in a full-stack Symfony application, this "
+"behavior is not configurable and cURL will be used automatically if the "
+"cURL PHP extension is installed and enabled. Otherwise, the native PHP "
+"streams will be used."
+msgstr ""
+
+#: ../../../components/http_client.rst:75
+msgid "HTTP/2 Support"
+msgstr ""
+
+#: ../../../components/http_client.rst:79
+msgid ""
+"Integration with ``amphp/http-client`` was introduced in Symfony 5.1. "
+"Prior to this version, HTTP/2 was only supported when ``libcurl`` was "
+"installed."
+msgstr ""
+
+#: ../../../components/http_client.rst:83
+msgid "The component supports HTTP/2 if one of the following tools is installed:"
+msgstr ""
+
+#: ../../../components/http_client.rst:86
+msgid "The `libcurl`_ package version 7.36 or higher;"
+msgstr ""
+
+#: ../../../components/http_client.rst:87
+msgid "The `amphp/http-client`_ Packagist package version 4.2 or higher."
+msgstr ""
+
+#: ../../../components/http_client.rst:89
+msgid ""
+"When requesting an ``https`` URL and HTTP/2 is supported by your server, "
+"HTTP/2 is enabled by default. To force HTTP/2 for ``http`` URLs, you need"
+" to enable it explicitly via the ``http_version`` option::"
+msgstr ""
+
+#: ../../../components/http_client.rst:95
+msgid ""
+"Support for HTTP/2 PUSH works out of the box when libcurl >= 7.61 is used"
+" with PHP >= 7.2.17 / 7.3.4: pushed responses are put into a temporary "
+"cache and are used when a subsequent request is triggered for the "
+"corresponding URLs."
+msgstr ""
+
+#: ../../../components/http_client.rst:100
+msgid "Making Requests"
+msgstr ""
+
+#: ../../../components/http_client.rst:102
+msgid ""
+"The client created with the ``HttpClient`` class provides a single "
+"``request()`` method to perform all kinds of HTTP requests::"
+msgstr ""
+
+#: ../../../components/http_client.rst:110
+msgid ""
+"Responses are always asynchronous, so that the call to the method returns"
+" immediately instead of waiting to receive the response::"
+msgstr ""
+
+#: ../../../components/http_client.rst:123
+msgid ""
+"This component also supports :ref:`streaming responses <http-client-"
+"streaming-responses>` for full asynchronous applications."
+msgstr ""
+
+#: ../../../components/http_client.rst:128
+msgid ""
+"HTTP compression and chunked transfer encoding are automatically enabled "
+"when both your PHP runtime and the remote server support them."
+msgstr ""
+
+#: ../../../components/http_client.rst:132
+msgid "Authentication"
+msgstr ""
+
+#: ../../../components/http_client.rst:134
+msgid ""
+"The HTTP client supports different authentication mechanisms. They can be"
+" defined globally when creating the client (to apply it to all requests) "
+"and to each request (which overrides any global authentication)::"
+msgstr ""
+
+#: ../../../components/http_client.rst:163
+msgid ""
+"The NTLM authentication mechanism requires using the cURL transport. By "
+"using ``HttpClient::createForBaseUri()``, we ensure that the auth "
+"credentials won't be sent to any other hosts than https://example.com/."
+msgstr ""
+
+#: ../../../components/http_client.rst:168
+msgid "Query String Parameters"
+msgstr ""
+
+#: ../../../components/http_client.rst:170
+msgid ""
+"You can either append them manually to the requested URL, or define them "
+"as an associative array via the ``query`` option, that will be merged "
+"with the URL::"
+msgstr ""
+
+#: ../../../components/http_client.rst:183
+msgid "Headers"
+msgstr ""
+
+#: ../../../components/http_client.rst:185
+msgid ""
+"Use the ``headers`` option to define both the default headers added to "
+"all requests and the specific headers for each request::"
+msgstr ""
+
+#: ../../../components/http_client.rst:202
+msgid "Uploading Data"
+msgstr ""
+
+#: ../../../components/http_client.rst:204
+msgid ""
+"This component provides several methods for uploading data using the "
+"``body`` option. You can use regular strings, closures, iterables and "
+"resources and they'll be processed automatically when making the "
+"requests::"
+msgstr ""
+
+#: ../../../components/http_client.rst:224
+msgid ""
+"When uploading data with the ``POST`` method, if you don't define the "
+"``Content-Type`` HTTP header explicitly, Symfony assumes that you're "
+"uploading form data and adds the required ``'Content-Type: application/x"
+"-www-form-urlencoded'`` header for you."
+msgstr ""
+
+#: ../../../components/http_client.rst:229
+msgid ""
+"When the ``body`` option is set as a closure, it will be called several "
+"times until it returns the empty string, which signals the end of the "
+"body. Each time, the closure should return a string smaller than the "
+"amount requested as argument."
+msgstr ""
+
+#: ../../../components/http_client.rst:233
+msgid "A generator or any ``Traversable`` can also be used instead of a closure."
+msgstr ""
+
+#: ../../../components/http_client.rst:237
+msgid ""
+"When uploading JSON payloads, use the ``json`` option instead of "
+"``body``. The given content will be JSON-encoded automatically and the "
+"request will add the ``Content-Type: application/json`` automatically "
+"too::"
+msgstr ""
+
+#: ../../../components/http_client.rst:247
+msgid ""
+"To submit a form with file uploads, it is your responsibility to encode "
+"the body according to the ``multipart/form-data`` content-type. The "
+":doc:`Symfony Mime </components/mime>` component makes it a few lines of "
+"code::"
+msgstr ""
+
+#: ../../../components/http_client.rst:265
+msgid "Cookies"
+msgstr ""
+
+#: ../../../components/http_client.rst:267
+msgid ""
+"The HTTP client provided by this component is stateless but handling "
+"cookies requires a stateful storage (because responses can update cookies"
+" and they must be used for subsequent requests). That's why this "
+"component doesn't handle cookies automatically."
+msgstr ""
+
+#: ../../../components/http_client.rst:272
+msgid ""
+"You can either handle cookies yourself using the ``Cookie`` HTTP header "
+"or use the :doc:`BrowserKit component </components/browser_kit>` which "
+"provides this feature and integrates seamlessly with the HttpClient "
+"component."
+msgstr ""
+
+#: ../../../components/http_client.rst:277
+msgid "Redirects"
+msgstr ""
+
+#: ../../../components/http_client.rst:279
+msgid ""
+"By default, the HTTP client follows redirects, up to a maximum of 20, "
+"when making a request. Use the ``max_redirects`` setting to configure "
+"this behavior (if the number of redirects is higher than the configured "
+"value, you'll get a "
+":class:`Symfony\\\\Component\\\\HttpClient\\\\Exception\\\\RedirectionException`)::"
+msgstr ""
+
+#: ../../../components/http_client.rst:290
+msgid "HTTP Proxies"
+msgstr ""
+
+#: ../../../components/http_client.rst:292
+msgid ""
+"By default, this component honors the standard environment variables that"
+" your Operating System defines to direct the HTTP traffic through your "
+"local proxy. This means there is usually nothing to configure to have the"
+" client work with proxies, provided these env vars are properly "
+"configured."
+msgstr ""
+
+#: ../../../components/http_client.rst:297
+msgid ""
+"You can still set or override these settings using the ``proxy`` and "
+"``no_proxy`` options:"
+msgstr ""
+
+#: ../../../components/http_client.rst:300
+msgid ""
+"``proxy`` should be set to the ``http://...`` URL of the proxy to get "
+"through"
+msgstr ""
+
+#: ../../../components/http_client.rst:302
+msgid ""
+"``no_proxy`` disables the proxy for a comma-separated list of hosts that "
+"do not require it to get reached."
+msgstr ""
+
+#: ../../../components/http_client.rst:306
+msgid "Progress Callback"
+msgstr ""
+
+#: ../../../components/http_client.rst:308
+msgid ""
+"By providing a callable to the ``on_progress`` option, one can track "
+"uploads/downloads as they complete. This callback is guaranteed to be "
+"called on DNS resolution, on arrival of headers and on completion; "
+"additionally it is called when new data is uploaded or downloaded and at "
+"least once per second::"
+msgstr ""
+
+#: ../../../components/http_client.rst:321
+msgid ""
+"Any exceptions thrown from the callback will be wrapped in an instance of"
+" ``TransportExceptionInterface`` and will abort the request."
+msgstr ""
+
+#: ../../../components/http_client.rst:325
+msgid "Advanced Options"
+msgstr ""
+
+#: ../../../components/http_client.rst:327
+msgid ""
+"The :class:`Symfony\\\\Contracts\\\\HttpClient\\\\HttpClientInterface` "
+"defines all the options you might need to take full control of the way "
+"the request is performed, including DNS pre-resolution, SSL parameters, "
+"public key pinning, etc."
+msgstr ""
+
+#: ../../../components/http_client.rst:332
+msgid "Processing Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:334
+msgid ""
+"The response returned by all HTTP clients is an object of type "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\ResponseInterface` which "
+"provides the following methods::"
+msgstr ""
+
+#: ../../../components/http_client.rst:369
+msgid ""
+"``$response->getInfo()`` is non-blocking: it returns *live* information "
+"about the response. Some of them might not be known yet (e.g. "
+"``http_code``) when you'll call it."
+msgstr ""
+
+#: ../../../components/http_client.rst:376
+msgid "Streaming Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:378
+msgid ""
+"Call the ``stream()`` method of the HTTP client to get *chunks* of the "
+"response sequentially instead of waiting for the entire response::"
+msgstr ""
+
+#: ../../../components/http_client.rst:398
+msgid ""
+"By default, ``text/*``, JSON and XML response bodies are buffered in a "
+"local ``php://temp`` stream. You can control this behavior by using the "
+"``buffer`` option: set it to ``true``/``false`` to enable/disable "
+"buffering, or to a closure that should return the same based on the "
+"response headers it receives as argument."
+msgstr ""
+
+#: ../../../components/http_client.rst:405
+msgid "Canceling Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:407
+msgid ""
+"To abort a request (e.g. because it didn't complete in due time, or you "
+"want to fetch only the first bytes of the response, etc.), you can either"
+" use the ``cancel()`` method of ``ResponseInterface``::"
+msgstr ""
+
+#: ../../../components/http_client.rst:413
+msgid "Or throw an exception from a progress callback::"
+msgstr ""
+
+#: ../../../components/http_client.rst:423
+msgid ""
+"The exception will be wrapped in an instance of "
+"``TransportExceptionInterface`` and will abort the request."
+msgstr ""
+
+#: ../../../components/http_client.rst:426
+msgid ""
+"In case the response was canceled using ``$response->cancel()``, "
+"``$response->getInfo('canceled')`` will return ``true``."
+msgstr ""
+
+#: ../../../components/http_client.rst:430
+msgid "Handling Exceptions"
+msgstr ""
+
+#: ../../../components/http_client.rst:432
+msgid ""
+"When the HTTP status code of the response is in the 300-599 range (i.e. "
+"3xx, 4xx or 5xx) your code is expected to handle it. If you don't do "
+"that, the ``getHeaders()`` and ``getContent()`` methods throw an "
+"appropriate exception, all of which implement the "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\Exception\\\\HttpExceptionInterface`::"
+msgstr ""
+
+#: ../../../components/http_client.rst:448
+msgid ""
+"While responses are lazy, their destructor will always wait for headers "
+"to come back. This means that the following request *will* complete; and "
+"if e.g. a 404 is returned, an exception will be thrown::"
+msgstr ""
+
+#: ../../../components/http_client.rst:457
+msgid ""
+"This in turn means that unassigned responses will fallback to synchronous"
+" requests. If you want to make these requests concurrent, you can store "
+"their corresponding responses in an array::"
+msgstr ""
+
+#: ../../../components/http_client.rst:470
+msgid ""
+"This behavior provided at destruction-time is part of the fail-safe "
+"design of the component. No errors will be unnoticed: if you don't write "
+"the code to handle errors, exceptions will notify you when needed. On the"
+" other hand, if you write the error-handling code, you will opt-out from "
+"these fallback mechanisms as the destructor won't have anything remaining"
+" to do."
+msgstr ""
+
+#: ../../../components/http_client.rst:476
+msgid "There are three types of exceptions:"
+msgstr ""
+
+#: ../../../components/http_client.rst:478
+msgid ""
+"Exceptions implementing the "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\Exception\\\\HttpExceptionInterface`"
+" are thrown when your code does not handle the status codes in the "
+"300-599 range."
+msgstr ""
+
+#: ../../../components/http_client.rst:481
+msgid ""
+"Exceptions implementing the "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\Exception\\\\TransportExceptionInterface`"
+" are thrown when a lower level issue occurs."
+msgstr ""
+
+#: ../../../components/http_client.rst:484
+msgid ""
+"Exceptions implementing the "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\Exception\\\\DecodingExceptionInterface`"
+" are thrown when a content-type cannot be decoded to the expected "
+"representation."
+msgstr ""
+
+#: ../../../components/http_client.rst:488
+msgid "Concurrent Requests"
+msgstr ""
+
+#: ../../../components/http_client.rst:490
+msgid ""
+"Thanks to responses being lazy, requests are always managed concurrently."
+" On a fast enough network, the following code makes 379 requests in less "
+"than half a second when cURL is used::"
+msgstr ""
+
+#: ../../../components/http_client.rst:510
+msgid ""
+"As you can read in the first \"for\" loop, requests are issued but are "
+"not consumed yet. That's the trick when concurrency is desired: requests "
+"should be sent first and be read later on. This will allow the client to "
+"monitor all pending requests while your code waits for a specific one, as"
+" done in each iteration of the above \"foreach\" loop."
+msgstr ""
+
+#: ../../../components/http_client.rst:517
+msgid "Multiplexing Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:519
+msgid ""
+"If you look again at the snippet above, responses are read in requests' "
+"order. But maybe the 2nd response came back before the 1st? Fully "
+"asynchronous operations require being able to deal with the responses in "
+"whatever order they come back."
+msgstr ""
+
+#: ../../../components/http_client.rst:523
+msgid ""
+"In order to do so, the ``stream()`` method of HTTP clients accepts a list"
+" of responses to monitor. As mentioned :ref:`previously <http-client-"
+"streaming-responses>`, this method yields response chunks as they arrive "
+"from the network. By replacing the \"foreach\" in the snippet with this "
+"one, the code becomes fully async::"
+msgstr ""
+
+#: ../../../components/http_client.rst:543
+msgid ""
+"Use the ``user_data`` option combined with "
+"``$response->getInfo('user_data')`` to track the identity of the "
+"responses in your foreach loops."
+msgstr ""
+
+#: ../../../components/http_client.rst:547
+msgid "Dealing with Network Timeouts"
+msgstr ""
+
+#: ../../../components/http_client.rst:549
+msgid "This component allows dealing with both request and response timeouts."
+msgstr ""
+
+#: ../../../components/http_client.rst:551
+msgid ""
+"A timeout can happen when e.g. DNS resolution takes too much time, when "
+"the TCP connection cannot be opened in the given time budget, or when the"
+" response content pauses for too long. This can be configured with the "
+"``timeout`` request option::"
+msgstr ""
+
+#: ../../../components/http_client.rst:560
+msgid ""
+"The ``default_socket_timeout`` PHP ini setting is used if the option is "
+"not set."
+msgstr ""
+
+#: ../../../components/http_client.rst:562
+msgid ""
+"The option can be overridden by using the 2nd argument of the "
+"``stream()`` method. This allows monitoring several responses at once and"
+" applying the timeout to all of them in a group. If all responses become "
+"inactive for the given duration, the method will yield a special chunk "
+"whose ``isTimeout()`` will return ``true``::"
+msgstr ""
+
+#: ../../../components/http_client.rst:573
+msgid ""
+"A timeout is not necessarily an error: you can decide to stream again the"
+" response and get remaining contents that might come back in a new "
+"timeout, etc."
+msgstr ""
+
+#: ../../../components/http_client.rst:578
+msgid ""
+"Passing ``0`` as timeout allows monitoring responses in a non-blocking "
+"way."
+msgstr ""
+
+#: ../../../components/http_client.rst:582
+msgid ""
+"Timeouts control how long one is willing to wait *while the HTTP "
+"transaction is idle*. Big responses can last as long as needed to "
+"complete, provided they remain active during the transfer and never pause"
+" for longer than specified."
+msgstr ""
+
+#: ../../../components/http_client.rst:586
+msgid ""
+"Use the ``max_duration`` option to limit the time a full request/response"
+" can last."
+msgstr ""
+
+#: ../../../components/http_client.rst:589
+msgid "Dealing with Network Errors"
+msgstr ""
+
+#: ../../../components/http_client.rst:591
+msgid ""
+"Network errors (broken pipe, failed DNS resolution, etc.) are thrown as "
+"instances of "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\Exception\\\\TransportExceptionInterface`."
+msgstr ""
+
+#: ../../../components/http_client.rst:594
+msgid ""
+"First of all, you don't *have* to deal with them: letting errors bubble "
+"to your generic exception-handling stack might be really fine in most use"
+" cases."
+msgstr ""
+
+#: ../../../components/http_client.rst:597
+msgid "If you want to handle them, here is what you need to know:"
+msgstr ""
+
+#: ../../../components/http_client.rst:599
+msgid ""
+"To catch errors, you need to wrap calls to ``$client->request()`` but "
+"also calls to any methods of the returned responses. This is because "
+"responses are lazy, so that network errors can happen when calling e.g. "
+"``getStatusCode()`` too::"
+msgstr ""
+
+#: ../../../components/http_client.rst:614
+msgid ""
+"Because ``$response->getInfo()`` is non-blocking, it shouldn't throw by "
+"design."
+msgstr ""
+
+#: ../../../components/http_client.rst:616
+msgid ""
+"When multiplexing responses, you can deal with errors for individual "
+"streams by catching ``TransportExceptionInterface`` in the foreach loop::"
+msgstr ""
+
+#: ../../../components/http_client.rst:639
+msgid "Caching Requests and Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:641
+msgid ""
+"This component provides a "
+":class:`Symfony\\\\Component\\\\HttpClient\\\\CachingHttpClient` "
+"decorator that allows caching responses and serving them from the local "
+"storage for next requests. The implementation leverages the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\HttpCache\\\\HttpCache` "
+"class under the hood so that the :doc:`HttpKernel component "
+"</components/http_kernel>` needs to be installed in your application::"
+msgstr ""
+
+#: ../../../components/http_client.rst:659
+msgid ""
+"``CachingHttpClient`` accepts a third argument to set the options of the "
+"``HttpCache``."
+msgstr ""
+
+#: ../../../components/http_client.rst:662
+msgid "Scoping Client"
+msgstr ""
+
+#: ../../../components/http_client.rst:664
+msgid ""
+"It's common that some of the HTTP client options depend on the URL of the"
+" request (e.g. you must set some headers when making requests to GitHub "
+"API but not for other hosts). If that's your case, this component "
+"provides a special HTTP client via the "
+":class:`Symfony\\\\Component\\\\HttpClient\\\\ScopingHttpClient` class to"
+" autoconfigure the HTTP client based on the requested URL::"
+msgstr ""
+
+#: ../../../components/http_client.rst:686
+msgid ""
+"You can define several scopes, so that each set of options is added only "
+"if a requested URL matches one of the regular expressions provided as "
+"keys."
+msgstr ""
+
+#: ../../../components/http_client.rst:689
+msgid ""
+"If the request URL is relative (because you use the ``base_uri`` option),"
+" the scoping HTTP client can't make a match. That's why you can define a "
+"third optional argument in its constructor which will be considered the "
+"default regular expression applied to relative URLs::"
+msgstr ""
+
+#: ../../../components/http_client.rst:708
+msgid "The above example can be reduced to a simpler call::"
+msgstr ""
+
+#: ../../../components/http_client.rst:716
+msgid ""
+"This way, the provided options will be used only if the requested URL is "
+"relative or if it matches the ``https://api.github.com/`` base URI."
+msgstr ""
+
+#: ../../../components/http_client.rst:720
+msgid "Interoperability"
+msgstr ""
+
+#: ../../../components/http_client.rst:722
+msgid ""
+"The component is interoperable with four different abstractions for HTTP "
+"clients: `Symfony Contracts`_, `PSR-18`_, `HTTPlug`_ v1/v2 and native PHP"
+" streams. If your application uses libraries that need any of them, the "
+"component is compatible with all of them. They also benefit from "
+":ref:`autowiring aliases <service-autowiring-alias>` when the "
+":ref:`framework bundle <framework-bundle-configuration>` is used."
+msgstr ""
+
+#: ../../../components/http_client.rst:728
+msgid ""
+"If you are writing or maintaining a library that makes HTTP requests, you"
+" can decouple it from any specific HTTP client implementations by coding "
+"against either Symfony Contracts (recommended), PSR-18 or HTTPlug v2."
+msgstr ""
+
+#: ../../../components/http_client.rst:733
+msgid "Symfony Contracts"
+msgstr ""
+
+#: ../../../components/http_client.rst:735
+msgid ""
+"The interfaces found in the ``symfony/http-client-contracts`` package "
+"define the primary abstractions implemented by the component. Its entry "
+"point is the "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\HttpClientInterface`. "
+"That's the interface you need to code against when a client is needed::"
+msgstr ""
+
+#: ../../../components/http_client.rst:754
+msgid ""
+"All request options mentioned above (e.g. timeout management) are also "
+"defined in the wordings of the interface, so that any compliant "
+"implementations (like this component) is guaranteed to provide them. "
+"That's a major difference with the other abstractions, which provide none"
+" related to the transport itself."
+msgstr ""
+
+#: ../../../components/http_client.rst:759
+msgid ""
+"Another major feature covered by the Symfony Contracts is "
+"async/multiplexing, as described in the previous sections."
+msgstr ""
+
+#: ../../../components/http_client.rst:763
+msgid "PSR-18 and PSR-17"
+msgstr ""
+
+#: ../../../components/http_client.rst:765
+msgid ""
+"This component implements the `PSR-18`_ (HTTP Client) specifications via "
+"the :class:`Symfony\\\\Component\\\\HttpClient\\\\Psr18Client` class, "
+"which is an adapter to turn a Symfony ``HttpClientInterface`` into a "
+"PSR-18 ``ClientInterface``. This class also implements the relevant "
+"methods of `PSR-17`_ to ease creating request objects."
+msgstr ""
+
+#: ../../../components/http_client.rst:771
+msgid ""
+"To use it, you need the ``psr/http-client`` package and a `PSR-17`_ "
+"implementation:"
+msgstr ""
+
+#: ../../../components/http_client.rst:786
+msgid "Now you can make HTTP requests with the PSR-18 client as follows::"
+msgstr ""
+
+#: ../../../components/http_client.rst:799
+msgid "HTTPlug"
+msgstr ""
+
+#: ../../../components/http_client.rst:801
+msgid ""
+"The `HTTPlug`_ v1 specification was published before PSR-18 and is "
+"superseded by it. As such, you should not use it in newly written code. "
+"The component is still interoperable with libraries that require it "
+"thanks to the "
+":class:`Symfony\\\\Component\\\\HttpClient\\\\HttplugClient` class. "
+"Similarly to ``Psr18Client`` implementing relevant parts of PSR-17, "
+"``HttplugClient`` also implements the factory methods defined in the "
+"related ``php-http/message-factory`` package."
+msgstr ""
+
+#: ../../../components/http_client.rst:821
+msgid ""
+"Let's say you want to instantiate a class with the following constructor,"
+" that requires HTTPlug dependencies::"
+msgstr ""
+
+#: ../../../components/http_client.rst:838
+msgid ""
+"Because ``HttplugClient`` implements the three interfaces, you can use it"
+" this way::"
+msgstr ""
+
+#: ../../../components/http_client.rst:845
+msgid ""
+"If you'd like to work with promises, ``HttplugClient`` also implements "
+"the ``HttpAsyncClient`` interface. To use it, you need to install the "
+"``guzzlehttp/promises`` package:"
+msgstr ""
+
+#: ../../../components/http_client.rst:853
+msgid "Then you're ready to go::"
+msgstr ""
+
+#: ../../../components/http_client.rst:887
+msgid "Native PHP Streams"
+msgstr ""
+
+#: ../../../components/http_client.rst:889
+msgid ""
+"Responses implementing "
+":class:`Symfony\\\\Contracts\\\\HttpClient\\\\ResponseInterface` can be "
+"cast to native PHP streams with "
+":method:`Symfony\\\\Component\\\\HttpClient\\\\Response\\\\StreamWrapper::createResource`."
+" This allows using them where native PHP streams are needed::"
+msgstr ""
+
+#: ../../../components/http_client.rst:912
+msgid "Symfony Framework Integration"
+msgstr ""
+
+#: ../../../components/http_client.rst:914
+msgid ""
+"When using this component in a full-stack Symfony application, you can "
+"configure multiple clients with different configurations and inject them "
+"into your services."
+msgstr ""
+
+#: ../../../components/http_client.rst:918
+msgid "Configuration"
+msgstr ""
+
+#: ../../../components/http_client.rst:920
+msgid ""
+"Use the ``framework.http_client`` key to configure the default HTTP "
+"client used in the application. Check out the full :ref:`http_client "
+"config reference <reference-http-client>` to learn about all the "
+"available config options:"
+msgstr ""
+
+#: ../../../components/http_client.rst:935
+msgid ""
+"If you want to define multiple HTTP clients, use this other expanded "
+"configuration:"
+msgstr ""
+
+#: ../../../components/http_client.rst:951
+msgid "Injecting the HTTP Client into Services"
+msgstr ""
+
+#: ../../../components/http_client.rst:953
+msgid ""
+"If your application only needs one HTTP client, you can inject the "
+"default one into any services by type-hinting a constructor argument with"
+" the :class:`Symfony\\\\Contracts\\\\HttpClient\\\\HttpClientInterface`::"
+msgstr ""
+
+#: ../../../components/http_client.rst:969
+msgid ""
+"If you have several clients, you must use any of the methods defined by "
+"Symfony to :ref:`choose a specific service <services-wire-specific-"
+"service>`. Each client has a unique service named after its "
+"configuration."
+msgstr ""
+
+#: ../../../components/http_client.rst:973
+msgid ""
+"Each scoped client also defines a corresponding named autowiring alias. "
+"If you use for example "
+"``Symfony\\Contracts\\HttpClient\\HttpClientInterface $myApiClient`` as "
+"the type and name of an argument, autowiring will inject the "
+"``my_api.client`` service into your autowired classes."
+msgstr ""
+
+#: ../../../components/http_client.rst:980
+msgid "Testing HTTP Clients and Responses"
+msgstr ""
+
+#: ../../../components/http_client.rst:982
+msgid ""
+"This component includes the ``MockHttpClient`` and ``MockResponse`` "
+"classes to use them in tests that need an HTTP client which doesn't make "
+"actual HTTP requests."
+msgstr ""
+
+#: ../../../components/http_client.rst:986
+msgid ""
+"The first way of using ``MockHttpClient`` is to pass a list of responses "
+"to its constructor. These will be yielded in order when requests are "
+"made::"
+msgstr ""
+
+#: ../../../components/http_client.rst:1002
+msgid ""
+"Another way of using ``MockHttpClient`` is to pass a callback that "
+"generates the responses dynamically when it's called::"
+msgstr ""
+
+#: ../../../components/http_client.rst:1015
+msgid ""
+"The responses provided to the mock client don't have to be instances of "
+"``MockResponse``. Any class implementing ``ResponseInterface`` will work "
+"(e.g. ``$this->createMock(ResponseInterface::class)``)."
+msgstr ""
+
+#: ../../../components/http_client.rst:1019
+msgid ""
+"However, using ``MockResponse`` allows simulating chunked responses and "
+"timeouts::"
+msgstr ""
+

@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/configurators.rst:5
+msgid "How to Configure a Service with a Configurator"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:7
+msgid ""
+"The *service configurator* is a feature of the service container that "
+"allows you to use a callable to configure a service after its "
+"instantiation."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:10
+msgid ""
+"A service configurator can be used, for example, when you have a service "
+"that requires complex setup based on configuration settings coming from "
+"different sources/services. Using an external configurator, you can "
+"maintain the service implementation cleanly and keep it decoupled from "
+"the other objects that provide the configuration needed."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:16
+msgid ""
+"Another use case is when you have multiple objects that share a common "
+"configuration or that should be configured in a similar way at runtime."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:19
+msgid ""
+"For example, suppose you have an application where you send different "
+"types of emails to users. Emails are passed through different formatters "
+"that could be enabled or not depending on some dynamic application "
+"settings. You start defining a ``NewsletterManager`` class like this::"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:39
+msgid "and also a ``GreetingCardManager`` class::"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:56
+msgid ""
+"As mentioned before, the goal is to set the formatters at runtime "
+"depending on application settings. To do this, you also have an "
+"``EmailFormatterManager`` class which is responsible for loading and "
+"validating formatters enabled in the application::"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:79
+msgid ""
+"If your goal is to avoid having to couple ``NewsletterManager`` and "
+"``GreetingCardManager`` with ``EmailFormatterManager``, then you might "
+"want to create a configurator class to configure these instances::"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:105
+msgid ""
+"The ``EmailConfigurator``'s job is to inject the enabled formatters into "
+"``NewsletterManager`` and ``GreetingCardManager`` because they are not "
+"aware of where the enabled formatters come from. On the other hand, the "
+"``EmailFormatterManager`` holds the knowledge about the enabled "
+"formatters and how to load them, keeping the single responsibility "
+"principle."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:113
+msgid ""
+"While this example uses a PHP class method, configurators can be any "
+"valid PHP callable, including functions, static methods and methods of "
+"services."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:117
+msgid "Using the Configurator"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:119
+msgid ""
+"You can configure the service configurator using the ``configurator`` "
+"option. If you're using the :ref:`default services.yaml configuration "
+"<service-container-services-load-example>`, all the classes are already "
+"loaded as services. All you need to do is specify the ``configurator``:"
+msgstr ""
+
+#: ../../../service_container/configurators.rst:191
+msgid ""
+"Services can be configured via invokable configurators (replacing the "
+"``configure()`` method with ``__invoke()``) by omitting the method name, "
+"just as routes can reference :ref:`invokable controllers <controller-"
+"service-invoke>`."
+msgstr ""
+
+#: ../../../service_container/configurators.rst:259
+msgid ""
+"That's it! When requesting the ``App\\Mail\\NewsletterManager`` or "
+"``App\\Mail\\GreetingCardManager`` service, the created instance will "
+"first be passed to the ``EmailConfigurator::configure()`` method."
+msgstr ""
+

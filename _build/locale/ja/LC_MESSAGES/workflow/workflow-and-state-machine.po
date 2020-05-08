@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../workflow/workflow-and-state-machine.rst:2
+msgid "Workflows and State Machines"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:5
+msgid "Workflows"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:7
+msgid ""
+"A workflow is a model of a process in your application. It may be the "
+"process of how a blog post goes from draft to review and publish. Another"
+" example is when a user submits a series of different forms to complete a"
+" task. Such processes are best kept away from your models and should be "
+"defined in configuration."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:12
+msgid ""
+"A **definition** of a workflow consists of places and actions to get from"
+" one place to another. The actions are called **transitions**. A workflow"
+" also needs to know each object's position in the workflow. The **marking"
+" store** writes the current place to a property on the object."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:19
+msgid ""
+"The terminology above is commonly used when discussing workflows and "
+"`Petri nets`_"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:23
+msgid "Examples"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:25
+msgid ""
+"The simplest workflow looks like this. It contains two places and one "
+"transition."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:29
+msgid ""
+"Workflows could be more complicated when they describe a real business "
+"case. The workflow below describes the process to fill in a job "
+"application."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:34
+msgid ""
+"When you fill in a job application in this example there are 4 to 7 steps"
+" depending on the job you are applying for. Some jobs require personality"
+" tests, logic tests and/or formal requirements to be answered by the "
+"user. Some jobs don't. The ``GuardEvent`` is used to decide what next "
+"steps are allowed for a specific application."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:40
+msgid ""
+"By defining a workflow like this, there is an overview how the process "
+"looks like. The process logic is not mixed with the controllers, models "
+"or view. The order of the steps can be changed by changing the "
+"configuration only."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:45
+msgid "State Machines"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:47
+msgid ""
+"A state machine is a subset of a workflow and its purpose is to hold a "
+"state of your model. The most important differences between them are:"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:50
+msgid ""
+"Workflows can be in more than one place at the same time, whereas state "
+"machines can't;"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:52
+msgid ""
+"In order to apply a transition, workflows require that the object is in "
+"all the previous places of the transition, whereas state machines only "
+"require that the object is at least in one of those places."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:57
+msgid "Example"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:59
+msgid ""
+"A pull request starts in an initial \"start\" state, then a state "
+"\"test\" for e.g. running tests on continuous integration stack. When "
+"this is finished, the pull request is in the \"review\" state, where "
+"contributors can require changes, reject or accept the pull request. At "
+"any time, you can also \"update\" the pull request, which will result in "
+"another continuous integration run."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:67
+msgid "Below is the configuration for the pull request state machine."
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:248
+msgid ""
+"In a Symfony application using the :ref:`default services.yaml "
+"configuration <service-container-services-load-example>`, you can get "
+"this state machine by injecting the Workflow registry service::"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:275
+msgid ""
+"Symfony automatically creates a service for each workflow "
+"(:class:`Symfony\\\\Component\\\\Workflow\\\\Workflow`) or state machine "
+"(:class:`Symfony\\\\Component\\\\Workflow\\\\StateMachine`) you have "
+"defined in your configuration. This means that you can use "
+"``workflow.pull_request`` or ``state_machine.pull_request`` respectively "
+"in your service definitions to access the proper service::"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:306
+msgid "Automatic and Manual Validation"
+msgstr ""
+
+#: ../../../workflow/workflow-and-state-machine.rst:308
+msgid ""
+"During cache warmup, Symfony validates the workflows and state machines "
+"that are defined in configuration files. If your workflows or state "
+"machines are defined programmatically instead of in a configuration file,"
+" you can validate them with the "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Validator\\\\WorkflowValidator`"
+" and "
+":class:`Symfony\\\\Component\\\\Workflow\\\\Validator\\\\StateMachineValidator`::"
+msgstr ""
+

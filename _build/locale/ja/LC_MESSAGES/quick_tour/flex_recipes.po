@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../quick_tour/flex_recipes.rst:2
+msgid "Flex: Compose your Application"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:4
+msgid ""
+"After reading the first part of this tutorial, you have decided that "
+"Symfony was worth another 10 minutes. Great choice! In this second part, "
+"you'll learn about Symfony Flex: the amazing tool that makes adding new "
+"features as simple as running one command. It's also the reason why "
+"Symfony is ideal for a small micro-service or a huge application. "
+"Curious? Perfect!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:11
+msgid "Symfony: Start Micro!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:13
+msgid ""
+"Unless you're building a pure API (more on that soon!), you'll probably "
+"want to render HTML. To do that, you'll use `Twig`_. Twig is a flexible, "
+"fast, and secure template engine for PHP. It makes your templates more "
+"readable and concise; it also makes them more friendly for web designers."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:18
+msgid ""
+"Is Twig already installed in our application? Actually, not yet! And "
+"that's great! When you start a new Symfony project, it's *small*:  only "
+"the most critical dependencies are included in your ``composer.json`` "
+"file:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:32
+msgid ""
+"This makes Symfony different than any other PHP framework! Instead of "
+"starting with a *bulky* app with *every* possible feature you might ever "
+"need, a Symfony app is small, simple and *fast*. And you're in total "
+"control of what you add."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:37
+msgid "Flex Recipes and Aliases"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:39
+msgid "So how can we install and configure Twig? By running one single command:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:45
+msgid ""
+"Two *very* interesting things happen behind the scenes thanks to Symfony "
+"Flex: a Composer plugin that is already installed in our project."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:48
+msgid ""
+"First, ``twig`` is not the name of a Composer package: it's a Flex "
+"*alias* that points to ``symfony/twig-bundle``. Flex resolves that alias "
+"for Composer."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:51
+msgid ""
+"And second, Flex installs a *recipe* for ``symfony/twig-bundle``. What's "
+"a recipe? It's a way for a library to automatically configure itself by "
+"adding and modifying files. Thanks to recipes, adding features is "
+"seamless and automated: install a package and you're done!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:56
+msgid ""
+"You can find a full list of recipes and aliases by going to "
+"`https://flex.symfony.com`_."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:58
+msgid ""
+"What did this recipe do? In addition to automatically enabling the "
+"feature in ``config/bundles.php``, it added 3 things:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:62
+msgid "``config/packages/twig.yaml``"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:62
+msgid "A configuration file that sets up Twig with sensible defaults."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:65
+msgid "``config/routes/dev/twig.yaml``"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:65
+msgid "A route that helps you debug your error pages."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:69
+msgid "``templates/``"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:68
+msgid ""
+"This is the directory where template files will live. The recipe also "
+"added a ``base.html.twig`` layout file."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:72
+msgid "Twig: Rendering a Template"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:74
+msgid "Thanks to Flex, after one command, you can start using Twig immediately:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:100
+msgid ""
+"By extending ``AbstractController``, you now have access to a number of "
+"shortcut methods and tools, like ``render()``. Create the new template:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:108
+msgid ""
+"That's it! The ``{{ name }}`` syntax will print the ``name`` variable "
+"that's passed in from the controller. If you're new to Twig, welcome! "
+"You'll learn more about its syntax and power later."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:112
+msgid ""
+"But, right now, the page *only* contains the ``h1`` tag. To give it an "
+"HTML layout, extend ``base.html.twig``:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:124
+msgid ""
+"This is called template inheritance: our page now inherits the HTML "
+"structure from ``base.html.twig``."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:128
+msgid "Profiler: Debugging Paradise"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:130
+msgid ""
+"One of the *coolest* features of Symfony isn't even installed yet! Let's "
+"fix that:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:136
+msgid ""
+"Yes! This is another alias! And Flex *also* installs another recipe, "
+"which automates the configuration of Symfony's Profiler. What's the "
+"result? Refresh!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:139
+msgid ""
+"See that black bar on the bottom? That's the web debug toolbar, and it's "
+"your new best friend. By hovering over each icon, you can get information"
+" about what controller was executed, performance information, cache hits "
+"& misses and a lot more. Click any icon to go into the *profiler* where "
+"you have even *more* detailed debugging and performance data!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:145
+msgid ""
+"Oh, and as you install more libraries, you'll get more tools (like a web "
+"debug toolbar icon that shows database queries)."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:148
+msgid ""
+"You can now directly use the profiler because it configured *itself* "
+"thanks to the recipe. What else can we install?"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:152
+msgid "Rich API Support"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:154
+msgid "Are you building an API? You can already return JSON from any controller::"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:178
+msgid "But for a *truly* rich API, try installing `API Platform`_:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:184
+msgid ""
+"This is an alias to ``api-platform/api-pack`` :ref:`Symfony pack "
+"<symfony-packs>`, which has dependencies on several other packages, like "
+"Symfony's Validator and Security components, as well as the Doctrine ORM."
+" In fact, Flex installed *5* recipes!"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:188
+msgid ""
+"But like usual, we can immediately start using the new library. Want to "
+"create a rich API for a ``product`` table? Create a ``Product`` entity "
+"and give it the ``@ApiResource()`` annotation::"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:224
+msgid ""
+"Done! You now have endpoints to list, add, update and delete products! "
+"Don't believe me? List your routes by running:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:245
+msgid "Removing Recipes"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:247
+msgid "Not convinced yet? No problem: remove the library:"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:253
+msgid ""
+"Flex will *uninstall* the recipes: removing files and un-doing changes to"
+" put your app back in its original state. Experiment without worry."
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:257
+msgid "More Features, Architecture and Speed"
+msgstr ""
+
+#: ../../../quick_tour/flex_recipes.rst:259
+msgid ""
+"I hope you're as excited about Flex as I am! But we still have *one* more"
+" chapter, and it's the most important yet. I want to show you how Symfony"
+" empowers you to quickly build features *without* sacrificing code "
+"quality or performance. It's all about the service container, and it's "
+"Symfony's super power. Read on: about "
+":doc:`/quick_tour/the_architecture`."
+msgstr ""
+

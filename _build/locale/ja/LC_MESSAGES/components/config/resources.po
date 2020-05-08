@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/config/resources.rst:5
+msgid "Loading Resources"
+msgstr ""
+
+#: ../../../components/config/resources.rst:9
+msgid ""
+"The ``IniFileLoader`` parses the file contents using the "
+":phpfunction:`parse_ini_file` function. Therefore, you can only set "
+"parameters to string values. To set parameters to other data types (e.g. "
+"boolean, integer, etc), the other loaders are recommended."
+msgstr ""
+
+#: ../../../components/config/resources.rst:14
+msgid ""
+"Loaders populate the application's configuration from different sources "
+"like YAML files. The Config component defines the interface for such "
+"loaders. The :doc:`Dependency Injection "
+"</components/dependency_injection>` and `Routing`_ components come with "
+"specialized loaders for different file formats."
+msgstr ""
+
+#: ../../../components/config/resources.rst:21
+msgid "Locating Resources"
+msgstr ""
+
+#: ../../../components/config/resources.rst:23
+msgid ""
+"Loading the configuration normally starts with a search for resources, "
+"mostly files. This can be done with the "
+":class:`Symfony\\\\Component\\\\Config\\\\FileLocator`::"
+msgstr ""
+
+#: ../../../components/config/resources.rst:33
+msgid ""
+"The locator receives a collection of locations where it should look for "
+"files. The first argument of ``locate()`` is the name of the file to look"
+" for. The second argument may be the current path and when supplied, the "
+"locator will look in this directory first. The third argument indicates "
+"whether or not the locator should return the first file it has found or "
+"an array containing all matches."
+msgstr ""
+
+#: ../../../components/config/resources.rst:41
+msgid "Resource Loaders"
+msgstr ""
+
+#: ../../../components/config/resources.rst:43
+msgid ""
+"For each type of resource (YAML, XML, annotation, etc.) a loader must be "
+"defined. Each loader should implement "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderInterface` or "
+"extend the abstract "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\FileLoader` class, "
+"which allows for recursively importing other resources::"
+msgstr ""
+
+#: ../../../components/config/resources.rst:77
+msgid "Finding the Right Loader"
+msgstr ""
+
+#: ../../../components/config/resources.rst:79
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderResolver` "
+"receives as its first constructor argument a collection of loaders. When "
+"a resource (for instance an XML file) should be loaded, it loops through "
+"this collection of loaders and returns the loader which supports this "
+"particular resource type."
+msgstr ""
+
+#: ../../../components/config/resources.rst:85
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\DelegatingLoader`"
+" makes use of the "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderResolver`. When"
+" it is asked to load a resource, it delegates this question to the "
+":class:`Symfony\\\\Component\\\\Config\\\\Loader\\\\LoaderResolver`. In "
+"case the resolver has found a suitable loader, this loader will be asked "
+"to load the resource::"
+msgstr ""
+

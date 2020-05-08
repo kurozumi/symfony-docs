@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../bundles.rst:7
+msgid "The Bundle System"
+msgstr ""
+
+#: ../../../bundles.rst:11
+msgid ""
+"In Symfony versions prior to 4.0, it was recommended to organize your own"
+" application code using bundles. This is no longer recommended and "
+"bundles should only be used to share code and features between multiple "
+"applications."
+msgstr ""
+
+#: ../../../bundles.rst:15
+msgid ""
+"A bundle is similar to a plugin in other software, but even better. The "
+"core features of Symfony framework are implemented with bundles "
+"(FrameworkBundle, SecurityBundle, DebugBundle, etc.) They are also used "
+"to add new features in your application via `third-party bundles`_."
+msgstr ""
+
+#: ../../../bundles.rst:20
+msgid ""
+"Bundles used in your applications must be enabled per :ref:`environment "
+"<configuration-environments>` in the ``config/bundles.php`` file::"
+msgstr ""
+
+#: ../../../bundles.rst:40
+msgid ""
+"In a default Symfony application that uses :ref:`Symfony Flex <symfony-"
+"flex>`, bundles are enabled/disabled automatically for you when "
+"installing/removing them, so you don't need to look at or edit this "
+"``bundles.php`` file."
+msgstr ""
+
+#: ../../../bundles.rst:45
+msgid "Creating a Bundle"
+msgstr ""
+
+#: ../../../bundles.rst:47
+msgid ""
+"This section creates and enables a new bundle to show there are only a "
+"few steps required. The new bundle is called AcmeTestBundle, where the "
+"``Acme`` portion is just a dummy name that should be replaced by some "
+"\"vendor\" name that represents you or your organization (e.g. "
+"ABCTestBundle for some company named ``ABC``)."
+msgstr ""
+
+#: ../../../bundles.rst:52
+msgid ""
+"Start by creating a ``src/Acme/TestBundle/`` directory and adding a new "
+"file called ``AcmeTestBundle.php``::"
+msgstr ""
+
+#: ../../../bundles.rst:66
+msgid ""
+"The name AcmeTestBundle follows the standard :ref:`Bundle naming "
+"conventions <bundles-naming-conventions>`. You could also choose to "
+"shorten the name of the bundle to simply TestBundle by naming this class "
+"TestBundle (and naming the file ``TestBundle.php``)."
+msgstr ""
+
+#: ../../../bundles.rst:71
+msgid ""
+"This empty class is the only piece you need to create the new bundle. "
+"Though commonly empty, this class is powerful and can be used to "
+"customize the behavior of the bundle. Now that you've created the bundle,"
+" enable it::"
+msgstr ""
+
+#: ../../../bundles.rst:81
+msgid ""
+"And while it doesn't do anything yet, AcmeTestBundle is now ready to be "
+"used."
+msgstr ""
+
+#: ../../../bundles.rst:84
+msgid "Bundle Directory Structure"
+msgstr ""
+
+#: ../../../bundles.rst:86
+msgid ""
+"The directory structure of a bundle is meant to help to keep code "
+"consistent between all Symfony bundles. It follows a set of conventions, "
+"but is flexible to be adjusted if needed:"
+msgstr ""
+
+#: ../../../bundles.rst:91
+msgid "``Controller/``"
+msgstr ""
+
+#: ../../../bundles.rst:91
+msgid "Contains the controllers of the bundle (e.g. ``RandomController.php``)."
+msgstr ""
+
+#: ../../../bundles.rst:96
+msgid "``DependencyInjection/``"
+msgstr ""
+
+#: ../../../bundles.rst:94
+msgid ""
+"Holds certain Dependency Injection Extension classes, which may import "
+"service configuration, register compiler passes or more (this directory "
+"is not necessary)."
+msgstr ""
+
+#: ../../../bundles.rst:99
+msgid "``Resources/config/``"
+msgstr ""
+
+#: ../../../bundles.rst:99
+msgid ""
+"Houses configuration, including routing configuration (e.g. "
+"``routing.yaml``)."
+msgstr ""
+
+#: ../../../bundles.rst:102
+msgid "``Resources/views/``"
+msgstr ""
+
+#: ../../../bundles.rst:102
+msgid ""
+"Holds templates organized by controller name (e.g. "
+"``Random/index.html.twig``)."
+msgstr ""
+
+#: ../../../bundles.rst:107
+msgid "``Resources/public/``"
+msgstr ""
+
+#: ../../../bundles.rst:105
+msgid ""
+"Contains web assets (images, stylesheets, etc) and is copied or "
+"symbolically linked into the project ``public/`` directory via the "
+"``assets:install`` console command."
+msgstr ""
+
+#: ../../../bundles.rst:110
+msgid "``Tests/``"
+msgstr ""
+
+#: ../../../bundles.rst:110
+msgid "Holds all tests for the bundle."
+msgstr ""
+
+#: ../../../bundles.rst:112
+msgid ""
+"A bundle can be as small or large as the feature it implements. It "
+"contains only the files you need and nothing else."
+msgstr ""
+
+#: ../../../bundles.rst:115
+msgid ""
+"As you move through the guides, you'll learn how to persist objects to a "
+"database, create and validate forms, create translations for your "
+"application, write tests and much more. Each of these has their own place"
+" and role within the bundle."
+msgstr ""
+
+#: ../../../bundles.rst:121
+msgid "Learn more"
+msgstr ""
+
+#: ../../../bundles.rst:123
+msgid ":doc:`/bundles/override`"
+msgstr ""
+
+#: ../../../bundles.rst:124
+msgid ":doc:`/bundles/best_practices`"
+msgstr ""
+
+#: ../../../bundles.rst:125
+msgid ":doc:`/bundles/configuration`"
+msgstr ""
+
+#: ../../../bundles.rst:126
+msgid ":doc:`/bundles/extension`"
+msgstr ""
+
+#: ../../../bundles.rst:127
+msgid ":doc:`/bundles/prepend_extension`"
+msgstr ""
+

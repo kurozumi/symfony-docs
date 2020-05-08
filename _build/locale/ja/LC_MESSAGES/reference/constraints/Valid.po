@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Valid.rst:2
+msgid "Valid"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:4
+msgid ""
+"This constraint is used to enable validation on objects that are embedded"
+" as properties on an object being validated. This allows you to validate "
+"an object and all sub-objects associated with it."
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:10
+#: ../../../reference/constraints/Valid.rst:247
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:11
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:12
+msgid "`traverse`_"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:13
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:13
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Valid`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_error_bubbling_hint.rst.inc:3
+msgid ""
+"By default, the ``error_bubbling`` option is enabled for the "
+":doc:`collection Field Type </reference/forms/types/collection>`, which "
+"passes the errors to the parent form. If you want to attach the errors to"
+" the locations where they actually occur you have to set "
+"``error_bubbling`` to ``false``."
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:19
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:21
+msgid ""
+"In the following example, create two classes ``Author`` and ``Address`` "
+"that both have constraints on their properties. Furthermore, ``Author`` "
+"stores an ``Address`` instance in the ``$address`` property::"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:178
+msgid ""
+"With this mapping, it is possible to successfully validate an author with"
+" an invalid address. To prevent that, add the ``Valid`` constraint to the"
+" ``$address`` property."
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:238
+msgid ""
+"If you validate an author with an invalid address now, you can see that "
+"the validation of the ``Address`` fields failed."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:254
+msgid "traverse"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:256
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/constraints/Valid.rst:258
+msgid ""
+"If this constraint is applied to a ``\\Traversable``, then all containing"
+" values will be validated if this option is set to ``true``. This option "
+"is ignored on arrays: Arrays are traversed in either case. Keys are not "
+"validated."
+msgstr ""
+

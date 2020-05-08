@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller/service.rst:5
+msgid "How to Define Controllers as Services"
+msgstr ""
+
+#: ../../../controller/service.rst:7
+msgid ""
+"In Symfony, a controller does *not* need to be registered as a service. "
+"But if you're using the :ref:`default services.yaml configuration "
+"<service-container-services-load-example>`, your controllers *are* "
+"already registered as services. This means you can use dependency "
+"injection like any other normal service."
+msgstr ""
+
+#: ../../../controller/service.rst:13
+msgid "Referencing your Service from Routing"
+msgstr ""
+
+#: ../../../controller/service.rst:15
+msgid ""
+"Registering your controller as a service is the first step, but you also "
+"need to update your routing config to reference the service properly, so "
+"that Symfony knows to use it."
+msgstr ""
+
+#: ../../../controller/service.rst:19
+msgid ""
+"Use the ``service_id::method_name`` syntax to refer to the controller "
+"method. If the service id is the fully-qualified class name (FQCN) of "
+"your controller, as Symfony recommends, then the syntax is the same as if"
+" the controller was not a service like: "
+"``App\\Controller\\HelloController::index``:"
+msgstr ""
+
+#: ../../../controller/service.rst:79
+msgid "Invokable Controllers"
+msgstr ""
+
+#: ../../../controller/service.rst:81
+msgid ""
+"Controllers can also define a single action using the ``__invoke()`` "
+"method, which is a common practice when following the `ADR pattern`_ "
+"(Action-Domain-Responder):"
+msgstr ""
+
+#: ../../../controller/service.rst:134
+msgid "Alternatives to base Controller Methods"
+msgstr ""
+
+#: ../../../controller/service.rst:136
+msgid ""
+"When using a controller defined as a service, you can still extend the "
+":ref:`AbstractController base controller <the-base-controller-class-"
+"services>` and use its shortcuts. But, you don't need to! You can choose "
+"to extend *nothing*, and use dependency injection to access different "
+"services."
+msgstr ""
+
+#: ../../../controller/service.rst:141
+msgid ""
+"The base `Controller class source code`_ is a great way to see how to "
+"accomplish common tasks. For example, ``$this->render()`` is usually used"
+" to render a Twig template and return a Response. But, you can also do "
+"this directly:"
+msgstr ""
+
+#: ../../../controller/service.rst:145
+msgid ""
+"In a controller that's defined as a service, you can instead inject the "
+"``twig`` service and use it directly::"
+msgstr ""
+
+#: ../../../controller/service.rst:174
+msgid ""
+"You can also use a special :ref:`action-based dependency injection "
+"<controller-accessing-services>` to receive services as arguments to your"
+" controller action methods."
+msgstr ""
+
+#: ../../../controller/service.rst:178
+msgid "Base Controller Methods and Their Service Replacements"
+msgstr ""
+
+#: ../../../controller/service.rst:180
+msgid ""
+"The best way to see how to replace base ``Controller`` convenience "
+"methods is to look at the `AbstractController`_ class that holds its "
+"logic."
+msgstr ""
+
+#: ../../../controller/service.rst:183
+msgid ""
+"If you want to know what type-hints to use for each service, see the "
+"``getSubscribedServices()`` method in `AbstractController`_."
+msgstr ""
+

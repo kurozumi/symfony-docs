@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/helpers/debug_formatter.rst:5
+msgid "Debug Formatter Helper"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:7
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DebugFormatterHelper`"
+" provides functions to output debug information when running an external "
+"program, for instance a process or HTTP request. For example, if you used"
+" it to output the results of running ``ls -la`` on a UNIX system, it "
+"might output something like this:"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:17
+msgid "Using the debug_formatter"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:19
+msgid ""
+"The formatter is included in the default helper set and you can get it by"
+" calling "
+":method:`Symfony\\\\Component\\\\Console\\\\Command\\\\Command::getHelper`::"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:24
+msgid ""
+"The formatter accepts strings and returns a formatted string, which you "
+"then output to the console (or even log the information or do anything "
+"else)."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:27
+msgid ""
+"All methods of this helper have an identifier as the first argument. This"
+" is a unique value for each program. This way, the helper can debug "
+"information for multiple programs at the same time. When using the "
+":doc:`Process component </components/process>`, you probably want to use "
+":phpfunction:`spl_object_hash`."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:35
+msgid ""
+"This information is often too verbose to be shown by default. You can use"
+" :doc:`verbosity levels </console/verbosity>` to only show it when in "
+"debugging mode (``-vvv``)."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:40
+msgid "Starting a Program"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:42
+msgid ""
+"As soon as you start a program, you can use "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DebugFormatterHelper::start`"
+" to display information that the program is started::"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:56
+#: ../../../components/console/helpers/debug_formatter.rst:129
+msgid "This will output:"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:62
+msgid "You can tweak the prefix using the third argument::"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:73
+msgid "Output Progress Information"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:75
+msgid ""
+"Some programs give output while they are running. This information can be"
+" shown using "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DebugFormatterHelper::progress`::"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:95
+msgid "In case of success, this will output:"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:101
+msgid "And this in case of failure:"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:107
+msgid ""
+"The third argument is a boolean which tells the function if the output is"
+" error output or not. When ``true``, the output is considered error "
+"output."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:110
+msgid ""
+"The fourth and fifth argument allow you to override the prefix for the "
+"normal output and error output respectively."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:114
+msgid "Stopping a Program"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:116
+msgid ""
+"When a program is stopped, you can use "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\DebugFormatterHelper::stop`"
+" to notify this to the users::"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:135
+msgid ""
+"In case of failure, this will be in red and in case of success it will be"
+" green."
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:138
+msgid "Using multiple Programs"
+msgstr ""
+
+#: ../../../components/console/helpers/debug_formatter.rst:140
+msgid ""
+"As said before, you can also use the helper to display more programs at "
+"the same time. Information about different programs will be shown in "
+"different colors, to make it clear which output belongs to which command."
+msgstr ""
+

@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/routing.rst:2
+msgid "The Routing Component"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:4
+msgid ""
+"Before we start diving into the Routing component, let's refactor our "
+"current framework just a little to make templates even more readable::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:32
+msgid ""
+"As we now extract the request query parameters, simplify the "
+"``hello.php`` template as follows::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:38
+msgid "Now, we are in good shape to add new features."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:40
+msgid ""
+"One very important aspect of any website is the form of its URLs. Thanks "
+"to the URL map, we have decoupled the URL from the code that generates "
+"the associated response, but it is not yet flexible enough. For instance,"
+" we might want to support dynamic paths to allow embedding data directly "
+"into the URL (e.g. ``/hello/Fabien``) instead of relying on a query "
+"string (e.g. ``/hello?name=Fabien``)."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:46
+msgid ""
+"To support this feature, add the Symfony Routing component as a "
+"dependency:"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:52
+msgid ""
+"Instead of an array for the URL map, the Routing component relies on a "
+"``RouteCollection`` instance::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:59
+msgid ""
+"Let's add a route that describes the ``/hello/SOMETHING`` URL and add "
+"another one for the simple ``/bye`` one::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:67
+msgid ""
+"Each entry in the collection is defined by a name (``hello``) and a "
+"``Route`` instance, which is defined by a route pattern "
+"(``/hello/{name}``) and an array of default values for route attributes "
+"(``['name' => 'World']``)."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:73
+msgid ""
+"Read the :doc:`Routing documentation </routing>` to learn more about its "
+"many features like URL generation, attribute requirements, HTTP method "
+"enforcement, loaders for YAML or XML files, dumpers to PHP or Apache "
+"rewrite rules for enhanced performance and much more."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:78
+msgid ""
+"Based on the information stored in the ``RouteCollection`` instance, a "
+"``UrlMatcher`` instance can match URL paths::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:90
+msgid ""
+"The ``match()`` method takes a request path and returns an array of "
+"attributes (notice that the matched route is automatically stored under "
+"the special ``_route`` attribute)::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:119
+msgid ""
+"Even if we don't strictly need the request context in our examples, it is"
+" used in real-world applications to enforce method requirements and more."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:122
+msgid "The URL matcher throws an exception when none of the routes match::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:128
+msgid ""
+"With this knowledge in mind, let's write the new version of our "
+"framework::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:158
+msgid "There are a few new things in the code:"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:160
+msgid "Route names are used for template names;"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:162
+msgid "``500`` errors are now managed correctly;"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:164
+msgid "Request attributes are extracted to keep our templates simple::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:169
+msgid "Route configuration has been moved to its own file::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:180
+msgid ""
+"We now have a clear separation between the configuration (everything "
+"specific to our application in ``app.php``) and the framework (the "
+"generic code that powers our application in ``front.php``)."
+msgstr ""
+
+#: ../../../create_framework/routing.rst:184
+msgid ""
+"With less than 30 lines of code, we have a new framework, more powerful "
+"and more flexible than the previous one. Enjoy!"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:187
+msgid ""
+"Using the Routing component has one big additional benefit: the ability "
+"to generate URLs based on Route definitions. When using both URL matching"
+" and URL generation in your code, changing the URL patterns should have "
+"no other impact. You can use the generator this way::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:199
+msgid ""
+"The code should be self-explanatory; and thanks to the context, you can "
+"even generate absolute URLs::"
+msgstr ""
+
+#: ../../../create_framework/routing.rst:213
+msgid ""
+"Concerned about performance? Based on your route definitions, create a "
+"highly optimized URL matcher class that can replace the default "
+"``UrlMatcher``::"
+msgstr ""
+

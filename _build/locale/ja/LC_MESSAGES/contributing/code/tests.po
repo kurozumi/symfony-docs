@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/tests.rst:4
+msgid "Running Symfony Tests"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:6
+msgid ""
+"The Symfony project uses a third-party service which automatically runs "
+"tests for any submitted :doc:`patch <pull_requests>`. If the new code "
+"breaks any test, the pull request will show an error message with a link "
+"to the full error details."
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:10
+msgid ""
+"In any case, it's a good practice to run tests locally before submitting "
+"a :doc:`patch <pull_requests>` for inclusion, to check that you have not "
+"broken anything."
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:17
+msgid "Before Running the Tests"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:19
+msgid ""
+"To run the Symfony test suite, install the external dependencies used "
+"during the tests, such as Doctrine, Twig and Monolog. To do so, `install "
+"Composer`_ and execute the following:"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:30
+msgid "Running the Tests"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:32
+msgid ""
+"Then, run the test suite from the Symfony root directory with the "
+"following command:"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:39
+msgid ""
+"The output should display ``OK``. If not, read the reported errors to "
+"figure out what's going on and if the tests are broken because of the new"
+" code."
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:44
+msgid ""
+"The entire Symfony suite can take up to several minutes to complete. If "
+"you want to test a single component, type its path after the ``phpunit`` "
+"command, e.g.:"
+msgstr ""
+
+#: ../../../contributing/code/tests.rst:54
+msgid ""
+"On Windows, install the `Cmder`_, `ConEmu`_, `ANSICON`_ or `Mintty`_ free"
+" applications to see colored test results."
+msgstr ""
+

@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/single_command_tool.rst:5
+msgid "Building a single Command Application"
+msgstr ""
+
+#: ../../../components/console/single_command_tool.rst:7
+msgid ""
+"When building a command line tool, you may not need to provide several "
+"commands. In such case, having to pass the command name each time is "
+"tedious."
+msgstr ""
+
+#: ../../../components/console/single_command_tool.rst:12
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Console\\\\SingleCommandApplication` "
+"class was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/console/single_command_tool.rst:15
+msgid ""
+"Fortunately, it is possible to remove this need by declaring a single "
+"command application::"
+msgstr ""
+
+#: ../../../components/console/single_command_tool.rst:38
+msgid "You can still register a command as usual::"
+msgstr ""
+
+#: ../../../components/console/single_command_tool.rst:55
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\Console\\\\Application::setDefaultCommand`"
+" method accepts a boolean as second parameter. If true, the command "
+"``echo`` will then always be used, without having to pass its name."
+msgstr ""
+

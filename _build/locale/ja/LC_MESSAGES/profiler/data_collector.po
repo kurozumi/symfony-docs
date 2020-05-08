@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../profiler/data_collector.rst:5
+msgid "How to Create a custom Data Collector"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:7
+msgid ""
+"The :doc:`Symfony Profiler </profiler>` obtains its profiling and debug "
+"information using some special classes called data collectors. Symfony "
+"comes bundled with a few of them, but you can also create your own."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:12
+msgid "Creating a custom Data Collector"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:14
+msgid ""
+"A data collector is a PHP class that implements the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollectorInterface`."
+" For convenience, your data collectors can also extend from the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollector`"
+" class, which implements the interface and provides some utilities and "
+"the ``$this->data`` property to store the collected information."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:21
+msgid ""
+"The following example shows a custom collector that stores information "
+"about the request::"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:70
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollectorInterface::collect`"
+" method:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:55
+msgid ""
+"Stores the collected data in local properties (``$this->data`` if you "
+"extend from "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollector`)."
+" If the data to collect cannot be obtained through the request or "
+"response, inject the needed services in the data collector."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:62
+msgid ""
+"The ``collect()`` method is only called once. It is not used to "
+"\"gather\" data but is there to \"pick up\" the data that has been stored"
+" by your service."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:68
+msgid ""
+"As the profiler serializes data collector instances, you should not store"
+" objects that cannot be serialized (like PDO objects) or you need to "
+"provide your own ``serialize()`` method."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:74
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollectorInterface::reset`"
+" method:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:73
+msgid ""
+"It's called between requests to reset the state of the profiler. Use it "
+"to remove all the information collected with the ``collect()`` method."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:80
+msgid ""
+":method:`Symfony\\\\Component\\\\HttpKernel\\\\DataCollector\\\\DataCollectorInterface::getName`"
+" method:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:77
+msgid ""
+"Returns the collector identifier, which must be unique in the "
+"application. This value is used later to access the collector information"
+" (see :doc:`/testing/profiling`) so it's recommended to return a string "
+"which is short, lowercase and without white spaces."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:85
+msgid "Enabling Custom Data Collectors"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:87
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>` with ``autoconfigure``, then Symfony "
+"will automatically see your new data collector! Your ``collect()`` method"
+" should be called next time your refresh."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:91
+msgid ""
+"If you're not using ``autoconfigure``, you can also :ref:`manually wire "
+"your service <services-explicitly-configure-wire-services>` and :doc:`tag"
+" </service_container/tags>` it with ``data_collector``."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:95
+msgid "Adding Web Profiler Templates"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:97
+msgid ""
+"The information collected by your data collector can be displayed both in"
+" the web debug toolbar and in the web profiler. To do so, you need to "
+"create a Twig template that includes some specific blocks."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:101
+msgid ""
+"However, first you must add some getters in the data collector class to "
+"give the template access to the collected information::"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:124
+msgid ""
+"In the simplest case, you just want to display the information in the "
+"toolbar without providing a profiler panel. This requires to define the "
+"``toolbar`` block and set the value of two variables called ``icon`` and "
+"``text``:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:160
+msgid ""
+"Built-in collector templates define all their images as embedded SVG "
+"files. This makes them work everywhere without having to mess with web "
+"assets links:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:170
+msgid ""
+"If the toolbar panel includes extended web profiler information, the Twig"
+" template must also define additional blocks:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:220
+msgid ""
+"The ``menu`` and ``panel`` blocks are the only required blocks to define "
+"the contents displayed in the web profiler panel associated with this "
+"data collector. All blocks have access to the ``collector`` object."
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:224
+msgid ""
+"Finally, to enable the data collector template, override your service "
+"configuration to specify a tag that contains the template:"
+msgstr ""
+
+#: ../../../profiler/data_collector.rst:282
+msgid ""
+"The position of each panel in the toolbar is determined by the collector "
+"priority. Priorities are defined as positive or negative integers and "
+"they default to ``0``. Most built-in collectors use ``255`` as their "
+"priority. If you want your collector to be displayed before them, use a "
+"higher value (like 300)."
+msgstr ""
+

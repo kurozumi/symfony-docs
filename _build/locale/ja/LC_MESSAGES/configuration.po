@@ -1,0 +1,676 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../configuration.rst:5
+msgid "Configuring Symfony"
+msgstr ""
+
+#: ../../../configuration.rst:8
+msgid "Configuration Files"
+msgstr ""
+
+#: ../../../configuration.rst:10
+msgid ""
+"Symfony applications are configured with the files stored in the "
+"``config/`` directory, which has this default structure:"
+msgstr ""
+
+#: ../../../configuration.rst:23
+msgid ""
+"The ``routes.yaml`` file defines the :doc:`routing configuration "
+"</routing>`; the ``services.yaml`` file configures the services of the "
+":doc:`service container </service_container>`; the ``bundles.php`` file "
+"enables/ disables packages in your application."
+msgstr ""
+
+#: ../../../configuration.rst:28
+msgid ""
+"You'll be working mostly in the ``config/packages/`` directory. This "
+"directory stores the configuration of every package installed in your "
+"application. Packages (also called \"bundles\" in Symfony and "
+"\"plugins/modules\" in other projects) add ready-to-use features to your "
+"projects."
+msgstr ""
+
+#: ../../../configuration.rst:33
+msgid ""
+"When using :ref:`Symfony Flex <symfony-flex>`, which is enabled by "
+"default in Symfony applications, packages update the ``bundles.php`` file"
+" and create new files in ``config/packages/`` automatically during their "
+"installation. For example, this is the default file created by the \"API "
+"Platform\" package:"
+msgstr ""
+
+#: ../../../configuration.rst:45
+msgid ""
+"Splitting the configuration into lots of small files is intimidating for "
+"some Symfony newcomers. However, you'll get used to them quickly and you "
+"rarely need to change these files after package installation"
+msgstr ""
+
+#: ../../../configuration.rst:51
+msgid ""
+"To learn about all the available configuration options, check out the "
+":doc:`Symfony Configuration Reference </reference/index>` or run the "
+"``config:dump-reference`` command."
+msgstr ""
+
+#: ../../../configuration.rst:56
+msgid "Configuration Formats"
+msgstr ""
+
+#: ../../../configuration.rst:58
+msgid ""
+"Unlike other frameworks, Symfony doesn't impose a specific format on you "
+"to configure your applications. Symfony lets you choose between YAML, XML"
+" and PHP and throughout the Symfony documentation, all configuration "
+"examples will be shown in these three formats."
+msgstr ""
+
+#: ../../../configuration.rst:63
+msgid ""
+"There isn't any practical difference between formats. In fact, Symfony "
+"transforms and caches all of them into PHP before running the "
+"application, so there's not even any performance difference between them."
+msgstr ""
+
+#: ../../../configuration.rst:67
+msgid ""
+"YAML is used by default when installing packages because it's concise and"
+" very readable. These are the main advantages and disadvantages of each "
+"format:"
+msgstr ""
+
+#: ../../../configuration.rst:70
+msgid ""
+"**YAML**: simple, clean and readable, but not all IDEs support "
+"autocompletion and validation for it. :doc:`Learn the YAML syntax "
+"</components/yaml/yaml_format>`;"
+msgstr ""
+
+#: ../../../configuration.rst:72
+msgid ""
+"**XML**:autocompleted/validated by most IDEs and is parsed natively by "
+"PHP, but sometimes it generates configuration considered too verbose. "
+"`Learn the XML syntax`_;"
+msgstr ""
+
+#: ../../../configuration.rst:74
+msgid ""
+"**PHP**: very powerful and it allows you to create dynamic configuration,"
+" but the resulting configuration is less readable than the other formats."
+msgstr ""
+
+#: ../../../configuration.rst:78
+msgid "Importing Configuration Files"
+msgstr ""
+
+#: ../../../configuration.rst:80
+msgid ""
+"Symfony loads configuration files using the :doc:`Config component "
+"</components/config>`, which provides advanced features such as importing"
+" other configuration files, even if they use a different format:"
+msgstr ""
+
+#: ../../../configuration.rst:137
+msgid "Configuration Parameters"
+msgstr ""
+
+#: ../../../configuration.rst:139
+msgid ""
+"Sometimes the same configuration value is used in several configuration "
+"files. Instead of repeating it, you can define it as a \"parameter\", "
+"which is like a reusable configuration value. By convention, parameters "
+"are defined under the ``parameters`` key in the ``config/services.yaml`` "
+"file:"
+msgstr ""
+
+#: ../../../configuration.rst:235
+msgid ""
+"When using XML configuration, the values between ``<parameter>`` tags are"
+" not trimmed. This means that the value of the following parameter will "
+"be ``'\\n    something@example.com\\n'``:"
+msgstr ""
+
+#: ../../../configuration.rst:245
+msgid ""
+"Once defined, you can reference this parameter value from any other "
+"configuration file using a special syntax: wrap the parameter name in two"
+" ``%`` (e.g. ``%app.admin_email%``):"
+msgstr ""
+
+#: ../../../configuration.rst:290
+msgid ""
+"If some parameter value includes the ``%`` character, you need to escape "
+"it by adding another ``%`` so Symfony doesn't consider it a reference to "
+"a parameter name:"
+msgstr ""
+
+#: ../../../components/dependency_injection/_imports-parameters-note.rst.inc:3
+msgid ""
+"Due to the way in which parameters are resolved, you cannot use them to "
+"build paths in imports dynamically. This means that something like the "
+"following doesn't work:"
+msgstr ""
+
+#: ../../../configuration.rst:317
+msgid ""
+"Configuration parameters are very common in Symfony applications. Some "
+"packages even define their own parameters (e.g. when installing the "
+"translation package, a new ``locale`` parameter is added to the "
+"``config/services.yaml`` file)."
+msgstr ""
+
+#: ../../../configuration.rst:323
+msgid ""
+"Later in this article you can read how to :ref:`get configuration "
+"parameters in controllers and services <configuration-accessing-"
+"parameters>`."
+msgstr ""
+
+#: ../../../configuration.rst:334
+msgid "Configuration Environments"
+msgstr ""
+
+#: ../../../configuration.rst:336
+msgid ""
+"You have just one application, but whether you realize it or not, you "
+"need it to behave differently at different times:"
+msgstr ""
+
+#: ../../../configuration.rst:339
+msgid ""
+"While **developing**, you want to log everything and expose nice "
+"debugging tools;"
+msgstr ""
+
+#: ../../../configuration.rst:340
+msgid ""
+"After deploying to **production**, you want that same application to be "
+"optimized for speed and only log errors."
+msgstr ""
+
+#: ../../../configuration.rst:343
+msgid ""
+"The files stored in ``config/packages/`` are used by Symfony to configure"
+" the :doc:`application services </service_container>`. In other words, "
+"you can change the application behavior by changing which configuration "
+"files are loaded. That's the idea of Symfony's **configuration "
+"environments**."
+msgstr ""
+
+#: ../../../configuration.rst:348
+msgid ""
+"A typical Symfony application begins with three environments: ``dev`` "
+"(for local development), ``prod`` (for production servers) and ``test`` "
+"(for :doc:`automated tests </testing>`). When running the application, "
+"Symfony loads the configuration files in this order (the last files can "
+"override the values set in the previous ones):"
+msgstr ""
+
+#: ../../../configuration.rst:354
+msgid "``config/packages/*.yaml`` (and ``*.xml`` and ``*.php`` files too);"
+msgstr ""
+
+#: ../../../configuration.rst:355
+msgid ""
+"``config/packages/<environment-name>/*.yaml`` (and ``*.xml`` and "
+"``*.php`` files too);"
+msgstr ""
+
+#: ../../../configuration.rst:356
+msgid ""
+"``config/packages/services.yaml`` (and ``services.xml`` and "
+"``services.php`` files too);"
+msgstr ""
+
+#: ../../../configuration.rst:358
+msgid "Take the ``framework`` package, installed by default, as an example:"
+msgstr ""
+
+#: ../../../configuration.rst:360
+msgid ""
+"First, ``config/packages/framework.yaml`` is loaded in all environments "
+"and it configures the framework with some options;"
+msgstr ""
+
+#: ../../../configuration.rst:362
+msgid ""
+"In the **prod** environment, nothing extra will be set as there is no "
+"``config/packages/prod/framework.yaml`` file;"
+msgstr ""
+
+#: ../../../configuration.rst:364
+msgid ""
+"In the **dev** environment, there is no file either ( "
+"``config/packages/dev/framework.yaml`` does not exist)."
+msgstr ""
+
+#: ../../../configuration.rst:366
+msgid ""
+"In the **test** environment, the ``config/packages/test/framework.yaml`` "
+"file is loaded to override some of the settings previously configured in "
+"``config/packages/framework.yaml``."
+msgstr ""
+
+#: ../../../configuration.rst:370
+msgid ""
+"In reality, each environment differs only somewhat from others. This "
+"means that all environments share a large base of common configuration, "
+"which is put in files directly in the ``config/packages/`` directory."
+msgstr ""
+
+#: ../../../configuration.rst:376
+msgid ""
+"See the ``configureContainer()`` method of :doc:`the Kernel class "
+"</configuration/front_controllers_and_kernel>` to learn everything about "
+"the loading order of configuration files."
+msgstr ""
+
+#: ../../../configuration.rst:383
+msgid "Selecting the Active Environment"
+msgstr ""
+
+#: ../../../configuration.rst:385
+msgid ""
+"Symfony applications come with a file called ``.env`` located at the "
+"project root directory. This file is used to define the value of "
+"environment variables and it's explained in detail :ref:`later in this "
+"article <config-dot-env>`."
+msgstr ""
+
+#: ../../../configuration.rst:389
+msgid ""
+"Open the ``.env`` file (or better, the ``.env.local`` file if you created"
+" one) and edit the value of the ``APP_ENV`` variable to change the "
+"environment in which the application runs. For example, to run the "
+"application in production:"
+msgstr ""
+
+#: ../../../configuration.rst:398
+msgid ""
+"This value is used both for the web and for the console commands. "
+"However, you can override it for commands by setting the ``APP_ENV`` "
+"value before running them:"
+msgstr ""
+
+#: ../../../configuration.rst:410
+msgid "Creating a New Environment"
+msgstr ""
+
+#: ../../../configuration.rst:412
+msgid ""
+"The default three environments provided by Symfony are enough for most "
+"projects, but you can define your own environments too. For example, this"
+" is how you can define a ``staging`` environment where the client can "
+"test the project before going to production:"
+msgstr ""
+
+#: ../../../configuration.rst:417
+msgid ""
+"Create a configuration directory with the same name as the environment "
+"(in this case, ``config/packages/staging/``);"
+msgstr ""
+
+#: ../../../configuration.rst:419
+msgid ""
+"Add the needed configuration files in ``config/packages/staging/`` to "
+"define the behavior of the new environment. Symfony loads the "
+"``config/packages/*.yaml`` files first, so you only need to configure the"
+" differences to those files;"
+msgstr ""
+
+#: ../../../configuration.rst:423
+msgid ""
+"Select the ``staging`` environment using the ``APP_ENV`` env var as "
+"explained in the previous section."
+msgstr ""
+
+#: ../../../configuration.rst:428
+msgid ""
+"It's common for environments to be similar to each other, so you can use "
+"`symbolic links`_ between ``config/packages/<environment-name>/`` "
+"directories to reuse the same configuration."
+msgstr ""
+
+#: ../../../configuration.rst:435
+msgid "Configuration Based on Environment Variables"
+msgstr ""
+
+#: ../../../configuration.rst:437
+msgid ""
+"Using `environment variables`_ (or \"env vars\" for short) is a common "
+"practice to configure options that depend on where the application is run"
+" (e.g. the database credentials are usually different in production "
+"versus your local machine). If the values are sensitive, you can even "
+":doc:`encrypt them as secrets </configuration/secrets>`."
+msgstr ""
+
+#: ../../../configuration.rst:442
+#, python-format
+msgid ""
+"You can reference environment variables using the special syntax "
+"``%env(ENV_VAR_NAME)%``. The values of these options are resolved at "
+"runtime (only once per request, to not impact performance)."
+msgstr ""
+
+#: ../../../configuration.rst:446
+msgid ""
+"This example shows how you could configure the database connection using "
+"an env var:"
+msgstr ""
+
+#: ../../../configuration.rst:490
+msgid ""
+"The values of env vars can only be strings, but Symfony includes some "
+":doc:`env var processors </configuration/env_var_processors>` to "
+"transform their contents (e.g. to turn a string value into an integer)."
+msgstr ""
+
+#: ../../../configuration.rst:494
+msgid "To define the value of an env var, you have several options:"
+msgstr ""
+
+#: ../../../configuration.rst:496
+msgid ":ref:`Add the value to a .env file <config-dot-env>`;"
+msgstr ""
+
+#: ../../../configuration.rst:497
+msgid ":ref:`Encrypt the value as a secret <configuration-secrets>`;"
+msgstr ""
+
+#: ../../../configuration.rst:498
+msgid ""
+"Set the value as a real environment variable in your shell or your web "
+"server."
+msgstr ""
+
+#: ../../../configuration.rst:502
+msgid ""
+"Some hosts - like SymfonyCloud - offer easy `utilities to manage env "
+"vars`_ in production."
+msgstr ""
+
+#: ../../../configuration.rst:507
+msgid ""
+"Beware that dumping the contents of the ``$_SERVER`` and ``$_ENV`` "
+"variables or outputting the ``phpinfo()`` contents will display the "
+"values of the environment variables, exposing sensitive information such "
+"as the database credentials."
+msgstr ""
+
+#: ../../../configuration.rst:512
+msgid ""
+"The values of the env vars are also exposed in the web interface of the "
+":doc:`Symfony profiler </profiler>`. In practice this shouldn't be a "
+"problem because the web profiler must **never** be enabled in production."
+msgstr ""
+
+#: ../../../configuration.rst:520
+msgid "Configuring Environment Variables in .env Files"
+msgstr ""
+
+#: ../../../configuration.rst:522
+msgid ""
+"Instead of defining env vars in your shell or your web server, Symfony "
+"provides a convenient way to define them inside a ``.env`` (with a "
+"leading dot) file located at the root of your project."
+msgstr ""
+
+#: ../../../configuration.rst:526
+msgid ""
+"The ``.env`` file is read and parsed on every request and its env vars "
+"are added to the ``$_ENV`` & ``$_SERVER`` PHP variables. Any existing env"
+" vars are *never* overwritten by the values defined in ``.env``, so you "
+"can combine both."
+msgstr ""
+
+#: ../../../configuration.rst:530
+msgid ""
+"For example, to define the ``DATABASE_URL`` env var shown earlier in this"
+" article, you can add:"
+msgstr ""
+
+#: ../../../configuration.rst:538
+msgid ""
+"This file should be committed to your repository and (due to that fact) "
+"should only contain \"default\" values that are good for local "
+"development. This file should not contain production values."
+msgstr ""
+
+#: ../../../configuration.rst:542
+msgid ""
+"In addition to your own env vars, this ``.env`` file also contains the "
+"env vars defined by the third-party packages installed in your "
+"application (they are added automatically by :ref:`Symfony Flex <symfony-"
+"flex>` when installing packages)."
+msgstr ""
+
+#: ../../../configuration.rst:549
+msgid "Overriding Environment Values via .env.local"
+msgstr ""
+
+#: ../../../configuration.rst:551
+msgid ""
+"If you need to override an environment value (e.g. to a different value "
+"on your local machine), you can do that in a ``.env.local`` file:"
+msgstr ""
+
+#: ../../../configuration.rst:559
+msgid ""
+"This file should be ignored by git and should *not* be committed to your "
+"repository. Several other ``.env`` files are available to set environment"
+" variables in *just* the right situation:"
+msgstr ""
+
+#: ../../../configuration.rst:563
+msgid ""
+"``.env``: defines the default values of the env vars needed by the "
+"application;"
+msgstr ""
+
+#: ../../../configuration.rst:564
+msgid ""
+"``.env.local``: overrides the default values for all environments but "
+"only on the machine which contains the file. This file should not be "
+"committed to the repository and it's ignored in the ``test`` environment "
+"(because tests should produce the same results for everyone);"
+msgstr ""
+
+#: ../../../configuration.rst:568
+msgid ""
+"``.env.<environment>`` (e.g. ``.env.test``): overrides env vars only for "
+"one environment but for all machines (these files *are* committed);"
+msgstr ""
+
+#: ../../../configuration.rst:570
+msgid ""
+"``.env.<environment>.local`` (e.g. ``.env.test.local``): defines machine-"
+"specific env var overrides only for one environment. It's similar to "
+"``.env.local``, but the overrides only apply to one environment."
+msgstr ""
+
+#: ../../../configuration.rst:574
+msgid ""
+"*Real* environment variables always win over env vars created by any of "
+"the ``.env`` files."
+msgstr ""
+
+#: ../../../configuration.rst:577
+msgid ""
+"The ``.env`` and ``.env.<environment>`` files should be committed to the "
+"repository because they are the same for all developers and machines. "
+"However, the env files ending in ``.local`` (``.env.local`` and "
+"``.env.<environment>.local``) **should not be committed** because only "
+"you will use them. In fact, the ``.gitignore`` file that comes with "
+"Symfony prevents them from being committed."
+msgstr ""
+
+#: ../../../configuration.rst:585
+msgid ""
+"Applications created before November 2018 had a slightly different "
+"system, involving a ``.env.dist`` file. For information about upgrading, "
+"see: :doc:`configuration/dot-env-changes`."
+msgstr ""
+
+#: ../../../configuration.rst:592
+msgid "Configuring Environment Variables in Production"
+msgstr ""
+
+#: ../../../configuration.rst:594
+msgid ""
+"In production, the ``.env`` files are also parsed and loaded on each "
+"request. So the easiest way to define env vars is by deploying a "
+"``.env.local`` file to your production server(s) with your production "
+"values."
+msgstr ""
+
+#: ../../../configuration.rst:598
+msgid ""
+"To improve performance, you can optionally run the ``dump-env`` command "
+"(available in :ref:`Symfony Flex <symfony-flex>` 1.2 or later):"
+msgstr ""
+
+#: ../../../configuration.rst:606
+msgid ""
+"After running this command, Symfony will load the ``.env.local.php`` file"
+" to get the environment variables and will not spend time parsing the "
+"``.env`` files."
+msgstr ""
+
+#: ../../../configuration.rst:611
+msgid ""
+"Update your deployment tools/workflow to run the ``dump-env`` command "
+"after each deploy to improve the application performance."
+msgstr ""
+
+#: ../../../configuration.rst:617
+msgid "Encrypting Environment Variables (Secrets)"
+msgstr ""
+
+#: ../../../configuration.rst:619
+msgid ""
+"Instead of defining a real environment variable or adding it to a "
+"``.env`` file, if the value of a variable is sensitive (e.g. an API key "
+"or a database password), you can encrypt the value using the "
+":doc:`secrets management system </configuration/secrets>`."
+msgstr ""
+
+#: ../../../configuration.rst:624
+msgid "Listing Environment Variables"
+msgstr ""
+
+#: ../../../configuration.rst:626
+msgid ""
+"Regardless of how you set environment variables, you can see a full list "
+"with their values by running:"
+msgstr ""
+
+#: ../../../configuration.rst:650
+msgid "Accessing Configuration Parameters"
+msgstr ""
+
+#: ../../../configuration.rst:652
+msgid ""
+"Controllers and services can access all the configuration parameters. "
+"This includes both the :ref:`parameters defined by yourself "
+"<configuration-parameters>` and the parameters created by "
+"packages/bundles. Run the following command to see all the parameters "
+"that exist in your application:"
+msgstr ""
+
+#: ../../../configuration.rst:661
+msgid ""
+"In controllers extending from the :ref:`AbstractController <the-base-"
+"controller-class-services>`, use the ``getParameter()`` helper::"
+msgstr ""
+
+#: ../../../configuration.rst:682
+msgid ""
+"In services and controllers not extending from ``AbstractController``, "
+"inject the parameters as arguments of their constructors. You must inject"
+" them explicitly because :doc:`service autowiring "
+"</service_container/autowiring>` doesn't work for parameters:"
+msgstr ""
+
+#: ../../../configuration.rst:731
+msgid ""
+"If you inject the same parameters over and over again, use the "
+"``services._defaults.bind`` option instead. The arguments defined in that"
+" option are injected automatically whenever a service constructor or "
+"controller action defines an argument with that exact name. For example, "
+"to inject the value of the :ref:`kernel.project_dir parameter "
+"<configuration-kernel-project-directory>` whenever a service/controller "
+"defines a ``$projectDir`` argument, use this:"
+msgstr ""
+
+#: ../../../configuration.rst:790
+msgid ""
+"Read the article about :ref:`binding arguments by name and/or type "
+"<services-binding>` to learn more about this powerful feature."
+msgstr ""
+
+#: ../../../configuration.rst:793
+msgid ""
+"Finally, if some service needs access to lots of parameters, instead of "
+"injecting each of them individually, you can inject all the application "
+"parameters at once by type-hinting any of its constructor arguments with "
+"the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\ParameterBag\\\\ContainerBagInterface`::"
+msgstr ""
+
+#: ../../../configuration.rst:823
+msgid "Keep Going!"
+msgstr ""
+
+#: ../../../configuration.rst:825
+msgid ""
+"Congratulations! You've tackled the basics of Symfony. Next, learn about "
+"*each* part of Symfony individually by following the guides. Check out:"
+msgstr ""
+
+#: ../../../configuration.rst:828
+msgid ":doc:`/forms`"
+msgstr ""
+
+#: ../../../configuration.rst:829
+msgid ":doc:`/doctrine`"
+msgstr ""
+
+#: ../../../configuration.rst:830
+msgid ":doc:`/service_container`"
+msgstr ""
+
+#: ../../../configuration.rst:831
+msgid ":doc:`/security`"
+msgstr ""
+
+#: ../../../configuration.rst:832
+msgid ":doc:`/mailer`"
+msgstr ""
+
+#: ../../../configuration.rst:833
+msgid ":doc:`/logging`"
+msgstr ""
+
+#: ../../../configuration.rst:835
+msgid "And all the other topics related to configuration:"
+msgstr ""
+

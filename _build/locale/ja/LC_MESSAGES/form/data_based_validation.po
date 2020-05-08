@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/data_based_validation.rst:5
+msgid "How to Choose Validation Groups Based on the Submitted Data"
+msgstr ""
+
+#: ../../../form/data_based_validation.rst:7
+msgid ""
+"If you need some advanced logic to determine the validation groups (e.g. "
+"based on submitted data), you can set the ``validation_groups`` option to"
+" an array callback::"
+msgstr ""
+
+#: ../../../form/data_based_validation.rst:25
+msgid ""
+"This will call the static method ``determineValidationGroups()`` on the "
+"``Client`` class after the form is submitted, but before validation is "
+"executed. The Form object is passed as an argument to that method (see "
+"next example). You can also define whole logic inline by using a "
+"``Closure``::"
+msgstr ""
+
+#: ../../../form/data_based_validation.rst:50
+msgid ""
+"Using the ``validation_groups`` option overrides the default validation "
+"group which is being used. If you want to validate the default "
+"constraints of the entity as well you have to adjust the option as "
+"follows::"
+msgstr ""
+
+#: ../../../form/data_based_validation.rst:74
+msgid ""
+"You can find more information about how the validation groups and the "
+"default constraints work in the article about :doc:`validation groups "
+"</validation/groups>`."
+msgstr ""
+

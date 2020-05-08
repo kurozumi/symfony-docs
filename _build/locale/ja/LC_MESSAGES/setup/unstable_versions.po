@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/unstable_versions.rst:2
+msgid "How to Install or Upgrade to the Latest, Unreleased Symfony Version"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:4
+msgid ""
+"In this article, you'll learn how to install and use new Symfony versions"
+" before they are released as stable versions."
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:8
+msgid "Creating a New Project Based on an Unstable Symfony Version"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:11
+msgid ""
+"Suppose that the Symfony 4.0 version hasn't been released yet and you "
+"want to create a new project to test its features. First, `install the "
+"Composer package manager`_. Then, open a command console, enter your "
+"project's directory and execute the following command:"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:21
+msgid ""
+"Once the command finishes its execution, you'll have a new Symfony "
+"project created in the ``my_project/`` directory."
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:25
+msgid "Upgrading your Project to an Unstable Symfony Version"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:27
+msgid ""
+"Suppose again that Symfony 4.0 hasn't been released yet and you want to "
+"upgrade an existing application to test that your project works with it."
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:30
+msgid ""
+"First, open the ``composer.json`` file located in the root directory of "
+"your project. Then, edit the value of all of the ``symfony/*`` libraries "
+"to the new version and change your ``minimum-stability`` to ``beta``:"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:45
+msgid ""
+"You can also use set ``minimum-stability`` to ``dev``, or omit this line "
+"entirely, and opt into your stability on each package by using "
+"constraints like ``4.0.*@beta``."
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:49
+msgid "Finally, from a terminal, update your project's dependencies:"
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:55
+msgid ""
+"After upgrading the Symfony version, read the :ref:`Symfony Upgrading "
+"Guide <upgrade-major-symfony-deprecations>` to learn how you should "
+"proceed to update your application's code in case the new Symfony version"
+" has deprecated some of its features."
+msgstr ""
+
+#: ../../../setup/unstable_versions.rst:61
+msgid ""
+"If you use Git to manage the project's code, it's a good practice to "
+"create a new branch to test the new Symfony version. This solution avoids"
+" introducing any issue in your application and allows you to test the new"
+" version with total confidence:"
+msgstr ""
+

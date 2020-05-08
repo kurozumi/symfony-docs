@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../configuration/micro_kernel_trait.rst:2
+msgid "Building your own Framework with the MicroKernelTrait"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:4
+msgid ""
+"The default ``Kernel`` class included in Symfony applications uses a "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Kernel\\\\MicroKernelTrait`"
+" to configure the bundles, the routes and the service container in the "
+"same class."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:8
+msgid ""
+"This micro-kernel approach is flexible, allowing you to control your "
+"application structure and features."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:12
+msgid "A Single-File Symfony Application"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:14
+msgid ""
+"Start with a completely empty directory and install these Symfony "
+"components via Composer:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:23
+msgid ""
+"Next, create an ``index.php`` file that defines the kernel class and "
+"executes it::"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:76
+msgid ""
+"That's it! To test it, start the :doc:`Symfony Local Web Server "
+"</setup/symfony_server>`:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:83
+msgid ""
+"Then see the JSON response in your browser: "
+"http://localhost:8000/random/10"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:86
+msgid "The Methods of a \"Micro\" Kernel"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:88
+msgid ""
+"When you use the ``MicroKernelTrait``, your kernel needs to have exactly "
+"three methods that define your bundles, your services and your routes:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:92
+msgid "**registerBundles()**"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:92
+msgid "This is the same ``registerBundles()`` that you see in a normal kernel."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:98
+msgid "**configureContainer(ContainerBuilder $c, LoaderInterface $loader)**"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:95
+msgid ""
+"This method builds and configures the container. In practice, you will "
+"use ``loadFromExtension`` to configure different bundles (this is the "
+"equivalent of what you see in a normal ``config/packages/*`` file). You "
+"can also register services directly in PHP or load external configuration"
+" files (shown below)."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:103
+msgid "**configureRoutes(RoutingConfigurator $routes)**"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:101
+msgid ""
+"Your job in this method is to add routes to the application. The "
+"``RoutingConfigurator`` has methods that make adding routes in PHP more "
+"fun. You can also load external routing files (shown below)."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:106
+msgid "Advanced Example: Twig, Annotations and the Web Debug Toolbar"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:108
+msgid ""
+"The purpose of the ``MicroKernelTrait`` is *not* to have a single-file "
+"application. Instead, its goal to give you the power to choose your "
+"bundles and structure."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:111
+msgid ""
+"First, you'll probably want to put your PHP classes in an ``src/`` "
+"directory. Configure your ``composer.json`` file to load from there:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:127
+msgid "Then, run ``composer dump-autoload`` to dump your new autoload config."
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:129
+msgid ""
+"Now, suppose you want to use Twig and load routes via annotations. "
+"Instead of putting *everything* in ``index.php``, create a new "
+"``src/Kernel.php`` to hold the kernel. Now it looks like this::"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:198
+msgid ""
+"Before continuing, run this command to add support for the new "
+"dependencies:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:204
+msgid ""
+"Unlike the previous kernel, this loads an external "
+"``config/framework.yaml`` file, because the configuration started to get "
+"bigger:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:241
+msgid ""
+"This also loads annotation routes from an ``src/Controller/`` directory, "
+"which has one file in it::"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:265
+msgid ""
+"Template files should live in the ``templates/`` directory at the root of"
+" your project. This template lives at "
+"``templates/micro/random.html.twig``:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:281
+msgid ""
+"Finally, you need a front controller to boot and run the application. "
+"Create a ``public/index.php``::"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:299
+msgid ""
+"That's it! This ``/random/10`` URL will work, Twig will render, and "
+"you'll even get the web debug toolbar to show up at the bottom. The final"
+" structure looks like this:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:325
+msgid ""
+"As before you can use the :doc:`Symfony Local Web Server "
+"</setup/symfony_server>`:"
+msgstr ""
+
+#: ../../../configuration/micro_kernel_trait.rst:333
+msgid "Then visit the page in your browser: http://localhost:8000/random/10"
+msgstr ""
+

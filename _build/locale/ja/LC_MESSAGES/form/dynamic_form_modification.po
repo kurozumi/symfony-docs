@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/dynamic_form_modification.rst:5
+msgid "How to Dynamically Modify Forms Using Form Events"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:7
+msgid ""
+"Often times, a form can't be created statically. In this article, you'll "
+"learn how to customize your form based on three common use-cases:"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:10
+msgid ":ref:`form-events-underlying-data`"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:12
+msgid ""
+"Example: you have a \"Product\" form and need to modify/add/remove a "
+"field based on the data on the underlying Product being edited."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:15
+msgid ":ref:`form-events-user-data`"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:17
+msgid ""
+"Example: you create a \"Friend Message\" form and need to build a drop-"
+"down that contains only users that are friends with the *current* "
+"authenticated user."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:21
+msgid ":ref:`form-events-submitted-data`"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:23
+msgid ""
+"Example: on a registration form, you have a \"country\" field and a "
+"\"state\" field which should populate dynamically based on the value in "
+"the \"country\" field."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:27
+msgid ""
+"If you wish to learn more about the basics behind form events, you can "
+"take a look at the :doc:`Form Events </form/events>` documentation."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:33
+msgid "Customizing your Form Based on the Underlying Data"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:35
+msgid ""
+"Before starting with dynamic form generation, remember what a bare form "
+"class looks like::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:64
+msgid ""
+"If this particular section of code isn't already familiar to you, you "
+"probably need to take a step back and first review the :doc:`Forms "
+"article </forms>` before proceeding."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:68
+msgid ""
+"Assume for a moment that this form utilizes an imaginary \"Product\" "
+"class that has only two properties (\"name\" and \"price\"). The form "
+"generated from this class will look the exact same regardless if a new "
+"Product is being created or if an existing product is being edited (e.g. "
+"a product fetched from the database)."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:73
+msgid ""
+"Suppose now, that you don't want the user to be able to change the "
+"``name`` value once the object has been created. To do this, you can rely"
+" on Symfony's :doc:`EventDispatcher component "
+"</components/event_dispatcher>` system to analyze the data on the object "
+"and modify the form based on the Product object's data. In this article, "
+"you'll learn how to add this level of flexibility to your forms."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:81
+msgid "Adding an Event Listener to a Form Class"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:83
+msgid ""
+"So, instead of directly adding that ``name`` widget, the responsibility "
+"of creating that particular field is delegated to an event listener::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:107
+msgid ""
+"The goal is to create a ``name`` field *only* if the underlying "
+"``Product`` object is new (e.g. hasn't been persisted to the database). "
+"Based on that, the event listener might look like the following::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:130
+msgid ""
+"The ``FormEvents::PRE_SET_DATA`` line actually resolves to the string "
+"``form.pre_set_data``. "
+":class:`Symfony\\\\Component\\\\Form\\\\FormEvents` serves an "
+"organizational purpose. It is a centralized location in which you can "
+"find all of the various form events available. You can view the full list"
+" of form events via the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormEvents` class."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:138
+msgid "Adding an Event Subscriber to a Form Class"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:140
+msgid ""
+"For better reusability or if there is some heavy logic in your event "
+"listener, you can also move the logic for creating the ``name`` field to "
+"an :ref:`event subscriber <event_dispatcher-using-event-subscribers>`::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:172
+msgid "Great! Now use that in your form class::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:195
+msgid "How to dynamically Generate Forms Based on user Data"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:197
+msgid ""
+"Sometimes you want a form to be generated dynamically based not only on "
+"data from the form but also on something else - like some data from the "
+"current user. Suppose you have a social website where a user can only "
+"message people marked as friends on the website. In this case, a \"choice"
+" list\" of whom to message should only contain users that are the current"
+" user's friends."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:204
+msgid "Creating the Form Type"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:206
+msgid "Using an event listener, your form might look like this::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:232
+msgid ""
+"The problem is now to get the current user and create a choice field that"
+" contains only this user's friends. This can be done injecting the "
+"``Security`` service into the form type so you can get the current user "
+"object::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:252
+msgid "Customizing the Form Type"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:254
+msgid ""
+"Now that you have all the basics in place you can use the features of the"
+" security helper to fill in the listener logic::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:319
+msgid ""
+"You might wonder, now that you have access to the ``User`` object, why "
+"not just use it directly in ``buildForm()`` and omit the event listener? "
+"This is because doing so in the ``buildForm()`` method would result in "
+"the whole form type being modified and not just this one form instance. "
+"This may not usually be a problem, but technically a single form type "
+"could be used on a single request to create many forms or fields."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:327
+msgid "Using the Form"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:329
+msgid ""
+"If you're using the :ref:`default services.yaml configuration <service-"
+"container-services-load-example>`, your form is ready to be used thanks "
+"to :ref:`autowire <services-autowire>` and :ref:`autoconfigure <services-"
+"autoconfigure>`. Otherwise, :ref:`register the form class as a service "
+"<service-container-creating-service>` and :doc:`tag it "
+"</service_container/tags>` with the ``form.type`` tag."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:335
+msgid "In a controller, create the form like normal::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:349
+msgid "You can also  embed the form type into another form::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:360
+msgid "Dynamic Generation for Submitted Forms"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:362
+msgid ""
+"Another case that can appear is that you want to customize the form "
+"specific to the data that was submitted by the user. For example, imagine"
+" you have a registration form for sports gatherings. Some events will "
+"allow you to specify your preferred position on the field. This would be "
+"a ``choice`` field for example. However, the possible choices will depend"
+" on each sport. Football will have attack, defense, goalkeeper etc... "
+"Baseball will have a pitcher but will not have a goalkeeper. You will "
+"need the correct options in order for validation to pass."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:370
+msgid ""
+"The meetup is passed as an entity field to the form. So we can access "
+"each sport like this::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:417
+msgid ""
+"When you're building this form to display to the user for the first time,"
+" then this example works perfectly."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:420
+msgid ""
+"However, things get more difficult when you handle the form submission. "
+"This is because the ``PRE_SET_DATA`` event tells us the data that you're "
+"starting with (e.g. an empty ``SportMeetup`` object), *not* the submitted"
+" data."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:424
+msgid "On a form, we can usually listen to the following events:"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:426
+msgid "``PRE_SET_DATA``"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:427
+msgid "``POST_SET_DATA``"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:428
+msgid "``PRE_SUBMIT``"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:429
+msgid "``SUBMIT``"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:430
+msgid "``POST_SUBMIT``"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:432
+msgid ""
+"The key is to add a ``POST_SUBMIT`` listener to the field that your new "
+"field depends on. If you add a ``POST_SUBMIT`` listener to a form child "
+"(e.g. ``sport``), and add new children to the parent form, the Form "
+"component will detect the new field automatically and map it to the "
+"submitted client data."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:437
+msgid "The type would now look like::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:495
+msgid ""
+"You can see that you need to listen on these two events and have "
+"different callbacks only because in two different scenarios, the data "
+"that you can use is available in different events. Other than that, the "
+"listeners always perform exactly the same things on a given form."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:502
+msgid ""
+"The ``FormEvents::POST_SUBMIT`` event does not allow to modify the form "
+"the listener is bound to, but it allows to modify its parent."
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:505
+msgid ""
+"One piece that is still missing is the client-side updating of your form "
+"after the sport is selected. This should be handled by making an AJAX "
+"call back to your application. Assume that you have a sport meetup "
+"creation controller::"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:538
+msgid ""
+"The associated template uses some JavaScript to update the ``position`` "
+"form field according to the current selection in the ``sport`` field:"
+msgstr ""
+
+#: ../../../form/dynamic_form_modification.rst:576
+msgid ""
+"The major benefit of submitting the whole form to just extract the "
+"updated ``position`` field is that no additional server-side code is "
+"needed; all the code from above to generate the submitted form can be "
+"reused."
+msgstr ""
+

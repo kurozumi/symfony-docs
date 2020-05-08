@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/split-chunks.rst:2
+msgid "Preventing Duplication by \"Splitting\" Shared Code into Separate Files"
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:4
+msgid ""
+"Suppose you have multiple entry files and *each* requires ``jquery``. In "
+"this case, *each* output file will contain jQuery, making your files much"
+" larger than necessary. To solve this, you can ask webpack to analyze "
+"your files and *split* them into additional files, which will contain "
+"\"shared\" code."
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:9
+msgid "To enable this, call ``splitEntryChunks()``:"
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:25
+msgid ""
+"Now, each output file (e.g. ``homepage.js``) *may* be split into multiple"
+" file (e.g. ``homepage.js``, ``vendor~homepage.js``). This means that you"
+" *may* need to include *multiple* ``script`` tags (or ``link`` tags for "
+"CSS) in your template. Encore creates an :ref:`entrypoints.json <encore-"
+"entrypointsjson-simple-description>` file that lists exactly which CSS "
+"and JavaScript files are needed for each entry."
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:31
+msgid ""
+"If you're using the ``encore_entry_link_tags()`` and "
+"``encore_entry_script_tags()`` Twig functions from WebpackEncoreBundle, "
+"you don't need to do anything else! These functions automatically read "
+"this file and render as many ``script`` or ``link`` tags as needed:"
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:47
+msgid "Controlling how Assets are Split"
+msgstr ""
+
+#: ../../../frontend/encore/split-chunks.rst:49
+msgid ""
+"The logic for *when* and *how* to split the files is controlled by the "
+"`SplitChunksPlugin from Webpack`_. You can control the configuration "
+"passed to this plugin with the ``configureSplitChunks()`` function:"
+msgstr ""
+

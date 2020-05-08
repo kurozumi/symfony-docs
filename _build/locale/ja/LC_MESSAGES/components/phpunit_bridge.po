@@ -1,0 +1,982 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/phpunit_bridge.rst:6
+msgid "The PHPUnit Bridge"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:8
+msgid ""
+"The PHPUnit Bridge provides utilities to report legacy tests and usage of"
+" deprecated code and helpers for mocking native functions related to "
+"time, DNS and class existence."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:12
+msgid "It comes with the following features:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:14
+msgid ""
+"Forces the tests to use a consistent locale (``C``) (if you create "
+"locale-sensitive tests, use PHPUnit's ``setLocale()`` method);"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:17
+msgid "Auto-register ``class_exists`` to load Doctrine annotations (when used);"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:19
+msgid "It displays the whole list of deprecated features used in the application;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:21
+msgid "Displays the stack trace of a deprecation on-demand;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:23
+msgid ""
+"Provides a ``ClockMock``, ``DnsMock`` and ``ClassExistsMock`` classes for"
+" tests sensitive to time, network or class existence;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:26
+msgid ""
+"Provides a modified version of PHPUnit that allows 1. separating the "
+"dependencies of your app from those of phpunit to prevent any unwanted "
+"constraints to apply; 2. running tests in parallel when a test suite is "
+"split in several phpunit.xml files; 3. recording and replaying skipped "
+"tests;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:31
+msgid ""
+"It allows to create tests that are compatible with multiple PHPUnit "
+"versions (because it provides polyfills for missing methods, namespaced "
+"aliases for non-namespaced classes, etc.)."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:36
+#: ../../../components/phpunit_bridge.rst:924
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:46
+msgid ""
+"The PHPUnit bridge is designed to work with all maintained versions of "
+"Symfony components, even across different major versions of them. You "
+"should always use its very latest stable major version to get the most "
+"accurate deprecation report."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:51
+msgid ""
+"If you plan to :ref:`write-assertions-about-deprecations` and use the "
+"regular PHPUnit script (not the modified PHPUnit script provided by "
+"Symfony), you have to register a new `test listener`_ called "
+"``SymfonyTestsListener``:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:70
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:74
+msgid ""
+"This article explains how to use the PhpUnitBridge features as an "
+"independent component in any PHP application. Read the :doc:`/testing` "
+"article to learn about how to use it in Symfony applications."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:78
+msgid ""
+"Once the component is installed, a ``simple-phpunit`` script is created "
+"in the ``vendor/`` directory to run tests. This script wraps the original"
+" PHPUnit binary to provide more features:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:87
+msgid ""
+"After running your PHPUnit tests, you will get a report similar to this "
+"one:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:107
+msgid "The summary includes:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:111
+msgid "**Unsilenced**"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:110
+msgid ""
+"Reports deprecation notices that were triggered without the recommended "
+"`@-silencing operator`_."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:114
+msgid "**Legacy**"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:114
+msgid ""
+"Deprecation notices denote tests that explicitly test some legacy "
+"features."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:118
+msgid "**Remaining/Other**"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:117
+msgid ""
+"Deprecation notices are all other (non-legacy) notices, grouped by "
+"message, test class and method."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:122
+msgid ""
+"If you don't want to use the ``simple-phpunit`` script, register the "
+"following `PHPUnit event listener`_ in your PHPUnit configuration file to"
+" get the same report about deprecations (which is created by a `PHP error"
+" handler`_ called "
+":class:`Symfony\\\\Bridge\\\\PhpUnit\\\\DeprecationErrorHandler`):"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:136
+msgid "Running Tests in Parallel"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:138
+msgid ""
+"The modified PHPUnit script allows running tests in parallel by providing"
+" a directory containing multiple test suites with their own "
+"``phpunit.xml.dist``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:155
+msgid ""
+"The modified PHPUnit script will recursively go through the provided "
+"directory, up to a depth of 3 subdirectories or the value specified by "
+"the environment variable ``SYMFONY_PHPUNIT_MAX_DEPTH``, looking for "
+"``phpunit.xml.dist`` files and then running each suite it finds in "
+"parallel, collecting their output and displaying each test suite's "
+"results in their own section."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:162
+msgid "Trigger Deprecation Notices"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:164
+msgid ""
+"Deprecation notices can be triggered by using ``trigger_deprecation`` "
+"from the ``symfony/deprecation-contracts`` package::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:174
+msgid "Mark Tests as Legacy"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:176
+msgid "There are three ways to mark a test as legacy:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:178
+msgid ""
+"(**Recommended**) Add the ``@group legacy`` annotation to its class or "
+"method;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:180
+msgid "Make its class name start with the ``Legacy`` prefix;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:182
+msgid "Make its method name start with ``testLegacy*()`` instead of ``test*()``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:186
+msgid ""
+"If your data provider calls code that would usually trigger a "
+"deprecation, you can prefix its name with ``provideLegacy`` or "
+"``getLegacy`` to silence these deprecations. If your data provider does "
+"not execute deprecated code, it is not required to choose a special "
+"naming just because the test being fed by the data provider is marked as "
+"legacy."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:192
+msgid ""
+"Also be aware that choosing one of the two legacy prefixes will not mark "
+"tests as legacy that make use of this data provider. You still have to "
+"mark them as legacy tests explicitly."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:197
+msgid "Configuration"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:199
+msgid ""
+"In case you need to inspect the stack trace of a particular deprecation "
+"triggered by your unit tests, you can set the "
+"``SYMFONY_DEPRECATIONS_HELPER`` `environment variable`_ to a regular "
+"expression that matches this deprecation's message, enclosed with ``/``. "
+"For example, with:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:219
+msgid ""
+"`PHPUnit`_ will stop your test suite once a deprecation notice is "
+"triggered whose message contains the ``\"foobar\"`` string."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:223
+msgid "Making Tests Fail"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:225
+msgid ""
+"By default, any non-legacy-tagged or any non-`@-silenced <@-silencing "
+"operator>`_ deprecation notices will make tests fail. Alternatively, you "
+"can configure an arbitrary threshold by setting "
+"``SYMFONY_DEPRECATIONS_HELPER`` to ``max[total]=320`` for instance. It "
+"will make the tests fails only if a higher number of deprecation notices "
+"is reached (``0`` is the default value)."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:232
+msgid ""
+"You can have even finer-grained control by using other keys of the "
+"``max`` array, which are ``self``, ``direct``, and ``indirect``. The "
+"``SYMFONY_DEPRECATIONS_HELPER`` environment variable accepts a URL-"
+"encoded string, meaning you can combine thresholds and any other "
+"configuration setting, like this: "
+"``SYMFONY_DEPRECATIONS_HELPER=max[total]=42&max[self]=0&verbose=0``"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:239
+msgid "Internal deprecations"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:241
+msgid ""
+"When you maintain a library, having the test suite fail as soon as a "
+"dependency introduces a new deprecation is not desirable, because it "
+"shifts the burden of fixing that deprecation to any contributor that "
+"happens to submit a pull request shortly after a new vendor release is "
+"made with that deprecation."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:246
+msgid ""
+"To mitigate this, you can either use tighter requirements, in the hope "
+"that dependencies will not introduce deprecations in a patch version, or "
+"even commit the ``composer.lock`` file, which would create another class "
+"of issues. Libraries will often use "
+"``SYMFONY_DEPRECATIONS_HELPER=max[total]=999999`` because of this. This "
+"has the drawback of allowing contributions that introduce deprecations "
+"but:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:253
+msgid "forget to fix the deprecated calls if there are any;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:254
+msgid "forget to mark appropriate tests with the ``@group legacy`` annotations."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:256
+msgid ""
+"By using ``SYMFONY_DEPRECATIONS_HELPER=max[self]=0``, deprecations that "
+"are triggered outside the ``vendors`` directory will be accounted for "
+"separately, while deprecations triggered from a library inside it will "
+"not (unless you reach 999999 of these), giving you the best of both "
+"worlds."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:262
+msgid "Direct and Indirect Deprecations"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:264
+msgid ""
+"When working on a project, you might be more interested in "
+"``max[direct]``. Let's say you want to fix deprecations as soon as they "
+"appear. A problem many developers experience is that some dependencies "
+"they have tend to lag behind their own dependencies, meaning they do not "
+"fix deprecations as soon as possible, which means you should create a "
+"pull request on the outdated vendor, and ignore these deprecations until "
+"your pull request is merged."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:271
+msgid ""
+"The ``max[direct]`` config allows you to put a threshold on direct "
+"deprecations only, allowing you to notice when *your code* is using "
+"deprecated APIs, and to keep up with the changes. You can still use "
+"``max[indirect]`` if you want to keep indirect deprecations under a given"
+" threshold."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:276
+msgid "Here is a summary that should help you pick the right configuration:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:279
+msgid "Value"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:279
+msgid "Recommended situation"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:281
+msgid "max[total]=0"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:281
+msgid "Recommended for actively maintained projects with robust/no dependencies"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:284
+msgid "max[direct]=0"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:284
+msgid ""
+"Recommended for projects with dependencies that fail to keep up with new "
+"deprecations."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:287
+msgid "max[self]=0"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:287
+msgid ""
+"Recommended for libraries that use the deprecation system themselves and "
+"cannot afford to use one of the modes above."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:293
+msgid "Disabling the Verbose Output"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:295
+msgid ""
+"By default, the bridge will display a detailed output with the number of "
+"deprecations and where they arise. If this is too much for you, you can "
+"use ``SYMFONY_DEPRECATIONS_HELPER=verbose=0`` to turn the verbose output "
+"off."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:300
+msgid "Disabling the Deprecation Helper"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:302
+msgid ""
+"Set the ``SYMFONY_DEPRECATIONS_HELPER`` environment variable to "
+"``disabled=1`` to completely disable the deprecation helper. This is "
+"useful to make use of the rest of features provided by this component "
+"without getting errors or messages related to deprecations."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:310
+msgid "Deprecation Notices at Autoloading Time"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:312
+msgid ""
+"By default, the PHPUnit Bridge uses ``DebugClassLoader`` from the "
+":doc:`ErrorHandler component </components/error_handler>` to throw "
+"deprecation notices at class autoloading time. This can be disabled with "
+"the ``debug-class-loader`` option."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:333
+msgid "Write Assertions about Deprecations"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:335
+msgid ""
+"When adding deprecations to your code, you might like writing tests that "
+"verify that they are triggered as required. To do so, the bridge provides"
+" the ``expectDeprecation()`` method that you can use on your test "
+"methods. It requires you to pass the expected message, given in the same "
+"format as for the `PHPUnit's assertStringMatchesFormat()`_ method. If you"
+" expect more than one deprecation message for a given test method, you "
+"can use the method several times (order matters)::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:369
+msgid ""
+"Symfony versions previous to 5.1 also included a ``@expectedDeprecation``"
+" annotation to test deprecations, but it was deprecated in favor of the "
+"method."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:373
+msgid "Display the Full Stack Trace"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:375
+msgid ""
+"By default, the PHPUnit Bridge displays only deprecation messages. To "
+"show the full stack trace related to a deprecation, set the value of "
+"``SYMFONY_DEPRECATIONS_HELPER`` to a regular expression matching the "
+"deprecation message."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:379
+msgid "For example, if the following deprecation notice is thrown:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:386
+msgid "Running the following command will display the full stack trace:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:393
+msgid "Testing with Multiple PHPUnit Versions"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:395
+msgid ""
+"When testing a library that has to be compatible with several versions of"
+" PHP, the test suite cannot use the latest versions of PHPUnit because:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:398
+msgid ""
+"PHPUnit 8 deprecated several methods in favor of other methods which are "
+"not available in older versions (e.g. PHPUnit 4);"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:400
+msgid ""
+"PHPUnit 8 added the ``void`` return type to the ``setUp()`` method, which"
+" is not compatible with PHP 5.5;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:402
+msgid ""
+"PHPUnit switched to namespaced classes starting from PHPUnit 6, so tests "
+"must work with and without namespaces."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:406
+msgid "Polyfills for the Unavailable Methods"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:408
+msgid ""
+"When using the ``simple-phpunit`` script, PHPUnit Bridge injects "
+"polyfills for most methods of the ``TestCase`` and ``Assert`` classes "
+"(e.g. ``expectException()``, ``expectExceptionMessage()``, "
+"``assertContainsEquals()``, etc.). This allows writing test cases using "
+"the latest best practices while still remaining compatible with older "
+"PHPUnit versions."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:415
+msgid "Removing the Void Return Type"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:417
+msgid ""
+"When running the ``simple-phpunit`` script with the "
+"``SYMFONY_PHPUNIT_REMOVE_RETURN_TYPEHINT`` environment variable set to "
+"``1``, the PHPUnit bridge will alter the code of PHPUnit to remove the "
+"return type (introduced in PHPUnit 8) from ``setUp()``, ``tearDown()``, "
+"``setUpBeforeClass()`` and ``tearDownAfterClass()`` methods. This allows "
+"you to write a test compatible with both PHP 5 and PHPUnit 8."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:423
+msgid ""
+"Alternatively, you can use the trait "
+":class:`Symfony\\\\Bridge\\\\PhpUnit\\\\SetUpTearDownTrait`, which "
+"provides the right signature for the ``setUp()``, ``tearDown()``, "
+"``setUpBeforeClass()`` and ``tearDownAfterClass()`` methods and delegates"
+" the call to the ``doSetUp()``, ``doTearDown()``, "
+"``doSetUpBeforeClass()`` and ``doTearDownAfterClass()`` methods::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:450
+msgid "Using Namespaced PHPUnit Classes"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:452
+msgid ""
+"The PHPUnit bridge adds namespaced class aliases for most of the PHPUnit "
+"classes declared without namespaces (e.g. ``PHPUnit_Framework_Assert``), "
+"allowing you to always use the namespaced class declaration even when the"
+" test is executed with PHPUnit 4."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:458
+msgid "Time-sensitive Tests"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:461
+#: ../../../components/phpunit_bridge.rst:619
+#: ../../../components/phpunit_bridge.rst:695
+msgid "Use Case"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:463
+msgid "If you have this kind of time-related tests::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:482
+msgid ""
+"You used the :doc:`Symfony Stopwatch Component </components/stopwatch>` "
+"to calculate the duration time of your process, here 10 seconds. However,"
+" depending on the load of the server or the processes running on your "
+"local machine, the ``$duration`` could for example be ``10.000023s`` "
+"instead of ``10s``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:487
+msgid ""
+"This kind of tests are called transient tests: they are failing randomly "
+"depending on spurious and external circumstances. They are often cause "
+"trouble when using public continuous integration services like `Travis "
+"CI`_."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:492
+msgid "Clock Mocking"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:494
+msgid ""
+"The :class:`Symfony\\\\Bridge\\\\PhpUnit\\\\ClockMock` class provided by "
+"this bridge allows you to mock the PHP's built-in time functions "
+"``time()``, ``microtime()``, ``sleep()``, ``usleep()`` and ``gmdate()``. "
+"Additionally the function ``date()`` is mocked so it uses the mocked time"
+" if no timestamp is specified."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:499
+msgid ""
+"Other functions with an optional timestamp parameter that defaults to "
+"``time()`` will still use the system time instead of the mocked time. "
+"This means that you may need to change some code in your tests. For "
+"example, instead of ``new DateTime()``, you should use "
+"``DateTime::createFromFormat('U', time())`` to use the mocked ``time()`` "
+"function."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:505
+msgid ""
+"To use the ``ClockMock`` class in your test, add the ``@group time-"
+"sensitive`` annotation to its class or methods. This annotation only "
+"works when executing PHPUnit using the ``vendor/bin/simple-phpunit`` "
+"script or when registering the following listener in your PHPUnit "
+"configuration:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:520
+msgid ""
+"If you don't want to use the ``@group time-sensitive`` annotation, you "
+"can register the ``ClockMock`` class manually by calling "
+"``ClockMock::register(__CLASS__)`` and ``ClockMock::withClockMock(true)``"
+" before the test and ``ClockMock::withClockMock(false)`` after the test."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:525
+msgid ""
+"As a result, the following is guaranteed to work and is no longer a "
+"transient test::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:548
+msgid "And that's all!"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:552
+msgid ""
+"Time-based function mocking follows the `PHP namespace resolutions "
+"rules`_ so \"fully qualified function calls\" (e.g ``\\time()``) cannot "
+"be mocked."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:555
+msgid ""
+"The ``@group time-sensitive`` annotation is equivalent to calling "
+"``ClockMock::register(MyTest::class)``. If you want to mock a function "
+"used in a different class, do it explicitly using "
+"``ClockMock::register(MyClass::class)``::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:595
+msgid ""
+"An added bonus of using the ``ClockMock`` class is that time passes "
+"instantly. Using PHP's ``sleep(10)`` will make your test wait for 10 "
+"actual seconds (more or less). In contrast, the ``ClockMock`` class "
+"advances the internal clock the given number of seconds without actually "
+"waiting that time, so your test will execute 10 seconds faster."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:602
+msgid "DNS-sensitive Tests"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:604
+msgid ""
+"Tests that make network connections, for example to check the validity of"
+" a DNS record, can be slow to execute and unreliable due to the "
+"conditions of the network. For that reason, this component also provides "
+"mocks for these PHP functions:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:609
+msgid ":phpfunction:`checkdnsrr`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:610
+msgid ":phpfunction:`dns_check_record`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:611
+msgid ":phpfunction:`getmxrr`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:612
+msgid ":phpfunction:`dns_get_mx`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:613
+msgid ":phpfunction:`gethostbyaddr`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:614
+msgid ":phpfunction:`gethostbyname`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:615
+msgid ":phpfunction:`gethostbynamel`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:616
+msgid ":phpfunction:`dns_get_record`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:621
+msgid ""
+"Consider the following example that tests a custom class called "
+"``DomainValidator`` which defines a ``checkDnsRecord`` option to also "
+"validate that a domain is associated to a valid host::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:639
+msgid ""
+"In order to avoid making a real network connection, add the ``@dns-"
+"sensitive`` annotation to the class and use the "
+"``DnsMock::withMockedHosts()`` to configure the data you expect to get "
+"for the given hosts::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:665
+msgid ""
+"The ``withMockedHosts()`` method configuration is defined as an array. "
+"The keys are the mocked hosts and the values are arrays of DNS records in"
+" the same format returned by :phpfunction:`dns_get_record`, so you can "
+"simulate diverse network conditions::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:684
+msgid "Class Existence Based Tests"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:686
+msgid ""
+"Tests that behave differently depending on existing classes, for example "
+"Composer's development dependencies, are often hard to test for the "
+"alternate case. For that reason, this component also provides mocks for "
+"these PHP functions:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:690
+msgid ":phpfunction:`class_exists`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:691
+msgid ":phpfunction:`interface_exists`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:692
+msgid ":phpfunction:`trait_exists`"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:697
+msgid ""
+"Consider the following example that relies on the "
+"``Vendor\\DependencyClass`` to toggle a behavior::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:714
+msgid ""
+"A regular test case for ``MyClass`` (assuming the development "
+"dependencies are installed during tests) would look like::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:731
+msgid ""
+"In order to test the default behavior instead use the "
+"``ClassExistsMock::withMockedClasses()`` to configure the expected "
+"classes, interfaces and/or traits for the code to run::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:756
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:758
+msgid ""
+"The ``@group time-sensitive`` and ``@group dns-sensitive`` annotations "
+"work \"by convention\" and assume that the namespace of the tested class "
+"can be obtained just by removing the ``Tests\\`` part from the test "
+"namespace. I.e. if your test cases fully-qualified class name (FQCN) is "
+"``App\\Tests\\Watch\\DummyWatchTest``, it assumes the tested class "
+"namespace is ``App\\Watch``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:765
+msgid ""
+"If this convention doesn't work for your application, configure the "
+"mocked namespaces in the ``phpunit.xml`` file, as done for example in the"
+" :doc:`HttpKernel Component </components/http_kernel>`:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:789
+msgid ""
+"Under the hood, a PHPUnit listener injects the mocked functions in the "
+"tested classes' namespace. In order to work as expected, the listener has"
+" to run before the tested class ever runs. By default, the mocked "
+"functions are created when the annotation are found and the corresponding"
+" tests are run. Depending on how your tests are constructed, this might "
+"be too late. In this case, you will need to declare the namespaces of the"
+" tested classes in your ``phpunit.xml.dist``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:811
+msgid "Modified PHPUnit script"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:813
+msgid ""
+"This bridge provides a modified version of PHPUnit that you can call by "
+"using its ``bin/simple-phpunit`` command. It has the following features:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:816
+msgid "Works with a standalone vendor directory that doesn't conflict with yours;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:817
+msgid ""
+"Does not embed ``prophecy`` to prevent any conflicts with its "
+"dependencies;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:818
+msgid ""
+"Uses PHPUnit 4.8 when run with PHP <=5.5, PHPUnit 5.7 when run with PHP "
+">=5.6 and PHPUnit 6.5 when run with PHP >=7.2;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:820
+msgid ""
+"Collects and replays skipped tests when the "
+"``SYMFONY_PHPUNIT_SKIPPED_TESTS`` env var is defined: the env var should "
+"specify a file name that will be used for storing skipped tests on a "
+"first run, and replay them on the second run;"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:823
+msgid ""
+"Parallelizes test suites execution when given a directory as argument, "
+"scanning this directory for ``phpunit.xml.dist`` files up to "
+"``SYMFONY_PHPUNIT_MAX_DEPTH`` levels (specified as an env var, defaults "
+"to ``3``);"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:827
+msgid ""
+"The script writes the modified PHPUnit it builds in a directory that can "
+"be configured by the ``SYMFONY_PHPUNIT_DIR`` env var, or in the same "
+"directory as the ``simple-phpunit`` if it is not provided. It's also "
+"possible to set this env var in the ``phpunit.xml.dist`` file."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:832
+msgid ""
+"By default, these are the PHPUnit versions used depending on the "
+"installed PHP versions:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:835
+msgid "Installed PHP version"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:835
+msgid "PHPUnit version used by default"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:837
+msgid "PHP <= 5.5"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:837
+msgid "PHPUnit 4.8"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:838
+msgid "PHP 5.6"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:838
+msgid "PHPUnit 5.7"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:839
+msgid "PHP 7.0"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:839
+msgid "PHPUnit 6.5"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:840
+msgid "PHP 7.1"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:840
+msgid "PHPUnit 7.5"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:841
+msgid "PHP >= 7.2"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:841
+msgid "PHPUnit 8.3"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:844
+msgid ""
+"If you have installed the bridge through Composer, you can run it by "
+"calling e.g.:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:852
+msgid ""
+"It's possible to change the base version of PHPUnit by setting the "
+"``SYMFONY_PHPUNIT_VERSION`` env var in the ``phpunit.xml.dist`` file "
+"(e.g. ``<server name=\"SYMFONY_PHPUNIT_VERSION\" value=\"5.5\"/>``). This"
+" is the preferred method as it can be committed to your version control "
+"repository."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:857
+msgid ""
+"It's also possible to set ``SYMFONY_PHPUNIT_VERSION`` as a real env var "
+"(not defined in a :ref:`dotenv file <config-dot-env>`)."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:862
+msgid ""
+"If you still need to use ``prophecy`` (but not ``symfony/yaml``), then "
+"set the ``SYMFONY_PHPUNIT_REMOVE`` env var to ``symfony/yaml``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:865
+msgid "It's also possible to set this env var in the ``phpunit.xml.dist`` file."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:868
+msgid "Code Coverage Listener"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:870
+msgid ""
+"By default, the code coverage is computed with the following rule: if a "
+"line of code is executed, then it is marked as covered. The test which "
+"executes a line of code is therefore marked as \"covering the line of "
+"code\". This can be misleading."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:875
+msgid "Consider the following example::"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:913
+msgid ""
+"The ``FooTest::test`` method executes every single line of code of both "
+"``Foo`` and ``Bar`` classes, but ``Bar`` is not truly tested. The "
+"``CoverageListener`` aims to fix this behavior by adding the appropriate "
+"`@covers`_ annotation on each test class."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:918
+msgid ""
+"If a test class already defines the ``@covers`` annotation, this listener"
+" does nothing. Otherwise, it tries to find the code related to the test "
+"by removing the ``Test`` part of the classname: "
+"``My\\Namespace\\Tests\\FooTest`` -> ``My\\Namespace\\Foo``."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:926
+msgid "Add the following configuration to the ``phpunit.xml.dist`` file:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:942
+msgid ""
+"If the logic used to find the related code is too simple or doesn't work "
+"for your application, you can use your own SUT (System Under Test) "
+"solver:"
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:955
+msgid ""
+"The ``My\\Namespace\\SutSolver::solve`` can be any PHP callable and "
+"receives the current test as its first argument."
+msgstr ""
+
+#: ../../../components/phpunit_bridge.rst:958
+msgid ""
+"Finally, the listener can also display warning messages when the SUT "
+"solver does not find the SUT:"
+msgstr ""
+

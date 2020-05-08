@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/adapters/pdo_doctrine_dbal_adapter.rst:8
+msgid "PDO & Doctrine DBAL Cache Adapter"
+msgstr ""
+
+#: ../../../components/cache/adapters/pdo_doctrine_dbal_adapter.rst:10
+msgid ""
+"This adapter stores the cache items in an SQL database. It requires a "
+":phpclass:`PDO`, `Doctrine DBAL Connection`_, or `Data Source Name "
+"(DSN)`_ as its first parameter, and optionally a namespace, default cache"
+" lifetime, and options array as its second, third, and forth parameters::"
+msgstr ""
+
+#: ../../../components/cache/adapters/pdo_doctrine_dbal_adapter.rst:34
+msgid ""
+"The table where values are stored is created automatically on the first "
+"call to the "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\PdoAdapter::save` "
+"method. You can also create this table explicitly by calling the "
+":method:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\PdoAdapter::createTable`"
+" method in your code."
+msgstr ""
+
+#: ../../../components/cache/adapters/pdo_doctrine_dbal_adapter.rst:42
+msgid ""
+"When passed a `Data Source Name (DSN)`_ string (instead of a database "
+"connection class instance), the connection will be lazy-loaded when "
+"needed."
+msgstr ""
+
+#: ../../../components/cache/adapters/pdo_doctrine_dbal_adapter.rst:47
+msgid ""
+"Since Symfony 3.4, this adapter implements "
+":class:`Symfony\\\\Component\\\\Cache\\\\PruneableInterface`, allowing "
+"for manual :ref:`pruning of expired cache entries <component-cache-cache-"
+"pool-prune>` by calling its ``prune()`` method."
+msgstr ""
+

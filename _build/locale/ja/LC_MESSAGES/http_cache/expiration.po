@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../http_cache/expiration.rst:5
+msgid "HTTP Cache Expiration"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:7
+msgid ""
+"The `expiration model`_ is the most efficient and straightforward of the "
+"two caching models and should be used whenever possible. When a response "
+"is cached with an expiration, the cache returns it directly without "
+"hitting the application until the cached response expires."
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:12
+msgid ""
+"The expiration model can be accomplished using one of two, nearly "
+"identical, HTTP headers: ``Expires`` or ``Cache-Control``."
+msgstr ""
+
+#: ../../../http_cache/expiration.rst
+msgid "Expiration and Validation"
+msgstr ""
+
+#: ../../../http_cache/_expiration-and-validation.rst.inc:3
+msgid ""
+"You can use both validation and expiration within the same ``Response``. "
+"As expiration wins over validation, you can benefit from the best of both"
+" worlds. In other words, by using both expiration and validation, you can"
+" instruct the cache to serve the cached content, while checking back at "
+"some interval (the expiration) to verify that the content is still valid."
+msgstr ""
+
+#: ../../../http_cache/_expiration-and-validation.rst.inc:11
+msgid ""
+"You can also define HTTP caching headers for expiration and validation by"
+" using annotations. See the `FrameworkExtraBundle documentation`_."
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:22
+msgid "Expiration with the ``Cache-Control`` Header"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:24
+msgid ""
+"Most of the time, you will use the ``Cache-Control`` header, which is "
+"used to specify many different cache directives::"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:31
+msgid ""
+"The ``Cache-Control`` header would take on the following format (it may "
+"have additional directives):"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:43
+msgid "Expiration with the ``Expires`` Header"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:45
+msgid ""
+"An alternative to the ``Cache-Control`` header is ``Expires``. There's no"
+" advantage or disadvantage to either: they're just different ways to set "
+"expiration caching on your response."
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:49
+msgid ""
+"According to the HTTP specification, \"the ``Expires`` header field gives"
+" the date/time after which the response is considered stale.\" The "
+"``Expires`` header can be set with the ``setExpires()`` ``Response`` "
+"method. It takes a ``DateTime`` instance as an argument::"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:59
+msgid "The resulting HTTP header will look like this:"
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:67
+msgid ""
+"The ``setExpires()`` method automatically converts the date to the GMT "
+"timezone as required by the specification."
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:70
+msgid ""
+"Note that in HTTP versions before 1.1 the origin server wasn't required "
+"to send the ``Date`` header. Consequently, the cache (e.g. the browser) "
+"might need to rely on the local clock to evaluate the ``Expires`` header "
+"making the lifetime calculation vulnerable to clock skew. Another "
+"limitation of the ``Expires`` header is that the specification states "
+"that \"HTTP/1.1 servers should not send ``Expires`` dates more than one "
+"year in the future.\""
+msgstr ""
+
+#: ../../../http_cache/expiration.rst:79
+msgid ""
+"According to `RFC 7234 - Caching`_, the ``Expires`` header value is "
+"ignored when the ``s-maxage`` or ``max-age`` directive of the ``Cache-"
+"Control`` header is defined."
+msgstr ""
+

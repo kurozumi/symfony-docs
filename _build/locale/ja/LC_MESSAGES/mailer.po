@@ -1,0 +1,647 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../mailer.rst:2
+msgid "Sending Emails with Mailer"
+msgstr ""
+
+#: ../../../mailer.rst:5
+msgid "Installation"
+msgstr ""
+
+#: ../../../mailer.rst:7
+msgid ""
+"Symfony's Mailer & :doc:`Mime </components/mime>` components form a "
+"*powerful* system for creating and sending emails - complete with support"
+" for multipart messages, Twig integration, CSS inlining, file attachments"
+" and a lot more. Get them installed with:"
+msgstr ""
+
+#: ../../../mailer.rst:19
+msgid "Transport Setup"
+msgstr ""
+
+#: ../../../mailer.rst:21
+msgid ""
+"Emails are delivered via a \"transport\". And without installing anything"
+" else, you can deliver emails over ``smtp`` by configuring your ``.env`` "
+"file:"
+msgstr ""
+
+#: ../../../mailer.rst:31
+msgid ""
+"If you are migrating from Swiftmailer (and the Swiftmailer bundle), be "
+"warned that the DSN format is different."
+msgstr ""
+
+#: ../../../mailer.rst:35
+msgid "Using a 3rd Party Transport"
+msgstr ""
+
+#: ../../../mailer.rst:37
+msgid ""
+"But an easier option is to send emails via a 3rd party provider. Mailer "
+"supports several - install whichever you want:"
+msgstr ""
+
+#: ../../../mailer.rst:41
+msgid "Service"
+msgstr ""
+
+#: ../../../mailer.rst:41
+msgid "Install with"
+msgstr ""
+
+#: ../../../mailer.rst:43
+msgid "Amazon SES"
+msgstr ""
+
+#: ../../../mailer.rst:43
+msgid "``composer require symfony/amazon-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:44
+msgid "Gmail"
+msgstr ""
+
+#: ../../../mailer.rst:44
+msgid "``composer require symfony/google-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:45 ../../../mailer.rst:768
+msgid "MailChimp"
+msgstr ""
+
+#: ../../../mailer.rst:45
+msgid "``composer require symfony/mailchimp-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:46 ../../../mailer.rst:767
+msgid "Mailgun"
+msgstr ""
+
+#: ../../../mailer.rst:46
+msgid "``composer require symfony/mailgun-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:47 ../../../mailer.rst:766
+msgid "Postmark"
+msgstr ""
+
+#: ../../../mailer.rst:47
+msgid "``composer require symfony/postmark-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:48
+msgid "SendGrid"
+msgstr ""
+
+#: ../../../mailer.rst:48
+msgid "``composer require symfony/sendgrid-mailer``"
+msgstr ""
+
+#: ../../../mailer.rst:51
+msgid ""
+"Each library includes a :ref:`Symfony Flex recipe <symfony-flex>` that "
+"will add example configuration to your ``.env`` file. For example, "
+"suppose you want to use SendGrid. First, install it:"
+msgstr ""
+
+#: ../../../mailer.rst:59
+msgid "You'll now have a new line in your ``.env`` file that you can uncomment:"
+msgstr ""
+
+#: ../../../mailer.rst:66
+msgid ""
+"The ``MAILER_DSN`` isn't a *real* address: it's a simple format that "
+"offloads most of the configuration work to mailer. The ``sendgrid`` "
+"scheme activates the SendGrid provider that you just installed, which "
+"knows all about how to deliver messages to SendGrid."
+msgstr ""
+
+#: ../../../mailer.rst:71
+msgid ""
+"The *only* part you need to change is to replace ``KEY`` in the "
+"``MAILER_DSN`` (in ``.env`` or ``.env.local``)."
+msgstr ""
+
+#: ../../../mailer.rst:74
+msgid ""
+"Each provider has different environment variables that the Mailer uses to"
+" configure the *actual* protocol, address and authentication for "
+"delivery. Some also have options that can be configured with query "
+"parameters at the end of the ``MAILER_DSN`` - like ``?region=`` for "
+"Amazon SES or Mailgun. Some providers support sending via ``http``, "
+"``api`` or ``smtp``. Symfony chooses the best available transport, but "
+"you can force to use one:"
+msgstr ""
+
+#: ../../../mailer.rst:89
+msgid "Check the :ref:`DSN formats <mailer_dsn>` for all supported providers."
+msgstr ""
+
+#: ../../../mailer.rst:92
+msgid "Creating & Sending Messages"
+msgstr ""
+
+#: ../../../mailer.rst:94
+msgid ""
+"To send an email, autowire the mailer using "
+":class:`Symfony\\\\Component\\\\Mailer\\\\MailerInterface` (service id "
+"``mailer.mailer``) and create an "
+":class:`Symfony\\\\Component\\\\Mime\\\\Email` object::"
+msgstr ""
+
+#: ../../../mailer.rst:129
+msgid "That's it! The message will be sent via whatever transport you configured."
+msgstr ""
+
+#: ../../../mailer.rst:132
+msgid "Email Addresses"
+msgstr ""
+
+#: ../../../mailer.rst:134
+msgid ""
+"All the methods that require email addresses (``from()``, ``to()``, etc.)"
+" accept both strings or address objects::"
+msgstr ""
+
+#: ../../../mailer.rst:160
+msgid ""
+"Instead of calling ``->from()`` *every* time you create a new email, you "
+"can create an :doc:`event subscriber </event_dispatcher>` and listen to "
+"the :class:`Symfony\\\\Component\\\\Mailer\\\\Event\\\\MessageEvent` "
+"event to set the same ``From`` email to all messages."
+msgstr ""
+
+#: ../../../mailer.rst:165
+msgid "Multiple addresses are defined with the ``addXXX()`` methods::"
+msgstr ""
+
+#: ../../../mailer.rst:175
+msgid "Alternatively, you can pass multiple addresses to each method::"
+msgstr ""
+
+#: ../../../mailer.rst:187
+msgid "Message Contents"
+msgstr ""
+
+#: ../../../mailer.rst:189
+msgid ""
+"The text and HTML contents of the email messages can be strings (usually "
+"the result of rendering some template) or PHP resources::"
+msgstr ""
+
+#: ../../../mailer.rst:205
+msgid ""
+"You can also use Twig templates to render the HTML and text contents. "
+"Read the `Twig: HTML & CSS`_ section later in this article to learn more."
+msgstr ""
+
+#: ../../../mailer.rst:210
+msgid "File Attachments"
+msgstr ""
+
+#: ../../../mailer.rst:212
+msgid ""
+"Use the ``attachFromPath()`` method to attach files that exist on your "
+"file system::"
+msgstr ""
+
+#: ../../../mailer.rst:226
+msgid ""
+"Alternatively you can use the ``attach()`` method to attach contents from"
+" a stream::"
+msgstr ""
+
+#: ../../../mailer.rst:234 ../../../mailer.rst:373
+msgid "Embedding Images"
+msgstr ""
+
+#: ../../../mailer.rst:236
+msgid ""
+"If you want to display images inside your email, you must embed them "
+"instead of adding them as attachments. When using Twig to render the "
+"email contents, as explained :ref:`later in this article <mailer-twig-"
+"embedding-images>`, the images are embedded automatically. Otherwise, you"
+" need to embed them manually."
+msgstr ""
+
+#: ../../../mailer.rst:241
+msgid ""
+"First, use the ``embed()`` or ``embedFromPath()`` method to add an image "
+"from a file or stream::"
+msgstr ""
+
+#: ../../../mailer.rst:252
+msgid ""
+"The second optional argument of both methods is the image name "
+"(\"Content-ID\" in the MIME standard). Its value is an arbitrary string "
+"used later to reference the images inside the HTML contents::"
+msgstr ""
+
+#: ../../../mailer.rst:265
+msgid "Debugging Emails"
+msgstr ""
+
+#: ../../../mailer.rst:267
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Mailer\\\\SentMessage` object "
+"returned by the ``send()`` method of the "
+":class:`Symfony\\\\Component\\\\Mailer\\\\Transport\\\\TransportInterface`"
+" provides access to the original message (``getOriginalMessage()``) and "
+"to some debug information (``getDebug()``) such as the HTTP calls done by"
+" the HTTP transports, which is useful to debug errors."
+msgstr ""
+
+#: ../../../mailer.rst:275
+msgid ""
+"Some mailer providers change the ``Message-Id`` when sending the email. "
+"The ``getMessageId()`` method from ``SentMessage`` always returns the "
+"definitive ID of the message (being the original random ID generated by "
+"Symfony or the new ID generated by the mailer provider)."
+msgstr ""
+
+#: ../../../mailer.rst:280
+msgid ""
+"The exceptions related to mailer transports (those which implement "
+":class:`Symfony\\\\Component\\\\Mailer\\\\Exception\\\\TransportException`)"
+" also provide this debug information via the ``getDebug()`` method."
+msgstr ""
+
+#: ../../../mailer.rst:287
+msgid "Twig: HTML & CSS"
+msgstr ""
+
+#: ../../../mailer.rst:289
+msgid ""
+"The Mime component integrates with the :ref:`Twig template engine <twig-"
+"language>` to provide advanced features such as CSS style inlining and "
+"support for HTML/CSS frameworks to create complex HTML email messages. "
+"First, make sure Twig is installed:"
+msgstr ""
+
+#: ../../../mailer.rst:298
+msgid "HTML Content"
+msgstr ""
+
+#: ../../../mailer.rst:300
+msgid ""
+"To define the contents of your email with Twig, use the "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Mime\\\\TemplatedEmail` class. This "
+"class extends the normal :class:`Symfony\\\\Component\\\\Mime\\\\Email` "
+"class but adds some new methods for Twig templates::"
+msgstr ""
+
+#: ../../../mailer.rst:322
+msgid "Then, create the template:"
+msgstr ""
+
+#: ../../../mailer.rst:339
+msgid ""
+"The Twig template has access to any of the parameters passed in the "
+"``context()`` method of the ``TemplatedEmail`` class and also to a "
+"special variable called ``email``, which is an instance of "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Mime\\\\WrappedTemplatedEmail`."
+msgstr ""
+
+#: ../../../mailer.rst:345
+msgid "Text Content"
+msgstr ""
+
+#: ../../../mailer.rst:347
+msgid ""
+"When the text content of a ``TemplatedEmail`` is not explicitly defined, "
+"mailer will generate it automatically by converting the HTML contents "
+"into text. If you have `league/html-to-markdown`_ installed in your "
+"application, it uses that to turn HTML into Markdown (so the text email "
+"has some visual appeal). Otherwise, it applies the "
+":phpfunction:`strip_tags` PHP function to the original HTML contents."
+msgstr ""
+
+#: ../../../mailer.rst:354
+msgid ""
+"If you want to define the text content yourself, use the ``text()`` "
+"method explained in the previous sections or the ``textTemplate()`` "
+"method provided by the ``TemplatedEmail`` class:"
+msgstr ""
+
+#: ../../../mailer.rst:375
+msgid ""
+"Instead of dealing with the ``<img src=\"cid: ...\">`` syntax explained "
+"in the previous sections, when using Twig to render email contents you "
+"can refer to image files as usual. First, to simplify things, define a "
+"Twig namespace called ``images`` that points to whatever directory your "
+"images are stored in:"
+msgstr ""
+
+#: ../../../mailer.rst:390
+msgid ""
+"Now, use the special ``email.image()`` Twig helper to embed the images "
+"inside the email contents:"
+msgstr ""
+
+#: ../../../mailer.rst:404
+msgid "Inlining CSS Styles"
+msgstr ""
+
+#: ../../../mailer.rst:406
+msgid ""
+"Designing the HTML contents of an email is very different from designing "
+"a normal HTML page. For starters, most email clients only support a "
+"subset of all CSS features. In addition, popular email clients like Gmail"
+" don't support defining styles inside ``<style> ... </style>`` sections "
+"and you must **inline all the CSS styles**."
+msgstr ""
+
+#: ../../../mailer.rst:412
+msgid ""
+"CSS inlining means that every HTML tag must define a ``style`` attribute "
+"with all its CSS styles. This can make organizing your CSS a mess. That's"
+" why Twig provides a ``CssInlinerExtension`` that automates everything "
+"for you. Install it with:"
+msgstr ""
+
+#: ../../../mailer.rst:421
+msgid ""
+"The extension is enabled automatically. To use it, wrap the entire "
+"template with the ``inline_css`` filter:"
+msgstr ""
+
+#: ../../../mailer.rst:439
+msgid "Using External CSS Files"
+msgstr ""
+
+#: ../../../mailer.rst:441
+msgid ""
+"You can also define CSS styles in external files and pass them as "
+"arguments to the filter:"
+msgstr ""
+
+#: ../../../mailer.rst:451
+msgid ""
+"You can pass unlimited number of arguments to ``inline_css()`` to load "
+"multiple CSS files. For this example to work, you also need to define a "
+"new Twig namespace called ``css`` that points to the directory where "
+"``email.css`` lives:"
+msgstr ""
+
+#: ../../../mailer.rst:470
+msgid "Rendering Markdown Content"
+msgstr ""
+
+#: ../../../mailer.rst:472
+msgid ""
+"Twig provides another extension called ``MarkdownExtension`` that lets "
+"you define the email contents using `Markdown syntax`_. To use this, "
+"install the extension and a Markdown conversion library (the extension is"
+" compatible with several popular libraries):"
+msgstr ""
+
+#: ../../../mailer.rst:482
+msgid ""
+"The extension adds a ``markdown_to_html`` filter, which you can use to "
+"convert parts or the entire email contents from Markdown to HTML:"
+msgstr ""
+
+#: ../../../mailer.rst:500
+msgid "Inky Email Templating Language"
+msgstr ""
+
+#: ../../../mailer.rst:502
+msgid ""
+"Creating beautifully designed emails that work on every email client is "
+"so complex that there are HTML/CSS frameworks dedicated to that. One of "
+"the most popular frameworks is called `Inky`_. It defines a syntax based "
+"on some simple tags which are later transformed into the real HTML code "
+"sent to users:"
+msgstr ""
+
+#: ../../../mailer.rst:516
+msgid ""
+"Twig provides integration with Inky via the ``InkyExtension``. First, "
+"install the extension in your application:"
+msgstr ""
+
+#: ../../../mailer.rst:523
+msgid ""
+"The extension adds an ``inky_to_html`` filter, which can be used to "
+"convert parts or the entire email contents from Inky to HTML:"
+msgstr ""
+
+#: ../../../mailer.rst:541
+msgid "You can combine all filters to create complex email messages:"
+msgstr ""
+
+#: ../../../mailer.rst:549
+msgid ""
+"This makes use of the :ref:`css Twig namespace <mailer-css-namespace>` we"
+" created earlier. You could, for example, `download the foundation-"
+"emails.css file`_ directly from GitHub and save it in ``assets/css``."
+msgstr ""
+
+#: ../../../mailer.rst:554
+msgid "Signing and Encrypting Messages"
+msgstr ""
+
+#: ../../../mailer.rst:556
+msgid ""
+"It's possible to sign and/or encrypt email messages applying the "
+"`S/MIME`_ standard to increase their integrity/security. Both options can"
+" be combined to encrypt a signed message and/or to sign an encrypted "
+"message."
+msgstr ""
+
+#: ../../../mailer.rst:560
+msgid "Before signing/encrypting messages, make sure to have:"
+msgstr ""
+
+#: ../../../mailer.rst:562
+msgid "The `OpenSSL PHP extension`_ properly installed and configured;"
+msgstr ""
+
+#: ../../../mailer.rst:563
+msgid "A valid `S/MIME`_ security certificate."
+msgstr ""
+
+#: ../../../mailer.rst:566
+msgid "Signing Messages"
+msgstr ""
+
+#: ../../../mailer.rst:568
+msgid ""
+"When signing a message, a cryptographic hash is generated for the entire "
+"content of the message (including attachments). This hash is added as an "
+"attachment so the recipient can validate the integrity of the received "
+"message. However, the contents of the original message are still readable"
+" for mailing agents not supporting signed messages, so you must also "
+"encrypt the message if you want to hide its contents::"
+msgstr ""
+
+#: ../../../mailer.rst:590
+msgid ""
+"The certificate and private key must be `PEM encoded`_, and can be either"
+" created using for example OpenSSL or obtained at an official Certificate"
+" Authority (CA). The email recipient must have the CA certificate in the "
+"list of trusted issuers in order to verify the signature."
+msgstr ""
+
+#: ../../../mailer.rst:597
+msgid ""
+"When using OpenSSL to generate certificates, make sure to add the "
+"``-addtrust emailProtection`` command option."
+msgstr ""
+
+#: ../../../mailer.rst:602
+msgid ""
+"The ``SMimeSigner`` class defines other optional arguments to pass "
+"intermediate certificates and to configure the signing process using a "
+"bitwise operator options for :phpfunction:`openssl_pkcs7_sign` PHP "
+"function."
+msgstr ""
+
+#: ../../../mailer.rst:607
+msgid "Encrypting Messages"
+msgstr ""
+
+#: ../../../mailer.rst:609
+msgid ""
+"When encrypting a message, the entire message (including attachments) is "
+"encrypted using a certificate. Therefore, only the recipients that have "
+"the corresponding private key can read the original message contents::"
+msgstr ""
+
+#: ../../../mailer.rst:625
+msgid ""
+"You can pass more than one certificate to the ``SMimeEncrypter()`` "
+"constructor and it will select the appropriate certificate depending on "
+"the ``To`` option::"
+msgstr ""
+
+#: ../../../mailer.rst:648
+msgid "Multiple Email Transports"
+msgstr ""
+
+#: ../../../mailer.rst:650
+msgid ""
+"You may want to use more than one mailer transport for delivery of your "
+"messages. This can be configured by replacing the ``dsn`` configuration "
+"entry with a ``transports`` entry, like:"
+msgstr ""
+
+#: ../../../mailer.rst:663
+msgid ""
+"By default the first transport is used. The other transports can be used "
+"by adding a text header ``X-Transport`` to an email::"
+msgstr ""
+
+#: ../../../mailer.rst:674
+msgid "Sending Messages Async"
+msgstr ""
+
+#: ../../../mailer.rst:676
+msgid ""
+"When you call ``$mailer->send($email)``, the email is sent to the "
+"transport immediately. To improve performance, you can leverage "
+":doc:`Messenger </messenger>` to send the messages later via a Messenger "
+"transport."
+msgstr ""
+
+#: ../../../mailer.rst:680
+msgid ""
+"Start by following the :doc:`Messenger </messenger>` documentation and "
+"configuring a transport. Once everything is set up, when you call "
+"``$mailer->send()``, a "
+":class:`Symfony\\\\Component\\\\Mailer\\\\Messenger\\\\SendEmailMessage` "
+"message will be dispatched through the default message bus "
+"(``messenger.default_bus``). Assuming you have a transport called "
+"``async``, you can route the message there:"
+msgstr ""
+
+#: ../../../mailer.rst:731
+msgid ""
+"Thanks to this, instead of being delivered immediately, messages will be "
+"sent to the transport to be handled later (see :ref:`messenger-worker`)."
+msgstr ""
+
+#: ../../../mailer.rst:735
+msgid "Adding Tags and Metadata to Emails"
+msgstr ""
+
+#: ../../../mailer.rst:739
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Mailer\\\\Header\\\\TagHeader` and "
+":class:`Symfony\\\\Component\\\\Mailer\\\\Header\\\\MetadataHeader` "
+"classes were introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../mailer.rst:743
+msgid ""
+"Certain 3rd party transports support email *tags* and *metadata*, which "
+"can be used for grouping, tracking and workflows. You can add those by "
+"using the :class:`Symfony\\\\Component\\\\Mailer\\\\Header\\\\TagHeader` "
+"and :class:`Symfony\\\\Component\\\\Mailer\\\\Header\\\\MetadataHeader` "
+"classes. If your transport supports headers, it will convert them to "
+"their appropriate format::"
+msgstr ""
+
+#: ../../../mailer.rst:756
+msgid ""
+"If your transport does not support tags and metadata, they will be added "
+"as custom headers:"
+msgstr ""
+
+#: ../../../mailer.rst:764
+msgid "The following transports currently support tags and metadata:"
+msgstr ""
+
+#: ../../../mailer.rst:771
+msgid "Development & Debugging"
+msgstr ""
+
+#: ../../../mailer.rst:774
+msgid "Disabling Delivery"
+msgstr ""
+
+#: ../../../mailer.rst:776
+msgid ""
+"While developing (or testing), you may want to disable delivery of "
+"messages entirely. You can do this by forcing Mailer to use the "
+"``NullTransport`` in only the ``dev`` environment:"
+msgstr ""
+
+#: ../../../mailer.rst:789
+msgid ""
+"If you're using Messenger and routing to a transport, the message will "
+"*still* be sent to that transport."
+msgstr ""
+
+#: ../../../mailer.rst:793
+msgid "Always Send to the same Address"
+msgstr ""
+
+#: ../../../mailer.rst:795
+msgid ""
+"Instead of disabling delivery entirely, you might want to *always* send "
+"emails to a specific address, instead of the *real* address. To do that, "
+"you can take advantage of the ``EnvelopeListener`` and register it *only*"
+" for the ``dev`` environment:"
+msgstr ""
+

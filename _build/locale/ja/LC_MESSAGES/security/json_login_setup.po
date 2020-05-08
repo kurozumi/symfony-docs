@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/json_login_setup.rst:2
+msgid "How to Build a JSON Authentication Endpoint"
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:4
+msgid ""
+"In this entry, you'll build a JSON endpoint to log in your users. When "
+"the user logs in, you can load your users from anywhere - like the "
+"database. See :ref:`security-user-providers` for details."
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:8
+msgid "First, enable the JSON login under your firewall:"
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:60
+msgid ""
+"The ``check_path`` can also be a route name (but cannot have mandatory "
+"wildcards - e.g. ``/login/{foo}`` where ``foo`` has no default value)."
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:63
+msgid "The next step is to configure a route in your app matching this path:"
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:125
+msgid ""
+"Now, when you make a ``POST`` request, with the header ``Content-Type: "
+"application/json``, to the ``/login`` URL with the following JSON "
+"document as the body, the security system intercepts the request and "
+"initiates the authentication process:"
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:136
+msgid ""
+"Symfony takes care of authenticating the user with the submitted username"
+" and password or triggers an error in case the authentication process "
+"fails. If the authentication is successful, the controller defined "
+"earlier will be executed."
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:140
+msgid ""
+"If the JSON document has a different structure, you can specify the path "
+"to access the ``username`` and ``password`` properties using the "
+"``username_path`` and ``password_path`` keys (they default respectively "
+"to ``username`` and ``password``). For example, if the JSON document has "
+"the following structure:"
+msgstr ""
+
+#: ../../../security/json_login_setup.rst:156
+msgid "The security configuration should be:"
+msgstr ""
+

@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Regex.rst:2
+msgid "Regex"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:4
+msgid "Validates that a value matches a regular expression."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:7
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:7
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:8
+#: ../../../reference/constraints/Regex.rst:166
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:8
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:9
+msgid "`htmlPattern`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:10
+msgid "`match`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:12
+msgid "`pattern`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:13
+msgid "`normalizer`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Regex`"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:16
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\RegexValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:20
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:22
+msgid ""
+"Suppose you have a ``description`` field and you want to verify that it "
+"begins with a valid word character. The regular expression to test for "
+"this would be ``/^\\w+/``, indicating that you're looking for at least "
+"one or more word characters at the beginning of your string:"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:87
+msgid ""
+"Alternatively, you can set the `match`_ option to ``false`` in order to "
+"assert that a given string does *not* match. In the following example, "
+"you'll assert that the ``firstName`` field does not contain any numbers "
+"and give it a custom message:"
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:171
+msgid "htmlPattern"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:173
+msgid "**type**: ``string|boolean`` **default**: null"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:175
+msgid ""
+"This option specifies the pattern to use in the HTML5 ``pattern`` "
+"attribute. You usually don't need to specify this option because by "
+"default, the constraint will convert the pattern given in the `pattern`_ "
+"option into an HTML5 compatible pattern. This means that the delimiters "
+"are removed (e.g. ``/[a-z]+/`` becomes ``[a-z]+``)."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:181
+msgid ""
+"However, there are some other incompatibilities between both patterns "
+"which cannot be fixed by the constraint. For instance, the HTML5 "
+"``pattern`` attribute does not support flags. If you have a pattern like "
+"``/[a-z]+/i``, you need to specify the HTML5 compatible pattern in the "
+"``htmlPattern`` option:"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:253
+msgid "Setting ``htmlPattern`` to false will disable client side validation."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:256
+msgid "match"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:258
+msgid "**type**: ``boolean`` default: ``true``"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:260
+msgid ""
+"If ``true`` (or not set), this validator will pass if the given string "
+"matches the given `pattern`_ regular expression. However, when this "
+"option is set to ``false``, the opposite will occur: validation will pass"
+" only if the given string does **not** match the `pattern`_ regular "
+"expression."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:266
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:268
+msgid "**type**: ``string`` **default**: ``This value is not valid.``"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:270
+msgid "This is the message that will be shown if this validator fails."
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:272
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:275
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:275
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:277
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:277
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:281
+msgid "pattern"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:283
+msgid "**type**: ``string`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Regex.rst:285
+msgid ""
+"This required option is the regular expression pattern that the input "
+"will be matched against. By default, this validator will fail if the "
+"input string does *not* match this regular expression (via the "
+":phpfunction:`preg_match` PHP function). However, if `match`_ is set to "
+"false, then validation will fail if the input string *does* match this "
+"pattern."
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:2
+msgid "normalizer"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:4
+msgid "**type**: a `PHP callable`_ **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:6
+msgid ""
+"This option allows to define the PHP callable applied to the given value "
+"before checking if it is valid."
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:9
+msgid ""
+"For example, you may want to pass the ``'trim'`` string to apply the "
+":phpfunction:`trim` PHP function in order to ignore leading and trailing "
+"whitespace during validation."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

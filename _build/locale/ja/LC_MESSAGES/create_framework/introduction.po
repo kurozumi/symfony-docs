@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../create_framework/introduction.rst:2
+msgid "Introduction"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:4
+msgid ""
+"`Symfony`_ is a reusable set of standalone, decoupled and cohesive PHP "
+"components that solve common web development problems."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:7
+msgid ""
+"Instead of using these low-level components, you can use the ready-to-be-"
+"used Symfony full-stack web framework, which is based on these "
+"components... or you can create your very own framework. This tutorial is"
+" about the latter."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:12
+msgid "Why would you Like to Create your Own Framework?"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:14
+msgid ""
+"Why would you like to create your own framework in the first place? If "
+"you look around, everybody will tell you that it's a bad thing to "
+"reinvent the wheel and that you'd better choose an existing framework and"
+" forget about creating your own altogether. Most of the time, they are "
+"right but there are a few good reasons to start creating your own "
+"framework:"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:20
+msgid ""
+"To learn more about the low level architecture of modern web frameworks "
+"in general and about the Symfony full-stack framework internals in "
+"particular;"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:23
+msgid ""
+"To create a framework tailored to your very specific needs (just be sure "
+"first that your needs are really specific);"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:26
+msgid ""
+"To experiment creating a framework for fun (in a learn-and-throw-away "
+"approach);"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:29
+msgid ""
+"To refactor an old/existing application that needs a good dose of recent "
+"web development best practices;"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:32
+msgid ""
+"To prove the world that you can actually create a framework on your own "
+"(... but with little effort)."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:35
+msgid ""
+"This tutorial will gently guide you through the creation of a web "
+"framework, one step at a time. At each step, you will have a fully-"
+"working framework that you can use as is or as a start for your very own."
+" It will start with a simple framework and more features will be added "
+"with time. Eventually, you will have a fully-featured full-stack web "
+"framework."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:41
+msgid ""
+"And each step will be the occasion to learn more about some of the "
+"Symfony Components."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:44
+msgid ""
+"Many modern web frameworks advertize themselves as being MVC frameworks. "
+"This tutorial won't talk about the MVC pattern, as the Symfony Components"
+" are able to create any type of frameworks, not just the ones that follow"
+" the MVC architecture. Anyway, if you have a look at the MVC semantics, "
+"this book is about how to create the Controller part of a framework. For "
+"the Model and the View, it really depends on your personal taste and you "
+"can use any existing third-party libraries (Doctrine, Propel or plain-old"
+" PDO for the Model; PHP or Twig for the View)."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:53
+msgid ""
+"When creating a framework, following the MVC pattern is not the right "
+"goal. The main goal should be the **Separation of Concerns**; this is "
+"probably the only design pattern that you should really care about. The "
+"fundamental principles of the Symfony Components are focused on the HTTP "
+"specification. As such, the framework that you are going to create should"
+" be more accurately labelled as a HTTP framework or Request/Response "
+"framework."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:61
+msgid "Before You Start"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:63
+msgid ""
+"Reading about how to create a framework is not enough. You will have to "
+"follow along and actually type all the examples included in this "
+"tutorial. For that, you need a recent version of PHP (5.5.9 or later is "
+"good enough), a web server (like Apache, nginx or PHP's built-in web "
+"server), a good knowledge of PHP and an understanding of Object Oriented "
+"programming."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:69
+msgid "Ready to go? Read on!"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:72
+msgid "Bootstrapping"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:74
+msgid ""
+"Before you can even think of creating the first framework, you need to "
+"think about some conventions: where you will store the code, how you will"
+" name the classes, how you will reference external dependencies, etc."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:78
+msgid "To store your new framework, create a directory somewhere on your machine:"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:86
+msgid "Dependency Management"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:88
+msgid ""
+"To install the Symfony Components that you need for your framework, you "
+"are going to use `Composer`_, a project dependency manager for PHP. If "
+"you don't have it yet, `download and install Composer`_ now."
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:93
+msgid "Our Project"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:95
+msgid ""
+"Instead of creating our framework from scratch, we are going to write the"
+" same \"application\" over and over again, adding one abstraction at a "
+"time. Let's start with the simplest web application we can think of in "
+"PHP::"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:104
+msgid ""
+"You can use the :doc:`Symfony Local Web Server </setup/symfony_server>` "
+"to test this great application in a browser "
+"(``http://localhost:8000/index.php?name=Fabien``):"
+msgstr ""
+
+#: ../../../create_framework/introduction.rst:112
+msgid ""
+"In the :doc:`next chapter </create_framework/http_foundation>`, we are "
+"going to introduce the HttpFoundation Component and see what it brings "
+"us."
+msgstr ""
+

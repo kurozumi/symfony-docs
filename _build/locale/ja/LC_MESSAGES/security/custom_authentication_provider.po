@@ -1,0 +1,359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/custom_authentication_provider.rst:5
+msgid "How to Create a custom Authentication Provider"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:9
+msgid ""
+"Creating a custom authentication system is hard, and almost definitely "
+"**not** needed. Instead, see :doc:`/security/guard_authentication` for a "
+"simple way to create an authentication system you will love. Do **not** "
+"keep reading unless you want to learn the lowest level details of "
+"authentication."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:15
+msgid ""
+"Symfony provides support for the most :doc:`common authentication "
+"mechanisms </security/auth_providers>`. However, your app may need to "
+"integrated with some proprietary single-sign-on system or some legacy "
+"authentication mechanism. In those cases you could create a custom "
+"authentication provider. This article discusses the core classes involved"
+" in the authentication process, and how to implement a custom "
+"authentication provider. Because authentication and authorization are "
+"separate concepts, this extension will be user-provider agnostic, and "
+"will function with your application's user providers, may they be based "
+"in memory, a database, or wherever else you choose to store them."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:27
+msgid "Meet WSSE"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:29
+msgid ""
+"The following article demonstrates how to create a custom authentication "
+"provider for WSSE authentication. The security protocol for WSSE provides"
+" several security benefits:"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:33
+msgid "Username / Password encryption"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:34
+msgid "Safe guarding against replay attacks"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:35
+msgid "No web server configuration required"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:37
+msgid ""
+"WSSE is very useful for the securing of web services, may they be SOAP or"
+" REST."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:40
+msgid ""
+"There is plenty of great documentation on `WSSE`_, but this article will "
+"focus not on the security protocol, but rather the manner in which a "
+"custom protocol can be added to your Symfony application. The basis of "
+"WSSE is that a request header is checked for encrypted credentials, "
+"verified using a timestamp and `nonce`_, and authenticated for the "
+"requested user using a password digest."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:49
+msgid ""
+"WSSE also supports application key validation, which is useful for web "
+"services, but is outside the scope of this article."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:53
+msgid "The Token"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:55
+msgid ""
+"The role of the token in the Symfony security context is an important "
+"one. A token represents the user authentication data present in the "
+"request. Once a request is authenticated, the token retains the user's "
+"data, and delivers this data across the security context. First, you'll "
+"create your token class. This will allow the passing of all relevant "
+"information to your authentication provider::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:89
+msgid ""
+"The ``WsseUserToken`` class extends the Security component's "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\AbstractToken`"
+" class, which provides basic token functionality. Implement the "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Token\\\\TokenInterface`"
+" on any class to use as a token."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:96
+msgid "The Listener"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:98
+msgid ""
+"Next, you need a listener to listen on the firewall. The listener is "
+"responsible for fielding requests to the firewall and calling the "
+"authentication provider. Listener is a callable, so you have to implement"
+" an ``__invoke()`` method. A security listener should handle the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\RequestEvent` "
+"event, and set an authenticated token in the token storage if "
+"successful::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:166
+msgid ""
+"This listener checks the request for the expected ``X-WSSE`` header, "
+"matches the value returned for the expected WSSE information, creates a "
+"token using that information, and passes the token on to the "
+"authentication manager. If the proper information is not provided, or the"
+" authentication manager throws an "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AuthenticationException`,"
+" a 401 Response is returned."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:175
+msgid ""
+"A class not used above, the "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Firewall\\\\AbstractAuthenticationListener`"
+" class, is a very useful base class which provides commonly needed "
+"functionality for security extensions. This includes maintaining the "
+"token in the session, providing success / failure handlers, login form "
+"URLs, and more. As WSSE does not require maintaining authentication "
+"sessions or login forms, it won't be used for this example."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:185
+msgid ""
+"Returning prematurely from the listener is relevant only if you want to "
+"chain authentication providers (for example to allow anonymous users). If"
+" you want to forbid access to anonymous users and have a 404 error, you "
+"should set the status code of the response before returning."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:191
+msgid "The Authentication Provider"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:193
+msgid ""
+"The authentication provider will do the verification of the "
+"``WsseUserToken``. Namely, the provider will verify the ``Created`` "
+"header value is valid within five minutes, the ``Nonce`` header value is "
+"unique within five minutes, and the ``PasswordDigest`` header value "
+"matches with the user's password::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:280
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Authentication\\\\Provider\\\\AuthenticationProviderInterface`"
+" requires an ``authenticate()`` method on the user token, and a "
+"``supports()`` method, which tells the authentication manager whether or "
+"not to use this provider for the given token. In the case of multiple "
+"providers, the authentication manager will then move to the next provider"
+" in the list."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:287
+msgid "The Factory"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:289
+msgid ""
+"You have created a custom token, custom listener, and custom provider. "
+"Now you need to tie them all together. How do you make a unique provider "
+"available for every firewall? The answer is by using a *factory*. A "
+"factory is where you hook into the Security component, telling it the "
+"name of your provider and any configuration options available for it. "
+"First, you must create a class which implements "
+":class:`Symfony\\\\Bundle\\\\SecurityBundle\\\\DependencyInjection\\\\Security\\\\Factory\\\\SecurityFactoryInterface`::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:339
+msgid ""
+"The "
+":class:`Symfony\\\\Bundle\\\\SecurityBundle\\\\DependencyInjection\\\\Security\\\\Factory\\\\SecurityFactoryInterface`"
+" requires the following methods:"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:344
+msgid "``create()``"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:343
+msgid ""
+"Method which adds the listener and authentication provider to the DI "
+"container for the appropriate security context."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:348
+msgid "``getPosition()``"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:347
+msgid ""
+"Returns when the provider should be called. This can be one of "
+"``pre_auth``, ``form``, ``http`` or ``remember_me``."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:352
+msgid "``getKey()``"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:351
+msgid ""
+"Method which defines the configuration key used to reference the provider"
+" in the firewall configuration."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:357
+msgid "``addConfiguration()``"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:355
+msgid ""
+"Method which is used to define the configuration options underneath the "
+"configuration key in your security configuration. Setting configuration "
+"options are explained later in this article."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:361
+msgid ""
+"A class not used in this example, "
+":class:`Symfony\\\\Bundle\\\\SecurityBundle\\\\DependencyInjection\\\\Security\\\\Factory\\\\AbstractFactory`,"
+" is a very useful base class which provides commonly needed functionality"
+" for security factories. It may be useful when defining an authentication"
+" provider of a different type."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:367
+msgid ""
+"Now that you have created a factory class, the ``wsse`` key can be used "
+"as a firewall in your security configuration."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:372
+msgid ""
+"You may be wondering \"why do you need a special factory class to add "
+"listeners and providers to the dependency injection container?\". This is"
+" a very good question. The reason is you can use your firewall multiple "
+"times, to secure multiple parts of your application. Because of this, "
+"each time your firewall is used, a new service is created in the DI "
+"container. The factory is what creates these new services."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:380
+#: ../../../security/custom_authentication_provider.rst:533
+msgid "Configuration"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:382
+msgid ""
+"It's time to see your authentication provider in action. You will need to"
+" do a few things in order to make this work. The first thing is to add "
+"the services above to the DI container. Your factory class above makes "
+"reference to service ids that may not exist yet: "
+"``App\\Security\\Authentication\\Provider\\WsseProvider`` and "
+"``App\\Security\\Firewall\\WsseListener``. It's time to define those "
+"services."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:447
+msgid ""
+"Now that your services are defined, tell your security context about your"
+" factory in the kernel::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:467
+msgid ""
+"You are finished! You can now define parts of your app as under WSSE "
+"protection."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:522
+msgid ""
+"Congratulations! You have written your very own custom security "
+"authentication provider!"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:526
+msgid "A little Extra"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:528
+msgid ""
+"How about making your WSSE authentication provider a bit more exciting? "
+"The possibilities are endless. Why don't you start by adding some sparkle"
+" to that shine?"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:535
+msgid ""
+"You can add custom options under the ``wsse`` key in your security "
+"configuration. For instance, the time allowed before expiring the "
+"``Created`` header item, by default, is 5 minutes. Make this "
+"configurable, so different firewalls can have different timeout lengths."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:540
+msgid ""
+"You will first need to edit ``WsseFactory`` and define the new option in "
+"the ``addConfiguration()`` method::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:556
+msgid ""
+"Now, in the ``create()`` method of the factory, the ``$config`` argument "
+"will contain a ``lifetime`` key, set to 5 minutes (300 seconds) unless "
+"otherwise set in the configuration. Pass this argument to your "
+"authentication provider in order to put it to use::"
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:580
+msgid ""
+"The ``WsseProvider`` class will also now need to accept a third "
+"constructor argument - the lifetime - which it should use instead of the "
+"hard-coded 300 seconds. This step is not shown here."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:584
+msgid ""
+"The lifetime of each WSSE request is now configurable, and can be set to "
+"any desirable value per firewall."
+msgstr ""
+
+#: ../../../security/custom_authentication_provider.rst:639
+msgid ""
+"The rest is up to you! Any relevant configuration items can be defined in"
+" the factory and consumed or passed to the other classes in the "
+"container."
+msgstr ""
+

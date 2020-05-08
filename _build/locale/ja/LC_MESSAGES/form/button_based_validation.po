@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/button_based_validation.rst:5
+msgid "How to Choose Validation Groups Based on the Clicked Button"
+msgstr ""
+
+#: ../../../form/button_based_validation.rst:7
+msgid ""
+"When your form contains multiple submit buttons, you can change the "
+"validation group depending on which button is used to submit the form. "
+"For example, consider a form in a wizard that lets you advance to the "
+"next step or go back to the previous step. Also assume that when "
+"returning to the previous step, the data of the form should be saved, but"
+" not validated."
+msgstr ""
+
+#: ../../../form/button_based_validation.rst:13
+msgid "First, we need to add the two buttons to the form::"
+msgstr ""
+
+#: ../../../form/button_based_validation.rst:21
+msgid ""
+"Then, we configure the button for returning to the previous step to run "
+"specific validation groups. In this example, we want it to suppress "
+"validation, so we set its ``validation_groups`` option to false::"
+msgstr ""
+
+#: ../../../form/button_based_validation.rst:32
+msgid ""
+"Now the form will skip your validation constraints. It will still "
+"validate basic integrity constraints, such as checking whether an "
+"uploaded file was too large or whether you tried to submit text in a "
+"number field."
+msgstr ""
+
+#: ../../../form/button_based_validation.rst:38
+msgid ""
+"To see how to use a service to resolve ``validation_groups`` dynamically "
+"read the :doc:`/form/validation_group_service_resolver` article."
+msgstr ""
+

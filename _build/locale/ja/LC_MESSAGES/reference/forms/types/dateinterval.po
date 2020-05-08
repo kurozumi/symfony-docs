@@ -1,0 +1,828 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/dateinterval.rst:5
+msgid "DateIntervalType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:7
+msgid ""
+"This field allows the user to select an *interval* of time. For example, "
+"if you want to allow the user to choose *how often* they receive a status"
+" email, they could use this field to choose intervals like every \"10 "
+"minutes\" or \"3 days\"."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:11
+msgid ""
+"The field can be rendered in a variety of different ways (see `widget`_) "
+"and can be configured to give you a ``DateInterval`` object, an `ISO "
+"8601`_ duration string (e.g. ``P1DT12H``) or an array (see `input`_)."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:16
+msgid "Underlying Data Type"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:16
+msgid "can be ``DateInterval``, string or array (see the ``input`` option)"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:18
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:18
+msgid ""
+"single text box, multiple text boxes or select fields - see the `widget`_"
+" option"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:20
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:20
+msgid "`days`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:21
+msgid "`hours`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:22
+msgid "`minutes`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:23
+msgid "`months`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:24
+msgid "`seconds`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:25
+msgid "`weeks`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:26
+msgid "`input`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:27
+msgid "`labels`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:28
+msgid "`placeholder`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:29
+msgid "`widget`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:30
+msgid "`with_days`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:31
+msgid "`with_hours`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:32
+msgid "`with_invert`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:33
+msgid "`with_minutes`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:34
+msgid "`with_months`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:35
+msgid "`with_seconds`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:36
+msgid "`with_weeks`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:37
+msgid "`with_years`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:38
+msgid "`years`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:40
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:40
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:41
+msgid "`data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:42
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:43
+msgid "`help`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:44
+msgid "`help_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:45
+msgid "`help_html`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:46
+msgid "`inherit_data`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:47
+msgid "`invalid_message`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:48
+msgid "`invalid_message_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:49
+msgid "`mapped`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:50
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:52
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:52
+msgid ":doc:`FormType </reference/forms/types/form>`"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:54
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:54
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\DateIntervalType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:60
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:62
+msgid ""
+"This field type is highly configurable. The most important options are "
+"`input`_ and `widget`_."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:64
+msgid ""
+"You can configure *a lot* of different options, including exactly *which*"
+" range options to show (e.g. don't show \"months\", but *do* show "
+"\"days\")::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:79
+msgid "Field Options"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:82
+msgid "``days``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:84
+msgid "**type**: ``array`` **default**: 0 to 31"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:86
+msgid ""
+"List of days available to the days field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:96
+msgid "``placeholder``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:98
+msgid "**type**: ``string`` or ``array``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:100
+msgid ""
+"If your widget option is set to ``choice``, then this field will be "
+"represented as a series of ``select`` boxes. The ``placeholder`` option "
+"can be used to add a \"blank\" entry to the top of each select box::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:108
+msgid ""
+"Alternatively, you can specify a string to be displayed for the \"blank\""
+" value::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:115
+msgid "``hours``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:117
+msgid "**type**: ``array`` **default**: 0 to 24"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:119
+msgid ""
+"List of hours available to the hours field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:129
+msgid "``input``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:131
+msgid "**type**: ``string`` **default**: ``dateinterval``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:133
+msgid ""
+"The format of the *input* data - i.e. the format that the interval is "
+"stored on your underlying object. Valid values are:"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:136
+msgid ""
+"``string`` (a string formatted with `ISO 8601`_ standard, e.g. "
+"``P7Y6M5DT12H15M30S``)"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:137
+msgid "``dateinterval`` (a ``DateInterval`` object)"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:138
+msgid "``array`` (e.g. ``['days' => '1', 'hours' => '12',]``)"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:140
+msgid ""
+"The value that comes back from the form will also be normalized back into"
+" this format."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:144
+msgid "``labels``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:146
+msgid "**type**: ``array`` **default**: (see below)"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:148
+msgid ""
+"The labels displayed for each of the elements of this type. The default "
+"values are ``null``, so they display the \"humanized version\" of the "
+"child names (``Invert``, ``Years``, etc.)::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:164
+msgid "``minutes``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:166
+#: ../../../reference/forms/types/dateinterval.rst:194
+msgid "**type**: ``array`` **default**: 0 to 60"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:168
+msgid ""
+"List of minutes available to the minutes field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:178
+msgid "``months``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:180
+msgid "**type**: ``array`` **default**: 0 to 12"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:182
+msgid ""
+"List of months available to the months field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:192
+msgid "``seconds``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:196
+msgid ""
+"List of seconds available to the seconds field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:206
+msgid "``weeks``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:208
+msgid "**type**: ``array`` **default**: 0 to 52"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:210
+msgid ""
+"List of weeks available to the weeks field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:220
+#: ../../../reference/forms/types/dateinterval.rst:369
+msgid "``widget``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:222
+msgid "**type**: ``string`` **default**: ``choice``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:224
+msgid ""
+"The basic way in which this field should be rendered. Can be one of the "
+"following:"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:227
+msgid ""
+"``choice``: renders one to six select inputs for years, months, weeks, "
+"days, hours, minutes and/or seconds, depending on the `with_years`_, "
+"`with_months`_, `with_weeks`_, `with_days`_, `with_hours`_, "
+"`with_minutes`_ and `with_seconds`_ options. Default: Three fields for "
+"years, months and days."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:233
+msgid ""
+"``text``: renders one to six text inputs for years, months, weeks, days, "
+"hours, minutes and/or seconds, depending on the `with_years`_, "
+"`with_months`_, `with_weeks`_, `with_days`_, `with_hours`_, "
+"`with_minutes`_ and `with_seconds`_ options. Default: Three fields for "
+"years, months and days."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:239
+msgid ""
+"``integer``: renders one to six integer inputs for years, months, weeks, "
+"days, hours, minutes and/or seconds, depending on the `with_years`_, "
+"`with_months`_, `with_weeks`_, `with_days`_, `with_hours`_, "
+"`with_minutes`_ and `with_seconds`_ options. Default: Three fields for "
+"years, months and days."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:245
+msgid ""
+"``single_text``: renders a single input of type ``text``. User's input "
+"will be validated against the form ``PnYnMnDTnHnMnS`` (or ``PnW`` if "
+"using only weeks)."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:250
+#: ../../../reference/forms/types/dateinterval.rst:370
+msgid "``with_days``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:252
+#: ../../../reference/forms/types/dateinterval.rst:289
+#: ../../../reference/forms/types/dateinterval.rst:317
+msgid "**type**: ``Boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:254
+msgid ""
+"Whether or not to include days in the input. This will result in an "
+"additional input to capture days."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:259
+msgid "This can not be used when `with_weeks`_ is enabled."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:262
+#: ../../../reference/forms/types/dateinterval.rst:372
+msgid "``with_hours``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:264
+#: ../../../reference/forms/types/dateinterval.rst:272
+#: ../../../reference/forms/types/dateinterval.rst:281
+#: ../../../reference/forms/types/dateinterval.rst:297
+#: ../../../reference/forms/types/dateinterval.rst:305
+msgid "**type**: ``Boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:266
+msgid ""
+"Whether or not to include hours in the input. This will result in an "
+"additional input to capture hours."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:270
+#: ../../../reference/forms/types/dateinterval.rst:371
+msgid "``with_invert``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:274
+msgid ""
+"Whether or not to include invert in the input. This will result in an "
+"additional checkbox. This can not be used when the `widget`_ option is "
+"set to ``single_text``."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:279
+#: ../../../reference/forms/types/dateinterval.rst:373
+msgid "``with_minutes``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:283
+msgid ""
+"Whether or not to include minutes in the input. This will result in an "
+"additional input to capture minutes."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:287
+#: ../../../reference/forms/types/dateinterval.rst:374
+msgid "``with_months``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:291
+msgid ""
+"Whether or not to include months in the input. This will result in an "
+"additional input to capture months."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:295
+#: ../../../reference/forms/types/dateinterval.rst:375
+msgid "``with_seconds``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:299
+msgid ""
+"Whether or not to include seconds in the input. This will result in an "
+"additional input to capture seconds."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:303
+#: ../../../reference/forms/types/dateinterval.rst:376
+msgid "``with_weeks``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:307
+msgid ""
+"Whether or not to include weeks in the input. This will result in an "
+"additional input to capture weeks."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:312
+msgid "This can not be used when `with_days`_ is enabled."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:315
+#: ../../../reference/forms/types/dateinterval.rst:377
+msgid "``with_years``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:319
+msgid ""
+"Whether or not to include years in the input. This will result in an "
+"additional input to capture years."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:323
+msgid "``years``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:325
+msgid "**type**: ``array`` **default**: 0 to 100"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:327
+msgid ""
+"List of years available to the years field type. This option is only "
+"relevant when the ``widget`` option is set to ``choice``::"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:337
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:339
+msgid ""
+"These options inherit from the :doc:`form </reference/forms/types/form>` "
+"type:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:2
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:4
+#: ../../../reference/forms/types/options/help_attr.rst.inc:4
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:6
+msgid ""
+"If you want to add extra attributes to an HTML field representation you "
+"can use the ``attr`` option. It's an associative array with HTML "
+"attributes as keys. This can be useful when you need to set a custom "
+"class for some widget::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr.rst.inc:16
+msgid ""
+"Use the ``row_attr`` option if you want to add these attributes to the "
+"the :ref:`form type row <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:2
+msgid "``data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:4
+msgid ""
+"**type**: ``mixed`` **default**: Defaults to field of the underlying "
+"structure."
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:6
+msgid ""
+"When you create a form, each field initially displays the value of the "
+"corresponding property of the form's domain data (e.g. if you bind an "
+"object to the form). If you want to override this initial value for the "
+"form or an individual field, you can set it in the data option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/data.rst.inc:21
+msgid ""
+"The ``data`` option *always* overrides the value taken from the domain "
+"data (object) when rendering. This means the object value is also "
+"overridden when the form edits an already persisted object, causing it to"
+" lose its persisted value when the form is submitted."
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/disabled.rst.inc:6
+msgid ""
+"If you don't want a user to modify the value of a field, you can set the "
+"disabled option to true. Any submitted value will be ignored."
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:2
+msgid "help"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:4
+msgid "**type**: ``string`` **default**: null"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help.rst.inc:6
+msgid ""
+"Allows you to define a help message for the form field, which by default "
+"is rendered below the field::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:2
+msgid "help_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_attr.rst.inc:6
+msgid ""
+"Sets the HTML attributes for the element used to display the help message"
+" of the form field. Its value is an associative array with HTML attribute"
+" names as keys. These attributes can also be set in the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:2
+msgid "help_html"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:4
+msgid "**type**: ``bool`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/help_html.rst.inc:6
+msgid ""
+"By default, the contents of the ``help`` option are escaped before "
+"rendering them in the template. Set this option to ``true`` to not escape"
+" them, which is useful when the help contains HTML elements."
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:2
+msgid "``inherit_data``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:4
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:6
+msgid ""
+"This option determines if the form will inherit data from its parent "
+"form. This can be useful if you have a set of fields that are duplicated "
+"across multiple forms. See :doc:`/form/inherit_data_option`."
+msgstr ""
+
+#: ../../../reference/forms/types/options/inherit_data.rst.inc:12
+msgid ""
+"When a field has the ``inherit_data`` option set, it uses the data of the"
+" parent form as is. This means that :doc:`Data Transformers "
+"</form/data_transformers>` won't be applied to that field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:2
+msgid "``invalid_message``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:4
+msgid "**type**: ``string`` **default**: ``This value is not valid``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:6
+msgid ""
+"This is the validation error message that's used if the data entered into"
+" this field doesn't make sense (i.e. fails validation)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:9
+msgid ""
+"This might happen, for example, if the user enters a nonsense string into"
+" a :doc:`TimeType </reference/forms/types/time>` field that cannot be "
+"converted into a real time or if the user enters a string (e.g. "
+"``apple``) into a number field."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message.rst.inc:14
+msgid ""
+"Normal (business logic) validation (such as when setting a minimum length"
+" for a field) should be set using validation messages with your "
+"validation rules (:ref:`reference <validation-constraint-"
+"configuration>`)."
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:2
+msgid "``invalid_message_parameters``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/invalid_message_parameters.rst.inc:6
+msgid ""
+"When setting the ``invalid_message`` option, you may need to include some"
+" variables in the string. This can be done by adding placeholders to that"
+" option and including the variables in this option::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:2
+msgid "``mapped``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/mapped.rst.inc:6
+msgid ""
+"If you wish the field to be ignored when reading or writing to the "
+"object, you can set the ``mapped`` option to ``false``."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:364
+msgid "Field Variables"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:367
+msgid "Variable"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:367
+msgid "Type"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:367
+msgid "Usage"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:369
+msgid "``mixed``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:369
+msgid "The value of the `widget`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:370
+#: ../../../reference/forms/types/dateinterval.rst:371
+#: ../../../reference/forms/types/dateinterval.rst:372
+#: ../../../reference/forms/types/dateinterval.rst:373
+#: ../../../reference/forms/types/dateinterval.rst:374
+#: ../../../reference/forms/types/dateinterval.rst:375
+#: ../../../reference/forms/types/dateinterval.rst:376
+#: ../../../reference/forms/types/dateinterval.rst:377
+msgid "``Boolean``"
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:370
+msgid "The value of the `with_days`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:371
+msgid "The value of the `with_invert`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:372
+msgid "The value of the `with_hours`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:373
+msgid "The value of the `with_minutes`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:374
+msgid "The value of the `with_months`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:375
+msgid "The value of the `with_seconds`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:376
+msgid "The value of the `with_weeks`_ option."
+msgstr ""
+
+#: ../../../reference/forms/types/dateinterval.rst:377
+msgid "The value of the `with_years`_ option."
+msgstr ""
+

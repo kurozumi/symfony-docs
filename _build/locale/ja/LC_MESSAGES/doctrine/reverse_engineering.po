@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/reverse_engineering.rst:5
+msgid "How to Generate Entities from an Existing Database"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:7
+msgid ""
+"When starting work on a brand new project that uses a database, two "
+"different situations comes naturally. In most cases, the database model "
+"is designed and built from scratch. Sometimes, however, you'll start with"
+" an existing and probably unchangeable database model. Fortunately, "
+"Doctrine comes with a bunch of tools to help generate model classes from "
+"your existing database."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:15
+#, python-format
+msgid ""
+"As the `Doctrine tools documentation`_ says, reverse engineering is a "
+"one-time process to get started on a project. Doctrine is able to convert"
+" approximately 70-80% of the necessary mapping information based on "
+"fields, indexes and foreign key constraints. Doctrine can't discover "
+"inverse associations, inheritance types, entities with foreign keys as "
+"primary keys or semantical operations on associations such as cascade or "
+"lifecycle events. Some additional work on the generated entities will be "
+"necessary afterwards to design each to fit your domain model "
+"specificities."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:24
+msgid ""
+"This tutorial assumes you're using a simple blog application with the "
+"following two tables: ``blog_post`` and ``blog_comment``. A comment "
+"record is linked to a post record thanks to a foreign key constraint."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:49
+msgid ""
+"Before diving into the recipe, be sure your database connection "
+"parameters are correctly setup in the ``.env`` file (or ``.env.local`` "
+"override file)."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:52
+msgid ""
+"The first step towards building entity classes from an existing database "
+"is to ask Doctrine to introspect the database and generate the "
+"corresponding metadata files. Metadata files describe the entity class to"
+" generate based on table fields."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:61
+msgid ""
+"This command line tool asks Doctrine to introspect the database and "
+"generate new PHP classes with annotation metadata into ``src/Entity``. "
+"This generates two files: ``BlogPost.php`` and ``BlogComment.php``."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:67
+msgid ""
+"It's also possible to generate the metadata files into XML or eventually "
+"into YAML:"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:73
+msgid "In this case, make sure to adapt your mapping configuration accordingly:"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:91
+msgid "Generating the Getters & Setters or PHP Classes"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:93
+msgid ""
+"The generated PHP classes now have properties and annotation metadata, "
+"but they do *not* have any getter or setter methods. If you generated XML"
+" or YAML metadata, you don't even have the PHP classes!"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:97
+msgid ""
+"To generate the missing getter/setter methods (or to *create* the classes"
+" if necessary), run:"
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:107
+msgid ""
+"If you want to have a OneToMany relationship, you will need to add it "
+"manually into the entity (e.g. add a ``comments`` property to "
+"``BlogPost``) or to the generated XML or YAML files. Add a section on the"
+" specific entities for one-to-many defining the ``inversedBy`` and the "
+"``mappedBy`` pieces."
+msgstr ""
+
+#: ../../../doctrine/reverse_engineering.rst:112
+msgid "The generated entities are now ready to be used. Have fun!"
+msgstr ""
+

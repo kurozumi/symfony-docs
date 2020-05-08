@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../http_cache/cache_vary.rst:6
+msgid "Varying the Response for HTTP Cache"
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:8
+msgid ""
+"So far, it's been assumed that each URI has exactly one representation of"
+" the target resource. By default, HTTP caching is done by using the URI "
+"of the resource as the cache key. If two people request the same URI of a"
+" cacheable resource, the second person will receive the cached version."
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:13
+msgid ""
+"Sometimes this isn't enough and different versions of the same URI need "
+"to be cached based on one or more request header values. For instance, if"
+" you compress pages when the client supports it, any given URI has two "
+"representations: one when the client supports compression, and one when "
+"it does not. This determination is done by the value of the ``Accept-"
+"Encoding`` request header."
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:19
+msgid ""
+"In this case, you need the cache to store both a compressed and "
+"uncompressed version of the response for the particular URI and return "
+"them based on the request's ``Accept-Encoding`` value. This is done by "
+"using the ``Vary`` response header, which is a comma-separated list of "
+"different headers whose values trigger a different representation of the "
+"requested resource:"
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:31
+msgid ""
+"This particular ``Vary`` header would cache different versions of each "
+"resource based on the URI and the value of the ``Accept-Encoding`` and "
+"``User-Agent`` request header."
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:35
+msgid ""
+"The ``Response`` object offers a clean interface for managing the "
+"``Vary`` header::"
+msgstr ""
+
+#: ../../../http_cache/cache_vary.rst:44
+msgid ""
+"The ``setVary()`` method takes a header name or an array of header names "
+"for which the response varies."
+msgstr ""
+

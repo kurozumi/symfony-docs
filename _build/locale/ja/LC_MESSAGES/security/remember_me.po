@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../security/remember_me.rst:5
+msgid "How to Add \"Remember Me\" Login Functionality"
+msgstr ""
+
+#: ../../../security/remember_me.rst:7
+msgid ""
+"Once a user is authenticated, their credentials are typically stored in "
+"the session. This means that when the session ends they will be logged "
+"out and have to provide their login details again next time they wish to "
+"access the application. You can allow users to choose to stay logged in "
+"for longer than the session lasts using a cookie with the ``remember_me``"
+" firewall option:"
+msgstr ""
+
+#: ../../../security/remember_me.rst:85
+msgid "The ``remember_me`` firewall defines the following configuration options:"
+msgstr ""
+
+#: ../../../security/remember_me.rst:89
+msgid "``secret`` (**required**)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:88
+msgid ""
+"The value used to encrypt the cookie's content. It's common to use the "
+"``secret`` value defined in the ``APP_SECRET`` environment variable."
+msgstr ""
+
+#: ../../../security/remember_me.rst:95
+msgid "``name`` (default value: ``REMEMBERME``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:92
+msgid ""
+"The name of the cookie used to keep the user logged in. If you enable the"
+" ``remember_me`` feature in several firewalls of the same application, "
+"make sure to choose a different name for the cookie of each firewall. "
+"Otherwise, you'll face lots of security related problems."
+msgstr ""
+
+#: ../../../security/remember_me.rst:99
+msgid "``lifetime`` (default value: ``31536000``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:98
+msgid ""
+"The number of seconds during which the user will remain logged in. By "
+"default users are logged in for one year."
+msgstr ""
+
+#: ../../../security/remember_me.rst:104
+msgid "``path`` (default value: ``/``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:102
+msgid ""
+"The path where the cookie associated with this feature is used. By "
+"default the cookie will be applied to the entire website but you can "
+"restrict to a specific section (e.g. ``/forum``, ``/admin``)."
+msgstr ""
+
+#: ../../../security/remember_me.rst:108
+msgid "``domain`` (default value: ``null``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:107
+msgid ""
+"The domain where the cookie associated with this feature is used. By "
+"default cookies use the current domain obtained from ``$_SERVER``."
+msgstr ""
+
+#: ../../../security/remember_me.rst:112
+msgid "``secure`` (default value: ``false``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:111
+msgid ""
+"If ``true``, the cookie associated with this feature is sent to the user "
+"through an HTTPS secure connection."
+msgstr ""
+
+#: ../../../security/remember_me.rst:117
+msgid "``httponly`` (default value: ``true``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:115
+msgid ""
+"If ``true``, the cookie associated with this feature is accessible only "
+"through the HTTP protocol. This means that the cookie won't be accessible"
+" by scripting languages, such as JavaScript."
+msgstr ""
+
+#: ../../../security/remember_me.rst:121
+msgid "``samesite`` (default value: ``null``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:120
+msgid ""
+"If set to ``strict``, the cookie associated with this feature will not be"
+" sent along with cross-site requests, even when following a regular link."
+msgstr ""
+
+#: ../../../security/remember_me.rst:126
+msgid "``remember_me_parameter`` (default value: ``_remember_me``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:124
+msgid ""
+"The name of the form field checked to decide if the \"Remember Me\" "
+"feature should be enabled or not. Keep reading this article to know how "
+"to enable this feature conditionally."
+msgstr ""
+
+#: ../../../security/remember_me.rst:131
+msgid "``always_remember_me`` (default value: ``false``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:129
+msgid ""
+"If ``true``, the value of the ``remember_me_parameter`` is ignored and "
+"the \"Remember Me\" feature is always enabled, regardless of the desire "
+"of the end user."
+msgstr ""
+
+#: ../../../security/remember_me.rst:135
+msgid "``token_provider`` (default value: ``null``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:134
+msgid ""
+"Defines the service id of a token provider to use. If you want to store "
+"tokens in the database, see :ref:`remember-me-token-in-database`."
+msgstr ""
+
+#: ../../../security/remember_me.rst:143
+msgid "``service`` (default value: ``null``)"
+msgstr ""
+
+#: ../../../security/remember_me.rst:138
+msgid ""
+"Defines the ID of the service used to handle the Remember Me feature. "
+"It's useful if you need to overwrite the current behavior entirely."
+msgstr ""
+
+#: ../../../security/remember_me.rst:143
+msgid "The ``service`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../security/remember_me.rst:146
+msgid "Forcing the User to Opt-Out of the Remember Me Feature"
+msgstr ""
+
+#: ../../../security/remember_me.rst:148
+msgid ""
+"It's a good idea to provide the user with the option to use or not use "
+"the remember me functionality, as it will not always be appropriate. The "
+"usual way of doing this is to add a checkbox to the login form. By giving"
+" the checkbox the name ``_remember_me`` (or the name you configured using"
+" ``remember_me_parameter``), the cookie will automatically be set when "
+"the checkbox is checked and the user successfully logs in. So, your "
+"specific login form might ultimately look like this:"
+msgstr ""
+
+#: ../../../security/remember_me.rst:168
+msgid ""
+"The user will then automatically be logged in on subsequent visits while "
+"the cookie remains valid."
+msgstr ""
+
+#: ../../../security/remember_me.rst:172
+msgid "Forcing the User to Re-Authenticate before Accessing certain Resources"
+msgstr ""
+
+#: ../../../security/remember_me.rst:174
+msgid ""
+"When the user returns to your site, they are authenticated automatically "
+"based on the information stored in the remember me cookie. This allows "
+"the user to access protected resources as if the user had actually "
+"authenticated upon visiting the site."
+msgstr ""
+
+#: ../../../security/remember_me.rst:179
+msgid ""
+"In some cases, however, you may want to force the user to actually re-"
+"authenticate before accessing certain resources. For example, you might "
+"not allow \"remember me\" users to change their password. You can do this"
+" by leveraging a few special \"attributes\"::"
+msgstr ""
+
+#: ../../../security/remember_me.rst:208
+msgid ""
+"There is also a ``IS_REMEMBERED`` attribute that grants *only* when the "
+"user is authenticated via the remember me mechanism."
+msgstr ""
+
+#: ../../../security/remember_me.rst:213
+msgid "The ``IS_REMEMBERED`` attribute was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../security/remember_me.rst:218
+msgid "Storing Remember Me Tokens in the Database"
+msgstr ""
+
+#: ../../../security/remember_me.rst:220
+msgid ""
+"The token contents, including the hashed version of the user password, "
+"are stored by default in cookies. If you prefer to store them in a "
+"database, use the "
+":class:`Symfony\\\\Bridge\\\\Doctrine\\\\Security\\\\RememberMe\\\\DoctrineTokenProvider`"
+" class provided by the Doctrine Bridge."
+msgstr ""
+
+#: ../../../security/remember_me.rst:225
+msgid "First, you need to register ``DoctrineTokenProvider`` as a service:"
+msgstr ""
+
+#: ../../../security/remember_me.rst:257
+msgid ""
+"Then you need to create a table with the following structure in your "
+"database so ``DoctrineTokenProvider`` can store the tokens:"
+msgstr ""
+
+#: ../../../security/remember_me.rst:270
+msgid ""
+"Finally, set the ``token_provider`` option of the ``remember_me`` config "
+"to the service you just created:"
+msgstr ""
+

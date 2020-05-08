@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:2
+msgid "GreaterThanOrEqual"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:4
+msgid ""
+"Validates that a value is greater than or equal to another value, defined"
+" in the options. To force that a value is greater than another value, see"
+" :doc:`/reference/constraints/GreaterThan`."
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:10
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:287
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:11
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:12
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:13
+msgid "`propertyPath`_"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:14
+msgid "`value`_"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:15
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:15
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\GreaterThanOrEqual`"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:16
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\GreaterThanOrEqualValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:20
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:22
+msgid "The following constraints ensure that:"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:24
+msgid ""
+"the number of ``siblings`` of a ``Person`` is greater than or equal to "
+"``5``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:25
+msgid "the ``age`` of a ``Person`` class is greater than or equal to ``18``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:105
+msgid "Comparing Dates"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:107
+msgid ""
+"This constraint can be used to compare ``DateTime`` objects against any "
+"date string `accepted by the DateTime constructor`_. For example, you "
+"could check that a date must at least be the current day:"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:167
+msgid ""
+"Be aware that PHP will use the server's configured timezone to interpret "
+"these dates. If you want to fix the timezone, append it to the date "
+"string:"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:226
+msgid ""
+"The ``DateTime`` class also accepts relative dates or times. For example,"
+" you can check that the above delivery date starts at least five hours "
+"after the current time:"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:292
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:294
+msgid ""
+"**type**: ``string`` **default**: ``This value should be greater than or "
+"equal to {{ compared_value }}.``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:296
+msgid ""
+"This is the message that will be shown if the value is not greater than "
+"or equal to the comparison value."
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:299
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:302
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:302
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:304
+msgid "``{{ compared_value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:304
+msgid "The lower limit"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:305
+msgid "``{{ compared_value_type }}``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:305
+msgid "The expected value type"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:306
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/GreaterThanOrEqual.rst:306
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:2
+msgid "``propertyPath``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:4
+msgid "**type**: ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:6
+msgid "It defines the object property whose value is used to make the comparison."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:8
+msgid ""
+"For example, if you want to compare the ``$endDate`` property of some "
+"object with regard to the ``$startDate`` property of the same object, use"
+" ``propertyPath=\"startDate\"`` in the comparison constraint of "
+"``$endDate``."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-propertypath-option.rst.inc:14
+msgid ""
+"When using this option, its value is available in error messages as the "
+"``{{ compared_value_path }}`` placeholder. Although it's not intended to "
+"include it in the error messages displayed to end users, it's useful when"
+" using APIs for doing any mapping logic on client-side."
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:2
+msgid "``value``"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:4
+msgid "**type**: ``mixed`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/_comparison-value-option.rst.inc:6
+msgid ""
+"This option is required. It defines the value to compare to. It can be a "
+"string, number or object."
+msgstr ""
+

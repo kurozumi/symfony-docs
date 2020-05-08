@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../logging/handlers.rst:2
+msgid "Handlers"
+msgstr ""
+
+#: ../../../logging/handlers.rst:5
+msgid "ElasticsearchLogstashHandler"
+msgstr ""
+
+#: ../../../logging/handlers.rst:7
+msgid ""
+"This handler deals directly with the HTTP interface of Elasticsearch. "
+"This means it will slow down your application if Elasticsearch takes "
+"times to answer. Even if all HTTP calls are done asynchronously."
+msgstr ""
+
+#: ../../../logging/handlers.rst:11
+msgid ""
+"In a development environment, it's fine to keep the default "
+"configuration: for each log, an HTTP request will be made to push the log"
+" to Elasticsearch."
+msgstr ""
+
+#: ../../../logging/handlers.rst:14
+msgid ""
+"In a production environment, it's highly recommended to wrap this handler"
+" in a handler with buffering capabilities (like the "
+"``FingersCrossedHandler`` or ``BufferHandler``) in order to call "
+"Elasticsearch only once with a bulk push. For even better performance and"
+" fault tolerance, a proper `ELK stack`_ is recommended."
+msgstr ""
+
+#: ../../../logging/handlers.rst:19
+msgid "To use it, declare it as a service:"
+msgstr ""
+
+#: ../../../logging/handlers.rst:53
+msgid "Then reference it in the Monolog configuration:"
+msgstr ""
+

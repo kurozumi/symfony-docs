@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../messenger/message-recorder.rst:5
+msgid "Transactional Messages: Handle New Messages After Handling is Done"
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:7
+msgid ""
+"A message handler can ``dispatch`` new messages during execution, to "
+"either the same or a different bus (if the application has :doc:`multiple"
+" buses </messenger/multiple_buses>`). Any errors or exceptions that occur"
+" during this process can have unintended consequences, such as:"
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:12
+msgid ""
+"If using the ``DoctrineTransactionMiddleware`` and a dispatched message "
+"throws an exception, then any database transactions in the original "
+"handler will be rolled back."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:15
+msgid ""
+"If the message is dispatched to a different bus, then the dispatched "
+"message will be handled even if some code later in the current handler "
+"throws an exception."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:20
+msgid "An Example ``RegisterUser`` Process"
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:22
+msgid ""
+"Let's take the example of an application with both a *command* and an "
+"*event* bus. The application dispatches a command named ``RegisterUser`` "
+"to the command bus. The command is handled by the ``RegisterUserHandler``"
+" which creates a ``User`` object, stores that object to a database and "
+"dispatches a ``UserRegistered`` message to the event bus."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:28
+msgid ""
+"There are many handlers to the ``UserRegistered`` message, one handler "
+"may send a welcome email to the new user. We are using the "
+"``DoctrineTransactionMiddleware`` to wrap all database queries in one "
+"database transaction."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:32
+msgid ""
+"**Problem 1:** If an exception is thrown when sending the welcome email, "
+"then the user will not be created because the "
+"``DoctrineTransactionMiddleware`` will rollback the Doctrine transaction,"
+" in which the user has been created."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:36
+msgid ""
+"**Problem 2:** If an exception is thrown when saving the user to the "
+"database, the welcome email is still sent because it is handled "
+"asynchronously."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:40
+msgid "DispatchAfterCurrentBusMiddleware Middleware"
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:42
+msgid ""
+"For many applications, the desired behavior is to *only* handle messages "
+"that are dispatched by a handler once that handler has fully finished. "
+"This can be by using the ``DispatchAfterCurrentBusMiddleware`` and adding"
+" a ``DispatchAfterCurrentBusStamp`` stamp to :ref:`the message Envelope "
+"<messenger-envelopes>`::"
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:115
+msgid ""
+"This means that the ``UserRegistered`` message would not be handled until"
+" *after* the ``RegisterUserHandler`` had completed and the new ``User`` "
+"was persisted to the database. If the ``RegisterUserHandler`` encounters "
+"an exception, the ``UserRegistered`` event will never be handled. And if "
+"an exception is thrown while sending the welcome email, the Doctrine "
+"transaction will not be rolled back."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:124
+msgid ""
+"If ``WhenUserRegisteredThenSendWelcomeEmail`` throws an exception, that "
+"exception will be wrapped into a ``DelayedMessageHandlingException``. "
+"Using ``DelayedMessageHandlingException::getExceptions`` will give you "
+"all exceptions that are thrown while handing a message with the "
+"``DispatchAfterCurrentBusStamp``."
+msgstr ""
+
+#: ../../../messenger/message-recorder.rst:130
+msgid ""
+"The ``dispatch_after_current_bus`` middleware is enabled by default. If "
+"you're configuring your middleware manually, be sure to register "
+"``dispatch_after_current_bus`` before ``doctrine_transaction`` in the "
+"middleware chain. Also, the ``dispatch_after_current_bus`` middleware "
+"must be loaded for *all* of the buses being used."
+msgstr ""
+

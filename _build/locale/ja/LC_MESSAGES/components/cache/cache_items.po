@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache/cache_items.rst:7
+msgid "Cache Items"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:9
+msgid ""
+"Cache items are the information units stored in the cache as a key/value "
+"pair. In the Cache component they are represented by the "
+":class:`Symfony\\\\Component\\\\Cache\\\\CacheItem` class. They are used "
+"in both the Cache Contracts and the PSR-6 interfaces."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:15
+msgid "Cache Item Keys and Values"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:17
+msgid ""
+"The **key** of a cache item is a plain string which acts as its "
+"identifier, so it must be unique for each cache pool. You can freely "
+"choose the keys, but they should only contain letters (A-Z, a-z), numbers"
+" (0-9) and the ``_`` and ``.`` symbols. Other common symbols (such as "
+"``{``, ``}``, ``(``, ``)``, ``/``, ``\\``, ``@`` and ``:``) are reserved "
+"by the PSR-6 standard for future uses."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:24
+msgid ""
+"The **value** of a cache item can be any data represented by a type which"
+" is serializable by PHP, such as basic types (string, integer, float, "
+"boolean, null), arrays and objects."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:29
+msgid "Creating Cache Items"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:31
+msgid ""
+"The only way to create cache items is via cache pools. When using the "
+"Cache Contracts, they are passed as arguments to the recomputation "
+"callback::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:39
+msgid ""
+"When using PSR-6, they are created with the ``getItem($key)`` method of "
+"the cache pool::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:45
+msgid ""
+"Then, use the ``Psr\\Cache\\CacheItemInterface::set`` method to set the "
+"data stored in the cache item (this step is done automatically when using"
+" the Cache Contracts)::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:59
+msgid ""
+"The key and the value of any given cache item can be obtained with the "
+"corresponding *getter* methods::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:68
+msgid "Cache Item Expiration"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:70
+msgid ""
+"By default, cache items are stored permanently. In practice, this "
+"\"permanent storage\" can vary greatly depending on the type of cache "
+"being used, as explained in the :doc:`/components/cache/cache_pools` "
+"article."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:74
+msgid ""
+"However, in some applications it's common to use cache items with a "
+"shorter lifespan. Consider for example an application which caches the "
+"latest news just for one minute. In those cases, use the "
+"``expiresAfter()`` method to set the number of seconds to cache the "
+"item::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:84
+msgid ""
+"Cache items define another related method called ``expiresAt()`` to set "
+"the exact date and time when the item will expire::"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:90
+msgid "Cache Item Hits and Misses"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:92
+msgid ""
+"Using a cache mechanism is important to improve the application "
+"performance, but it should not be required to make the application work. "
+"In fact, the PSR-6 document wisely states that caching errors should not "
+"result in application failures."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:96
+msgid ""
+"In practice with PSR-6, this means that the ``getItem()`` method always "
+"returns an object which implements the ``Psr\\Cache\\CacheItemInterface``"
+" interface, even when the cache item doesn't exist. Therefore, you don't "
+"have to deal with ``null`` return values and you can safely store in the "
+"cache values such as ``false`` and ``null``."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:101
+msgid ""
+"In order to decide if the returned object represents a value coming from "
+"the storage or not, caches use the concept of hits and misses:"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:104
+msgid ""
+"**Cache Hits** occur when the requested item is found in the cache, its "
+"value is not corrupted or invalid and it hasn't expired;"
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:106
+msgid ""
+"**Cache Misses** are the opposite of hits, so they occur when the item is"
+" not found in the cache, its value is corrupted or invalid for any reason"
+" or the item has expired."
+msgstr ""
+
+#: ../../../components/cache/cache_items.rst:110
+msgid ""
+"Cache item objects define a boolean ``isHit()`` method which returns "
+"``true`` for cache hits::"
+msgstr ""
+

@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../index.rst:4
+msgid "Symfony Documentation"
+msgstr ""
+
+#: ../../../index.rst:7
+msgid "Quick Tour"
+msgstr ""
+
+#: ../../../index.rst:9
+msgid "Get started fast with the Symfony :doc:`Quick Tour <quick_tour/index>`:"
+msgstr ""
+
+#: ../../../index.rst:16
+msgid ":doc:`quick_tour/the_big_picture`"
+msgstr ""
+
+#: ../../../index.rst:17
+msgid ":doc:`quick_tour/flex_recipes`"
+msgstr ""
+
+#: ../../../index.rst:18
+msgid ":doc:`quick_tour/the_architecture`"
+msgstr ""
+
+#: ../../../index.rst:21
+msgid "Getting Started"
+msgstr ""
+
+#: ../../../index.rst:29
+msgid "Topics"
+msgstr ""
+
+#: ../../../index.rst:66
+msgid "Components"
+msgstr ""
+
+#: ../../../index.rst:73
+msgid "Read the :doc:`Components </components/index>` documentation."
+msgstr ""
+
+#: ../../../index.rst:76
+msgid "Reference Documents"
+msgstr ""
+
+#: ../../../index.rst:78
+msgid "Get answers quickly with reference documents:"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:1
+msgid "**Configuration Options**"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:3
+msgid ""
+"Ever wondered what configuration options you have available to you in "
+"``config/packages/*.yaml`` files? In this section, all the available "
+"configuration is broken down by the key (e.g. ``framework``) that defines"
+" each possible section of your Symfony configuration."
+msgstr ""
+
+#: ../../../reference/map.rst.inc:8
+msgid ":doc:`framework </reference/configuration/framework>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:9
+msgid ":doc:`doctrine </reference/configuration/doctrine>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:10
+msgid ":doc:`security </reference/configuration/security>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:11
+msgid ":doc:`swiftmailer </reference/configuration/swiftmailer>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:12
+msgid ":doc:`twig </reference/configuration/twig>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:13
+msgid ":doc:`monolog </reference/configuration/monolog>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:14
+msgid ":doc:`web_profiler </reference/configuration/web_profiler>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:15
+msgid ":doc:`debug </reference/configuration/debug>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:17
+msgid ":doc:`Configuring the Kernel </reference/configuration/kernel>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:19
+msgid "**Forms and Validation**"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:21
+msgid ":doc:`Form Field Type Reference </reference/forms/types>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:22
+msgid ":doc:`Validation Constraints Reference </reference/constraints>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:23
+msgid ""
+":ref:`Twig Template Function and Variable Reference <reference-form-twig-"
+"functions-variables>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:25
+msgid ""
+":doc:`Twig Extensions (forms, filters, tags, etc) Reference "
+"</reference/twig_reference>`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:27
+msgid "**Other Areas**"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:29
+msgid ":doc:`/reference/dic_tags`"
+msgstr ""
+
+#: ../../../reference/map.rst.inc:30
+msgid ":doc:`/reference/events`"
+msgstr ""
+
+#: ../../../index.rst:88
+msgid "Contributing"
+msgstr ""
+
+#: ../../../index.rst:90
+msgid "Contribute to Symfony:"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:1
+msgid "**Code of Conduct**"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:3
+msgid ":doc:`/contributing/code_of_conduct/code_of_conduct`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:4
+msgid ":doc:`/contributing/code_of_conduct/reporting_guidelines`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:5
+msgid ":doc:`/contributing/code_of_conduct/care_team`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:6
+msgid ":doc:`/contributing/code_of_conduct/concrete_example_document`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:8
+msgid "**Code**"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:10
+msgid ":doc:`Bugs </contributing/code/bugs>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:11
+msgid ":doc:`Pull Requests </contributing/code/pull_requests>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:12
+msgid ""
+":doc:`Reviewing Issues and Pull Requests "
+"</contributing/community/reviews>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:13
+msgid ":doc:`Maintenance </contributing/code/maintenance>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:14
+msgid ":doc:`The Core Team </contributing/code/core_team>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:15
+msgid ":doc:`Security </contributing/code/security>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:16
+msgid ":doc:`Tests </contributing/code/tests>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:17
+msgid ":doc:`Backward Compatibility </contributing/code/bc>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:18
+msgid ":doc:`Coding Standards</contributing/code/standards>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:19
+msgid ":doc:`Code Conventions</contributing/code/conventions>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:20
+msgid ":doc:`Git</contributing/code/git>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:21
+msgid ":doc:`License </contributing/code/license>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:23
+msgid "**Documentation**"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:25
+msgid ":doc:`Overview </contributing/documentation/overview>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:26
+msgid ":doc:`Format </contributing/documentation/format>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:27
+msgid ":doc:`Documentation Standards </contributing/documentation/standards>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:28
+msgid ":doc:`License </contributing/documentation/license>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:30
+msgid "**Community**"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:32
+msgid ":doc:`Release Process </contributing/community/releases>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:33
+msgid ""
+":doc:`Respectful Review comments </contributing/community/review-"
+"comments>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:34
+msgid ":doc:`Community Reviews </contributing/community/reviews>`"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:36
+msgid "**Diversity**"
+msgstr ""
+
+#: ../../../contributing/map.rst.inc:38
+msgid ":doc:`Governance </contributing/diversity/governance>`"
+msgstr ""
+
+#: ../../../index.rst:100
+msgid "Create your Own Framework"
+msgstr ""
+
+#: ../../../index.rst:102
+msgid "Want to create your own framework based on Symfony?"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:1
+msgid ":doc:`/create_framework/introduction`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:2
+msgid ":doc:`/create_framework/http_foundation`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:3
+msgid ":doc:`/create_framework/front_controller`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:4
+msgid ":doc:`/create_framework/routing`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:5
+msgid ":doc:`/create_framework/templating`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:6
+msgid ":doc:`/create_framework/http_kernel_controller_resolver`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:7
+msgid ":doc:`/create_framework/separation_of_concerns`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:8
+msgid ":doc:`/create_framework/unit_testing`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:9
+msgid ":doc:`/create_framework/event_dispatcher`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:10
+msgid ":doc:`/create_framework/http_kernel_httpkernelinterface`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:11
+msgid ":doc:`/create_framework/http_kernel_httpkernel_class`"
+msgstr ""
+
+#: ../../../create_framework/map.rst.inc:12
+msgid ":doc:`/create_framework/dependency_injection`"
+msgstr ""
+

@@ -1,0 +1,408 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/associations.rst:5
+msgid "How to Work with Doctrine Associations / Relations"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:7
+msgid "Screencast"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:10
+msgid ""
+"Do you prefer video tutorials? Check out the `Mastering Doctrine "
+"Relations`_ screencast series."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:13
+msgid "There are **two** main relationship/association types:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:19
+msgid "``ManyToOne`` / ``OneToMany``"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:16
+msgid ""
+"The most common relationship, mapped in the database with a foreign key "
+"column (e.g. a ``category_id`` column on the ``product`` table). This is "
+"actually just *one* association type, but seen from the two different "
+"*sides* of the relation."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:24
+msgid "``ManyToMany``"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:22
+msgid ""
+"Uses a join table and is needed when both sides of the relationship can "
+"have many of the other side (e.g. \"students\" and \"classes\": each "
+"student is in many classes, and each class has many students)."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:26
+msgid ""
+"First, you need to determine which relationship to use. If both sides of "
+"the relation will contain many of the other side (e.g. \"students\" and "
+"\"classes\"), you need a ``ManyToMany`` relation. Otherwise, you likely "
+"need a ``ManyToOne``."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:32
+msgid ""
+"There is also a OneToOne relationship (e.g. one User has one Profile and "
+"vice versa). In practice, using this is similar to ``ManyToOne``."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:36
+msgid "The ManyToOne / OneToMany Association"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:38
+msgid ""
+"Suppose that each product in your application belongs to exactly one "
+"category. In this case, you'll need a ``Category`` class, and a way to "
+"relate a ``Product`` object to a ``Category`` object."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:42
+msgid "Start by creating a ``Category`` entity with a ``name`` field:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:64
+msgid "This will generate your new entity class::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:89
+msgid "Mapping the ManyToOne Relationship"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:91
+msgid ""
+"In this example, each category can be associated with *many* products. "
+"But, each product can be associated with only *one* category. This "
+"relationship can be summarized as: *many* products to *one* category (or "
+"equivalently, *one* category to *many* products)."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:96
+msgid ""
+"From the perspective of the ``Product`` entity, this is a many-to-one "
+"relationship. From the perspective of the ``Category`` entity, this is a "
+"one-to-many relationship."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:99
+msgid ""
+"To map this, first create a ``category`` property on the ``Product`` "
+"class with the ``ManyToOne`` annotation. You can do this by hand, or by "
+"using the ``make:entity`` command, which will ask you several questions "
+"about your relationship. If you're not sure of the answer, don't worry! "
+"You can always change the settings later:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:141
+msgid ""
+"This made changes to *two* entities. First, it added a new ``category`` "
+"property to the ``Product`` entity (and getter & setter methods):"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:207
+msgid ""
+"This ``ManyToOne`` mapping is required. It tells Doctrine to use the "
+"``category_id`` column on the ``product`` table to relate each record in "
+"that table with a record in the ``category`` table."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:211
+msgid ""
+"Next, since *one* ``Category`` object will relate to *many* ``Product`` "
+"objects, the ``make:entity`` command *also* added a ``products`` property"
+" to the ``Category`` class that will hold these objects:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:287
+msgid ""
+"The ``ManyToOne`` mapping shown earlier is *required*, But, this "
+"``OneToMany`` is optional: only add it *if* you want to be able to access"
+" the products that are related to a category (this is one of the "
+"questions ``make:entity`` asks you). In this example, it *will* be useful"
+" to be able to call ``$category->getProducts()``. If you don't want it, "
+"then you also don't need the ``inversedBy`` or ``mappedBy`` config."
+msgstr ""
+
+#: ../../../doctrine/associations.rst
+msgid "What is the ArrayCollection Stuff?"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:296
+msgid ""
+"The code inside ``__construct()`` is important: The ``$products`` "
+"property must be a collection object that implements Doctrine's "
+"``Collection`` interface. In this case, an `ArrayCollection`_ object is "
+"used. This looks and acts almost *exactly* like an array, but has some "
+"added flexibility. Just imagine that it is an ``array`` and you'll be in "
+"good shape."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:302
+msgid "Your database is setup! Now, execute the migrations like normal:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:309
+msgid ""
+"Thanks to the relationship, this creates a ``category_id`` foreign key "
+"column on the ``product`` table. Doctrine is ready to persist our "
+"relationship!"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:313
+msgid "Saving Related Entities"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:315
+msgid ""
+"Now you can see this new code in action! Imagine you're inside a "
+"controller::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:355
+msgid ""
+"When you go to ``/product``, a single row is added to both the "
+"``category`` and ``product`` tables. The ``product.category_id`` column "
+"for the new product is set to whatever the ``id`` is of the new category."
+" Doctrine manages the persistence of this relationship for you:"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:363
+msgid ""
+"If you're new to an ORM, this is the *hardest* concept: you need to stop "
+"thinking about your database, and instead *only* think about your "
+"objects. Instead of setting the category's integer id onto ``Product``, "
+"you set the entire ``Category`` *object*. Doctrine takes care of the rest"
+" when saving."
+msgstr ""
+
+#: ../../../doctrine/associations.rst
+msgid "Updating the Relationship from the Inverse Side"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:370
+msgid ""
+"Could you also call ``$category->addProduct()`` to change the "
+"relationship? Yes, but, only because the ``make:entity`` command helped "
+"us. For more details, see: `associations-inverse-side`_."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:375
+msgid "Fetching Related Objects"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:377
+msgid ""
+"When you need to fetch associated objects, your workflow looks just like "
+"it did before. First, fetch a ``$product`` object and then access its "
+"related ``Category`` object::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:397
+msgid ""
+"In this example, you first query for a ``Product`` object based on the "
+"product's ``id``. This issues a query for *just* the product data and "
+"hydrates the ``$product``. Later, when you call "
+"``$product->getCategory()->getName()``, Doctrine silently makes a second "
+"query to find the ``Category`` that's related to this ``Product``. It "
+"prepares the ``$category`` object and returns it to you."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:407
+msgid ""
+"What's important is the fact that you have access to the product's "
+"related category, but the category data isn't actually retrieved until "
+"you ask for the category (i.e. it's \"lazily loaded\")."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:411
+msgid ""
+"Because we mapped the optional ``OneToMany`` side, you can also query in "
+"the other direction::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:425
+msgid ""
+"In this case, the same things occur: you first query for a single "
+"``Category`` object. Then, only when (and if) you access the products, "
+"Doctrine makes a second query to retrieve the related ``Product`` "
+"objects. This extra query can be avoided by adding JOINs."
+msgstr ""
+
+#: ../../../doctrine/associations.rst
+msgid "Relationships and Proxy Classes"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:432
+msgid ""
+"This \"lazy loading\" is possible because, when necessary, Doctrine "
+"returns a \"proxy\" object in place of the true object. Look again at the"
+" above example::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:446
+msgid ""
+"This proxy object extends the true ``Category`` object, and looks and "
+"acts exactly like it. The difference is that, by using a proxy object, "
+"Doctrine can delay querying for the real ``Category`` data until you "
+"actually need that data (e.g. until you call ``$category->getName()``)."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:451
+msgid ""
+"The proxy classes are generated by Doctrine and stored in the cache "
+"directory. You'll probably never even notice that your ``$category`` "
+"object is actually a proxy object."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:455
+msgid ""
+"In the next section, when you retrieve the product and category data all "
+"at once (via a *join*), Doctrine will return the *true* ``Category`` "
+"object, since nothing needs to be lazily loaded."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:462
+msgid "Joining Related Records"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:464
+msgid ""
+"In the examples above, two queries were made - one for the original "
+"object (e.g. a ``Category``) and one for the related object(s) (e.g. the "
+"``Product`` objects)."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:470
+msgid ""
+"Remember that you can see all of the queries made during a request via "
+"the web debug toolbar."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:473
+msgid ""
+"If you know up front that you'll need to access both objects, you can "
+"avoid the second query by issuing a join in the original query. Add the "
+"following method to the ``ProductRepository`` class::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:492
+msgid ""
+"This will *still* return an array of ``Product`` objects. But now, when "
+"you call ``$product->getCategory()`` and use that data, no second query "
+"is made."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:495
+msgid ""
+"Now, you can use this method in your controller to query for a "
+"``Product`` object and its related ``Category`` with just one query::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:512
+msgid "Setting Information from the Inverse Side"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:514
+msgid ""
+"So far, you've updated the relationship by calling "
+"``$product->setCategory($category)``. This is no accident! Each "
+"relationship has two sides: in this example, ``Product.category`` is the "
+"*owning* side and ``Category.products`` is the *inverse* side."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:518
+msgid ""
+"To update a relationship in the database, you *must* set the relationship"
+" on the *owning* side. The owning side is always where the ``ManyToOne`` "
+"mapping is set (for a ``ManyToMany`` relation, you can choose which side "
+"is the owning side)."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:522
+msgid ""
+"Does this means it's not possible to call ``$category->addProduct()`` or "
+"``$category->removeProduct()`` to update the database? Actually, it *is* "
+"possible, thanks to some clever code that the ``make:entity`` command "
+"generated::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:544
+msgid ""
+"The *key* is ``$product->setCategory($this)``, which sets the *owning* "
+"side. Thanks, to this, when you save, the relationship *will* update in "
+"the database."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:547
+msgid ""
+"What about *removing* a ``Product`` from a ``Category``? The "
+"``make:entity`` command also generated a ``removeProduct()`` method::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:571
+msgid ""
+"Thanks to this, if you call ``$category->removeProduct($product)``, the "
+"``category_id`` on that ``Product`` will be set to ``null`` in the "
+"database."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:574
+msgid ""
+"But, instead of setting the ``category_id`` to null, what if you want the"
+" ``Product`` to be *deleted* if it becomes \"orphaned\" (i.e. without a "
+"``Category``)? To choose that behavior, use the `orphanRemoval`_ option "
+"inside ``Category``::"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:587
+msgid ""
+"Thanks to this, if the ``Product`` is removed from the ``Category``, it "
+"will be removed from the database entirely."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:591
+msgid "More Information on Associations"
+msgstr ""
+
+#: ../../../doctrine/associations.rst:593
+msgid ""
+"This section has been an introduction to one common type of entity "
+"relationship, the one-to-many relationship. For more advanced details and"
+" examples of how to use other types of relations (e.g. one-to-one, many-"
+"to-many), see Doctrine's `Association Mapping Documentation`_."
+msgstr ""
+
+#: ../../../doctrine/associations.rst:600
+msgid ""
+"If you're using annotations, you'll need to prepend all annotations with "
+"``@ORM\\`` (e.g. ``@ORM\\OneToMany``), which is not reflected in "
+"Doctrine's documentation."
+msgstr ""
+

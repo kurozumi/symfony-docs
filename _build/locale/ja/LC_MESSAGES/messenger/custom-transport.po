@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../messenger/custom-transport.rst:2
+msgid "How to Create Your own Messenger Transport"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:4
+msgid ""
+"Once you have written your transport's sender and receiver, you can "
+"register your transport factory to be able to use it via a DSN in the "
+"Symfony application."
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:8
+msgid "Create your Transport Factory"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:10
+msgid ""
+"You need to give FrameworkBundle the opportunity to create your transport"
+" from a DSN. You will need a transport factory::"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:32
+msgid ""
+"The transport object needs to implement the "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\TransportInterface`"
+" (which combines the "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\Sender\\\\SenderInterface`"
+" and "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\Receiver\\\\ReceiverInterface`)."
+" Here is a simplified example of a database transport::"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:128
+msgid ""
+"The implementation above is not runnable code but illustrates how a "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\TransportInterface`"
+" could be implemented. For real implementations see "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\InMemoryTransport`"
+" and "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Transport\\\\Doctrine\\\\DoctrineReceiver`."
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:134
+msgid "Register your Factory"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:170
+msgid "Use your Transport"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:172
+msgid ""
+"Within the ``framework.messenger.transports.*`` configuration, create "
+"your named transport using your own DSN:"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:215
+msgid ""
+"In addition of being able to route your messages to the ``yours`` sender,"
+" this will give you access to the following services:"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:218
+msgid "``messenger.sender.yours``: the sender;"
+msgstr ""
+
+#: ../../../messenger/custom-transport.rst:219
+msgid "``messenger.receiver.yours``: the receiver."
+msgstr ""
+

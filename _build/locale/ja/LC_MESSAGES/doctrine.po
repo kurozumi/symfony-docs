@@ -1,0 +1,735 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine.rst:5
+msgid "Databases and the Doctrine ORM"
+msgstr ""
+
+#: ../../../doctrine.rst:7
+msgid "Screencast"
+msgstr ""
+
+#: ../../../doctrine.rst:10
+msgid ""
+"Do you prefer video tutorials? Check out the `Doctrine screencast "
+"series`_."
+msgstr ""
+
+#: ../../../doctrine.rst:12
+msgid ""
+"Symfony provides all the tools you need to use databases in your "
+"applications thanks to `Doctrine`_, the best set of PHP libraries to work"
+" with databases. These tools support relational databases like MySQL and "
+"PostgreSQL and also NoSQL databases like MongoDB."
+msgstr ""
+
+#: ../../../doctrine.rst:17
+msgid ""
+"Databases are a broad topic, so the documentation is divided in three "
+"articles:"
+msgstr ""
+
+#: ../../../doctrine.rst:19
+msgid ""
+"This article explains the recommended way to work with **relational "
+"databases** in Symfony applications;"
+msgstr ""
+
+#: ../../../doctrine.rst:21
+msgid ""
+"Read :doc:`this other article </doctrine/dbal>` if you need **low-level "
+"access** to perform raw SQL queries to relational databases (similar to "
+"PHP's `PDO`_);"
+msgstr ""
+
+#: ../../../doctrine.rst:23
+msgid ""
+"Read `DoctrineMongoDBBundle docs`_ if you are working with **MongoDB "
+"databases**."
+msgstr ""
+
+#: ../../../doctrine.rst:26
+msgid "Installing Doctrine"
+msgstr ""
+
+#: ../../../doctrine.rst:28
+msgid ""
+"First, install Doctrine support via the ``orm`` :ref:`Symfony pack "
+"<symfony-packs>`, as well as the MakerBundle, which will help generate "
+"some code:"
+msgstr ""
+
+#: ../../../doctrine.rst:37
+msgid "Configuring the Database"
+msgstr ""
+
+#: ../../../doctrine.rst:39
+msgid ""
+"The database connection information is stored as an environment variable "
+"called ``DATABASE_URL``. For development, you can find and customize this"
+" inside ``.env``:"
+msgstr ""
+
+#: ../../../doctrine.rst:54
+#, python-format
+msgid ""
+"If the username, password, host or database name contain any character "
+"considered special in a URI (such as ``+``, ``@``, ``$``, ``#``, ``/``, "
+"``:``, ``*``, ``!``), you must encode them. See `RFC 3986`_ for the full "
+"list of reserved characters or use the :phpfunction:`urlencode` function "
+"to encode them. In this case you need to remove the ``resolve:`` prefix "
+"in ``config/packages/doctrine.yaml`` to avoid errors: ``url: "
+"'%env(resolve:DATABASE_URL)%'``"
+msgstr ""
+
+#: ../../../doctrine.rst:61
+msgid ""
+"Now that your connection parameters are setup, Doctrine can create the "
+"``db_name`` database for you:"
+msgstr ""
+
+#: ../../../doctrine.rst:68
+msgid ""
+"There are more options in ``config/packages/doctrine.yaml`` that you can "
+"configure, including your ``server_version`` (e.g. 5.7 if you're using "
+"MySQL 5.7), which may affect how Doctrine functions."
+msgstr ""
+
+#: ../../../doctrine.rst:74
+msgid ""
+"There are many other Doctrine commands. Run ``php bin/console list "
+"doctrine`` to see a full list."
+msgstr ""
+
+#: ../../../doctrine.rst:78
+msgid "Creating an Entity Class"
+msgstr ""
+
+#: ../../../doctrine.rst:80
+msgid ""
+"Suppose you're building an application where products need to be "
+"displayed. Without even thinking about Doctrine or databases, you already"
+" know that you need a ``Product`` object to represent those products."
+msgstr ""
+
+#: ../../../doctrine.rst:86
+msgid ""
+"You can use the ``make:entity`` command to create this class and any "
+"fields you need. The command will ask you some questions - answer them "
+"like done below:"
+msgstr ""
+
+#: ../../../doctrine.rst:123
+msgid ""
+"The interactive behavior of the ``make:entity`` command was introduced in"
+" MakerBundle 1.3."
+msgstr ""
+
+#: ../../../doctrine.rst:126
+msgid "Woh! You now have a new ``src/Entity/Product.php`` file::"
+msgstr ""
+
+#: ../../../doctrine.rst:165
+msgid ""
+"Confused why the price is an integer? Don't worry: this is just an "
+"example. But, storing prices as integers (e.g. 100 = $1 USD) can avoid "
+"rounding issues."
+msgstr ""
+
+#: ../../../doctrine.rst:170
+msgid ""
+"If you are using an SQLite database, you'll see the following error: "
+"*PDOException: SQLSTATE[HY000]: General error: 1 Cannot add a NOT NULL "
+"column with default value NULL*. Add a ``nullable=true`` option to the "
+"``description`` property to fix the problem."
+msgstr ""
+
+#: ../../../doctrine.rst:177
+msgid ""
+"There is a `limit of 767 bytes for the index key prefix`_ when using "
+"InnoDB tables in MySQL 5.6 and earlier versions. String columns with 255 "
+"character length and ``utf8mb4`` encoding surpass that limit. This means "
+"that any column of type ``string`` and ``unique=true`` must set its "
+"maximum ``length`` to ``190``. Otherwise, you'll see this error: "
+"*\"[PDOException] SQLSTATE[42000]: Syntax error or access violation: 1071"
+" Specified key was too long; max key length is 767 bytes\"*."
+msgstr ""
+
+#: ../../../doctrine.rst:185
+msgid ""
+"This class is called an \"entity\". And soon, you'll be able to save and "
+"query Product objects to a ``product`` table in your database. Each "
+"property in the ``Product`` entity can be mapped to a column in that "
+"table. This is usually done with annotations: the ``@ORM\\...`` comments "
+"that you see above each property:"
+msgstr ""
+
+#: ../../../doctrine.rst:193
+msgid ""
+"The ``make:entity`` command is a tool to make life easier. But this is "
+"*your* code: add/remove fields, add/remove methods or update "
+"configuration."
+msgstr ""
+
+#: ../../../doctrine.rst:196
+msgid ""
+"Doctrine supports a wide variety of field types, each with their own "
+"options. To see a full list, check out `Doctrine's Mapping Types "
+"documentation`_. If you want to use XML instead of annotations, add "
+"``type: xml`` and ``dir: '%kernel.project_dir%/config/doctrine'`` to the "
+"entity mappings in your ``config/packages/doctrine.yaml`` file."
+msgstr ""
+
+#: ../../../doctrine.rst:204
+msgid ""
+"Be careful not to use reserved SQL keywords as your table or column names"
+" (e.g. ``GROUP`` or ``USER``). See Doctrine's `Reserved SQL keywords "
+"documentation`_ for details on how to escape these. Or, change the table "
+"name with ``@ORM\\Table(name=\"groups\")`` above the class or configure "
+"the column name with the ``name=\"group_name\"`` option."
+msgstr ""
+
+#: ../../../doctrine.rst:213
+msgid "Migrations: Creating the Database Tables/Schema"
+msgstr ""
+
+#: ../../../doctrine.rst:215
+msgid ""
+"The ``Product`` class is fully-configured and ready to save to a "
+"``product`` table. If you just defined this class, your database doesn't "
+"actually have the ``product`` table yet. To add it, you can leverage the "
+"`DoctrineMigrationsBundle`_, which is already installed:"
+msgstr ""
+
+#: ../../../doctrine.rst:224
+msgid "If everything worked, you should see something like this:"
+msgstr ""
+
+#: ../../../doctrine.rst:226
+msgid "SUCCESS!"
+msgstr ""
+
+#: ../../../doctrine.rst:228
+msgid ""
+"Next: Review the new migration "
+"\"src/Migrations/Version20180207231217.php\" Then: Run the migration with"
+" php bin/console doctrine:migrations:migrate"
+msgstr ""
+
+#: ../../../doctrine.rst:231
+msgid ""
+"If you open this file, it contains the SQL needed to update your "
+"database! To run that SQL, execute your migrations:"
+msgstr ""
+
+#: ../../../doctrine.rst:238
+msgid ""
+"This command executes all migration files that have not already been run "
+"against your database. You should run this command on production when you"
+" deploy to keep your production database up-to-date."
+msgstr ""
+
+#: ../../../doctrine.rst:245
+msgid "Migrations & Adding more Fields"
+msgstr ""
+
+#: ../../../doctrine.rst:247
+msgid ""
+"But what if you need to add a new field property to ``Product``, like a "
+"``description``? You can edit the class to add the new property. But, you"
+" can also use ``make:entity`` again:"
+msgstr ""
+
+#: ../../../doctrine.rst:271
+msgid ""
+"This adds the new ``description`` property and ``getDescription()`` and "
+"``setDescription()`` methods:"
+msgstr ""
+
+#: ../../../doctrine.rst:291
+msgid ""
+"The new property is mapped, but it doesn't exist yet in the ``product`` "
+"table. No problem! Generate a new migration:"
+msgstr ""
+
+#: ../../../doctrine.rst:298
+msgid "This time, the SQL in the generated file will look like this:"
+msgstr ""
+
+#: ../../../doctrine.rst:304
+msgid ""
+"The migration system is *smart*. It compares all of your entities with "
+"the current state of the database and generates the SQL needed to "
+"synchronize them! Like before, execute your migrations:"
+msgstr ""
+
+#: ../../../doctrine.rst:312
+msgid ""
+"This will only execute the *one* new migration file, because "
+"DoctrineMigrationsBundle knows that the first migration was already "
+"executed earlier. Behind the scenes, it manages a ``migration_versions`` "
+"table to track this."
+msgstr ""
+
+#: ../../../doctrine.rst:316
+msgid ""
+"Each time you make a change to your schema, run these two commands to "
+"generate the migration and then execute it. Be sure to commit the "
+"migration files and execute them when you deploy."
+msgstr ""
+
+#: ../../../doctrine.rst:324
+msgid ""
+"If you prefer to add new properties manually, the ``make:entity`` command"
+" can generate the getter & setter methods for you:"
+msgstr ""
+
+#: ../../../doctrine.rst:331
+msgid ""
+"If you make some changes and want to regenerate *all* getter/setter "
+"methods, also pass ``--overwrite``."
+msgstr ""
+
+#: ../../../doctrine.rst:335
+msgid "Persisting Objects to the Database"
+msgstr ""
+
+#: ../../../doctrine.rst:337
+msgid ""
+"It's time to save a ``Product`` object to the database! Let's create a "
+"new controller to experiment:"
+msgstr ""
+
+#: ../../../doctrine.rst:344
+msgid ""
+"Inside the controller, you can create a new ``Product`` object, set data "
+"on it, and save it::"
+msgstr ""
+
+#: ../../../doctrine.rst:381 ../../../doctrine.rst:540
+msgid "Try it out!"
+msgstr ""
+
+#: ../../../doctrine.rst:383
+msgid "http://localhost:8000/product"
+msgstr ""
+
+#: ../../../doctrine.rst:385
+msgid ""
+"Congratulations! You just created your first row in the ``product`` "
+"table. To prove it, you can query the database directly:"
+msgstr ""
+
+#: ../../../doctrine.rst:395
+msgid "Take a look at the previous example in more detail:"
+msgstr ""
+
+#: ../../../doctrine.rst:399
+msgid ""
+"**line 18** The ``$this->getDoctrine()->getManager()`` method gets "
+"Doctrine's *entity manager* object, which is the most important object in"
+" Doctrine. It's responsible for saving objects to, and fetching objects "
+"from, the database."
+msgstr ""
+
+#: ../../../doctrine.rst:403
+msgid ""
+"**lines 20-23** In this section, you instantiate and work with the "
+"``$product`` object like any other normal PHP object."
+msgstr ""
+
+#: ../../../doctrine.rst:406
+msgid ""
+"**line 26** The ``persist($product)`` call tells Doctrine to \"manage\" "
+"the ``$product`` object. This does **not** cause a query to be made to "
+"the database."
+msgstr ""
+
+#: ../../../doctrine.rst:409
+msgid ""
+"**line 29** When the ``flush()`` method is called, Doctrine looks through"
+" all of the objects that it's managing to see if they need to be "
+"persisted to the database. In this example, the ``$product`` object's "
+"data doesn't exist in the database, so the entity manager executes an "
+"``INSERT`` query, creating a new row in the ``product`` table."
+msgstr ""
+
+#: ../../../doctrine.rst:417
+msgid ""
+"If the ``flush()`` call fails, a ``Doctrine\\ORM\\ORMException`` "
+"exception is thrown. See `Transactions and Concurrency`_."
+msgstr ""
+
+#: ../../../doctrine.rst:420
+msgid ""
+"Whether you're creating or updating objects, the workflow is always the "
+"same: Doctrine is smart enough to know if it should INSERT or UPDATE your"
+" entity."
+msgstr ""
+
+#: ../../../doctrine.rst:426
+msgid "Validating Objects"
+msgstr ""
+
+#: ../../../doctrine.rst:428
+msgid ""
+":doc:`The Symfony validator </validation>` reuses Doctrine metadata to "
+"perform some basic validation tasks::"
+msgstr ""
+
+#: ../../../doctrine.rst:463
+msgid ""
+"Although the ``Product`` entity doesn't define any explicit "
+":doc:`validation configuration </validation>`, Symfony introspects the "
+"Doctrine mapping configuration to infer some validation rules. For "
+"example, given that the ``name`` property can't be ``null`` in the "
+"database, a :doc:`NotNull constraint </reference/constraints/NotNull>` is"
+" added automatically to the property (if it doesn't contain that "
+"constraint already)."
+msgstr ""
+
+#: ../../../doctrine.rst:470
+msgid ""
+"The following table summarizes the mapping between Doctrine metadata and "
+"the corresponding validation constraints added automatically by Symfony:"
+msgstr ""
+
+#: ../../../doctrine.rst:474
+msgid "Doctrine attribute"
+msgstr ""
+
+#: ../../../doctrine.rst:474
+msgid "Validation constraint"
+msgstr ""
+
+#: ../../../doctrine.rst:474
+msgid "Notes"
+msgstr ""
+
+#: ../../../doctrine.rst:476
+msgid "``nullable=false``"
+msgstr ""
+
+#: ../../../doctrine.rst:476
+msgid ":doc:`NotNull </reference/constraints/NotNull>`"
+msgstr ""
+
+#: ../../../doctrine.rst:476 ../../../doctrine.rst:477
+msgid ""
+"Requires installing the :doc:`PropertyInfo component "
+"</components/property_info>`"
+msgstr ""
+
+#: ../../../doctrine.rst:477
+msgid "``type``"
+msgstr ""
+
+#: ../../../doctrine.rst:477
+msgid ":doc:`Type </reference/constraints/Type>`"
+msgstr ""
+
+#: ../../../doctrine.rst:478
+msgid "``unique=true``"
+msgstr ""
+
+#: ../../../doctrine.rst:478
+msgid ":doc:`UniqueEntity </reference/constraints/UniqueEntity>`"
+msgstr ""
+
+#: ../../../doctrine.rst:479
+msgid "``length``"
+msgstr ""
+
+#: ../../../doctrine.rst:479
+msgid ":doc:`Length </reference/constraints/Length>`"
+msgstr ""
+
+#: ../../../doctrine.rst:482
+msgid ""
+"Because :doc:`the Form component </forms>` as well as `API Platform`_ "
+"internally use the Validator component, all your forms and web APIs will "
+"also automatically benefit from these automatic validation constraints."
+msgstr ""
+
+#: ../../../doctrine.rst:486
+msgid ""
+"This automatic validation is a nice feature to improve your productivity,"
+" but it doesn't replace the validation configuration entirely. You still "
+"need to add some :doc:`validation constraints </reference/constraints>` "
+"to ensure that data provided by the user is correct."
+msgstr ""
+
+#: ../../../doctrine.rst:492
+msgid "Fetching Objects from the Database"
+msgstr ""
+
+#: ../../../doctrine.rst:494
+msgid ""
+"Fetching an object back out of the database is even easier. Suppose you "
+"want to be able to go to ``/product/1`` to see your new product::"
+msgstr ""
+
+#: ../../../doctrine.rst:522
+msgid ""
+"Another possibility is to use the ``ProductRepository`` using Symfony's "
+"autowiring and injected by the dependency injection container::"
+msgstr ""
+
+#: ../../../doctrine.rst:542
+msgid "http://localhost:8000/product/1"
+msgstr ""
+
+#: ../../../doctrine.rst:544
+msgid ""
+"When you query for a particular type of object, you always use what's "
+"known as its \"repository\". You can think of a repository as a PHP class"
+" whose only job is to help you fetch entities of a certain class."
+msgstr ""
+
+#: ../../../doctrine.rst:548
+msgid "Once you have a repository object, you have many helper methods::"
+msgstr ""
+
+#: ../../../doctrine.rst:572
+msgid ""
+"You can also add *custom* methods for more complex queries! More on that "
+"later in the :ref:`doctrine-queries` section."
+msgstr ""
+
+#: ../../../doctrine.rst:577
+msgid ""
+"When rendering an HTML page, the web debug toolbar at the bottom of the "
+"page will display the number of queries and the time it took to execute "
+"them:"
+msgstr ""
+
+#: ../../../doctrine.rst:584
+msgid ""
+"If the number of database queries is too high, the icon will turn yellow "
+"to indicate that something may not be correct. Click on the icon to open "
+"the Symfony Profiler and see the exact queries that were executed. If you"
+" don't see the web debug toolbar, install the ``profiler`` :ref:`Symfony "
+"pack <symfony-packs>` by running this command: ``composer require --dev "
+"symfony/profiler-pack``."
+msgstr ""
+
+#: ../../../doctrine.rst:591
+msgid "Automatically Fetching Objects (ParamConverter)"
+msgstr ""
+
+#: ../../../doctrine.rst:593
+msgid ""
+"In many cases, you can use the `SensioFrameworkExtraBundle`_ to do the "
+"query for you automatically! First, install the bundle in case you don't "
+"have it:"
+msgstr ""
+
+#: ../../../doctrine.rst:600
+msgid "Now, simplify your controller::"
+msgstr ""
+
+#: ../../../doctrine.rst:614
+msgid ""
+"That's it! The bundle uses the ``{id}`` from the route to query for the "
+"``Product`` by the ``id`` column. If it's not found, a 404 page is "
+"generated."
+msgstr ""
+
+#: ../../../doctrine.rst:617
+msgid ""
+"There are many more options you can use. Read more about the "
+"`ParamConverter`_."
+msgstr ""
+
+#: ../../../doctrine.rst:620
+msgid "Updating an Object"
+msgstr ""
+
+#: ../../../doctrine.rst:622
+msgid ""
+"Once you've fetched an object from Doctrine, you interact with it the "
+"same as with any PHP model::"
+msgstr ""
+
+#: ../../../doctrine.rst:647
+msgid "Using Doctrine to edit an existing product consists of three steps:"
+msgstr ""
+
+#: ../../../doctrine.rst:649
+msgid "fetching the object from Doctrine;"
+msgstr ""
+
+#: ../../../doctrine.rst:650
+msgid "modifying the object;"
+msgstr ""
+
+#: ../../../doctrine.rst:651
+msgid "calling ``flush()`` on the entity manager."
+msgstr ""
+
+#: ../../../doctrine.rst:653
+msgid ""
+"You *can* call ``$entityManager->persist($product)``, but it isn't "
+"necessary: Doctrine is already \"watching\" your object for changes."
+msgstr ""
+
+#: ../../../doctrine.rst:657
+msgid "Deleting an Object"
+msgstr ""
+
+#: ../../../doctrine.rst:659
+msgid ""
+"Deleting an object is very similar, but requires a call to the "
+"``remove()`` method of the entity manager::"
+msgstr ""
+
+#: ../../../doctrine.rst:665
+msgid ""
+"As you might expect, the ``remove()`` method notifies Doctrine that you'd"
+" like to remove the given object from the database. The ``DELETE`` query "
+"isn't actually executed until the ``flush()`` method is called."
+msgstr ""
+
+#: ../../../doctrine.rst:672
+msgid "Querying for Objects: The Repository"
+msgstr ""
+
+#: ../../../doctrine.rst:674
+msgid ""
+"You've already seen how the repository object allows you to run basic "
+"queries without any work::"
+msgstr ""
+
+#: ../../../doctrine.rst:682
+msgid ""
+"But what if you need a more complex query? When you generated your entity"
+" with ``make:entity``, the command *also* generated a "
+"``ProductRepository`` class::"
+msgstr ""
+
+#: ../../../doctrine.rst:700
+msgid ""
+"When you fetch your repository (i.e. "
+"``->getRepository(Product::class)``), it is *actually* an instance of "
+"*this* object! This is because of the ``repositoryClass`` config that was"
+" generated at the top of your ``Product`` entity class."
+msgstr ""
+
+#: ../../../doctrine.rst:704
+msgid ""
+"Suppose you want to query for all Product objects greater than a certain "
+"price. Add a new method for this to your repository::"
+msgstr ""
+
+#: ../../../doctrine.rst:736
+msgid ""
+"The string passed to ``createQuery()`` might look like SQL, but it is "
+"`Doctrine Query Language`_. This allows you to type queries using "
+"commonly known query language, but referencing PHP objects instead (i.e. "
+"in the ``FROM`` statement)."
+msgstr ""
+
+#: ../../../doctrine.rst:741
+msgid "Now, you can call this method on the repository::"
+msgstr ""
+
+#: ../../../doctrine.rst:752
+msgid ""
+"See :ref:`services-constructor-injection` for how to inject the "
+"repository into any service."
+msgstr ""
+
+#: ../../../doctrine.rst:756
+msgid "Querying with the Query Builder"
+msgstr ""
+
+#: ../../../doctrine.rst:758
+msgid ""
+"Doctrine also provides a `Query Builder`_, an object-oriented way to "
+"write queries. It is recommended to use this when queries are built "
+"dynamically (i.e. based on PHP conditions)::"
+msgstr ""
+
+#: ../../../doctrine.rst:787
+msgid "Querying with SQL"
+msgstr ""
+
+#: ../../../doctrine.rst:789
+msgid "In addition, you can query directly with SQL if you need to::"
+msgstr ""
+
+#: ../../../doctrine.rst:810
+msgid ""
+"With SQL, you will get back raw data, not objects (unless you use the "
+"`NativeQuery`_ functionality)."
+msgstr ""
+
+#: ../../../doctrine.rst:814
+msgid "Configuration"
+msgstr ""
+
+#: ../../../doctrine.rst:816
+msgid ""
+"See the :doc:`Doctrine config reference "
+"</reference/configuration/doctrine>`."
+msgstr ""
+
+#: ../../../doctrine.rst:819
+msgid "Relationships and Associations"
+msgstr ""
+
+#: ../../../doctrine.rst:821
+msgid ""
+"Doctrine provides all the functionality you need to manage database "
+"relationships (also known as associations), including ManyToOne, "
+"OneToMany, OneToOne and ManyToMany relationships."
+msgstr ""
+
+#: ../../../doctrine.rst:825
+msgid "For info, see :doc:`/doctrine/associations`."
+msgstr ""
+
+#: ../../../doctrine.rst:828
+msgid "Database Testing"
+msgstr ""
+
+#: ../../../doctrine.rst:830
+msgid ""
+"Read the article about :doc:`testing code that interacts with the "
+"database </testing/database>`."
+msgstr ""
+
+#: ../../../doctrine.rst:833
+msgid "Doctrine Extensions (Timestampable, Translatable, etc.)"
+msgstr ""
+
+#: ../../../doctrine.rst:835
+msgid ""
+"Doctrine community has created some extensions to implement common needs "
+"such as *\"set the value of the createdAt property automatically when "
+"creating an entity\"*. Read more about the `available Doctrine "
+"extensions`_ and use the `StofDoctrineExtensionsBundle`_ to integrate "
+"them in your application."
+msgstr ""
+
+#: ../../../doctrine.rst:841
+msgid "Learn more"
+msgstr ""
+

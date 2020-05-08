@@ -1,0 +1,552 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/form_customization.rst:5
+msgid "How to Customize Form Rendering"
+msgstr ""
+
+#: ../../../form/form_customization.rst:7
+msgid ""
+"Symfony gives you several ways to customize how a form is rendered. In "
+"this article you'll learn how to make single customizations to one or "
+"more fields of your forms. If you need to customize all your forms in the"
+" same way, create instead a :doc:`form theme </form/form_themes>` or use "
+"any of the built-in themes, such as the :doc:`Bootstrap theme for Symfony"
+" forms </form/bootstrap4>`."
+msgstr ""
+
+#: ../../../form/form_customization.rst:16
+msgid "Form Rendering Functions"
+msgstr ""
+
+#: ../../../form/form_customization.rst:18
+msgid ""
+"A single call to the :ref:`form() Twig function <reference-forms-twig-"
+"form>` is enough to render an entire form, including all its fields and "
+"error messages:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:27
+msgid ""
+"The next step is to use the :ref:`form_start() <reference-forms-twig-"
+"start>`, :ref:`form_end() <reference-forms-twig-end>`, "
+":ref:`form_errors() <reference-forms-twig-errors>` and :ref:`form_row() "
+"<reference-forms-twig-row>` Twig functions to render the different form "
+"parts so you can customize them adding HTML elements and attributes:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:50
+msgid ""
+"The ``form_row()`` function outputs the entire field contents, including "
+"the label, help message, HTML elements and error messages. All this can "
+"be further customized using other Twig functions, as illustrated in the "
+"following diagram:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:58
+msgid ""
+"The :ref:`form_label() <reference-forms-twig-label>`, :ref:`form_widget()"
+" <reference-forms-twig-widget>`, :ref:`form_help() <reference-forms-twig-"
+"help>` and :ref:`form_errors() <reference-forms-twig-errors>` Twig "
+"functions give you total control over how each form field is rendered, so"
+" you can fully customize them:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:79
+msgid ""
+"Later in this article you can find the full reference of these Twig "
+"functions with more usage examples."
+msgstr ""
+
+#: ../../../form/form_customization.rst:83
+msgid "Form Rendering Variables"
+msgstr ""
+
+#: ../../../form/form_customization.rst:85
+msgid ""
+"Some of the Twig functions mentioned in the previous section allow to "
+"pass variables to configure their behavior. For example, the "
+"``form_label()`` function lets you define a custom label to override the "
+"one defined in the form:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:93
+msgid ""
+"Some :doc:`form field types </reference/forms/types>` have additional "
+"rendering options that can be passed to the widget. These options are "
+"documented with each type, but one common option is ``attr``, which "
+"allows you to modify HTML attributes on the form element. The following "
+"would add the ``task_field`` CSS class to the rendered input text field:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:105
+msgid ""
+"If you're rendering an entire form at once (or an entire embedded form), "
+"the ``variables`` argument will only be applied to the form itself and "
+"not its children. In other words, the following will **not** pass a "
+"\"foo\" class attribute to all of the child fields in the form:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:115
+msgid ""
+"If you need to render form fields \"by hand\" then you can access "
+"individual values for fields (such as the ``id``, ``name`` and ``label``)"
+" using its ``vars``  property. For example to get the ``id``:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:125
+msgid ""
+"Later in this article you can find the full reference of these Twig "
+"variables and their description."
+msgstr ""
+
+#: ../../../form/form_customization.rst:129
+msgid "Form Themes"
+msgstr ""
+
+#: ../../../form/form_customization.rst:131
+msgid ""
+"The Twig functions and variables shown in the previous sections can help "
+"you customize one or more fields of your forms. However, this "
+"customization can't be applied to the rest of the forms of your app."
+msgstr ""
+
+#: ../../../form/form_customization.rst:135
+msgid ""
+"If you want to customize all forms in the same way (for example to adapt "
+"the generated HTML code to the CSS framework used in your app) you must "
+"create a :doc:`form theme </form/form_themes>`."
+msgstr ""
+
+#: ../../../form/form_customization.rst:142
+msgid "Form Functions and Variables Reference"
+msgstr ""
+
+#: ../../../form/form_customization.rst:147
+msgid "Functions"
+msgstr ""
+
+#: ../../../form/form_customization.rst:152
+msgid "form(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:154
+msgid "Renders the HTML of a complete form."
+msgstr ""
+
+#: ../../../form/form_customization.rst:161
+msgid ""
+"You will mostly use this helper for prototyping or if you use custom form"
+" themes. If you need more flexibility in rendering the form, you should "
+"use the other helpers to render individual parts of the form instead:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:179
+msgid "form_start(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:181
+msgid ""
+"Renders the start tag of a form. This helper takes care of printing the "
+"configured method and target action of the form. It will also include the"
+" correct ``enctype`` property if the form contains upload fields."
+msgstr ""
+
+#: ../../../form/form_customization.rst:193
+msgid "form_end(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:195
+msgid "Renders the end tag of a form."
+msgstr ""
+
+#: ../../../form/form_customization.rst:201
+msgid ""
+"This helper also outputs ``form_rest()`` (which is explained later in "
+"this article) unless you set ``render_rest`` to false:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:212
+msgid "form_label(form_view, label, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:214
+msgid ""
+"Renders the label for the given field. You can optionally pass the "
+"specific label you want to display as the second argument."
+msgstr ""
+
+#: ../../../form/form_customization.rst:229
+#: ../../../form/form_customization.rst:298
+msgid ""
+"See \":ref:`twig-reference-form-variables`\" to learn about the "
+"``variables`` argument."
+msgstr ""
+
+#: ../../../form/form_customization.rst:235
+msgid "form_help(form_view)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:237
+msgid "Renders the help text for the given field."
+msgstr ""
+
+#: ../../../form/form_customization.rst:246
+msgid "form_errors(form_view)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:248
+msgid "Renders any errors for the given field."
+msgstr ""
+
+#: ../../../form/form_customization.rst:261
+msgid "form_widget(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:263
+msgid ""
+"Renders the HTML widget of a given field. If you apply this to an entire "
+"form or collection of fields, each underlying form row will be rendered."
+msgstr ""
+
+#: ../../../form/form_customization.rst:271
+msgid ""
+"The second argument to ``form_widget()`` is an array of variables. The "
+"most common variable is ``attr``, which is an array of HTML attributes to"
+" apply to the HTML widget. In some cases, certain types also have other "
+"template-related options that can be passed. These are discussed on a "
+"type-by-type basis. The ``attributes`` are not applied recursively to "
+"child fields if you're rendering many fields at once (e.g. "
+"``form_widget(form)``)."
+msgstr ""
+
+#: ../../../form/form_customization.rst:278
+msgid ""
+"See \":ref:`twig-reference-form-variables`\" to learn more about the "
+"``variables`` argument."
+msgstr ""
+
+#: ../../../form/form_customization.rst:284
+msgid "form_row(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:286
+msgid ""
+"Renders the \"row\" of a given field, which is the combination of the "
+"field's label, errors, help and widget."
+msgstr ""
+
+#: ../../../form/form_customization.rst:294
+msgid ""
+"The second argument to ``form_row()`` is an array of variables. The "
+"templates provided in Symfony only allow to override the label as shown "
+"in the example above."
+msgstr ""
+
+#: ../../../form/form_customization.rst:304
+msgid "form_rest(form_view, variables)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:306
+msgid ""
+"This renders all fields that have not yet been rendered for the given "
+"form. It's a good idea to always have this somewhere inside your form as "
+"it'll render hidden fields for you and make any fields you forgot to "
+"render easier to spot (since it'll render the field for you)."
+msgstr ""
+
+#: ../../../form/form_customization.rst:316
+msgid "form_parent(form_view)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:318
+msgid ""
+"Returns the parent form view or ``null`` if the form view already is the "
+"root form. Using this function should be preferred over accessing the "
+"parent form using ``form.parent``. The latter way will produce different "
+"results when a child form is named ``parent``."
+msgstr ""
+
+#: ../../../form/form_customization.rst:324
+msgid "Tests"
+msgstr ""
+
+#: ../../../form/form_customization.rst:326
+msgid ""
+"Tests can be executed by using the ``is`` operator in Twig to create a "
+"condition. Read `the Twig documentation`_ for more information."
+msgstr ""
+
+#: ../../../form/form_customization.rst:332
+msgid "selectedchoice(selected_value)"
+msgstr ""
+
+#: ../../../form/form_customization.rst:334
+msgid ""
+"This test will check if the current choice is equal to the "
+"``selected_value`` or if the current choice is in the array (when "
+"``selected_value`` is an array)."
+msgstr ""
+
+#: ../../../form/form_customization.rst:345
+msgid "rootform"
+msgstr ""
+
+#: ../../../form/form_customization.rst:347
+msgid ""
+"This test will check if the current ``form`` does not have a parent form "
+"view."
+msgstr ""
+
+#: ../../../form/form_customization.rst:368
+msgid "Form Variables Reference"
+msgstr ""
+
+#: ../../../form/form_customization.rst:370
+msgid ""
+"The following variables are common to every field type. Certain field "
+"types may define even more variables and some variables here only really "
+"apply to certain types. To know the exact variables available for each "
+"type, check out the code of the templates used by your :doc:`form theme "
+"</form/form_themes>`."
+msgstr ""
+
+#: ../../../form/form_customization.rst:375
+msgid ""
+"Assuming you have a ``form`` variable in your template and you want to "
+"reference the variables on the ``name`` field, accessing the variables is"
+" done by using a public ``vars`` property on the "
+":class:`Symfony\\\\Component\\\\Form\\\\FormView` object:"
+msgstr ""
+
+#: ../../../form/form_customization.rst:388
+msgid "Variable"
+msgstr ""
+
+#: ../../../form/form_customization.rst:388
+msgid "Usage"
+msgstr ""
+
+#: ../../../form/form_customization.rst:390
+msgid "``action``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:390
+msgid "The action of the current form."
+msgstr ""
+
+#: ../../../form/form_customization.rst:391
+msgid "``attr``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:391
+msgid "A key-value array that will be rendered as HTML attributes on the field."
+msgstr ""
+
+#: ../../../form/form_customization.rst:392
+msgid "``block_prefixes``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:392
+msgid "An array of all the names of the parent types."
+msgstr ""
+
+#: ../../../form/form_customization.rst:393
+msgid "``cache_key``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:393
+msgid "A unique key which is used for caching."
+msgstr ""
+
+#: ../../../form/form_customization.rst:394
+msgid "``compound``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:394
+msgid ""
+"Whether or not a field is actually a holder for a group of children "
+"fields (for example, a ``choice`` field, which is actually a group of "
+"checkboxes)."
+msgstr ""
+
+#: ../../../form/form_customization.rst:396
+msgid "``data``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:396
+msgid "The normalized data of the type."
+msgstr ""
+
+#: ../../../form/form_customization.rst:397
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:397
+msgid "If ``true``, ``disabled=\"disabled\"`` is added to the field."
+msgstr ""
+
+#: ../../../form/form_customization.rst:398
+msgid "``errors``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:398
+msgid ""
+"An array of any errors attached to *this* specific field (e.g. "
+"``form.title.errors``). Note that you can't use ``form.errors`` to "
+"determine if a form is valid, since this only returns \"global\" errors: "
+"some individual fields may have errors. Instead, use the ``valid`` "
+"option."
+msgstr ""
+
+#: ../../../form/form_customization.rst:402
+msgid "``form``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:402
+msgid "The current ``FormView`` instance."
+msgstr ""
+
+#: ../../../form/form_customization.rst:403
+msgid "``full_name``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:403
+msgid "The ``name`` HTML attribute to be rendered."
+msgstr ""
+
+#: ../../../form/form_customization.rst:404
+msgid "``help``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:404
+msgid "The help message that will be rendered."
+msgstr ""
+
+#: ../../../form/form_customization.rst:405
+msgid "``id``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:405
+msgid "The ``id`` HTML attribute to be rendered."
+msgstr ""
+
+#: ../../../form/form_customization.rst:406
+msgid "``label``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:406
+msgid "The string label that will be rendered."
+msgstr ""
+
+#: ../../../form/form_customization.rst:407
+msgid "``label_attr``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:407
+msgid "A key-value array that will be rendered as HTML attributes on the label."
+msgstr ""
+
+#: ../../../form/form_customization.rst:408
+msgid "``method``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:408
+msgid "The method of the current form (POST, GET, etc.)."
+msgstr ""
+
+#: ../../../form/form_customization.rst:409
+msgid "``multipart``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:409
+msgid ""
+"If ``true``, ``form_enctype`` will render ``enctype=\"multipart/form-"
+"data\"``."
+msgstr ""
+
+#: ../../../form/form_customization.rst:410
+msgid "``name``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:410
+msgid ""
+"The name of the field (e.g. ``title``) - but not the ``name`` HTML "
+"attribute, which is ``full_name``."
+msgstr ""
+
+#: ../../../form/form_customization.rst:412
+msgid "``required``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:412
+msgid ""
+"If ``true``, a ``required`` attribute is added to the field to activate "
+"HTML5 validation. Additionally, a ``required`` class is added to the "
+"label."
+msgstr ""
+
+#: ../../../form/form_customization.rst:414
+msgid "``submitted``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:414
+msgid ""
+"Returns ``true`` or ``false`` depending on whether the whole form is "
+"submitted"
+msgstr ""
+
+#: ../../../form/form_customization.rst:415
+msgid "``translation_domain``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:415
+msgid "The domain of the translations for this form."
+msgstr ""
+
+#: ../../../form/form_customization.rst:416
+msgid "``valid``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:416
+msgid ""
+"Returns ``true`` or ``false`` depending on whether the whole form is "
+"valid."
+msgstr ""
+
+#: ../../../form/form_customization.rst:417
+msgid "``value``"
+msgstr ""
+
+#: ../../../form/form_customization.rst:417
+msgid ""
+"The value that will be used when rendering (commonly the ``value`` HTML "
+"attribute). This only applies to the root form element."
+msgstr ""
+
+#: ../../../form/form_customization.rst:423
+msgid ""
+"Behind the scenes, these variables are made available to the ``FormView``"
+" object of your form when the Form component calls ``buildView()`` and "
+"``finishView()`` on each \"node\" of your form tree. To see what \"view\""
+" variables a particular field has, find the source code for the form "
+"field (and its parent fields) and look at the above two functions."
+msgstr ""
+

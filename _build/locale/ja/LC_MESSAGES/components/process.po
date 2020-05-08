@@ -1,0 +1,472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/process.rst:6
+msgid "The Process Component"
+msgstr ""
+
+#: ../../../components/process.rst:8
+msgid "The Process component executes commands in sub-processes."
+msgstr ""
+
+#: ../../../components/process.rst:11
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/process.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/process.rst:23
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Process\\\\Process` class executes a "
+"command in a sub-process, taking care of the differences between "
+"operating system and escaping arguments to prevent security issues. It "
+"replaces PHP functions like :phpfunction:`exec`, :phpfunction:`passthru`,"
+" :phpfunction:`shell_exec` and :phpfunction:`system`::"
+msgstr ""
+
+#: ../../../components/process.rst:42
+msgid ""
+"The ``getOutput()`` method always returns the whole content of the "
+"standard output of the command and ``getErrorOutput()`` the content of "
+"the error output. Alternatively, the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::getIncrementalOutput`"
+" and "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::getIncrementalErrorOutput`"
+" methods return the new output since the last call."
+msgstr ""
+
+#: ../../../components/process.rst:48
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Process\\\\Process::clearOutput` "
+"method clears the contents of the output and "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::clearErrorOutput` "
+"clears the contents of the error output."
+msgstr ""
+
+#: ../../../components/process.rst:53
+msgid ""
+"You can also use the :class:`Symfony\\\\Component\\\\Process\\\\Process` "
+"class with the for each construct to get the output while it is "
+"generated. By default, the loop waits for new output before going to the "
+"next iteration::"
+msgstr ""
+
+#: ../../../components/process.rst:70
+msgid ""
+"The Process component internally uses a PHP iterator to get the output "
+"while it is generated. That iterator is exposed via the ``getIterator()``"
+" method to allow customizing its behavior::"
+msgstr ""
+
+#: ../../../components/process.rst:81
+msgid ""
+"The ``mustRun()`` method is identical to ``run()``, except that it will "
+"throw a "
+":class:`Symfony\\\\Component\\\\Process\\\\Exception\\\\ProcessFailedException`"
+" if the process couldn't be executed successfully (i.e. the process "
+"exited with a non-zero code)::"
+msgstr ""
+
+#: ../../../components/process.rst:101
+msgid ""
+"You can get the last output time in seconds by using the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::getLastOutputTime` "
+"method. This method returns ``null`` if the process wasn't started!"
+msgstr ""
+
+#: ../../../components/process.rst:106
+msgid "Using Features From the OS Shell"
+msgstr ""
+
+#: ../../../components/process.rst:108
+msgid ""
+"Using array of arguments is the recommended way to define commands. This "
+"saves you from any escaping and allows sending signals seamlessly (e.g. "
+"to stop processes while they run)::"
+msgstr ""
+
+#: ../../../components/process.rst:115
+msgid ""
+"If you need to use stream redirections, conditional execution, or any "
+"other feature provided by the shell of your operating system, you can "
+"also define commands as strings using the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::fromShellCommandline`"
+" static factory."
+msgstr ""
+
+#: ../../../components/process.rst:121
+msgid ""
+"Each operating system provides a different syntax for their command-"
+"lines, so it becomes your responsibility to deal with escaping and "
+"portability."
+msgstr ""
+
+#: ../../../components/process.rst:124
+msgid ""
+"When using strings to define commands, variable arguments are passed as "
+"environment variables using the second argument of the ``run()``, "
+"``mustRun()`` or ``start()`` methods. Referencing them is also OS-"
+"dependent::"
+msgstr ""
+
+#: ../../../components/process.rst:137
+msgid ""
+"If you prefer to create portable commands that are independent from the "
+"operating system, you can write the above command as follows::"
+msgstr ""
+
+#: ../../../components/process.rst:143
+msgid ""
+"Portable commands require using a syntax that is specific to the "
+"component: when enclosing a variable name into ``\"${:`` and ``}\"`` "
+"exactly, the process object will replace it with its escaped value, or "
+"will fail if the variable is not found in the list of environment "
+"variables attached to the command."
+msgstr ""
+
+#: ../../../components/process.rst:149
+msgid "Setting Environment Variables for Processes"
+msgstr ""
+
+#: ../../../components/process.rst:151
+msgid ""
+"The constructor of the "
+":class:`Symfony\\\\Component\\\\Process\\\\Process` class and all of its "
+"methods related to executing processes (``run()``, ``mustRun()``, "
+"``start()``, etc.) allow passing an array of environment variables to set"
+" while running the process::"
+msgstr ""
+
+#: ../../../components/process.rst:160
+msgid ""
+"In addition to the env vars passed explicitly, processes inherit all the "
+"env vars defined in your system. You can prevent this by setting to "
+"``false`` the env vars you want to remove::"
+msgstr ""
+
+#: ../../../components/process.rst:170
+msgid "Getting real-time Process Output"
+msgstr ""
+
+#: ../../../components/process.rst:172
+msgid ""
+"When executing a long running command (like ``rsync`` to a remote "
+"server), you can give feedback to the end user in real-time by passing an"
+" anonymous function to the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::run` method::"
+msgstr ""
+
+#: ../../../components/process.rst:190
+msgid ""
+"This feature won't work as expected in servers using PHP output "
+"buffering. In those cases, either disable the `output_buffering`_ PHP "
+"option or use the :phpfunction:`ob_flush` PHP function to force sending "
+"the output buffer."
+msgstr ""
+
+#: ../../../components/process.rst:195
+msgid "Running Processes Asynchronously"
+msgstr ""
+
+#: ../../../components/process.rst:197
+msgid ""
+"You can also start the subprocess and then let it run asynchronously, "
+"retrieving output and the status in your main process whenever you need "
+"it. Use the :method:`Symfony\\\\Component\\\\Process\\\\Process::start` "
+"method to start an asynchronous process, the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::isRunning` method to"
+" check if the process is done and the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::getOutput` method to"
+" get the output::"
+msgstr ""
+
+#: ../../../components/process.rst:213
+msgid ""
+"You can also wait for a process to end if you started it asynchronously "
+"and are done doing other stuff::"
+msgstr ""
+
+#: ../../../components/process.rst:227
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Process\\\\Process::wait` method is "
+"blocking, which means that your code will halt at this line until the "
+"external process is completed."
+msgstr ""
+
+#: ../../../components/process.rst:233
+msgid ""
+"If a ``Response`` is sent **before** a child process had a chance to "
+"complete, the server process will be killed (depending on your OS). It "
+"means that your task will be stopped right away. Running an asynchronous "
+"process is not the same as running a process that survives its parent "
+"process."
+msgstr ""
+
+#: ../../../components/process.rst:238
+msgid ""
+"If you want your process to survive the request/response cycle, you can "
+"take advantage of the ``kernel.terminate`` event, and run your command "
+"**synchronously** inside this event. Be aware that ``kernel.terminate`` "
+"is called only if you use PHP-FPM."
+msgstr ""
+
+#: ../../../components/process.rst:245
+msgid ""
+"Beware also that if you do that, the said PHP-FPM process will not be "
+"available to serve any new request until the subprocess is finished. This"
+" means you can quickly block your FPM pool if you're not careful enough. "
+"That is why it's generally way better not to do any fancy things even "
+"after the request is sent, but to use a job queue instead."
+msgstr ""
+
+#: ../../../components/process.rst:251
+msgid ""
+":method:`Symfony\\\\Component\\\\Process\\\\Process::wait` takes one "
+"optional argument: a callback that is called repeatedly whilst the "
+"process is still running, passing in the output and its type::"
+msgstr ""
+
+#: ../../../components/process.rst:266
+msgid ""
+"Instead of waiting until the process has finished, you can use the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::waitUntil` method to"
+" keep or stop waiting based on some PHP logic. The following example "
+"starts a long running process and checks its output to wait until its "
+"fully initialized::"
+msgstr ""
+
+#: ../../../components/process.rst:284
+msgid "Streaming to the Standard Input of a Process"
+msgstr ""
+
+#: ../../../components/process.rst:286
+msgid ""
+"Before a process is started, you can specify its standard input using "
+"either the :method:`Symfony\\\\Component\\\\Process\\\\Process::setInput`"
+" method or the 4th argument of the constructor. The provided input can be"
+" a string, a stream resource or a ``Traversable`` object::"
+msgstr ""
+
+#: ../../../components/process.rst:295
+msgid ""
+"When this input is fully written to the subprocess standard input, the "
+"corresponding pipe is closed."
+msgstr ""
+
+#: ../../../components/process.rst:298
+msgid ""
+"In order to write to a subprocess standard input while it is running, the"
+" component provides the "
+":class:`Symfony\\\\Component\\\\Process\\\\InputStream` class::"
+msgstr ""
+
+#: ../../../components/process.rst:318
+msgid ""
+"The :method:`Symfony\\\\Component\\\\Process\\\\InputStream::write` "
+"method accepts scalars, stream resources or ``Traversable`` objects as "
+"argument. As shown in the above example, you need to explicitly call the "
+":method:`Symfony\\\\Component\\\\Process\\\\InputStream::close` method "
+"when you are done writing to the standard input of the subprocess."
+msgstr ""
+
+#: ../../../components/process.rst:324
+msgid "Using PHP Streams as the Standard Input of a Process"
+msgstr ""
+
+#: ../../../components/process.rst:326
+msgid "The input of a process can also be defined using `PHP streams`_::"
+msgstr ""
+
+#: ../../../components/process.rst:347
+msgid "Stopping a Process"
+msgstr ""
+
+#: ../../../components/process.rst:349
+msgid ""
+"Any asynchronous process can be stopped at any time with the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::stop` method. This "
+"method takes two arguments: a timeout and a signal. Once the timeout is "
+"reached, the signal is sent to the running process. The default signal "
+"sent to a process is ``SIGKILL``. Please read the :ref:`signal "
+"documentation below<reference-process-signal>` to find out more about "
+"signal handling in the Process component::"
+msgstr ""
+
+#: ../../../components/process.rst:364
+msgid "Executing PHP Code in Isolation"
+msgstr ""
+
+#: ../../../components/process.rst:366
+msgid ""
+"If you want to execute some PHP code in isolation, use the ``PhpProcess``"
+" instead::"
+msgstr ""
+
+#: ../../../components/process.rst:378
+msgid "Using a Prepared Command Line"
+msgstr ""
+
+#: ../../../components/process.rst:380
+msgid ""
+"You can run the process by using a a prepared command line using the "
+"double bracket notation. You can use a placeholder in order to have a "
+"process that can only be changed with the values and without changing the"
+" PHP code::"
+msgstr ""
+
+#: ../../../components/process.rst:392
+msgid "A prepared command line will not be escaped automatically!"
+msgstr ""
+
+#: ../../../components/process.rst:395
+msgid "Process Timeout"
+msgstr ""
+
+#: ../../../components/process.rst:397
+msgid ""
+"By default processes have a timeout of 60 seconds, but you can change it "
+"passing a different timeout (in seconds) to the ``setTimeout()`` method::"
+msgstr ""
+
+#: ../../../components/process.rst:406
+msgid ""
+"If the timeout is reached, a "
+":class:`Symfony\\\\Component\\\\Process\\\\Exception\\\\ProcessTimedOutException`"
+" is thrown."
+msgstr ""
+
+#: ../../../components/process.rst:409
+msgid ""
+"For long running commands, it is your responsibility to perform the "
+"timeout check regularly::"
+msgstr ""
+
+#: ../../../components/process.rst:426
+msgid "You can get the process start time using the ``getStartTime()`` method."
+msgstr ""
+
+#: ../../../components/process.rst:430
+msgid "The ``getStartTime()`` method was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/process.rst:435
+msgid "Process Idle Timeout"
+msgstr ""
+
+#: ../../../components/process.rst:437
+msgid ""
+"In contrast to the timeout of the previous paragraph, the idle timeout "
+"only considers the time since the last output was produced by the "
+"process::"
+msgstr ""
+
+#: ../../../components/process.rst:447
+msgid ""
+"In the case above, a process is considered timed out, when either the "
+"total runtime exceeds 3600 seconds, or the process does not produce any "
+"output for 60 seconds."
+msgstr ""
+
+#: ../../../components/process.rst:451
+msgid "Process Signals"
+msgstr ""
+
+#: ../../../components/process.rst:453
+msgid ""
+"When running a program asynchronously, you can send it POSIX signals with"
+" the :method:`Symfony\\\\Component\\\\Process\\\\Process::signal` "
+"method::"
+msgstr ""
+
+#: ../../../components/process.rst:465
+msgid "Process Pid"
+msgstr ""
+
+#: ../../../components/process.rst:467
+msgid ""
+"You can access the `pid`_ of a running process with the "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::getPid` method::"
+msgstr ""
+
+#: ../../../components/process.rst:478
+msgid "Disabling Output"
+msgstr ""
+
+#: ../../../components/process.rst:480
+msgid ""
+"As standard output and error output are always fetched from the "
+"underlying process, it might be convenient to disable output in some "
+"cases to save memory. Use "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::disableOutput` and "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::enableOutput` to "
+"toggle this feature::"
+msgstr ""
+
+#: ../../../components/process.rst:493
+msgid "You cannot enable or disable the output while the process is running."
+msgstr ""
+
+#: ../../../components/process.rst:495
+msgid ""
+"If you disable the output, you cannot access ``getOutput()``, "
+"``getIncrementalOutput()``, ``getErrorOutput()``, "
+"``getIncrementalErrorOutput()`` or ``setIdleTimeout()``."
+msgstr ""
+
+#: ../../../components/process.rst:499
+msgid ""
+"However, it is possible to pass a callback to the ``start``, ``run`` or "
+"``mustRun`` methods to handle process output in a streaming fashion."
+msgstr ""
+
+#: ../../../components/process.rst:503
+msgid "Finding the Executable PHP Binary"
+msgstr ""
+
+#: ../../../components/process.rst:505
+msgid ""
+"This component also provides a utility class called "
+":class:`Symfony\\\\Component\\\\Process\\\\PhpExecutableFinder` which "
+"returns the absolute path of the executable PHP binary available on your "
+"server::"
+msgstr ""
+
+#: ../../../components/process.rst:516
+msgid "Checking for TTY Support"
+msgstr ""
+
+#: ../../../components/process.rst:518
+msgid ""
+"Another utility provided by this component is a method called "
+":method:`Symfony\\\\Component\\\\Process\\\\Process::isTtySupported` "
+"which returns whether `TTY`_ is supported on the current operating "
+"system::"
+msgstr ""
+

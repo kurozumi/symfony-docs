@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/file_permissions.rst:2
+msgid "Setting up or Fixing File Permissions"
+msgstr ""
+
+#: ../../../setup/file_permissions.rst:4
+msgid ""
+"In Symfony 3.x, you needed to do some extra work to make sure that your "
+"cache directory was writable. But that is no longer true! In Symfony 4, "
+"everything works automatically:"
+msgstr ""
+
+#: ../../../setup/file_permissions.rst:7
+msgid ""
+"In the ``dev`` environment, ``umask()`` is used in ``bin/console`` and "
+"``public/index.php`` so that any created files are writable by everyone."
+msgstr ""
+
+#: ../../../setup/file_permissions.rst:10
+msgid ""
+"In the ``prod`` environment (i.e. when ``APP_ENV`` is ``prod`` and "
+"``APP_DEBUG`` is ``0``), as long as you run ``php bin/console "
+"cache:warmup``, no cache files will need to be written to disk at "
+"runtime. The only exception is when using a filesystem-based cache, such "
+"as Doctrine's query result cache or Symfony's cache with a filesystem "
+"provider configured."
+msgstr ""
+
+#: ../../../setup/file_permissions.rst:16
+msgid ""
+"In all environments, the log directory (``var/log/`` by default) must "
+"exist and be writable by your web server user and terminal user. One way "
+"this can be done is by using ``chmod -R 777 var/log/``. Be aware that "
+"your logs are readable by any user on your production system."
+msgstr ""
+

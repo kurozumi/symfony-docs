@@ -1,0 +1,484 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../mercure.rst:5
+msgid "Pushing Data to Clients Using the Mercure Protocol"
+msgstr ""
+
+#: ../../../mercure.rst:7
+msgid ""
+"Being able to broadcast data in real-time from servers to clients is a "
+"requirement for many modern web and mobile applications."
+msgstr ""
+
+#: ../../../mercure.rst:10
+msgid ""
+"Creating a UI reacting in live to changes made by other users (e.g. a "
+"user changes the data currently browsed by several other users, all UIs "
+"are instantly updated), notifying the user when :doc:`an asynchronous job"
+" </messenger>` has been completed or creating chat applications are among"
+" the typical use cases requiring \"push\" capabilities."
+msgstr ""
+
+#: ../../../mercure.rst:17
+msgid ""
+"Symfony provides a straightforward component, built on top of `the "
+"Mercure protocol`_, specifically designed for this class of use cases."
+msgstr ""
+
+#: ../../../mercure.rst:20
+msgid ""
+"Mercure is an open protocol designed from the ground to publish updates "
+"from server to clients. It is a modern and efficient alternative to "
+"timer-based polling and to WebSocket."
+msgstr ""
+
+#: ../../../mercure.rst:24
+msgid ""
+"Because it is built on top `Server-Sent Events (SSE)`_, Mercure is "
+"supported out of the box in most modern browsers (Edge and IE require `a "
+"polyfill`_) and has `high-level implementations`_ in many programming "
+"languages."
+msgstr ""
+
+#: ../../../mercure.rst:28
+msgid ""
+"Mercure comes with an authorization mechanism, automatic re-connection in"
+" case of network issues with retrieving of lost updates, \"connection-"
+"less\" push for smartphones and auto-discoverability (a supported client "
+"can automatically discover and subscribe to updates of a given resource "
+"thanks to a specific HTTP header)."
+msgstr ""
+
+#: ../../../mercure.rst:34
+msgid "All these features are supported in the Symfony integration."
+msgstr ""
+
+#: ../../../mercure.rst:36
+msgid ""
+"Unlike WebSocket, which is only compatible with HTTP 1.x, Mercure "
+"leverages the multiplexing capabilities provided by HTTP/2 and HTTP/3 "
+"(but also supports older versions of HTTP)."
+msgstr ""
+
+#: ../../../mercure.rst:40
+msgid ""
+"`In this recording`_ you can see how a Symfony web API leverages Mercure "
+"and API Platform to update in live a React app and a mobile app (React "
+"Native) generated using the API Platform client generator."
+msgstr ""
+
+#: ../../../mercure.rst:45
+msgid "Installation"
+msgstr ""
+
+#: ../../../mercure.rst:48
+msgid "Installing the Symfony Component"
+msgstr ""
+
+#: ../../../mercure.rst:50
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the Mercure support before using it:"
+msgstr ""
+
+#: ../../../mercure.rst:58
+msgid "Running a Mercure Hub"
+msgstr ""
+
+#: ../../../mercure.rst:60
+msgid ""
+"To manage persistent connections, Mercure relies on a Hub: a dedicated "
+"server that handles persistent SSE connections with the clients. The "
+"Symfony app publishes the updates to the hub, that will broadcast them to"
+" clients."
+msgstr ""
+
+#: ../../../mercure.rst:67
+msgid ""
+"An official and open source (AGPL) implementation of a Hub can be "
+"downloaded as a static binary from `Mercure.rocks`_."
+msgstr ""
+
+#: ../../../mercure.rst:70
+msgid "Run the following command to start it:"
+msgstr ""
+
+#: ../../../mercure.rst:78
+msgid ""
+"Alternatively to the binary, a Docker image, a Helm chart for Kubernetes "
+"and a managed, High Availability Hub are also provided by Mercure.rocks."
+msgstr ""
+
+#: ../../../mercure.rst:83
+#, python-format
+msgid ""
+"The `API Platform distribution`_ comes with a Docker Compose "
+"configuration as well as a Helm chart for Kubernetes that are 100% "
+"compatible with Symfony, and contain a Mercure hub. You can copy them in "
+"your project, even if you don't use API Platform."
+msgstr ""
+
+#: ../../../mercure.rst:89
+msgid "Configuration"
+msgstr ""
+
+#: ../../../mercure.rst:91
+msgid ""
+"The preferred way to configure the MercureBundle is using "
+":doc:`environment variables </configuration>`."
+msgstr ""
+
+#: ../../../mercure.rst:94
+msgid ""
+"Set the URL of your hub as the value of the ``MERCURE_PUBLISH_URL`` env "
+"var. The ``.env`` file of your project has been updated by the Flex "
+"recipe to provide example values. Set it to the URL of the Mercure Hub "
+"(``http://localhost:3000/.well-known/mercure`` by default)."
+msgstr ""
+
+#: ../../../mercure.rst:99
+msgid ""
+"In addition, the Symfony application must bear a `JSON Web Token`_ (JWT) "
+"to the Mercure Hub to be authorized to publish updates."
+msgstr ""
+
+#: ../../../mercure.rst:102
+msgid ""
+"This JWT should be stored in the ``MERCURE_JWT_TOKEN`` environment "
+"variable."
+msgstr ""
+
+#: ../../../mercure.rst:104
+msgid ""
+"The JWT must be signed with the same secret key as the one used by the "
+"Hub to verify the JWT (``aVerySecretKey`` in our example). Its payload "
+"must contain at least the following structure to be allowed to publish:"
+msgstr ""
+
+#: ../../../mercure.rst:117
+msgid ""
+"Because the array is empty, the Symfony app will only be authorized to "
+"publish public updates (see the authorization_ section for further "
+"information)."
+msgstr ""
+
+#: ../../../mercure.rst:122
+msgid ""
+"The jwt.io website is a convenient way to create and sign JWTs. Checkout "
+"this `example JWT`_, that grants publishing rights for all *targets* "
+"(notice the star in the array). Don't forget to set your secret key "
+"properly in the bottom of the right panel of the form!"
+msgstr ""
+
+#: ../../../mercure.rst:129
+msgid ""
+"Don't put the secret key in ``MERCURE_JWT_TOKEN``, it will not work! This"
+" environment variable must contain a JWT, signed with the secret key."
+msgstr ""
+
+#: ../../../mercure.rst:132
+msgid "Also, be sure to keep both the secret key and the JWTs... secrets!"
+msgstr ""
+
+#: ../../../mercure.rst:135
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../mercure.rst:138
+msgid "Publishing"
+msgstr ""
+
+#: ../../../mercure.rst:140
+msgid ""
+"The Mercure Component provides an ``Update`` value object representing "
+"the update to publish. It also provides a ``Publisher`` service to "
+"dispatch updates to the Hub."
+msgstr ""
+
+#: ../../../mercure.rst:144
+msgid ""
+"The ``Publisher`` service can be injected using the :doc:`autowiring "
+"</service_container/autowiring>` in any other service, including "
+"controllers::"
+msgstr ""
+
+#: ../../../mercure.rst:171
+msgid ""
+"The first parameter to pass to the ``Update`` constructor is the "
+"**topic** being updated. This topic should be an `IRI`_ "
+"(Internationalized Resource Identifier, RFC 3987): a unique identifier of"
+" the resource being dispatched."
+msgstr ""
+
+#: ../../../mercure.rst:176
+msgid ""
+"Usually, this parameter contains the original URL of the resource "
+"transmitted to the client, but it can be any valid `IRI`_, it doesn't "
+"have to be a URL that exists (similarly to XML namespaces)."
+msgstr ""
+
+#: ../../../mercure.rst:180
+msgid ""
+"The second parameter of the constructor is the content of the update. It "
+"can be anything, stored in any format. However, serializing the resource "
+"in a hypermedia format such as JSON-LD, Atom, HTML or XML is recommended."
+msgstr ""
+
+#: ../../../mercure.rst:186
+msgid "Subscribing"
+msgstr ""
+
+#: ../../../mercure.rst:188
+msgid "Subscribing to updates in JavaScript is straightforward:"
+msgstr ""
+
+#: ../../../mercure.rst:198
+msgid ""
+"Mercure also allows to subscribe to several topics, and to use URI "
+"Templates as patterns:"
+msgstr ""
+
+#: ../../../mercure.rst:218
+msgid ""
+"Google Chrome DevTools natively integrate a `practical UI`_ displaying in"
+" live the received events:"
+msgstr ""
+
+#: ../../../mercure.rst:223
+msgid "To use it:"
+msgstr ""
+
+#: ../../../mercure.rst:225
+msgid "open the DevTools"
+msgstr ""
+
+#: ../../../mercure.rst:226
+msgid "select the \"Network\" tab"
+msgstr ""
+
+#: ../../../mercure.rst:227
+msgid "click on the request to the Mercure hub"
+msgstr ""
+
+#: ../../../mercure.rst:228
+msgid "click on the \"EventStream\" sub-tab."
+msgstr ""
+
+#: ../../../mercure.rst:232
+msgid "Test if a URI Template match a URL using `the online debugger`_"
+msgstr ""
+
+#: ../../../mercure.rst:235
+msgid "Async dispatching"
+msgstr ""
+
+#: ../../../mercure.rst:237
+msgid ""
+"Instead of calling the ``Publisher`` service directly, you can also let "
+"Symfony dispatching the updates asynchronously thanks to the provided "
+"integration with the Messenger component."
+msgstr ""
+
+#: ../../../mercure.rst:241
+msgid ""
+"First, be sure :doc:`to install the Messenger component </messenger>` and"
+" to configure properly a transport (if you don't, the handler will be "
+"called synchronously)."
+msgstr ""
+
+#: ../../../mercure.rst:245
+msgid ""
+"Then, dispatch the Mercure ``Update`` to the Messenger's Message Bus, it "
+"will be handled automatically::"
+msgstr ""
+
+#: ../../../mercure.rst:272
+msgid "Discovery"
+msgstr ""
+
+#: ../../../mercure.rst:274
+msgid ""
+"The Mercure protocol comes with a discovery mechanism. To leverage it, "
+"the Symfony application must expose the URL of the Mercure Hub in a "
+"``Link`` HTTP header."
+msgstr ""
+
+#: ../../../mercure.rst:280
+msgid ""
+"You can create ``Link`` headers with the :doc:`WebLink Component "
+"</web_link>`, by using the ``AbstractController::addLink`` helper "
+"method::"
+msgstr ""
+
+#: ../../../mercure.rst:308
+msgid ""
+"Then, this header can be parsed client-side to find the URL of the Hub, "
+"and to subscribe to it:"
+msgstr ""
+
+#: ../../../mercure.rst:329
+msgid "Authorization"
+msgstr ""
+
+#: ../../../mercure.rst:331
+msgid ""
+"Mercure also allows to dispatch updates only to authorized clients. To do"
+" so, set the list of **targets** allowed to receive the update as the "
+"third parameter of the ``Update`` constructor::"
+msgstr ""
+
+#: ../../../mercure.rst:360
+msgid ""
+"To subscribe to private updates, subscribers must provide a JWT "
+"containing at least one target marking the update to the Hub."
+msgstr ""
+
+#: ../../../mercure.rst:363
+msgid ""
+"To provide this JWT, the subscriber can use a cookie, or a "
+"``Authorization`` HTTP header. Cookies are automatically sent by the "
+"browsers when opening an ``EventSource`` connection. Using cookies is the"
+" most secure and preferred way when the client is a web browser. If the "
+"client is not a web browser, then using an authorization header is the "
+"way to go."
+msgstr ""
+
+#: ../../../mercure.rst:371
+msgid ""
+"The native implementation of EventSource doesn't allow specifying "
+"headers. For example, authorization using Bearer token. In order to "
+"achieve that, use `a polyfill`_"
+msgstr ""
+
+#: ../../../mercure.rst:382
+msgid ""
+"In the following example controller, the generated cookie contains a JWT,"
+" itself containing the appropriate targets. This cookie will be "
+"automatically sent by the web browser when connecting to the Hub. Then, "
+"the Hub will verify the validity of the provided JWT, and extract the "
+"targets from it."
+msgstr ""
+
+#: ../../../mercure.rst:388
+msgid "To generate the JWT, we'll use the ``lcobucci/jwt`` library. Install it:"
+msgstr ""
+
+#: ../../../mercure.rst:394
+msgid "And here is the controller::"
+msgstr ""
+
+#: ../../../mercure.rst:432
+msgid ""
+"To use the cookie authentication method, the Symfony app and the Hub must"
+" be served from the same domain (can be different sub-domains)."
+msgstr ""
+
+#: ../../../mercure.rst:436
+msgid "Generating Programmatically The JWT Used to Publish"
+msgstr ""
+
+#: ../../../mercure.rst:438
+msgid ""
+"Instead of directly storing a JWT in the configuration, you can create a "
+"service that will return the token used by the ``Publisher`` object::"
+msgstr ""
+
+#: ../../../mercure.rst:453
+msgid "Then, reference this service in the bundle configuration:"
+msgstr ""
+
+#: ../../../mercure.rst:492
+msgid ""
+"This method is especially convenient when using tokens having an "
+"expiration date, that can be refreshed programmatically."
+msgstr ""
+
+#: ../../../mercure.rst:496
+msgid "Web APIs"
+msgstr ""
+
+#: ../../../mercure.rst:498
+msgid ""
+"When creating a web API, it's convenient to be able to instantly push new"
+" versions of the resources to all connected devices, and to update their "
+"views."
+msgstr ""
+
+#: ../../../mercure.rst:502
+msgid ""
+"API Platform can use the Mercure Component to dispatch updates "
+"automatically, every time an API resource is created, modified or "
+"deleted."
+msgstr ""
+
+#: ../../../mercure.rst:505
+msgid "Start by installing the library using its official recipe:"
+msgstr ""
+
+#: ../../../mercure.rst:511
+msgid ""
+"Then, creating the following entity is enough to get a fully-featured "
+"hypermedia API, and automatic update broadcasting through the Mercure "
+"hub::"
+msgstr ""
+
+#: ../../../mercure.rst:538
+msgid ""
+"As showcased `in this recording`_, the API Platform Client Generator also"
+" allows to scaffold complete React and React Native applications from "
+"this API. These applications will render the content of Mercure updates "
+"in real-time."
+msgstr ""
+
+#: ../../../mercure.rst:542
+msgid ""
+"Checkout `the dedicated API Platform documentation`_ to learn more about "
+"its Mercure support."
+msgstr ""
+
+#: ../../../mercure.rst:546
+msgid "Testing"
+msgstr ""
+
+#: ../../../mercure.rst:548
+msgid ""
+"During functional testing there is no need to send updates to Mercure. "
+"They will be handled by a stub publisher::"
+msgstr ""
+
+#: ../../../mercure.rst:565
+msgid ""
+"PublisherStub decorates the default publisher service so no updates are "
+"actually sent. Here is the PublisherStub implementation::"
+msgstr ""
+
+#: ../../../mercure.rst:574
+msgid "Debugging"
+msgstr ""
+
+#: ../../../mercure.rst:578
+msgid "The WebProfiler panel was introduced in MercureBundle 0.2."
+msgstr ""
+
+#: ../../../mercure.rst:580
+msgid "Enable the panel in your configuration, as follows:"
+msgstr ""
+

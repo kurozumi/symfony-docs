@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../notifier/chatters.rst:5
+msgid "How to send Chat Messages"
+msgstr ""
+
+#: ../../../notifier/chatters.rst:9
+msgid ""
+"The Notifier component was introduced in Symfony 5.0 as an "
+":doc:`experimental feature </contributing/code/experimental>`."
+msgstr ""
+
+#: ../../../notifier/chatters.rst:12
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Notifier\\\\ChatterInterface` class "
+"allows you to send messages to chat services like Slack or Telegram::"
+msgstr ""
+
+#: ../../../notifier/chatters.rst:43
+msgid ""
+"Read :ref:`the main Notifier guide <notifier-chatter-dsn>` to see how to "
+"configure the different transports."
+msgstr ""
+
+#: ../../../notifier/chatters.rst:47
+msgid "Adding Interactions to a Slack Message"
+msgstr ""
+
+#: ../../../notifier/chatters.rst:49
+msgid ""
+"With a Slack message, you can use the "
+":class:`Symfony\\\\Component\\\\Notifier\\\\Bridge\\\\Slack\\\\SlackOptions`"
+" to add some interactive options called `Block elements`_::"
+msgstr ""
+

@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/versus-assetic.rst:2
+msgid "Encore Versus Assetic?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:4
+msgid ""
+"Symfony originally shipped with support for :doc:`Assetic "
+"</frontend/assetic/index>`: a pure PHP library capable of processing, "
+"combining and minifying CSS and JavaScript files. And while Encore is now"
+" the recommended way of processing your assets, Assetic still works well."
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:9
+msgid "So what are the differences between Assetic and Encore?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:12
+msgid "Assetic"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:12
+msgid "Encore"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:14
+msgid "Language"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:14
+msgid "Pure PHP, relies on other language tools for some tasks"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:14
+msgid "Node.js"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:17
+msgid "Combine assets?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:17
+#: ../../../frontend/encore/versus-assetic.rst:21
+#: ../../../frontend/encore/versus-assetic.rst:23
+#: ../../../frontend/encore/versus-assetic.rst:25
+#: ../../../frontend/encore/versus-assetic.rst:27
+msgid "Yes"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:19
+msgid "Minify assets?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:19
+msgid "Yes (when configured)"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:19
+msgid "Yes (out-of-the-box)"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:21
+msgid "Process Sass/Less?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:23
+msgid "Loads JS Modules? [1]_"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:23
+#: ../../../frontend/encore/versus-assetic.rst:25
+msgid "No"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:25
+msgid "Load CSS dependencies in JS? [1]"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:27
+msgid "React, Vue.js support?"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:27
+msgid "No [2]_"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:29
+msgid "Support"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:29
+msgid "Not actively maintained"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:29
+msgid "Actively maintained"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:32
+msgid ""
+"JavaScript modules allow you to organize your JavaScript into small files"
+" called modules and import them:"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:43
+msgid ""
+"Encore (via Webpack) parses these automatically and creates a JavaScript "
+"file that contains all needed dependencies. You can even require CSS or "
+"images."
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:47
+msgid ""
+"Assetic has outdated support for React.js only. Encore ships with modern "
+"support for React.js, Vue.js, TypeScript, etc."
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:51
+msgid "Should I Upgrade from Assetic to Encore"
+msgstr ""
+
+#: ../../../frontend/encore/versus-assetic.rst:53
+msgid ""
+"If you already have Assetic working in an application, and haven't needed"
+" any of the features that Encore offers over Assetic, continuing to use "
+"Assetic is fine. If you *do* start to need more features, then you might "
+"have a business case for changing to Encore."
+msgstr ""
+

@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/code-splitting.rst:2
+msgid "Async Code Splitting"
+msgstr ""
+
+#: ../../../frontend/encore/code-splitting.rst:4
+msgid ""
+"When you require/import a JavaScript or CSS module, Webpack compiles that"
+" code into the final JavaScript or CSS file. Usually, that's exactly what"
+" you want. But what if you only need to use a piece of code under certain"
+" conditions? For example, what if you want to use `video.js`_ to play a "
+"video, but only once a user has clicked a link:"
+msgstr ""
+
+#: ../../../frontend/encore/code-splitting.rst:23
+msgid ""
+"In this example, the VideoPlayer module and everything it imports will be"
+" packaged into the final, built JavaScript file, even though it may not "
+"be very common for someone to actually need it. A better solution is to "
+"use `dynamic imports`_: load the code via AJAX when it's needed:"
+msgstr ""
+
+#: ../../../frontend/encore/code-splitting.rst:47
+msgid ""
+"By using ``import()`` like a function, the module will be downloaded "
+"async and the ``.then()`` callback will be executed when it's finished. "
+"The ``VideoPlayer`` argument to the callback will be the loaded module. "
+"In other words, it works like normal AJAX calls! Behind the scenes, "
+"Webpack will package the ``VideoPlayer`` module into a separate file "
+"(e.g. ``0.js``) so it can be downloaded. All the details are handled for "
+"you."
+msgstr ""
+
+#: ../../../frontend/encore/code-splitting.rst:54
+msgid ""
+"The ``{ default: VideoPlayer }`` part may look strange. When using the "
+"async import, your ``.then()`` callback is passed an object, where the "
+"*actual* module is on a ``.default`` key. There are reasons why this is "
+"done, but it does look quirky. The ``{ default: VideoPlayer }`` code "
+"makes sure that the ``VideoPlayer`` module we want is read from this "
+"``.default`` property."
+msgstr ""
+
+#: ../../../frontend/encore/code-splitting.rst:60
+msgid ""
+"For more details and configuration options, see `dynamic imports`_ on "
+"Webpack's documentation."
+msgstr ""
+

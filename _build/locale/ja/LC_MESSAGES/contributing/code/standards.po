@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/standards.rst:2
+msgid "Coding Standards"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:4
+msgid ""
+"Symfony code is contributed by thousands of developers around the world. "
+"To make every piece of code look and feel familiar, Symfony defines some "
+"coding standards that all contributions must follow."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:8
+msgid ""
+"These Symfony coding standards are based on the `PSR-1`_, `PSR-2`_ and "
+"`PSR-4`_ standards, so you may already know most of them."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:12
+msgid "Making your Code Follow the Coding Standards"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:14
+msgid ""
+"Instead of reviewing your code manually, Symfony makes it simple to "
+"ensure that your contributed code matches the expected code syntax. "
+"First, install the `PHP CS Fixer tool`_ and then, run this command to fix"
+" any problem:"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:23
+msgid ""
+"If you forget to run this command and make a pull request with any syntax"
+" issue, our automated tools will warn you about that and will provide the"
+" solution."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:27
+msgid "Symfony Coding Standards in Detail"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:29
+msgid ""
+"If you want to learn about the Symfony coding standards in detail, here's"
+" a short example containing most features described below::"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:141
+msgid "Structure"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:143
+msgid "Add a single space after each comma delimiter;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:145
+msgid ""
+"Add a single space around binary operators (``==``, ``&&``, ...), with "
+"the exception of the concatenation (``.``) operator;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:148
+msgid ""
+"Place unary operators (``!``, ``--``, ...) adjacent to the affected "
+"variable;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:150
+msgid "Always use `identical comparison`_ unless you need type juggling;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:152
+msgid ""
+"Use `Yoda conditions`_ when checking a variable against an expression to "
+"avoid an accidental assignment inside the condition statement (this "
+"applies to ``==``, ``!=``, ``===``, and ``!==``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:156
+msgid ""
+"Add a comma after each array item in a multi-line array, even after the "
+"last one;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:159
+msgid ""
+"Add a blank line before ``return`` statements, unless the return is alone"
+" inside a statement-group (like an ``if`` statement);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:162
+msgid ""
+"Use ``return null;`` when a function explicitly returns ``null`` values "
+"and use ``return;`` when the function returns ``void`` values;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:165
+msgid ""
+"Use braces to indicate control structure body regardless of the number of"
+" statements it contains;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:168
+msgid ""
+"Define one class per file - this does not apply to private helper classes"
+" that are not intended to be instantiated from the outside and thus are "
+"not concerned by the `PSR-0`_ and `PSR-4`_ autoload standards;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:172
+msgid ""
+"Declare the class inheritance and all the implemented interfaces on the "
+"same line as the class name;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:175
+msgid "Declare class properties before methods;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:177
+msgid ""
+"Declare public methods first, then protected ones and finally private "
+"ones. The exceptions to this rule are the class constructor and the "
+"``setUp()`` and ``tearDown()`` methods of PHPUnit tests, which must "
+"always be the first methods to increase readability;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:182
+msgid ""
+"Declare all the arguments on the same line as the method/function name, "
+"no matter how many arguments there are;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:185
+msgid ""
+"Use parentheses when instantiating classes regardless of the number of "
+"arguments the constructor has;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:188
+msgid ""
+"Exception and error message strings must be concatenated using "
+":phpfunction:`sprintf`;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:190
+msgid ""
+"Do not use ``else``, ``elseif``, ``break`` after ``if`` and ``case`` "
+"conditions which return or throw something;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:193
+msgid ""
+"Do not use spaces around ``[`` offset accessor and before ``]`` offset "
+"accessor;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:195
+msgid ""
+"Add a ``use`` statement for every class that is not part of the global "
+"namespace;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:197
+msgid ""
+"When PHPDoc tags like ``@param`` or ``@return`` include ``null`` and "
+"other types, always place ``null`` at the end of the list of types."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:201
+msgid "Naming Conventions"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:203
+msgid ""
+"Use `camelCase`_ for PHP variables, function and method names, arguments "
+"(e.g. ``$acceptableContentTypes``, ``hasSession()``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:206
+msgid ""
+"Use `snake_case`_ for configuration parameters and Twig template "
+"variables (e.g. ``framework.csrf_protection``, ``http_status_code``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:209
+msgid ""
+"Use namespaces for all PHP classes and `UpperCamelCase`_ for their names "
+"(e.g. ``ConsoleLogger``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:212
+msgid ""
+"Prefix all abstract classes with ``Abstract`` except PHPUnit "
+"``*TestCase``. Please note some early Symfony classes do not follow this "
+"convention and have not been renamed for backward compatibility reasons. "
+"However, all new abstract classes must follow this naming convention;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:217
+msgid "Suffix interfaces with ``Interface``;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:219
+msgid "Suffix traits with ``Trait``;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:221
+msgid "Suffix exceptions with ``Exception``;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:223
+msgid ""
+"Use UpperCamelCase for naming PHP files (e.g. ``EnvVarProcessor.php``) "
+"and snake case for naming Twig templates and web assets "
+"(``section_layout.html.twig``, ``index.scss``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:227
+msgid ""
+"For type-hinting in PHPDocs and casting, use ``bool`` (instead of "
+"``boolean`` or ``Boolean``), ``int`` (instead of ``integer``), ``float`` "
+"(instead of ``double`` or ``real``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:231
+msgid ""
+"Don't forget to look at the more verbose :doc:`conventions` document for "
+"more subjective naming considerations."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:237
+msgid "Service Naming Conventions"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:239
+msgid ""
+"A service name must be the same as the fully qualified class name (FQCN) "
+"of its class (e.g. ``App\\EventSubscriber\\UserSubscriber``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:242
+msgid ""
+"If there are multiple services for the same class, use the FQCN for the "
+"main service and use lowercase and underscored names for the rest of "
+"services. Optionally divide them in groups separated with dots (e.g. "
+"``something.service_name``, ``fos_user.something.service_name``);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:247
+#, python-format
+msgid ""
+"Use lowercase letters for parameter names (except when referring to "
+"environment variables with the ``%env(VARIABLE_NAME)%`` syntax);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:250
+msgid ""
+"Add class aliases for public services (e.g. alias "
+"``Symfony\\Component\\Something\\ClassName`` to "
+"``something.service_name``)."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:254
+msgid "Documentation"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:256
+msgid ""
+"Add PHPDoc blocks for all classes, methods, and functions (though you may"
+" be asked to remove PHPDoc that do not add value);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:259
+msgid ""
+"Group annotations together so that annotations of the same type "
+"immediately follow each other, and annotations of a different type are "
+"separated by a single blank line;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:263
+msgid "Omit the ``@return`` tag if the method does not return anything;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:265
+msgid "The ``@package`` and ``@subpackage`` annotations are not used;"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:267
+msgid ""
+"Don't inline PHPDoc blocks, even when they contain just one tag (e.g. "
+"don't put ``/** {@inheritdoc} */`` in a single line);"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:270
+msgid ""
+"When adding a new class or when making significant changes to an existing"
+" class, an ``@author`` tag with personal contact information may be "
+"added, or expanded. Please note it is possible to have the personal "
+"contact information updated or removed per request to the :doc:`core team"
+" </contributing/code/core_team>`."
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:276
+msgid "License"
+msgstr ""
+
+#: ../../../contributing/code/standards.rst:278
+msgid ""
+"Symfony is released under the MIT license, and the license block has to "
+"be present at the top of every PHP file, before the namespace."
+msgstr ""
+

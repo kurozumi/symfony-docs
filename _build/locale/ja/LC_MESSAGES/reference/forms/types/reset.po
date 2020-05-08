@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/forms/types/reset.rst:5
+msgid "ResetType Field"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:7
+msgid "A button that resets all fields to their original values."
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:10
+msgid "Rendered as"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:10
+msgid "``input`` ``reset`` tag"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:12
+msgid "Inherited options"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:12
+msgid "`attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:13
+msgid "`attr_translation_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:14
+msgid "`disabled`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:15
+msgid "`label`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:16
+msgid "`label_translation_parameters`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:17
+msgid "`row_attr`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:18
+msgid "`translation_domain`_"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:20
+msgid "Parent type"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:20
+msgid ":doc:`ButtonType </reference/forms/types/button>`"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:22
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:22
+msgid ":class:`Symfony\\\\Component\\\\Form\\\\Extension\\\\Core\\\\Type\\\\ResetType`"
+msgstr ""
+
+#: ../../../reference/forms/types/options/_debug_form.rst.inc:3
+msgid ""
+"The full list of options defined and inherited by this form type is "
+"available running this command in your app:"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:28
+msgid "Inherited Options"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:31
+msgid "``attr``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:4
+#: ../../../reference/forms/types/options/row_attr.rst.inc:4
+#: ../../../reference/forms/types/reset.rst:33
+#: ../../../reference/forms/types/reset.rst:55
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:35
+msgid ""
+"If you want to add extra attributes to the HTML representation of the "
+"button, you can use ``attr`` option. It's an associative array with HTML "
+"attribute as a key. This can be useful when you need to set a custom "
+"class for the button::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:2
+msgid "``disabled``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:4
+msgid "**type**: ``boolean``  **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_disabled.rst.inc:6
+msgid ""
+"If you don't want a user to be able to click a button, you can set the "
+"disabled option to true. It will not be possible to submit the form with "
+"this button, not even when bypassing the browser and sending a request "
+"manually, for example with cURL."
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:2
+msgid "``label``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:4
+msgid ""
+"**type**: ``string`` **default**: The label is \"guessed\" from the field"
+" name"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_label.rst.inc:6
+msgid ""
+"Sets the label that will be displayed on the button. The label can also "
+"be directly set inside the template:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:2
+msgid "``translation_domain``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:4
+msgid "**type**: ``string`` **default**: ``messages``"
+msgstr ""
+
+#: ../../../reference/forms/types/options/button_translation_domain.rst.inc:6
+msgid ""
+"This is the translation domain that will be used for any labels or "
+"options that are rendered for this button."
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:53
+msgid "label_translation_parameters"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:57
+msgid ""
+"The content of the `label`_ option is translated before displaying it, so"
+" it can contain :ref:`translation placeholders <component-translation-"
+"placeholders>`. This option defines the values used to replace those "
+"placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:11
+#: ../../../reference/forms/types/reset.rst:61
+msgid "Given this translation message:"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:19
+#: ../../../reference/forms/types/reset.rst:68
+msgid "You can specify the placeholder values as follows::"
+msgstr ""
+
+#: ../../../reference/forms/types/reset.rst:80
+msgid ""
+"The ``label_translation_parameters`` option of buttons is merged with the"
+" same option of its parents, so buttons can reuse and/or override any of "
+"the parent placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:2
+msgid "attr_translation_parameters"
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:6
+msgid ""
+"The content of the ``title`` and ``placeholder`` values defined in the "
+"`attr`_ option is translated before displaying it, so it can contain "
+":ref:`translation placeholders <component-translation-placeholders>`. "
+"This option defines the values used to replace those placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/attr_translation_parameters.rst.inc:31
+msgid ""
+"The ``attr_translation_parameters`` option of children fields is merged "
+"with the same option of their parents, so children can reuse and/or "
+"override any of the parent placeholders."
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:2
+msgid "row_attr"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:6
+msgid ""
+"An associative array of the HTML attributes added to the element which is"
+" used to render the :ref:`form type row <form-rendering-basics>`::"
+msgstr ""
+
+#: ../../../reference/forms/types/options/row_attr.rst.inc:15
+msgid ""
+"Use the ``attr`` option if you want to add these attributes to the the "
+":ref:`form type widget <form-rendering-basics>` element."
+msgstr ""
+

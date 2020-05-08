@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/expression_language.rst:6
+msgid "The ExpressionLanguage Component"
+msgstr ""
+
+#: ../../../components/expression_language.rst:8
+msgid ""
+"The ExpressionLanguage component provides an engine that can compile and "
+"evaluate expressions. An expression is a one-liner that returns a value "
+"(mostly, but not limited to, Booleans)."
+msgstr ""
+
+#: ../../../components/expression_language.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/expression_language.rst:22
+msgid "How can the Expression Engine Help Me?"
+msgstr ""
+
+#: ../../../components/expression_language.rst:24
+msgid ""
+"The purpose of the component is to allow users to use expressions inside "
+"configuration for more complex logic. For some examples, the Symfony "
+"Framework uses expressions in security, for validation rules and in route"
+" matching."
+msgstr ""
+
+#: ../../../components/expression_language.rst:28
+msgid ""
+"Besides using the component in the framework itself, the "
+"ExpressionLanguage component is a perfect candidate for the foundation of"
+" a *business rule engine*. The idea is to let the webmaster of a website "
+"configure things in a dynamic way without using PHP and without "
+"introducing security problems:"
+msgstr ""
+
+#: ../../../components/expression_language.rst:46
+msgid ""
+"Expressions can be seen as a very restricted PHP sandbox and are immune "
+"to external injections as you must explicitly declare which variables are"
+" available in an expression."
+msgstr ""
+
+#: ../../../components/expression_language.rst:51
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/expression_language.rst:53
+msgid ""
+"The ExpressionLanguage component can compile and evaluate expressions. "
+"Expressions are one-liners that often return a Boolean, which can be used"
+" by the code executing the expression in an ``if`` statement. A simple "
+"example of an expression is ``1 + 2``. You can also use more complicated "
+"expressions, such as ``someArray[3].someMethod('bar')``."
+msgstr ""
+
+#: ../../../components/expression_language.rst:59
+msgid "The component provides 2 ways to work with expressions:"
+msgstr ""
+
+#: ../../../components/expression_language.rst:61
+msgid "**evaluation**: the expression is evaluated without being compiled to PHP;"
+msgstr ""
+
+#: ../../../components/expression_language.rst:62
+msgid ""
+"**compile**: the expression is compiled to PHP, so it can be cached and "
+"evaluated."
+msgstr ""
+
+#: ../../../components/expression_language.rst:65
+msgid ""
+"The main class of the component is "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage`::"
+msgstr ""
+
+#: ../../../components/expression_language.rst:77
+msgid "Expression Syntax"
+msgstr ""
+
+#: ../../../components/expression_language.rst:79
+msgid ""
+"See :doc:`/components/expression_language/syntax` to learn the syntax of "
+"the ExpressionLanguage component."
+msgstr ""
+
+#: ../../../components/expression_language.rst:83
+msgid "Passing in Variables"
+msgstr ""
+
+#: ../../../components/expression_language.rst:85
+msgid ""
+"You can also pass variables into the expression, which can be of any "
+"valid PHP type (including objects)::"
+msgstr ""
+
+#: ../../../components/expression_language.rst:107
+msgid ""
+"For more information, see the "
+":doc:`/components/expression_language/syntax` entry, especially :ref"
+":`component-expression-objects` and :ref:`component-expression-arrays`."
+msgstr ""
+
+#: ../../../components/expression_language.rst:111
+msgid "Caching"
+msgstr ""
+
+#: ../../../components/expression_language.rst:113
+msgid ""
+"The component provides some different caching strategies, read more about"
+" them in :doc:`/components/expression_language/caching`."
+msgstr ""
+
+#: ../../../components/expression_language.rst:117
+msgid "AST Dumping and Editing"
+msgstr ""
+
+#: ../../../components/expression_language.rst:119
+msgid ""
+"The AST (*Abstract Syntax Tree*) of expressions can be dumped and "
+"manipulated as explained in :doc:`/components/expression_language/ast`."
+msgstr ""
+
+#: ../../../components/expression_language.rst:123
+msgid "Learn More"
+msgstr ""
+

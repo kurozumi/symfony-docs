@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../bundles/extension.rst:6
+msgid "How to Load Service Configuration inside a Bundle"
+msgstr ""
+
+#: ../../../bundles/extension.rst:8
+msgid ""
+"Services created by bundles are not defined in the main "
+"``config/services.yaml`` file used by the application but in the bundles "
+"themselves. This article explains how to create and load service files "
+"using the bundle directory structure."
+msgstr ""
+
+#: ../../../bundles/extension.rst:14
+msgid "Creating an Extension Class"
+msgstr ""
+
+#: ../../../bundles/extension.rst:16
+msgid ""
+"In order to load service configuration, you have to create a Dependency "
+"Injection (DI) Extension for your bundle. By default, the Extension class"
+" must follow these conventions (but later you'll learn how to skip them "
+"if needed):"
+msgstr ""
+
+#: ../../../bundles/extension.rst:20
+msgid "It has to live in the ``DependencyInjection`` namespace of the bundle;"
+msgstr ""
+
+#: ../../../bundles/extension.rst:22
+msgid ""
+"It has to implement the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Extension\\\\ExtensionInterface`,"
+" which is usually achieved by extending the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Extension\\\\Extension`"
+" class;"
+msgstr ""
+
+#: ../../../bundles/extension.rst:26
+msgid ""
+"The name is equal to the bundle name with the ``Bundle`` suffix replaced "
+"by ``Extension`` (e.g. the Extension class of the AcmeBundle would be "
+"called ``AcmeExtension`` and the one for AcmeHelloBundle would be called "
+"``AcmeHelloExtension``)."
+msgstr ""
+
+#: ../../../bundles/extension.rst:31
+msgid "This is how the extension of an AcmeHelloBundle should look like::"
+msgstr ""
+
+#: ../../../bundles/extension.rst:48
+msgid "Manually Registering an Extension Class"
+msgstr ""
+
+#: ../../../bundles/extension.rst:50
+msgid ""
+"When not following the conventions, you will have to manually register "
+"your extension. To do this, you should override the "
+":method:`Bundle::getContainerExtension() "
+"<Symfony\\\\Component\\\\HttpKernel\\\\Bundle\\\\Bundle::build>` method "
+"to return the instance of the extension::"
+msgstr ""
+
+#: ../../../bundles/extension.rst:66
+msgid ""
+"In addition, when the new Extension class name doesn't follow the naming "
+"conventions, you must also override the :method:`Extension::getAlias() "
+"<Symfony\\\\Component\\\\DependencyInjection\\\\Extension\\\\Extension::getAlias>`"
+" method to return the correct DI alias. The DI alias is the name used to "
+"refer to the bundle in the container (e.g. in the ``config/packages/`` "
+"files). By default, this is done by removing the ``Extension`` suffix and"
+" converting the class name to underscores (e.g. ``AcmeHelloExtension``'s "
+"DI alias is ``acme_hello``)."
+msgstr ""
+
+#: ../../../bundles/extension.rst:76
+msgid "Using the ``load()`` Method"
+msgstr ""
+
+#: ../../../bundles/extension.rst:78
+msgid ""
+"In the ``load()`` method, all services and parameters related to this "
+"extension will be loaded. This method doesn't get the actual container "
+"instance, but a copy. This container only has the parameters from the "
+"actual container. After loading the services and parameters, the copy "
+"will be merged into the actual container, to ensure all services and "
+"parameters are also added to the actual container."
+msgstr ""
+
+#: ../../../bundles/extension.rst:85
+msgid ""
+"In the ``load()`` method, you can use PHP code to register service "
+"definitions, but it is more common if you put these definitions in a "
+"configuration file (using the YAML, XML or PHP format)."
+msgstr ""
+
+#: ../../../bundles/extension.rst:89
+msgid ""
+"For instance, assume you have a file called ``services.xml`` in the "
+"``Resources/config/`` directory of your bundle, your ``load()`` method "
+"looks like::"
+msgstr ""
+
+#: ../../../bundles/extension.rst:105
+msgid "The other available loaders are ``YamlFileLoader`` and ``PhpFileLoader``."
+msgstr ""
+
+#: ../../../bundles/extension.rst:108
+msgid "Using Configuration to Change the Services"
+msgstr ""
+
+#: ../../../bundles/extension.rst:110
+msgid ""
+"The Extension is also the class that handles the configuration for that "
+"particular bundle (e.g. the configuration in "
+"``config/packages/<bundle_alias>.yaml``). To read more about it, see the "
+"\":doc:`/bundles/configuration`\" article."
+msgstr ""
+
+#: ../../../bundles/extension.rst:115
+msgid "Adding Classes to Compile"
+msgstr ""
+
+#: ../../../bundles/extension.rst:117
+msgid ""
+"Bundles can hint Symfony about which of their classes contain annotations"
+" so they are compiled when generating the application cache to improve "
+"the overall performance. Define the list of annotated classes to compile "
+"in the ``addAnnotatedClassesToCompile()`` method::"
+msgstr ""
+
+#: ../../../bundles/extension.rst:138
+msgid ""
+"If some class extends from other classes, all its parents are "
+"automatically included in the list of classes to compile."
+msgstr ""
+
+#: ../../../bundles/extension.rst:141
+msgid ""
+"Patterns are transformed into the actual class namespaces using the "
+"classmap generated by Composer. Therefore, before using these patterns, "
+"you must generate the full classmap executing the ``dump-autoload`` "
+"command of Composer."
+msgstr ""
+
+#: ../../../bundles/extension.rst:147
+msgid ""
+"This technique can't be used when the classes to compile use the "
+"``__DIR__`` or ``__FILE__`` constants, because their values will change "
+"when loading these classes from the ``classes.php`` file."
+msgstr ""
+

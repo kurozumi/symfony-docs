@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/compiler_passes.rst:6
+msgid "How to Work with Compiler Passes"
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:8
+msgid ""
+"Compiler passes give you an opportunity to manipulate other :doc:`service"
+" definitions </service_container/definitions>` that have been registered "
+"with the service container. You can read about how to create them in the "
+"components section \":ref:`components-di-separate-compiler-passes`\"."
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:13
+msgid ""
+"Compiler passes are registered in the ``build()`` method of the "
+"application kernel::"
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:35
+msgid ""
+"One of the most common use-cases of compiler passes is to work with "
+":doc:`tagged services </service_container/tags>`. In those cases, instead"
+" of creating a compiler pass, you can make the kernel implement "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Compiler\\\\CompilerPassInterface`"
+" and process the services inside the ``process()`` method::"
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:69
+msgid "Working with Compiler Passes in Bundles"
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:71
+msgid ""
+":doc:`Bundles </bundles>` can define compiler passes in the ``build()`` "
+"method of the main bundle class (this is not needed when implementing the"
+" ``process()`` method in the extension)::"
+msgstr ""
+
+#: ../../../service_container/compiler_passes.rst:92
+msgid ""
+"If you are using custom :doc:`service tags </service_container/tags>` in "
+"a bundle then by convention, tag names consist of the name of the bundle "
+"(lowercase, underscores as separators), followed by a dot, and finally "
+"the \"real\" name. For example, if you want to introduce some sort of "
+"\"transport\" tag in your AcmeMailerBundle, you should call it "
+"``acme_mailer.transport``."
+msgstr ""
+

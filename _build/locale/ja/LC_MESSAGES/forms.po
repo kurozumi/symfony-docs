@@ -1,0 +1,729 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../forms.rst:5
+msgid "Forms"
+msgstr ""
+
+#: ../../../forms.rst:7
+msgid "Screencast"
+msgstr ""
+
+#: ../../../forms.rst:10
+msgid ""
+"Do you prefer video tutorials? Check out the `Symfony Forms screencast "
+"series`_."
+msgstr ""
+
+#: ../../../forms.rst:12
+msgid ""
+"Creating and processing HTML forms is hard and repetitive. You need to "
+"deal with rendering HTML form fields, validating submitted data, mapping "
+"the form data into objects and a lot more. Symfony includes a powerful "
+"form feature that provides all these features and many more for truly "
+"complex scenarios."
+msgstr ""
+
+#: ../../../forms.rst:18
+msgid "Installation"
+msgstr ""
+
+#: ../../../forms.rst:20
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the form feature before using it:"
+msgstr ""
+
+#: ../../../forms.rst:28
+msgid "Usage"
+msgstr ""
+
+#: ../../../forms.rst:30
+msgid "The recommended workflow when working with Symfony forms is the following:"
+msgstr ""
+
+#: ../../../forms.rst:32
+msgid ""
+"**Build the form** in a Symfony controller or using a dedicated form "
+"class;"
+msgstr ""
+
+#: ../../../forms.rst:33
+msgid "**Render the form** in a template so the user can edit and submit it;"
+msgstr ""
+
+#: ../../../forms.rst:34
+msgid ""
+"**Process the form** to validate the submitted data, transform it into "
+"PHP data and do something with it (e.g. persist it in a database)."
+msgstr ""
+
+#: ../../../forms.rst:37
+msgid ""
+"Each of these steps is explained in detail in the next sections. To make "
+"examples easier to follow, all of them assume that you're building a "
+"simple Todo list application that displays \"tasks\"."
+msgstr ""
+
+#: ../../../forms.rst:41
+msgid ""
+"Users create and edit tasks using Symfony forms. Each task is an instance"
+" of the following ``Task`` class::"
+msgstr ""
+
+#: ../../../forms.rst:73
+msgid ""
+"This class is a \"plain-old-PHP-object\" because, so far, it has nothing "
+"to do with Symfony or any other library. It's a normal PHP object that "
+"directly solves a problem inside *your* application (i.e. the need to "
+"represent a task in your application). But you can also edit "
+":doc:`Doctrine entities </doctrine>` in the same way."
+msgstr ""
+
+#: ../../../forms.rst:82
+msgid "Form Types"
+msgstr ""
+
+#: ../../../forms.rst:84
+msgid ""
+"Before creating your first Symfony form, it's important to understand the"
+" concept of \"form type\". In other projects, it's common to "
+"differentiate between \"forms\" and \"form fields\". In Symfony, all of "
+"them are \"form types\":"
+msgstr ""
+
+#: ../../../forms.rst:88
+msgid ""
+"a single ``<input type=\"text\">`` form field is a \"form type\" (e.g. "
+"``TextType``);"
+msgstr ""
+
+#: ../../../forms.rst:89
+msgid ""
+"a group of several HTML fields used to input a postal address is a \"form"
+" type\" (e.g. ``PostalAddressType``);"
+msgstr ""
+
+#: ../../../forms.rst:91
+msgid ""
+"an entire ``<form>`` with multiple fields to edit a user profile is a "
+"\"form type\" (e.g. ``UserProfileType``)."
+msgstr ""
+
+#: ../../../forms.rst:94
+msgid ""
+"This may be confusing at first, but it will feel natural to you soon "
+"enough. Besides, it simplifies code and makes \"composing\" and "
+"\"embedding\" form fields much easier to implement."
+msgstr ""
+
+#: ../../../forms.rst:98
+msgid ""
+"There are tens of :doc:`form types provided by Symfony "
+"</reference/forms/types>` and you can also :doc:`create your own form "
+"types </form/create_custom_field_type>`."
+msgstr ""
+
+#: ../../../forms.rst:102
+msgid "Building Forms"
+msgstr ""
+
+#: ../../../forms.rst:104
+msgid ""
+"Symfony provides a \"form builder\" object which allows you to describe "
+"the form fields using a fluent interface. Later, this builder creates the"
+" actual form object used to render and process contents."
+msgstr ""
+
+#: ../../../forms.rst:111
+msgid "Creating Forms in Controllers"
+msgstr ""
+
+#: ../../../forms.rst:113
+msgid ""
+"If your controller extends from the :ref:`AbstractController <the-base-"
+"controller-class-services>`, use the ``createFormBuilder()`` helper::"
+msgstr ""
+
+#: ../../../forms.rst:145
+msgid ""
+"If your controller does not extend from ``AbstractController``, you'll "
+"need to :ref:`fetch services in your controller <controller-accessing-"
+"services>` and use the ``createBuilder()`` method of the ``form.factory``"
+" service."
+msgstr ""
+
+#: ../../../forms.rst:149
+msgid ""
+"In this example, you've added two fields to your form - ``task`` and "
+"``dueDate`` - corresponding to the ``task`` and ``dueDate`` properties of"
+" the ``Task`` class. You've also assigned each a :ref:`form type <form-"
+"types>` (e.g. ``TextType`` and ``DateType``), represented by its fully "
+"qualified class name. Finally, you added a submit button with a custom "
+"label for submitting the form to the server."
+msgstr ""
+
+#: ../../../forms.rst:158
+msgid "Creating Form Classes"
+msgstr ""
+
+#: ../../../forms.rst:160
+msgid ""
+"Symfony recommends to put as little logic as possible in controllers. "
+"That's why it's better to move complex forms to dedicated classes instead"
+" of defining them in controller actions. Besides, forms defined in "
+"classes can be reused in multiple actions and services."
+msgstr ""
+
+#: ../../../forms.rst:165
+msgid ""
+"Form classes are :ref:`form types <form-types>` that implement "
+":class:`Symfony\\\\Component\\\\Form\\\\FormTypeInterface`. However, it's"
+" better to extend from "
+":class:`Symfony\\\\Component\\\\Form\\\\AbstractType`, which already "
+"implements the interface and provides some utilities::"
+msgstr ""
+
+#: ../../../forms.rst:193
+msgid ""
+"Install the `MakerBundle`_ in your project to generate form classes using"
+" the ``make:form`` and ``make:registration-form`` commands."
+msgstr ""
+
+#: ../../../forms.rst:196
+msgid ""
+"The form class contains all the directions needed to create the task "
+"form. In controllers extending from the :ref:`AbstractController <the-"
+"base-controller-class-services>`, use the ``createForm()`` helper "
+"(otherwise, use the ``create()`` method of the ``form.factory`` "
+"service)::"
+msgstr ""
+
+#: ../../../forms.rst:224
+msgid ""
+"Every form needs to know the name of the class that holds the underlying "
+"data (e.g. ``App\\Entity\\Task``). Usually, this is just guessed based "
+"off of the object passed to the second argument to ``createForm()`` (i.e."
+" ``$task``). Later, when you begin :doc:`embedding forms "
+"</form/embedded>`, this will no longer be sufficient."
+msgstr ""
+
+#: ../../../forms.rst:230
+msgid ""
+"So, while not always necessary, it's generally a good idea to explicitly "
+"specify the ``data_class`` option by adding the following to your form "
+"type class::"
+msgstr ""
+
+#: ../../../forms.rst:255
+msgid "Rendering Forms"
+msgstr ""
+
+#: ../../../forms.rst:257
+msgid ""
+"Now that the form has been created, the next step is to render it. "
+"Instead of passing the entire form object to the template, use the "
+"``createView()`` method to build another object with the visual "
+"representation of the form::"
+msgstr ""
+
+#: ../../../forms.rst:284
+msgid ""
+"Then, use some :ref:`form helper functions <reference-form-twig-"
+"functions>` to render the form contents:"
+msgstr ""
+
+#: ../../../forms.rst:292
+msgid ""
+"That's it! The :ref:`form() function <reference-forms-twig-form>` renders"
+" all fields *and* the ``<form>`` start and end tags. By default, the form"
+" method is ``POST`` and the target URL is the same that displayed the "
+"form, but :ref:`you can change both <forms-change-action-method>`."
+msgstr ""
+
+#: ../../../forms.rst:297
+msgid ""
+"Notice how the rendered ``task`` input field has the value of the "
+"``task`` property from the ``$task`` object (i.e. \"Write a blog post\")."
+" This is the first job of a form: to take data from an object and "
+"translate it into a format that's suitable for being rendered in an HTML "
+"form."
+msgstr ""
+
+#: ../../../forms.rst:304
+msgid ""
+"The form system is smart enough to access the value of the protected "
+"``task`` property via the ``getTask()`` and ``setTask()`` methods on the "
+"``Task`` class. Unless a property is public, it *must* have a \"getter\" "
+"and \"setter\" method so that Symfony can get and put data onto the "
+"property. For a boolean property, you can use an \"isser\" or \"hasser\" "
+"method (e.g. ``isPublished()`` or ``hasReminder()``) instead of a getter "
+"(e.g. ``getPublished()`` or ``getReminder()``)."
+msgstr ""
+
+#: ../../../forms.rst:312
+msgid ""
+"As short as this rendering is, it's not very flexible. Usually, you'll "
+"need more control about how the entire form or some of its fields look. "
+"For example, thanks to the :doc:`Bootstrap 4 integration with Symfony "
+"forms </form/bootstrap4>` you can set this option to generate forms "
+"compatible with the Bootstrap 4 CSS framework:"
+msgstr ""
+
+#: ../../../forms.rst:354
+msgid ""
+"The :ref:`built-in Symfony form themes <symfony-builtin-forms>` include "
+"Bootstrap 3 and 4 and Foundation 5. You can also :ref:`create your own "
+"Symfony form theme <create-your-own-form-theme>`."
+msgstr ""
+
+#: ../../../forms.rst:358
+msgid ""
+"In addition to form themes, Symfony allows you to :doc:`customize the way"
+" fields are rendered </form/form_customization>` with multiple functions "
+"to render each field part separately (widgets, labels, errors, help "
+"messages, etc.)"
+msgstr ""
+
+#: ../../../forms.rst:366
+msgid "Processing Forms"
+msgstr ""
+
+#: ../../../forms.rst:368
+msgid ""
+"The :ref:`recommended way of processing forms <best-practice-handle-"
+"form>` is to use a single action for both rendering the form and handling"
+" the form submit. You can use separate actions, but using one action "
+"simplifies everything while keeping the code concise and maintainable."
+msgstr ""
+
+#: ../../../forms.rst:373
+msgid ""
+"Processing a form means to translate user-submitted data back to the "
+"properties of an object. To make this happen, the submitted data from the"
+" user must be written into the form object::"
+msgstr ""
+
+#: ../../../forms.rst:407
+msgid ""
+"This controller follows a common pattern for handling forms and has three"
+" possible paths:"
+msgstr ""
+
+#: ../../../forms.rst:410
+msgid ""
+"When initially loading the page in a browser, the form hasn't been "
+"submitted yet and ``$form->isSubmitted()`` returns ``false``. So, the "
+"form is created and rendered;"
+msgstr ""
+
+#: ../../../forms.rst:414
+msgid ""
+"When the user submits the form, "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"recognizes this and immediately writes the submitted data back into the "
+"``task`` and ``dueDate`` properties of the ``$task`` object. Then this "
+"object is validated (validation is explained in the next section). If it "
+"is invalid, "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` returns "
+"``false`` and the form is rendered again, but now with validation errors;"
+msgstr ""
+
+#: ../../../forms.rst:421
+msgid ""
+"When the user submits the form with valid data, the submitted data is "
+"again written into the form, but this time "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::isValid` returns "
+"``true``. Now you have the opportunity to perform some actions using the "
+"``$task`` object (e.g. persisting it to the database) before redirecting "
+"the user to some other page (e.g. a \"thank you\" or \"success\" page);"
+msgstr ""
+
+#: ../../../forms.rst:429
+msgid ""
+"Redirecting a user after a successful form submission is a best practice "
+"that prevents the user from being able to hit the \"Refresh\" button of "
+"their browser and re-post the data."
+msgstr ""
+
+#: ../../../forms.rst:435
+msgid ""
+"The ``createView()`` method should be called *after* ``handleRequest()`` "
+"is called. Otherwise, when using :doc:`form events </form/events>`, "
+"changes done in the ``*_SUBMIT`` events won't be applied to the view "
+"(like validation errors)."
+msgstr ""
+
+#: ../../../forms.rst:441
+msgid ""
+"If you need more control over exactly when your form is submitted or "
+"which data is passed to it, you can :doc:`use the submit() method to "
+"handle form submissions </form/direct_submit>`."
+msgstr ""
+
+#: ../../../forms.rst:448
+msgid "Validating Forms"
+msgstr ""
+
+#: ../../../forms.rst:450
+msgid ""
+"In the previous section, you learned how a form can be submitted with "
+"valid or invalid data. In Symfony, the question isn't whether the "
+"\"form\" is valid, but whether or not the underlying object (``$task`` in"
+" this example) is valid after the form has applied the submitted data to "
+"it. Calling ``$form->isValid()`` is a shortcut that asks the ``$task`` "
+"object whether or not it has valid data."
+msgstr ""
+
+#: ../../../forms.rst:456
+msgid "Before using validation, add support for it in your application:"
+msgstr ""
+
+#: ../../../forms.rst:462
+msgid ""
+"Validation is done by adding a set of rules (called constraints) to a "
+"class. To see this in action, add validation constraints so that the "
+"``task`` field cannot be empty and the ``dueDate`` field cannot be empty "
+"and must be a valid \\DateTime object."
+msgstr ""
+
+#: ../../../forms.rst:546
+msgid ""
+"That's it! If you re-submit the form with invalid data, you'll see the "
+"corresponding errors printed out with the form. Read the :doc:`Symfony "
+"validation documentation </validation>` to learn more about this powerful"
+" feature."
+msgstr ""
+
+#: ../../../forms.rst:552
+msgid "Other Common Form Features"
+msgstr ""
+
+#: ../../../forms.rst:555
+msgid "Passing Options to Forms"
+msgstr ""
+
+#: ../../../forms.rst:557
+msgid ""
+"If you :ref:`create forms in classes <creating-forms-in-classes>`, when "
+"building the form in the controller you can pass custom options to it as "
+"the third optional argument of ``createForm()``::"
+msgstr ""
+
+#: ../../../forms.rst:583
+msgid ""
+"If you try to use the form now, you'll see an error message: *The option "
+"\"require_due_date\" does not exist.* That's because forms must declare "
+"all the options they accept using the ``configureOptions()`` method::"
+msgstr ""
+
+#: ../../../forms.rst:610
+msgid "Now you can use this new form option inside the ``buildForm()`` method::"
+msgstr ""
+
+#: ../../../forms.rst:635
+msgid "Form Type Options"
+msgstr ""
+
+#: ../../../forms.rst:637
+msgid ""
+"Each :ref:`form type <form-types>` has a number of options to configure "
+"it, as explained in the :doc:`Symfony form types reference "
+"</reference/forms/types>`. Two commonly used options are ``required`` and"
+" ``label``."
+msgstr ""
+
+#: ../../../forms.rst:642
+msgid "The ``required`` Option"
+msgstr ""
+
+#: ../../../forms.rst:644
+msgid ""
+"The most common option is the ``required`` option, which can be applied "
+"to any field. By default, this option is set to ``true``, meaning that "
+"HTML5-ready browsers will require to fill in all fields before submitting"
+" the form."
+msgstr ""
+
+#: ../../../forms.rst:648
+msgid ""
+"If you don't want this behavior, either :ref:`disable client-side "
+"validation <forms-html5-validation-disable>` for the entire form or set "
+"the ``required`` option to ``false`` on one or more fields::"
+msgstr ""
+
+#: ../../../forms.rst:656
+msgid ""
+"The ``required`` option does not perform any server-side validation. If a"
+" user submits a blank value for the field (either with an old browser or "
+"a web service, for example), it will be accepted as a valid value unless "
+"you also use Symfony's ``NotBlank`` or ``NotNull`` validation "
+"constraints."
+msgstr ""
+
+#: ../../../forms.rst:662
+msgid "The ``label`` Option"
+msgstr ""
+
+#: ../../../forms.rst:664
+msgid ""
+"By default, the label of form fields are the *humanized* version of the "
+"property name (``user`` -> ``User``; ``postalAddress`` -> ``Postal "
+"Address``). Set the ``label`` option on fields to define their labels "
+"explicitly::"
+msgstr ""
+
+#: ../../../forms.rst:675
+msgid ""
+"By default, ``<label>`` tags of required fields are rendered with a "
+"``required`` CSS class, so you can display an asterisk for required "
+"fields applying these CSS styles:"
+msgstr ""
+
+#: ../../../forms.rst:688
+msgid "Changing the Action and HTTP Method"
+msgstr ""
+
+#: ../../../forms.rst:690
+msgid ""
+"By default, a form will be submitted via an HTTP POST request to the same"
+" URL under which the form was rendered. When building the form in the "
+"controller, use the ``setAction()`` and ``setMethod()`` methods to change"
+" this::"
+msgstr ""
+
+#: ../../../forms.rst:718
+msgid ""
+"When building the form in a class, pass the action and method as form "
+"options::"
+msgstr ""
+
+#: ../../../forms.rst:741
+msgid ""
+"Finally, you can override the action and method in the template by "
+"passing them to the ``form()`` or the ``form_start()`` helper functions:"
+msgstr ""
+
+#: ../../../forms.rst:751
+msgid ""
+"If the form's method is not ``GET`` or ``POST``, but ``PUT``, ``PATCH`` "
+"or ``DELETE``, Symfony will insert a hidden field with the name "
+"``_method`` that stores this method. The form will be submitted in a "
+"normal ``POST`` request, but :doc:`Symfony's routing </routing>` is "
+"capable of detecting the ``_method`` parameter and will interpret it as a"
+" ``PUT``, ``PATCH`` or ``DELETE`` request. See the :ref:`configuration-"
+"framework-http_method_override` option."
+msgstr ""
+
+#: ../../../forms.rst:759
+msgid "Changing the Form Name"
+msgstr ""
+
+#: ../../../forms.rst:761
+msgid ""
+"If you inspect the HTML contents of the rendered form, you'll see that "
+"the ``<form>`` name and the field names are generated from the type class"
+" name (e.g. ``<form name=\"task\" ...>`` and ``<select "
+"name=\"task[dueDate][date][month]\" ...>``)."
+msgstr ""
+
+#: ../../../forms.rst:765
+msgid ""
+"If you want to modify this, use the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormFactoryInterface::createNamed`"
+" method::"
+msgstr ""
+
+#: ../../../forms.rst:785
+msgid ""
+"You can even suppress the name completely by setting it to an empty "
+"string."
+msgstr ""
+
+#: ../../../forms.rst:790
+msgid "Client-Side HTML Validation"
+msgstr ""
+
+#: ../../../forms.rst:792
+msgid ""
+"Thanks to HTML5, many browsers can natively enforce certain validation "
+"constraints on the client side. The most common validation is activated "
+"by adding a ``required`` attribute on fields that are required. For "
+"browsers that support HTML5, this will result in a native browser message"
+" being displayed if the user tries to submit the form with that field "
+"blank."
+msgstr ""
+
+#: ../../../forms.rst:798
+msgid ""
+"Generated forms take full advantage of this new feature by adding "
+"sensible HTML attributes that trigger the validation. The client-side "
+"validation, however, can be disabled by adding the ``novalidate`` "
+"attribute to the ``<form>`` tag or ``formnovalidate`` to the submit tag. "
+"This is especially useful when you want to test your server-side "
+"validation constraints, but are being prevented by your browser from, for"
+" example, submitting blank fields."
+msgstr ""
+
+#: ../../../forms.rst:815
+msgid "Form Type Guessing"
+msgstr ""
+
+#: ../../../forms.rst:817
+msgid ""
+"If the object handled by the form includes validation constraints, "
+"Symfony can introspect that metadata to guess the type of your field and "
+"set it up for you. In the above example, Symfony can guess from the "
+"validation rules that both the ``task`` field is a normal ``TextType`` "
+"field and the ``dueDate`` field is a ``DateType`` field."
+msgstr ""
+
+#: ../../../forms.rst:823
+msgid ""
+"When building the form, omit the second argument to the ``add()`` method,"
+" or pass ``null`` to it, to enable Symfony's \"guessing mechanism\"::"
+msgstr ""
+
+#: ../../../forms.rst:851
+msgid ""
+"When using a specific :doc:`form validation group "
+"</form/validation_groups>`, the field type guesser will still consider "
+"*all* validation constraints when guessing your field types (including "
+"constraints that are not part of the validation group(s) being used)."
+msgstr ""
+
+#: ../../../forms.rst:857
+msgid "Form Type Options Guessing"
+msgstr ""
+
+#: ../../../forms.rst:859
+msgid ""
+"When the guessing mechanism is enabled for some field (i.e. you omit or "
+"pass ``null`` as the second argument to ``add()``), in addition to its "
+"form type, the following options can be guessed too:"
+msgstr ""
+
+#: ../../../forms.rst:867
+msgid "``required``"
+msgstr ""
+
+#: ../../../forms.rst:864
+msgid ""
+"The ``required`` option can be guessed based on the validation rules "
+"(i.e. is the field ``NotBlank`` or ``NotNull``) or the Doctrine metadata "
+"(i.e. is the field ``nullable``). This is very useful, as your client-"
+"side validation will automatically match your validation rules."
+msgstr ""
+
+#: ../../../forms.rst:872
+msgid "``maxlength``"
+msgstr ""
+
+#: ../../../forms.rst:870
+msgid ""
+"If the field is some sort of text field, then the ``maxlength`` option "
+"attribute can be guessed from the validation constraints (if ``Length`` "
+"or ``Range`` is used) or from the :doc:`Doctrine </doctrine>` metadata "
+"(via the field's length)."
+msgstr ""
+
+#: ../../../forms.rst:874
+msgid ""
+"If you'd like to change one of the guessed values, override it by passing"
+" the option in the options field array::"
+msgstr ""
+
+#: ../../../forms.rst:881
+msgid ""
+"Besides guessing the form type, Symfony also guesses :ref:`validation "
+"constraints <validating-forms>` if you're using a Doctrine entity. Read "
+":ref:`automatic_object_validation` guide for more information."
+msgstr ""
+
+#: ../../../forms.rst:886
+msgid "Unmapped Fields"
+msgstr ""
+
+#: ../../../forms.rst:888
+msgid ""
+"When editing an object via a form, all form fields are considered "
+"properties of the object. Any fields on the form that do not exist on the"
+" object will cause an exception to be thrown."
+msgstr ""
+
+#: ../../../forms.rst:892
+msgid ""
+"If you need extra fields in the form that won't be stored in the object "
+"(for example to add an *\"I agree with these terms\"* checkbox), set the "
+"``mapped`` option to ``false`` in those fields::"
+msgstr ""
+
+#: ../../../forms.rst:908
+msgid "These \"unmapped fields\" can be set and accessed in a controller with::"
+msgstr ""
+
+#: ../../../forms.rst:913
+msgid ""
+"Additionally, if there are any fields on the form that aren't included in"
+" the submitted data, those fields will be explicitly set to ``null``."
+msgstr ""
+
+#: ../../../forms.rst:917
+msgid "Learn more"
+msgstr ""
+
+#: ../../../forms.rst:919
+msgid ""
+"When building forms, keep in mind that the first goal of a form is to "
+"translate data from an object (``Task``) to an HTML form so that the user"
+" can modify that data. The second goal of a form is to take the data "
+"submitted by the user and to re-apply it to the object."
+msgstr ""
+
+#: ../../../forms.rst:924
+msgid ""
+"There's a lot more to learn and a lot of *powerful* tricks in the Symfony"
+" forms:"
+msgstr ""
+
+#: ../../../forms.rst:926
+msgid "Reference:"
+msgstr ""
+
+#: ../../../forms.rst:933
+msgid "Advanced Features:"
+msgstr ""
+
+#: ../../../forms.rst:947
+msgid "Form Themes and Customization:"
+msgstr ""
+
+#: ../../../forms.rst:956
+msgid "Events:"
+msgstr ""
+
+#: ../../../forms.rst:964
+msgid "Validation:"
+msgstr ""
+
+#: ../../../forms.rst:974
+msgid "Misc.:"
+msgstr ""
+

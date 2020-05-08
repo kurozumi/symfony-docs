@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/config/caching.rst:5
+msgid "Caching based on Resources"
+msgstr ""
+
+#: ../../../components/config/caching.rst:7
+msgid ""
+"When all configuration resources are loaded, you may want to process the "
+"configuration values and combine them all in one file. This file acts "
+"like a cache. Its contents don’t have to be regenerated every time the "
+"application runs – only when the configuration resources are modified."
+msgstr ""
+
+#: ../../../components/config/caching.rst:12
+msgid ""
+"For example, the Symfony Routing component allows you to load all routes,"
+" and then dump a URL matcher or a URL generator based on these routes. In"
+" this case, when one of the resources is modified (and you are working in"
+" a development environment), the generated file should be invalidated and"
+" regenerated. This can be accomplished by making use of the "
+":class:`Symfony\\\\Component\\\\Config\\\\ConfigCache` class."
+msgstr ""
+
+#: ../../../components/config/caching.rst:19
+msgid ""
+"The example below shows you how to collect resources, then generate some "
+"code based on the resources that were loaded and write this code to the "
+"cache. The cache also receives the collection of resources that were used"
+" for generating the code. By looking at the \"last modified\" timestamp "
+"of these resources, the cache can tell if it is still fresh or that its "
+"contents should be regenerated::"
+msgstr ""
+
+#: ../../../components/config/caching.rst:56
+msgid ""
+"In debug mode, a ``.meta`` file will be created in the same directory as "
+"the cache file itself. This ``.meta`` file contains the serialized "
+"resources, whose timestamps are used to determine if the cache is still "
+"fresh. When not in debug mode, the cache is considered to be \"fresh\" as"
+" soon as it exists, and therefore no ``.meta`` file will be generated."
+msgstr ""
+

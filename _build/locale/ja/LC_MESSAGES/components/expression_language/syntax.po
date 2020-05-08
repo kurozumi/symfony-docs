@@ -1,0 +1,382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/expression_language/syntax.rst:5
+msgid "The Expression Syntax"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:7
+msgid ""
+"The ExpressionLanguage component uses a specific syntax which is based on"
+" the expression syntax of Twig. In this document, you can find all "
+"supported syntaxes."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:12
+msgid "Supported Literals"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:14
+msgid "The component supports:"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:16
+msgid "**strings** - single and double quotes (e.g. ``'hello'``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:17
+msgid "**numbers** - e.g. ``103``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:18
+msgid "**arrays** - using JSON-like notation (e.g. ``[1, 2]``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:19
+msgid "**hashes** - using JSON-like notation (e.g. ``{ foo: 'bar' }``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:20
+msgid "**booleans** - ``true`` and ``false``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:21
+msgid "**null** - ``null``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:22
+msgid "**exponential** - also known as scientific (e.g. ``1.99E+3`` or ``1e-2``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:26
+msgid ""
+"A backslash (``\\``) must be escaped by 4 backslashes (``\\\\\\\\``) in a"
+" string and 8 backslashes (``\\\\\\\\\\\\\\\\``) in a regex::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:32
+msgid ""
+"Control characters (e.g. ``\\n``) in expressions are replaced with "
+"whitespace. To avoid this, escape the sequence with a single backslash "
+"(e.g.  ``\\\\n``)."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:39
+msgid "Working with Objects"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:41
+msgid ""
+"When passing objects into an expression, you can use different syntaxes "
+"to access properties and call methods on the object."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:45
+msgid "Accessing Public Properties"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:47
+msgid ""
+"Public properties on objects can be accessed by using the ``.`` syntax, "
+"similar to JavaScript::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:65
+msgid "This will print out ``Honeycrisp``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:68
+msgid "Calling Methods"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:70
+msgid ""
+"The ``.`` syntax can also be used to call methods on an object, similar "
+"to JavaScript::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:95
+msgid "This will print out ``Hi Hi Hi!``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:100
+msgid "Working with Functions"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:102
+msgid ""
+"You can also use registered functions in the expression by using the same"
+" syntax as PHP and JavaScript. The ExpressionLanguage component comes "
+"with one function by default: ``constant()``, which will return the value"
+" of the PHP constant::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:113
+msgid "This will print out ``root``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:117
+msgid ""
+"To read how to register your own functions to use in an expression, see "
+"\":doc:`/components/expression_language/extending`\"."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:123
+msgid "Working with Arrays"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:125
+msgid ""
+"If you pass an array into an expression, use the ``[]`` syntax to access "
+"array keys, similar to JavaScript::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:137
+#: ../../../components/expression_language/syntax.rst:165
+msgid "This will print out ``42``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:140
+msgid "Supported Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:142
+msgid "The component comes with a lot of operators:"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:145
+msgid "Arithmetic Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:147
+msgid "``+`` (addition)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:148
+msgid "``-`` (subtraction)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:149
+msgid "``*`` (multiplication)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:150
+msgid "``/`` (division)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:151
+msgid "``%`` (modulus)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:152
+msgid "``**`` (pow)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:154
+#: ../../../components/expression_language/syntax.rst:226
+#: ../../../components/expression_language/syntax.rst:244
+#: ../../../components/expression_language/syntax.rst:262
+#: ../../../components/expression_language/syntax.rst:286
+msgid "For example::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:168
+msgid "Bitwise Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:170
+msgid "``&`` (and)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:171
+msgid "``|`` (or)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:172
+msgid "``^`` (xor)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:175
+msgid "Comparison Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:177
+msgid "``==`` (equal)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:178
+msgid "``===`` (identical)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:179
+msgid "``!=`` (not equal)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:180
+msgid "``!==`` (not identical)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:181
+msgid "``<`` (less than)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:182
+msgid "``>`` (greater than)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:183
+msgid "``<=`` (less than or equal to)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:184
+msgid "``>=`` (greater than or equal to)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:185
+msgid "``matches`` (regex match)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:189
+msgid ""
+"To test if a string does *not* match a regex, use the logical ``not`` "
+"operator in combination with the ``matches`` operator::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:194
+msgid ""
+"You must use parenthesis because the unary operator ``not`` has "
+"precedence over the binary operator ``matches``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:197
+msgid "Examples::"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:217
+msgid "Both variables would be set to ``false``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:220
+msgid "Logical Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:222
+msgid "``not`` or ``!``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:223
+msgid "``and`` or ``&&``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:224
+msgid "``or`` or ``||``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:237
+msgid "This ``$ret`` variable will be set to ``true``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:240
+msgid "String Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:242
+msgid "``~`` (concatenation)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:254
+msgid "This would print out ``Arthur Dent``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:257
+msgid "Array Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:259
+msgid "``in`` (contain)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:260
+msgid "``not in`` (does not contain)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:279
+msgid "The ``$inGroup`` would evaluate to ``true``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:282
+msgid "Numeric Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:284
+msgid "``..`` (range)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:303
+msgid ""
+"This will evaluate to ``true``, because ``user.age`` is in the range from"
+" ``18`` to ``45``."
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:307
+msgid "Ternary Operators"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:309
+msgid "``foo ? 'yes' : 'no'``"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:310
+msgid "``foo ?: 'no'`` (equal to ``foo ? foo : 'no'``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:311
+msgid "``foo ? 'yes'`` (equal to ``foo ? 'yes' : ''``)"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:314
+msgid "Built-in Objects and Variables"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:316
+msgid ""
+"When using this component inside a Symfony application, certain objects "
+"and variables are automatically injected by Symfony so you can use them "
+"in your expressions (e.g. the request, the current user, etc.):"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:320
+msgid ""
+":doc:`Variables available in security expressions "
+"</security/expressions>`;"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:321
+msgid ""
+":doc:`Variables available in service container expressions "
+"</service_container/expression_language>`;"
+msgstr ""
+
+#: ../../../components/expression_language/syntax.rst:322
+msgid ""
+":ref:`Variables available in routing expressions <routing-matching-"
+"expressions>`."
+msgstr ""
+

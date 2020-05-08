@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/var_dumper.rst:6
+msgid "The VarDumper Component"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:8
+msgid ""
+"The VarDumper component provides mechanisms for extracting the state out "
+"of any PHP variables. Built on top, it provides a better ``dump()`` "
+"function that you can use instead of :phpfunction:`var_dump`."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:23
+msgid ""
+"If using it inside a Symfony application, make sure that the DebugBundle "
+"has been installed (or run ``composer require --dev symfony/debug-"
+"bundle`` to install it)."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:29
+msgid "The dump() Function"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:31
+msgid ""
+"The VarDumper component creates a global ``dump()`` function that you can"
+" use instead of e.g. :phpfunction:`var_dump`. By using it, you'll gain:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:34
+msgid ""
+"Per object and resource types specialized view to e.g. filter out "
+"Doctrine internals while dumping a single proxy entity, or get more "
+"insight on opened files with :phpfunction:`stream_get_meta_data`;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:37
+msgid "Configurable output formats: HTML or colored command line output;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:38
+msgid ""
+"Ability to dump internal references, either soft ones (objects or "
+"resources) or hard ones (``=&`` on arrays or objects properties). "
+"Repeated occurrences of the same object/array/resource won't appear again"
+" and again anymore. Moreover, you'll be able to inspect the reference "
+"structure of your data;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:43
+msgid "Ability to operate in the context of an output buffering handler."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:45
+msgid "For example::"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:57
+msgid ""
+"By default, the output format and destination are selected based on your "
+"current PHP SAPI:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:60
+msgid ""
+"On the command line (CLI SAPI), the output is written on ``STDOUT``. This"
+" can be surprising to some because this bypasses PHP's output buffering "
+"mechanism;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:63
+msgid "On other SAPIs, dumps are written as HTML in the regular output."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:67
+msgid ""
+"You can also select the output format explicitly defining the "
+"``VAR_DUMPER_FORMAT`` environment variable and setting its value to "
+"either ``html`` or ``cli``."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:73
+msgid ""
+"If you want to catch the dump output as a string, please read the "
+":doc:`advanced documentation </components/var_dumper/advanced>` which "
+"contains examples of it. You'll also learn how to change the format or "
+"redirect the output to wherever you want."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:80
+msgid ""
+"In order to have the ``dump()`` function always available when running "
+"any PHP code, you can install it globally on your computer:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:83
+msgid "Run ``composer global require symfony/var-dumper``;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:84
+msgid ""
+"Add ``auto_prepend_file = ${HOME}/.composer/vendor/autoload.php`` to your"
+" ``php.ini`` file;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:86
+msgid ""
+"From time to time, run ``composer global update symfony/var-dumper`` to "
+"have the latest bug fixes."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:91
+msgid ""
+"The VarDumper component also provides a ``dd()`` (\"dump and die\") "
+"helper function. This function dumps the variables using ``dump()`` and "
+"immediately ends the execution of the script (using :phpfunction:`exit`)."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:98
+msgid "The Dump Server"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:100
+msgid ""
+"The ``dump()`` function outputs its contents in the same browser window "
+"or console terminal as your own application. Sometimes mixing the real "
+"output with the debug output can be confusing. That's why this component "
+"provides a server to collect all the dumped data."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:105
+msgid ""
+"Start the server with the ``server:dump`` command and whenever you call "
+"to ``dump()``, the dumped data won't be displayed in the output but sent "
+"to that server, which outputs it to its own console or to an HTML file:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:118
+msgid ""
+"Inside a Symfony application, the output of the dump server is configured"
+" with the :ref:`dump_destination option <configuration-debug-"
+"dump_destination>` of the ``debug`` package:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:151
+msgid ""
+"Outside a Symfony application, use the "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\ServerDumper` "
+"class::"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:176
+msgid ""
+"The second argument of "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\ServerDumper` is a"
+" "
+":class:`Symfony\\\\Component\\\\VarDumper\\\\Dumper\\\\DataDumperInterface`"
+" instance used as a fallback when the server is unreachable. The third "
+"argument are the context providers, which allow to gather some info about"
+" the context in which the data was dumped. The built-in context providers"
+" are: ``cli``, ``request`` and ``source``."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:182
+msgid "Then you can use the following command to start a server out-of-the-box:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:190
+msgid "DebugBundle and Twig Integration"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:192
+msgid ""
+"The DebugBundle allows greater integration of this component into Symfony"
+" applications."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:195
+msgid ""
+"Since generating (even debug) output in the controller or in the model of"
+" your application may just break it by e.g. sending HTTP headers or "
+"corrupting your view, the bundle configures the ``dump()`` function so "
+"that variables are dumped in the web debug toolbar."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:200
+msgid ""
+"But if the toolbar cannot be displayed because you e.g. called "
+"``die()``/``exit()``/``dd()`` or a fatal error occurred, then dumps are "
+"written on the regular output."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:204
+msgid ""
+"In a Twig template, two constructs are available for dumping a variable. "
+"Choosing between both is mostly a matter of personal taste, still:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:207
+#, python-format
+msgid ""
+"``{% dump foo.bar %}`` is the way to go when the original template output"
+" shall not be modified: variables are not dumped inline, but in the web "
+"debug toolbar;"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:210
+msgid ""
+"on the contrary, ``{{ dump(foo.bar) }}`` dumps inline and thus may or not"
+" be suited to your use case (e.g. you shouldn't use it in an HTML "
+"attribute or a ``<script>`` tag)."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:214
+msgid ""
+"This behavior can be changed by configuring the "
+"``debug.dump_destination`` option. Read more about this and other options"
+" in :doc:`the DebugBundle configuration reference "
+"</reference/configuration/debug>`."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:220
+msgid ""
+"If the dumped contents are complex, consider using the local search box "
+"to look for specific variables or values. First, click anywhere on the "
+"dumped contents and then press ``Ctrl. + F`` or ``Cmd. + F`` to make the "
+"local search box appear. All the common shortcuts to navigate the search "
+"results are supported (``Ctrl. + G`` or ``Cmd. + G``, ``F3``, etc.) When "
+"finished, press ``Esc.`` to hide the box again."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:227
+msgid ""
+"If you want to use your browser search input, press ``Ctrl. + F`` or "
+"``Cmd. + F`` again while having focus on VarDumper's search input."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:231
+msgid "Using the VarDumper Component in your PHPUnit Test Suite"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:233
+msgid ""
+"The VarDumper component provides :class:`a trait "
+"<Symfony\\\\Component\\\\VarDumper\\\\Test\\\\VarDumperTestTrait>` that "
+"can help writing some of your tests for PHPUnit."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:237
+msgid "This will provide you with two new assertions:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:241
+msgid ":method:`Symfony\\\\Component\\\\VarDumper\\\\Test\\\\VarDumperTestTrait::assertDumpEquals`"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:240
+msgid ""
+"verifies that the dump of the variable given as the second argument "
+"matches the expected dump provided as the first argument."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:245
+msgid ":method:`Symfony\\\\Component\\\\VarDumper\\\\Test\\\\VarDumperTestTrait::assertDumpMatchesFormat`"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:244
+msgid ""
+"is like the previous method but accepts placeholders in the expected "
+"dump, based on the ``assertStringMatchesFormat()`` method provided by "
+"PHPUnit."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:247
+msgid "The ``VarDumperTestTrait`` also includes these other methods:"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:251
+msgid ":method:`Symfony\\\\Component\\\\VarDumper\\\\Test\\\\VarDumperTestTrait::setUpVarDumper`"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:250
+msgid ""
+"is used to configure the available casters and their options, which is a "
+"way to only control the fields you're expecting and allows writing "
+"concise tests."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:255
+msgid ":method:`Symfony\\\\Component\\\\VarDumper\\\\Test\\\\VarDumperTestTrait::tearDownVarDumper`"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:254
+msgid ""
+"is called automatically after each case to reset the custom configuration"
+" made in ``setUpVarDumper()``."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:257
+msgid "Example::"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:306
+msgid "Dump Examples and Output"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:308
+msgid ""
+"For simple variables, reading the output should be straightforward. Here "
+"are some examples showing first a variable defined in PHP, then its dump "
+"representation::"
+msgstr ""
+
+#: ../../../components/var_dumper.rst:325
+msgid ""
+"The gray arrow is a toggle button for hiding/showing children of nested "
+"structures."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:356
+msgid ""
+"`#14` is the internal object handle. It allows comparing two consecutive "
+"dumps of the same object."
+msgstr ""
+
+#: ../../../components/var_dumper.rst:434
+msgid "Learn More"
+msgstr ""
+

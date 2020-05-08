@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../session/php_bridge.rst:5
+msgid "Bridge a legacy Application with Symfony Sessions"
+msgstr ""
+
+#: ../../../session/php_bridge.rst:7
+msgid ""
+"If you're integrating the Symfony full-stack Framework into a legacy "
+"application that starts the session with ``session_start()``, you may "
+"still be able to use Symfony's session management by using the PHP Bridge"
+" session."
+msgstr ""
+
+#: ../../../session/php_bridge.rst:11
+msgid ""
+"If the application has its own PHP save handler, you can specify null for"
+" the ``handler_id``:"
+msgstr ""
+
+#: ../../../session/php_bridge.rst:51
+msgid ""
+"Otherwise, if the problem is that you cannot avoid the application "
+"starting the session with ``session_start()``, you can still make use of "
+"a Symfony based session save handler by specifying the save handler as in"
+" the example below:"
+msgstr ""
+
+#: ../../../session/php_bridge.rst:95
+msgid ""
+"If the legacy application requires its own session save handler, do not "
+"override this. Instead set ``handler_id: ~``. Note that a save handler "
+"cannot be changed once the session has been started. If the application "
+"starts the session before Symfony is initialized, the save handler will "
+"have already been set. In this case, you will need ``handler_id: ~``. "
+"Only override the save handler if you are sure the legacy application can"
+" use the Symfony save handler without side effects and that the session "
+"has not been started before Symfony is initialized."
+msgstr ""
+
+#: ../../../session/php_bridge.rst:104
+msgid ""
+"For more details, see "
+":doc:`/components/http_foundation/session_php_bridge`."
+msgstr ""
+

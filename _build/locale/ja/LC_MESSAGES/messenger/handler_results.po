@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../messenger/handler_results.rst:5
+msgid "Getting Results from your Handler"
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:7
+msgid ""
+"When a message is handled, the "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Middleware\\\\HandleMessageMiddleware`"
+" adds a "
+":class:`Symfony\\\\Component\\\\Messenger\\\\Stamp\\\\HandledStamp` for "
+"each object that handled the message. You can use this to get the value "
+"returned by the handler(s)::"
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:24
+msgid "Working with Command & Query Buses"
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:26
+msgid ""
+"The Messenger component can be used in CQRS architectures where command &"
+" query buses are central pieces of the application. Read Martin Fowler's "
+"`article about CQRS`_ to learn more and :doc:`how to configure multiple "
+"buses </messenger/multiple_buses>`."
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:31
+msgid ""
+"As queries are usually synchronous and expected to be handled once, "
+"getting the result from the handler is a common need."
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:34
+msgid ""
+"A :class:`Symfony\\\\Component\\\\Messenger\\\\HandleTrait` exists to get"
+" the result of the handler when processing synchronously. It also ensures"
+" that exactly one handler is registered. The ``HandleTrait`` can be used "
+"in any class that has a ``$messageBus`` property::"
+msgstr ""
+
+#: ../../../messenger/handler_results.rst:71
+msgid ""
+"Hence, you can use the trait to create command & query bus classes. For "
+"example, you could create a special ``QueryBus`` class and inject it "
+"wherever you need a query bus behavior instead of the "
+"``MessageBusInterface``::"
+msgstr ""
+

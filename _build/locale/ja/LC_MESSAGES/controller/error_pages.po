@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller/error_pages.rst:6
+msgid "How to Customize Error Pages"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:8
+msgid ""
+"In Symfony applications, all errors are treated as exceptions, no matter "
+"if they are just a 404 Not Found error or a fatal error triggered by "
+"throwing some exception in your code."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:12
+msgid ""
+"In the :ref:`development environment <configuration-environments>`, "
+"Symfony catches all the exceptions and displays a special **exception "
+"page** with lots of debug information to help you discover the root "
+"problem:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:21
+msgid ""
+"Since these pages contain a lot of sensitive internal information, "
+"Symfony won't display them in the production environment. Instead, it'll "
+"show a simple and generic **error page**:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:30
+msgid ""
+"Error pages for the production environment can be customized in different"
+" ways depending on your needs:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:33
+msgid ""
+"If you just want to change the contents and styles of the error pages to "
+"match the rest of your application, :ref:`override the default error "
+"templates <use-default-error-controller>`;"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:36
+msgid ""
+"If you want to change the contents of non-HTML error output, :ref:`create"
+" a new normalizer <overriding-non-html-error-output>`;"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:39
+msgid ""
+"If you also want to tweak the logic used by Symfony to generate error "
+"pages, :ref:`override the default error controller <custom-error-"
+"controller>`;"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:42
+msgid ""
+"If you need total control of exception handling to execute your own logic"
+" :ref:`use the kernel.exception event <use-kernel-exception-event>`."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:49
+msgid "Overriding the Default Error Templates"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:51
+msgid ""
+"You can use the built-in Twig error renderer to override the default "
+"error templates. Both the TwigBundle and TwigBridge need to be installed "
+"for this. Run this command to ensure both are installed:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:59
+msgid ""
+"When the error page loads, "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\ErrorRenderer\\\\TwigErrorRenderer` "
+"is used to render a Twig template to show the user."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:64
+msgid ""
+"This renderer uses the HTTP status code and the following logic to "
+"determine the template filename:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:67
+msgid ""
+"Look for a template for the given status code (like "
+"``error500.html.twig``);"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:69
+msgid ""
+"If the previous template doesn't exist, discard the status code and look "
+"for a generic error template (``error.html.twig``)."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:74
+msgid ""
+"To override these templates, rely on the standard Symfony method for "
+":ref:`overriding templates that live inside a bundle <override-"
+"templates>` and put them in the "
+"``templates/bundles/TwigBundle/Exception/`` directory."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:78
+msgid "A typical project that returns HTML pages might look like this:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:91
+msgid "Example 404 Error Template"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:93
+msgid ""
+"To override the 404 error template for HTML pages, create a new "
+"``error404.html.twig`` template located at "
+"``templates/bundles/TwigBundle/Exception/``:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:110
+msgid ""
+"In case you need them, the ``TwigErrorRenderer`` passes some information "
+"to the error template via the ``status_code`` and ``status_text`` "
+"variables that store the HTTP status code and message respectively."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:116
+msgid ""
+"You can customize the status code of an exception by implementing "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpExceptionInterface`"
+" and its required ``getStatusCode()`` method. Otherwise, the "
+"``status_code`` will default to ``500``."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:121
+msgid ""
+"Additionally you have access to the Exception with ``exception``, which "
+"for example allows you to output the stack trace using ``{{ "
+"exception.traceAsString }}`` or access any other method on the object. "
+"You should be careful with this though, as this is very likely to expose "
+"sensitive data."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:128
+msgid ""
+"PHP errors are turned into exceptions as well by default, so you can also"
+" access these error details using ``exception``. For more on this see "
+":ref:`Turning PHP Errors into Exceptions <turning-php-errors-into-"
+"exceptions>`"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:133
+msgid "Security & 404 Pages"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:135
+msgid ""
+"Due to the order of how routing and security are loaded, security "
+"information will *not* be available on your 404 pages. This means that it"
+" will appear as if your user is logged out on the 404 page (it will work "
+"while testing, but not on production)."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:142
+msgid "Testing Error Pages during Development"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:144
+msgid ""
+"While you're in the development environment, Symfony shows the big "
+"*exception* page instead of your shiny new customized error page. So, how"
+" can you see what it looks like and debug it?"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:148
+msgid ""
+"Fortunately, the default ``ErrorController`` allows you to preview your "
+"*error* pages during development."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:151
+msgid ""
+"To use this feature, you need to load some special routes provided by "
+"FrameworkBundle (if the application uses :ref:`Symfony Flex <symfony-"
+"flex>` they are loaded automatically when installing ``symfony/framework-"
+"bundle``):"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:187
+msgid ""
+"With this route added, you can use URLs like these to preview the *error*"
+" page for a given status code as HTML or for a given status code and "
+"format."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:198
+msgid "Overriding Error output for non-HTML formats"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:200
+msgid ""
+"To override non-HTML error output, the Serializer component needs to be "
+"installed."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:206
+msgid ""
+"The Serializer component has a built-in ``FlattenException`` normalizer "
+"(:class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ProblemNormalizer`)"
+" and JSON/XML/CSV/YAML encoders. When your application throws an "
+"exception, Symfony can output it in one of those formats. If you want to "
+"change the output contents, create a new Normalizer that supports the "
+"``FlattenException`` input::"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:241
+msgid "Overriding the Default ErrorController"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:243
+msgid ""
+"If you need a little more flexibility beyond just overriding the "
+"template, then you can change the controller that renders the error page."
+" For example, you might need to pass some additional variables into your "
+"template."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:247
+msgid ""
+"To do this, create a new controller anywhere in your application and set "
+"the :ref:`framework.error_controller <config-framework-error_controller>`"
+" configuration option to point to it:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:282
+msgid ""
+"The "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\EventListener\\\\ErrorListener`"
+" class used by the FrameworkBundle as a listener of the "
+"``kernel.exception`` event creates the request that will be dispatched to"
+" your controller. In addition, your controller will be passed two "
+"parameters:"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:288
+msgid "``exception``"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:288
+msgid "The original :class:`Throwable` instance being handled."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:292
+msgid "``logger``"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:291
+msgid ""
+"A "
+":class:`\\\\Symfony\\\\Component\\\\HttpKernel\\\\Log\\\\DebugLoggerInterface`"
+" instance which may be ``null`` in some circumstances."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:296
+msgid ""
+"The :ref:`error page preview <testing-error-pages>` also works for your "
+"own controllers set up this way."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:302
+msgid "Working with the ``kernel.exception`` Event"
+msgstr ""
+
+#: ../../../controller/error_pages.rst:304
+msgid ""
+"When an exception is thrown, the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\HttpKernel` class catches "
+"it and dispatches a ``kernel.exception`` event. This gives you the power "
+"to convert the exception into a ``Response`` in a few different ways."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:308
+msgid ""
+"Working with this event is actually much more powerful than what has been"
+" explained before, but also requires a thorough understanding of Symfony "
+"internals. Suppose that your code throws specialized exceptions with a "
+"particular meaning to your application domain."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:313
+msgid ""
+":doc:`Writing your own event listener </event_dispatcher>` for the "
+"``kernel.exception`` event allows you to have a closer look at the "
+"exception and take different actions depending on it. Those actions might"
+" include logging the exception, redirecting the user to another page or "
+"rendering specialized error pages."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:321
+msgid ""
+"If your listener calls ``setResponse()`` on the "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Event\\\\ExceptionEvent`, "
+"event, propagation will be stopped and the response will be sent to the "
+"client."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:326
+msgid ""
+"This approach allows you to create centralized and layered error "
+"handling: instead of catching (and handling) the same exceptions in "
+"various controllers time and again, you can have just one (or several) "
+"listeners deal with them."
+msgstr ""
+
+#: ../../../controller/error_pages.rst:332
+msgid ""
+"See "
+":class:`Symfony\\\\Component\\\\Security\\\\Http\\\\Firewall\\\\ExceptionListener`"
+" class code for a real example of an advanced listener of this type. This"
+" listener handles various security-related exceptions that are thrown in "
+"your application (like "
+":class:`Symfony\\\\Component\\\\Security\\\\Core\\\\Exception\\\\AccessDeniedException`)"
+" and takes measures like redirecting the user to the login page, logging "
+"them out and other things."
+msgstr ""
+

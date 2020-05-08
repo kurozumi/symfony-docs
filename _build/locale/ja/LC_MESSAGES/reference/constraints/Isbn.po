@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Isbn.rst:2
+msgid "Isbn"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:4
+msgid ""
+"This constraint validates that an `International Standard Book Number "
+"(ISBN)`_ is either a valid ISBN-10 or a valid ISBN-13."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:8
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:8
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:9
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:9
+msgid "`bothIsbnMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:10
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:11
+msgid "`isbn10Message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:12
+msgid "`isbn13Message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:13
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:15
+msgid "`type`_"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:16
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:16
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Isbn`"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:17
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\IsbnValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:21
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:23
+msgid ""
+"To use the ``Isbn`` validator, apply it to a property or method on an "
+"object that will contain an ISBN."
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:96
+msgid "Available Options"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:99
+msgid "bothIsbnMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:101
+msgid ""
+"**type**: ``string`` **default**: ``This value is neither a valid ISBN-10"
+" nor a valid ISBN-13.``"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:103
+msgid ""
+"The message that will be shown if the `type`_ option is ``null`` and the "
+"given value does not pass any of the ISBN checks."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:106
+#: ../../../reference/constraints/Isbn.rst:124
+#: ../../../reference/constraints/Isbn.rst:140
+#: ../../../reference/constraints/Isbn.rst:156
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:109
+#: ../../../reference/constraints/Isbn.rst:127
+#: ../../../reference/constraints/Isbn.rst:143
+#: ../../../reference/constraints/Isbn.rst:159
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:109
+#: ../../../reference/constraints/Isbn.rst:127
+#: ../../../reference/constraints/Isbn.rst:143
+#: ../../../reference/constraints/Isbn.rst:159
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:111
+#: ../../../reference/constraints/Isbn.rst:129
+#: ../../../reference/constraints/Isbn.rst:145
+#: ../../../reference/constraints/Isbn.rst:161
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:111
+#: ../../../reference/constraints/Isbn.rst:129
+#: ../../../reference/constraints/Isbn.rst:145
+#: ../../../reference/constraints/Isbn.rst:161
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:117
+msgid "isbn10Message"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:119
+msgid "**type**: ``string`` **default**: ``This value is not a valid ISBN-10.``"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:121
+msgid ""
+"The message that will be shown if the `type`_ option is ``isbn10`` and "
+"the given value does not pass the ISBN-10 check."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:133
+msgid "isbn13Message"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:135
+msgid "**type**: ``string`` **default**: ``This value is not a valid ISBN-13.``"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:137
+msgid ""
+"The message that will be shown if the `type`_ option is ``isbn13`` and "
+"the given value does not pass the ISBN-13 check."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:149
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:151
+#: ../../../reference/constraints/Isbn.rst:169
+msgid "**type**: ``string`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:153
+msgid ""
+"The message that will be shown if the value is not valid. If not "
+"``null``, this message has priority over all the other messages."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:167
+msgid "type"
+msgstr ""
+
+#: ../../../reference/constraints/Isbn.rst:171
+msgid ""
+"The type of ISBN to validate against. Valid values are ``isbn10``, "
+"``isbn13`` and ``null`` to accept any kind of ISBN."
+msgstr ""
+

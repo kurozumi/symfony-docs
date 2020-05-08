@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/direct_submit.rst:5
+msgid "How to Use the submit() Function to Handle Form Submissions"
+msgstr ""
+
+#: ../../../form/direct_submit.rst:7
+msgid ""
+"The recommended way of :ref:`processing Symfony forms <processing-forms>`"
+" is to use the "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::handleRequest` "
+"method to detect when the form has been submitted. However, you can also "
+"use the :method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` "
+"method to have better control over when exactly your form is submitted "
+"and what data is passed to it::"
+msgstr ""
+
+#: ../../../form/direct_submit.rst:37
+msgid ""
+"Forms consisting of nested fields expect an array in "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit`. You can "
+"also submit individual fields by calling "
+":method:`Symfony\\\\Component\\\\Form\\\\FormInterface::submit` directly "
+"on the field::"
+msgstr ""
+
+#: ../../../form/direct_submit.rst:46
+msgid ""
+"When submitting a form via a \"PATCH\" request, you may want to update "
+"only a few submitted fields. To achieve this, you may pass an optional "
+"second boolean argument to ``submit()``. Passing ``false`` will remove "
+"any missing fields within the form object. Otherwise, the missing fields "
+"will be set to ``null``."
+msgstr ""
+
+#: ../../../form/direct_submit.rst:53
+msgid ""
+"When the second parameter ``$clearMissing`` is ``false``, like with the "
+"\"PATCH\" method, the validation will only apply to the submitted fields."
+" If you need to validate all the underlying data, add the required fields"
+" manually so that they are validated::"
+msgstr ""
+

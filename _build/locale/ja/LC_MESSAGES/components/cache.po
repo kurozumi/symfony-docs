@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/cache.rst:9
+msgid "The Cache Component"
+msgstr ""
+
+#: ../../../components/cache.rst:11
+msgid ""
+"The Cache component provides features covering simple to advanced caching"
+" needs. It natively implements `PSR-6`_ and the `Cache Contracts`_ for "
+"greatest interoperability. It is designed for performance and resiliency,"
+" ships with ready to use adapters for the most common caching backends. "
+"It enables tag-based invalidation and cache stampede protection via "
+"locking and early expiration."
+msgstr ""
+
+#: ../../../components/cache.rst:19
+msgid ""
+"The component also contains adapters to convert between PSR-6, PSR-16 and"
+" Doctrine caches. See :doc:`/components/cache/psr6_psr16_adapters` and "
+":doc:`/components/cache/adapters/doctrine_adapter`."
+msgstr ""
+
+#: ../../../components/cache.rst:24
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/cache.rst:33
+msgid "Cache Contracts versus PSR-6"
+msgstr ""
+
+#: ../../../components/cache.rst:35
+msgid "This component includes *two* different approaches to caching:"
+msgstr ""
+
+#: ../../../components/cache.rst:38
+msgid ":ref:`PSR-6 Caching <cache-component-psr6-caching>`:"
+msgstr ""
+
+#: ../../../components/cache.rst:38
+msgid ""
+"A generic cache system, which involves cache \"pools\" and cache "
+"\"items\"."
+msgstr ""
+
+#: ../../../components/cache.rst:41
+msgid ":ref:`Cache Contracts <cache-component-contracts>`:"
+msgstr ""
+
+#: ../../../components/cache.rst:41
+msgid ""
+"A simpler yet more powerful way to cache values based on recomputation "
+"callbacks."
+msgstr ""
+
+#: ../../../components/cache.rst:45
+msgid ""
+"Using the Cache Contracts approach is recommended: it requires less code "
+"boilerplate and provides cache stampede protection by default."
+msgstr ""
+
+#: ../../../components/cache.rst:51
+msgid "Cache Contracts"
+msgstr ""
+
+#: ../../../components/cache.rst:53
+msgid ""
+"All adapters support the Cache Contracts. They contain only two methods: "
+"``get()`` and ``delete()``. There's no ``set()`` method because the "
+"``get()`` method both gets and sets the cache values."
+msgstr ""
+
+#: ../../../components/cache.rst:57
+msgid ""
+"The first thing you need is to instantiate a cache adapter. The "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\FilesystemAdapter` is"
+" used in this example::"
+msgstr ""
+
+#: ../../../components/cache.rst:65
+msgid ""
+"Now you can retrieve and delete cached data using this object. The first "
+"argument of the ``get()`` method is a key, an arbitrary string that you "
+"associate to the cached value so you can retrieve it later. The second "
+"argument is a PHP callable which is executed when the key is not found in"
+" the cache to generate and return the value::"
+msgstr ""
+
+#: ../../../components/cache.rst:90
+msgid ""
+"Use cache tags to delete more than one key at the time. Read more at "
+":doc:`/components/cache/cache_invalidation`."
+msgstr ""
+
+#: ../../../components/cache.rst:93
+msgid ""
+"The Cache Contracts also comes with built in `Stampede prevention`_. This"
+" will remove CPU spikes at the moments when the cache is cold. If an "
+"example application spends 5 seconds to compute data that is cached for 1"
+" hour and this data is accessed 10 times every second, this means that "
+"you mostly have cache hits and everything is fine. But after 1 hour, we "
+"get 10 new requests to a cold cache. So the data is computed again. The "
+"next second the same thing happens. So the data is computed about 50 "
+"times before the cache is warm again. This is where you need stampede "
+"prevention"
+msgstr ""
+
+#: ../../../components/cache.rst:102
+msgid ""
+"The first solution is to use locking: only allow one PHP process (on a "
+"per-host basis) to compute a specific key at a time. Locking is built-in "
+"by default, so you don't need to do anything beyond leveraging the Cache "
+"Contracts."
+msgstr ""
+
+#: ../../../components/cache.rst:106
+msgid ""
+"The second solution is also built-in when using the Cache Contracts: "
+"instead of waiting for the full delay before expiring a value, recompute "
+"it ahead of its expiration date. The `Probabilistic early expiration`_ "
+"algorithm randomly fakes a cache miss for one user while others are still"
+" served the cached value. You can control its behavior with the third "
+"optional parameter of "
+":method:`Symfony\\\\Contracts\\\\Cache\\\\CacheInterface::get`, which is "
+"a float value called \"beta\"."
+msgstr ""
+
+#: ../../../components/cache.rst:114
+msgid ""
+"By default the beta is ``1.0`` and higher values mean earlier recompute. "
+"Set it to ``0`` to disable early recompute and set it to ``INF`` to force"
+" an immediate recompute::"
+msgstr ""
+
+#: ../../../components/cache.rst:129
+msgid "Available Cache Adapters"
+msgstr ""
+
+#: ../../../components/cache.rst:131
+msgid "The following cache adapters are available:"
+msgstr ""
+
+#: ../../../components/cache.rst:143
+msgid "Generic Caching (PSR-6)"
+msgstr ""
+
+#: ../../../components/cache.rst:145
+msgid ""
+"To use the generic PSR-6 Caching abilities, you'll need to learn its key "
+"concepts:"
+msgstr ""
+
+#: ../../../components/cache.rst:150
+msgid "**Item**"
+msgstr ""
+
+#: ../../../components/cache.rst:149
+msgid ""
+"A single unit of information stored as a key/value pair, where the key is"
+" the unique identifier of the information and the value is its contents; "
+"see the :doc:`/components/cache/cache_items` article for more details."
+msgstr ""
+
+#: ../../../components/cache.rst:154
+msgid "**Pool**"
+msgstr ""
+
+#: ../../../components/cache.rst:153
+msgid ""
+"A logical repository of cache items. All cache operations (saving items, "
+"looking for items, etc.) are performed through the pool. Applications can"
+" define as many pools as needed."
+msgstr ""
+
+#: ../../../components/cache.rst:159
+msgid "**Adapter**"
+msgstr ""
+
+#: ../../../components/cache.rst:157
+msgid ""
+"It implements the actual caching mechanism to store the information in "
+"the filesystem, in a database, etc. The component provides several ready "
+"to use adapters for common caching backends (Redis, APCu, Doctrine, PDO, "
+"etc.)"
+msgstr ""
+
+#: ../../../components/cache.rst:162
+msgid "Basic Usage (PSR-6)"
+msgstr ""
+
+#: ../../../components/cache.rst:164
+msgid ""
+"This part of the component is an implementation of `PSR-6`_, which means "
+"that its basic API is the same as defined in the document. Before "
+"starting to cache information, create the cache pool using any of the "
+"built-in adapters. For example, to create a filesystem-based cache, "
+"instantiate "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\FilesystemAdapter`::"
+msgstr ""
+
+#: ../../../components/cache.rst:173
+msgid ""
+"Now you can create, retrieve, update and delete items using this cache "
+"pool::"
+msgstr ""
+
+#: ../../../components/cache.rst:193
+msgid ""
+"For a list of all of the supported adapters, see "
+":doc:`/components/cache/cache_pools`."
+msgstr ""
+
+#: ../../../components/cache.rst:196
+msgid "Advanced Usage"
+msgstr ""
+

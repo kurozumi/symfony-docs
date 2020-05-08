@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/code/bugs.rst:2
+msgid "Reporting a Bug"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:4
+msgid ""
+"Whenever you find a bug in Symfony, we kindly ask you to report it. It "
+"helps us make a better Symfony."
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:9
+msgid ""
+"If you think you've found a security issue, please use the special "
+":doc:`procedure <security>` instead."
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:12
+msgid "Before submitting a bug:"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:14
+msgid ""
+"Double-check the official :doc:`documentation </index>` to see if you're "
+"not misusing the framework;"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:17
+msgid ""
+"Ask for assistance on `Stack Overflow`_, on the #support channel of `the "
+"Symfony Slack`_ or on the ``#symfony`` `IRC channel`_ if you're not sure "
+"if your issue really is a bug."
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:21
+msgid ""
+"If your problem definitely looks like a bug, report it using the official"
+" bug `tracker`_ and follow some basic rules:"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:24
+msgid "Use the title field to clearly describe the issue;"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:26
+msgid ""
+"Describe the steps needed to reproduce the bug with short code examples "
+"(providing a unit test that illustrates the bug is best);"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:29
+msgid ""
+"If the bug you experienced is not simple or affects more than one layer, "
+"providing a simple failing unit test may not be sufficient. In this case,"
+" please :doc:`provide a reproducer </contributing/code/reproducer>`;"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:33
+msgid ""
+"Give as much detail as possible about your environment (OS, PHP version, "
+"Symfony version, enabled extensions, ...);"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:36
+msgid ""
+"If you want to provide a stack trace you got on an HTML page, be sure to "
+"provide the plain text version, which should appear at the bottom of the "
+"page. *Do not* provide it as a screenshot, since search engines will not "
+"be able to index the text inside them. Same goes for errors encountered "
+"in a terminal, do not take a screenshot, but copy/paste the contents. If "
+"the stack trace is long, consider enclosing it in a `<details> HTML "
+"tag`_. **Be wary that stack traces may contain sensitive information, and"
+" if it is the case, be sure to redact them prior to posting your stack "
+"trace.**"
+msgstr ""
+
+#: ../../../contributing/code/bugs.rst:45
+msgid "*(optional)* Attach a :doc:`patch <pull_requests>`."
+msgstr ""
+

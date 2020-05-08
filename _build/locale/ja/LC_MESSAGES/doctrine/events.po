@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/events.rst:5
+msgid "Doctrine Events"
+msgstr ""
+
+#: ../../../doctrine/events.rst:7
+msgid ""
+"`Doctrine`_, the set of PHP libraries used by Symfony to work with "
+"databases, provides a lightweight event system to update entities during "
+"the application execution. These events, called `lifecycle events`_, "
+"allow to perform tasks such as *\"update the createdAt property "
+"automatically just before persisting entities of this type\"*."
+msgstr ""
+
+#: ../../../doctrine/events.rst:13
+msgid ""
+"Doctrine triggers events before/after performing the most common entity "
+"operations (e.g. ``prePersist/postPersist``, ``preUpdate/postUpdate``) "
+"and also on other common tasks (e.g. ``loadClassMetadata``, ``onClear``)."
+msgstr ""
+
+#: ../../../doctrine/events.rst:17
+msgid "There are different ways to listen to these Doctrine events:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:19
+msgid ""
+"**Lifecycle callbacks**, they are defined as methods on the entity "
+"classes and they are called when the events are triggered;"
+msgstr ""
+
+#: ../../../doctrine/events.rst:21
+msgid ""
+"**Lifecycle listeners and subscribers**, they are classes with callback "
+"methods for one or more events and they are called for all entities;"
+msgstr ""
+
+#: ../../../doctrine/events.rst:23
+msgid ""
+"**Entity listeners**, they are similar to lifecycle listeners, but they "
+"are called only for the entities of a certain class."
+msgstr ""
+
+#: ../../../doctrine/events.rst:26
+msgid "These are the **drawbacks and advantages** of each one:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:28
+msgid ""
+"Callbacks have better performance because they only apply to a single "
+"entity class, but you can't reuse the logic for different entities and "
+"they don't have access to :doc:`Symfony services </service_container>`;"
+msgstr ""
+
+#: ../../../doctrine/events.rst:31
+msgid ""
+"Lifecycle listeners and subscribers can reuse logic among different "
+"entities and can access Symfony services but their performance is worse "
+"because they are called for all entities;"
+msgstr ""
+
+#: ../../../doctrine/events.rst:34
+msgid ""
+"Entity listeners have the same advantages of lifecycle listeners and they"
+" have better performance because they only apply to a single entity "
+"class."
+msgstr ""
+
+#: ../../../doctrine/events.rst:37
+msgid ""
+"This article only explains the basics about Doctrine events when using "
+"them inside a Symfony application. Read the `official docs about Doctrine"
+" events`_ to learn everything about them."
+msgstr ""
+
+#: ../../../doctrine/events.rst:43
+msgid ""
+"This article covers listeners and subscribers for Doctrine ORM. If you "
+"are using ODM for MongoDB, read the `DoctrineMongoDBBundle "
+"documentation`_."
+msgstr ""
+
+#: ../../../doctrine/events.rst:47
+msgid "Doctrine Lifecycle Callbacks"
+msgstr ""
+
+#: ../../../doctrine/events.rst:49
+msgid ""
+"Lifecycle callbacks are defined as methods inside the entity you want to "
+"modify. For example, suppose you want to set a ``createdAt`` date column "
+"to the current date, but only when the entity is first persisted (i.e. "
+"inserted). To do so, define a callback for the ``prePersist`` Doctrine "
+"event:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:109
+msgid ""
+"Some lifecycle callbacks receive an argument that provides access to "
+"useful information such as the current entity manager (e.g. the "
+"``preUpdate`` callback receives a ``PreUpdateEventArgs $event`` "
+"argument)."
+msgstr ""
+
+#: ../../../doctrine/events.rst:116
+msgid "Doctrine Lifecycle Listeners"
+msgstr ""
+
+#: ../../../doctrine/events.rst:118
+msgid ""
+"Lifecycle listeners are defined as PHP classes that listen to a single "
+"Doctrine event on all the application entities. For example, suppose that"
+" you want to update some search index whenever a new entity is persisted "
+"in the database. To do so, define a listener for the ``postPersist`` "
+"Doctrine event::"
+msgstr ""
+
+#: ../../../doctrine/events.rst:148
+msgid ""
+"The next step is to enable the Doctrine listener in the Symfony "
+"application by creating a new service for it and :doc:`tagging it "
+"</service_container/tags>` with the ``doctrine.event_listener`` tag:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:220
+msgid ""
+"Symfony loads (and instantiates) Doctrine listeners only when the related"
+" Doctrine event is actually fired; whereas Doctrine subscribers are "
+"always loaded (and instantiated) by Symfony, making them less performant."
+msgstr ""
+
+#: ../../../doctrine/events.rst:225
+msgid "Doctrine Entity Listeners"
+msgstr ""
+
+#: ../../../doctrine/events.rst:227
+msgid ""
+"Entity listeners are defined as PHP classes that listen to a single "
+"Doctrine event on a single entity class. For example, suppose that you "
+"want to send some notifications whenever a ``User`` entity is modified in"
+" the database. To do so, define a listener for the ``postUpdate`` "
+"Doctrine event::"
+msgstr ""
+
+#: ../../../doctrine/events.rst:248
+msgid ""
+"The next step is to enable the Doctrine listener in the Symfony "
+"application by creating a new service for it and :doc:`tagging it "
+"</service_container/tags>` with the ``doctrine.orm.entity_listener`` tag:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:334
+msgid "Doctrine Lifecycle Subscribers"
+msgstr ""
+
+#: ../../../doctrine/events.rst:336
+msgid ""
+"Lifecycle subscribers are defined as PHP classes that implement the "
+"``Doctrine\\Common\\EventSubscriber`` interface and which listen to one "
+"or more Doctrine events on all the application entities. For example, "
+"suppose that you want to log all the database activity. To do so, define "
+"a subscriber for the ``postPersist``, ``postRemove`` and ``postUpdate`` "
+"Doctrine events::"
+msgstr ""
+
+#: ../../../doctrine/events.rst:395
+msgid ""
+"The next step is to enable the Doctrine subscriber in the Symfony "
+"application by creating a new service for it and :doc:`tagging it "
+"</service_container/tags>` with the ``doctrine.event_subscriber`` tag:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:435
+msgid ""
+"If you need to associate the subscriber with a specific Doctrine "
+"connection, you can do it in the service configuration:"
+msgstr ""
+
+#: ../../../doctrine/events.rst:476
+msgid ""
+"Symfony loads (and instantiates) Doctrine subscribers whenever the "
+"application executes; whereas Doctrine listeners are only loaded when the"
+" related event is actually fired, making them more performant."
+msgstr ""
+

@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller/upload_file.rst:5
+msgid "How to Upload Files"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:9
+msgid ""
+"Instead of handling file uploading yourself, you may consider using the "
+"`VichUploaderBundle`_ community bundle. This bundle provides all the "
+"common operations (such as file renaming, saving and deleting) and it's "
+"tightly integrated with Doctrine ORM, MongoDB ODM, PHPCR ODM and Propel."
+msgstr ""
+
+#: ../../../controller/upload_file.rst:14
+msgid ""
+"Imagine that you have a ``Product`` entity in your application and you "
+"want to add a PDF brochure for each product. To do so, add a new property"
+" called ``brochureFilename`` in the ``Product`` entity::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:45
+msgid ""
+"Note that the type of the ``brochureFilename`` column is ``string`` "
+"instead of ``binary`` or ``blob`` because it only stores the PDF file "
+"name instead of the file contents."
+msgstr ""
+
+#: ../../../controller/upload_file.rst:49
+msgid ""
+"The next step is to add a new field to the form that manages the "
+"``Product`` entity. This must be a ``FileType`` field so the browsers can"
+" display the file upload widget. The trick to make it work is to add the "
+"form field as \"unmapped\", so Symfony doesn't try to get/set its value "
+"from the related entity::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:105
+msgid ""
+"Now, update the template that renders the form to display the new "
+"``brochure`` field (the exact template code to add depends on the method "
+"used by your application to :doc:`customize form rendering "
+"</form/form_customization>`):"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:120
+msgid ""
+"Finally, you need to update the code of the controller that handles the "
+"form::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:183
+msgid ""
+"Now, create the ``brochures_directory`` parameter that was used in the "
+"controller to specify the directory in which the brochures should be "
+"stored:"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:194
+msgid ""
+"There are some important things to consider in the code of the above "
+"controller:"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:196
+msgid ""
+"In Symfony applications, uploaded files are objects of the "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile` "
+"class. This class provides methods for the most common operations when "
+"dealing with uploaded files;"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:199
+msgid ""
+"A well-known security best practice is to never trust the input provided "
+"by users. This also applies to the files uploaded by your visitors. The "
+"``UploadedFile`` class provides methods to get the original file "
+"extension "
+"(:method:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile::getExtension`),"
+" the original file size "
+"(:method:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile::getSize`)"
+" and the original file name "
+"(:method:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile::getClientOriginalName`)."
+" However, they are considered *not safe* because a malicious user could "
+"tamper that information. That's why it's always better to generate a "
+"unique name and use the "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\UploadedFile::guessExtension`"
+" method to let Symfony guess the right extension according to the file "
+"MIME type;"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:210
+msgid "You can use the following code to link to the PDF brochure of a product:"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:218
+msgid ""
+"When creating a form to edit an already persisted item, the file form "
+"type still expects a "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\File` instance."
+" As the persisted entity now contains only the relative file path, you "
+"first have to concatenate the configured upload path with the stored "
+"filename and create a new ``File`` class::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:232
+msgid "Creating an Uploader Service"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:234
+msgid ""
+"To avoid logic in controllers, making them big, you can extract the "
+"upload logic to a separate service::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:278
+msgid ""
+"In addition to the generic "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\FileException`"
+" class there are other exception classes to handle failed file uploads: "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\CannotWriteFileException`,"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\ExtensionFileException`,"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\FormSizeFileException`,"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\IniSizeFileException`,"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\NoFileException`,"
+" "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\NoTmpDirFileException`,"
+" and "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\File\\\\Exception\\\\PartialFileException`."
+msgstr ""
+
+#: ../../../controller/upload_file.rst:288
+msgid "Then, define a service for this class:"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:325
+msgid "Now you're ready to use this service in the controller::"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:351
+msgid "Using a Doctrine Listener"
+msgstr ""
+
+#: ../../../controller/upload_file.rst:353
+msgid ""
+"The previous versions of this article explained how to handle file "
+"uploads using :ref:`Doctrine listeners <doctrine-lifecycle-listener>`. "
+"However, this is no longer recommended, because Doctrine events shouldn't"
+" be used for your domain logic."
+msgstr ""
+
+#: ../../../controller/upload_file.rst:357
+msgid ""
+"Moreover, Doctrine listeners are often dependent on internal Doctrine "
+"behavior which may change in future versions. Also, they can introduce "
+"performance issues unwillingly (because your listener persists entities "
+"which cause other entities to be changed and persisted)."
+msgstr ""
+
+#: ../../../controller/upload_file.rst:362
+msgid ""
+"As an alternative, you can use :doc:`Symfony events, listeners and "
+"subscribers </event_dispatcher>`."
+msgstr ""
+

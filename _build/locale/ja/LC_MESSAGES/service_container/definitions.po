@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/definitions.rst:5
+msgid "How to work with Service Definition Objects"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:7
+msgid ""
+"Service definitions are the instructions describing how the container "
+"should build a service. They are not the actual services used by your "
+"applications. The container will create the actual class instances based "
+"on the configuration in the definition."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:12
+msgid ""
+"Normally, you would use YAML, XML or PHP to describe the service "
+"definitions. But if you're doing advanced things with the service "
+"container, like working with a :doc:`Compiler Pass "
+"</service_container/compiler_passes>` or creating a :doc:`Dependency "
+"Injection Extension </bundles/extension>`, you may need to work directly "
+"with the ``Definition`` objects that define how a service will be "
+"instantiated."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:20
+msgid "Getting and Setting Service Definitions"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:22
+msgid "There are some helpful methods for working with the service definitions::"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:44
+msgid "Working with a Definition"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:47
+msgid "Creating a New Definition"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:49
+msgid ""
+"In addition to manipulating and retrieving existing definitions, you can "
+"also define new service definitions with the "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\Definition` class."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:54
+msgid "Class"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:56
+msgid ""
+"The first optional argument of the ``Definition`` class is the fully "
+"qualified class name of the object returned when the service is fetched "
+"from the container::"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:72
+msgid "Constructor Arguments"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:74
+msgid ""
+"The second optional argument of the ``Definition`` class is an array with"
+" the arguments passed to the constructor of the object returned when the "
+"service is fetched from the container::"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:108
+msgid ""
+"Don't use ``get()`` to get a service that you want to inject as "
+"constructor argument, the service is not yet available. Instead, use a "
+"``Reference`` instance as shown above."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:113
+msgid "Method Calls"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:115
+msgid ""
+"If the service you are working with uses setter injection then you can "
+"manipulate any method calls in the definitions as well::"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:132
+msgid ""
+"There are more examples of specific ways of working with definitions in "
+"the PHP code blocks of the Service Container articles such as "
+":doc:`/service_container/factories` and "
+":doc:`/service_container/parent_services`."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:138
+msgid ""
+"The methods here that change service definitions can only be used before "
+"the container is compiled. Once the container is compiled you cannot "
+"manipulate service definitions further. To learn more about compiling the"
+" container, see :doc:`/components/dependency_injection/compilation`."
+msgstr ""
+
+#: ../../../service_container/definitions.rst:144
+msgid "Requiring Files"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:146
+msgid ""
+"There might be use cases when you need to include another file just "
+"before the service itself gets loaded. To do so, you can use the "
+":method:`Symfony\\\\Component\\\\DependencyInjection\\\\Definition::setFile`"
+" method::"
+msgstr ""
+
+#: ../../../service_container/definitions.rst:152
+msgid ""
+"Notice that Symfony will internally call the PHP statement "
+"``require_once``, which means that your file will be included only once "
+"per request."
+msgstr ""
+

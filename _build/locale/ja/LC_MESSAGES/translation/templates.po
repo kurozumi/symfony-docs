@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/templates.rst:2
+msgid "Using Translation in Templates"
+msgstr ""
+
+#: ../../../translation/templates.rst:5
+msgid "Twig Templates"
+msgstr ""
+
+#: ../../../translation/templates.rst:10
+msgid "Using Twig Tags"
+msgstr ""
+
+#: ../../../translation/templates.rst:12
+msgid ""
+"Symfony provides a specialized Twig tag ``trans`` to help with message "
+"translation of *static blocks of text*:"
+msgstr ""
+
+#: ../../../translation/templates.rst:21
+msgid ""
+"The ``%var%`` notation of placeholders is required when translating in "
+"Twig templates using the tag."
+msgstr ""
+
+#: ../../../translation/templates.rst:26
+#, python-format
+msgid ""
+"If you need to use the percent character (``%``) in a string, escape it "
+"by doubling it: ``{% trans %}Percent: %percent%%%{% endtrans %}``"
+msgstr ""
+
+#: ../../../translation/templates.rst:29
+msgid ""
+"You can also specify the message domain and pass some additional "
+"variables:"
+msgstr ""
+
+#: ../../../translation/templates.rst:40
+msgid "Using Twig Filters"
+msgstr ""
+
+#: ../../../translation/templates.rst:42
+msgid ""
+"The ``trans`` filter can be used to translate *variable texts* and "
+"complex expressions:"
+msgstr ""
+
+#: ../../../translation/templates.rst:52
+msgid ""
+"Using the translation tags or filters have the same effect, but with one "
+"subtle difference: automatic output escaping is only applied to "
+"translations using a filter. In other words, if you need to be sure that "
+"your translated message is *not* output escaped, you must apply the "
+"``raw`` filter after the translation filter:"
+msgstr ""
+
+#: ../../../translation/templates.rst:73
+msgid ""
+"You can set the translation domain for an entire Twig template with a "
+"single tag:"
+msgstr ""
+
+#: ../../../translation/templates.rst:79
+msgid ""
+"Note that this only influences the current template, not any \"included\""
+" template (in order to avoid side effects)."
+msgstr ""
+
+#: ../../../translation/templates.rst:83
+msgid "PHP Templates"
+msgstr ""
+
+#: ../../../translation/templates.rst:85
+msgid ""
+"The translator service is accessible in PHP templates through the "
+"``translator`` helper::"
+msgstr ""
+

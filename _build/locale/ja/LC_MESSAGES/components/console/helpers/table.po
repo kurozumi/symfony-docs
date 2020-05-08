@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/helpers/table.rst:5
+msgid "Table"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:7
+msgid ""
+"When building a console application it may be useful to display tabular "
+"data:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:20
+msgid ""
+"To display a table, use "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table`, set the "
+"headers, set the rows and then render the table::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:47
+msgid ""
+"You can add a table separator anywhere in the output by passing an "
+"instance of "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableSeparator` as a"
+" row::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:72
+msgid "You can optionally display titles at the top and the bottom of the table::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:91
+msgid ""
+"By default, the width of the columns is calculated automatically based on"
+" their contents. Use the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::setColumnWidths`"
+" method to set the column widths explicitly::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:99
+msgid ""
+"In this example, the first column width will be ``10``, the last column "
+"width will be ``30`` and the second column width will be calculated "
+"automatically because of the ``0`` value."
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:103
+msgid ""
+"You can also set the width individually for each column with the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::setColumnWidth`"
+" method. Its first argument is the column index (starting from ``0``) and"
+" the second argument is the column width::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:113
+#: ../../../components/console/helpers/table.rst:140
+msgid "The output of this command will be:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:127
+msgid ""
+"Note that the defined column widths are always considered as the minimum "
+"column widths. If the contents don't fit, the given column width is "
+"increased up to the longest content length. That's why in the previous "
+"example the first column has a ``13`` character length although the user "
+"defined ``10`` as its width."
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:132
+msgid ""
+"If you prefer to wrap long contents in multiple rows, use the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::setColumnMaxWidth`"
+" method::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:153
+msgid ""
+"The table style can be changed to any built-in styles via "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::setStyle`::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:163
+msgid "This code results in:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:173
+msgid "You can also set the style to ``borderless``::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:178
+#: ../../../components/console/helpers/table.rst:196
+#: ../../../components/console/helpers/table.rst:214
+msgid "which outputs:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:191
+msgid "You can also set the style to ``box``::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:209
+msgid "You can also set the style to ``box-double``::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:227
+msgid "If the built-in styles do not fit your need, define your own::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:244
+msgid "Here is a full list of things you can customize:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:246
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setPaddingChar`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:247
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setDefaultCrossingChars`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:248
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setVerticalBorderChars`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:249
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCrossingChars`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:250
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setDefaultCrossingChar`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:251
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCellHeaderFormat`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:252
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setCellRowFormat`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:253
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setBorderFormat`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:254
+msgid ":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableStyle::setPadType`"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:258
+msgid "You can also register a style globally::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:266
+msgid "This method can also be used to override a built-in style."
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:269
+msgid "Spanning Multiple Columns and Rows"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:271
+msgid ""
+"To make a table cell that spans multiple columns you can use a "
+":class:`Symfony\\\\Component\\\\Console\\\\Helper\\\\TableCell`::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:288
+msgid "This results in:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:302
+msgid ""
+"You can create a multiple-line page title using a header cell that spans "
+"the entire table width::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:311
+msgid "This generates:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:323
+msgid "In a similar way you can span multiple rows::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:342
+msgid "This outputs:"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:353
+msgid ""
+"You can use the ``colspan`` and ``rowspan`` options at the same time "
+"which allows you to create any table layout you may wish."
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:359
+msgid "Modifying Rendered Tables"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:361
+msgid ""
+"The ``render()`` method requires passing the entire table contents. "
+"However, sometimes that information is not available beforehand because "
+"it's generated dynamically. In those cases, use the "
+":method:`Symfony\\\\Component\\\\Console\\\\Helper\\\\Table::appendRow` "
+"method, which takes the same arguments as the ``addRow()`` method, to add"
+" rows at the bottom of an already rendered table."
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:368
+msgid ""
+"The only requirement to append rows is that the table must be rendered "
+"inside a :ref:`Console output section <console-output-sections>`::"
+msgstr ""
+
+#: ../../../components/console/helpers/table.rst:388
+msgid "This will display the following table in the terminal:"
+msgstr ""
+

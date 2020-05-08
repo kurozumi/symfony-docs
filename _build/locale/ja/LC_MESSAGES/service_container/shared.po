@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/shared.rst:5
+msgid "How to Define Non Shared Services"
+msgstr ""
+
+#: ../../../service_container/shared.rst:7
+msgid ""
+"In the service container, all services are shared by default. This means "
+"that each time you retrieve the service, you'll get the *same* instance. "
+"This is usually the behavior you want, but in some cases, you might want "
+"to always get a *new* instance."
+msgstr ""
+
+#: ../../../service_container/shared.rst:12
+msgid ""
+"In order to always get a new instance, set the ``shared`` setting to "
+"``false`` in your service definition:"
+msgstr ""
+
+#: ../../../service_container/shared.rst:46
+msgid ""
+"Now, whenever you request the ``App\\SomeNonSharedService`` from the "
+"container, you will be passed a new instance."
+msgstr ""
+

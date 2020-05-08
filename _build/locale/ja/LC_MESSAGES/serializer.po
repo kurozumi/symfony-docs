@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../serializer.rst:5
+msgid "How to Use the Serializer"
+msgstr ""
+
+#: ../../../serializer.rst:7
+msgid ""
+"Symfony provides a serializer to serialize/deserialize to and from "
+"objects and different formats (e.g. JSON or XML). Before using it, read "
+"the :doc:`Serializer component docs </components/serializer>` to get "
+"familiar with its philosophy and the normalizers and encoders "
+"terminology."
+msgstr ""
+
+#: ../../../serializer.rst:15
+msgid "Installation"
+msgstr ""
+
+#: ../../../serializer.rst:17
+msgid ""
+"In applications using :ref:`Symfony Flex <symfony-flex>`, run this "
+"command to install the ``serializer`` :ref:`Symfony pack <symfony-packs>`"
+" before using it:"
+msgstr ""
+
+#: ../../../serializer.rst:25
+msgid "Using the Serializer Service"
+msgstr ""
+
+#: ../../../serializer.rst:27
+msgid ""
+"Once enabled, the serializer service can be injected in any service where"
+" you need it or it can be used in a controller::"
+msgstr ""
+
+#: ../../../serializer.rst:45
+msgid "Adding Normalizers and Encoders"
+msgstr ""
+
+#: ../../../serializer.rst:47
+msgid ""
+"Once enabled, the ``serializer`` service will be available in the "
+"container. It comes with a set of useful :ref:`encoders <component-"
+"serializer-encoders>` and :ref:`normalizers <component-serializer-"
+"normalizers>`."
+msgstr ""
+
+#: ../../../serializer.rst:51
+msgid "Encoders supporting the following formats are enabled:"
+msgstr ""
+
+#: ../../../serializer.rst:53
+msgid ""
+"JSON: "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\JsonEncoder`"
+msgstr ""
+
+#: ../../../serializer.rst:54
+msgid "XML: :class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\XmlEncoder`"
+msgstr ""
+
+#: ../../../serializer.rst:55
+msgid "CSV: :class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\CsvEncoder`"
+msgstr ""
+
+#: ../../../serializer.rst:56
+msgid ""
+"YAML: "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Encoder\\\\YamlEncoder`"
+msgstr ""
+
+#: ../../../serializer.rst:58
+msgid "As well as the following normalizers:"
+msgstr ""
+
+#: ../../../serializer.rst:60
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ObjectNormalizer`"
+" to handle typical data objects"
+msgstr ""
+
+#: ../../../serializer.rst:62
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateTimeNormalizer`"
+" for objects implementing the :phpclass:`DateTimeInterface` interface"
+msgstr ""
+
+#: ../../../serializer.rst:64
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateTimeZoneNormalizer`"
+" for :phpclass:`DateTimeZone` objects"
+msgstr ""
+
+#: ../../../serializer.rst:66
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DateIntervalNormalizer`"
+" for :phpclass:`DateInterval` objects"
+msgstr ""
+
+#: ../../../serializer.rst:68
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\DataUriNormalizer`"
+" to transform :phpclass:`SplFileInfo` objects in `Data URIs`_"
+msgstr ""
+
+#: ../../../serializer.rst:70
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\JsonSerializableNormalizer`"
+" to deal with objects implementing the :phpclass:`JsonSerializable` "
+"interface"
+msgstr ""
+
+#: ../../../serializer.rst:72
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ArrayDenormalizer`"
+" to denormalize arrays of objects using a format like `MyObject[]` (note "
+"the `[]` suffix)"
+msgstr ""
+
+#: ../../../serializer.rst:74
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ConstraintViolationListNormalizer`"
+" for objects implementing the "
+":class:`Symfony\\\\Component\\\\Validator\\\\ConstraintViolationListInterface`"
+" interface"
+msgstr ""
+
+#: ../../../serializer.rst:75
+msgid ""
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\ProblemNormalizer`"
+" for "
+":class:`Symfony\\\\Component\\\\ErrorHandler\\\\Exception\\\\FlattenException`"
+" objects"
+msgstr ""
+
+#: ../../../serializer.rst:77
+msgid ""
+"Custom normalizers and/or encoders can also be loaded by tagging them as "
+":ref:`serializer.normalizer <reference-dic-tags-serializer-normalizer>` "
+"and :ref:`serializer.encoder <reference-dic-tags-serializer-encoder>`. "
+"It's also possible to set the priority of the tag in order to decide the "
+"matching order."
+msgstr ""
+
+#: ../../../serializer.rst:82
+msgid ""
+"Here is an example on how to load the "
+":class:`Symfony\\\\Component\\\\Serializer\\\\Normalizer\\\\GetSetMethodNormalizer`,"
+" a faster alternative to the `ObjectNormalizer` when data objects always "
+"use getters (``getXxx()``), issers (``isXxx()``) or hassers "
+"(``hasXxx()``) to read properties and setters (``setXxx()``) to change "
+"properties:"
+msgstr ""
+
+#: ../../../serializer.rst:132
+msgid "Using Serialization Groups Annotations"
+msgstr ""
+
+#: ../../../serializer.rst:134
+msgid ""
+"To use annotations, first add support for them via the "
+"SensioFrameworkExtraBundle:"
+msgstr ""
+
+#: ../../../serializer.rst:140
+msgid ""
+"Next, add the :ref:`@Groups annotations <component-serializer-attributes-"
+"groups-annotations>` to your class and choose which groups to use when "
+"serializing::"
+msgstr ""
+
+#: ../../../serializer.rst:150
+msgid ""
+"The value of the ``groups`` key can be a single string, or an array of "
+"strings."
+msgstr ""
+
+#: ../../../serializer.rst:152
+msgid ""
+"In addition to the ``@Groups`` annotation, the Serializer component also "
+"supports YAML or XML files. These files are automatically loaded when "
+"being stored in one of the following locations:"
+msgstr ""
+
+#: ../../../serializer.rst:156
+msgid ""
+"All ``*.yaml`` and ``*.xml`` files in the ``config/serializer/`` "
+"directory."
+msgstr ""
+
+#: ../../../serializer.rst:158
+msgid ""
+"The ``serialization.yaml`` or ``serialization.xml`` file in the "
+"``Resources/config/`` directory of a bundle;"
+msgstr ""
+
+#: ../../../serializer.rst:160
+msgid ""
+"All ``*.yaml`` and ``*.xml`` files in the "
+"``Resources/config/serialization/`` directory of a bundle."
+msgstr ""
+
+#: ../../../serializer.rst:166
+msgid "Configuring the Metadata Cache"
+msgstr ""
+
+#: ../../../serializer.rst:168
+msgid ""
+"The metadata for the serializer is automatically cached to enhance "
+"application performance. By default, the serializer uses the "
+"``cache.system`` cache pool which is configured using the "
+":ref:`cache.system <reference-cache-system>` option."
+msgstr ""
+
+#: ../../../serializer.rst:174
+msgid "Enabling a Name Converter"
+msgstr ""
+
+#: ../../../serializer.rst:176
+msgid ""
+"The use of a :ref:`name converter <component-serializer-converting-"
+"property-names-when-serializing-and-deserializing>` service can be "
+"defined in the configuration using the :ref:`name_converter <reference-"
+"serializer-name_converter>` option."
+msgstr ""
+
+#: ../../../serializer.rst:180
+msgid ""
+"The built-in :ref:`CamelCase to snake_case name converter <using-"
+"camelized-method-names-for-underscored-attributes>` can be enabled by "
+"using the ``serializer.name_converter.camel_case_to_snake_case`` value:"
+msgstr ""
+
+#: ../../../serializer.rst:213
+msgid "Going Further with the Serializer"
+msgstr ""
+
+#: ../../../serializer.rst:215
+msgid "`API Platform`_ provides an API system supporting the following formats:"
+msgstr ""
+
+#: ../../../serializer.rst:217
+msgid "`JSON-LD`_ along with the `Hydra Core Vocabulary`_"
+msgstr ""
+
+#: ../../../serializer.rst:218
+msgid "`OpenAPI`_ v2 (formerly Swagger) and v3"
+msgstr ""
+
+#: ../../../serializer.rst:219
+msgid "`GraphQL`_"
+msgstr ""
+
+#: ../../../serializer.rst:220
+msgid "`JSON:API`_"
+msgstr ""
+
+#: ../../../serializer.rst:221
+msgid "`HAL`_"
+msgstr ""
+
+#: ../../../serializer.rst:222
+msgid "JSON"
+msgstr ""
+
+#: ../../../serializer.rst:223
+msgid "XML"
+msgstr ""
+
+#: ../../../serializer.rst:224
+msgid "YAML"
+msgstr ""
+
+#: ../../../serializer.rst:225
+msgid "CSV"
+msgstr ""
+
+#: ../../../serializer.rst:227
+msgid ""
+"It is built on top of the Symfony Framework and its Serializer component."
+" It provides custom normalizers and a custom encoder, custom metadata and"
+" a caching system."
+msgstr ""
+
+#: ../../../serializer.rst:231
+msgid ""
+"If you want to leverage the full power of the Symfony Serializer "
+"component, take a look at how this bundle works."
+msgstr ""
+

@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/sourcemaps.rst:2
+msgid "Enabling Source Maps"
+msgstr ""
+
+#: ../../../frontend/encore/sourcemaps.rst:4
+msgid ""
+"`Source maps`_ allow browsers to access the original code related to some"
+" asset (e.g. the Sass code that was compiled to CSS or the TypeScript "
+"code that was compiled to JavaScript). Source maps are useful for "
+"debugging purposes but unnecessary when executing the application in "
+"production."
+msgstr ""
+
+#: ../../../frontend/encore/sourcemaps.rst:9
+msgid ""
+"Encore's default ``webpack.config.js`` file enables source maps in the "
+"``dev`` build:"
+msgstr ""
+

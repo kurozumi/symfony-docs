@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/web_link.rst:6
+msgid "The WebLink Component"
+msgstr ""
+
+#: ../../../components/web_link.rst:8
+msgid ""
+"The WebLink component provides tools to manage the ``Link`` HTTP header "
+"needed for `Web Linking`_ when using `HTTP/2 Server Push`_ as well as "
+"`Resource Hints`_."
+msgstr ""
+
+#: ../../../components/web_link.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/web_link.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/web_link.rst:23
+msgid "The following example shows the component in action::"
+msgstr ""
+
+#: ../../../components/web_link.rst:36
+msgid ""
+"Read the full :doc:`WebLink documentation </web_link>` to learn about all"
+" the features of the component and its integration with the Symfony "
+"framework."
+msgstr ""
+

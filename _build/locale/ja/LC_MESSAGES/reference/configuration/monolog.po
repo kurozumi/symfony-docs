@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/configuration/monolog.rst:5
+msgid "Logging Configuration Reference (MonologBundle)"
+msgstr ""
+
+#: ../../../reference/configuration/monolog.rst:7
+msgid ""
+"The MonologBundle integrates the Monolog :doc:`logging </logging>` "
+"library in Symfony applications. All these options are configured under "
+"the ``monolog`` key in your application configuration."
+msgstr ""
+
+#: ../../../reference/configuration/monolog.rst:21
+msgid ""
+"When using XML, you must use the "
+"``http://symfony.com/schema/dic/monolog`` namespace and the related XSD "
+"schema is available at: "
+"``https://symfony.com/schema/dic/monolog/monolog-1.0.xsd``"
+msgstr ""
+
+#: ../../../reference/configuration/monolog.rst:27
+msgid ""
+"For a full list of handler types and related configuration options, see "
+"`Monolog Configuration`_."
+msgstr ""
+
+#: ../../../reference/configuration/monolog.rst:32
+msgid ""
+"When the profiler is enabled, a handler is added to store the logs' "
+"messages in the profiler. The profiler uses the name \"debug\" so it is "
+"reserved and cannot be used in the configuration."
+msgstr ""
+

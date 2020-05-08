@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/lazy_services.rst:5
+msgid "Lazy Services"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:9
+msgid ""
+"Another way to inject services lazily is via a :doc:`service subscriber "
+"</service_container/service_subscribers_locators>`."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:12
+msgid "Why Lazy Services?"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:14
+msgid ""
+"In some cases, you may want to inject a service that is a bit heavy to "
+"instantiate, but is not always used inside your object. For example, "
+"imagine you have a ``NewsletterManager`` and you inject a ``mailer`` "
+"service into it. Only a few methods on your ``NewsletterManager`` "
+"actually use the ``mailer``, but even when you don't need it, a "
+"``mailer`` service is always instantiated in order to construct your "
+"``NewsletterManager``."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:21
+msgid ""
+"Configuring lazy services is one answer to this. With a lazy service, a "
+"\"proxy\" of the ``mailer`` service is actually injected. It looks and "
+"acts just like the ``mailer``, except that the ``mailer`` isn't actually "
+"instantiated until you interact with the proxy in some way."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:28
+msgid "Lazy services do not support `final`_ classes."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:31
+msgid "Installation"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:33
+msgid ""
+"In order to use the lazy service instantiation, you will need to install "
+"the ``symfony/proxy-manager-bridge`` package:"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:41
+msgid "Configuration"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:43
+msgid "You can mark the service as ``lazy`` by manipulating its definition:"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:82
+msgid ""
+"Once you inject the service into another service, a virtual `proxy`_ with"
+" the same signature of the class representing the service should be "
+"injected. The same happens when calling ``Container::get()`` directly."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:86
+msgid ""
+"The actual class will be instantiated as soon as you try to interact with"
+" the service (e.g. call one of its methods)."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:89
+msgid ""
+"To check if your proxy works you can check the interface of the received "
+"object::"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:96
+msgid ""
+"If you don't install the `ProxyManager bridge`_ and the `ocramius/proxy-"
+"manager`_, the container will skip over the ``lazy`` flag and directly "
+"instantiate the service as it would normally do."
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:101
+msgid "Additional Resources"
+msgstr ""
+
+#: ../../../service_container/lazy_services.rst:103
+msgid ""
+"You can read more about how proxies are instantiated, generated and "
+"initialized in the `documentation of ProxyManager`_."
+msgstr ""
+

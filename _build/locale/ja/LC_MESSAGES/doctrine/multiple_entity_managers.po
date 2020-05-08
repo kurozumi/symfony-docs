@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/multiple_entity_managers.rst:5
+msgid "How to Work with multiple Entity Managers and Connections"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:7
+msgid ""
+"You can use multiple Doctrine entity managers or connections in a Symfony"
+" application. This is necessary if you are using different databases or "
+"even vendors with entirely different sets of entities. In other words, "
+"one entity manager that connects to one database will handle some "
+"entities while another entity manager that connects to another database "
+"might handle the rest."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:15
+msgid ""
+"Using multiple entity managers is not complicated to configure, but more "
+"advanced and not usually required. Be sure you actually need multiple "
+"entity managers before adding in this layer of complexity."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:21
+msgid ""
+"Entities cannot define associations across different entity managers. If "
+"you need that, there are `several alternatives`_ that require some custom"
+" setup."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:24
+msgid ""
+"The following configuration code shows how you can configure two entity "
+"managers:"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:182
+msgid ""
+"In this case, you've defined two entity managers and called them "
+"``default`` and ``customer``. The ``default`` entity manager manages "
+"entities in the ``src/Entity/Main`` directory, while the ``customer`` "
+"entity manager manages entities in ``src/Entity/Customer``. You've also "
+"defined two connections, one for each entity manager."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:190
+msgid ""
+"When working with multiple connections and entity managers, you should be"
+" explicit about which configuration you want. If you *do* omit the name "
+"of the connection or entity manager, the default (i.e. ``default``) is "
+"used."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:194
+msgid ""
+"If you use a different name than ``default`` for the default entity "
+"manager, you will need to redefine the default entity manager in ``prod``"
+" environment configuration too:"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:207
+msgid "When working with multiple connections to create your databases:"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:217
+msgid "When working with multiple entity managers to generate migrations:"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:229
+msgid ""
+"If you *do* omit the entity manager's name when asking for it, the "
+"default entity manager (i.e. ``default``) is returned::"
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:252
+msgid ""
+"You can now use Doctrine just as you did before - using the ``default`` "
+"entity manager to persist and fetch entities that it manages and the "
+"``customer`` entity manager to persist and fetch its entities."
+msgstr ""
+
+#: ../../../doctrine/multiple_entity_managers.rst:256
+msgid "The same applies to repository calls::"
+msgstr ""
+

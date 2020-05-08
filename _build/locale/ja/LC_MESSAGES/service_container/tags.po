@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/tags.rst:6
+msgid "How to Work with Service Tags"
+msgstr ""
+
+#: ../../../service_container/tags.rst:8
+msgid ""
+"**Service tags** are a way to tell Symfony or other third-party bundles "
+"that your service should be registered in some special way. Take the "
+"following example:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:52
+msgid ""
+"Services tagged with the ``twig.extension`` tag are collected during the "
+"initialization of TwigBundle and added to Twig as extensions."
+msgstr ""
+
+#: ../../../service_container/tags.rst:55
+msgid ""
+"Other tags are used to integrate your services into other systems. For a "
+"list of all the tags available in the core Symfony Framework, check out "
+":doc:`/reference/dic_tags`. Each of these has a different effect on your "
+"service and many tags require additional arguments (beyond just the "
+"``name`` parameter)."
+msgstr ""
+
+#: ../../../service_container/tags.rst:60
+msgid ""
+"**For most users, this is all you need to know**. If you want to go "
+"further and learn how to create your own custom tags, keep reading."
+msgstr ""
+
+#: ../../../service_container/tags.rst:64
+msgid "Autoconfiguring Tags"
+msgstr ""
+
+#: ../../../service_container/tags.rst:66
+msgid ""
+"If you enable :ref:`autoconfigure <services-autoconfigure>`, then some "
+"tags are automatically applied for you. That's true for the "
+"``twig.extension`` tag: the container sees that your class extends "
+"``AbstractExtension`` (or more accurately, that it implements "
+"``ExtensionInterface``) and adds the tag for you."
+msgstr ""
+
+#: ../../../service_container/tags.rst:71
+msgid ""
+"If you want to apply tags automatically for your own services, use the "
+"``_instanceof`` option:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:119
+msgid ""
+"For more advanced needs, you can define the automatic tags using the "
+":method:`Symfony\\\\Component\\\\DependencyInjection\\\\ContainerBuilder::registerForAutoconfiguration`"
+" method."
+msgstr ""
+
+#: ../../../service_container/tags.rst:122
+msgid "In a Symfony application, call this method in your kernel class::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:137
+msgid ""
+"In a Symfony bundle, call this method in the ``load()`` method of the "
+":doc:`bundle extension class </bundles/extension>`::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:154
+msgid "Creating custom Tags"
+msgstr ""
+
+#: ../../../service_container/tags.rst:156
+msgid ""
+"Tags on their own don't actually alter the functionality of your services"
+" in any way. But if you choose to, you can ask a container builder for a "
+"list of all services that were tagged with some specific tag. This is "
+"useful in compiler passes where you can find these services and use or "
+"modify them in some specific way."
+msgstr ""
+
+#: ../../../service_container/tags.rst:162
+msgid ""
+"For example, if you are using Swift Mailer you might imagine that you "
+"want to implement a \"transport chain\", which is a collection of classes"
+" implementing ``\\Swift_Transport``. Using the chain, you'll want Swift "
+"Mailer to try several ways of transporting the message until one "
+"succeeds."
+msgstr ""
+
+#: ../../../service_container/tags.rst:167
+msgid "To begin with, define the ``TransportChain`` class::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:187
+msgid "Then, define the chain as a service:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:226
+msgid "Define Services with a Custom Tag"
+msgstr ""
+
+#: ../../../service_container/tags.rst:228
+msgid ""
+"Now you might want several of the ``\\Swift_Transport`` classes to be "
+"instantiated and added to the chain automatically using the "
+"``addTransport()`` method. For example, you may add the following "
+"transports as services:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:285
+msgid ""
+"Notice that each service was given a tag named ``app.mail_transport``. "
+"This is the custom tag that you'll use in your compiler pass. The "
+"compiler pass is what makes this tag \"mean\" something."
+msgstr ""
+
+#: ../../../service_container/tags.rst:292
+msgid "Create a Compiler Pass"
+msgstr ""
+
+#: ../../../service_container/tags.rst:294
+msgid ""
+"You can now use a :ref:`compiler pass <components-di-separate-compiler-"
+"passes>` to ask the container for any services with the "
+"``app.mail_transport`` tag::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:327
+msgid "Register the Pass with the Container"
+msgstr ""
+
+#: ../../../service_container/tags.rst:329
+msgid ""
+"In order to run the compiler pass when the container is compiled, you "
+"have to add the compiler pass to the container in a :doc:`bundle "
+"extension </bundles/extension>` or from your kernel::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:352
+msgid ""
+"When implementing the ``CompilerPassInterface`` in a service extension, "
+"you do not need to register it. See the :ref:`components documentation "
+"<components-di-compiler-pass>` for more information."
+msgstr ""
+
+#: ../../../service_container/tags.rst:358
+msgid "Adding Additional Attributes on Tags"
+msgstr ""
+
+#: ../../../service_container/tags.rst:360
+msgid ""
+"Sometimes you need additional information about each service that's "
+"tagged with your tag. For example, you might want to add an alias to each"
+" member of the transport chain."
+msgstr ""
+
+#: ../../../service_container/tags.rst:364
+msgid "To begin with, change the ``TransportChain`` class::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:388
+msgid ""
+"As you can see, when ``addTransport()`` is called, it takes not only a "
+"``Swift_Transport`` object, but also a string alias for that transport. "
+"So, how can you allow each tagged transport service to also supply an "
+"alias?"
+msgstr ""
+
+#: ../../../service_container/tags.rst:392
+msgid "To answer this, change the service declaration:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:451
+msgid ""
+"In YAML format, you may provide the tag as a simple string as long as you"
+" don't need to specify additional attributes. The following definitions "
+"are equivalent."
+msgstr ""
+
+#: ../../../service_container/tags.rst:470
+msgid ""
+"Notice that you've added a generic ``alias`` key to the tag. To actually "
+"use this, update the compiler::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:496
+msgid ""
+"The double loop may be confusing. This is because a service can have more"
+" than one tag. You tag a service twice or more with the "
+"``app.mail_transport`` tag. The second ``foreach`` loop iterates over the"
+" ``app.mail_transport`` tags set for the current service and gives you "
+"the attributes."
+msgstr ""
+
+#: ../../../service_container/tags.rst:502
+msgid "Reference Tagged Services"
+msgstr ""
+
+#: ../../../service_container/tags.rst:504
+msgid ""
+"Symfony provides a shortcut to inject all services tagged with a specific"
+" tag, which is a common need in some applications, so you don't have to "
+"write a compiler pass just for that."
+msgstr ""
+
+#: ../../../service_container/tags.rst:508
+msgid ""
+"In the following example, all services tagged with ``app.handler`` are "
+"passed as first  constructor argument to the ``App\\HandlerCollection`` "
+"service:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:575
+msgid ""
+"After compilation the ``HandlerCollection`` service is able to iterate "
+"over your application handlers::"
+msgstr ""
+
+#: ../../../service_container/tags.rst:590
+msgid ""
+"The collected services can be prioritized using the ``priority`` "
+"attribute:"
+msgstr ""
+
+#: ../../../service_container/tags.rst:631
+msgid "Note that any other custom attributes will be ignored by this feature."
+msgstr ""
+

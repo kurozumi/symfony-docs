@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Choice.rst:2
+msgid "Choice"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:4
+msgid ""
+"This constraint is used to ensure that the given value is one of a given "
+"set of *valid* choices. It can also be used to validate that each item in"
+" an array of items is one of those valid choices."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:9
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:9
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:10
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:10
+msgid "`callback`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:11
+msgid "`choices`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:12
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:13
+msgid "`max`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:14
+msgid "`maxMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:15
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:16
+msgid "`min`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:17
+msgid "`minMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:18
+msgid "`multiple`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:19
+msgid "`multipleMessage`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:20
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:21
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:21
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Choice`"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:22
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:22
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\ChoiceValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:26
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:28
+msgid ""
+"The basic idea of this constraint is that you supply it with an array of "
+"valid values (this can be done in several ways) and it validates that the"
+" value of the given property exists in that array."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:32
+msgid ""
+"If your valid choice list is simple, you can pass them in directly via "
+"the `choices`_ option:"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:126
+msgid "Supplying the Choices with a Callback Function"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:128
+msgid ""
+"You can also use a callback function to specify your options. This is "
+"useful if you want to keep your choices in some central location so that,"
+" for example, you can access those choices for validation or for building"
+" a select form element::"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:143
+msgid ""
+"You can pass the name of this method to the `callback`_ option of the "
+"``Choice`` constraint."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:208
+msgid ""
+"If the callback is defined in a different class and is static, for "
+"example ``App\\Entity\\Genre``, you can pass the class name and the "
+"method as an array."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:276
+msgid "Available Options"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:279
+msgid "callback"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:281
+msgid "**type**: ``string|array|Closure``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:283
+msgid ""
+"This is a callback method that can be used instead of the `choices`_ "
+"option to return the choices array. See `Supplying the Choices with a "
+"Callback Function`_ for details on its usage."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:288
+msgid "choices"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:290
+msgid "**type**: ``array`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:292
+msgid ""
+"A required option (unless `callback`_ is specified) - this is the array "
+"of options that should be considered in the valid set. The input value "
+"will be matched against this array."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:299
+msgid "max"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:301
+#: ../../../reference/constraints/Choice.rst:346
+msgid "**type**: ``integer``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:303
+msgid ""
+"If the ``multiple`` option is true, then you can use the ``max`` option "
+"to force no more than XX number of values to be selected. For example, if"
+" ``max`` is 3, but the input array contains 4 valid items, the validation"
+" will fail."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:309
+msgid "maxMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:311
+msgid ""
+"**type**: ``string`` **default**: ``You must select at most {{ limit }} "
+"choices.``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:313
+msgid ""
+"This is the validation error message that's displayed when the user "
+"chooses too many options per the `max`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:316
+#: ../../../reference/constraints/Choice.rst:334
+#: ../../../reference/constraints/Choice.rst:361
+#: ../../../reference/constraints/Choice.rst:389
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:319
+#: ../../../reference/constraints/Choice.rst:337
+#: ../../../reference/constraints/Choice.rst:364
+#: ../../../reference/constraints/Choice.rst:392
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:319
+#: ../../../reference/constraints/Choice.rst:337
+#: ../../../reference/constraints/Choice.rst:364
+#: ../../../reference/constraints/Choice.rst:392
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:321
+#: ../../../reference/constraints/Choice.rst:339
+#: ../../../reference/constraints/Choice.rst:366
+msgid "``{{ choices }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:321
+#: ../../../reference/constraints/Choice.rst:339
+#: ../../../reference/constraints/Choice.rst:366
+msgid "A comma-separated list of available choices"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:322
+#: ../../../reference/constraints/Choice.rst:340
+#: ../../../reference/constraints/Choice.rst:367
+#: ../../../reference/constraints/Choice.rst:394
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:322
+#: ../../../reference/constraints/Choice.rst:340
+#: ../../../reference/constraints/Choice.rst:367
+#: ../../../reference/constraints/Choice.rst:394
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:326
+msgid "message"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:328
+msgid ""
+"**type**: ``string`` **default**: ``The value you selected is not a valid"
+" choice.``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:330
+msgid ""
+"This is the message that you will receive if the ``multiple`` option is "
+"set to ``false`` and the underlying value is not in the valid array of "
+"choices."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:344
+msgid "min"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:348
+msgid ""
+"If the ``multiple`` option is true, then you can use the ``min`` option "
+"to force at least XX number of values to be selected. For example, if "
+"``min`` is 3, but the input array only contains 2 valid items, the "
+"validation will fail."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:354
+msgid "minMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:356
+msgid ""
+"**type**: ``string`` **default**: ``You must select at least {{ limit }} "
+"choices.``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:358
+msgid ""
+"This is the validation error message that's displayed when the user "
+"chooses too few choices per the `min`_ option."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:371
+msgid "multiple"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:373
+msgid "**type**: ``boolean`` **default**: ``false``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:375
+msgid ""
+"If this option is true, the input value is expected to be an array "
+"instead of a single, scalar value. The constraint will check that each "
+"value of the input array can be found in the array of valid choices. If "
+"even one of the input values cannot be found, the validation will fail."
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:381
+msgid "multipleMessage"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:383
+msgid ""
+"**type**: ``string`` **default**: ``One or more of the given values is "
+"invalid.``"
+msgstr ""
+
+#: ../../../reference/constraints/Choice.rst:385
+msgid ""
+"This is the message that you will receive if the ``multiple`` option is "
+"set to ``true`` and one of the values on the underlying array being "
+"checked is not in the array of valid choices."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+

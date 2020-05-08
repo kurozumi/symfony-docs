@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../console/input.rst:2
+msgid "Console Input (Arguments & Options)"
+msgstr ""
+
+#: ../../../console/input.rst:4
+msgid ""
+"The most interesting part of the commands are the arguments and options "
+"that you can make available. These arguments and options allow you to "
+"pass dynamic information from the terminal to the command."
+msgstr ""
+
+#: ../../../console/input.rst:9
+msgid "Using Command Arguments"
+msgstr ""
+
+#: ../../../console/input.rst:11
+msgid ""
+"Arguments are the strings - separated by spaces - that come after the "
+"command name itself. They are ordered, and can be optional or required. "
+"For example, to add an optional ``last_name`` argument to the command and"
+" make the ``name`` argument required::"
+msgstr ""
+
+#: ../../../console/input.rst:34
+msgid "You now have access to a ``last_name`` argument in your command::"
+msgstr ""
+
+#: ../../../console/input.rst:58
+msgid "The command can now be used in either of the following ways:"
+msgstr ""
+
+#: ../../../console/input.rst:68
+msgid ""
+"It is also possible to let an argument take a list of values (imagine you"
+" want to greet all your friends). Only the last argument can be a list::"
+msgstr ""
+
+#: ../../../console/input.rst:80
+msgid "To use this, specify as many names as you want:"
+msgstr ""
+
+#: ../../../console/input.rst:86
+msgid "You can access the ``names`` argument as an array::"
+msgstr ""
+
+#: ../../../console/input.rst:93
+msgid "There are three argument variants you can use:"
+msgstr ""
+
+#: ../../../console/input.rst:97
+msgid "``InputArgument::REQUIRED``"
+msgstr ""
+
+#: ../../../console/input.rst:96
+msgid ""
+"The argument is mandatory. The command doesn't run if the argument isn't "
+"provided;"
+msgstr ""
+
+#: ../../../console/input.rst:101
+msgid "``InputArgument::OPTIONAL``"
+msgstr ""
+
+#: ../../../console/input.rst:100
+msgid ""
+"The argument is optional and therefore can be omitted. This is the "
+"default behavior of arguments;"
+msgstr ""
+
+#: ../../../console/input.rst:105
+msgid "``InputArgument::IS_ARRAY``"
+msgstr ""
+
+#: ../../../console/input.rst:104
+msgid ""
+"The argument can contain any number of values. For that reason, it must "
+"be used at the end of the argument list."
+msgstr ""
+
+#: ../../../console/input.rst:107
+msgid ""
+"You can combine ``IS_ARRAY`` with ``REQUIRED`` and ``OPTIONAL`` like "
+"this::"
+msgstr ""
+
+#: ../../../console/input.rst:119
+msgid "Using Command Options"
+msgstr ""
+
+#: ../../../console/input.rst:121
+msgid ""
+"Unlike arguments, options are not ordered (meaning you can specify them "
+"in any order) and are specified with two dashes (e.g. ``--yell``). "
+"Options are *always* optional, and can be setup to accept a value (e.g. "
+"``--dir=src``) or as a boolean flag without a value (e.g.  ``--yell``)."
+msgstr ""
+
+#: ../../../console/input.rst:126
+msgid ""
+"For example, add a new option to the command that can be used to specify "
+"how many times in a row the message should be printed::"
+msgstr ""
+
+#: ../../../console/input.rst:143
+msgid "Next, use this in the command to print the message multiple times::"
+msgstr ""
+
+#: ../../../console/input.rst:149
+msgid ""
+"Now, when you run the command, you can optionally specify a "
+"``--iterations`` flag:"
+msgstr ""
+
+#: ../../../console/input.rst:172
+msgid ""
+"You can also declare a one-letter shortcut that you can call with a "
+"single dash, like ``-i``::"
+msgstr ""
+
+#: ../../../console/input.rst:186
+msgid ""
+"Note that to comply with the `docopt standard`_, long options can specify"
+" their values after a white space or an ``=`` sign (e.g. ``--iterations "
+"5`` or ``--iterations=5``), but short options can only use white spaces "
+"or no separation at all (e.g. ``-i 5`` or ``-i5``)."
+msgstr ""
+
+#: ../../../console/input.rst:193
+msgid ""
+"While it is possible to separate an option from its value with a white "
+"space, using this form leads to an ambiguity should the option appear "
+"before the command name. For example, ``php bin/console --iterations 5 "
+"app:greet Fabien`` is ambiguous; Symfony would interpret ``5`` as the "
+"command name. To avoid this situation, always place options after the "
+"command name, or avoid using a space to separate the option name from its"
+" value."
+msgstr ""
+
+#: ../../../console/input.rst:200
+msgid "There are four option variants you can use:"
+msgstr ""
+
+#: ../../../console/input.rst:203
+msgid "``InputOption::VALUE_IS_ARRAY``"
+msgstr ""
+
+#: ../../../console/input.rst:203
+msgid "This option accepts multiple values (e.g. ``--dir=/foo --dir=/bar``);"
+msgstr ""
+
+#: ../../../console/input.rst:207
+msgid "``InputOption::VALUE_NONE``"
+msgstr ""
+
+#: ../../../console/input.rst:206
+msgid ""
+"Do not accept input for this option (e.g. ``--yell``). This is the "
+"default behavior of options;"
+msgstr ""
+
+#: ../../../console/input.rst:211
+msgid "``InputOption::VALUE_REQUIRED``"
+msgstr ""
+
+#: ../../../console/input.rst:210
+msgid ""
+"This value is required (e.g. ``--iterations=5`` or ``-i5``), the option "
+"itself is still optional;"
+msgstr ""
+
+#: ../../../console/input.rst:215
+msgid "``InputOption::VALUE_OPTIONAL``"
+msgstr ""
+
+#: ../../../console/input.rst:214
+msgid ""
+"This option may or may not have a value (e.g. ``--yell`` or "
+"``--yell=loud``)."
+msgstr ""
+
+#: ../../../console/input.rst:217
+msgid ""
+"You can combine ``VALUE_IS_ARRAY`` with ``VALUE_REQUIRED`` or "
+"``VALUE_OPTIONAL`` like this::"
+msgstr ""
+
+#: ../../../console/input.rst:232
+msgid "Options with optional arguments"
+msgstr ""
+
+#: ../../../console/input.rst:234
+msgid ""
+"There is nothing forbidding you to create a command with an option that "
+"optionally accepts a value, but it's a bit tricky. Consider this "
+"example::"
+msgstr ""
+
+#: ../../../console/input.rst:250
+msgid ""
+"This option can be used in 3 ways: ``greet --yell``, ``greet "
+"yell=louder``, and ``greet``. However, it's hard to distinguish between "
+"passing the option without a value (``greet --yell``) and not passing the"
+" option (``greet``)."
+msgstr ""
+
+#: ../../../console/input.rst:254
+msgid ""
+"To solve this issue, you have to set the option's default value to "
+"``false``::"
+msgstr ""
+
+#: ../../../console/input.rst:270
+msgid ""
+"Now it's possible to differentiate between not passing the option and not"
+" passing any value for it::"
+msgstr ""
+
+#: ../../../console/input.rst:294
+msgid "The above code can be simplified as follows because ``false !== null``::"
+msgstr ""
+

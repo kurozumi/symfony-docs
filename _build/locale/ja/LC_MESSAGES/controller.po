@@ -1,0 +1,510 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../controller.rst:5
+msgid "Controller"
+msgstr ""
+
+#: ../../../controller.rst:7
+msgid ""
+"A controller is a PHP function you create that reads information from the"
+" ``Request`` object and creates and returns a ``Response`` object. The "
+"response could be an HTML page, JSON, XML, a file download, a redirect, a"
+" 404 error or anything else. The controller executes whatever arbitrary "
+"logic *your application* needs to render the content of a page."
+msgstr ""
+
+#: ../../../controller.rst:15
+msgid ""
+"If you haven't already created your first working page, check out "
+":doc:`/page_creation` and then come back!"
+msgstr ""
+
+#: ../../../controller.rst:22
+msgid "A Simple Controller"
+msgstr ""
+
+#: ../../../controller.rst:24
+msgid ""
+"While a controller can be any PHP callable (function, method on an "
+"object, or a ``Closure``), a controller is usually a method inside a "
+"controller class::"
+msgstr ""
+
+#: ../../../controller.rst:49
+msgid ""
+"The controller is the ``number()`` method, which lives inside the "
+"controller class ``LuckyController``."
+msgstr ""
+
+#: ../../../controller.rst:52
+msgid "This controller is pretty straightforward:"
+msgstr ""
+
+#: ../../../controller.rst:54
+msgid ""
+"*line 2*: Symfony takes advantage of PHP's namespace functionality to "
+"namespace the entire controller class."
+msgstr ""
+
+#: ../../../controller.rst:57
+msgid ""
+"*line 4*: Symfony again takes advantage of PHP's namespace functionality:"
+" the ``use`` keyword imports the ``Response`` class, which the controller"
+" must return."
+msgstr ""
+
+#: ../../../controller.rst:61
+msgid ""
+"*line 7*: The class can technically be called anything, but it's suffixed"
+" with ``Controller`` by convention."
+msgstr ""
+
+#: ../../../controller.rst:64
+msgid ""
+"*line 12*: The action method is allowed to have a ``$max`` argument "
+"thanks to the ``{max}`` :doc:`wildcard in the route </routing>`."
+msgstr ""
+
+#: ../../../controller.rst:67
+msgid "*line 16*: The controller creates and returns a ``Response`` object."
+msgstr ""
+
+#: ../../../controller.rst:73
+msgid "Mapping a URL to a Controller"
+msgstr ""
+
+#: ../../../controller.rst:75
+msgid ""
+"In order to *view* the result of this controller, you need to map a URL "
+"to it via a route. This was done above with the "
+"``@Route(\"/lucky/number/{max}\")`` :ref:`route annotation <annotation-"
+"routes>`."
+msgstr ""
+
+#: ../../../controller.rst:79
+msgid ""
+"To see your page, go to this URL in your browser: "
+"http://localhost:8000/lucky/number/100"
+msgstr ""
+
+#: ../../../controller.rst:81
+msgid "For more information on routing, see :doc:`/routing`."
+msgstr ""
+
+#: ../../../controller.rst:90
+msgid "The Base Controller Class & Services"
+msgstr ""
+
+#: ../../../controller.rst:92
+msgid ""
+"To aid development, Symfony comes with an optional base controller class "
+"called "
+":class:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\AbstractController`."
+" It can be extended to gain access to helper methods."
+msgstr ""
+
+#: ../../../controller.rst:96
+msgid ""
+"Add the ``use`` statement atop your controller class and then modify "
+"``LuckyController`` to extend it:"
+msgstr ""
+
+#: ../../../controller.rst:112
+msgid ""
+"That's it! You now have access to methods like :ref:`$this->render() "
+"<controller-rendering-templates>` and many others that you'll learn about"
+" next."
+msgstr ""
+
+#: ../../../controller.rst:119
+msgid "Generating URLs"
+msgstr ""
+
+#: ../../../controller.rst:121
+msgid ""
+"The "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\AbstractController::generateUrl`"
+" method is just a helper method that generates the URL for a given "
+"route::"
+msgstr ""
+
+#: ../../../controller.rst:129
+msgid "Redirecting"
+msgstr ""
+
+#: ../../../controller.rst:131
+msgid ""
+"If you want to redirect the user to another page, use the "
+"``redirectToRoute()`` and ``redirect()`` methods::"
+msgstr ""
+
+#: ../../../controller.rst:160
+msgid ""
+"The ``redirect()`` method does not check its destination in any way. If "
+"you redirect to a URL provided by end-users, your application may be open"
+" to the `unvalidated redirects security vulnerability`_."
+msgstr ""
+
+#: ../../../controller.rst:170
+msgid "Rendering Templates"
+msgstr ""
+
+#: ../../../controller.rst:172
+msgid ""
+"If you're serving HTML, you'll want to render a template. The "
+"``render()`` method renders a template **and** puts that content into a "
+"``Response`` object for you::"
+msgstr ""
+
+#: ../../../controller.rst:179
+msgid ""
+"Templating and Twig are explained more in the :doc:`Creating and Using "
+"Templates article </templates>`."
+msgstr ""
+
+#: ../../../controller.rst:189
+msgid "Fetching Services"
+msgstr ""
+
+#: ../../../controller.rst:191
+msgid ""
+"Symfony comes *packed* with a lot of useful classes and functionalities, "
+"called :doc:`services </service_container>`. These are used for rendering"
+" templates, sending emails, querying the database and any other \"work\" "
+"you can think of."
+msgstr ""
+
+#: ../../../controller.rst:195
+msgid ""
+"If you need a service in a controller, type-hint an argument with its "
+"class (or interface) name. Symfony will automatically pass you the "
+"service you need::"
+msgstr ""
+
+#: ../../../controller.rst:210
+msgid "Awesome!"
+msgstr ""
+
+#: ../../../controller.rst:212
+msgid ""
+"What other services can you type-hint? To see them, use the "
+"``debug:autowiring`` console command:"
+msgstr ""
+
+#: ../../../controller.rst:219
+msgid ""
+"If you need control over the *exact* value of an argument, you can "
+":ref:`bind <services-binding>` the argument by its name:"
+msgstr ""
+
+#: ../../../controller.rst:277
+msgid ""
+"Like with all services, you can also use regular :ref:`constructor "
+"injection <services-constructor-injection>` in your controllers."
+msgstr ""
+
+#: ../../../controller.rst:280
+msgid ""
+"For more information about services, see the :doc:`/service_container` "
+"article."
+msgstr ""
+
+#: ../../../controller.rst:283
+msgid "Generating Controllers"
+msgstr ""
+
+#: ../../../controller.rst:285
+msgid ""
+"To save time, you can install `Symfony Maker`_ and tell Symfony to "
+"generate a new controller class:"
+msgstr ""
+
+#: ../../../controller.rst:295
+msgid ""
+"If you want to generate an entire CRUD from a Doctrine :doc:`entity "
+"</doctrine>`, use:"
+msgstr ""
+
+#: ../../../controller.rst:313
+msgid "The ``make:crud`` command was introduced in MakerBundle 1.2."
+msgstr ""
+
+#: ../../../controller.rst:320
+msgid "Managing Errors and 404 Pages"
+msgstr ""
+
+#: ../../../controller.rst:322
+msgid ""
+"When things are not found, you should return a 404 response. To do this, "
+"throw a special type of exception::"
+msgstr ""
+
+#: ../../../controller.rst:342
+msgid ""
+"The "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\AbstractController::createNotFoundException`"
+" method is just a shortcut to create a special "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException`"
+" object, which ultimately triggers a 404 HTTP response inside Symfony."
+msgstr ""
+
+#: ../../../controller.rst:347
+msgid ""
+"If you throw an exception that extends or is an instance of "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException`,"
+" Symfony will use the appropriate HTTP status code. Otherwise, the "
+"response will have a 500 HTTP status code::"
+msgstr ""
+
+#: ../../../controller.rst:355
+msgid ""
+"In every case, an error page is shown to the end user and a full debug "
+"error page is shown to the developer (i.e. when you're in \"Debug\" mode "
+"- see :ref:`page-creation-environments`)."
+msgstr ""
+
+#: ../../../controller.rst:359
+msgid ""
+"To customize the error page that's shown to the user, see the "
+":doc:`/controller/error_pages` article."
+msgstr ""
+
+#: ../../../controller.rst:365
+msgid "The Request object as a Controller Argument"
+msgstr ""
+
+#: ../../../controller.rst:367
+msgid ""
+"What if you need to read query parameters, grab a request header or get "
+"access to an uploaded file? That information is stored in Symfony's "
+"``Request`` object. To access it in your controller, add it as an "
+"argument and **type-hint it with the Request class**::"
+msgstr ""
+
+#: ../../../controller.rst:381
+msgid ""
+":ref:`Keep reading <request-object-info>` for more information about "
+"using the Request object."
+msgstr ""
+
+#: ../../../controller.rst:391
+msgid "Managing the Session"
+msgstr ""
+
+#: ../../../controller.rst:393
+msgid ""
+"Symfony provides a session service that you can use to store information "
+"about the user between requests. Session is enabled by default, but will "
+"only be started if you read or write from it."
+msgstr ""
+
+#: ../../../controller.rst:397
+msgid ""
+"Session storage and other configuration can be controlled under the "
+":ref:`framework.session configuration <config-framework-session>` in "
+"``config/packages/framework.yaml``."
+msgstr ""
+
+#: ../../../controller.rst:401
+msgid ""
+"To get the session, add an argument and type-hint it with "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\SessionInterface`::"
+msgstr ""
+
+#: ../../../controller.rst:418
+msgid ""
+"Stored attributes remain in the session for the remainder of that user's "
+"session."
+msgstr ""
+
+#: ../../../controller.rst:420
+msgid "For more info, see :doc:`/session`."
+msgstr ""
+
+#: ../../../controller.rst:428
+msgid "Flash Messages"
+msgstr ""
+
+#: ../../../controller.rst:430
+msgid ""
+"You can also store special messages, called \"flash\" messages, on the "
+"user's session. By design, flash messages are meant to be used exactly "
+"once: they vanish from the session automatically as soon as you retrieve "
+"them. This feature makes \"flash\" messages particularly great for "
+"storing user notifications."
+msgstr ""
+
+#: ../../../controller.rst:435
+msgid "For example, imagine you're processing a :doc:`form </forms>` submission::"
+msgstr ""
+
+#: ../../../controller.rst:458
+msgid ""
+"After processing the request, the controller sets a flash message in the "
+"session and then redirects. The message key (``notice`` in this example) "
+"can be anything: you'll use this key to retrieve the message."
+msgstr ""
+
+#: ../../../controller.rst:462
+msgid ""
+"In the template of the next page (or even better, in your base layout "
+"template), read any flash messages from the session using the "
+"``flashes()`` method provided by the :ref:`Twig global app variable "
+"<twig-app-variable>`:"
+msgstr ""
+
+#: ../../../controller.rst:495
+msgid ""
+"It's common to use ``notice``, ``warning`` and ``error`` as the keys of "
+"the different types of flash messages, but you can use any key that fits "
+"your needs."
+msgstr ""
+
+#: ../../../controller.rst:501
+msgid ""
+"You can use the "
+":method:`Symfony\\\\Component\\\\HttpFoundation\\\\Session\\\\Flash\\\\FlashBagInterface::peek`"
+" method instead to retrieve the message while keeping it in the bag."
+msgstr ""
+
+#: ../../../controller.rst:511
+msgid "The Request and Response Object"
+msgstr ""
+
+#: ../../../controller.rst:513
+msgid ""
+"As mentioned :ref:`earlier <controller-request-argument>`, Symfony will "
+"pass the ``Request`` object to any controller argument that is type-"
+"hinted with the ``Request`` class::"
+msgstr ""
+
+#: ../../../controller.rst:543
+msgid ""
+"The ``Request`` class has several public properties and methods that "
+"return any information you need about the request."
+msgstr ""
+
+#: ../../../controller.rst:546
+msgid ""
+"Like the ``Request``, the ``Response`` object has a public ``headers`` "
+"property. This object is of the type "
+":class:`Symfony\\\\Component\\\\HttpFoundation\\\\ResponseHeaderBag` and "
+"provides methods for getting and setting response headers. The header "
+"names are normalized. As a result, the name ``Content-Type`` is "
+"equivalent to the name ``content-type`` or ``content_type``."
+msgstr ""
+
+#: ../../../controller.rst:552
+msgid "In Symfony, a controller is required to return a ``Response`` object::"
+msgstr ""
+
+#: ../../../controller.rst:563
+msgid ""
+"To facilitate this, different response objects are included to address "
+"different response types.  Some of these are mentioned below. To learn "
+"more about the ``Request`` and ``Response`` (and different ``Response`` "
+"classes), see the :ref:`HttpFoundation component documentation "
+"<component-http-foundation-request>`."
+msgstr ""
+
+#: ../../../controller.rst:569
+msgid "Accessing Configuration Values"
+msgstr ""
+
+#: ../../../controller.rst:571
+msgid ""
+"To get the value of any :ref:`configuration parameter <configuration-"
+"parameters>` from a controller, use the ``getParameter()`` helper "
+"method::"
+msgstr ""
+
+#: ../../../controller.rst:582
+msgid "Returning JSON Response"
+msgstr ""
+
+#: ../../../controller.rst:584
+msgid ""
+"To return JSON from a controller, use the ``json()`` helper method. This "
+"returns a ``JsonResponse`` object that encodes the data automatically::"
+msgstr ""
+
+#: ../../../controller.rst:597
+msgid ""
+"If the :doc:`serializer service </serializer>` is enabled in your "
+"application, it will be used to serialize the data to JSON. Otherwise, "
+"the :phpfunction:`json_encode` function is used."
+msgstr ""
+
+#: ../../../controller.rst:602
+msgid "Streaming File Responses"
+msgstr ""
+
+#: ../../../controller.rst:604
+msgid ""
+"You can use the "
+":method:`Symfony\\\\Bundle\\\\FrameworkBundle\\\\Controller\\\\AbstractController::file`"
+" helper to serve a file from inside a controller::"
+msgstr ""
+
+#: ../../../controller.rst:613
+msgid "The ``file()`` helper provides some arguments to configure its behavior::"
+msgstr ""
+
+#: ../../../controller.rst:633
+msgid "Final Thoughts"
+msgstr ""
+
+#: ../../../controller.rst:635
+msgid ""
+"In Symfony, a controller is usually a class method which is used to "
+"accept requests, and return a ``Response`` object. When mapped with a "
+"URL, a controller becomes accessible and its response can be viewed."
+msgstr ""
+
+#: ../../../controller.rst:639
+msgid ""
+"To facilitate the development of controllers, Symfony provides an "
+"``AbstractController``.  It can be used to extend the controller class "
+"allowing access to some frequently used utilities such as ``render()`` "
+"and ``redirectToRoute()``. The ``AbstractController`` also provides the "
+"``createNotFoundException()`` utility which is used to return a page not "
+"found response."
+msgstr ""
+
+#: ../../../controller.rst:646
+msgid ""
+"In other articles, you'll learn how to use specific services from inside "
+"your controller that will help you persist and fetch objects from a "
+"database, process form submissions, handle caching and more."
+msgstr ""
+
+#: ../../../controller.rst:651
+msgid "Keep Going!"
+msgstr ""
+
+#: ../../../controller.rst:653
+msgid "Next, learn all about :doc:`rendering templates with Twig </templates>`."
+msgstr ""
+
+#: ../../../controller.rst:656
+msgid "Learn more about Controllers"
+msgstr ""
+

@@ -1,0 +1,1059 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../routing.rst:5
+msgid "Routing"
+msgstr ""
+
+#: ../../../routing.rst:7
+msgid ""
+"When your application receives a request, it executes a :doc:`controller "
+"action </controller>` to generate the response. The routing configuration"
+" defines which action to run for each incoming URL. It also provides "
+"other useful features, like generating SEO-friendly URLs (e.g. ``/read"
+"/intro-to-symfony`` instead of ``index.php?article_id=57``)."
+msgstr ""
+
+#: ../../../routing.rst:16
+msgid "Creating Routes"
+msgstr ""
+
+#: ../../../routing.rst:18
+msgid ""
+"Routes can be configured in YAML, XML, PHP or using annotations. All "
+"formats provide the same features and performance, so choose your "
+"favorite. :ref:`Symfony recommends annotations <best-practice-controller-"
+"annotations>` because it's convenient to put the route and controller in "
+"the same place."
+msgstr ""
+
+#: ../../../routing.rst:24
+msgid "Creating Routes as Annotations"
+msgstr ""
+
+#: ../../../routing.rst:26
+msgid "Run this command once in your application to add support for annotations:"
+msgstr ""
+
+#: ../../../routing.rst:32
+msgid ""
+"In addition to installing the needed dependencies, this command creates "
+"the following configuration file:"
+msgstr ""
+
+#: ../../../routing.rst:46
+msgid ""
+"This configuration tells Symfony to look for routes defined as "
+"annotations in any PHP class stored in the ``src/Controller/`` directory."
+msgstr ""
+
+#: ../../../routing.rst:49
+msgid ""
+"Suppose you want to define a route for the ``/blog`` URL in your "
+"application. To do so, create a :doc:`controller class </controller>` "
+"like the following::"
+msgstr ""
+
+#: ../../../routing.rst:69
+msgid ""
+"This configuration defines a route called ``blog_list`` that matches when"
+" the user requests the ``/blog`` URL. When the match occurs, the "
+"application runs the ``list()`` method of the ``BlogController`` class."
+msgstr ""
+
+#: ../../../routing.rst:75
+msgid ""
+"The query string of a URL is not considered when matching routes. In this"
+" example, URLs like ``/blog?foo=bar`` and ``/blog?foo=bar&bar=foo`` will "
+"also match the ``blog_list`` route."
+msgstr ""
+
+#: ../../../routing.rst:79
+msgid ""
+"The route name (``blog_list``) is not important for now, but it will be "
+"essential later when :ref:`generating URLs <routing-generating-urls>`. "
+"You only have to keep in mind that each route name must be unique in the "
+"application."
+msgstr ""
+
+#: ../../../routing.rst:84
+msgid "Creating Routes in YAML, XML or PHP Files"
+msgstr ""
+
+#: ../../../routing.rst:86
+msgid ""
+"Instead of defining routes in the controller classes, you can define them"
+" in a separate YAML, XML or PHP file. The main advantage is that they "
+"don't require any extra dependency. The main drawback is that you have to"
+" work with multiple files when checking the routing of some controller "
+"action."
+msgstr ""
+
+#: ../../../routing.rst:91
+msgid ""
+"The following example shows how to define in YAML/XML/PHP a route called "
+"``blog_list`` that associates the ``/blog`` URL with the ``list()`` "
+"action of the ``BlogController``:"
+msgstr ""
+
+#: ../../../routing.rst:147
+msgid "Matching HTTP Methods"
+msgstr ""
+
+#: ../../../routing.rst:149
+msgid ""
+"By default, routes match any HTTP verb (``GET``, ``POST``, ``PUT``, etc.)"
+" Use the ``methods`` option to restrict the verbs each route should "
+"respond to:"
+msgstr ""
+
+#: ../../../routing.rst:230
+msgid ""
+"HTML forms only support ``GET`` and ``POST`` methods. If you're calling a"
+" route with a different method from an HTML form, add a hidden field "
+"called ``_method`` with the method to use (e.g. ``<input type=\"hidden\" "
+"name=\"_method\" value=\"PUT\"/>``). If you create your forms with "
+":doc:`Symfony Forms </forms>` this is done automatically for you."
+msgstr ""
+
+#: ../../../routing.rst:239
+msgid "Matching Expressions"
+msgstr ""
+
+#: ../../../routing.rst:241
+msgid ""
+"Use the ``condition`` option if you need some route to match based on "
+"some arbitrary matching logic:"
+msgstr ""
+
+#: ../../../routing.rst:313
+msgid ""
+"The value of the ``condition`` option is any valid "
+":doc:`ExpressionLanguage expression "
+"</components/expression_language/syntax>` and can use any of these "
+"variables created by Symfony:"
+msgstr ""
+
+#: ../../../routing.rst:319
+msgid "``context``"
+msgstr ""
+
+#: ../../../routing.rst:318
+msgid ""
+"An instance of "
+":class:`Symfony\\\\Component\\\\Routing\\\\RequestContext`, which holds "
+"the most fundamental information about the route being matched."
+msgstr ""
+
+#: ../../../routing.rst:323
+msgid "``request``"
+msgstr ""
+
+#: ../../../routing.rst:322
+msgid ""
+"The :ref:`Symfony Request <component-http-foundation-request>` object "
+"that represents the current request."
+msgstr ""
+
+#: ../../../routing.rst:325
+msgid ""
+"Behind the scenes, expressions are compiled down to raw PHP. Because of "
+"this, using the ``condition`` key causes no extra overhead beyond the "
+"time it takes for the underlying PHP to execute."
+msgstr ""
+
+#: ../../../routing.rst:331
+msgid ""
+"Conditions are *not* taken into account when generating URLs (which is "
+"explained later in this article)."
+msgstr ""
+
+#: ../../../routing.rst:335
+msgid "Debugging Routes"
+msgstr ""
+
+#: ../../../routing.rst:337
+msgid ""
+"As your application grows, you'll eventually have a *lot* of routes. "
+"Symfony includes some commands to help you debug routing issues. First, "
+"the ``debug:router`` command lists all your application routes in the "
+"same order in which Symfony evaluates them:"
+msgstr ""
+
+#: ../../../routing.rst:357
+msgid ""
+"Pass the name (or part of the name) of some route to this argument to "
+"print the route details:"
+msgstr ""
+
+#: ../../../routing.rst:374
+msgid ""
+"The other command is called ``router:match`` and it shows which route "
+"will match the given URL. It's useful to find out why some URL is not "
+"executing the controller action that you expect:"
+msgstr ""
+
+#: ../../../routing.rst:385
+msgid "Route Parameters"
+msgstr ""
+
+#: ../../../routing.rst:387
+msgid ""
+"The previous examples defined routes where the URL never changes (e.g. "
+"``/blog``). However, it's common to define routes where some parts are "
+"variable. For example, the URL to display some blog post will probably "
+"include the title or slug (e.g. ``/blog/my-first-post`` or ``/blog/all-"
+"about-symfony``)."
+msgstr ""
+
+#: ../../../routing.rst:392
+msgid ""
+"In Symfony routes, variable parts are wrapped in ``{ ... }`` and they "
+"must have a unique name. For example, the route to display the blog post "
+"contents is defined as ``/blog/{slug}``:"
+msgstr ""
+
+#: ../../../routing.rst:454
+msgid ""
+"The name of the variable part (``{slug}`` in this example) is used to "
+"create a PHP variable where that route content is stored and passed to "
+"the controller. If a user visits the ``/blog/my-first-post`` URL, Symfony"
+" executes the ``show()`` method in the ``BlogController`` class and "
+"passes a ``$slug = 'my-first-post'`` argument to the ``show()`` method."
+msgstr ""
+
+#: ../../../routing.rst:460
+msgid ""
+"Routes can define any number of parameters, but each of them can only be "
+"used once on each route (e.g. ``/blog/posts-"
+"about-{category}/page/{pageNumber}``)."
+msgstr ""
+
+#: ../../../routing.rst:466
+msgid "Parameters Validation"
+msgstr ""
+
+#: ../../../routing.rst:468
+msgid ""
+"Imagine that your application has a ``blog_show`` route (URL: "
+"``/blog/{slug}``) and a ``blog_list`` route (URL: ``/blog/{page}``). "
+"Given that route parameters accept any value, there's no way to "
+"differentiate both routes."
+msgstr ""
+
+#: ../../../routing.rst:472
+msgid ""
+"If the user requests ``/blog/my-first-post``, both routes will match and "
+"Symfony will use the route which was defined first. To fix this, add some"
+" validation to the ``{page}`` parameter using the ``requirements`` "
+"option:"
+msgstr ""
+
+#: ../../../routing.rst:553
+msgid ""
+"The ``requirements`` option defines the `PHP regular expressions`_ that "
+"route parameters must match for the entire route to match. In this "
+"example, ``\\d+`` is a regular expression that matches a *digit* of any "
+"length. Now:"
+msgstr ""
+
+#: ../../../routing.rst:558
+msgid "URL"
+msgstr ""
+
+#: ../../../routing.rst:558
+msgid "Route"
+msgstr ""
+
+#: ../../../routing.rst:558
+msgid "Parameters"
+msgstr ""
+
+#: ../../../routing.rst:560
+msgid "``/blog/2``"
+msgstr ""
+
+#: ../../../routing.rst:560
+msgid "``blog_list``"
+msgstr ""
+
+#: ../../../routing.rst:560
+msgid "``$page`` = ``2``"
+msgstr ""
+
+#: ../../../routing.rst:561
+msgid "``/blog/my-first-post``"
+msgstr ""
+
+#: ../../../routing.rst:561
+msgid "``blog_show``"
+msgstr ""
+
+#: ../../../routing.rst:561
+msgid "``$slug`` = ``my-first-post``"
+msgstr ""
+
+#: ../../../routing.rst:566
+msgid ""
+"Route requirements (and route paths too) can include :ref:`container "
+"parameters <configuration-parameters>`, which is useful to define complex"
+" regular expressions once and reuse them in multiple routes."
+msgstr ""
+
+#: ../../../routing.rst:572
+msgid ""
+"Parameters also support `PCRE Unicode properties`_, which are escape "
+"sequences that match generic character types. For example, ``\\p{Lu}`` "
+"matches any uppercase character in any language, ``\\p{Greek}`` matches "
+"any Greek character, etc."
+msgstr ""
+
+#: ../../../routing.rst:579
+msgid ""
+"When using regular expressions in route parameters, you can set the "
+"``utf8`` route option to ``true`` to make any ``.`` character match any "
+"UTF-8 characters instead of just a single byte."
+msgstr ""
+
+#: ../../../routing.rst:583
+msgid ""
+"If you prefer, requirements can be inlined in each parameter using the "
+"syntax ``{parameter_name<requirements>}``. This feature makes "
+"configuration more concise, but it can decrease route readability when "
+"requirements are complex:"
+msgstr ""
+
+#: ../../../routing.rst:644
+msgid "Optional Parameters"
+msgstr ""
+
+#: ../../../routing.rst:646
+msgid ""
+"In the previous example, the URL of ``blog_list`` is ``/blog/{page}``. If"
+" users visit ``/blog/1``, it will match. But if they visit ``/blog``, it "
+"will **not** match. As soon as you add a parameter to a route, it must "
+"have a value."
+msgstr ""
+
+#: ../../../routing.rst:650
+msgid ""
+"You can make ``blog_list`` once again match when the user visits "
+"``/blog`` by adding a default value for the ``{page}`` parameter. When "
+"using annotations, default values are defined in the arguments of the "
+"controller action. In the other configuration formats they are defined "
+"with the ``defaults`` option:"
+msgstr ""
+
+#: ../../../routing.rst:722
+msgid ""
+"Now, when the user visits ``/blog``, the ``blog_list`` route will match "
+"and ``$page`` will default to a value of ``1``."
+msgstr ""
+
+#: ../../../routing.rst:727
+msgid ""
+"You can have more than one optional parameter (e.g. "
+"``/blog/{slug}/{page}``), but everything after an optional parameter must"
+" be optional. For example, ``/{page}/blog`` is a valid path, but ``page``"
+" will always be required (i.e. ``/blog`` will not match this route)."
+msgstr ""
+
+#: ../../../routing.rst:732
+msgid ""
+"If you want to always include some default value in the generated URL "
+"(for example to force the generation of ``/blog/1`` instead of ``/blog`` "
+"in the previous example) add the ``!`` character before the parameter "
+"name: ``/blog/{!page}``"
+msgstr ""
+
+#: ../../../routing.rst:736
+msgid ""
+"As it happens with requirements, default values can also be inlined in "
+"each parameter using the syntax ``{parameter_name?default_value}``. This "
+"feature is compatible with inlined requirements, so you can inline both "
+"in a single parameter:"
+msgstr ""
+
+#: ../../../routing.rst:798
+msgid ""
+"To give a ``null`` default value to any parameter, add nothing after the "
+"``?`` character (e.g. ``/blog/{page?}``)."
+msgstr ""
+
+#: ../../../routing.rst:802
+msgid "Priority Parameter"
+msgstr ""
+
+#: ../../../routing.rst:806
+msgid "The ``priority`` parameter was introduced in Symfony 5.1"
+msgstr ""
+
+#: ../../../routing.rst:808
+msgid ""
+"When defining a greedy pattern that matches many routes, this may be at "
+"the beginning of your routing collection and prevents any route defined "
+"after to be matched. A ``priority`` optional parameter is available in "
+"order to let you choose the order of your routes, and it is only "
+"available when using annotations."
+msgstr ""
+
+#: ../../../routing.rst:845
+msgid ""
+"The priority parameter expects an integer value. Routes with higher "
+"priority are sorted before routes with lower priority. The default value "
+"when it is not defined is ``0``."
+msgstr ""
+
+#: ../../../routing.rst:850
+msgid "Parameter Conversion"
+msgstr ""
+
+#: ../../../routing.rst:852
+msgid ""
+"A common routing need is to convert the value stored in some parameter "
+"(e.g. an integer acting as the user ID) into another value (e.g. the "
+"object that represents the user). This feature is called \"param "
+"converter\" and is only available when using annotations to define "
+"routes."
+msgstr ""
+
+#: ../../../routing.rst:857
+msgid ""
+"In case you didn't run this command before, run it now to add support for"
+" annotations and \"param converters\":"
+msgstr ""
+
+#: ../../../routing.rst:864
+msgid ""
+"Now, keep the previous route configuration, but change the arguments of "
+"the controller action. Instead of ``string $slug``, add ``BlogPost "
+"$post``::"
+msgstr ""
+
+#: ../../../routing.rst:889
+msgid ""
+"If your controller arguments include type-hints for objects (``BlogPost``"
+" in this case), the \"param converter\" makes a database request to find "
+"the object using the request parameters (``slug`` in this case). If no "
+"object is found, Symfony generates a 404 response automatically."
+msgstr ""
+
+#: ../../../routing.rst:894
+msgid ""
+"Read the `full param converter documentation`_ to learn about the "
+"converters provided by Symfony and how to configure them."
+msgstr ""
+
+#: ../../../routing.rst:898
+msgid "Special Parameters"
+msgstr ""
+
+#: ../../../routing.rst:900
+msgid ""
+"In addition to your own parameters, routes can include any of the "
+"following special parameters created by Symfony:"
+msgstr ""
+
+#: ../../../routing.rst:905
+msgid "``_controller``"
+msgstr ""
+
+#: ../../../routing.rst:904
+msgid ""
+"This parameter is used to determine which controller and action is "
+"executed when the route is matched."
+msgstr ""
+
+#: ../../../routing.rst:912
+msgid "``_format``"
+msgstr ""
+
+#: ../../../routing.rst:910
+msgid ""
+"The matched value is used to set the \"request format\" of the "
+"``Request`` object. This is used for such things as setting the "
+"``Content-Type`` of the response (e.g. a ``json`` format translates into "
+"a ``Content-Type`` of ``application/json``)."
+msgstr ""
+
+#: ../../../routing.rst:916
+msgid "``_fragment``"
+msgstr ""
+
+#: ../../../routing.rst:915
+msgid ""
+"Used to set the fragment identifier, which is the optional last part of a"
+" URL that starts with a ``#`` character and is used to identify a portion"
+" of a document."
+msgstr ""
+
+#: ../../../routing.rst:921
+msgid "``_locale``"
+msgstr ""
+
+#: ../../../routing.rst:921
+msgid "Used to set the :ref:`locale <translation-locale-url>` on the request."
+msgstr ""
+
+#: ../../../routing.rst:923
+msgid ""
+"You can include these attributes (except ``_fragment``) both in "
+"individual routes and in route imports. Symfony defines some special "
+"attributes with the same name (except for the leading underscore) so you "
+"can define them easier:"
+msgstr ""
+
+#: ../../../routing.rst:1006
+msgid "Extra Parameters"
+msgstr ""
+
+#: ../../../routing.rst:1008
+msgid ""
+"In the ``defaults`` option of a route you can optionally define "
+"parameters not included in the route configuration. This is useful to "
+"pass extra arguments to the controllers of the routes:"
+msgstr ""
+
+#: ../../../routing.rst:1076
+msgid "Slash Characters in Route Parameters"
+msgstr ""
+
+#: ../../../routing.rst:1078
+msgid ""
+"Route parameters can contain any values except the ``/`` slash character,"
+" because that's the character used to separate the different parts of the"
+" URLs. For example, if the ``token`` value in the ``/share/{token}`` "
+"route contains a ``/`` character, this route won't match."
+msgstr ""
+
+#: ../../../routing.rst:1083
+msgid ""
+"A possible solution is to change the parameter requirements to be more "
+"permissive:"
+msgstr ""
+
+#: ../../../routing.rst:1145
+msgid ""
+"If the route defines several parameter and you apply this permissive "
+"regular expression to all of them, you might get unexpected results. For "
+"example, if the route definition is ``/share/{path}/{token}`` and both "
+"``path`` and ``token`` accept ``/``. The ``token`` only get the last path"
+" and the rest of the match is matched by the first argument (``path``)."
+msgstr ""
+
+#: ../../../routing.rst:1153
+msgid ""
+"If the route includes the special ``{_format}`` parameter, you shouldn't "
+"use the ``.+`` requirement for the parameters that allow slashes. For "
+"example, if the pattern is ``/share/{token}.{_format}`` and ``{token}`` "
+"allows any character, the ``/share/foo/bar.json`` URL will consider "
+"``foo/bar.json`` as the token and the format will be empty. This can be "
+"solved by replacing the ``.+`` requirement by ``[^.]+`` to allow any "
+"character except dots."
+msgstr ""
+
+#: ../../../routing.rst:1163
+msgid "Route Groups and Prefixes"
+msgstr ""
+
+#: ../../../routing.rst:1165
+msgid ""
+"It's common for a group of routes to share some options (e.g. all routes "
+"related to the blog start with ``/blog``) That's why Symfony includes a "
+"feature to share route configuration."
+msgstr ""
+
+#: ../../../routing.rst:1169
+msgid ""
+"When defining routes as annotations, put the common configuration in the "
+"``@Route`` annotation of the controller class. In other routing formats, "
+"define the common configuration using options when importing the routes."
+msgstr ""
+
+#: ../../../routing.rst:1276
+msgid ""
+"In this example, the route of the ``index()`` action will be called "
+"``blog_index`` and its URL will be ``/blog/``. The route of the "
+"``show()`` action will be called ``blog_show`` and its URL will be "
+"``/blog/{_locale}/posts/{slug}``. Both routes will also validate that the"
+" ``_locale`` parameter matches the regular expression defined in the "
+"class annotation."
+msgstr ""
+
+#: ../../../routing.rst:1284
+msgid ""
+"Symfony can :doc:`import routes from different sources "
+"</routing/custom_route_loader>` and you can even create your own route "
+"loader."
+msgstr ""
+
+#: ../../../routing.rst:1288
+msgid "Getting the Route Name and Parameters"
+msgstr ""
+
+#: ../../../routing.rst:1290
+msgid ""
+"The ``Request`` object created by Symfony stores all the route "
+"configuration (such as the name and parameters) in the \"request "
+"attributes\". You can get this information in a controller via the "
+"``Request`` object::"
+msgstr ""
+
+#: ../../../routing.rst:1318
+msgid ""
+"You can get this information in services too injecting the "
+"``request_stack`` service to :doc:`get the Request object in a service "
+"</service_container/request>`. In templates, use the :ref:`Twig global "
+"app variable <twig-app-variable>` to get the request and its attributes:"
+msgstr ""
+
+#: ../../../routing.rst:1332
+msgid "Special Routes"
+msgstr ""
+
+#: ../../../routing.rst:1334
+msgid ""
+"Symfony defines some special controllers to render templates and redirect"
+" to other routes from the route configuration so you don't have to create"
+" a controller action."
+msgstr ""
+
+#: ../../../routing.rst:1339
+msgid "Rendering a Template Directly from a Route"
+msgstr ""
+
+#: ../../../routing.rst:1341
+msgid ""
+"Read the section about :ref:`rendering a template from a route "
+"<templates-render-from-route>` in the main article about Symfony "
+"templates."
+msgstr ""
+
+#: ../../../routing.rst:1345
+msgid "Redirecting to URLs and Routes Directly from a Route"
+msgstr ""
+
+#: ../../../routing.rst:1347
+msgid "Use the ``RedirectController`` to redirect to other routes and URLs:"
+msgstr ""
+
+#: ../../../routing.rst:1452
+msgid ""
+"Symfony also provides some utilities to :ref:`redirect inside controllers"
+" <controller-redirect>`"
+msgstr ""
+
+#: ../../../routing.rst:1458
+msgid "Redirecting URLs with Trailing Slashes"
+msgstr ""
+
+#: ../../../routing.rst:1460
+msgid ""
+"Historically, URLs have followed the UNIX convention of adding trailing "
+"slashes for directories (e.g. ``https://example.com/foo/``) and removing "
+"them to refer to files (``https://example.com/foo``). Although serving "
+"different contents for both URLs is OK, nowadays it's common to treat "
+"both URLs as the same URL and redirect between them."
+msgstr ""
+
+#: ../../../routing.rst:1466
+msgid ""
+"Symfony follows this logic to redirect between URLs with and without "
+"trailing slashes (but only for ``GET`` and ``HEAD`` requests):"
+msgstr ""
+
+#: ../../../routing.rst:1470
+msgid "Route URL"
+msgstr ""
+
+#: ../../../routing.rst:1470
+msgid "If the requested URL is ``/foo``"
+msgstr ""
+
+#: ../../../routing.rst:1470
+msgid "If the requested URL is ``/foo/``"
+msgstr ""
+
+#: ../../../routing.rst:1472
+msgid "``/foo``"
+msgstr ""
+
+#: ../../../routing.rst:1472 ../../../routing.rst:1473
+msgid "It matches (``200`` status response)"
+msgstr ""
+
+#: ../../../routing.rst:1472
+msgid "It makes a ``301`` redirect to ``/foo``"
+msgstr ""
+
+#: ../../../routing.rst:1473
+msgid "``/foo/``"
+msgstr ""
+
+#: ../../../routing.rst:1473
+msgid "It makes a ``301`` redirect to ``/foo/``"
+msgstr ""
+
+#: ../../../routing.rst:1477
+msgid "Sub-Domain Routing"
+msgstr ""
+
+#: ../../../routing.rst:1479
+msgid ""
+"Routes can configure a ``host`` option to require that the HTTP host of "
+"the incoming requests matches some specific value. In the following "
+"example, both routes match the same path (``/``) but one of them only "
+"responds to a specific host name:"
+msgstr ""
+
+#: ../../../routing.rst:1559
+msgid ""
+"The value of the ``host`` option can include parameters (which is useful "
+"in multi-tenant applications) and these parameters can be validated too "
+"with ``requirements``:"
+msgstr ""
+
+#: ../../../routing.rst:1656
+msgid ""
+"In the above example, the ``subdomain`` parameter defines a default value"
+" because otherwise you need to include a domain value each time you "
+"generate a URL using these routes."
+msgstr ""
+
+#: ../../../routing.rst:1662
+msgid ""
+"You can also set the ``host`` option when :ref:`importing routes "
+"<routing-route-groups>` to make all of them require that host name."
+msgstr ""
+
+#: ../../../routing.rst:1667
+msgid ""
+"When using sub-domain routing, you must set the ``Host`` HTTP headers in "
+":doc:`functional tests </testing>` or routes won't match::"
+msgstr ""
+
+#: ../../../routing.rst:1683
+msgid "Localized Routes (i18n)"
+msgstr ""
+
+#: ../../../routing.rst:1685
+msgid ""
+"If your application is translated into multiple languages, each route can"
+" define a different URL per each :doc:`translation locale "
+"</translation/locale>`. This avoids the need for duplicating routes, "
+"which also reduces the potential bugs:"
+msgstr ""
+
+#: ../../../routing.rst:1752
+msgid ""
+"When a localized route is matched, Symfony uses the same locale "
+"automatically during the entire request."
+msgstr ""
+
+#: ../../../routing.rst:1757
+msgid ""
+"When the application uses full \"language + territory\" locales (e.g. "
+"``fr_FR``, ``fr_BE``), if the URLs are the same in all related locales, "
+"routes can use only the language part (e.g. ``fr``) to avoid repeating "
+"the same URLs."
+msgstr ""
+
+#: ../../../routing.rst:1761
+msgid ""
+"A common requirement for internationalized applications is to prefix all "
+"routes with a locale. This can be done by defining a different prefix for"
+" each locale (and setting an empty prefix for your default locale if you "
+"prefer it):"
+msgstr ""
+
+#: ../../../routing.rst:1811
+msgid "Stateless Routes"
+msgstr ""
+
+#: ../../../routing.rst:1815
+msgid "The ``stateless`` option was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../routing.rst:1817
+msgid ""
+"Sometimes, when an HTTP response should be cached, it is important to "
+"ensure that can happen. However, whenever session is started during a "
+"request, Symfony turns the response into a private non-cacheable "
+"response."
+msgstr ""
+
+#: ../../../routing.rst:1821
+msgid "For details, see :doc:`/http_cache`."
+msgstr ""
+
+#: ../../../routing.rst:1823
+msgid ""
+"Routes can configure a ``stateless`` boolean option in order to declare "
+"that the session shouldn't be used when matching a request:"
+msgstr ""
+
+#: ../../../routing.rst:1879
+msgid ""
+"Now, if the session is used, the application will report it based on your"
+" ``kernel.debug`` parameter: * ``enabled``: will throw an "
+":class:`Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\UnexpectedSessionUsageException`"
+" exception * ``disabled``: will log a warning"
+msgstr ""
+
+#: ../../../routing.rst:1884
+msgid ""
+"It well help you understanding and hopefully fixing unexpected behavior "
+"in your application."
+msgstr ""
+
+#: ../../../routing.rst:1889
+msgid "Generating URLs"
+msgstr ""
+
+#: ../../../routing.rst:1891
+msgid ""
+"Routing systems are bidirectional: 1) they associate URLs with "
+"controllers (as explained in the previous sections); 2) they generate "
+"URLs for a given route. Generating URLs from routes allows you to not "
+"write the ``<a href=\"...\">`` values manually in your HTML templates. "
+"Also, if the URL of some route changes, you only have to update the route"
+" configuration and all links will be updated."
+msgstr ""
+
+#: ../../../routing.rst:1897
+msgid ""
+"To generate a URL, you need to specify the name of the route (e.g. "
+"``blog_show``) and the values of the parameters defined by the route "
+"(e.g. ``slug = my-blog-post``)."
+msgstr ""
+
+#: ../../../routing.rst:1901
+msgid ""
+"For that reason each route has an internal name that must be unique in "
+"the application. If you don't set the route name explicitly with the "
+"``name`` option, Symfony generates an automatic name based on the "
+"controller and action."
+msgstr ""
+
+#: ../../../routing.rst:1906
+msgid "Generating URLs in Controllers"
+msgstr ""
+
+#: ../../../routing.rst:1908
+msgid ""
+"If your controller extends from the :ref:`AbstractController <the-base-"
+"controller-class-services>`, use the ``generateUrl()`` helper::"
+msgstr ""
+
+#: ../../../routing.rst:1947
+msgid ""
+"If you pass to the ``generateUrl()`` method some parameters that are not "
+"part of the route definition, they are included in the generated URL as a"
+" query string:::"
+msgstr ""
+
+#: ../../../routing.rst:1955
+msgid ""
+"If your controller does not extend from ``AbstractController``, you'll "
+"need to :ref:`fetch services in your controller <controller-accessing-"
+"services>` and follow the instructions of the next section."
+msgstr ""
+
+#: ../../../routing.rst:1962
+msgid "Generating URLs in Services"
+msgstr ""
+
+#: ../../../routing.rst:1964
+msgid ""
+"Inject the ``router`` Symfony service into your own services and use its "
+"``generate()`` method. When using :doc:`service autowiring "
+"</service_container/autowiring>` you only need to add an argument in the "
+"service constructor and type-hint it with the "
+":class:`Symfony\\\\Component\\\\Routing\\\\Generator\\\\UrlGeneratorInterface`"
+" class::"
+msgstr ""
+
+#: ../../../routing.rst:2006
+msgid "Generating URLs in Templates"
+msgstr ""
+
+#: ../../../routing.rst:2008
+msgid ""
+"Read the section about :ref:`creating links between pages <templates-"
+"link-to-pages>` in the main article about Symfony templates."
+msgstr ""
+
+#: ../../../routing.rst:2012
+msgid "Generating URLs in JavaScript"
+msgstr ""
+
+#: ../../../routing.rst:2014
+msgid ""
+"If your JavaScript code is included in a Twig template, you can use the "
+"``path()`` and ``url()`` Twig functions to generate the URLs and store "
+"them in JavaScript variables. The ``escape()`` function is needed to "
+"escape any non-JavaScript-safe values:"
+msgstr ""
+
+#: ../../../routing.rst:2025
+msgid ""
+"If you need to generate URLs dynamically or if you are using pure "
+"JavaScript code, this solution doesn't work. In those cases, consider "
+"using the `FOSJsRoutingBundle`_."
+msgstr ""
+
+#: ../../../routing.rst:2030
+msgid "Generating URLs in Commands"
+msgstr ""
+
+#: ../../../routing.rst:2032
+msgid ""
+"Generating URLs in commands works the same as :ref:`generating URLs in "
+"services <routing-generating-urls-in-services>`. The only difference is "
+"that commands are not executed in the HTTP context, so they don't have "
+"access to HTTP requests. In practice, this means that if you generate "
+"absolute URLs, you'll get ``http://localhost/`` as the host name instead "
+"of your real host name."
+msgstr ""
+
+#: ../../../routing.rst:2039
+msgid ""
+"The solution is to configure the \"request context\" used by commands "
+"when they generate URLs. This context can be configured globally for all "
+"commands:"
+msgstr ""
+
+#: ../../../routing.rst:2076
+msgid "This information can be configured per command too::"
+msgstr ""
+
+#: ../../../routing.rst:2127
+msgid "Checking if a Route Exists"
+msgstr ""
+
+#: ../../../routing.rst:2129
+msgid ""
+"In highly dynamic applications, it may be necessary to check whether a "
+"route exists before using it to generate a URL. In those cases, don't use"
+" the "
+":method:`Symfony\\\\Component\\\\Routing\\\\Router::getRouteCollection` "
+"method because that regenerates the routing cache and slows down the "
+"application."
+msgstr ""
+
+#: ../../../routing.rst:2134
+msgid ""
+"Instead, try to generate the URL and catch the "
+":class:`Symfony\\\\Component\\\\Routing\\\\Exception\\\\RouteNotFoundException`"
+" thrown when the route doesn't exist::"
+msgstr ""
+
+#: ../../../routing.rst:2151
+msgid "Forcing HTTPS on Generated URLs"
+msgstr ""
+
+#: ../../../routing.rst:2153
+msgid ""
+"By default, generated URLs use the same HTTP scheme as the current "
+"request. In console commands, where there is no HTTP request, URLs use "
+"``http`` by default. You can change this per command (via the router's "
+"``getContext()`` method) or globally with these configuration parameters:"
+msgstr ""
+
+#: ../../../routing.rst:2189
+msgid ""
+"Outside of console commands, use the ``schemes`` option to define the "
+"scheme of each route explicitly:"
+msgstr ""
+
+#: ../../../routing.rst:2247
+msgid ""
+"The URL generated for the ``login`` route will always use HTTPS. This "
+"means that when using the ``path()`` Twig function to generate URLs, you "
+"may get an absolute URL instead of a relative URL if the HTTP scheme of "
+"the original request is different from the scheme used by the route:"
+msgstr ""
+
+#: ../../../routing.rst:2261
+msgid ""
+"The scheme requirement is also enforced for incoming requests. If you try"
+" to access the ``/login`` URL with HTTP, you will automatically be "
+"redirected to the same URL, but with the HTTPS scheme."
+msgstr ""
+
+#: ../../../routing.rst:2265
+msgid ""
+"If you want to force a group of routes to use HTTPS, you can define the "
+"default scheme when importing them. The following example forces HTTPS on"
+" all routes defined as annotations:"
+msgstr ""
+
+#: ../../../routing.rst:2307
+msgid ""
+"The Security component provides :doc:`another way to enforce HTTP or "
+"HTTPS </security/force_https>` via the ``requires_channel`` setting."
+msgstr ""
+
+#: ../../../routing.rst:2312
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../../routing.rst:2314
+msgid "Here are some common errors you might see while working with routing:"
+msgstr ""
+
+#: ../../../routing.rst:2316
+msgid ""
+"Controller \"App\\\\Controller\\\\BlogController::show()\" requires that "
+"you provide a value for the \"$slug\" argument."
+msgstr ""
+
+#: ../../../routing.rst:2319
+msgid ""
+"This happens when your controller method has an argument (e.g. "
+"``$slug``)::"
+msgstr ""
+
+#: ../../../routing.rst:2326
+msgid ""
+"But your route path does *not* have a ``{slug}`` parameter (e.g. it is "
+"``/blog/show``). Add a ``{slug}`` to your route path: "
+"``/blog/show/{slug}`` or give the argument a default value (i.e. ``$slug "
+"= null``)."
+msgstr ""
+
+#: ../../../routing.rst:2330
+msgid ""
+"Some mandatory parameters are missing (\"slug\") to generate a URL for "
+"route \"blog_show\"."
+msgstr ""
+
+#: ../../../routing.rst:2333
+msgid ""
+"This means that you're trying to generate a URL to the ``blog_show`` "
+"route but you are *not* passing a ``slug`` value (which is required, "
+"because it has a ``{slug}`` parameter in the route path). To fix this, "
+"pass a ``slug`` value when generating the route::"
+msgstr ""
+
+#: ../../../routing.rst:2344
+msgid "Learn more about Routing"
+msgstr ""
+

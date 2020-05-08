@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/string.rst:6
+msgid "The String Component"
+msgstr ""
+
+#: ../../../components/string.rst:8
+msgid ""
+"The String component provides a single object-oriented API to work with "
+"three \"unit systems\" of strings: bytes, code points and grapheme "
+"clusters."
+msgstr ""
+
+#: ../../../components/string.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/string.rst:21
+msgid "What is a String?"
+msgstr ""
+
+#: ../../../components/string.rst:23
+msgid ""
+"You can skip this section if you already know what a *\"code point\"* or "
+"a *\"grapheme cluster\"* are in the context of handling strings. "
+"Otherwise, read this section to learn about the terminology used by this "
+"component."
+msgstr ""
+
+#: ../../../components/string.rst:27
+msgid ""
+"Languages like English require a very limited set of characters and "
+"symbols to display any content. Each string is a series of characters "
+"(letters or symbols) and they can be encoded even with the most limited "
+"standards (e.g. `ASCII`_)."
+msgstr ""
+
+#: ../../../components/string.rst:31
+msgid ""
+"However, other languages require thousands of symbols to display their "
+"contents. They need complex encoding standards such as `Unicode`_ and "
+"concepts like \"character\" no longer make sense. Instead, you have to "
+"deal with these terms:"
+msgstr ""
+
+#: ../../../components/string.rst:35
+msgid ""
+"`Code points`_: they are the atomic unit of information. A string is a "
+"series of code points. Each code point is a number whose meaning is given"
+" by the `Unicode`_ standard. For example, the English letter ``A`` is the"
+" ``U+0041`` code point and the Japanese *kana* ``の`` is the ``U+306E`` "
+"code point."
+msgstr ""
+
+#: ../../../components/string.rst:39
+msgid ""
+"`Grapheme clusters`_: they are a sequence of one or more code points "
+"which are displayed as a single graphical unit. For example, the Spanish "
+"letter ``ñ`` is a grapheme cluster that contains two code points: "
+"``U+006E`` = ``n`` (*\"latin small letter N\"*) + ``U+0303`` = ``◌̃`` "
+"(*\"combining tilde\"*)."
+msgstr ""
+
+#: ../../../components/string.rst:43
+msgid ""
+"Bytes: they are the actual information stored for the string contents. "
+"Each code point can require one or more bytes of storage depending on the"
+" standard being used (UTF-8, UTF-16, etc.)."
+msgstr ""
+
+#: ../../../components/string.rst:47
+msgid ""
+"The following image displays the bytes, code points and grapheme clusters"
+" for the same word written in English (``hello``) and Hindi (``नमस्ते``):"
+msgstr ""
+
+#: ../../../components/string.rst:54
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/string.rst:56
+msgid ""
+"Create a new object of type "
+":class:`Symfony\\\\Component\\\\String\\\\ByteString`, "
+":class:`Symfony\\\\Component\\\\String\\\\CodePointString` or "
+":class:`Symfony\\\\Component\\\\String\\\\UnicodeString`, pass the string"
+" contents as their arguments and then use the object-oriented API to work"
+" with those strings::"
+msgstr ""
+
+#: ../../../components/string.rst:75
+msgid "Method Reference"
+msgstr ""
+
+#: ../../../components/string.rst:78
+msgid "Methods to Create String Objects"
+msgstr ""
+
+#: ../../../components/string.rst:80
+msgid ""
+"First, you can create objects prepared to store strings as bytes, code "
+"points and grapheme clusters with the following classes::"
+msgstr ""
+
+#: ../../../components/string.rst:92
+msgid ""
+"Use the ``wrap()`` static method to instantiate more than one string "
+"object::"
+msgstr ""
+
+#: ../../../components/string.rst:102
+msgid ""
+"If you work with lots of String objects, consider using the shortcut "
+"functions to make your code more concise::"
+msgstr ""
+
+#: ../../../components/string.rst:130
+msgid "The ``s()`` function was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/string.rst:132
+msgid "There are also some specialized constructors::"
+msgstr ""
+
+#: ../../../components/string.rst:142
+msgid "Methods to Transform String Objects"
+msgstr ""
+
+#: ../../../components/string.rst:144
+msgid ""
+"Each string object can be transformed into the other two types of "
+"objects::"
+msgstr ""
+
+#: ../../../components/string.rst:155
+msgid ""
+"If the conversion is not possible for any reason, you'll get an "
+":class:`Symfony\\\\Component\\\\String\\\\Exception\\\\InvalidArgumentException`."
+msgstr ""
+
+#: ../../../components/string.rst:158
+msgid "There is also a method to get the bytes stored at some position::"
+msgstr ""
+
+#: ../../../components/string.rst:169
+msgid "Methods Related to Length and White Spaces"
+msgstr ""
+
+#: ../../../components/string.rst:203
+msgid "Methods to Change Case"
+msgstr ""
+
+#: ../../../components/string.rst:231
+msgid ""
+"The methods of all string classes are case-sensitive by default. You can "
+"perform case-insensitive operations with the ``ignoreCase()`` method::"
+msgstr ""
+
+#: ../../../components/string.rst:238
+msgid "Methods to Append and Prepend"
+msgstr ""
+
+#: ../../../components/string.rst:276
+msgid "Methods to Pad and Trim"
+msgstr ""
+
+#: ../../../components/string.rst:298
+msgid "Methods to Search and Replace"
+msgstr ""
+
+#: ../../../components/string.rst:347
+msgid "The ``containsAny()`` method was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/string.rst:350
+msgid "Methods to Join, Split, Truncate and Reverse"
+msgstr ""
+
+#: ../../../components/string.rst:381
+msgid "The third argument of ``truncate()`` was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/string.rst:407
+msgid "The ``reverse()`` method was introduced in Symfony 5.1."
+msgstr ""
+
+#: ../../../components/string.rst:410
+msgid "Methods Added by ByteString"
+msgstr ""
+
+#: ../../../components/string.rst:412
+msgid "These methods are only available for ``ByteString`` objects::"
+msgstr ""
+
+#: ../../../components/string.rst:419
+msgid "Methods Added by CodePointString and UnicodeString"
+msgstr ""
+
+#: ../../../components/string.rst:421
+msgid ""
+"These methods are only available for ``CodePointString`` and "
+"``UnicodeString`` objects::"
+msgstr ""
+
+#: ../../../components/string.rst:436
+msgid ""
+"`Unicode equivalence`_ is the specification by the Unicode standard that "
+"different sequences of code points represent the same character. For "
+"example, the Swedish letter ``å`` can be a single code point (``U+00E5`` "
+"= *\"latin small letter A with ring above\"*) or a sequence of two code "
+"points (``U+0061`` = *\"latin small letter A\"* + ``U+030A`` = "
+"*\"combining ring above\"*). The ``normalize()`` method allows to pick "
+"the normalization mode::"
+msgstr ""
+
+#: ../../../components/string.rst:451
+msgid "Slugger"
+msgstr ""
+
+#: ../../../components/string.rst:453
+msgid ""
+"In some contexts, such as URLs and file/directory names, it's not safe to"
+" use any Unicode character. A *slugger* transforms a given string into "
+"another string that only includes safe ASCII characters::"
+msgstr ""
+
+#: ../../../components/string.rst:463
+msgid ""
+"The separator between words is a dash (``-``) by default, but you can "
+"define another separator as the second argument::"
+msgstr ""
+
+#: ../../../components/string.rst:469
+msgid ""
+"The slugger transliterates the original string into the Latin script "
+"before applying the other transformations. The locale of the original "
+"string is detected automatically, but you can define it explicitly::"
+msgstr ""
+
+#: ../../../components/string.rst:479
+msgid ""
+"In a Symfony application, you don't need to create the slugger yourself. "
+"Thanks to :doc:`service autowiring </service_container/autowiring>`, you "
+"can inject a slugger by type-hinting a service constructor argument with "
+"the "
+":class:`Symfony\\\\Component\\\\String\\\\Slugger\\\\SluggerInterface`. "
+"The locale of the injected slugger is the same as the request locale::"
+msgstr ""
+

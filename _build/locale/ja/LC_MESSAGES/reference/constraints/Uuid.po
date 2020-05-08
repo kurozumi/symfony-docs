@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Uuid.rst:2
+msgid "UUID"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:4
+msgid ""
+"Validates that a value is a valid `Universally unique identifier (UUID)`_"
+" per `RFC 4122`_. By default, this will validate the format according to "
+"the RFC's guidelines, but this can be relaxed to accept non-standard "
+"UUIDs that other systems (like PostgreSQL) accept. UUID versions can also"
+" be restricted using a whitelist."
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:10
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:10
+msgid ":ref:`property or method <validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:11
+#: ../../../reference/constraints/Uuid.rst:83
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:11
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:12
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:13
+msgid "`normalizer`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:14
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:15
+msgid "`strict`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:16
+msgid "`versions`_"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:17
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Uuid`"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:18
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\UuidValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:22
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/_empty-values-are-valid.rst.inc:3
+msgid ""
+"As with most of the other constraints, ``null`` and empty strings are "
+"considered valid values. This is to allow them to be optional values. If "
+"the value is mandatory, a common solution is to combine this constraint "
+"with :doc:`NotBlank </reference/constraints/NotBlank>`."
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:88
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:90
+msgid "**type**: ``string`` **default**: ``This is not a valid UUID.``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:92
+msgid "This message is shown if the string is not a valid UUID."
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:94
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:97
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:97
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:99
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:99
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:2
+msgid "normalizer"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:4
+msgid "**type**: a `PHP callable`_ **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:6
+msgid ""
+"This option allows to define the PHP callable applied to the given value "
+"before checking if it is valid."
+msgstr ""
+
+#: ../../../reference/constraints/_normalizer-option.rst.inc:9
+msgid ""
+"For example, you may want to pass the ``'trim'`` string to apply the "
+":phpfunction:`trim` PHP function in order to ignore leading and trailing "
+"whitespace during validation."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:107
+msgid "``strict``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:109
+msgid "**type**: ``boolean`` **default**: ``true``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:111
+msgid ""
+"If this option is set to ``true`` the constraint will check if the UUID "
+"is formatted per the RFC's input format rules: "
+"``216fff40-98d9-11e3-a5e2-0800200c9a66``. Setting this to ``false`` will "
+"allow alternate input formats like:"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:115
+msgid "``216f-ff40-98d9-11e3-a5e2-0800-200c-9a66``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:116
+msgid "``{216fff40-98d9-11e3-a5e2-0800200c9a66}``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:117
+msgid "``216fff4098d911e3a5e20800200c9a66``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:120
+msgid "``versions``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:122
+msgid "**type**: ``int[]`` **default**: ``[1,2,3,4,5]``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:124
+msgid ""
+"This option can be used to only allow specific `UUID versions`_.  Valid "
+"versions are 1 - 5. The following PHP constants can also be used:"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:127
+msgid "``Uuid::V1_MAC``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:128
+msgid "``Uuid::V2_DCE``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:129
+msgid "``Uuid::V3_MD5``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:130
+msgid "``Uuid::V4_RANDOM``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:131
+msgid "``Uuid::V5_SHA1``"
+msgstr ""
+
+#: ../../../reference/constraints/Uuid.rst:133
+msgid "All five versions are allowed by default."
+msgstr ""
+

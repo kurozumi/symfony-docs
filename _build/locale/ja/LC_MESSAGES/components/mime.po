@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/mime.rst:7
+msgid "The Mime Component"
+msgstr ""
+
+#: ../../../components/mime.rst:9
+msgid ""
+"The Mime component allows manipulating the MIME messages used to send "
+"emails and provides utilities related to MIME types."
+msgstr ""
+
+#: ../../../components/mime.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/mime.rst:22
+msgid "Introduction"
+msgstr ""
+
+#: ../../../components/mime.rst:24
+msgid ""
+"`MIME`_ (Multipurpose Internet Mail Extensions) is an Internet standard "
+"that extends the original basic format of emails to support features "
+"like:"
+msgstr ""
+
+#: ../../../components/mime.rst:27
+msgid "Headers and text contents using non-ASCII characters;"
+msgstr ""
+
+#: ../../../components/mime.rst:28
+msgid "Message bodies with multiple parts (e.g. HTML and plain text contents);"
+msgstr ""
+
+#: ../../../components/mime.rst:29
+msgid "Non-text attachments: audio, video, images, PDF, etc."
+msgstr ""
+
+#: ../../../components/mime.rst:31
+msgid ""
+"The entire MIME standard is complex and huge, but Symfony abstracts all "
+"that complexity to provide two ways of creating MIME messages:"
+msgstr ""
+
+#: ../../../components/mime.rst:34
+msgid ""
+"A high-level API based on the "
+":class:`Symfony\\\\Component\\\\Mime\\\\Email` class to quickly create "
+"email messages with all the common features;"
+msgstr ""
+
+#: ../../../components/mime.rst:36
+msgid ""
+"A low-level API based on the "
+":class:`Symfony\\\\Component\\\\Mime\\\\Message` class to have an "
+"absolute control over every single part of the email message."
+msgstr ""
+
+#: ../../../components/mime.rst:40
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/mime.rst:42
+msgid ""
+"Use the :class:`Symfony\\\\Component\\\\Mime\\\\Email` class and their "
+"*chainable* methods to compose the entire email message::"
+msgstr ""
+
+#: ../../../components/mime.rst:59
+msgid ""
+"This only purpose of this component is to create the email messages. Use "
+"the :doc:`Mailer component </components/mailer>` to actually send them. "
+"In Symfony applications, it's easier to use the :doc:`Mailer integration "
+"</mailer>`."
+msgstr ""
+
+#: ../../../components/mime.rst:63
+msgid ""
+"Most of the details about how to create Email objects, including Twig "
+"integration, can be found in the :doc:`Mailer documentation </mailer>`."
+msgstr ""
+
+#: ../../../components/mime.rst:67
+msgid "Twig Integration"
+msgstr ""
+
+#: ../../../components/mime.rst:69
+msgid ""
+"The Mime component comes with excellent integration with Twig, allowing "
+"you to create messages from Twig templates, embed images, inline CSS and "
+"more. Details on how to use those features can be found in the Mailer "
+"documentation: :ref:`Twig: HTML & CSS <mailer-twig>`."
+msgstr ""
+
+#: ../../../components/mime.rst:74
+msgid ""
+"But if you're using the Mime component without the Symfony framework, "
+"you'll need to handle a few setup details."
+msgstr ""
+
+#: ../../../components/mime.rst:78
+msgid "Twig Setup"
+msgstr ""
+
+#: ../../../components/mime.rst:80
+msgid ""
+"To integrate with Twig, use the "
+":class:`Symfony\\\\Bridge\\\\Twig\\\\Mime\\\\BodyRenderer` class to "
+"render the template and update the email message contents with the "
+"results::"
+msgstr ""
+
+#: ../../../components/mime.rst:99
+msgid "Inlining CSS Styles (and other Extensions)"
+msgstr ""
+
+#: ../../../components/mime.rst:101
+msgid ""
+"To use the :ref:`inline_css <mailer-inline-css>` filter, first install "
+"the Twig extension:"
+msgstr ""
+
+#: ../../../components/mime.rst:108
+msgid "Now, enable the extension::"
+msgstr ""
+
+#: ../../../components/mime.rst:117
+msgid ""
+"The same process should be used for enabling other extensions, like the "
+":ref:`MarkdownExtension <mailer-markdown>` and :ref:`InkyExtension "
+"<mailer-inky>`."
+msgstr ""
+
+#: ../../../components/mime.rst:121
+msgid "Creating Raw Email Messages"
+msgstr ""
+
+#: ../../../components/mime.rst:123
+msgid ""
+"This is useful for advanced applications that need absolute control over "
+"every email part. It's not recommended for applications with regular "
+"email requirements because it adds complexity for no real gain."
+msgstr ""
+
+#: ../../../components/mime.rst:127
+msgid ""
+"Before continuing, it's important to have a look at the low level "
+"structure of an email message. Consider a message which includes some "
+"content as both text and HTML, a single PNG image embedded in those "
+"contents and a PDF file attached to it. The MIME standard allows "
+"structuring this message in different ways, but the following tree is the"
+" one that works on most email clients:"
+msgstr ""
+
+#: ../../../components/mime.rst:143
+msgid "This is the purpose of each MIME message part:"
+msgstr ""
+
+#: ../../../components/mime.rst:145
+msgid ""
+"``multipart/alternative``: used when two or more parts are alternatives "
+"of the same (or very similar) content. The preferred format must be added"
+" last."
+msgstr ""
+
+#: ../../../components/mime.rst:147
+msgid ""
+"``multipart/mixed``: used to send different content types in the same "
+"message, such as when attaching files."
+msgstr ""
+
+#: ../../../components/mime.rst:149
+msgid ""
+"``multipart/related``: used to indicate that each message part is a "
+"component of an aggregate whole. The most common usage is to display "
+"images embedded in the message contents."
+msgstr ""
+
+#: ../../../components/mime.rst:153
+msgid ""
+"When using the low-level :class:`Symfony\\\\Component\\\\Mime\\\\Message`"
+" class to create the email message, you must keep all the above in mind "
+"to define the different parts of the email by hand::"
+msgstr ""
+
+#: ../../../components/mime.rst:174
+msgid ""
+"Embedding images and attaching files is possible by creating the "
+"appropriate email multiparts::"
+msgstr ""
+
+#: ../../../components/mime.rst:200
+msgid "Serializing Email Messages"
+msgstr ""
+
+#: ../../../components/mime.rst:202
+msgid ""
+"Email messages created with either the ``Email`` or ``Message`` classes "
+"can be serialized because they are simple data objects::"
+msgstr ""
+
+#: ../../../components/mime.rst:212
+msgid ""
+"A common use case is to store serialized email messages, include them in "
+"a message sent with the :doc:`Messenger component "
+"</components/messenger>` and recreate them later when sending them. Use "
+"the :class:`Symfony\\\\Component\\\\Mime\\\\RawMessage` class to recreate"
+" email messages from their serialized contents::"
+msgstr ""
+
+#: ../../../components/mime.rst:227
+msgid "MIME Types Utilities"
+msgstr ""
+
+#: ../../../components/mime.rst:229
+msgid ""
+"Although MIME was designed mainly for creating emails, the content types "
+"(also known as `MIME types`_ and \"media types\") defined by MIME "
+"standards are also of importance in communication protocols outside of "
+"email, such as HTTP. That's why this component also provides utilities to"
+" work with MIME types."
+msgstr ""
+
+#: ../../../components/mime.rst:234
+msgid ""
+"The :class:`Symfony\\\\Component\\\\Mime\\\\MimeTypes` class transforms "
+"between MIME types and file name extensions::"
+msgstr ""
+
+#: ../../../components/mime.rst:250
+msgid ""
+"These methods return arrays with one or more elements. The element "
+"position indicates its priority, so the first returned extension is the "
+"preferred one."
+msgstr ""
+
+#: ../../../components/mime.rst:256
+msgid "Guessing the MIME Type"
+msgstr ""
+
+#: ../../../components/mime.rst:258
+msgid "Another useful utility allows to guess the MIME type of any given file::"
+msgstr ""
+
+#: ../../../components/mime.rst:267
+msgid ""
+"Guessing the MIME type is a time-consuming process that requires "
+"inspecting part of the file contents. Symfony applies multiple guessing "
+"mechanisms, one of them based on the PHP `fileinfo extension`_. It's "
+"recommended to install that extension to improve the guessing "
+"performance."
+msgstr ""
+
+#: ../../../components/mime.rst:273
+msgid "Adding a MIME Type Guesser"
+msgstr ""
+
+#: ../../../components/mime.rst:275
+msgid ""
+"You can register your own MIME type guesser by creating a class that "
+"implements "
+":class:`Symfony\\\\Component\\\\Mime\\\\MimeTypeGuesserInterface`::"
+msgstr ""
+

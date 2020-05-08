@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/console/changing_default_command.rst:5
+msgid "Changing the Default Command"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:7
+msgid ""
+"The Console component will always run the ``ListCommand`` when no command"
+" name is passed. In order to change the default command you need to pass "
+"the command name to the ``setDefaultCommand()`` method::"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:32
+msgid "Executing the application and changing the default command::"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:44
+msgid "Test the new default console command by running the following:"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:50
+msgid "This will print the following to the command line:"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:58
+msgid ""
+"This feature has a limitation: you cannot pass any argument or option to "
+"the default command because they are ignored."
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:62
+msgid "Learn More!"
+msgstr ""
+
+#: ../../../components/console/changing_default_command.rst:64
+msgid ":doc:`/components/console/single_command_tool`"
+msgstr ""
+

@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../contributing/documentation/index.rst:2
+msgid "Contributing Documentation"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:4
+msgid ""
+"These short articles explain everything you need to contribute to the "
+"Symfony documentation:"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:10
+msgid ":doc:`The Contribution Process </contributing/documentation/overview>`"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:8
+msgid ""
+"Explains the steps to follow to contribute fixes and new contents. It's "
+"the same contribution process followed by most open source projects, so "
+"you may already know everything that is needed."
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:14
+msgid ":doc:`Documentation Formats </contributing/documentation/format>`"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:13
+msgid ""
+"Explains the technical details of the reStructuredText format that is "
+"used to write the docs. Skip it if you are already familiar with this "
+"format."
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:18
+msgid ":doc:`Documentation Standards </contributing/documentation/standards>`"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:17
+msgid ""
+"Explains how to write docs and code examples to match the style and tone "
+"of the rest of the existing documentation."
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:22
+msgid ":doc:`License </contributing/documentation/license>`"
+msgstr ""
+
+#: ../../../contributing/documentation/index.rst:21
+msgid ""
+"Explains the details of the Creative Commons BY-SA 3.0 license used for "
+"the Symfony Documentation."
+msgstr ""
+

@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/browser_kit.rst:6
+msgid "The BrowserKit Component"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:8
+msgid ""
+"The BrowserKit component simulates the behavior of a web browser, "
+"allowing you to make requests, click on links and submit forms "
+"programmatically."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:13
+msgid ""
+"In Symfony versions prior to 4.3, the BrowserKit component could only "
+"make internal requests to your application. Starting from Symfony 4.3, "
+"this component can also :ref:`make HTTP requests to any public site "
+"<component-browserkit-external-requests>` when using it in combination "
+"with the :doc:`HttpClient component </components/http_client>`."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:19
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:28
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:32
+msgid ""
+"This article explains how to use the BrowserKit features as an "
+"independent component in any PHP application. Read the :ref:`Symfony "
+"Functional Tests <functional-tests>` article to learn about how to use it"
+" in Symfony applications."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:37
+msgid "Creating a Client"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:39
+msgid ""
+"The component only provides an abstract client and does not provide any "
+"backend ready to use for the HTTP layer."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:42
+msgid ""
+"To create your own client, you must extend the abstract ``Client`` class "
+"and implement the "
+":method:`Symfony\\\\Component\\\\BrowserKit\\\\Client::doRequest` method."
+" This method accepts a request and should return a response::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:61
+msgid ""
+"For a simple implementation of a browser based on the HTTP layer, have a "
+"look at the :class:`Symfony\\\\Component\\\\BrowserKit\\\\HttpBrowser` "
+"provided by :ref:`this component <component-browserkit-external-"
+"requests>`. For an implementation based on ``HttpKernelInterface``, have "
+"a look at the :class:`Symfony\\\\Component\\\\HttpKernel\\\\Client` "
+"provided by the :doc:`HttpKernel component </components/http_kernel>`."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:68
+msgid "Making Requests"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:70
+msgid ""
+"Use the :method:`Symfony\\\\Component\\\\BrowserKit\\\\Client::request` "
+"method to make HTTP requests. The first two arguments are the HTTP method"
+" and the requested URL::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:79
+msgid ""
+"The value returned by the ``request()`` method is an instance of the "
+":class:`Symfony\\\\Component\\\\DomCrawler\\\\Crawler` class, provided by"
+" the :doc:`DomCrawler component </components/dom_crawler>`, which allows "
+"accessing and traversing HTML elements programmatically."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:84
+msgid ""
+"The "
+":method:`Symfony\\\\Component\\\\BrowserKit\\\\Client::xmlHttpRequest` "
+"method, which defines the same arguments as the ``request()`` method, is "
+"a shortcut to make AJAX requests::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:95
+msgid "Clicking Links"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:97
+msgid ""
+"The ``Client`` object is capable of simulating link clicks. Pass the text"
+" content of the link and the client will perform the needed HTTP GET "
+"request to simulate the link click::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:108
+msgid ""
+"If you need the :class:`Symfony\\\\Component\\\\DomCrawler\\\\Link` "
+"object that provides access to the link properties (e.g. "
+"``$link->getMethod()``, ``$link->getUri()``), use this other method::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:118
+msgid "Submitting Forms"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:120
+msgid ""
+"The ``Client`` object is also capable of submitting forms. First, select "
+"the form using any of its buttons and then override any of its properties"
+" (method, field values, etc.) before submitting it::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:151
+msgid ""
+"If you need the :class:`Symfony\\\\Component\\\\DomCrawler\\\\Form` "
+"object that provides access to the form properties (e.g. "
+"``$form->getUri()``, ``$form->getValues()``, ``$form->getFields()``), use"
+" this other method::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:166
+msgid "Cookies"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:169
+msgid "Retrieving Cookies"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:171
+msgid ""
+"The ``Client`` implementation exposes cookies (if any) through a "
+":class:`Symfony\\\\Component\\\\BrowserKit\\\\CookieJar`, which allows "
+"you to store and retrieve any cookie while making requests with the "
+"client::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:201
+msgid "These methods only return cookies that have not expired."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:204
+msgid "Looping Through Cookies"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:236
+msgid "Setting Cookies"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:238
+msgid ""
+"You can also create cookies and add them to a cookie jar that can be "
+"injected into the client constructor::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:253
+msgid "History"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:255
+msgid ""
+"The client stores all your requests allowing you to go back and forward "
+"in your history::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:273
+msgid ""
+"You can delete the client's history with the ``restart()`` method. This "
+"will also delete all the cookies::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:287
+msgid "Making External HTTP Requests"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:289
+msgid ""
+"So far, all the examples in this article have assumed that you are making"
+" internal requests to your own application. However, you can run the "
+"exact same examples when making HTTP requests to external web sites and "
+"applications."
+msgstr ""
+
+#: ../../../components/browser_kit.rst:293
+msgid ""
+"First, install and configure the :doc:`HttpClient component "
+"</components/http_client>`. Then, use the "
+":class:`Symfony\\\\Component\\\\BrowserKit\\\\HttpBrowser` to create the "
+"client that will make the external HTTP requests::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:302
+msgid ""
+"You can now use any of the methods shown in this article to extract "
+"information, click links, submit forms, etc. This means that you no "
+"longer need to use a dedicated web crawler or scraper such as `Goutte`_::"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:316
+msgid "Learn more"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:318
+msgid ":doc:`/testing`"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:319
+msgid ":doc:`/components/css_selector`"
+msgstr ""
+
+#: ../../../components/browser_kit.rst:320
+msgid ":doc:`/components/dom_crawler`"
+msgstr ""
+

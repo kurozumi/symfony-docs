@@ -1,0 +1,260 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../reference/constraints/Expression.rst:2
+msgid "Expression"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:4
+msgid ""
+"This constraint allows you to use an :ref:`expression <component-"
+"expression-language-examples>` for more complex, dynamic validation. See "
+"`Basic Usage`_ for an example. See :doc:`/reference/constraints/Callback`"
+" for a different constraint that gives you similar flexibility."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:10
+msgid "Applies to"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:10
+msgid ""
+":ref:`class <validation-class-target>` or :ref:`property/method "
+"<validation-property-target>`"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:12
+#: ../../../reference/constraints/Expression.rst:224
+msgid "Options"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:12
+msgid ":ref:`expression <reference-constraint-expression-option>`"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:13
+msgid "`groups`_"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:14
+msgid "`message`_"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:15
+msgid "`payload`_"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:16
+msgid "`values`_"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:17
+msgid "Class"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:17
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\Expression`"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:18
+msgid "Validator"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:18
+msgid ":class:`Symfony\\\\Component\\\\Validator\\\\Constraints\\\\ExpressionValidator`"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:22
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:24
+msgid ""
+"Imagine you have a class ``BlogPost`` with ``category`` and "
+"``isTechnicalPost`` properties::"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:53
+msgid "To validate the object, you have some special requirements:"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:55
+msgid ""
+"If ``isTechnicalPost`` is true, then ``category`` must be either ``php`` "
+"or ``symfony``;"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:57
+msgid "If ``isTechnicalPost`` is false, then ``category`` can be anything."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:59
+msgid "One way to accomplish this is with the Expression constraint:"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:130
+msgid ""
+"The :ref:`expression <reference-constraint-expression-option>` option is "
+"the expression that must return true in order for validation to pass. To "
+"learn more about the expression language syntax, see "
+":doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst
+msgid "Mapping the Error to a Specific Field"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:137
+msgid ""
+"You can also attach the constraint to a specific property and still "
+"validate based on the values of the entire entity. This is handy if you "
+"want to attach the error to a specific field. In this context, ``value`` "
+"represents the value of ``isTechnicalPost``."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:219
+msgid ""
+"For more information about the expression and what variables are "
+"available to you, see the :ref:`expression <reference-constraint-"
+"expression-option>` option details below."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:229
+msgid "``expression``"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:231
+msgid "**type**: ``string`` [:ref:`default option <validation-default-option>`]"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:233
+msgid ""
+"The expression that will be evaluated. If the expression evaluates to a "
+"false value (using ``==``, not ``===``), validation will fail."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:236
+msgid ""
+"To learn more about the expression language syntax, see "
+":doc:`/components/expression_language/syntax`."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:239
+msgid "Inside of the expression, you have access to up to 2 variables:"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:241
+msgid ""
+"Depending on how you use the constraint, you have access to 1 or 2 "
+"variables in your expression:"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:244
+msgid "``this``: The object being validated (e.g. an instance of BlogPost);"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:245
+msgid ""
+"``value``: The value of the property being validated (only available when"
+" the constraint is applied directly to a property);"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:2
+msgid "``groups``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:4
+msgid "**type**: ``array`` | ``string``"
+msgstr ""
+
+#: ../../../reference/constraints/_groups-option.rst.inc:6
+msgid ""
+"It defines the validation group or groups this constraint belongs to. "
+"Read more about :doc:`validation groups </validation/groups>`."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:251
+msgid "``message``"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:253
+msgid "**type**: ``string`` **default**: ``This value is not valid.``"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:255
+msgid "The default message supplied when the expression evaluates to false."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:257
+msgid "You can use the following parameters in this message:"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:260
+msgid "Parameter"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:260
+msgid "Description"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:262
+msgid "``{{ value }}``"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:262
+msgid "The current (invalid) value"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:2
+msgid "``payload``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:4
+msgid "**type**: ``mixed`` **default**: ``null``"
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:6
+msgid ""
+"This option can be used to attach arbitrary domain-specific data to a "
+"constraint. The configured payload is not used by the Validator "
+"component, but its processing is completely up to you."
+msgstr ""
+
+#: ../../../reference/constraints/_payload-option.rst.inc:10
+msgid ""
+"For example, you may want to use :doc:`several error levels "
+"</validation/severity>` to present failed constraints differently in the "
+"front-end depending on the severity of the error."
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:268
+msgid "values"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:270
+msgid "**type**: ``array`` **default**: ``[]``"
+msgstr ""
+
+#: ../../../reference/constraints/Expression.rst:272
+msgid ""
+"The values of the custom variables used in the expression. Values can be "
+"of any type (numeric, boolean, strings, null, etc.)"
+msgstr ""
+

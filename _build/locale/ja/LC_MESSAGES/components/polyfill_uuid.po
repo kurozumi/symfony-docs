@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/polyfill_uuid.rst:7
+msgid "The Symfony Polyfill / UUID Component"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:9
+msgid ""
+"This component provides ``uuid_*`` functions to users who run PHP "
+"versions without the UUID extension."
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:13
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:22
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:24
+msgid ""
+"Once this component is installed in your application, you can use the "
+"following functions, no matter if the `PHP UUID extension`_ is installed "
+"or not in your server."
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:29
+msgid "Provided Constants"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:31
+msgid "``UUID_VARIANT_NCS`` (value = 0)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:32
+msgid "``UUID_VARIANT_DCE`` (value = 1)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:33
+msgid "``UUID_VARIANT_MICROSOFT`` (value = 2)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:34
+msgid "``UUID_VARIANT_OTHER`` (value = 3)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:35
+msgid "``UUID_TYPE_DEFAULT`` (value = 0)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:36
+msgid "``UUID_TYPE_TIME`` (value = 1)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:37
+msgid "``UUID_TYPE_DCE`` (value = 4)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:38
+msgid "``UUID_TYPE_NAME`` (value = 1)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:39
+msgid "``UUID_TYPE_RANDOM`` (value = 4)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:40
+msgid "``UUID_TYPE_NULL`` (value = -1)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:41
+msgid "``UUID_TYPE_INVALID`` (value = -42)"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:44
+msgid "Provided Functions"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:46
+msgid ":phpfunction:`uuid_create`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:47
+msgid ":phpfunction:`uuid_is_valid`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:48
+msgid ":phpfunction:`uuid_compare`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:49
+msgid ":phpfunction:`uuid_is_null`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:50
+msgid ":phpfunction:`uuid_type`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:51
+msgid ":phpfunction:`uuid_variant`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:52
+msgid ":phpfunction:`uuid_time`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:53
+msgid ":phpfunction:`uuid_mac`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:54
+msgid ":phpfunction:`uuid_parse`"
+msgstr ""
+
+#: ../../../components/polyfill_uuid.rst:55
+msgid ":phpfunction:`uuid_unparse`"
+msgstr ""
+

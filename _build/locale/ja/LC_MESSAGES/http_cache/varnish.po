@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../http_cache/varnish.rst:5
+msgid "How to Use Varnish to Speed up my Website"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:7
+msgid ""
+"Because Symfony's cache uses the standard HTTP cache headers, the :ref"
+":`symfony-gateway-cache` can be replaced with any other reverse proxy. "
+"`Varnish`_ is a powerful, open-source, HTTP accelerator capable of "
+"serving cached content fast and including support for :doc:`Edge Side "
+"Includes </http_cache/esi>`."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:16
+msgid "Make Symfony Trust the Reverse Proxy"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:18
+msgid ""
+"Varnish automatically forwards the IP as ``X-Forwarded-For`` and leaves "
+"the ``X-Forwarded-Proto`` header in the request. If you do not configure "
+"Varnish as trusted proxy, Symfony will see all requests as coming through"
+" insecure HTTP connections from the Varnish host instead of the real "
+"client."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:23
+msgid ""
+"Remember to call the :ref:`Request::setTrustedProxies() <request-set-"
+"trusted-proxies>` method in your front controller so that Varnish is seen"
+" as a trusted proxy and the :ref:`X-Forwarded-* <varnish-x-forwarded-"
+"headers>` headers are used."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:30
+msgid "Routing and X-FORWARDED Headers"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:32
+msgid ""
+"To ensure that the Symfony Router generates URLs correctly with Varnish, "
+"an ``X-Forwarded-Port`` header must be present for Symfony to use the "
+"correct port number."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:36
+msgid ""
+"This port number corresponds to the port your setup is using to receive "
+"external connections (``80`` is the default value for HTTP connections). "
+"If the application also accepts HTTPS connections, there could be another"
+" proxy (as Varnish does not do HTTPS itself) on the default HTTPS port "
+"443 that handles the SSL termination and forwards the requests as HTTP "
+"requests to Varnish with an ``X-Forwarded-Proto`` header. In this case, "
+"you need to add the following configuration snippet:"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:54
+msgid "Cookies and Caching"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:56
+msgid ""
+"By default, a sane caching proxy does not cache anything when a request "
+"is sent with :ref:`cookies or a basic authentication header <http-cache-"
+"introduction>`. This is because the content of the page is supposed to "
+"depend on the cookie value or authentication header."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:61
+msgid ""
+"If you know for sure that the backend never uses sessions or basic "
+"authentication, have Varnish remove the corresponding header from "
+"requests to prevent clients from bypassing the cache. In practice, you "
+"will need sessions at least for some parts of the site, e.g. when using "
+"forms with :doc:`CSRF Protection </security/csrf>`. In this situation, "
+"make sure to :ref:`only start a session when actually needed <session-"
+"avoid-start>` and clear the session when it is no longer needed. "
+"Alternatively, you can look into :ref:`caching pages that contain CSRF "
+"protected forms <caching-pages-that-contain-csrf-protected-forms>`."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:70
+msgid ""
+"Cookies created in JavaScript and used only in the frontend, e.g. when "
+"using Google Analytics, are nonetheless sent to the server. These cookies"
+" are not relevant for the backend and should not affect the caching "
+"decision. Configure your Varnish cache to `clean the cookies header`_. "
+"You want to keep the session cookie, if there is one, and get rid of all "
+"other cookies so that pages are cached if there is no active session. "
+"Unless you changed the default configuration of PHP, your session cookie "
+"has the name ``PHPSESSID``:"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:118
+msgid ""
+"If content is not different for every user, but depends on the roles of a"
+" user, a solution is to separate the cache per group. This pattern is "
+"implemented and explained by the FOSHttpCacheBundle_ under the name `User"
+" Context`_."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:124
+msgid "Ensure Consistent Caching Behavior"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:126
+msgid ""
+"Varnish uses the cache headers sent by your application to determine how "
+"to cache content. However, versions prior to Varnish 4 did not respect "
+"``Cache-Control: no-cache``, ``no-store`` and ``private``. To ensure "
+"consistent behavior, use the following configuration if you are still "
+"using Varnish 3:"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:149
+msgid ""
+"You can see the default behavior of Varnish in the form of a VCL file: "
+"`default.vcl`_ for Varnish 3, `builtin.vcl`_ for Varnish 4."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:153
+msgid "Enable Edge Side Includes (ESI)"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:155
+msgid ""
+"As explained in the :doc:`Edge Side Includes article </http_cache/esi>`, "
+"Symfony detects whether it talks to a reverse proxy that understands ESI "
+"or not. When you use the Symfony reverse proxy, you don't need to do "
+"anything. But to make Varnish instead of Symfony resolve the ESI tags, "
+"you need some configuration in Varnish. Symfony uses the ``Surrogate-"
+"Capability`` header from the `Edge Architecture`_ described by Akamai."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:164
+msgid ""
+"Varnish only supports the ``src`` attribute for ESI tags (``onerror`` and"
+" ``alt`` attributes are ignored)."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:167
+msgid ""
+"First, configure Varnish so that it advertises its ESI support by adding "
+"a ``Surrogate-Capability`` header to requests forwarded to the backend "
+"application:"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:180
+msgid ""
+"The ``abc`` part of the header isn't important unless you have multiple "
+"\"surrogates\" that need to advertise their capabilities. See `Surrogate-"
+"Capability Header`_ for details."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:184
+msgid ""
+"Then, optimize Varnish so that it only parses the response contents when "
+"there is at least one ESI tag by checking the ``Surrogate-Control`` "
+"header that Symfony adds automatically:"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:212
+msgid ""
+"If you followed the advice about ensuring a consistent caching behavior, "
+"those VCL functions already exist. Append the code to the end of the "
+"function, they won't interfere with each other."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:220
+msgid "Cache Invalidation"
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:222
+msgid ""
+"If you want to cache content that changes frequently and still serve the "
+"most recent version to users, you need to invalidate that content. While "
+"`cache invalidation`_ allows you to purge content from your proxy before "
+"it has expired, it adds complexity to your caching setup."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:229
+msgid ""
+"The open source `FOSHttpCacheBundle`_ takes the pain out of cache "
+"invalidation by helping you to organize your caching and invalidation "
+"setup."
+msgstr ""
+
+#: ../../../http_cache/varnish.rst:233
+msgid ""
+"The documentation of the `FOSHttpCacheBundle`_ explains how to configure "
+"Varnish and other reverse proxies for cache invalidation."
+msgstr ""
+

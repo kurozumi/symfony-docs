@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../doctrine/registration_form.rst:7
+msgid "How to Implement a Registration Form"
+msgstr ""
+
+#: ../../../doctrine/registration_form.rst:9
+msgid ""
+"This article has been removed because it only explained things that are "
+"already explained in other articles. Specifically, to implement a "
+"registration form you must:"
+msgstr ""
+
+#: ../../../doctrine/registration_form.rst:13
+msgid ":ref:`Define a class to represent users <create-user-class>`;"
+msgstr ""
+
+#: ../../../doctrine/registration_form.rst:14
+msgid ""
+":doc:`Create a form </forms>` to ask for the registration information "
+"(you can generate this with the ``make:registration-form`` command "
+"provided by the `MakerBundle`_);"
+msgstr ""
+
+#: ../../../doctrine/registration_form.rst:16
+msgid ""
+"Create :doc:`a controller </controller>` to :ref:`process the form "
+"<processing-forms>`;"
+msgstr ""
+
+#: ../../../doctrine/registration_form.rst:17
+msgid ""
+":ref:`Protect some parts of your application <security-authorization>` so"
+" only registered users can access to them."
+msgstr ""
+

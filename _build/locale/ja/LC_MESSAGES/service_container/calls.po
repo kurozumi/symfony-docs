@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/calls.rst:5
+msgid "Service Method Calls and Setter Injection"
+msgstr ""
+
+#: ../../../service_container/calls.rst:9
+msgid ""
+"If you're using autowiring, you can use ``@required`` to "
+":ref:`automatically configure method calls <autowiring-calls>`."
+msgstr ""
+
+#: ../../../service_container/calls.rst:12
+msgid ""
+"Usually, you'll want to inject your dependencies via the constructor. But"
+" sometimes, especially if a dependency is optional, you may want to use "
+"\"setter injection\". For example::"
+msgstr ""
+
+#: ../../../service_container/calls.rst:32
+msgid ""
+"To configure the container to call the ``setLogger`` method, use the "
+"``calls`` key:"
+msgstr ""
+
+#: ../../../service_container/calls.rst:79
+msgid ""
+"To provide immutable services, some classes implement immutable setters. "
+"Such setters return a new instance of the configured class instead of "
+"mutating the object they were called on::"
+msgstr ""
+
+#: ../../../service_container/calls.rst:105
+msgid ""
+"Because the method returns a separate cloned instance, configuring such a"
+" service means using the return value of the wither method (``$service = "
+"$service->withLogger($logger);``). The configuration to tell the "
+"container it should do so would be like:"
+msgstr ""
+

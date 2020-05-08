@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/copy-files.rst:2
+msgid "Copying & Referencing Images"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:4
+msgid ""
+"Need to reference a static file - like the path to an image for an "
+"``img`` tag? That can be tricky if you store your assets outside of the "
+"public document root. Fortunately, depending on your situation, there is "
+"a solution!"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:9
+msgid "Referencing Images from Inside a Webpacked JavaScript File"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:11
+msgid ""
+"To reference an image tag from inside a JavaScript file, *require* the "
+"file:"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:23
+msgid ""
+"When you ``require`` (or ``import``) an image file, Webpack copies it "
+"into your output directory and returns the final, *public* path to that "
+"file."
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:27
+msgid "Referencing Image files from a Template"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:29
+msgid ""
+"To reference an image file from outside of a JavaScript file that's "
+"processed by Webpack - like a template - you can use the ``copyFiles()`` "
+"method to copy those files into your final output directory."
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:54
+msgid ""
+"This will copy all files from ``assets/images`` into ``public/build`` "
+"(the output path). If you have :doc:`versioning enabled <versioning>`, "
+"the copied files will include a hash based on their content."
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:58
+msgid "To render inside Twig, use the ``asset()`` function:"
+msgstr ""
+
+#: ../../../frontend/encore/copy-files.rst:68
+msgid ""
+"Make sure you've enabled the :ref:`json_manifest_path <load-manifest-"
+"files>` option, which tells the ``asset()`` function to read the final "
+"paths from the ``manifest.json`` file. If you're not sure what path "
+"argument to pass to the ``asset()`` function, find the file in "
+"``manifest.json`` and use the *key* as the argument."
+msgstr ""
+

@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../setup/bundles.rst:5
+msgid "Upgrading a Third-Party Bundle for a Major Symfony Version"
+msgstr ""
+
+#: ../../../setup/bundles.rst:7
+msgid ""
+"Symfony 3 was released on November 2015. Although this version doesn't "
+"contain any new features, it removes all the backward compatibility "
+"layers included in the previous 2.8 version. If your bundle uses any "
+"deprecated feature and it's published as a third-party bundle, "
+"applications upgrading to Symfony 3 will no longer be able to use it."
+msgstr ""
+
+#: ../../../setup/bundles.rst:14
+msgid "Allowing to Install Symfony 3 Components"
+msgstr ""
+
+#: ../../../setup/bundles.rst:16
+msgid ""
+"Most third-party bundles define their Symfony dependencies using the "
+"``~2.N`` or ``^2.N`` constraints in the ``composer.json`` file. For "
+"example:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:29
+msgid ""
+"These constraints prevent the bundle from using Symfony 3 components, so "
+"it makes it impossible to install it in a Symfony 3 based application. "
+"Thanks to the flexibility of Composer dependencies constraints, you can "
+"specify more than one major version by replacing ``~2.N`` by "
+"``~2.N|~3.0`` (or ``^2.N`` by ``^2.N|~3.0``)."
+msgstr ""
+
+#: ../../../setup/bundles.rst:34
+msgid "The above example can be updated to work with Symfony 3 as follows:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:48
+msgid ""
+"Another common version constraint found on third-party bundles is "
+"``>=2.N``. You should avoid using that constraint because it's too "
+"generic (it means that your bundle is compatible with any future Symfony "
+"version). Use instead ``~2.N|~3.0`` or ``^2.N|~3.0`` to make your bundle "
+"future-proof."
+msgstr ""
+
+#: ../../../setup/bundles.rst:54
+msgid "Look for Deprecations and Fix Them"
+msgstr ""
+
+#: ../../../setup/bundles.rst:56
+msgid ""
+"Besides allowing users to use your bundle with Symfony 3, your bundle "
+"must stop using any feature deprecated by the 2.8 version because they "
+"are removed in 3.0 (you'll get exceptions or PHP errors). The easiest way"
+" to detect deprecations is to install the `symfony/phpunit-bridge "
+"package`_ and then run the test suite."
+msgstr ""
+
+#: ../../../setup/bundles.rst:61
+msgid "First, install the component as a ``dev`` dependency of your bundle:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:67
+msgid ""
+"Then, run your test suite and look for the deprecation list displayed "
+"after the PHPUnit test report:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:87
+msgid ""
+"Fix the reported deprecations, run the test suite again and repeat the "
+"process until no deprecation usage is reported."
+msgstr ""
+
+#: ../../../setup/bundles.rst:91
+msgid "Useful Resources"
+msgstr ""
+
+#: ../../../setup/bundles.rst:93
+msgid ""
+"There are several resources that can help you detect, understand and fix "
+"the use of deprecated features:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:97
+msgid "`Official Symfony Guide to Upgrade from 2.x to 3.0`_"
+msgstr ""
+
+#: ../../../setup/bundles.rst:97
+msgid ""
+"The full list of changes required to upgrade to Symfony 3.0 and grouped "
+"by component."
+msgstr ""
+
+#: ../../../setup/bundles.rst:102
+msgid "`SensioLabs DeprecationDetector`_"
+msgstr ""
+
+#: ../../../setup/bundles.rst:100
+msgid ""
+"It runs a static code analysis against your project's source code to find"
+" usages of deprecated methods, classes and interfaces. It works for any "
+"PHP application, but it includes special detectors for Symfony "
+"applications, where it can also detect usages of deprecated services."
+msgstr ""
+
+#: ../../../setup/bundles.rst:106
+msgid "`Symfony Upgrade Fixer`_"
+msgstr ""
+
+#: ../../../setup/bundles.rst:105
+msgid ""
+"It analyzes Symfony projects to find deprecations. In addition it solves "
+"automatically some of them thanks to the growing list of supported "
+"\"fixers\"."
+msgstr ""
+
+#: ../../../setup/bundles.rst:109
+msgid "Testing your Bundle in Symfony 3"
+msgstr ""
+
+#: ../../../setup/bundles.rst:111
+msgid ""
+"Now that your bundle has removed all deprecations, it's time to test it "
+"for real in a Symfony 3 application. Assuming that you already have a "
+"Symfony 3 application, you can test the updated bundle locally without "
+"having to install it through Composer."
+msgstr ""
+
+#: ../../../setup/bundles.rst:116
+msgid ""
+"If your operating system supports symbolic links, instead point the "
+"appropriate vendor directory to your local bundle root directory:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:123
+msgid ""
+"If your operating system doesn't support symbolic links, you'll need to "
+"copy your local bundle directory into the appropriate directory inside "
+"``vendor/``."
+msgstr ""
+
+#: ../../../setup/bundles.rst:127
+msgid "Update the Travis CI Configuration"
+msgstr ""
+
+#: ../../../setup/bundles.rst:129
+msgid ""
+"In addition to running tools locally, it's recommended to set-up Travis "
+"CI service to run the tests of your bundle using different Symfony "
+"configurations. Use the following recommended configuration as the "
+"starting point of your own configuration:"
+msgstr ""
+
+#: ../../../setup/bundles.rst:167
+msgid "Updating your Code to Support Symfony 2.x and 3.x at the Same Time"
+msgstr ""
+
+#: ../../../setup/bundles.rst:169
+msgid ""
+"The real challenge of adding Symfony 3 support for your bundles is when "
+"you want to support both Symfony 2.x and 3.x simultaneously using the "
+"same code. There are some edge cases where you'll need to deal with the "
+"API differences."
+msgstr ""
+
+#: ../../../setup/bundles.rst:173
+msgid ""
+"Before diving into the specifics of the most common edge cases, the "
+"general recommendation is to **not rely on the Symfony Kernel version** "
+"to decide which code to use::"
+msgstr ""
+
+#: ../../../setup/bundles.rst:183
+msgid ""
+"Instead of checking the Symfony Kernel version, check the version of the "
+"specific component. For example, the OptionsResolver API changed in its "
+"2.6 version by adding a ``setDefined()`` method. The recommended check in"
+" this case would be::"
+msgstr ""
+
+#: ../../../setup/bundles.rst:197
+msgid ""
+"There is one case when you actually can rely on the "
+"``Symfony\\Component\\HttpKernel\\Kernel::VERSION_ID`` constant: when "
+"trying to detect the version of the ``symfony/http-kernel`` component, "
+"because it is the component where this constant is defined."
+msgstr ""
+

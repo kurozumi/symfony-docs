@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../performance.rst:5
+msgid "Performance"
+msgstr ""
+
+#: ../../../performance.rst:7
+msgid ""
+"Symfony is fast, right out of the box. However, you can make it faster if"
+" you optimize your servers and your applications as explained in the "
+"following performance checklists."
+msgstr ""
+
+#: ../../../performance.rst:12
+msgid "Symfony Application Checklist"
+msgstr ""
+
+#: ../../../performance.rst:14
+msgid ""
+"These are the code and configuration changes that you can make in your "
+"Symfony application to improve its performance:"
+msgstr ""
+
+#: ../../../performance.rst:17
+msgid ""
+":ref:`Install APCu Polyfill if your server uses APC <performance-install-"
+"apcu-polyfill>`"
+msgstr ""
+
+#: ../../../performance.rst:18
+msgid ""
+":ref:`Dump the service container into a single file <performance-service-"
+"container-single-file>`"
+msgstr ""
+
+#: ../../../performance.rst:19
+msgid ""
+":ref:`Restrict the number of locales enabled in the application "
+"<performance-enabled-locales>`"
+msgstr ""
+
+#: ../../../performance.rst:24
+msgid "Install APCu Polyfill if your Server Uses APC"
+msgstr ""
+
+#: ../../../performance.rst:26
+msgid ""
+"If your production server still uses the legacy APC PHP extension instead"
+" of OPcache, install the `APCu Polyfill component`_ in your application "
+"to enable compatibility with `APCu PHP functions`_ and unlock support for"
+" advanced Symfony features, such as the APCu Cache adapter."
+msgstr ""
+
+#: ../../../performance.rst:34
+msgid "Dump the Service Container into a Single File"
+msgstr ""
+
+#: ../../../performance.rst:36
+msgid ""
+"Symfony compiles the :doc:`service container </service_container>` into "
+"multiple small files by default. Set this parameter to ``true`` to "
+"compile the entire container into a single file, which could improve "
+"performance when using \"class preloading\" in PHP 7.4 or newer versions:"
+msgstr ""
+
+#: ../../../performance.rst:75
+msgid "Restrict the Number of Locales Enabled in the Application"
+msgstr ""
+
+#: ../../../performance.rst:77
+msgid ""
+"Use the :ref:`framework.translator.enabled_locales <reference-translator-"
+"enabled-locales>` option to only generate the translation files actually "
+"used in your application."
+msgstr ""
+
+#: ../../../performance.rst:81
+msgid "Production Server Checklist"
+msgstr ""
+
+#: ../../../performance.rst:83
+msgid ""
+"These are the changes that you can make in your production server to "
+"improve performance when running Symfony applications:"
+msgstr ""
+
+#: ../../../performance.rst:86
+msgid ":ref:`Use the OPcache byte code cache <performance-use-opcache>`"
+msgstr ""
+
+#: ../../../performance.rst:87
+msgid ":ref:`Use the OPcache class preloading <performance-use-preloading>`"
+msgstr ""
+
+#: ../../../performance.rst:88
+msgid ""
+":ref:`Configure OPcache for maximum performance <performance-configure-"
+"opcache>`"
+msgstr ""
+
+#: ../../../performance.rst:89
+msgid ""
+":ref:`Don't check PHP files timestamps <performance-dont-check-"
+"timestamps>`"
+msgstr ""
+
+#: ../../../performance.rst:90
+msgid ""
+":ref:`Configure the PHP realpath Cache <performance-configure-realpath-"
+"cache>`"
+msgstr ""
+
+#: ../../../performance.rst:91
+msgid ""
+":ref:`Optimize Composer Autoloader <performance-optimize-composer-"
+"autoloader>`"
+msgstr ""
+
+#: ../../../performance.rst:96
+msgid "Use the OPcache Byte Code Cache"
+msgstr ""
+
+#: ../../../performance.rst:98
+msgid ""
+"OPcache stores the compiled PHP files to avoid having to recompile them "
+"for every request. There are some `byte code caches`_ available, but as "
+"of PHP 5.5, PHP comes with `OPcache`_ built-in. For older versions, the "
+"most widely used byte code cache is `APC`_."
+msgstr ""
+
+#: ../../../performance.rst:106
+msgid "Use the OPcache class preloading"
+msgstr ""
+
+#: ../../../performance.rst:108
+msgid ""
+"Starting from PHP 7.4, OPcache can compile and load classes at start-up "
+"and make them available to all requests until the server is restarted, "
+"improving performance significantly."
+msgstr ""
+
+#: ../../../performance.rst:112
+msgid ""
+"During container compilation, Symfony generates the file with the list of"
+" classes to preload. The only requirement is that you need to set both "
+"``container.dumper.inline_factories`` and  "
+"``container.dumper.inline_class_loader`` parameters to ``true``."
+msgstr ""
+
+#: ../../../performance.rst:117
+msgid ""
+"The preload file path is the same as the compiled service container but "
+"with the ``preload`` suffix:"
+msgstr ""
+
+#: ../../../performance.rst:125
+msgid ""
+"Use the :ref:`container.preload <dic-tags-container-preload>` and "
+":ref:`container.no_preload <dic-tags-container-nopreload>` service tags "
+"to define which classes should or should not be preloaded PHP."
+msgstr ""
+
+#: ../../../performance.rst:132
+msgid "Configure OPcache for Maximum Performance"
+msgstr ""
+
+#: ../../../performance.rst:134
+msgid ""
+"The default OPcache configuration is not suited for Symfony applications,"
+" so it's recommended to change these settings as follows:"
+msgstr ""
+
+#: ../../../performance.rst:149
+msgid "Don't Check PHP Files Timestamps"
+msgstr ""
+
+#: ../../../performance.rst:151
+msgid ""
+"In production servers, PHP files should never change, unless a new "
+"application version is deployed. However, by default OPcache checks if "
+"cached files have changed their contents since they were cached. This "
+"check introduces some overhead that can be avoided as follows:"
+msgstr ""
+
+#: ../../../performance.rst:161
+msgid ""
+"After each deploy, you must empty and regenerate the cache of OPcache. "
+"Otherwise you won't see the updates made in the application. Given that "
+"in PHP, the CLI and the web processes don't share the same OPcache, you "
+"cannot clear the web server OPcache by executing some command in your "
+"terminal. These are some of the possible solutions:"
+msgstr ""
+
+#: ../../../performance.rst:167
+msgid "Restart the web server;"
+msgstr ""
+
+#: ../../../performance.rst:168
+msgid ""
+"Call the ``apc_clear_cache()`` or ``opcache_reset()`` functions via the "
+"web server (i.e. by having these in a script that you execute over the "
+"web);"
+msgstr ""
+
+#: ../../../performance.rst:170
+msgid "Use the `cachetool`_ utility to control APC and OPcache from the CLI."
+msgstr ""
+
+#: ../../../performance.rst:175
+msgid "Configure the PHP ``realpath`` Cache"
+msgstr ""
+
+#: ../../../performance.rst:177
+msgid ""
+"When a relative path is transformed into its real and absolute path, PHP "
+"caches the result to improve performance. Applications that open many PHP"
+" files, such as Symfony projects, should use at least these values:"
+msgstr ""
+
+#: ../../../performance.rst:192
+msgid ""
+"PHP disables the ``realpath`` cache when the `open_basedir`_ config "
+"option is enabled."
+msgstr ""
+
+#: ../../../performance.rst:198
+msgid "Optimize Composer Autoloader"
+msgstr ""
+
+#: ../../../performance.rst:200
+msgid ""
+"The class loader used while developing the application is optimized to "
+"find new and changed classes. In production servers, PHP files should "
+"never change, unless a new application version is deployed. That's why "
+"you can optimize Composer's autoloader to scan the entire application "
+"once and build a \"class map\", which is a big array of the locations of "
+"all the classes and it's stored in "
+"``vendor/composer/autoload_classmap.php``."
+msgstr ""
+
+#: ../../../performance.rst:207
+msgid ""
+"Execute this command to generate the class map (and make it part of your "
+"deployment process too):"
+msgstr ""
+
+#: ../../../performance.rst:214
+msgid ""
+"``--no-dev`` excludes the classes that are only needed in the development"
+" environment (i.e. ``require-dev`` dependencies and ``autoload-dev`` "
+"rules);"
+msgstr ""
+
+#: ../../../performance.rst:216
+msgid ""
+"``--classmap-authoritative`` creates a class map for PSR-0 and PSR-4 "
+"compatible classes used in your application and prevents Composer from "
+"scanning the file system for classes that are not found in the class map."
+" (see: `Composer's autoloader optimization`_)."
+msgstr ""
+
+#: ../../../performance.rst:221
+msgid "Learn more"
+msgstr ""
+
+#: ../../../performance.rst:223
+msgid ":doc:`/http_cache/varnish`"
+msgstr ""
+

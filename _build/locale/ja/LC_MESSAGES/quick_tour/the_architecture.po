@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../quick_tour/the_architecture.rst:2
+msgid "The Architecture"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:4
+msgid ""
+"You are my hero! Who would have thought that you would still be here "
+"after the first two parts? Your efforts will be well-rewarded soon. The "
+"first two parts didn't look too deeply at the architecture of the "
+"framework. Because it makes Symfony stand apart from the framework crowd,"
+" let's dive into the architecture now."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:10
+msgid "Add Logging"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:12
+msgid ""
+"A new Symfony app is micro: it's basically just a routing & controller "
+"system. But thanks to Flex, installing more features is simple."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:15
+msgid "Want a logging system? No problem:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:21
+msgid ""
+"This installs and configures (via a recipe) the powerful `Monolog`_ "
+"library. To use the logger in a controller, add a new argument type-"
+"hinted with ``LoggerInterface``::"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:44
+msgid ""
+"That's it! The new log message will be written to ``var/log/dev.log``. "
+"The log file path or even a different method of logging can be configured"
+" by updating one of the config files added by the recipe."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:49
+msgid "Services & Autowiring"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:51
+msgid ""
+"But wait! Something *very* cool just happened. Symfony read the "
+"``LoggerInterface`` type-hint and automatically figured out that it "
+"should pass us the Logger object! This is called *autowiring*."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:55
+msgid ""
+"Every bit of work that's done in a Symfony app is done by an *object*: "
+"the Logger object logs things and the Twig object renders templates. "
+"These objects are called *services* and they are *tools* that help you "
+"build rich features."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:59
+msgid ""
+"To make life awesome, you can ask Symfony to pass you a service by using "
+"a type-hint. What other possible classes or interfaces could you use? "
+"Find out by running:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:82
+msgid ""
+"This is just a short summary of the full list! And as you add more "
+"packages, this list of tools will grow!"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:86
+msgid "Creating Services"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:88
+msgid ""
+"To keep your code organized, you can even create your own services! "
+"Suppose you want to generate a random greeting (e.g. \"Hello\", \"Yo\", "
+"etc). Instead of putting this code directly in your controller, create a "
+"new class::"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:106
+msgid "Great! You can use this immediately in your controller::"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:131
+msgid ""
+"That's it! Symfony will instantiate the ``GreetingGenerator`` "
+"automatically and pass it as an argument. But, could we *also* move the "
+"logger logic to ``GreetingGenerator``? Yes! You can use autowiring inside"
+" a service to access *other* services. The only difference is that it's "
+"done in the constructor:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:160
+msgid "Yes! This works too: no configuration, no time wasted. Keep coding!"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:163
+msgid "Twig Extension & Autoconfiguration"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:165
+msgid ""
+"Thanks to Symfony's service handling, you can *extend* Symfony in many "
+"ways, like by creating an event subscriber or a security voter for "
+"complex authorization rules. Let's add a new filter to Twig called "
+"``greet``. How? Create a class that extends ``AbstractExtension``::"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:201
+msgid "After creating just *one* file, you can use this immediately:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:209
+msgid ""
+"How does this work? Symfony notices that your class extends "
+"``AbstractExtension`` and so *automatically* registers it as a Twig "
+"extension. This is called autoconfiguration, and it works for *many* many"
+" things. Create a class and then extend a base class (or implement an "
+"interface). Symfony takes care of the rest."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:215
+msgid "Blazing Speed: The Cached Container"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:217
+msgid ""
+"After seeing how much Symfony handles automatically, you might be "
+"wondering: \"Doesn't this hurt performance?\" Actually, no! Symfony is "
+"blazing fast."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:220
+msgid ""
+"How is that possible? The service system is managed by a very important "
+"object called the \"container\". Most frameworks have a container, but "
+"Symfony's is unique because it's *cached*. When you loaded your first "
+"page, all of the service information was compiled and saved. This means "
+"that the autowiring and autoconfiguration features add *no* overhead! It "
+"also means that you get *great* errors: Symfony inspects and validates "
+"*everything* when the container is built."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:227
+msgid ""
+"Now you might be wondering what happens when you update a file and the "
+"cache needs to rebuild? I like your thinking! It's smart enough to "
+"rebuild on the next page load. But that's really the topic of the next "
+"section."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:232
+msgid "Development Versus Production: Environments"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:234
+msgid ""
+"One of a framework's main jobs is to make debugging easy! And our app is "
+"*full* of great tools for this: the web debug toolbar displays at the "
+"bottom of the page, errors are big, beautiful & explicit, and any "
+"configuration cache is automatically rebuilt whenever needed."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:239
+msgid ""
+"But what about when you deploy to production? We will need to hide those "
+"tools and optimize for speed!"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:242
+msgid ""
+"This is solved by Symfony's *environment* system and there are three: "
+"``dev``, ``prod`` and ``test``. Based on the environment, Symfony loads "
+"different files in the ``config/`` directory:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:268
+msgid ""
+"This is a *powerful* idea: by changing one piece of configuration (the "
+"environment), your app is transformed from a debugging-friendly "
+"experience to one that's optimized for speed."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:272
+msgid ""
+"Oh, how do you change the environment? Change the ``APP_ENV`` environment"
+" variable from ``dev`` to ``prod``:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:281
+msgid ""
+"But I want to talk more about environment variables next. Change the "
+"value back to ``dev``: debugging tools are great when you're working "
+"locally."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:285
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:287
+msgid ""
+"Every app contains configuration that's different on each server - like "
+"database connection information or passwords. How should these be stored?"
+" In files? Or some other way?"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:291
+msgid ""
+"Symfony follows the industry best practice by storing server-based "
+"configuration as *environment* variables. This means that Symfony works "
+"*perfectly* with Platform as a Service (PaaS) deployment systems as well "
+"as Docker."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:295
+msgid ""
+"But setting environment variables while developing can be a pain. That's "
+"why your app automatically loads a ``.env`` file. The keys in this file "
+"then become environment variables and are read by your app:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:307
+msgid ""
+"At first, the file doesn't contain much. But as your app grows, you'll "
+"add more configuration as you need it. But, actually, it gets much more "
+"interesting! Suppose your app needs a database ORM. Let's install the "
+"Doctrine ORM:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:315
+msgid "Thanks to a new recipe installed by Flex, look at the ``.env`` file again:"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:329
+msgid ""
+"The new ``DATABASE_URL`` environment variable was added *automatically* "
+"and is already referenced by the new ``doctrine.yaml`` configuration "
+"file. By combining environment variables and Flex, you're using industry "
+"best practices without any extra effort."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:334
+msgid "Keep Going!"
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:336
+msgid ""
+"Call me crazy, but after reading this part, you should be comfortable "
+"with the most *important* parts of Symfony. Everything in Symfony is "
+"designed to get out of your way so you can keep coding and adding "
+"features, all with the speed and quality you demand."
+msgstr ""
+
+#: ../../../quick_tour/the_architecture.rst:341
+msgid ""
+"That's all for the quick tour. From authentication, to forms, to caching,"
+" there is so much more to discover. Ready to dig into these topics now? "
+"Look no further - go to the official :doc:`/index` and pick any guide you"
+" want."
+msgstr ""
+

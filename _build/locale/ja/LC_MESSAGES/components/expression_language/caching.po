@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/expression_language/caching.rst:5
+msgid "Caching Expressions Using Parser Caches"
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:7
+msgid ""
+"The ExpressionLanguage component already provides a "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::compile`"
+" method to be able to cache the expressions in plain PHP. But internally,"
+" the component also caches the parsed expressions, so duplicated "
+"expressions can be compiled/evaluated quicker."
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:14
+msgid "The Workflow"
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:16
+msgid ""
+"Both "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::evaluate`"
+" and ``compile()`` need to do some things before each can provide the "
+"return values. For ``evaluate()``, this overhead is even bigger."
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:20
+msgid ""
+"Both methods need to tokenize and parse the expression. This is done by "
+"the "
+":method:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ExpressionLanguage::parse`"
+" method. It  returns a "
+":class:`Symfony\\\\Component\\\\ExpressionLanguage\\\\ParsedExpression`. "
+"Now, the ``compile()`` method just returns the string conversion of this "
+"object. The ``evaluate()`` method needs to loop through the \"nodes\" "
+"(pieces of an expression saved in the ``ParsedExpression``) and evaluate "
+"them on the fly."
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:27
+msgid ""
+"To save time, the ``ExpressionLanguage`` caches the ``ParsedExpression`` "
+"so it can skip the tokenize and parse steps with duplicate expressions. "
+"The caching is done by a PSR-6 `CacheItemPoolInterface`_ instance (by "
+"default, it uses an "
+":class:`Symfony\\\\Component\\\\Cache\\\\Adapter\\\\ArrayAdapter`). You "
+"can customize this by creating a custom cache pool or using one of the "
+"available ones and injecting this using the constructor::"
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:42
+msgid ""
+"See the :doc:`/components/cache` documentation for more information about"
+" available cache adapters."
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:46
+msgid "Using Parsed and Serialized Expressions"
+msgstr ""
+
+#: ../../../components/expression_language/caching.rst:48
+msgid ""
+"Both ``evaluate()`` and ``compile()`` can handle ``ParsedExpression`` and"
+" ``SerializedParsedExpression``::"
+msgstr ""
+

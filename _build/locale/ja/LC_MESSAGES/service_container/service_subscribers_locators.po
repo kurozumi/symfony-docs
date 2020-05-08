@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/service_subscribers_locators.rst:7
+msgid "Service Subscribers & Locators"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:9
+msgid ""
+"Sometimes, a service needs access to several other services without being"
+" sure that all of them will actually be used. In those cases, you may "
+"want the instantiation of the services to be lazy. However, that's not "
+"possible using the explicit dependency injection since services are not "
+"all meant to be ``lazy`` (see :doc:`/service_container/lazy_services`)."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:15
+msgid ""
+"This can typically be the case in your controllers, where you may inject "
+"several services in the constructor, but the action executed only uses "
+"some of them. Another example are applications that implement the "
+"`Command pattern`_ using a CommandBus to map command handlers by Command "
+"class names and use them to handle their respective command when it is "
+"asked for::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:52
+msgid ""
+"Considering that only one command is handled at a time, instantiating all"
+" the other command handlers is unnecessary. A possible solution to lazy-"
+"load the handlers could be to inject the main dependency injection "
+"container."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:56
+msgid ""
+"However, injecting the entire container is discouraged because it gives "
+"too broad access to existing services and it hides the actual "
+"dependencies of the services. Doing so also requires services to be made "
+"public, which isn't the case by default in Symfony applications."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:61
+msgid ""
+"**Service Subscribers** are intended to solve this problem by giving "
+"access to a set of predefined services while instantiating them only when"
+" actually needed through a **Service Locator**, a separate lazy-loaded "
+"container."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:66
+msgid "Defining a Service Subscriber"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:68
+msgid ""
+"First, turn ``CommandBus`` into an implementation of "
+":class:`Symfony\\\\Contracts\\\\Service\\\\ServiceSubscriberInterface`. "
+"Use its ``getSubscribedServices()`` method to include as many services as"
+" needed in the service subscriber and change the type hint of the "
+"container to a PSR-11 ``ContainerInterface``::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:112
+msgid ""
+"If the container does *not* contain the subscribed services, double-check"
+" that you have :ref:`autoconfigure <services-autoconfigure>` enabled. You"
+" can also manually add the ``container.service_subscriber`` tag."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:116
+msgid ""
+"The injected service is an instance of "
+":class:`Symfony\\\\Component\\\\DependencyInjection\\\\ServiceLocator` "
+"which implements the PSR-11 ``ContainerInterface``, but it is also a "
+"callable::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:125
+msgid "Including Services"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:127
+msgid ""
+"In order to add a new dependency to the service subscriber, use the "
+"``getSubscribedServices()`` method to add service types to include in the"
+" service locator::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:141
+msgid "Service types can also be keyed by a service name for internal use::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:153
+msgid ""
+"When extending a class that also implements "
+"``ServiceSubscriberInterface``, it's your responsibility to call the "
+"parent when overriding the method. This typically happens when extending "
+"``AbstractController``::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:172
+msgid "Optional Services"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:174
+msgid ""
+"For optional dependencies, prepend the service type with a ``?`` to "
+"prevent errors if there's no matching service found in the service "
+"container::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:189
+msgid ""
+"Make sure an optional service exists by calling ``has()`` on the service "
+"locator before calling the service itself."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:193
+msgid "Aliased Services"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:195
+msgid ""
+"By default, autowiring is used to match a service type to a service from "
+"the service container. If you don't use autowiring or need to add a non-"
+"traditional service as a dependency, use the "
+"``container.service_subscriber`` tag to map a service type to a service."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:243
+msgid ""
+"The ``key`` attribute can be omitted if the service name internally is "
+"the same as in the service container."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:247
+msgid "Defining a Service Locator"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:249
+msgid ""
+"To manually define a service locator, create a new service definition and"
+" add the ``container.service_locator`` tag to it. Use the first argument "
+"of the service definition to pass a collection of services to the service"
+" locator:"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:333
+msgid ""
+"The services defined in the service locator argument must include keys, "
+"which later become their unique identifiers inside the locator."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:336
+msgid "Now you can use the service locator by injecting it in any other service:"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:378
+msgid ""
+"In :doc:`compiler passes </service_container/compiler_passes>` it's "
+"recommended to use the "
+":method:`Symfony\\\\Component\\\\DependencyInjection\\\\Compiler\\\\ServiceLocatorTagPass::register`"
+" method to create the service locators. This will save you some "
+"boilerplate and will share identical locators among all the services "
+"referencing them::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:399
+msgid "Indexing the Collection of Services"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:401
+msgid ""
+"Services passed to the service locator can define their own index using "
+"an arbitrary attribute whose name is defined as ``index_by`` in the "
+"service locator."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:404
+msgid ""
+"In the following example, the ``App\\Handler\\HandlerCollection`` locator"
+" receives all services tagged with ``app.handler`` and they are indexed "
+"using the value of the ``key`` tag attribute (as defined in the "
+"``index_by`` locator option):"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:473
+msgid ""
+"Inside this locator you can retrieve services by index using the value of"
+" the ``key`` attribute. For example, to get the ``App\\Handler\\Two`` "
+"service::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:491
+msgid ""
+"Instead of defining the index in the service definition, you can return "
+"its value in a method called ``getDefaultIndexName()`` inside the class "
+"associated to the service::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:508
+msgid ""
+"If you prefer to use another method name, add a ``default_index_method`` "
+"attribute to the locator service defining the name of this custom method:"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:555
+msgid ""
+"Since code should not be responsible for defining how the locators are "
+"going to be used, a configuration key (``key`` in the example above) must"
+" be set so the custom method may be called as a fallback."
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:560
+msgid "Service Subscriber Trait"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:562
+msgid ""
+"The :class:`Symfony\\\\Contracts\\\\Service\\\\ServiceSubscriberTrait` "
+"provides an implementation for "
+":class:`Symfony\\\\Contracts\\\\Service\\\\ServiceSubscriberInterface` "
+"that looks through all methods in your class that have no arguments and a"
+" return type. It provides a ``ServiceLocator`` for the services of those "
+"return types. The service id is ``__METHOD__``. This allows you to add "
+"dependencies to your services based on type-hinted helper methods::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:598
+msgid ""
+"This  allows you to create helper traits like RouterAware, LoggerAware, "
+"etc... and compose your services with them::"
+msgstr ""
+
+#: ../../../service_container/service_subscribers_locators.rst:646
+msgid ""
+"When creating these helper traits, the service id cannot be "
+"``__METHOD__`` as this will include the trait name, not the class name. "
+"Instead, use ``__CLASS__.'::'.__FUNCTION__`` as the service id."
+msgstr ""
+

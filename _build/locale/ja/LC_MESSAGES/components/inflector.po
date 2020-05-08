@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../components/inflector.rst:6
+msgid "The Inflector Component"
+msgstr ""
+
+#: ../../../components/inflector.rst:8
+msgid ""
+"The Inflector component converts English words between their singular and"
+" plural forms."
+msgstr ""
+
+#: ../../../components/inflector.rst:12
+msgid "Installation"
+msgstr ""
+
+#: ../../../components/require_autoload.rst.inc:3
+msgid ""
+"If you install this component outside of a Symfony application, you must "
+"require the ``vendor/autoload.php`` file in your code to enable the class"
+" autoloading mechanism provided by Composer. Read :doc:`this article "
+"</components/using_components>` for more details."
+msgstr ""
+
+#: ../../../components/inflector.rst:21
+msgid "When you May Need an Inflector"
+msgstr ""
+
+#: ../../../components/inflector.rst:23
+msgid ""
+"In some scenarios such as code generation and code introspection, it's "
+"usually required to convert words from/to singular/plural. For example, "
+"if you need to know which property is associated with an *adder* method, "
+"you must convert from plural to singular (``addStories()`` method -> "
+"``$story`` property)."
+msgstr ""
+
+#: ../../../components/inflector.rst:28
+msgid ""
+"Although most human languages define simple pluralization rules, they "
+"also define lots of exceptions. For example, the general rule in English "
+"is to add an ``s`` at the end of the word (``book`` -> ``books``) but "
+"there are lots of exceptions even for common words (``woman`` -> "
+"``women``, ``life`` -> ``lives``, ``news`` -> ``news``, ``radius`` -> "
+"``radii``, etc.)"
+msgstr ""
+
+#: ../../../components/inflector.rst:34
+msgid ""
+"This component abstracts all those pluralization rules so you can convert"
+" from/to singular/plural with confidence. However, due to the complexity "
+"of the human languages, this component only provides support for the "
+"English language."
+msgstr ""
+
+#: ../../../components/inflector.rst:39
+msgid "Usage"
+msgstr ""
+
+#: ../../../components/inflector.rst:41
+msgid ""
+"The Inflector component provides two static methods to convert from/to "
+"singular/plural::"
+msgstr ""
+
+#: ../../../components/inflector.rst:54
+msgid ""
+"Sometimes it's not possible to determine a unique singular/plural form "
+"for the given word. In those cases, the methods return an array with all "
+"the possible forms::"
+msgstr ""
+

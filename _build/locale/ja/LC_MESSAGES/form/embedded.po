@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/embedded.rst:5
+msgid "How to Embed Forms"
+msgstr ""
+
+#: ../../../form/embedded.rst:7
+msgid ""
+"Often, you'll want to build a form that will include fields from many "
+"different objects. For example, a registration form may contain data "
+"belonging to a ``User`` object as well as many ``Address`` objects. "
+"Fortunately this can be achieved by the Form component."
+msgstr ""
+
+#: ../../../form/embedded.rst:15
+msgid "Embedding a Single Object"
+msgstr ""
+
+#: ../../../form/embedded.rst:17
+msgid ""
+"Suppose that each ``Task`` belongs to a simple ``Category`` object. Start"
+" by creating the ``Category`` object::"
+msgstr ""
+
+#: ../../../form/embedded.rst:33
+msgid "Next, add a new ``category`` property to the ``Task`` class::"
+msgstr ""
+
+#: ../../../form/embedded.rst:62
+msgid ""
+"The ``Valid`` Constraint has been added to the property ``category``. "
+"This cascades the validation to the corresponding entity. If you omit "
+"this constraint, the child entity would not be validated."
+msgstr ""
+
+#: ../../../form/embedded.rst:66
+msgid ""
+"Now that your application has been updated to reflect the new "
+"requirements, create a form class so that a ``Category`` object can be "
+"modified by the user::"
+msgstr ""
+
+#: ../../../form/embedded.rst:92
+msgid ""
+"The end goal is to allow the ``Category`` of a ``Task`` to be modified "
+"right inside the task form itself. To accomplish this, add a ``category``"
+" field to the ``TaskType`` object whose type is an instance of the new "
+"``CategoryType`` class::"
+msgstr ""
+
+#: ../../../form/embedded.rst:107
+msgid ""
+"The fields from ``CategoryType`` can now be rendered alongside those from"
+" the ``TaskType`` class."
+msgstr ""
+
+#: ../../../form/embedded.rst:110
+msgid ""
+"Render the ``Category`` fields in the same way as the original ``Task`` "
+"fields:"
+msgstr ""
+
+#: ../../../form/embedded.rst:123
+msgid ""
+"When the user submits the form, the submitted data for the ``Category`` "
+"fields are used to construct an instance of ``Category``, which is then "
+"set on the ``category`` field of the ``Task`` instance."
+msgstr ""
+
+#: ../../../form/embedded.rst:127
+msgid ""
+"The ``Category`` instance is accessible naturally via "
+"``$task->getCategory()`` and can be persisted to the database or used "
+"however you need."
+msgstr ""
+
+#: ../../../form/embedded.rst:131
+msgid "Embedding a Collection of Forms"
+msgstr ""
+
+#: ../../../form/embedded.rst:133
+msgid ""
+"You can also embed a collection of forms into one form (imagine a "
+"``Category`` form with many ``Product`` sub-forms). This is done by using"
+" the ``collection`` field type."
+msgstr ""
+
+#: ../../../form/embedded.rst:137
+msgid ""
+"For more information see the :doc:`/form/form_collections` article and "
+"the :doc:`CollectionType </reference/forms/types/collection>` reference."
+msgstr ""
+

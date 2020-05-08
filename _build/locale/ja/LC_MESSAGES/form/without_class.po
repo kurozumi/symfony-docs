@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../form/without_class.rst:5
+msgid "How to Use a Form without a Data Class"
+msgstr ""
+
+#: ../../../form/without_class.rst:7
+msgid ""
+"In most cases, a form is tied to an object, and the fields of the form "
+"get and store their data on the properties of that object. This is "
+"exactly what you've seen so far in this article with the ``Task`` class."
+msgstr ""
+
+#: ../../../form/without_class.rst:11
+msgid ""
+"But sometimes, you may just want to use a form without a class, and get "
+"back an array of the submitted data. The ``getData()`` method allows you "
+"to do exactly that::"
+msgstr ""
+
+#: ../../../form/without_class.rst:38
+msgid ""
+"By default, a form actually assumes that you want to work with arrays of "
+"data, instead of an object. There are exactly two ways that you can "
+"change this behavior and tie the form to an object instead:"
+msgstr ""
+
+#: ../../../form/without_class.rst:42
+msgid ""
+"Pass an object when creating the form (as the first argument to "
+"``createFormBuilder()`` or the second argument to ``createForm()``);"
+msgstr ""
+
+#: ../../../form/without_class.rst:45
+msgid "Declare the ``data_class`` option on your form."
+msgstr ""
+
+#: ../../../form/without_class.rst:47
+msgid ""
+"If you *don't* do either of these, then the form will return the data as "
+"an array. In this example, since ``$defaultData`` is not an object (and "
+"no ``data_class`` option is set), ``$form->getData()`` ultimately returns"
+" an array."
+msgstr ""
+
+#: ../../../form/without_class.rst:54
+msgid ""
+"You can also access POST values (in this case \"name\") directly through "
+"the request object, like so::"
+msgstr ""
+
+#: ../../../form/without_class.rst:59
+msgid ""
+"Be advised, however, that in most cases using the ``getData()`` method is"
+" a better choice, since it returns the data (usually an object) after "
+"it's been transformed by the Form component."
+msgstr ""
+
+#: ../../../form/without_class.rst:64
+msgid "Adding Validation"
+msgstr ""
+
+#: ../../../form/without_class.rst:66
+msgid ""
+"The only missing piece is validation. Usually, when you call "
+"``$form->handleRequest($request)``, the object is validated by reading "
+"the constraints that you applied to that class. If your form is mapped to"
+" an object (i.e. you're using the ``data_class`` option or passing an "
+"object to your form), this is almost always the approach you want to use."
+" See :doc:`/validation` for more details."
+msgstr ""
+
+#: ../../../form/without_class.rst:74
+msgid ""
+"But if the form is not mapped to an object and you instead want to "
+"retrieve a simple array of your submitted data, how can you add "
+"constraints to the data of your form?"
+msgstr ""
+
+#: ../../../form/without_class.rst:78
+msgid ""
+"The answer is to set up the constraints yourself, and attach them to the "
+"individual fields. The overall approach is covered a bit more in "
+":doc:`this validation article </validation/raw_values>`, but here's a "
+"short example::"
+msgstr ""
+
+#: ../../../form/without_class.rst:104
+msgid ""
+"If you are using validation groups, you need to either reference the "
+"``Default`` group when creating the form, or set the correct group on the"
+" constraint you are adding::"
+msgstr ""
+
+#: ../../../form/without_class.rst:112
+msgid ""
+"If the form is not mapped to an object, every object in your array of "
+"submitted data is validated using the "
+"``Symfony\\Component\\Validator\\Constraints\\Valid`` constraint, unless "
+"you :doc:`disable validation </form/disabling_validation>`."
+msgstr ""
+
+#: ../../../form/without_class.rst:118
+msgid ""
+"When a form is only partially submitted (for example, in an HTTP PATCH "
+"request), only the constraints from the submitted form fields will be "
+"evaluated."
+msgstr ""
+

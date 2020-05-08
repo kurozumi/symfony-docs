@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../frontend/encore/dev-server.rst:2
+msgid "Using webpack-dev-server and HMR"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:4
+msgid ""
+"While developing, instead of using ``yarn encore dev --watch``, you can "
+"use the `webpack-dev-server`_:"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:11
+msgid ""
+"This serves the built assets from a new server at "
+"``http://localhost:8080`` (it does not actually write any files to disk)."
+" This means your ``script`` and ``link`` tags need to change to point to "
+"this."
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:15
+msgid ""
+"If you're using the ``encore_entry_script_tags()`` and "
+"``encore_entry_link_tags()`` Twig shortcuts (or are :ref:`processing your"
+" assets through entrypoints.json <load-manifest-files>` in some other "
+"way), you're done: the paths in your templates will automatically point "
+"to the dev server."
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:20
+msgid ""
+"The ``dev-server`` command supports all the options defined by `webpack-"
+"dev-server`_. You can set these options via command line options:"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:27
+msgid ""
+"You can also set these options using the "
+"``Encore.configureDevServerOptions()`` method in your "
+"``webpack.config.js`` file:"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:48
+msgid ""
+"The ``Encore.configureDevServerOptions()`` method was introduced in "
+"Encore 0.28.4."
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:51
+msgid "Hot Module Replacement HMR"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:53
+msgid ""
+"Encore *does* support `HMR`_ for :doc:`Vue.js </frontend/encore/vuejs>`, "
+"but does *not* work for styles anywhere at this time. To activate it, "
+"pass the ``--hot`` option:"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:61
+msgid ""
+"If you experience issues related to CORS (Cross Origin Resource Sharing),"
+" add the ``--disable-host-check`` and ``--port`` options to the ``dev-"
+"server`` command in the ``package.json`` file:"
+msgstr ""
+
+#: ../../../frontend/encore/dev-server.rst:78
+msgid ""
+"Beware that `it's not recommended to disable host checking`_ in general, "
+"but here it's required to solve the CORS issue."
+msgstr ""
+

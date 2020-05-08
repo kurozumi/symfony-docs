@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../translation/lint.rst:6
+msgid "How to Find Errors in Translation Files"
+msgstr ""
+
+#: ../../../translation/lint.rst:8
+msgid ""
+"Symfony processes all the application translation files as part of the "
+"process that compiles the application code before executing it. If "
+"there's an error in any translation file, you'll see an error message "
+"explaining the problem."
+msgstr ""
+
+#: ../../../translation/lint.rst:12
+msgid ""
+"If you prefer, you can also validate the contents of any YAML and XLIFF "
+"translation file using the ``lint:yaml`` and ``lint:xliff`` commands:"
+msgstr ""
+
+#: ../../../translation/lint.rst:29
+msgid "The linter results can be exported to JSON using the ``--format`` option:"
+msgstr ""
+
+#: ../../../translation/lint.rst:38
+msgid ""
+"The Yaml component provides a stand-alone ``yaml-lint`` binary allowing "
+"you to lint YAML files without having to create a console application:"
+msgstr ""
+
+#: ../../../translation/lint.rst:47
+msgid "The ``yaml-lint`` binary was introduced in Symfony 5.1."
+msgstr ""
+

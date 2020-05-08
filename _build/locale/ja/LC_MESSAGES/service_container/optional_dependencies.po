@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Symfony Framework
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Symfony Framework Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-08 14:21+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: ../../../service_container/optional_dependencies.rst:2
+msgid "How to Make Service Arguments/References Optional"
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:4
+msgid ""
+"Sometimes, one of your services may have an optional dependency, meaning "
+"that the dependency is not required for your service to work properly. "
+"You can configure the container to not throw an error in this case."
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:9
+msgid "Setting Missing Dependencies to null"
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:11
+msgid ""
+"You can use the ``null`` strategy to explicitly set the argument to "
+"``null`` if the service does not exist:"
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:51
+msgid "The \"null\" strategy is not currently supported by the YAML driver."
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:54
+msgid "Ignoring Missing Dependencies"
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:56
+msgid ""
+"The behavior of ignoring missing dependencies is the same as the \"null\""
+" behavior except when used within a method call, in which case the method"
+" call itself will be removed."
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:60
+msgid ""
+"In the following example the container will inject a service using a "
+"method call if the service exists and remove the method call if it does "
+"not:"
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:108
+msgid ""
+"If the argument to the method call is a collection of arguments and any "
+"of them is missing, those elements are removed but the method call is "
+"still made with the remaining elements of the collection."
+msgstr ""
+
+#: ../../../service_container/optional_dependencies.rst:112
+msgid ""
+"In YAML, the special ``@?`` syntax tells the service container that the "
+"dependency is optional. The ``NewsletterManager`` must also be rewritten "
+"by adding a ``setLogger()`` method::"
+msgstr ""
+
