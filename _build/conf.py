@@ -291,6 +291,6 @@ texinfo_documents = [
 # Use PHP syntax highlighting in code examples by default
 highlight_language='php'
 
-locale_dirs = ['locale/']
+locale_dirs = ['_build/locale']
 gettext_compact = False
 language = 'ja'
