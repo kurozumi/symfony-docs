@@ -4,60 +4,73 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Symfony Framework Documentation \n"
+"Project-Id-Version: Symfony Framework Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-08 14:21+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-05-09 23:00+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../../../best_practices.rst:2
 msgid "The Symfony Framework Best Practices"
-msgstr ""
+msgstr "Symfonyフレームワークのベストプラクティス"
 
 #: ../../../best_practices.rst:4
 msgid ""
-"This article describes the **best practices for developing web "
-"applications with Symfony** that fit the philosophy envisioned by the "
-"original Symfony creators."
+"This article describes the **best practices for developing web applications "
+"with Symfony** that fit the philosophy envisioned by the original Symfony "
+"creators."
 msgstr ""
+"この記事では、Symfonyの最初の作成者が構想した哲学に適合する **SymfonyでWebア"
+"プリケーションを開発するためのベストプラクティス** について説明します。"
 
 #: ../../../best_practices.rst:7
 msgid ""
-"If you don't agree with some of these recommendations, they might be a "
-"good **starting point** that you can then **extend and fit to your "
-"specific needs**. You can even ignore them completely and continue using "
-"your own best practices and methodologies. Symfony is flexible enough to "
-"adapt to your needs."
+"If you don't agree with some of these recommendations, they might be a good "
+"**starting point** that you can then **extend and fit to your specific "
+"needs**. You can even ignore them completely and continue using your own "
+"best practices and methodologies. Symfony is flexible enough to adapt to "
+"your needs."
 msgstr ""
+"これらの推奨事項のいくつかに同意しない場合は、**特定のニーズに拡張して適合さ"
+"せる** ことができる **開始点** になる可能性があります。それらを完全に無視し"
+"て、独自のベストプラクティスと方法論を引き続き使用することもできます。 "
+"Symfonyはあなたのニーズに適応するのに十分な柔軟性があります。"
 
 #: ../../../best_practices.rst:12
 msgid ""
 "This article assumes that you already have experience developing Symfony "
-"applications. If you don't, read first the :doc:`Getting Started "
-"</setup>` section of the documentation."
+"applications. If you don't, read first the :doc:`Getting Started </setup>` "
+"section of the documentation."
 msgstr ""
+"この記事は、Symfonyアプリケーションの開発経験があることを前提としています。"
+"そうでない場合は、最初にドキュメントのセクション :doc:`はじめに </setup>` を"
+"読んでください。"
 
 #: ../../../best_practices.rst:18
 msgid ""
-"Symfony provides a sample application called `Symfony Demo`_ that follows"
-" all these best practices, so you can experience them in practice."
+"Symfony provides a sample application called `Symfony Demo`_ that follows "
+"all these best practices, so you can experience them in practice."
 msgstr ""
+"Symfonyは `Symfony Demo`_ と呼ばれるサンプルアプリケーションを提供していま"
+"す。これはすべてのベストプラクティスに従っており、実際にそれらを体験すること"
+"ができます。"
 
 #: ../../../best_practices.rst:22
 msgid "Creating the Project"
-msgstr ""
+msgstr "プロジェクトを作成する"
 
 #: ../../../best_practices.rst:25
 msgid "Use the Symfony Binary to Create Symfony Applications"
-msgstr ""
+msgstr "Symfonyバイナリを使用してSymfonyアプリケーションを作成する"
 
 #: ../../../best_practices.rst:27
 msgid ""
@@ -65,499 +78,724 @@ msgid ""
 "you `download Symfony`_. It provides multiple utilities, including the "
 "simplest way to create new Symfony applications:"
 msgstr ""
+"Symfonyバイナリは、`Symfonyをダウンロード`_ したときにマシンで作成される実行"
+"可能なコマンドです。新しいSymfonyアプリケーションを作成する最も簡単な方法を"
+"含む、複数のユーティリティを提供します："
 
 #: ../../../best_practices.rst:35
 msgid ""
-"Under the hood, this Symfony binary command executes the needed "
-"`Composer`_ command to :ref:`create a new Symfony application <creating-"
-"symfony-applications>` based on the current stable version."
+"Under the hood, this Symfony binary command executes the needed `Composer`_ "
+"command to :ref:`create a new Symfony application <creating-symfony-"
+"applications>` based on the current stable version."
 msgstr ""
+"内部的には、このSymfonyバイナリコマンドは現在の安定バージョンに基づいた :"
+"ref:`新しいSymfonyアプリケーションを作成するために <creating-symfony-"
+"applications>` 必要な `Composer`_ コマンドを実行します。"
 
 #: ../../../best_practices.rst:40
 msgid "Use the Default Directory Structure"
-msgstr ""
+msgstr "デフォルトのディレクトリ構造を使用する"
 
 #: ../../../best_practices.rst:42
 msgid ""
-"Unless your project follows a development practice that imposes a certain"
-" directory structure, follow the default Symfony directory structure. "
-"It's flat, self-explanatory and not coupled to Symfony:"
+"Unless your project follows a development practice that imposes a certain "
+"directory structure, follow the default Symfony directory structure. It's "
+"flat, self-explanatory and not coupled to Symfony:"
 msgstr ""
+"プロジェクトが特定のディレクトリ構造を強制する開発慣行に従っていない限り、デ"
+"フォルトのSymfonyディレクトリ構造に従います。フラットで自明であり、Symfonyと"
+"連動していません:"
 
 #: ../../../best_practices.rst:79
 msgid "Configuration"
-msgstr ""
+msgstr "構成"
 
 #: ../../../best_practices.rst:82
 msgid "Use Environment Variables for Infrastructure Configuration"
-msgstr ""
+msgstr "インフラ構成に環境変数を使用する"
 
 #: ../../../best_practices.rst:84
 msgid ""
 "These are the options that change from one machine to another (e.g. from "
-"your development machine to the production server) but which don't change"
-" the application behavior."
+"your development machine to the production server) but which don't change "
+"the application behavior."
 msgstr ""
+"これらは、あるマシンから別のマシンに（たとえば、開発マシンから本番サーバー"
+"に）変更されるオプションですが、アプリケーションの動作は変更されません。"
 
 #: ../../../best_practices.rst:88
 msgid ""
 ":ref:`Use env vars in your project <config-env-vars>` to define these "
-"options and create multiple ``.env`` files to :ref:`configure env vars "
-"per environment <config-dot-env>`."
+"options and create multiple ``.env`` files to :ref:`configure env vars per "
+"environment <config-dot-env>`."
 msgstr ""
+"これらのオプションを定義するための :ref:`プロジェクトで環境変数の使用"
+"<config-env-vars>` し、 :ref:`環境毎の環境変数を構成するための<config-dot-"
+"env>`  複数の ``.env`` ファイルを作成します。"
 
 #: ../../../best_practices.rst:92
 msgid "Use Secret for Sensitive Information"
-msgstr ""
+msgstr "機密情報にシークレットを使用する"
 
 #: ../../../best_practices.rst:94
 msgid ""
-"When your application has sensitive configuration - like an API key - you"
-" should store those securely via :doc:`secrets </configuration/secrets>`."
+"When your application has sensitive configuration - like an API key - you "
+"should store those securely via :doc:`secrets </configuration/secrets>`."
 msgstr ""
+"アプリケーションにAPIキーなどの機密構成がある場合は、それらを :doc:`secrets "
+"</configuration/secrets>` を介して安全に保存する必要があります。"
 
 #: ../../../best_practices.rst:98
+#, fuzzy
 msgid "Use Parameters for Application Configuration"
-msgstr ""
+msgstr "アプリケーション構成のパラメーターを使用する"
 
 #: ../../../best_practices.rst:100
+#, fuzzy
 msgid ""
-"These are the options used to modify the application behavior, such as "
-"the sender of email notifications, or the enabled `feature toggles`_. "
-"Their value doesn't change per machine, so don't define them as "
-"environment variables."
+"These are the options used to modify the application behavior, such as the "
+"sender of email notifications, or the enabled `feature toggles`_. Their "
+"value doesn't change per machine, so don't define them as environment "
+"variables."
 msgstr ""
+"これらは、メール通知の送信者や有効な「機能の切り替え」など、アプリケーション"
+"の動作を変更するために使用されるオプションです。それらの値はマシンごとに変化"
+"しないため、環境変数として定義しないでください。"
 
 #: ../../../best_practices.rst:104
+#, fuzzy
 msgid ""
-"Define these options as :ref:`parameters <configuration-parameters>` in "
-"the ``config/services.yaml`` file. You can override these options per "
-":ref:`environment <configuration-environments>` in the "
-"``config/services_dev.yaml`` and ``config/services_prod.yaml`` files."
+"Define these options as :ref:`parameters <configuration-parameters>` in the "
+"``config/services.yaml`` file. You can override these options per :ref:"
+"`environment <configuration-environments>` in the ``config/services_dev."
+"yaml`` and ``config/services_prod.yaml`` files."
 msgstr ""
+"これらのオプションを：ref： `parametersとして定義します<configuration-"
+"parameters> `` `config / services.yaml``ファイル内。これらのオプションは："
+"ref： `environmentごとに上書きできます<configuration-environments> `` "
+"`config / services_dev.yaml``と` `config / services_prod.yaml``ファイル内。"
 
 #: ../../../best_practices.rst:110
+#, fuzzy
 msgid "Use Short and Prefixed Parameter Names"
-msgstr ""
+msgstr "短いプレフィックスのパラメータ名を使用する"
 
 #: ../../../best_practices.rst:112
+#, fuzzy
 msgid ""
 "Consider using ``app.`` as the prefix of your :ref:`parameters "
 "<configuration-parameters>` to avoid collisions with Symfony and third-"
 "party bundles/libraries parameters. Then, use just one or two words to "
 "describe the purpose of the parameter:"
 msgstr ""
+"：ref： `パラメータのプレフィックスとして「app。」を使用することを検討してく"
+"ださい<configuration-parameters> `Symfonyおよびサードパーティのバンドル/ライ"
+"ブラリパラメータとの衝突を避けるため。次に、1つまたは2つの単語を使用して、パ"
+"ラメーターの目的を説明します。"
 
 #: ../../../best_practices.rst:130
+#, fuzzy
 msgid "Use Constants to Define Options that Rarely Change"
-msgstr ""
+msgstr "定数を使用してほとんど変化しないオプションを定義する"
 
 #: ../../../best_practices.rst:132
+#, fuzzy
 msgid ""
-"Configuration options like the number of items to display in some listing"
-" rarely change. Instead of defining them as :ref:`service container "
-"parameters <configuration-parameters>`, define them as PHP constants in "
-"the related classes. Example::"
+"Configuration options like the number of items to display in some listing "
+"rarely change. Instead of defining them as :ref:`service container "
+"parameters <configuration-parameters>`, define them as PHP constants in the "
+"related classes. Example::"
 msgstr ""
+"一部のリストに表示するアイテムの数などの構成オプションはほとんど変更されませ"
+"ん。 ：ref： `サービスコンテナパラメータとして定義する代わりに"
+"<configuration-parameters> `、それらを関連クラスのPHP定数として定義します。"
+"例::"
 
 #: ../../../best_practices.rst:146
+#, fuzzy
 msgid ""
 "The main advantage of constants is that you can use them everywhere, "
-"including Twig templates and Doctrine entities, whereas parameters are "
-"only available from places with access to the :doc:`service container "
-"</service_container>`."
+"including Twig templates and Doctrine entities, whereas parameters are only "
+"available from places with access to the :doc:`service container </"
+"service_container>`."
 msgstr ""
+"定数の主な利点は、TwigテンプレートやDoctrineエンティティを含め、定数をどこで"
+"も使用できることです。一方、パラメーターは：doc： `サービスコンテナー</ "
+"service_container>`にアクセスできる場所からのみ利用できます。"
 
 #: ../../../best_practices.rst:150
+#, fuzzy
 msgid ""
 "The only notable disadvantage of using constants for this kind of "
-"configuration values is that it's complicated to redefine their values in"
-" your tests."
+"configuration values is that it's complicated to redefine their values in "
+"your tests."
 msgstr ""
+"この種の構成値に定数を使用することの唯一の注目すべき欠点は、テストで値を再定"
+"義するのが複雑なことです。"
 
 #: ../../../best_practices.rst:154
+#, fuzzy
 msgid "Business Logic"
-msgstr ""
+msgstr "ビジネスの論理"
 
 #: ../../../best_practices.rst:157
+#, fuzzy
 msgid "Don't Create any Bundle to Organize your Application Logic"
 msgstr ""
+"アプリケーションロジックを整理するためにバンドルを作成しないでください"
 
 #: ../../../best_practices.rst:159
+#, fuzzy
 msgid ""
-"When Symfony 2.0 was released, applications used :doc:`bundles "
-"</bundles>` to divide their code into logical features: UserBundle, "
-"ProductBundle, InvoiceBundle, etc. However, a bundle is meant to be "
-"something that can be reused as a stand-alone piece of software."
+"When Symfony 2.0 was released, applications used :doc:`bundles </bundles>` "
+"to divide their code into logical features: UserBundle, ProductBundle, "
+"InvoiceBundle, etc. However, a bundle is meant to be something that can be "
+"reused as a stand-alone piece of software."
 msgstr ""
+"Symfony 2.0がリリースされたとき、アプリケーションは：doc： `bundlesを使用し"
+"ていました</bundles> `コードを論理機能（UserBundle、ProductBundle、"
+"InvoiceBundleなど）に分割します。ただし、バンドルは、スタンドアロンのソフト"
+"ウェアとして再利用できるものです。"
 
 #: ../../../best_practices.rst:164
+#, fuzzy
 msgid ""
-"If you need to reuse some feature in your projects, create a bundle for "
-"it (in a private repository, to not make it publicly available). For the "
-"rest of your application code, use PHP namespaces to organize code "
-"instead of bundles."
+"If you need to reuse some feature in your projects, create a bundle for it "
+"(in a private repository, to not make it publicly available). For the rest "
+"of your application code, use PHP namespaces to organize code instead of "
+"bundles."
 msgstr ""
+"プロジェクトで一部の機能を再利用する必要がある場合は、そのバンドルを作成しま"
+"す（公開しないように、プライベートリポジトリに作成します）。残りのアプリケー"
+"ションコードについては、バンドルの代わりにPHP名前空間を使用してコードを整理"
+"します。"
 
 #: ../../../best_practices.rst:169
+#, fuzzy
 msgid "Use Autowiring to Automate the Configuration of Application Services"
-msgstr ""
+msgstr "自動配線を使用してアプリケーションサービスの構成を自動化する"
 
 #: ../../../best_practices.rst:171
+#, fuzzy
 msgid ""
-":doc:`Service autowiring </service_container/autowiring>` is a feature "
-"that reads the type-hints on your constructor (or other methods) and "
+":doc:`Service autowiring </service_container/autowiring>` is a feature that "
+"reads the type-hints on your constructor (or other methods) and "
 "automatically passes the correct services to each method, making "
 "unnecessary to configure services explicitly and simplifying the "
 "application maintenance."
 msgstr ""
+"：doc： `Service autowiring </ service_container / autowiring>`は、コンスト"
+"ラクター（またはその他のメソッド）の型ヒントを読み取り、正しいサービスを各メ"
+"ソッドに自動的に渡すため、サービスを明示的に構成する必要がなく、アプリケー"
+"ションを簡素化しますメンテナンス。"
 
 #: ../../../best_practices.rst:176
+#, fuzzy
 msgid ""
 "Use it in combination with :ref:`service autoconfiguration <services-"
-"autoconfigure>` to also add :doc:`service tags </service_container/tags>`"
-" to the services needing them, such as Twig extensions, event "
-"subscribers, etc."
+"autoconfigure>` to also add :doc:`service tags </service_container/tags>` "
+"to the services needing them, such as Twig extensions, event subscribers, "
+"etc."
 msgstr ""
+"：ref： `service autoconfigurationと組み合わせて使用します<services-"
+"autoconfigure> `：doc：`サービスタグも追加する</service_container/tags> "
+"`Twigエクステンション、イベントサブスクライバーなど、それらを必要とするサー"
+"ビスに"
 
 #: ../../../best_practices.rst:181
+#, fuzzy
 msgid "Services Should be Private Whenever Possible"
-msgstr ""
+msgstr "サービスは可能な限りプライベートである必要があります"
 
 #: ../../../best_practices.rst:183
+#, fuzzy
 msgid ""
 ":ref:`Make services private <container-public>` to prevent you from "
-"accessing those services via ``$container->get()``. Instead, you will "
-"need to use proper dependency injection."
+"accessing those services via ``$container->get()``. Instead, you will need "
+"to use proper dependency injection."
 msgstr ""
+"：ref： `サービスをプライベートにする<container-public> `` `$ container-> "
+"get（）` `を介してこれらのサービスにアクセスできないようにします。代わりに、"
+"適切な依存関係注入を使用する必要があります。"
 
 #: ../../../best_practices.rst:188
+#, fuzzy
 msgid "Use the YAML Format to Configure your Own Services"
-msgstr ""
+msgstr "YAML形式を使用して独自のサービスを構成する"
 
 #: ../../../best_practices.rst:190
+#, fuzzy
 msgid ""
-"If you use the :ref:`default services.yaml configuration <service-"
-"container-services-load-example>`, most services will be configured "
-"automatically. However, in some edge cases you'll need to configure "
-"services (or parts of them) manually."
+"If you use the :ref:`default services.yaml configuration <service-container-"
+"services-load-example>`, most services will be configured automatically. "
+"However, in some edge cases you'll need to configure services (or parts of "
+"them) manually."
 msgstr ""
+"：ref： `default services.yaml設定を使用する場合<service-container-services-"
+"load-example> `、ほとんどのサービスは自動的に設定されます。ただし、一部の"
+"エッジケースでは、サービス（またはサービスの一部）を手動で構成する必要があり"
+"ます。"
 
 #: ../../../best_practices.rst:194
+#, fuzzy
 msgid ""
-"YAML is the format recommended to configure services because it's "
-"friendly to newcomers and concise, but Symfony also supports XML and PHP "
+"YAML is the format recommended to configure services because it's friendly "
+"to newcomers and concise, but Symfony also supports XML and PHP "
 "configuration."
 msgstr ""
+"YAMLはサービスの設定に推奨されるフォーマットです。YAMLは新規参入者にわかりや"
+"すく簡潔であるためですが、SymfonyはXMLとPHPの設定もサポートしています。"
 
 #: ../../../best_practices.rst:198
+#, fuzzy
 msgid "Use Annotations to Define the Doctrine Entity Mapping"
-msgstr ""
+msgstr "アノテーションを使用してDoctrineエンティティマッピングを定義する"
 
 #: ../../../best_practices.rst:200
+#, fuzzy
 msgid ""
-"Doctrine entities are plain PHP objects that you store in some "
-"\"database\". Doctrine only knows about your entities through the mapping"
-" metadata configured for your model classes."
+"Doctrine entities are plain PHP objects that you store in some \"database"
+"\". Doctrine only knows about your entities through the mapping metadata "
+"configured for your model classes."
 msgstr ""
+"Doctrineエンティティは、何らかの「データベース」に保存するプレーンなPHPオブ"
+"ジェクトです。 Doctrineはあなたのモデルクラスのために設定されたマッピングメ"
+"タデータを通してあなたのエンティティについてのみ知っています。"
 
 #: ../../../best_practices.rst:204
+#, fuzzy
 msgid ""
 "Doctrine supports several metadata formats, but it's recommended to use "
 "annotations because they are by far the most convenient and agile way of "
 "setting up and looking for mapping information."
 msgstr ""
+"Doctrineはいくつかのメタデータフォーマットをサポートしますが、マッピング情報"
+"を設定して探すための最も便利で機敏な方法であるため、アノテーションを使用する"
+"ことをお勧めします。"
 
 #: ../../../best_practices.rst:209
+#, fuzzy
 msgid "Controllers"
-msgstr ""
+msgstr "コントローラー"
 
 #: ../../../best_practices.rst:212
+#, fuzzy
 msgid "Make your Controller Extend the ``AbstractController`` Base Controller"
 msgstr ""
+"コントローラーに `` AbstractController``ベースコントローラーを拡張させます"
 
 #: ../../../best_practices.rst:214
+#, fuzzy
 msgid ""
 "Symfony provides a :ref:`base controller <the-base-controller-classes-"
 "services>` which includes shortcuts for the most common needs such as "
 "rendering templates or checking security permissions."
 msgstr ""
+"symfonyは：ref： `ベースコントローラーを提供します<the-base-controller-"
+"classes-services> `テンプレートのレンダリングやセキュリティ権限の確認など、"
+"最も一般的なニーズへのショートカットが含まれています。"
 
 #: ../../../best_practices.rst:218
+#, fuzzy
 msgid ""
 "Extending your controllers from this base controller couples your "
 "application to Symfony. Coupling is generally wrong, but it may be OK in "
 "this case because controllers shouldn't contain any business logic. "
-"Controllers should contain nothing more than a few lines of *glue-code*, "
-"so you are not coupling the important parts of your application."
+"Controllers should contain nothing more than a few lines of *glue-code*, so "
+"you are not coupling the important parts of your application."
 msgstr ""
+"この基本コントローラーからコントローラーを拡張すると、アプリケーションが"
+"Symfonyに結合されます。カップリングは一般的に間違っていますが、コントロー"
+"ラーにはビジネスロジックを含めるべきではないため、この場合は問題ない可能性が"
+"あります。コントローラーには数行の*グルーコード*のみを含める必要があるため、"
+"アプリケーションの重要な部分を結合していません。"
 
 #: ../../../best_practices.rst:227
+#, fuzzy
 msgid "Use Annotations to Configure Routing, Caching and Security"
 msgstr ""
+"アノテーションを使用してルーティング、キャッシュ、セキュリティを構成する"
 
 #: ../../../best_practices.rst:229
+#, fuzzy
 msgid ""
 "Using annotations for routing, caching and security simplifies "
 "configuration. You don't need to browse several files created with "
-"different formats (YAML, XML, PHP): all the configuration is just where "
-"you need it and it only uses one format."
+"different formats (YAML, XML, PHP): all the configuration is just where you "
+"need it and it only uses one format."
 msgstr ""
+"ルーティング、キャッシング、セキュリティにアノテーションを使用すると、構成が"
+"簡単になります。異なる形式（YAML、XML、PHP）で作成されたいくつかのファイルを"
+"参照する必要はありません。すべての構成は必要な場所にあり、1つの形式のみを使"
+"用します。"
 
 #: ../../../best_practices.rst:234
+#, fuzzy
 msgid "Don't Use Annotations to Configure the Controller Template"
-msgstr ""
+msgstr "注釈を使用してコントローラーテンプレートを構成しない"
 
 #: ../../../best_practices.rst:236
+#, fuzzy
 msgid ""
 "The ``@Template`` annotation is useful, but also involves some *magic*. "
 "Moreover, most of the time ``@Template`` is used without any parameters, "
-"which makes it more difficult to know which template is being rendered. "
-"It also hides the fact that a controller should always return a "
-"``Response`` object."
+"which makes it more difficult to know which template is being rendered. It "
+"also hides the fact that a controller should always return a ``Response`` "
+"object."
 msgstr ""
+"`` @ Template``アノテーションは便利ですが、いくつかの*マジック*も含みます。"
+"さらに、ほとんどの場合、「@ Template」はパラメータなしで使用されるため、どの"
+"テンプレートがレンダリングされているかを知るのがより難しくなります。また、コ"
+"ントローラは常に `` Response``オブジェクトを返す必要があるという事実を隠しま"
+"す。"
 
 #: ../../../best_practices.rst:242
+#, fuzzy
 msgid "Use Dependency Injection to Get Services"
-msgstr ""
+msgstr "依存性注入を使用してサービスを取得する"
 
 #: ../../../best_practices.rst:244
+#, fuzzy
 msgid ""
-"If you extend the base ``AbstractController``, you can only access to the"
-" most common services (e.g ``twig``, ``router``, ``doctrine``, etc.), "
-"directly from the container via ``$this->container->get()`` or "
-"``$this->get()``. Instead, you must use dependency injection to fetch "
-"services by :ref:`type-hinting action method arguments <controller-"
-"accessing-services>` or constructor arguments."
+"If you extend the base ``AbstractController``, you can only access to the "
+"most common services (e.g ``twig``, ``router``, ``doctrine``, etc.), "
+"directly from the container via ``$this->container->get()`` or ``$this-"
+">get()``. Instead, you must use dependency injection to fetch services by :"
+"ref:`type-hinting action method arguments <controller-accessing-services>` "
+"or constructor arguments."
 msgstr ""
+"ベースの `` AbstractController``を拡張すると、 `を介してコンテナから直接アク"
+"セスできるのは、最も一般的なサービス（` `twig``、` `router``、` `doctrine``"
+"など）のみです。 `$ this-> container-> get（）` `または` `$ this-> get（）` "
+"`。代わりに、依存関係注入を使用して、：ref： `type-hintingアクションメソッド"
+"の引数でサービスをフェッチする必要があります<controller-accessing-services> "
+"`またはコンストラクタ引数。"
 
 #: ../../../best_practices.rst:252
+#, fuzzy
 msgid "Use ParamConverters If They Are Convenient"
-msgstr ""
+msgstr "便利な場合はParamConvertersを使用する"
 
 #: ../../../best_practices.rst:254
+#, fuzzy
 msgid ""
-"If you're using :doc:`Doctrine </doctrine>`, then you can *optionally* "
-"use the `ParamConverter`_ to automatically query for an entity and pass "
-"it as an argument to your controller. It will also show a 404 page if no "
-"entity can be found."
+"If you're using :doc:`Doctrine </doctrine>`, then you can *optionally* use "
+"the `ParamConverter`_ to automatically query for an entity and pass it as "
+"an argument to your controller. It will also show a 404 page if no entity "
+"can be found."
 msgstr ""
+"：doc： `Doctrineを使用している場合</doctrine> `、その後、オプションで` "
+"ParamConverter`_を使用してエンティティを自動的にクエリし、それを引数としてコ"
+"ントローラーに渡すことができます。エンティティが見つからない場合は、404ペー"
+"ジも表示されます。"
 
 #: ../../../best_practices.rst:258
+#, fuzzy
 msgid ""
 "If the logic to get an entity from a route variable is more complex, "
-"instead of configuring the ParamConverter, it's better to make the "
-"Doctrine query inside the controller (e.g. by calling to a :doc:`Doctrine"
-" repository method </doctrine>`)."
+"instead of configuring the ParamConverter, it's better to make the Doctrine "
+"query inside the controller (e.g. by calling to a :doc:`Doctrine repository "
+"method </doctrine>`)."
 msgstr ""
+"ルート変数からエンティティを取得するロジックがより複雑な場合、ParamConverter"
+"を構成する代わりに、コントローラー内でDoctrineクエリを作成することをお勧めし"
+"ます（例：：doc： `Doctrineリポジトリメソッドを呼び出すことによって） </"
+"doctrine> `）。"
 
 #: ../../../best_practices.rst:263
 msgid "Templates"
-msgstr ""
+msgstr "テンプレート"
 
 #: ../../../best_practices.rst:266
+#, fuzzy
 msgid "Use Snake Case for Template Names and Variables"
-msgstr ""
+msgstr "テンプレート名と変数にスネークケースを使用する"
 
 #: ../../../best_practices.rst:268
+#, fuzzy
 msgid ""
-"Use lowercased snake_case for template names, directories and variables "
-"(e.g. ``user_profile`` instead of ``userProfile`` and "
-"``product/edit_form.html.twig`` instead of "
-"``Product/EditForm.html.twig``)."
+"Use lowercased snake_case for template names, directories and variables (e."
+"g. ``user_profile`` instead of ``userProfile`` and ``product/edit_form.html."
+"twig`` instead of ``Product/EditForm.html.twig``)."
 msgstr ""
+"テンプレート名、ディレクトリ、変数には小文字のsnake_caseを使用します（例： "
+"`` userProfile``の代わりに `` user_profile``と `` Product / EditForm.html."
+"twig``の代わりに `` product / edit_form.html.twig``） 。"
 
 #: ../../../best_practices.rst:273
+#, fuzzy
 msgid "Prefix Template Fragments with an Underscore"
-msgstr ""
+msgstr "アンダースコア付きのプレフィックステンプレートフラグメント"
 
 #: ../../../best_practices.rst:275
+#, fuzzy
 msgid ""
-"Template fragments, also called *\"partial templates\"*, allow to "
-":ref:`reuse template contents <templates-reuse-contents>`. Prefix their "
-"names with an underscore to better differentiate them from complete "
-"templates (e.g. ``_user_metadata.html.twig`` or "
-"``_caution_message.html.twig``)."
+"Template fragments, also called *\"partial templates\"*, allow to :ref:"
+"`reuse template contents <templates-reuse-contents>`. Prefix their names "
+"with an underscore to better differentiate them from complete templates (e."
+"g. ``_user_metadata.html.twig`` or ``_caution_message.html.twig``)."
 msgstr ""
+"*「部分テンプレート」*とも呼ばれるテンプレートフラグメントにより、：ref： `"
+"テンプレートの内容を再利用できます<templates-reuse-contents> `。名前の前にア"
+"ンダースコアを付けて、完全なテンプレートと区別しやすくします（例： `` "
+"_user_metadata.html.twig``または `` _caution_message.html.twig``）。"
 
 #: ../../../best_practices.rst:281
 msgid "Forms"
-msgstr ""
+msgstr "フォーム"
 
 #: ../../../best_practices.rst:284
+#, fuzzy
 msgid "Define your Forms as PHP Classes"
-msgstr ""
+msgstr "フォームをPHPクラスとして定義する"
 
 #: ../../../best_practices.rst:286
+#, fuzzy
 msgid ""
 "Creating :ref:`forms in classes <creating-forms-in-classes>` allows to "
 "reuse them in different parts of the application. Besides, not creating "
-"forms in controllers simplify the code and maintenance of the "
-"controllers."
+"forms in controllers simplify the code and maintenance of the controllers."
 msgstr ""
+"クラスで：ref： `フォームを作成する<creating-forms-in-classes> `アプリケー"
+"ションの異なる部分でそれらを再利用することができます。さらに、コントローラー"
+"でフォームを作成しないことで、コントローラーのコードとメンテナンスが簡素化さ"
+"れます。"
 
 #: ../../../best_practices.rst:291
+#, fuzzy
 msgid "Add Form Buttons in Templates"
-msgstr ""
+msgstr "テンプレートにフォームボタンを追加する"
 
 #: ../../../best_practices.rst:293
+#, fuzzy
 msgid ""
 "Form classes should be agnostic to where they will be used. For example, "
-"the button of a form used to both create and edit items should change "
-"from \"Add new\" to \"Save changes\" depending on where it's used."
+"the button of a form used to both create and edit items should change from "
+"\"Add new\" to \"Save changes\" depending on where it's used."
 msgstr ""
+"フォームクラスは、使用される場所にとらわれない必要があります。たとえば、アイ"
+"テムの作成と編集の両方に使用されるフォームのボタンは、それが使用される場所に"
+"応じて、「新規追加」から「変更を保存」に変更する必要があります。"
 
 #: ../../../best_practices.rst:297
+#, fuzzy
 msgid ""
 "Instead of adding buttons in form classes or the controllers, it's "
 "recommended to add buttons in the templates. This also improves the "
 "separation of concerns, because the button styling (CSS class and other "
 "attributes) is defined in the template instead of in a PHP class."
 msgstr ""
+"フォームクラスまたはコントローラーにボタンを追加する代わりに、テンプレートに"
+"ボタンを追加することをお勧めします。また、ボタンのスタイル（CSSクラスおよび"
+"その他の属性）がPHPクラスではなくテンプレートで定義されるため、問題の分離も"
+"向上します。"
 
 #: ../../../best_practices.rst:303
+#, fuzzy
 msgid "Define Validation Constraints on the Underlying Object"
-msgstr ""
+msgstr "基になるオブジェクトの検証制約を定義する"
 
 #: ../../../best_practices.rst:305
+#, fuzzy
 msgid ""
 "Attaching :doc:`validation constraints </reference/constraints>` to form "
-"fields instead of to the mapped object prevents the validation from being"
-" reused in other forms or other places where the object is used."
+"fields instead of to the mapped object prevents the validation from being "
+"reused in other forms or other places where the object is used."
 msgstr ""
+"：doc： `検証制約</ reference / constraints>`をマップされたオブジェクトでは"
+"なくフォームフィールドに添付すると、検証が他のフォームやオブジェクトが使用さ"
+"れる他の場所で再利用されなくなります。"
 
 #: ../../../best_practices.rst:312
+#, fuzzy
 msgid "Use a Single Action to Render and Process the Form"
-msgstr ""
+msgstr "単一のアクションを使用してフォームをレンダリングおよび処理する"
 
 #: ../../../best_practices.rst:314
+#, fuzzy
 msgid ""
 ":ref:`Rendering forms <rendering-forms>` and :ref:`processing forms "
-"<processing-forms>` are two of the main tasks when handling forms. Both "
-"are too similar (most of the times, almost identical), so it's much "
-"simpler to let a single controller action handle everything."
+"<processing-forms>` are two of the main tasks when handling forms. Both are "
+"too similar (most of the times, almost identical), so it's much simpler to "
+"let a single controller action handle everything."
 msgstr ""
+"：ref： `フォームのレンダリング<rendering-forms> `および：ref：`フォームの処"
+"理<processing-forms> `はフォームを処理する際の2つの主要なタスクです。どちら"
+"も似すぎているため（ほとんどの場合、ほとんど同じ）、1つのコントローラーアク"
+"ションですべてを処理する方がはるかに簡単です。"
 
 #: ../../../best_practices.rst:320
 msgid "Internationalization"
-msgstr ""
+msgstr "国際化社会"
 
 #: ../../../best_practices.rst:323
+#, fuzzy
 msgid "Use the XLIFF Format for Your Translation Files"
-msgstr ""
+msgstr "翻訳ファイルにXLIFF形式を使用する"
 
 #: ../../../best_practices.rst:325
+#, fuzzy
 msgid ""
-"Of all the translation formats supported by Symfony (PHP, Qt, ``.po``, "
-"``.mo``, JSON, CSV, INI, etc.) XLIFF and gettext have the best support in"
-" the tools used by professional translators. And since it's based on XML,"
-" you can validate XLIFF file contents as you write them."
+"Of all the translation formats supported by Symfony (PHP, Qt, ``.po``, ``."
+"mo``, JSON, CSV, INI, etc.) XLIFF and gettext have the best support in the "
+"tools used by professional translators. And since it's based on XML, you "
+"can validate XLIFF file contents as you write them."
 msgstr ""
+"Symfonyがサポートするすべての翻訳フォーマット（PHP、Qt、「。po」、「。mo」、"
+"JSON、CSV、INIなど）のうち、XLIFFとgettextは、プロの翻訳者が使用するツールで"
+"最高のサポートを提供します。また、XMLに基づいているため、XLIFFファイルの内容"
+"を記述しながら検証できます。"
 
 #: ../../../best_practices.rst:330
+#, fuzzy
 msgid ""
-"Symfony also supports notes in XLIFF files, making them more user-"
-"friendly for translators. At the end, good translations are all about "
-"context, and these XLIFF notes allow you to define that context."
+"Symfony also supports notes in XLIFF files, making them more user-friendly "
+"for translators. At the end, good translations are all about context, and "
+"these XLIFF notes allow you to define that context."
 msgstr ""
+"symfonyはXLIFFファイルのノートもサポートしているため、翻訳者にとってより使い"
+"やすいものになっています。結局のところ、適切な翻訳はすべてコンテキストに関す"
+"るものであり、これらのXLIFFノートでは、そのコンテキストを定義できます。"
 
 #: ../../../best_practices.rst:335
+#, fuzzy
 msgid "Use Keys for Translations Instead of Content Strings"
-msgstr ""
+msgstr "コンテンツ文字列の代わりに翻訳にキーを使用する"
 
 #: ../../../best_practices.rst:337
+#, fuzzy
 msgid ""
-"Using keys simplifies the management of the translation files because you"
-" can change the original contents in templates, controllers and services "
+"Using keys simplifies the management of the translation files because you "
+"can change the original contents in templates, controllers and services "
 "without having to update all of the translation files."
 msgstr ""
+"キーを使用すると、すべての翻訳ファイルを更新しなくても、テンプレート、コント"
+"ローラー、サービスの元のコンテンツを変更できるため、翻訳ファイルの管理が簡単"
+"になります。"
 
 #: ../../../best_practices.rst:341
+#, fuzzy
 msgid ""
-"Keys should always describe their *purpose* and *not* their location. For"
-" example, if a form has a field with the label \"Username\", then a nice "
-"key would be ``label.username``, *not* ``edit_form.label.username``."
+"Keys should always describe their *purpose* and *not* their location. For "
+"example, if a form has a field with the label \"Username\", then a nice key "
+"would be ``label.username``, *not* ``edit_form.label.username``."
 msgstr ""
+"キーは常にその*目的*を記述し、それらの場所を*記述しない*必要があります。たと"
+"えば、フォームに「Username」というラベルのフィールドがある場合、適切なキーは"
+"「label.username」、「edit_form.label.username」ではありません。"
 
 #: ../../../best_practices.rst:346
 msgid "Security"
-msgstr ""
+msgstr "セキュリティ"
 
 #: ../../../best_practices.rst:349
+#, fuzzy
 msgid "Define a Single Firewall"
-msgstr ""
+msgstr "単一のファイアウォールを定義する"
 
 #: ../../../best_practices.rst:351
+#, fuzzy
 msgid ""
-"Unless you have two legitimately different authentication systems and "
-"users (e.g. form login for the main site and a token system for your API "
-"only), it's recommended to have only one firewall to keep things simple."
+"Unless you have two legitimately different authentication systems and users "
+"(e.g. form login for the main site and a token system for your API only), "
+"it's recommended to have only one firewall to keep things simple."
 msgstr ""
+"正当に異なる2つの認証システムとユーザー（たとえば、メインサイトのフォームロ"
+"グインとAPIのみのトークンシステム）がない限り、単純にするためにファイア"
+"ウォールを1つだけにすることをお勧めします。"
 
 #: ../../../best_practices.rst:355
+#, fuzzy
 msgid ""
-"Additionally, you should use the ``anonymous`` key under your firewall. "
-"If you require users to be logged in for different sections of your site,"
-" use the :doc:`access_control </security/access_control>` option."
+"Additionally, you should use the ``anonymous`` key under your firewall. If "
+"you require users to be logged in for different sections of your site, use "
+"the :doc:`access_control </security/access_control>` option."
 msgstr ""
+"さらに、ファイアウォールの下で「匿名」キーを使用する必要があります。サイトの"
+"さまざまなセクションでユーザーにログインを要求する場合は、：doc： "
+"`access_control </ security / access_control>`オプションを使用します。"
 
 #: ../../../best_practices.rst:360
+#, fuzzy
 msgid "Use the ``auto`` Password Hasher"
-msgstr ""
+msgstr "`` auto``パスワードハッシュを使用する"
 
 #: ../../../best_practices.rst:362
+#, fuzzy
 msgid ""
 "The :ref:`auto password hasher <reference-security-encoder-auto>` "
 "automatically selects the best possible encoder/hasher depending on your "
 "PHP installation. Currently, it tries to use ``sodium`` by default and "
 "falls back to ``bcrypt``."
 msgstr ""
+"：ref： `自動パスワードハッシュ化<reference-security-encoder-auto> `は、PHP"
+"のインストールに応じて、最適なエンコーダー/ハッシャーを自動的に選択します。"
+"現在、デフォルトで `` sodium``の使用を試み、 `` bcrypt``にフォールバックしま"
+"す。"
 
 #: ../../../best_practices.rst:367
+#, fuzzy
 msgid "Use Voters to Implement Fine-grained Security Restrictions"
-msgstr ""
+msgstr "投票者を使用してきめ細かなセキュリティ制限を実装する"
 
 #: ../../../best_practices.rst:369
+#, fuzzy
 msgid ""
-"If your security logic is complex, you should create custom "
-":doc:`security voters </security/voters>` instead of defining long "
-"expressions inside the ``@Security`` annotation."
+"If your security logic is complex, you should create custom :doc:`security "
+"voters </security/voters>` instead of defining long expressions inside the "
+"``@Security`` annotation."
 msgstr ""
+"セキュリティロジックが複雑な場合は、「@ Security」アノテーション内で長い式を"
+"定義する代わりに、カスタムの：doc： `security voters </ security / voters>`"
+"を作成する必要があります。"
 
 #: ../../../best_practices.rst:374
+#, fuzzy
 msgid "Web Assets"
-msgstr ""
+msgstr "Webアセット"
 
 #: ../../../best_practices.rst:377
+#, fuzzy
 msgid "Use Webpack Encore to Process Web Assets"
-msgstr ""
+msgstr "Webpack Encoreを使用してWebアセットを処理する"
 
 #: ../../../best_practices.rst:379
+#, fuzzy
 msgid ""
 "Web assets are things like CSS, JavaScript and image files that make the "
 "frontend of your site look and work great. `Webpack`_ is the leading "
-"JavaScript module bundler that compiles, transforms and packages assets "
-"for usage in a browser."
+"JavaScript module bundler that compiles, transforms and packages assets for "
+"usage in a browser."
 msgstr ""
+"Webアセットとは、CSS、JavaScript、画像ファイルなどであり、サイトのフロントエ"
+"ンドを美しく機能させます。 `Webpack`_は、ブラウザーで使用するためにアセット"
+"をコンパイル、変換、パッケージ化する主要なJavaScriptモジュールバンドラーで"
+"す。"
 
 #: ../../../best_practices.rst:383
+#, fuzzy
 msgid ""
-":doc:`Webpack Encore </frontend>` is a JavaScript library that gets rid "
-"of most of Webpack complexity without hiding any of its features or "
-"distorting its usage and philosophy. It was originally created for "
-"Symfony applications, but it works for any application using any "
-"technology."
+":doc:`Webpack Encore </frontend>` is a JavaScript library that gets rid of "
+"most of Webpack complexity without hiding any of its features or distorting "
+"its usage and philosophy. It was originally created for Symfony "
+"applications, but it works for any application using any technology."
 msgstr ""
+"：doc： `Webpack Encore </frontend> `は、機能を隠したり、使用方法や哲学を歪"
+"めたりすることなく、Webpackの複雑さのほとんどを取り除くJavaScriptライブラリ"
+"です。これはもともとSymfonyアプリケーション用に作成されましたが、どのテクノ"
+"ロジーを使用するどのアプリケーションでも機能します。"
 
 #: ../../../best_practices.rst:389
 msgid "Tests"
-msgstr ""
+msgstr "テスト"
 
 #: ../../../best_practices.rst:392
+#, fuzzy
 msgid "Smoke Test your URLs"
-msgstr ""
+msgstr "URLの煙テスト"
 
 #: ../../../best_practices.rst:394
+#, fuzzy
 msgid ""
 "In software engineering, `smoke testing`_ consists of *\"preliminary "
 "testing to reveal simple failures severe enough to reject a prospective "
@@ -565,30 +803,48 @@ msgid ""
 "providers>` you can define a functional test that checks that all "
 "application URLs load successfully::"
 msgstr ""
+"ソフトウェアエンジニアリングでは、 `スモークテスト` _は* \"予想されるソフト"
+"ウェアリリースを拒否するのに十分深刻な単純な障害を明らかにするための予備テス"
+"ト\" *で構成されます。 ：ref： `PHPUnitデータプロバイダーの使用<testing-"
+"data-providers> `すべてのアプリケーションURLが正常に読み込まれることを確認す"
+"る機能テストを定義できます::"
 
 #: ../../../best_practices.rst:428
+#, fuzzy
 msgid ""
 "Add this test while creating your application because it requires little "
 "effort and checks that none of your pages returns an error. Later you'll "
 "add more specific tests for each page."
 msgstr ""
+"このテストは、アプリケーションの作成中に追加します。これは、ほとんど労力を必"
+"要とせず、どのページもエラーを返さないことを確認するためです。後で、各ページ"
+"により具体的なテストを追加します。"
 
 #: ../../../best_practices.rst:433
+#, fuzzy
 msgid "Hardcode URLs in a Functional Test"
-msgstr ""
+msgstr "機能テストでのURLのハードコード"
 
 #: ../../../best_practices.rst:435
+#, fuzzy
 msgid ""
 "In Symfony applications it's recommended to :ref:`generate URLs <routing-"
-"generating-urls>` using routes to automatically update all links when a "
-"URL changes. However, if a public URL changes, users won't be able to "
-"browse it unless you set up a redirection to the new URL."
+"generating-urls>` using routes to automatically update all links when a URL "
+"changes. However, if a public URL changes, users won't be able to browse it "
+"unless you set up a redirection to the new URL."
 msgstr ""
+"symfonyアプリケーションでは：ref： `URLを生成することをお勧めします<routing-"
+"generating-urls> `URLが変更されると、ルートを使用してすべてのリンクを自動的"
+"に更新します。ただし、パブリックURLが変更されると、新しいURLへのリダイレクト"
+"を設定しない限り、ユーザーはそのURLを閲覧できなくなります。"
 
 #: ../../../best_practices.rst:440
+#, fuzzy
 msgid ""
-"That's why it's recommended to use raw URLs in tests instead of "
-"generating them from routes. Whenever a route changes, tests will break "
-"and you'll know that you must set up a redirection."
+"That's why it's recommended to use raw URLs in tests instead of generating "
+"them from routes. Whenever a route changes, tests will break and you'll "
+"know that you must set up a redirection."
 msgstr ""
-
+"そのため、ルートから生成するのではなく、テストで生のURLを使用することをお勧"
+"めします。ルートが変更されると必ずテストが失敗し、リダイレクトを設定する必要"
+"があることがわかります。"
