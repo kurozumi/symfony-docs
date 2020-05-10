@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Unit Test your Forms &mdash; Symfony Framework Documentation  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="How to Configure empty Data for a Form Class" href="use_empty_data.html" />
+    <link rel="prev" title="How to Submit a Form with Multiple Buttons" href="multiple_buttons.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Symfony Framework Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick_tour/index.html">The Quick Tour</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../best_practices.html">The Symfony Framework Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundles.html">The Bundle System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache.html">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console.html">Console Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Databases and the Doctrine ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">How to Deploy a Symfony Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email.html">Swift Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_dispatcher.html">Events and Event Listeners</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../forms.html">Forms</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#building-forms">Building Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#rendering-forms">Rendering Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#processing-forms">Processing Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#validating-forms">Validating Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forms.html#other-common-form-features">Other Common Form Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../forms.html#learn-more">Learn more</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../reference/forms/types.html">Form Types Reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../controller/upload_file.html">How to Upload Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../security/csrf.html">How to Implement CSRF Protection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form_dependencies.html">How to Access Services or Config from Inside a Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_custom_field_type.html">How to Create a Custom Form Field Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_transformers.html">How to Use Data Transformers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_mappers.html">When and How to Use Data Mappers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="create_form_type_extension.html">How to Create a Form Type Extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_guesser.html">Creating a custom Type Guesser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bootstrap4.html">Bootstrap 4 Form Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form_customization.html">How to Customize Form Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form_themes.html">How to Work with Form Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html">Form Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dynamic_form_modification.html">How to Dynamically Modify Forms Using Form Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="validation_groups.html">How to Define the Validation Groups to Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="validation_group_service_resolver.html">How to Dynamically Configure Form Validation Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="button_based_validation.html">How to Choose Validation Groups Based on the Clicked Button</a></li>
+<li class="toctree-l3"><a class="reference internal" href="disabling_validation.html">How to Disable the Validation of Submitted Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="direct_submit.html">How to Use the submit() Function to Handle Form Submissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="embedded.html">How to Embed Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form_collections.html">How to Embed a Collection of Forms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inherit_data_option.html">How to Reduce Code Duplication with &#8220;inherit_data&#8221;</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multiple_buttons.html">How to Submit a Form with Multiple Buttons</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">How to Unit Test your Forms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-basics">The Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#testings-types-from-the-service-container">Testings Types from the Service Container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-custom-extensions">Adding Custom Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="use_empty_data.html">How to Configure empty Data for a Form Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="without_class.html">How to Use a Form without a Data Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">Managing CSS and JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_cache.html">HTTP Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailer.html">Sending Emails with Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mercure.html">Pushing Data to Clients Using the Mercure Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messenger.html">Messenger: Sync &amp; Queued Message Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration.html">Migrating an Existing Application to Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifier.html">Creating and Sending Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler.html">Profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../session.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serializer.html">How to Use the Serializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_container.html">Service Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_link.html">Asset Preloading and Resource Hints with HTTP/2 and WebLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">The Components</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference Documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../create_framework/index.html">Create your own PHP Framework</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Symfony Framework Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../forms.html">Forms</a> &raquo;</li>
+        
+      <li>How to Unit Test your Forms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/form/unit_testing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-unit-test-your-forms">
+<span id="index-0"></span><h1>How to Unit Test your Forms<a class="headerlink" href="#how-to-unit-test-your-forms" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="admonition caution">
+<p class="first admonition-title">ご用心</p>
+<p class="last">This article is intended for developers who create
+<a class="reference internal" href="create_custom_field_type.html"><em>custom form types</em></a>. If you are using
+the <a class="reference internal" href="../reference/forms/types.html"><em>built-in Symfony form types</em></a> or the form
+types provided by third-party bundles, you don&#8217;t need to unit test them.</p>
+</div>
+<p>The Form component consists of 3 core objects: a form type (implementing
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/FormTypeInterface.html" title="Symfony\Component\Form\FormTypeInterface"><span class="pre">FormTypeInterface</span></a></code>), the
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Form.html" title="Symfony\Component\Form\Form"><span class="pre">Form</span></a></code> and the
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/FormView.html" title="Symfony\Component\Form\FormView"><span class="pre">FormView</span></a></code>.</p>
+<p>The only class that is usually manipulated by programmers is the form type class
+which serves as a form blueprint. It is used to generate the <code class="docutils literal"><span class="pre">Form</span></code> and the
+<code class="docutils literal"><span class="pre">FormView</span></code>. You could test it directly by mocking its interactions with the
+factory but it would be complex. It is better to pass it to FormFactory like it
+is done in a real application. It is simple to bootstrap and you can trust
+the Symfony components enough to use them as a testing base.</p>
+<p>There is already a class that you can benefit from for simple FormTypes
+testing: <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Test/TypeTestCase.html" title="Symfony\Component\Form\Test\TypeTestCase"><span class="pre">TypeTestCase</span></a></code>. It is used to
+test the core types and you can use it to test your types too.</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Depending on the way you installed your Symfony or Symfony Form component
+the tests may not be downloaded. Use the <code class="docutils literal"><span class="pre">--prefer-source</span></code> option with
+Composer if this is the case.</p>
+</div>
+<div class="section" id="the-basics">
+<h2>The Basics<a class="headerlink" href="#the-basics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The simplest <code class="docutils literal"><span class="pre">TypeTestCase</span></code> implementation looks like the following:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// tests/Form/Type/TestedTypeTest.php</span>
+<span class="k">namespace</span> <span class="nx">App\Tests\Form\Type</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Form\Type\TestedType</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Model\TestObject</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Form\Test\TypeTestCase</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">TestedTypeTest</span> <span class="k">extends</span> <span class="nx">TypeTestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testSubmitValidData</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$formData</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;test&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;test2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test2&#39;</span><span class="p">,</span>
+        <span class="p">];</span>
+
+        <span class="nv">$objectToCompare</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestObject</span><span class="p">();</span>
+        <span class="c1">// $objectToCompare will retrieve data from the form submission; pass it as the second argument</span>
+        <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">TestedType</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$objectToCompare</span><span class="p">);</span>
+
+        <span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestObject</span><span class="p">();</span>
+        <span class="c1">// ...populate $object properties with the data stored in $formData</span>
+
+        <span class="c1">// submit the data to the form directly</span>
+        <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">submit</span><span class="p">(</span><span class="nv">$formData</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isSynchronized</span><span class="p">());</span>
+
+        <span class="c1">// check that $objectToCompare was modified as expected when the form was submitted</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="nv">$objectToCompare</span><span class="p">);</span>
+
+        <span class="nv">$view</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">createView</span><span class="p">();</span>
+        <span class="nv">$children</span> <span class="o">=</span> <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">children</span><span class="p">;</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$formData</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertArrayHasKey</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$children</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>So, what does it test? Here comes a detailed explanation.</p>
+<p>First you verify if the <code class="docutils literal"><span class="pre">FormType</span></code> compiles. This includes basic class
+inheritance, the <code class="docutils literal"><span class="pre">buildForm()</span></code> function and options resolution. This should
+be the first test you write:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">TestedType</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="nv">$objectToCompare</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This test checks that none of your data transformers used by the form
+failed. The <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/FormInterface.html#method_isSynchronized" title="Symfony\Component\Form\FormInterface::isSynchronized()"><span class="pre">isSynchronized()</span></a></code>
+method is only set to <code class="docutils literal"><span class="pre">false</span></code> if a data transformer throws an exception:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">submit</span><span class="p">(</span><span class="nv">$formData</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertTrue</span><span class="p">(</span><span class="nv">$form</span><span class="o">-&gt;</span><span class="na">isSynchronized</span><span class="p">());</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Don&#8217;t test the validation: it is applied by a listener that is not
+active in the test case and it relies on validation configuration.
+Instead, unit test your custom constraints directly.</p>
+</div>
+<p>Next, verify the submission and mapping of the form. The test below
+checks if all the fields are correctly specified:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="nv">$objectToCompare</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Finally, check the creation of the <code class="docutils literal"><span class="pre">FormView</span></code>. You should check if all
+widgets you want to display are available in the children property:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="nv">$view</span> <span class="o">=</span> <span class="nv">$form</span><span class="o">-&gt;</span><span class="na">createView</span><span class="p">();</span>
+<span class="nv">$children</span> <span class="o">=</span> <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">children</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nb">array_keys</span><span class="p">(</span><span class="nv">$formData</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertArrayHasKey</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$children</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Use <a class="reference internal" href="../testing.html#testing-data-providers"><span>PHPUnit data providers</span></a> to test multiple
+form conditions using the same test code.</p>
+</div>
+</div>
+<div class="section" id="testings-types-from-the-service-container">
+<h2>Testings Types from the Service Container<a class="headerlink" href="#testings-types-from-the-service-container" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Your form may be used as a service, as it depends on other services (e.g. the
+Doctrine entity manager). In these cases, using the above code won&#8217;t work, as
+the Form component just instantiates the form type without passing any
+arguments to the constructor.</p>
+<p>To solve this, you have to mock the injected dependencies, instantiate your own
+form type and use the <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/PreloadedExtension.html" title="Symfony\Component\Form\PreloadedExtension"><span class="pre">PreloadedExtension</span></a></code> to
+make sure the <code class="docutils literal"><span class="pre">FormRegistry</span></code> uses the created instance:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// tests/Form/Type/TestedTypeTest.php</span>
+<span class="k">namespace</span> <span class="nx">App\Tests\Form\Type</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Form\Type\TestedType</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\Persistence\ObjectManager</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Form\PreloadedExtension</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Form\Test\TypeTestCase</span><span class="p">;</span>
+<span class="c1">// ...</span>
+
+<span class="k">class</span> <span class="nc">TestedTypeTest</span> <span class="k">extends</span> <span class="nx">TypeTestCase</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$objectManager</span><span class="p">;</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// mock any dependencies</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectManager</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createMock</span><span class="p">(</span><span class="nx">ObjectManager</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+        <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getExtensions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// create a type instance with the mocked dependencies</span>
+        <span class="nv">$type</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestedType</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectManager</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="c1">// register the type instances with the PreloadedExtension</span>
+            <span class="k">new</span> <span class="nx">PreloadedExtension</span><span class="p">([</span><span class="nv">$type</span><span class="p">],</span> <span class="p">[]),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testSubmitValidData</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Instead of creating a new instance, the one created in</span>
+        <span class="c1">// getExtensions() will be used.</span>
+        <span class="nv">$form</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">factory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">TestedType</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+        <span class="c1">// ... your test</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-custom-extensions">
+<h2>Adding Custom Extensions<a class="headerlink" href="#adding-custom-extensions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>It often happens that you use some options that are added by
+<a class="reference internal" href="create_form_type_extension.html"><em>form extensions</em></a>. One of the
+cases may be the <code class="docutils literal"><span class="pre">ValidatorExtension</span></code> with its <code class="docutils literal"><span class="pre">invalid_message</span></code> option.
+The <code class="docutils literal"><span class="pre">TypeTestCase</span></code> only loads the core form extension, which means an
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/OptionsResolver/Exception/InvalidOptionsException.html" title="Symfony\Component\OptionsResolver\Exception\InvalidOptionsException"><span class="pre">InvalidOptionsException</span></a></code>
+will be raised if you try to test a class that depends on other extensions.
+The <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Test/TypeTestCase.html#method_getExtensions" title="Symfony\Component\Form\Test\TypeTestCase::getExtensions()"><span class="pre">getExtensions()</span></a></code> method
+allows you to return a list of extensions to register:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// tests/Form/Type/TestedTypeTest.php</span>
+<span class="k">namespace</span> <span class="nx">App\Tests\Form\Type</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Form\Extension\Validator\ValidatorExtension</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Validator\Validation</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">TestedTypeTest</span> <span class="k">extends</span> <span class="nx">TypeTestCase</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getExtensions</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$validator</span> <span class="o">=</span> <span class="nx">Validation</span><span class="o">::</span><span class="na">createValidator</span><span class="p">();</span>
+
+        <span class="c1">// or if you also need to read constraints from annotations</span>
+        <span class="nv">$validator</span> <span class="o">=</span> <span class="nx">Validation</span><span class="o">::</span><span class="na">createValidatorBuilder</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="na">enableAnnotationMapping</span><span class="p">()</span>
+            <span class="o">-&gt;</span><span class="na">getValidator</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="k">new</span> <span class="nx">ValidatorExtension</span><span class="p">(</span><span class="nv">$validator</span><span class="p">),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ... your tests</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It is also possible to load custom form types, form type extensions or type
+guessers using the <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Test/FormIntegrationTestCase.html#method_getTypes" title="Symfony\Component\Form\Test\FormIntegrationTestCase::getTypes()"><span class="pre">getTypes()</span></a></code>,
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Test/FormIntegrationTestCase.html#method_getTypeExtensions" title="Symfony\Component\Form\Test\FormIntegrationTestCase::getTypeExtensions()"><span class="pre">getTypeExtensions()</span></a></code>
+and <code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/Form/Test/FormIntegrationTestCase.html#method_getTypeGuessers" title="Symfony\Component\Form\Test\FormIntegrationTestCase::getTypeGuessers()"><span class="pre">getTypeGuessers()</span></a></code>
+methods.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use_empty_data.html" class="btn btn-neutral float-right" title="How to Configure empty Data for a Form Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multiple_buttons.html" class="btn btn-neutral" title="How to Submit a Form with Multiple Buttons" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'ja',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

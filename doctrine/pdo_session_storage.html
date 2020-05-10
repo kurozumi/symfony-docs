@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to Use PdoSessionHandler to Store Sessions in the Database &mdash; Symfony Framework Documentation  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="next" title="How to Use MongoDbSessionHandler to Store Sessions in a MongoDB Database" href="mongodb_session_storage.html" />
+    <link rel="prev" title="How to Work with multiple Entity Managers and Connections" href="multiple_entity_managers.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Symfony Framework Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick_tour/index.html">The Quick Tour</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../best_practices.html">The Symfony Framework Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bundles.html">The Bundle System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cache.html">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console.html">Console Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../doctrine.html">Databases and the Doctrine ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment.html">How to Deploy a Symfony Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email.html">Swift Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_dispatcher.html">Events and Event Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms.html">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontend.html">Managing CSS and JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../http_cache.html">HTTP Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mailer.html">Sending Emails with Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mercure.html">Pushing Data to Clients Using the Mercure Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messenger.html">Messenger: Sync &amp; Queued Message Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migration.html">Migrating an Existing Application to Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notifier.html">Creating and Sending Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiler.html">Profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../session.html">Sessions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../session.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../session.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../session.html#avoid-starting-sessions-for-anonymous-users">Avoid Starting Sessions for Anonymous Users</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../session.html#more-about-sessions">More about Sessions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">How to Use PdoSessionHandler to Store Sessions in the Database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-the-table-and-column-names">Configuring the Table and Column Names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preparing-the-database-to-store-sessions">Preparing the Database to Store Sessions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../session/locale_sticky_session.html">Making the Locale &#8220;Sticky&#8221; during a User&#8217;s Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session/php_bridge.html">Bridge a legacy Application with Symfony Sessions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../session/proxy_examples.html">Session Proxy Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serializer.html">How to Use the Serializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_container.html">Service Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../translation.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web_link.html">Asset Preloading and Resource Hints with HTTP/2 and WebLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Workflow</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../components/index.html">The Components</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference Documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../create_framework/index.html">Create your own PHP Framework</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Symfony Framework Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../doctrine.html">Databases and the Doctrine ORM</a> &raquo;</li>
+        
+      <li>How to Use PdoSessionHandler to Store Sessions in the Database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/doctrine/pdo_session_storage.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-pdosessionhandler-to-store-sessions-in-the-database">
+<span id="index-0"></span><h1>How to Use PdoSessionHandler to Store Sessions in the Database<a class="headerlink" href="#how-to-use-pdosessionhandler-to-store-sessions-in-the-database" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The default Symfony session storage writes the session information to files.
+Most medium to large websites use a database to store the session values
+instead of files, because databases are easier to use and scale in a
+multiple web server environment.</p>
+<p>Symfony has a built-in solution for database session storage called
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.html" title="Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler"><span class="pre">PdoSessionHandler</span></a></code>.
+To use it, first register a new handler service:</p>
+<div class="configuration-block">
+<ul class="simple">
+<li><em>YAML</em><div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># config/services.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">arguments</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="s">&#39;mysql:dbname=mydatabase;</span><span class="nv"> </span><span class="s">host=myhost;</span><span class="nv"> </span><span class="s">port=myport&#39;</span>
+            <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span> <span class="nv">db_username</span><span class="p p-Indicator">:</span> <span class="nv">myuser</span><span class="p p-Indicator">,</span> <span class="nv">db_password</span><span class="p p-Indicator">:</span> <span class="nv">mypassword</span> <span class="p p-Indicator">}</span>
+
+            <span class="c1"># If you&#39;re using Doctrine &amp; want to re-use that connection, then:</span>
+            <span class="c1"># comment-out the above 2 lines and uncomment the line below</span>
+            <span class="c1"># - !service { class: PDO, factory: [&#39;@database_connection&#39;, &#39;getWrappedConnection&#39;] }</span>
+            <span class="c1"># If you get transaction issues (e.g. after login) uncomment the line below</span>
+            <span class="c1"># - { lock_mode: 1 }</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>XML</em><div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- config/services.xml --&gt;</span>
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="nt">&lt;container</span> <span class="na">xmlns=</span><span class="s">&quot;http://symfony.com/schema/dic/services&quot;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="na">xmlns:framework=</span><span class="s">&quot;http://symfony.com/schema/dic/symfony&quot;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://symfony.com/schema/dic/services</span>
+<span class="s">        https://symfony.com/schema/dic/services/services-1.0.xsd</span>
+<span class="s">        https://symfony.com/schema/dic/symfony/symfony-1.0.xsd&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;services&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler&quot;</span> <span class="na">public=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument&gt;</span>mysql:dbname=mydatabase, host=myhost<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">type=</span><span class="s">&quot;collection&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">key=</span><span class="s">&quot;db_username&quot;</span><span class="nt">&gt;</span>myuser<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">key=</span><span class="s">&quot;db_password&quot;</span><span class="nt">&gt;</span>mypassword<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;/services&gt;</span>
+<span class="nt">&lt;/container&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>PHP</em><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// config/services.php</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span><span class="p">;</span>
+
+<span class="nv">$storageDefinition</span> <span class="o">=</span> <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">autowire</span><span class="p">(</span><span class="nx">PdoSessionHandler</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setArguments</span><span class="p">([</span>
+        <span class="s1">&#39;mysql:dbname=mydatabase; host=myhost; port=myport&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">&#39;db_username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;myuser&#39;</span><span class="p">,</span> <span class="s1">&#39;db_password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">],</span>
+    <span class="p">])</span>
+<span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Configure the database credentials
+<a class="reference internal" href="../configuration.html#config-env-vars"><span>using environment variables</span></a>
+or as a <a class="reference internal" href="../configuration/secrets.html"><em>secret</em></a> to make your application
+more secure.</p>
+</div>
+<p>Next, tell Symfony to use your service as the session handler:</p>
+<div class="configuration-block">
+<ul class="simple">
+<li><em>YAML</em><div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># config/packages/framework.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">framework</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">session</span><span class="p p-Indicator">:</span>
+        <span class="c1"># ...</span>
+        <span class="l l-Scalar l-Scalar-Plain">handler_id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>XML</em><div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- config/packages/framework.xml --&gt;</span>
+<span class="nt">&lt;framework:config&gt;</span>
+    <span class="c">&lt;!-- ... --&gt;</span>
+    <span class="nt">&lt;framework:session</span> <span class="na">handler-id=</span><span class="s">&quot;Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler&quot;</span> <span class="na">cookie-lifetime=</span><span class="s">&quot;3600&quot;</span> <span class="na">auto-start=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/framework:config&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>PHP</em><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// config/packages/framework.php</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span><span class="p">;</span>
+
+<span class="c1">// ...</span>
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">loadFromExtension</span><span class="p">(</span><span class="s1">&#39;framework&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="c1">// ...</span>
+    <span class="s1">&#39;session&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="c1">// ...</span>
+        <span class="s1">&#39;handler_id&#39;</span> <span class="o">=&gt;</span> <span class="nx">PdoSessionHandler</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">]);</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ul>
+</div>
+<div class="section" id="configuring-the-table-and-column-names">
+<h2>Configuring the Table and Column Names<a class="headerlink" href="#configuring-the-table-and-column-names" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>This will expect a <code class="docutils literal"><span class="pre">sessions</span></code> table with a number of different columns.
+The table name, and all of the column names, can be configured by passing
+a second array argument to <code class="docutils literal"><span class="pre">PdoSessionHandler</span></code>:</p>
+<div class="configuration-block">
+<ul class="simple">
+<li><em>YAML</em><div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># config/services.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">services</span><span class="p p-Indicator">:</span>
+    <span class="c1"># ...</span>
+
+    <span class="l l-Scalar l-Scalar-Plain">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">arguments</span><span class="p p-Indicator">:</span>
+            <span class="p p-Indicator">-</span> <span class="s">&#39;mysql:dbname=mydatabase;</span><span class="nv"> </span><span class="s">host=myhost;</span><span class="nv"> </span><span class="s">port=myport&#39;</span>
+            <span class="p p-Indicator">-</span> <span class="p p-Indicator">{</span> <span class="nv">db_table</span><span class="p p-Indicator">:</span> <span class="s">&#39;sessions&#39;</span><span class="p p-Indicator">,</span> <span class="nv">db_username</span><span class="p p-Indicator">:</span> <span class="s">&#39;myuser&#39;</span><span class="p p-Indicator">,</span> <span class="nv">db_password</span><span class="p p-Indicator">:</span> <span class="s">&#39;mypassword&#39;</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>XML</em><div class="highlight-xml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- config/services.xml --&gt;</span>
+<span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
+<span class="nt">&lt;container</span> <span class="na">xmlns=</span><span class="s">&quot;http://symfony.com/schema/dic/services&quot;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://symfony.com/schema/dic/services</span>
+<span class="s">        https://symfony.com/schema/dic/services/services-1.0.xsd&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;services&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">id=</span><span class="s">&quot;Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler&quot;</span> <span class="na">public=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument&gt;</span>mysql:dbname=mydatabase, host=myhost<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">type=</span><span class="s">&quot;collection&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">key=</span><span class="s">&quot;db_table&quot;</span><span class="nt">&gt;</span>sessions<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">key=</span><span class="s">&quot;db_username&quot;</span><span class="nt">&gt;</span>myuser<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">key=</span><span class="s">&quot;db_password&quot;</span><span class="nt">&gt;</span>mypassword<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;/services&gt;</span>
+<span class="nt">&lt;/container&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><em>PHP</em><div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// config/services.php</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</span><span class="p">;</span>
+<span class="c1">// ...</span>
+
+<span class="nv">$container</span><span class="o">-&gt;</span><span class="na">autowire</span><span class="p">(</span><span class="nx">PdoSessionHandler</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setArguments</span><span class="p">([</span>
+        <span class="s1">&#39;mysql:dbname=mydatabase; host=myhost; port=myport&#39;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s1">&#39;db_table&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sessions&#39;</span><span class="p">,</span> <span class="s1">&#39;db_username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;myuser&#39;</span><span class="p">,</span> <span class="s1">&#39;db_password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">]</span>
+    <span class="p">])</span>
+<span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ul>
+</div>
+<p>These are parameters that you can configure:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">db_table</span></code> (default <code class="docutils literal"><span class="pre">sessions</span></code>):</dt>
+<dd>The name of the session table in your database;</dd>
+<dt><code class="docutils literal"><span class="pre">db_id_col</span></code> (default <code class="docutils literal"><span class="pre">sess_id</span></code>):</dt>
+<dd>The name of the id column in your session table (VARCHAR(128));</dd>
+<dt><code class="docutils literal"><span class="pre">db_data_col</span></code> (default <code class="docutils literal"><span class="pre">sess_data</span></code>):</dt>
+<dd>The name of the value column in your session table (BLOB);</dd>
+<dt><code class="docutils literal"><span class="pre">db_time_col</span></code> (default <code class="docutils literal"><span class="pre">sess_time</span></code>):</dt>
+<dd>The name of the time column in your session table (INTEGER);</dd>
+<dt><code class="docutils literal"><span class="pre">db_lifetime_col</span></code> (default <code class="docutils literal"><span class="pre">sess_lifetime</span></code>):</dt>
+<dd>The name of the lifetime column in your session table (INTEGER).</dd>
+</dl>
+</div>
+<div class="section" id="preparing-the-database-to-store-sessions">
+<span id="example-sql-statements"></span><h2>Preparing the Database to Store Sessions<a class="headerlink" href="#preparing-the-database-to-store-sessions" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Before storing sessions in the database, you must create the table that stores
+the information. The session handler provides a method called
+<code class="docutils literal"><a class="reference external" href="http://api.symfony.com/master/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.html#method_createTable" title="Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler::createTable()"><span class="pre">createTable()</span></a></code>
+to set up this table for you according to the database engine used:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$sessionHandlerService</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\PDOException</span> <span class="nv">$exception</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// the table could not be created for some reason</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you prefer to set up the table yourself, these are some examples of the SQL
+statements you may use according to your specific database engine.</p>
+<p>A great way to run this on production is to generate an empty migration, and then
+add this SQL inside:</p>
+<div class="highlight-terminal"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> php bin/console doctrine:migrations:generate
+</pre></div>
+</td></tr></table></div>
+<p>Find the correct SQL below and put it inside that file. Then execute it with:</p>
+<div class="highlight-terminal"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> php bin/console doctrine:migrations:migrate
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="mysql">
+<h3>MySQL<a class="headerlink" href="#mysql" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-sql"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">sessions</span><span class="o">`</span> <span class="p">(</span>
+    <span class="o">`</span><span class="n">sess_id</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="o">`</span><span class="n">sess_data</span><span class="o">`</span> <span class="nb">BLOB</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="o">`</span><span class="n">sess_time</span><span class="o">`</span> <span class="nb">INTEGER</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="o">`</span><span class="n">sess_lifetime</span><span class="o">`</span> <span class="nb">INTEGER</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">,</span> <span class="n">ENGINE</span> <span class="o">=</span> <span class="n">InnoDB</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">A <code class="docutils literal"><span class="pre">BLOB</span></code> column type can only store up to 64 kb. If the data stored in
+a user&#8217;s session exceeds this, an exception may be thrown or their session
+will be silently reset. Consider using a <code class="docutils literal"><span class="pre">MEDIUMBLOB</span></code> if you need more
+space.</p>
+</div>
+</div>
+<div class="section" id="postgresql">
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-sql"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">sessions</span> <span class="p">(</span>
+    <span class="n">sess_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">sess_data</span> <span class="n">BYTEA</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">sess_time</span> <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="n">sess_lifetime</span> <span class="nb">INTEGER</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="microsoft-sql-server">
+<h3>Microsoft SQL Server<a class="headerlink" href="#microsoft-sql-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-sql"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="p">[</span><span class="n">dbo</span><span class="p">].[</span><span class="n">sessions</span><span class="p">](</span>
+    <span class="p">[</span><span class="n">sess_id</span><span class="p">]</span> <span class="p">[</span><span class="n">nvarchar</span><span class="p">](</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">sess_data</span><span class="p">]</span> <span class="p">[</span><span class="n">ntext</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">sess_time</span><span class="p">]</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">sess_lifetime</span><span class="p">]</span> <span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+    <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">CLUSTERED</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">sess_id</span><span class="p">]</span> <span class="k">ASC</span>
+    <span class="p">)</span> <span class="k">WITH</span> <span class="p">(</span>
+        <span class="n">PAD_INDEX</span>  <span class="o">=</span> <span class="k">OFF</span><span class="p">,</span>
+        <span class="n">STATISTICS_NORECOMPUTE</span>  <span class="o">=</span> <span class="k">OFF</span><span class="p">,</span>
+        <span class="n">IGNORE_DUP_KEY</span> <span class="o">=</span> <span class="k">OFF</span><span class="p">,</span>
+        <span class="n">ALLOW_ROW_LOCKS</span>  <span class="o">=</span> <span class="k">ON</span><span class="p">,</span>
+        <span class="n">ALLOW_PAGE_LOCKS</span>  <span class="o">=</span> <span class="k">ON</span>
+    <span class="p">)</span> <span class="k">ON</span> <span class="p">[</span><span class="k">PRIMARY</span><span class="p">]</span>
+<span class="p">)</span> <span class="k">ON</span> <span class="p">[</span><span class="k">PRIMARY</span><span class="p">]</span> <span class="n">TEXTIMAGE_ON</span> <span class="p">[</span><span class="k">PRIMARY</span><span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition caution">
+<p class="first admonition-title">ご用心</p>
+<p>If the session data doesn&#8217;t fit in the data column, it might get truncated
+by the database engine. To make matters worse, when the session data gets
+corrupted, PHP ignores the data without giving a warning.</p>
+<p class="last">If the application stores large amounts of session data, this problem can
+be solved by increasing the column size (use <code class="docutils literal"><span class="pre">BLOB</span></code> or even <code class="docutils literal"><span class="pre">MEDIUMBLOB</span></code>).
+When using MySQL as the database engine, you can also enable the <a class="reference external" href="https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html">strict SQL mode</a>
+to be notified when such an error happens.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mongodb_session_storage.html" class="btn btn-neutral float-right" title="How to Use MongoDbSessionHandler to Store Sessions in a MongoDB Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multiple_entity_managers.html" class="btn btn-neutral" title="How to Work with multiple Entity Managers and Connections" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            LANGUAGE:'ja',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

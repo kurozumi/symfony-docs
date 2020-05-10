@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Symfony Documentation &mdash; Symfony Framework Documentation  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="The Quick Tour" href="quick_tour/index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> Symfony Framework Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quick_tour/index.html">The Quick Tour</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="best_practices.html">Symfonyフレームワークのベストプラクティス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bundles.html">The Bundle System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console.html">Console Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Databases and the Doctrine ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">How to Deploy a Symfony Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">Swift Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_dispatcher.html">Events and Event Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend.html">Managing CSS and JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_cache.html">HTTP Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailer.html">Sending Emails with Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mercure.html">Pushing Data to Clients Using the Mercure Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messenger.html">Messenger: Sync &amp; Queued Message Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migrating an Existing Application to Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifier.html">Creating and Sending Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiler.html">Profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializer.html">How to Use the Serializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_container.html">Service Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_link.html">Asset Preloading and Resource Hints with HTTP/2 and WebLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html">The Components</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference Documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing/index.html">Contributing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="create_framework/index.html">Create your own PHP Framework</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Symfony Framework Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Symfony Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="symfony-documentation">
+<span id="symfony2-documentation"></span><h1>Symfony Documentation<a class="headerlink" href="#symfony-documentation" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="quick-tour">
+<h2>Quick Tour<a class="headerlink" href="#quick-tour" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Get started fast with the Symfony <a class="reference internal" href="quick_tour/index.html"><em>Quick Tour</em></a>:</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="quick_tour/the_big_picture.html"><em>The Big Picture</em></a></li>
+<li><a class="reference internal" href="quick_tour/flex_recipes.html"><em>Flex: Compose your Application</em></a></li>
+<li><a class="reference internal" href="quick_tour/the_architecture.html"><em>The Architecture</em></a></li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page_creation.html">Create your First Page in Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller.html">Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Creating and Using Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Configuring Symfony</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="topics">
+<h2>Topics<a class="headerlink" href="#topics" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="best_practices.html">Symfonyフレームワークのベストプラクティス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bundles.html">The Bundle System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console.html">Console Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Databases and the Doctrine ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">How to Deploy a Symfony Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">Swift Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_dispatcher.html">Events and Event Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend.html">Managing CSS and JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_cache.html">HTTP Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailer.html">Sending Emails with Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mercure.html">Pushing Data to Clients Using the Mercure Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messenger.html">Messenger: Sync &amp; Queued Message Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migrating an Existing Application to Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifier.html">Creating and Sending Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiler.html">Profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializer.html">How to Use the Serializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_container.html">Service Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_link.html">Asset Preloading and Resource Hints with HTTP/2 and WebLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>Read the <a class="reference internal" href="components/index.html"><em>Components</em></a> documentation.</p>
+</div>
+<div class="section" id="reference-documents">
+<h2>Reference Documents<a class="headerlink" href="#reference-documents" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Get answers quickly with reference documents:</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul>
+<li><p class="first"><strong>Configuration Options</strong></p>
+<p>Ever wondered what configuration options you have available to you in
+<code class="docutils literal"><span class="pre">config/packages/*.yaml</span></code> files? In this section, all the available
+configuration is broken down by the key (e.g. <code class="docutils literal"><span class="pre">framework</span></code>) that defines
+each possible section of your Symfony configuration.</p>
+<ul class="simple">
+<li><a class="reference internal" href="reference/configuration/framework.html"><em>framework</em></a></li>
+<li><a class="reference internal" href="reference/configuration/doctrine.html"><em>doctrine</em></a></li>
+<li><a class="reference internal" href="reference/configuration/security.html"><em>security</em></a></li>
+<li><a class="reference internal" href="reference/configuration/swiftmailer.html"><em>swiftmailer</em></a></li>
+<li><a class="reference internal" href="reference/configuration/twig.html"><em>twig</em></a></li>
+<li><a class="reference internal" href="reference/configuration/monolog.html"><em>monolog</em></a></li>
+<li><a class="reference internal" href="reference/configuration/web_profiler.html"><em>web_profiler</em></a></li>
+<li><a class="reference internal" href="reference/configuration/debug.html"><em>debug</em></a></li>
+</ul>
+</li>
+<li><p class="first"><a class="reference internal" href="reference/configuration/kernel.html"><em>Configuring the Kernel</em></a></p>
+</li>
+<li><p class="first"><strong>Forms and Validation</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="reference/forms/types.html"><em>Form Field Type Reference</em></a></li>
+<li><a class="reference internal" href="reference/constraints.html"><em>Validation Constraints Reference</em></a></li>
+<li><a class="reference internal" href="form/form_customization.html#reference-form-twig-functions-variables"><span>Twig Template Function and Variable Reference</span></a></li>
+</ul>
+</li>
+<li><p class="first"><a class="reference internal" href="reference/twig_reference.html"><em>Twig Extensions (forms, filters, tags, etc) Reference</em></a></p>
+</li>
+<li><p class="first"><strong>Other Areas</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="reference/dic_tags.html"><em>Built-in Symfony Service Tags</em></a></li>
+<li><a class="reference internal" href="reference/events.html"><em>Built-in Symfony Events</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Contribute to Symfony:</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><strong>Code of Conduct</strong><ul>
+<li><a class="reference internal" href="contributing/code_of_conduct/code_of_conduct.html"><em>Code of Conduct</em></a></li>
+<li><a class="reference internal" href="contributing/code_of_conduct/reporting_guidelines.html"><em>Reporting Guidelines</em></a></li>
+<li><a class="reference internal" href="contributing/code_of_conduct/care_team.html"><em>CARE Team</em></a></li>
+<li><a class="reference internal" href="contributing/code_of_conduct/concrete_example_document.html"><em>Code of Conduct: Concrete Example Document</em></a></li>
+</ul>
+</li>
+<li><strong>Code</strong><ul>
+<li><a class="reference internal" href="contributing/code/bugs.html"><em>Bugs</em></a></li>
+<li><a class="reference internal" href="contributing/code/pull_requests.html"><em>Pull Requests</em></a></li>
+<li><a class="reference internal" href="contributing/community/reviews.html"><em>Reviewing Issues and Pull Requests</em></a></li>
+<li><a class="reference internal" href="contributing/code/maintenance.html"><em>Maintenance</em></a></li>
+<li><a class="reference internal" href="contributing/code/core_team.html"><em>The Core Team</em></a></li>
+<li><a class="reference internal" href="contributing/code/security.html"><em>Security</em></a></li>
+<li><a class="reference internal" href="contributing/code/tests.html"><em>Tests</em></a></li>
+<li><a class="reference internal" href="contributing/code/bc.html"><em>Backward Compatibility</em></a></li>
+<li><a class="reference internal" href="contributing/code/standards.html"><em>Coding Standards</em></a></li>
+<li><a class="reference internal" href="contributing/code/conventions.html"><em>Code Conventions</em></a></li>
+<li><a class="reference internal" href="contributing/code/git.html"><em>Git</em></a></li>
+<li><a class="reference internal" href="contributing/code/license.html"><em>License</em></a></li>
+</ul>
+</li>
+<li><strong>Documentation</strong><ul>
+<li><a class="reference internal" href="contributing/documentation/overview.html"><em>Overview</em></a></li>
+<li><a class="reference internal" href="contributing/documentation/format.html"><em>Format</em></a></li>
+<li><a class="reference internal" href="contributing/documentation/standards.html"><em>Documentation Standards</em></a></li>
+<li><a class="reference internal" href="contributing/documentation/license.html"><em>License</em></a></li>
+</ul>
+</li>
+<li><strong>Community</strong><ul>
+<li><a class="reference internal" href="contributing/community/releases.html"><em>Release Process</em></a></li>
+<li><a class="reference internal" href="contributing/community/review-comments.html"><em>Respectful Review comments</em></a></li>
+<li><a class="reference internal" href="contributing/community/reviews.html"><em>Community Reviews</em></a></li>
+</ul>
+</li>
+<li><strong>Diversity</strong><ul>
+<li><a class="reference internal" href="contributing/diversity/governance.html"><em>Governance</em></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="create-your-own-framework">
+<h2>Create your Own Framework<a class="headerlink" href="#create-your-own-framework" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Want to create your own framework based on Symfony?</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="create_framework/introduction.html"><em>Introduction</em></a></li>
+<li><a class="reference internal" href="create_framework/http_foundation.html"><em>The HttpFoundation Component</em></a></li>
+<li><a class="reference internal" href="create_framework/front_controller.html"><em>The Front Controller</em></a></li>
+<li><a class="reference internal" href="create_framework/routing.html"><em>The Routing Component</em></a></li>
+<li><a class="reference internal" href="create_framework/templating.html"><em>Templating</em></a></li>
+<li><a class="reference internal" href="create_framework/http_kernel_controller_resolver.html"><em>The HttpKernel Component: the Controller Resolver</em></a></li>
+<li><a class="reference internal" href="create_framework/separation_of_concerns.html"><em>The Separation of Concerns</em></a></li>
+<li><a class="reference internal" href="create_framework/unit_testing.html"><em>Unit Testing</em></a></li>
+<li><a class="reference internal" href="create_framework/event_dispatcher.html"><em>The EventDispatcher Component</em></a></li>
+<li><a class="reference internal" href="create_framework/http_kernel_httpkernelinterface.html"><em>The HttpKernel Component: HttpKernelInterface</em></a></li>
+<li><a class="reference internal" href="create_framework/http_kernel_httpkernel_class.html"><em>The HttpKernel Component: The HttpKernel Class</em></a></li>
+<li><a class="reference internal" href="create_framework/dependency_injection.html"><em>The DependencyInjection Component</em></a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="quick_tour/index.html" class="btn btn-neutral float-right" title="The Quick Tour" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'ja',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

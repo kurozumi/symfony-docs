@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Symfonyフレームワークのベストプラクティス &mdash; Symfony Framework Documentation  ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="next" title="The Bundle System" href="bundles.html" />
+    <link rel="prev" title="Using Parameters within a Dependency Injection Class" href="configuration/using_parameters_in_dic.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Symfony Framework Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="quick_tour/index.html">The Quick Tour</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Symfonyフレームワークのベストプラクティス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-project">プロジェクトを作成する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-symfony-binary-to-create-symfony-applications">Symfonyバイナリを使用してSymfonyアプリケーションを作成する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-default-directory-structure">デフォルトのディレクトリ構造を使用する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">構成</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-environment-variables-for-infrastructure-configuration">インフラ構成に環境変数を使用する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-secret-for-sensitive-information">機密情報にシークレットを使用する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-parameters-for-application-configuration">アプリケーション構成のパラメーターを使用する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-short-and-prefixed-parameter-names">短いプレフィックスのパラメータ名を使用する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-constants-to-define-options-that-rarely-change">Use Constants to Define Options that Rarely Change</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#business-logic">Business Logic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#don-t-create-any-bundle-to-organize-your-application-logic">Don&#8217;t Create any Bundle to Organize your Application Logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-autowiring-to-automate-the-configuration-of-application-services">Use Autowiring to Automate the Configuration of Application Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-should-be-private-whenever-possible">Services Should be Private Whenever Possible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-yaml-format-to-configure-your-own-services">Use the YAML Format to Configure your Own Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-annotations-to-define-the-doctrine-entity-mapping">Use Annotations to Define the Doctrine Entity Mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#make-your-controller-extend-the-abstractcontroller-base-controller">Make your Controller Extend the <code class="docutils literal"><span class="pre">AbstractController</span></code> Base Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-annotations-to-configure-routing-caching-and-security">Use Annotations to Configure Routing, Caching and Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#don-t-use-annotations-to-configure-the-controller-template">Don&#8217;t Use Annotations to Configure the Controller Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-dependency-injection-to-get-services">Use Dependency Injection to Get Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-paramconverters-if-they-are-convenient">Use ParamConverters If They Are Convenient</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#templates">テンプレート</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-snake-case-for-template-names-and-variables">Use Snake Case for Template Names and Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prefix-template-fragments-with-an-underscore">Prefix Template Fragments with an Underscore</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#forms">フォーム</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-your-forms-as-php-classes">Define your Forms as PHP Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-form-buttons-in-templates">Add Form Buttons in Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-validation-constraints-on-the-underlying-object">Define Validation Constraints on the Underlying Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-a-single-action-to-render-and-process-the-form">Use a Single Action to Render and Process the Form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#internationalization">国際化社会</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-xliff-format-for-your-translation-files">Use the XLIFF Format for Your Translation Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-keys-for-translations-instead-of-content-strings">Use Keys for Translations Instead of Content Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#security">セキュリティ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-a-single-firewall">Define a Single Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-auto-password-hasher">Use the <code class="docutils literal"><span class="pre">auto</span></code> Password Hasher</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-voters-to-implement-fine-grained-security-restrictions">Use Voters to Implement Fine-grained Security Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web-assets">Web Assets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-webpack-encore-to-process-web-assets">Use Webpack Encore to Process Web Assets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">テスト</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#smoke-test-your-urls">Smoke Test your URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardcode-urls-in-a-functional-test">Hardcode URLs in a Functional Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bundles.html">The Bundle System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cache.html">Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="console.html">Console Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doctrine.html">Databases and the Doctrine ORM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">How to Deploy a Symfony Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">Swift Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_dispatcher.html">Events and Event Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend.html">Managing CSS and JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_cache.html">HTTP Cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailer.html">Sending Emails with Mailer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mercure.html">Pushing Data to Clients Using the Mercure Protocol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messenger.html">Messenger: Sync &amp; Queued Message Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migrating an Existing Application to Symfony</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notifier.html">Creating and Sending Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiler.html">Profiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Installing &amp; Setting up the Symfony Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializer.html">How to Use the Serializer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_container.html">Service Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web_link.html">Asset Preloading and Resource Hints with HTTP/2 and WebLink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html">The Components</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference Documents</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing/index.html">Contributing</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="create_framework/index.html">Create your own PHP Framework</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Symfony Framework Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Symfonyフレームワークのベストプラクティス</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/best_practices.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-symfony-framework-best-practices">
+<h1>Symfonyフレームワークのベストプラクティス<a class="headerlink" href="#the-symfony-framework-best-practices" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>この記事では、Symfonyの最初の作成者が構想した哲学に適合する <strong>SymfonyでWebアプリケーションを開発するためのベストプラクティス</strong> について説明します。</p>
+<p>これらの推奨事項のいくつかに同意しない場合は、<strong>特定のニーズに拡張して適合させる</strong> ことができる <strong>開始点</strong> になる可能性があります。それらを完全に無視して、独自のベストプラクティスと方法論を引き続き使用することもできます。 Symfonyはあなたのニーズに適応するのに十分な柔軟性があります。</p>
+<p>この記事は、Symfonyアプリケーションの開発経験があることを前提としています。そうでない場合は、最初にドキュメントのセクション <a class="reference internal" href="setup.html"><em>はじめに</em></a> を読んでください。</p>
+<div class="admonition tip">
+<p class="first admonition-title">ちなみに</p>
+<p class="last">Symfonyは <a class="reference external" href="https://github.com/symfony/demo">Symfony Demo</a> と呼ばれるサンプルアプリケーションを提供しています。これはすべてのベストプラクティスに従っており、実際にそれらを体験することができます。</p>
+</div>
+<div class="section" id="creating-the-project">
+<h2>プロジェクトを作成する<a class="headerlink" href="#creating-the-project" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-the-symfony-binary-to-create-symfony-applications">
+<h3>Symfonyバイナリを使用してSymfonyアプリケーションを作成する<a class="headerlink" href="#use-the-symfony-binary-to-create-symfony-applications" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Symfonyバイナリは、<a class="reference external" href="https://symfony.com/download">Symfonyをダウンロード</a> したときにマシンで作成される実行可能なコマンドです。新しいSymfonyアプリケーションを作成する最も簡単な方法を含む、複数のユーティリティを提供します：</p>
+<div class="highlight-terminal"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> symfony new my_project_name
+</pre></div>
+</td></tr></table></div>
+<p>内部的には、このSymfonyバイナリコマンドは現在の安定バージョンに基づいた <a class="reference internal" href="setup.html#creating-symfony-applications"><span>新しいSymfonyアプリケーションを作成するために</span></a> 必要な <a class="reference external" href="https://getcomposer.org/">Composer</a> コマンドを実行します。</p>
+</div>
+<div class="section" id="use-the-default-directory-structure">
+<h3>デフォルトのディレクトリ構造を使用する<a class="headerlink" href="#use-the-default-directory-structure" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>プロジェクトが特定のディレクトリ構造を強制する開発慣行に従っていない限り、デフォルトのSymfonyディレクトリ構造に従います。フラットで自明であり、Symfonyと連動していません:</p>
+<div class="highlight-text"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>your_project/
+├─ assets/
+├─ bin/
+│  └─ console
+├─ config/
+│  ├─ packages/
+│  └─ services.yaml
+└─ public/
+│  ├─ build/
+│  └─ index.php
+├─ src/
+│  ├─ Kernel.php
+│  ├─ Command/
+│  ├─ Controller/
+│  ├─ DataFixtures/
+│  ├─ Entity/
+│  ├─ EventSubscriber/
+│  ├─ Form/
+│  ├─ Migrations/
+│  ├─ Repository/
+│  ├─ Security/
+│  └─ Twig/
+├─ templates/
+├─ tests/
+├─ translations/
+├─ var/
+│  ├─ cache/
+│  └─ log/
+└─ vendor/
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>構成<a class="headerlink" href="#configuration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-environment-variables-for-infrastructure-configuration">
+<h3>インフラ構成に環境変数を使用する<a class="headerlink" href="#use-environment-variables-for-infrastructure-configuration" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>これらは、あるマシンから別のマシンに（たとえば、開発マシンから本番サーバーに）変更されるオプションですが、アプリケーションの動作は変更されません。</p>
+<p>これらのオプションを定義するための <a class="reference internal" href="configuration.html#config-env-vars"><span>プロジェクトで環境変数の使用</span></a> し、 <a class="reference internal" href="configuration.html#config-dot-env"><span>環境毎の環境変数を構成するための</span></a>  複数の <code class="docutils literal"><span class="pre">.env</span></code> ファイルを作成します。</p>
+</div>
+<div class="section" id="use-secret-for-sensitive-information">
+<h3>機密情報にシークレットを使用する<a class="headerlink" href="#use-secret-for-sensitive-information" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>アプリケーションにAPIキーなどの機密構成がある場合は、それらを <a class="reference internal" href="configuration/secrets.html"><em>secrets</em></a> を介して安全に保存する必要があります。</p>
+</div>
+<div class="section" id="use-parameters-for-application-configuration">
+<h3>アプリケーション構成のパラメーターを使用する<a class="headerlink" href="#use-parameters-for-application-configuration" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>これらは、メール通知の送信者や有効な <a class="reference external" href="https://en.wikipedia.org/wiki/Feature_toggle">機能の切り替え</a> など、アプリケーションの動作を変更するために使用されるオプションです。それらの値はマシンごとに変化しないため、環境変数として定義しないでください。</p>
+<p><code class="docutils literal"><span class="pre">config/services.yaml</span></code> ファイルに、 <a class="reference internal" href="configuration.html#configuration-parameters"><span>パラメータ</span></a> としてオプションを定義します。<code class="docutils literal"><span class="pre">config/services_dev.yaml</span></code> と <code class="docutils literal"><span class="pre">config/services_prod.yaml</span></code> ファイルで <a class="reference internal" href="configuration.html#configuration-environments"><span>環境</span></a> 毎にオプションを上書きできます。</p>
+</div>
+<div class="section" id="use-short-and-prefixed-parameter-names">
+<h3>短いプレフィックスのパラメータ名を使用する<a class="headerlink" href="#use-short-and-prefixed-parameter-names" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Symfonyとサードパーティのbundles/librariesのパラメータとの衝突を避けるため、 <a class="reference internal" href="configuration.html#configuration-parameters"><span>パラメータ</span></a> のプレフィックスに <code class="docutils literal"><span class="pre">app.</span></code> を使用することを検討してください 。次に、パラメーターの目的を説明するため1つまたは2つの単語を使用してください:</p>
+<div class="highlight-yaml"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># config/services.yaml</span>
+<span class="l l-Scalar l-Scalar-Plain">parameters</span><span class="p p-Indicator">:</span>
+    <span class="c1"># don&#39;t do this: &#39;dir&#39; is too generic and it doesn&#39;t convey any meaning</span>
+    <span class="l l-Scalar l-Scalar-Plain">app.dir</span><span class="p p-Indicator">:</span> <span class="s">&#39;...&#39;</span>
+    <span class="c1"># do this: short but easy to understand names</span>
+    <span class="l l-Scalar l-Scalar-Plain">app.contents_dir</span><span class="p p-Indicator">:</span> <span class="s">&#39;...&#39;</span>
+    <span class="c1"># it&#39;s OK to use dots, underscores, dashes or nothing, but always</span>
+    <span class="c1"># be consistent and use the same format for all the parameters</span>
+    <span class="l l-Scalar l-Scalar-Plain">app.dir.contents</span><span class="p p-Indicator">:</span> <span class="s">&#39;...&#39;</span>
+    <span class="l l-Scalar l-Scalar-Plain">app.contents-dir</span><span class="p p-Indicator">:</span> <span class="s">&#39;...&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="use-constants-to-define-options-that-rarely-change">
+<h3>Use Constants to Define Options that Rarely Change<a class="headerlink" href="#use-constants-to-define-options-that-rarely-change" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Configuration options like the number of items to display in some listing rarely
+change. Instead of defining them as <a class="reference internal" href="configuration.html#configuration-parameters"><span>service container parameters</span></a>,
+define them as PHP constants in the related classes. Example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// src/Entity/Post.php</span>
+<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Post</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">const</span> <span class="no">NUMBER_OF_ITEMS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The main advantage of constants is that you can use them everywhere, including
+Twig templates and Doctrine entities, whereas parameters are only available
+from places with access to the <a class="reference internal" href="service_container.html"><em>service container</em></a>.</p>
+<p>The only notable disadvantage of using constants for this kind of configuration
+values is that it&#8217;s complicated to redefine their values in your tests.</p>
+</div>
+</div>
+<div class="section" id="business-logic">
+<h2>Business Logic<a class="headerlink" href="#business-logic" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="don-t-create-any-bundle-to-organize-your-application-logic">
+<h3>Don&#8217;t Create any Bundle to Organize your Application Logic<a class="headerlink" href="#don-t-create-any-bundle-to-organize-your-application-logic" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>When Symfony 2.0 was released, applications used <a class="reference internal" href="bundles.html"><em>bundles</em></a> to
+divide their code into logical features: UserBundle, ProductBundle,
+InvoiceBundle, etc. However, a bundle is meant to be something that can be
+reused as a stand-alone piece of software.</p>
+<p>If you need to reuse some feature in your projects, create a bundle for it (in a
+private repository, to not make it publicly available). For the rest of your
+application code, use PHP namespaces to organize code instead of bundles.</p>
+</div>
+<div class="section" id="use-autowiring-to-automate-the-configuration-of-application-services">
+<h3>Use Autowiring to Automate the Configuration of Application Services<a class="headerlink" href="#use-autowiring-to-automate-the-configuration-of-application-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="service_container/autowiring.html"><em>Service autowiring</em></a> is a feature that
+reads the type-hints on your constructor (or other methods) and automatically
+passes the correct services to each method, making unnecessary to configure
+services explicitly and simplifying the application maintenance.</p>
+<p>Use it in combination with <a class="reference internal" href="service_container.html#services-autoconfigure"><span>service autoconfiguration</span></a>
+to also add <a class="reference internal" href="service_container/tags.html"><em>service tags</em></a> to the services
+needing them, such as Twig extensions, event subscribers, etc.</p>
+</div>
+<div class="section" id="services-should-be-private-whenever-possible">
+<h3>Services Should be Private Whenever Possible<a class="headerlink" href="#services-should-be-private-whenever-possible" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="service_container.html#container-public"><span>Make services private</span></a> to prevent you from accessing
+those services via <code class="docutils literal"><span class="pre">$container-&gt;get()</span></code>. Instead, you will need to use proper
+dependency injection.</p>
+</div>
+<div class="section" id="use-the-yaml-format-to-configure-your-own-services">
+<h3>Use the YAML Format to Configure your Own Services<a class="headerlink" href="#use-the-yaml-format-to-configure-your-own-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you use the <a class="reference internal" href="service_container.html#service-container-services-load-example"><span>default services.yaml configuration</span></a>,
+most services will be configured automatically. However, in some edge cases
+you&#8217;ll need to configure services (or parts of them) manually.</p>
+<p>YAML is the format recommended to configure services because it&#8217;s friendly to
+newcomers and concise, but Symfony also supports XML and PHP configuration.</p>
+</div>
+<div class="section" id="use-annotations-to-define-the-doctrine-entity-mapping">
+<h3>Use Annotations to Define the Doctrine Entity Mapping<a class="headerlink" href="#use-annotations-to-define-the-doctrine-entity-mapping" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Doctrine entities are plain PHP objects that you store in some &#8220;database&#8221;.
+Doctrine only knows about your entities through the mapping metadata configured
+for your model classes.</p>
+<p>Doctrine supports several metadata formats, but it&#8217;s recommended to use
+annotations because they are by far the most convenient and agile way of setting
+up and looking for mapping information.</p>
+</div>
+</div>
+<div class="section" id="controllers">
+<h2>Controllers<a class="headerlink" href="#controllers" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="make-your-controller-extend-the-abstractcontroller-base-controller">
+<h3>Make your Controller Extend the <code class="docutils literal"><span class="pre">AbstractController</span></code> Base Controller<a class="headerlink" href="#make-your-controller-extend-the-abstractcontroller-base-controller" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Symfony provides a <a class="reference internal" href="controller.html#the-base-controller-classes-services"><span>base controller</span></a>
+which includes shortcuts for the most common needs such as rendering templates
+or checking security permissions.</p>
+<p>Extending your controllers from this base controller couples your application
+to Symfony. Coupling is generally wrong, but it may be OK in this case because
+controllers shouldn&#8217;t contain any business logic. Controllers should contain
+nothing more than a few lines of <em>glue-code</em>, so you are not coupling the
+important parts of your application.</p>
+</div>
+<div class="section" id="use-annotations-to-configure-routing-caching-and-security">
+<span id="best-practice-controller-annotations"></span><h3>Use Annotations to Configure Routing, Caching and Security<a class="headerlink" href="#use-annotations-to-configure-routing-caching-and-security" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Using annotations for routing, caching and security simplifies configuration.
+You don&#8217;t need to browse several files created with different formats (YAML, XML,
+PHP): all the configuration is just where you need it and it only uses one format.</p>
+</div>
+<div class="section" id="don-t-use-annotations-to-configure-the-controller-template">
+<h3>Don&#8217;t Use Annotations to Configure the Controller Template<a class="headerlink" href="#don-t-use-annotations-to-configure-the-controller-template" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">&#64;Template</span></code> annotation is useful, but also involves some <em>magic</em>.
+Moreover, most of the time <code class="docutils literal"><span class="pre">&#64;Template</span></code> is used without any parameters, which
+makes it more difficult to know which template is being rendered. It also hides
+the fact that a controller should always return a <code class="docutils literal"><span class="pre">Response</span></code> object.</p>
+</div>
+<div class="section" id="use-dependency-injection-to-get-services">
+<h3>Use Dependency Injection to Get Services<a class="headerlink" href="#use-dependency-injection-to-get-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you extend the base <code class="docutils literal"><span class="pre">AbstractController</span></code>, you can only access to the most
+common services (e.g <code class="docutils literal"><span class="pre">twig</span></code>, <code class="docutils literal"><span class="pre">router</span></code>, <code class="docutils literal"><span class="pre">doctrine</span></code>, etc.), directly from the
+container via <code class="docutils literal"><span class="pre">$this-&gt;container-&gt;get()</span></code> or <code class="docutils literal"><span class="pre">$this-&gt;get()</span></code>.
+Instead, you must use dependency injection to fetch services by
+<a class="reference internal" href="controller.html#controller-accessing-services"><span>type-hinting action method arguments</span></a> or
+constructor arguments.</p>
+</div>
+<div class="section" id="use-paramconverters-if-they-are-convenient">
+<h3>Use ParamConverters If They Are Convenient<a class="headerlink" href="#use-paramconverters-if-they-are-convenient" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you&#8217;re using <a class="reference internal" href="doctrine.html"><em>Doctrine</em></a>, then you can <em>optionally</em> use the
+<a class="reference external" href="https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html">ParamConverter</a> to automatically query for an entity and pass it as an argument
+to your controller. It will also show a 404 page if no entity can be found.</p>
+<p>If the logic to get an entity from a route variable is more complex, instead of
+configuring the ParamConverter, it&#8217;s better to make the Doctrine query inside
+the controller (e.g. by calling to a <a class="reference internal" href="doctrine.html"><em>Doctrine repository method</em></a>).</p>
+</div>
+</div>
+<div class="section" id="templates">
+<h2>テンプレート<a class="headerlink" href="#templates" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-snake-case-for-template-names-and-variables">
+<h3>Use Snake Case for Template Names and Variables<a class="headerlink" href="#use-snake-case-for-template-names-and-variables" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Use lowercased snake_case for template names, directories and variables (e.g.
+<code class="docutils literal"><span class="pre">user_profile</span></code> instead of <code class="docutils literal"><span class="pre">userProfile</span></code> and <code class="docutils literal"><span class="pre">product/edit_form.html.twig</span></code>
+instead of <code class="docutils literal"><span class="pre">Product/EditForm.html.twig</span></code>).</p>
+</div>
+<div class="section" id="prefix-template-fragments-with-an-underscore">
+<h3>Prefix Template Fragments with an Underscore<a class="headerlink" href="#prefix-template-fragments-with-an-underscore" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Template fragments, also called <em>&#8220;partial templates&#8221;</em>, allow to
+<a class="reference internal" href="templates.html#templates-reuse-contents"><span>reuse template contents</span></a>. Prefix their names
+with an underscore to better differentiate them from complete templates (e.g.
+<code class="docutils literal"><span class="pre">_user_metadata.html.twig</span></code> or <code class="docutils literal"><span class="pre">_caution_message.html.twig</span></code>).</p>
+</div>
+</div>
+<div class="section" id="forms">
+<h2>フォーム<a class="headerlink" href="#forms" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="define-your-forms-as-php-classes">
+<h3>Define your Forms as PHP Classes<a class="headerlink" href="#define-your-forms-as-php-classes" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Creating <a class="reference internal" href="forms.html#creating-forms-in-classes"><span>forms in classes</span></a> allows to reuse
+them in different parts of the application. Besides, not creating forms in
+controllers simplify the code and maintenance of the controllers.</p>
+</div>
+<div class="section" id="add-form-buttons-in-templates">
+<h3>Add Form Buttons in Templates<a class="headerlink" href="#add-form-buttons-in-templates" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Form classes should be agnostic to where they will be used. For example, the
+button of a form used to both create and edit items should change from &#8220;Add new&#8221;
+to &#8220;Save changes&#8221; depending on where it&#8217;s used.</p>
+<p>Instead of adding buttons in form classes or the controllers, it&#8217;s recommended
+to add buttons in the templates. This also improves the separation of concerns,
+because the button styling (CSS class and other attributes) is defined in the
+template instead of in a PHP class.</p>
+</div>
+<div class="section" id="define-validation-constraints-on-the-underlying-object">
+<h3>Define Validation Constraints on the Underlying Object<a class="headerlink" href="#define-validation-constraints-on-the-underlying-object" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Attaching <a class="reference internal" href="reference/constraints.html"><em>validation constraints</em></a> to form fields
+instead of to the mapped object prevents the validation from being reused in
+other forms or other places where the object is used.</p>
+</div>
+<div class="section" id="use-a-single-action-to-render-and-process-the-form">
+<span id="best-practice-handle-form"></span><h3>Use a Single Action to Render and Process the Form<a class="headerlink" href="#use-a-single-action-to-render-and-process-the-form" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference internal" href="forms.html#rendering-forms"><span>Rendering forms</span></a> and <a class="reference internal" href="forms.html#processing-forms"><span>processing forms</span></a>
+are two of the main tasks when handling forms. Both are too similar (most of the
+times, almost identical), so it&#8217;s much simpler to let a single controller action
+handle everything.</p>
+</div>
+</div>
+<div class="section" id="internationalization">
+<h2>国際化社会<a class="headerlink" href="#internationalization" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-the-xliff-format-for-your-translation-files">
+<h3>Use the XLIFF Format for Your Translation Files<a class="headerlink" href="#use-the-xliff-format-for-your-translation-files" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Of all the translation formats supported by Symfony (PHP, Qt, <code class="docutils literal"><span class="pre">.po</span></code>, <code class="docutils literal"><span class="pre">.mo</span></code>,
+JSON, CSV, INI, etc.) XLIFF and gettext have the best support in the tools used
+by professional translators. And since it&#8217;s based on XML, you can validate XLIFF
+file contents as you write them.</p>
+<p>Symfony also supports notes in XLIFF files, making them more user-friendly for
+translators. At the end, good translations are all about context, and these
+XLIFF notes allow you to define that context.</p>
+</div>
+<div class="section" id="use-keys-for-translations-instead-of-content-strings">
+<h3>Use Keys for Translations Instead of Content Strings<a class="headerlink" href="#use-keys-for-translations-instead-of-content-strings" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Using keys simplifies the management of the translation files because you can
+change the original contents in templates, controllers and services without
+having to update all of the translation files.</p>
+<p>Keys should always describe their <em>purpose</em> and <em>not</em> their location. For
+example, if a form has a field with the label &#8220;Username&#8221;, then a nice key
+would be <code class="docutils literal"><span class="pre">label.username</span></code>, <em>not</em> <code class="docutils literal"><span class="pre">edit_form.label.username</span></code>.</p>
+</div>
+</div>
+<div class="section" id="security">
+<h2>セキュリティ<a class="headerlink" href="#security" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="define-a-single-firewall">
+<h3>Define a Single Firewall<a class="headerlink" href="#define-a-single-firewall" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Unless you have two legitimately different authentication systems and users
+(e.g. form login for the main site and a token system for your API only), it&#8217;s
+recommended to have only one firewall to keep things simple.</p>
+<p>Additionally, you should use the <code class="docutils literal"><span class="pre">anonymous</span></code> key under your firewall. If you
+require users to be logged in for different sections of your site, use the
+<a class="reference internal" href="security/access_control.html"><em>access_control</em></a> option.</p>
+</div>
+<div class="section" id="use-the-auto-password-hasher">
+<h3>Use the <code class="docutils literal"><span class="pre">auto</span></code> Password Hasher<a class="headerlink" href="#use-the-auto-password-hasher" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The <a class="reference internal" href="reference/configuration/security.html#reference-security-encoder-auto"><span>auto password hasher</span></a> automatically
+selects the best possible encoder/hasher depending on your PHP installation.
+Currently, it tries to use <code class="docutils literal"><span class="pre">sodium</span></code> by default and falls back to <code class="docutils literal"><span class="pre">bcrypt</span></code>.</p>
+</div>
+<div class="section" id="use-voters-to-implement-fine-grained-security-restrictions">
+<h3>Use Voters to Implement Fine-grained Security Restrictions<a class="headerlink" href="#use-voters-to-implement-fine-grained-security-restrictions" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If your security logic is complex, you should create custom
+<a class="reference internal" href="security/voters.html"><em>security voters</em></a> instead of defining long expressions
+inside the <code class="docutils literal"><span class="pre">&#64;Security</span></code> annotation.</p>
+</div>
+</div>
+<div class="section" id="web-assets">
+<h2>Web Assets<a class="headerlink" href="#web-assets" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="use-webpack-encore-to-process-web-assets">
+<h3>Use Webpack Encore to Process Web Assets<a class="headerlink" href="#use-webpack-encore-to-process-web-assets" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Web assets are things like CSS, JavaScript and image files that make the
+frontend of your site look and work great. <a class="reference external" href="https://webpack.js.org/">Webpack</a> is the leading JavaScript
+module bundler that compiles, transforms and packages assets for usage in a browser.</p>
+<p><a class="reference internal" href="frontend.html"><em>Webpack Encore</em></a> is a JavaScript library that gets rid of most
+of Webpack complexity without hiding any of its features or distorting its usage
+and philosophy. It was originally created for Symfony applications, but it works
+for any application using any technology.</p>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>テスト<a class="headerlink" href="#tests" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="smoke-test-your-urls">
+<h3>Smoke Test your URLs<a class="headerlink" href="#smoke-test-your-urls" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In software engineering, <a class="reference external" href="https://en.wikipedia.org/wiki/Smoke_testing_(software)">smoke testing</a> consists of <em>&#8220;preliminary testing to
+reveal simple failures severe enough to reject a prospective software release&#8221;</em>.
+Using <a class="reference internal" href="testing.html#testing-data-providers"><span>PHPUnit data providers</span></a> you can define a
+functional test that checks that all application URLs load successfully:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// tests/ApplicationAvailabilityFunctionalTest.php</span>
+<span class="k">namespace</span> <span class="nx">App\Tests</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ApplicationAvailabilityFunctionalTest</span> <span class="k">extends</span> <span class="nx">WebTestCase</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @dataProvider urlProvider</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testPageIsSuccessful</span><span class="p">(</span><span class="nv">$url</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$client</span> <span class="o">=</span> <span class="nx">self</span><span class="o">::</span><span class="na">createClient</span><span class="p">();</span>
+        <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertResponseIsSuccessful</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">urlProvider</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">yield</span> <span class="p">[</span><span class="s1">&#39;/&#39;</span><span class="p">];</span>
+        <span class="k">yield</span> <span class="p">[</span><span class="s1">&#39;/posts&#39;</span><span class="p">];</span>
+        <span class="k">yield</span> <span class="p">[</span><span class="s1">&#39;/post/fixture-post-1&#39;</span><span class="p">];</span>
+        <span class="k">yield</span> <span class="p">[</span><span class="s1">&#39;/blog/category/fixture-category&#39;</span><span class="p">];</span>
+        <span class="k">yield</span> <span class="p">[</span><span class="s1">&#39;/archives&#39;</span><span class="p">];</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Add this test while creating your application because it requires little effort
+and checks that none of your pages returns an error. Later you&#8217;ll add more
+specific tests for each page.</p>
+</div>
+<div class="section" id="hardcode-urls-in-a-functional-test">
+<h3>Hardcode URLs in a Functional Test<a class="headerlink" href="#hardcode-urls-in-a-functional-test" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In Symfony applications it&#8217;s recommended to <a class="reference internal" href="routing.html#routing-generating-urls"><span>generate URLs</span></a>
+using routes to automatically update all links when a URL changes. However, if a
+public URL changes, users won&#8217;t be able to browse it unless you set up a
+redirection to the new URL.</p>
+<p>That&#8217;s why it&#8217;s recommended to use raw URLs in tests instead of generating them
+from routes. Whenever a route changes, tests will break and you&#8217;ll know that
+you must set up a redirection.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bundles.html" class="btn btn-neutral float-right" title="The Bundle System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configuration/using_parameters_in_dic.html" class="btn btn-neutral" title="Using Parameters within a Dependency Injection Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'ja',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
