@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#business-logic">ビジネスロジック</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#don-t-create-any-bundle-to-organize-your-application-logic">アプリケーションロジックを整理するためにバンドルを作成しないでください</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-autowiring-to-automate-the-configuration-of-application-services">Autowiringを使用してアプリケーションサービスの構成を自動化する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#services-should-be-private-whenever-possible">Services Should be Private Whenever Possible</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#services-should-be-private-whenever-possible">サービスは可能な限りプライベートである必要があります</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-the-yaml-format-to-configure-your-own-services">Use the YAML Format to Configure your Own Services</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-annotations-to-define-the-doctrine-entity-mapping">Use Annotations to Define the Doctrine Entity Mapping</a></li>
 </ul>
@@ -403,14 +403,12 @@
 </div>
 <div class="section" id="use-autowiring-to-automate-the-configuration-of-application-services">
 <h3>Autowiringを使用してアプリケーションサービスの構成を自動化する<a class="headerlink" href="#use-autowiring-to-automate-the-configuration-of-application-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>:doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>Service autowiring&lt;/service_container / autowiring&gt;`は、コンストラクター（またはその他のメソッド）の型ヒントを読み取り、正しいサービスを各メソッドに自動的に渡すため、サービスを明示的に構成する必要がなく、アプリケーションのメンテナンスを簡素化します。</p>
+<p><code class="xref doc docutils literal"><span class="pre">Service</span> <span class="pre">autowiring</span></code> は、コンストラクター（またはその他のメソッド）の型ヒントを読み取り、正しいサービスを各メソッドに自動的に渡すため、サービスを明示的に構成する必要がなく、アプリケーションのメンテナンスを簡素化します。</p>
 <p>Twigエクステンション、イベントサブスクライバーなどの必要なサービスを <a class="reference internal" href="service_container/tags.html"><em>サービスタグ</em></a> に追加するために <a class="reference internal" href="service_container.html#services-autoconfigure"><span>service autoconfiguration</span></a> と組み合わせて使用します。</p>
 </div>
 <div class="section" id="services-should-be-private-whenever-possible">
-<h3>Services Should be Private Whenever Possible<a class="headerlink" href="#services-should-be-private-whenever-possible" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference internal" href="service_container.html#container-public"><span>Make services private</span></a> to prevent you from accessing
-those services via <code class="docutils literal"><span class="pre">$container-&gt;get()</span></code>. Instead, you will need to use proper
-dependency injection.</p>
+<h3>サービスは可能な限りプライベートである必要があります<a class="headerlink" href="#services-should-be-private-whenever-possible" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">$</span> <span class="pre">container-&gt;get()</span></code> を介してこれらのサービスにアクセスできないようにするため、<a class="reference internal" href="service_container.html#container-public"><span>サービスをプライベートにしてください</span></a> 。代わりに、適切な依存関係注入を使用する必要があります。</p>
 </div>
 <div class="section" id="use-the-yaml-format-to-configure-your-own-services">
 <h3>Use the YAML Format to Configure your Own Services<a class="headerlink" href="#use-the-yaml-format-to-configure-your-own-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
