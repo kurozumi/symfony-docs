@@ -94,12 +94,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#use-secret-for-sensitive-information">機密情報にシークレットを使用する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-parameters-for-application-configuration">アプリケーション構成のパラメーターを使用する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-short-and-prefixed-parameter-names">短いプレフィックスのパラメータ名を使用する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-constants-to-define-options-that-rarely-change">Use Constants to Define Options that Rarely Change</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-constants-to-define-options-that-rarely-change">ほとんど変化しないオプションを定義するため定数を使用する</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#business-logic">Business Logic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#don-t-create-any-bundle-to-organize-your-application-logic">Don&#8217;t Create any Bundle to Organize your Application Logic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-autowiring-to-automate-the-configuration-of-application-services">Use Autowiring to Automate the Configuration of Application Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#business-logic">ビジネスロジック</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#don-t-create-any-bundle-to-organize-your-application-logic">アプリケーションロジックを整理するためにバンドルを作成しないでください</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-autowiring-to-automate-the-configuration-of-application-services">Autowiringを使用してアプリケーションサービスの構成を自動化する</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#services-should-be-private-whenever-possible">Services Should be Private Whenever Possible</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-the-yaml-format-to-configure-your-own-services">Use the YAML Format to Configure your Own Services</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#use-annotations-to-define-the-doctrine-entity-mapping">Use Annotations to Define the Doctrine Entity Mapping</a></li>
@@ -377,10 +377,8 @@
 </td></tr></table></div>
 </div>
 <div class="section" id="use-constants-to-define-options-that-rarely-change">
-<h3>Use Constants to Define Options that Rarely Change<a class="headerlink" href="#use-constants-to-define-options-that-rarely-change" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Configuration options like the number of items to display in some listing rarely
-change. Instead of defining them as <a class="reference internal" href="configuration.html#configuration-parameters"><span>service container parameters</span></a>,
-define them as PHP constants in the related classes. Example:</p>
+<h3>ほとんど変化しないオプションを定義するため定数を使用する<a class="headerlink" href="#use-constants-to-define-options-that-rarely-change" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>一部のリストに表示するアイテムの数などの構成オプションはほとんど変更されません。 <a class="reference internal" href="configuration.html#configuration-parameters"><span>サービスコンテナパラメータ</span></a> として定義する代わりに、それらを関連クラスのPHP定数として定義します。例:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">// src/Entity/Post.php</span>
 <span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
 
@@ -392,34 +390,21 @@ define them as PHP constants in the related classes. Example:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The main advantage of constants is that you can use them everywhere, including
-Twig templates and Doctrine entities, whereas parameters are only available
-from places with access to the <a class="reference internal" href="service_container.html"><em>service container</em></a>.</p>
-<p>The only notable disadvantage of using constants for this kind of configuration
-values is that it&#8217;s complicated to redefine their values in your tests.</p>
+<p>定数の主な利点は、TwigテンプレートやDoctrineエンティティを含め、定数をどこでも使用できることです。一方、パラメーターは <a class="reference internal" href="service_container.html"><em>サービスコンテナー</em></a> にアクセスできる場所からのみ利用できます。</p>
+<p>この種の構成値に定数を使用することの唯一の注目すべき欠点は、テストで値を再定義するのが複雑なことです。</p>
 </div>
 </div>
 <div class="section" id="business-logic">
-<h2>Business Logic<a class="headerlink" href="#business-logic" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2>ビジネスロジック<a class="headerlink" href="#business-logic" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="don-t-create-any-bundle-to-organize-your-application-logic">
-<h3>Don&#8217;t Create any Bundle to Organize your Application Logic<a class="headerlink" href="#don-t-create-any-bundle-to-organize-your-application-logic" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>When Symfony 2.0 was released, applications used <a class="reference internal" href="bundles.html"><em>bundles</em></a> to
-divide their code into logical features: UserBundle, ProductBundle,
-InvoiceBundle, etc. However, a bundle is meant to be something that can be
-reused as a stand-alone piece of software.</p>
-<p>If you need to reuse some feature in your projects, create a bundle for it (in a
-private repository, to not make it publicly available). For the rest of your
-application code, use PHP namespaces to organize code instead of bundles.</p>
+<h3>アプリケーションロジックを整理するためにバンドルを作成しないでください<a class="headerlink" href="#don-t-create-any-bundle-to-organize-your-application-logic" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Symfony 2.0がリリースされたとき、アプリケーションはコードを論理機能（UserBundle、ProductBundle、InvoiceBundleなど）ごとに分割するため <a class="reference internal" href="bundles.html"><em>バンドル</em></a> を使用していました。しかしながら、バンドルはスタンドアロンのソフトウェアとして再利用できるものです。</p>
+<p>プロジェクトで一部の機能を再利用する必要がある場合は、そのバンドルを作成します（公開しないように、プライベートリポジトリに作成します）。残りのアプリケーションコードについては、バンドルの代わりにPHP名前空間を使用してコードを整理します。</p>
 </div>
 <div class="section" id="use-autowiring-to-automate-the-configuration-of-application-services">
-<h3>Use Autowiring to Automate the Configuration of Application Services<a class="headerlink" href="#use-autowiring-to-automate-the-configuration-of-application-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p><a class="reference internal" href="service_container/autowiring.html"><em>Service autowiring</em></a> is a feature that
-reads the type-hints on your constructor (or other methods) and automatically
-passes the correct services to each method, making unnecessary to configure
-services explicitly and simplifying the application maintenance.</p>
-<p>Use it in combination with <a class="reference internal" href="service_container.html#services-autoconfigure"><span>service autoconfiguration</span></a>
-to also add <a class="reference internal" href="service_container/tags.html"><em>service tags</em></a> to the services
-needing them, such as Twig extensions, event subscribers, etc.</p>
+<h3>Autowiringを使用してアプリケーションサービスの構成を自動化する<a class="headerlink" href="#use-autowiring-to-automate-the-configuration-of-application-services" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>:doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>Service autowiring&lt;/service_container / autowiring&gt;`は、コンストラクター（またはその他のメソッド）の型ヒントを読み取り、正しいサービスを各メソッドに自動的に渡すため、サービスを明示的に構成する必要がなく、アプリケーションのメンテナンスを簡素化します。</p>
+<p>Twigエクステンション、イベントサブスクライバーなどの必要なサービスを <a class="reference internal" href="service_container/tags.html"><em>サービスタグ</em></a> に追加するために <a class="reference internal" href="service_container.html#services-autoconfigure"><span>service autoconfiguration</span></a> と組み合わせて使用します。</p>
 </div>
 <div class="section" id="services-should-be-private-whenever-possible">
 <h3>Services Should be Private Whenever Possible<a class="headerlink" href="#services-should-be-private-whenever-possible" title="このヘッドラインへのパーマリンク">¶</a></h3>
